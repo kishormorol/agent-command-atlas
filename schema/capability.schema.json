@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentcommandatlas.dev/schema/capability.schema.json",
+  "title": "Agent Command Atlas Capability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "display_name", "description", "mappings"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "mappings": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tool", "entry_id", "relationship"],
+        "properties": {
+          "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]},
+          "entry_id": {"type": ["string", "null"]},
+          "relationship": {"enum": ["exact", "similar", "partial", "none", "unknown"]},
+          "notes": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

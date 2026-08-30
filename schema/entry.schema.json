@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentcommandatlas.dev/schema/entry.schema.json",
+  "title": "Agent Command Atlas Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "tool", "name", "display_name", "type", "category", "role", "description", "syntax", "maturity", "availability", "sources", "verification"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9-]+\\.[a-z0-9-]+\\.[a-z0-9-]+$"},
+    "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]},
+    "name": {"type": "string", "minLength": 1},
+    "display_name": {"type": "string", "minLength": 1},
+    "type": {"enum": ["slash-command", "cli-command", "cli-subcommand", "cli-flag", "shortcut", "prefix-command", "config", "config-file", "config-option", "environment-variable", "instruction-file", "skill", "workflow", "hook", "agent", "plugin", "extension", "permission", "mcp", "mode"]},
+    "parent_id": {"type": "string"},
+    "category": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+    "role": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "syntax": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "aliases": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}, "default": []},
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["command", "explanation", "level"],
+        "properties": {
+          "command": {"type": "string", "minLength": 1},
+          "explanation": {"type": "string", "minLength": 1},
+          "level": {"enum": ["minimal", "practical", "workflow"]}
+        }
+      }
+    },
+    "when_to_use": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "when_not_to_use": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "related_commands": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "equivalent_commands": {"type": "array", "items": {"$ref": "#/$defs/relationship"}},
+    "capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$"}},
+    "maturity": {"enum": ["stable", "experimental", "rolling-out", "conditional", "deprecated", "removed", "unknown"]},
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channels", "conditions"],
+      "properties": {
+        "channels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["interactive", "cli", "ide", "desktop", "web", "api"]}},
+        "platforms": {"type": "array", "uniqueItems": true, "items": {"enum": ["linux", "macos", "windows", "web"]}},
+        "plans": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "conditions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "introduced": {"type": ["string", "null"]},
+        "deprecated": {"type": ["string", "null"]},
+        "removed": {"type": ["string", "null"]},
+        "replacement": {"type": ["string", "null"]}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "kind"],
+        "properties": {
+          "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+          "kind": {"enum": ["official-docs", "official-source", "release-notes", "manual-test"]},
+          "note": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "last_verified", "tested_version", "verified_by"],
+      "properties": {
+        "status": {"enum": ["officially-documented", "manually-tested", "community-verified", "needs-verification", "unverified"]},
+        "last_verified": {"type": ["string", "null"], "format": "date"},
+        "tested_version": {"type": ["string", "null"]},
+        "verified_by": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "notes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "entry_id", "relationship"],
+      "properties": {
+        "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]},
+        "entry_id": {"type": ["string", "null"]},
+        "relationship": {"enum": ["exact", "similar", "partial", "none", "unknown"]},
+        "notes": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

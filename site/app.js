@@ -1,0 +1,528 @@
+const state = {
+  entries: [],
+  capabilities: [],
+  tools: new Map(),
+  categories: new Map(),
+  entriesById: new Map(),
+  capabilitiesByEntry: new Map(),
+  visibleLimit: 24,
+};
+
+const TYPE_GROUPS = {
+  configuration: new Set(["config", "config-file", "config-option", "instruction-file", "environment-variable"]),
+};
+
+const SEARCH_SYNONYMS = {
+  agent: ["agents", "subagent", "subagents"],
+  agents: ["agent", "subagent", "subagents"],
+  auth: ["authenticate", "authentication", "login", "credentials"],
+  change: ["select", "switch", "configure"],
+  command: ["control", "flag", "shortcut"],
+  compact: ["compress", "summarize", "summary", "context"],
+  context: ["conversation", "chat", "tokens"],
+  old: ["earlier", "previous", "saved", "history", "resume"],
+  permission: ["permissions", "approval", "sandbox", "trust", "access"],
+  resume: ["continue", "restore", "previous", "history"],
+  session: ["conversation", "chat", "thread"],
+  shell: ["terminal", "execute", "command", "process"],
+};
+
+const STOP_WORDS = new Set(["a", "all", "an", "and", "commands", "does", "features", "for", "have", "how", "is", "of", "show", "the", "to", "what", "which", "with"]);
+const MATURITY_ORDER = ["stable", "experimental", "rolling-out", "conditional", "deprecated", "removed", "unknown"];
+const $ = (selector, root = document) => root.querySelector(selector);
+
+function escapeHtml(value = "") {
+  return String(value).replace(/[&<>\"]/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;",
+  })[character]);
+}
+
+function label(value = "") {
+  return String(value).replaceAll("-", " ").replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
+function normalize(value = "") {
+  return String(value).toLowerCase().replace(/[^a-z0-9@!/+.-]+/g, " ").trim();
+}
+
+function toolName(toolId) {
+  return state.tools.get(toolId)?.name || label(toolId);
+}
+
+function categoryName(categoryId) {
+  return state.categories.get(categoryId)?.display_name || label(categoryId);
+}
+
+function sourceHost(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "Official documentation";
+  }
+}
+
+function routeHref(path = "") {
+  return escapeHtml(path);
+}
+
+function verificationLabel(status) {
+  return {
+    "officially-documented": "Officially documented",
+    "manually-tested": "Manually tested",
+    "community-verified": "Community verified",
+    "needs-verification": "Needs verification",
+    unverified: "Unverified",
+  }[status] || label(status);
+}
+
+function relationshipLabel(relationship) {
+  return relationship === "none" ? "No mapped control" : label(relationship);
+}
+
+function entryCapabilities(entry) {
+  return state.capabilitiesByEntry.get(entry.id) || [];
+}
+
+function prepareSearchIndex() {
+  state.capabilitiesByEntry = new Map();
+  state.capabilities.forEach((capability) => {
+    capability.mappings.forEach((mapping) => {
+      if (!mapping.entry_id) return;
+      const rows = state.capabilitiesByEntry.get(mapping.entry_id) || [];
+      rows.push(capability);
+      state.capabilitiesByEntry.set(mapping.entry_id, rows);
+    });
+  });
+
+  const capabilitiesById = new Map(state.capabilities.map((capability) => [capability.id, capability]));
+  state.entries.forEach((entry) => {
+    const rows = state.capabilitiesByEntry.get(entry.id) || [];
+    (entry.capabilities || []).forEach((capabilityId) => {
+      const capability = capabilitiesById.get(capabilityId);
+      if (capability && !rows.includes(capability)) rows.push(capability);
+    });
+    if (rows.length) state.capabilitiesByEntry.set(entry.id, rows);
+  });
+
+  state.entries.forEach((entry) => {
+    const capabilities = entryCapabilities(entry);
+    entry._searchFields = [
+      { text: normalize([entry.name, entry.display_name, ...(entry.aliases || [])].join(" ")), weight: 12 },
+      { text: normalize(capabilities.flatMap((item) => [item.id, item.display_name, item.description]).join(" ")), weight: 9 },
+      { text: normalize([toolName(entry.tool), state.tools.get(entry.tool)?.vendor, entry.type, categoryName(entry.category), entry.role].join(" ")), weight: 6 },
+      { text: normalize([entry.description, ...(entry.when_to_use || []), ...(entry.when_not_to_use || [])].join(" ")), weight: 4 },
+      { text: normalize((entry.examples || []).flatMap((item) => [item.command, item.explanation]).join(" ")), weight: 3 },
+      { text: normalize([...(entry.notes || []), ...(entry.availability?.conditions || [])].join(" ")), weight: 2 },
+    ];
+  });
+}
+
+function queryGroups(query) {
+  return [...new Set(normalize(query).split(/\s+/).filter((term) => term && !STOP_WORDS.has(term)))]
+    .map((term) => [...new Set([term, ...(SEARCH_SYNONYMS[term] || [])])]);
+}
+
+function searchScore(entry, query) {
+  const groups = queryGroups(query);
+  if (!groups.length) return 1;
+  let matchedGroups = 0;
+  let score = 0;
+  groups.forEach((variants) => {
+    let groupScore = 0;
+    entry._searchFields.forEach((field) => {
+      variants.forEach((variant, index) => {
+        const synonymFactor = index === 0 ? 1 : 0.55;
+        if (field.text.includes(variant)) groupScore = Math.max(groupScore, field.weight * synonymFactor);
+      });
+    });
+    if (groupScore) {
+      matchedGroups += 1;
+      score += groupScore;
+    }
+  });
+  if (!matchedGroups) return 0;
+  const coverage = matchedGroups / groups.length;
+  const normalizedQuery = normalize(query);
+  const normalizedName = normalize(entry.name).replace(/^[^a-z0-9]+/, "");
+  const exactName = normalizedName === normalizedQuery || normalize(entry.display_name) === normalizedQuery;
+  return score * coverage + (exactName ? 30 : 0);
+}
+
+function capabilityScore(capability, query) {
+  const groups = queryGroups(query);
+  if (!groups.length) return 0;
+  const mappingText = capability.mappings.flatMap((mapping) => {
+    const entry = mapping.entry_id ? state.entriesById.get(mapping.entry_id) : null;
+    return [mapping.notes, entry?.name, toolName(mapping.tool)];
+  });
+  const text = normalize([capability.id, capability.display_name, capability.description, ...mappingText].join(" "));
+  const matched = groups.filter((variants) => variants.some((variant) => text.includes(variant))).length;
+  return matched ? matched / groups.length : 0;
+}
+
+function option(value, text, selectedValue) {
+  return `<option value="${escapeHtml(value)}"${value === selectedValue ? " selected" : ""}>${escapeHtml(text)}</option>`;
+}
+
+function currentFilters(toolId = "") {
+  const params = new URLSearchParams(location.search);
+  return {
+    q: params.get("q") || "",
+    tool: toolId || params.get("tool") || "",
+    type: params.get("type") || "",
+    category: params.get("category") || "",
+    maturity: params.get("maturity") || "",
+  };
+}
+
+function toolLinks(activeTool = "") {
+  return `<nav class="tool-tabs" aria-label="Browse by tool">
+    <a class="tool-tab${activeTool ? "" : " is-active"}" href=""><span class="tool-tab__dot" aria-hidden="true"></span>All tools</a>
+    ${[...state.tools.values()].map((tool) => `<a class="tool-tab tool-tab--${escapeHtml(tool.id)}${activeTool === tool.id ? " is-active" : ""}" href="${routeHref(`${tool.id}/`)}"><span class="tool-tab__dot" aria-hidden="true"></span>${escapeHtml(tool.name.replace("OpenAI ", "").replace("GitHub ", ""))}</a>`).join("")}
+  </nav>`;
+}
+
+function searchBox(filters) {
+  return `<form class="search" role="search" id="search-form">
+    <label for="q">Search the Atlas</label>
+    <div class="search__input-wrap">
+      <span aria-hidden="true">⌕</span>
+      <input id="q" name="q" type="search" value="${escapeHtml(filters.q)}" placeholder="Search commands, flags, tasks, tools…" autocomplete="off" spellcheck="false">
+      <kbd aria-label="Keyboard shortcut: slash">/</kbd>
+    </div>
+  </form>`;
+}
+
+function filterPanel(filters, fixedTool = "") {
+  const entryTypes = [...new Set(state.entries.map((entry) => entry.type))].sort((a, b) => label(a).localeCompare(label(b)));
+  const typeOptions = [option("", "All types", filters.type), option("configuration", "Configuration (all)", filters.type)]
+    .concat(entryTypes.map((type) => option(type, label(type), filters.type)));
+  const categoryOptions = [option("", "All categories", filters.category)]
+    .concat([...state.categories.values()].map((category) => option(category.id, category.display_name, filters.category)));
+  const maturityOptions = [option("", "All maturity states", filters.maturity)]
+    .concat(MATURITY_ORDER.filter((value) => state.entries.some((entry) => entry.maturity === value)).map((value) => option(value, label(value), filters.maturity)));
+  const toolField = fixedTool ? "" : `<label class="field" for="tool"><span>Tool</span><select id="tool">${[option("", "All tools", filters.tool), ...[...state.tools.values()].map((tool) => option(tool.id, tool.name, filters.tool))].join("")}</select></label>`;
+  return `<div class="filter-panel" aria-label="Reference filters">
+    ${toolField}
+    <label class="field" for="type"><span>Type</span><select id="type">${typeOptions.join("")}</select></label>
+    <label class="field" for="category"><span>Category</span><select id="category">${categoryOptions.join("")}</select></label>
+    <label class="field" for="maturity"><span>Maturity</span><select id="maturity">${maturityOptions.join("")}</select></label>
+    <button class="button button--quiet" id="reset" type="button">Clear filters</button>
+  </div>`;
+}
+
+function maturityBadge(entry) {
+  if (entry.maturity === "stable") return "";
+  return `<span class="badge badge--${escapeHtml(entry.maturity)}">${escapeHtml(label(entry.maturity))}</span>`;
+}
+
+function entryCard(entry) {
+  const example = (entry.examples || []).find((item) => item.level === "practical") || (entry.examples || [])[0];
+  const titleId = `entry-${escapeHtml(entry.id)}`;
+  return `<article class="entry-card entry-card--${escapeHtml(entry.tool)}" aria-labelledby="${titleId}">
+    <div class="entry-card__identity">
+      <div class="entry-card__meta">
+        <span class="entry-card__tool"><i aria-hidden="true"></i>${escapeHtml(toolName(entry.tool))}</span>
+        <span>${escapeHtml(label(entry.type))}</span>
+        <span>${escapeHtml(categoryName(entry.category))}</span>
+        ${maturityBadge(entry)}
+      </div>
+      <h3 id="${titleId}"><a href="${routeHref(entry.path)}"><code>${escapeHtml(entry.name)}</code></a></h3>
+      <p class="entry-card__role">${escapeHtml(entry.role)}</p>
+    </div>
+    <div class="entry-card__usage">
+      <div><span>Syntax</span><code>${escapeHtml(entry.syntax[0])}</code></div>
+      ${example ? `<div><span>Example</span><code>${escapeHtml(example.command)}</code></div>` : ""}
+    </div>
+    <div class="entry-card__footer">
+      <span class="verification verification--${escapeHtml(entry.verification.status)}">${escapeHtml(verificationLabel(entry.verification.status))}</span>
+      <a href="${routeHref(entry.path)}" aria-label="Open the reference for ${escapeHtml(entry.name)}">Open reference <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>`;
+}
+
+function capabilityCard(capability) {
+  const mapped = capability.mappings.filter((mapping) => mapping.entry_id).length;
+  return `<a class="capability-card" href="${routeHref(capability.path)}">
+    <span class="capability-card__top"><span class="capability-card__id">${escapeHtml(capability.id)}</span><span aria-hidden="true">↗</span></span>
+    <strong>${escapeHtml(capability.display_name)}</strong>
+    <span>${escapeHtml(capability.description)}</span>
+    <small>${mapped}/5 tools mapped</small>
+  </a>`;
+}
+
+function matchesType(entry, type) {
+  return !type || entry.type === type || TYPE_GROUPS[type]?.has(entry.type);
+}
+
+function filteredEntries(filters) {
+  return state.entries.map((entry) => ({ entry, score: searchScore(entry, filters.q) }))
+    .filter(({ entry, score }) => score > 0
+      && (!filters.tool || entry.tool === filters.tool)
+      && matchesType(entry, filters.type)
+      && (!filters.category || entry.category === filters.category)
+      && (!filters.maturity || entry.maturity === filters.maturity))
+    .sort((a, b) => b.score - a.score
+      || (state.tools.get(a.entry.tool)?.order || 0) - (state.tools.get(b.entry.tool)?.order || 0)
+      || a.entry.name.localeCompare(b.entry.name))
+    .map(({ entry }) => entry);
+}
+
+function resultsMarkup(filters) {
+  const rows = filteredEntries(filters);
+  const visible = rows.slice(0, state.visibleLimit);
+  const taskMatches = filters.q
+    ? state.capabilities.map((capability) => ({ capability, score: capabilityScore(capability, filters.q) })).filter((item) => item.score >= 0.5).sort((a, b) => b.score - a.score).slice(0, 4)
+    : [];
+  return `<div id="results-region">
+    ${taskMatches.length ? `<aside class="task-matches" aria-labelledby="task-match-heading"><div><p class="eyebrow">Task matches</p><h2 id="task-match-heading">Compare this task across tools</h2></div><div class="task-match-links">${taskMatches.map(({ capability }) => `<a href="${routeHref(capability.path)}">${escapeHtml(capability.display_name)} <span aria-hidden="true">→</span></a>`).join("")}</div></aside>` : ""}
+    <div class="results-bar">
+      <p id="count" role="status" aria-live="polite"><strong>${rows.length}</strong> ${rows.length === 1 ? "entry" : "entries"}${filters.q ? ` for “${escapeHtml(filters.q)}”` : ""}</p>
+      <p>Showing ${Math.min(visible.length, rows.length)} of ${rows.length}</p>
+    </div>
+    <section class="entry-list" aria-label="Reference entries">
+      ${visible.length ? visible.map(entryCard).join("") : `<div class="empty"><h2>No entries found</h2><p>Try a broader task, remove a filter, or browse by capability.</p></div>`}
+    </section>
+    ${visible.length < rows.length ? `<div class="load-more"><button class="button" id="show-more" type="button">Show ${Math.min(24, rows.length - visible.length)} more</button></div>` : ""}
+  </div>`;
+}
+
+function referenceSection(filters, fixedTool = "") {
+  return `<section class="reference-section" aria-labelledby="reference-heading">
+    <div class="section-heading"><div><p class="eyebrow">Complete reference</p><h2 id="reference-heading">Commands and control surfaces</h2></div></div>
+    ${filterPanel(filters, fixedTool)}
+    ${resultsMarkup(filters)}
+  </section>`;
+}
+
+function homeView() {
+  const filters = currentFilters();
+  const verifiedDates = state.entries.map((entry) => entry.verification.last_verified).filter(Boolean).sort();
+  return `<section class="hero">
+      <div class="hero__grid">
+        <div class="hero__copy"><p class="eyebrow">Living, verified reference</p><h1>Agent Command<br><span>Atlas</span></h1><p>Find commands, flags, shortcuts, and control surfaces across the five leading AI coding agent ecosystems.</p></div>
+        <div class="hero__search-panel">
+          ${searchBox(filters)}
+          <p class="search-hint"><strong>Try a task:</strong> compact context, resume old session, configure permissions</p>
+        </div>
+      </div>
+      <div class="hero__utility">
+        <dl class="atlas-stats"><div><dt>${state.entries.length}</dt><dd>reference entries</dd></div><div><dt>${state.tools.size}</dt><dd>ecosystems</dd></div><div><dt>${state.capabilities.length}</dt><dd>cross-tool tasks</dd></div><div><dt>${escapeHtml(verifiedDates.at(-1) || "Undated")}</dt><dd>latest verification</dd></div></dl>
+      </div>
+      ${toolLinks(filters.tool)}
+    </section>
+    <section class="capability-section" aria-labelledby="capability-heading">
+      <div class="section-heading"><div><p class="eyebrow">Browse by task</p><h2 id="capability-heading">What do you need to do?</h2></div><a href="compare/">View all comparisons <span aria-hidden="true">→</span></a></div>
+      <div class="capability-grid">${state.capabilities.slice(0, 12).map(capabilityCard).join("")}</div>
+    </section>
+    ${referenceSection(filters)}`;
+}
+
+function breakdown(entries, key, getName) {
+  const counts = new Map();
+  entries.forEach((entry) => counts.set(entry[key], (counts.get(entry[key]) || 0) + 1));
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || getName(a[0]).localeCompare(getName(b[0])));
+}
+
+function toolView(toolId) {
+  const tool = state.tools.get(toolId);
+  if (!tool) return notFoundView();
+  const entries = state.entries.filter((entry) => entry.tool === toolId);
+  const filters = currentFilters(toolId);
+  const allTypes = breakdown(entries, "type", label);
+  const allCategories = breakdown(entries, "category", categoryName);
+  const types = allTypes.slice(0, 5);
+  const categories = allCategories.slice(0, 5);
+  const dates = entries.map((entry) => entry.verification.last_verified).filter(Boolean).sort();
+  const sources = [...new Map(entries.flatMap((entry) => entry.sources).map((source) => [source.url, source])).values()].slice(0, 4);
+  return `<div class="page-head page-head--${escapeHtml(toolId)}">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.name)}</span></nav>
+      <p class="eyebrow">Tool reference</p><h1>${escapeHtml(tool.name)} commands</h1>
+      <p>Search ${entries.length} documented commands and control surfaces for ${escapeHtml(tool.name)}, derived from the canonical Atlas dataset and official ${escapeHtml(tool.vendor)} sources.</p>
+      ${searchBox(filters)}
+      ${toolLinks(toolId)}
+    </div>
+    <section class="tool-summary" aria-label="Dataset summary">
+      <div class="metric"><strong>${entries.length}</strong><span>reference entries</span></div>
+      <div class="metric"><strong>${allTypes.length}</strong><span>entry types</span></div>
+      <div class="metric"><strong>${allCategories.length}</strong><span>categories</span></div>
+      <div class="metric"><strong>${escapeHtml(dates.at(-1) || "Undated")}</strong><span>latest verification</span></div>
+      <div class="summary-list"><h2>Top types</h2>${types.map(([type, count]) => `<span>${escapeHtml(label(type))}<strong>${count}</strong></span>`).join("")}</div>
+      <div class="summary-list"><h2>Top categories</h2>${categories.map(([category, count]) => `<span>${escapeHtml(categoryName(category))}<strong>${count}</strong></span>`).join("")}</div>
+      <div class="summary-list summary-list--sources"><h2>Official documentation</h2>${sources.map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(sourceHost(source.url))} <span aria-hidden="true">↗</span></a>`).join("")}</div>
+    </section>
+    ${referenceSection(filters, toolId)}`;
+}
+
+function codeList(values) {
+  return `<pre><code>${values.map(escapeHtml).join("\n")}</code></pre>`;
+}
+
+function bulletSection(title, values) {
+  if (!values?.length) return "";
+  return `<section class="detail-section"><h2>${escapeHtml(title)}</h2><ul>${values.map((value) => `<li>${escapeHtml(value)}</li>`).join("")}</ul></section>`;
+}
+
+function relationshipTable(capability, activeEntryId = "") {
+  return `<div class="comparison-table-wrap"><table class="comparison-table" aria-label="${escapeHtml(capability.display_name)} comparison">
+    <thead><tr><th scope="col">Tool</th><th scope="col">Control</th><th scope="col">Relationship</th><th scope="col">Notes</th></tr></thead><tbody>
+    ${capability.mappings.map((mapping) => {
+      const entry = mapping.entry_id ? state.entriesById.get(mapping.entry_id) : null;
+      const isActive = entry?.id === activeEntryId;
+      return `<tr${isActive ? ' class="is-active"' : ""}>
+        <th scope="row" data-label="Tool">${escapeHtml(toolName(mapping.tool))}</th>
+        <td data-label="Control">${entry ? `<a href="${routeHref(entry.path)}"><code>${escapeHtml(entry.name)}</code></a>` : "—"}</td>
+        <td data-label="Relationship"><span class="relationship relationship--${escapeHtml(mapping.relationship)}">${escapeHtml(relationshipLabel(mapping.relationship))}</span></td>
+        <td data-label="Notes">${escapeHtml(mapping.notes || (isActive ? "Current entry." : "Mapped to the vendor-neutral capability."))}</td>
+      </tr>`;
+    }).join("")}
+    </tbody></table></div>`;
+}
+
+function detailView(entryId) {
+  const entry = state.entriesById.get(entryId);
+  if (!entry) return notFoundView();
+  const examples = entry.examples || [];
+  const related = (entry.related_commands || []).map((id) => state.entriesById.get(id)).filter(Boolean);
+  const capabilities = entryCapabilities(entry);
+  const availability = entry.availability || {};
+  const version = entry.version || {};
+  const versionRows = [["Introduced", version.introduced], ["Deprecated", version.deprecated], ["Removed", version.removed], ["Replacement", version.replacement]].filter(([, value]) => value);
+  return `<article class="detail-page detail-page--${escapeHtml(entry.tool)}">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><a href="${routeHref(`${entry.tool}/`)}">${escapeHtml(toolName(entry.tool))}</a><span aria-hidden="true">/</span><span>${escapeHtml(entry.name)}</span></nav>
+    <header class="detail-head">
+      <div class="detail-head__meta"><span>${escapeHtml(toolName(entry.tool))}</span><span>${escapeHtml(label(entry.type))}</span><span>${escapeHtml(categoryName(entry.category))}</span>${maturityBadge(entry)}</div>
+      <h1><code>${escapeHtml(entry.name)}</code></h1>
+      <p class="detail-role">${escapeHtml(entry.role)}</p>
+      <p>${escapeHtml(entry.description)}</p>
+      ${(entry.aliases || []).length ? `<p class="aliases"><strong>Aliases:</strong> ${entry.aliases.map((alias) => `<code>${escapeHtml(alias)}</code>`).join(" ")}</p>` : ""}
+    </header>
+    <div class="detail-layout">
+      <div class="detail-main">
+        <section class="detail-section"><h2>Syntax</h2>${codeList(entry.syntax)}</section>
+        ${examples.length ? `<section class="detail-section"><h2>Examples</h2><div class="examples">${examples.map((example) => `<div><h3>${escapeHtml(label(example.level))} example</h3><pre><code>${escapeHtml(example.command)}</code></pre><p>${escapeHtml(example.explanation)}</p></div>`).join("")}</div></section>` : ""}
+        ${bulletSection("When to use", entry.when_to_use)}
+        ${bulletSection("When not to use", entry.when_not_to_use)}
+        ${related.length ? `<section class="detail-section"><h2>Related commands</h2><div class="related-links">${related.map((item) => `<a href="${routeHref(item.path)}"><code>${escapeHtml(item.name)}</code><span>${escapeHtml(item.display_name)}</span></a>`).join("")}</div></section>` : ""}
+        ${capabilities.map((capability) => `<section class="detail-section"><div class="section-heading"><div><p class="eyebrow">Equivalent capabilities</p><h2>${escapeHtml(capability.display_name)}</h2></div><a href="${routeHref(capability.path)}">Open comparison <span aria-hidden="true">→</span></a></div><p>${escapeHtml(capability.description)}</p>${relationshipTable(capability, entry.id)}</section>`).join("")}
+        ${bulletSection("Notes", entry.notes)}
+      </div>
+      <aside class="detail-aside" aria-label="Availability and verification">
+        <section><h2>Availability</h2><dl><div><dt>Maturity</dt><dd>${escapeHtml(label(entry.maturity))}</dd></div><div><dt>Channels</dt><dd>${escapeHtml((availability.channels || []).map(label).join(", "))}</dd></div>${availability.platforms?.length ? `<div><dt>Platforms</dt><dd>${escapeHtml(availability.platforms.map(label).join(", "))}</dd></div>` : ""}${availability.plans?.length ? `<div><dt>Plans</dt><dd>${escapeHtml(availability.plans.join(", "))}</dd></div>` : ""}</dl>${availability.conditions?.length ? `<ul>${availability.conditions.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}</section>
+        ${versionRows.length ? `<section><h2>Version</h2><dl>${versionRows.map(([key, value]) => `<div><dt>${key}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl></section>` : ""}
+        <section><h2>Verification</h2><p class="verification verification--${escapeHtml(entry.verification.status)}">${escapeHtml(verificationLabel(entry.verification.status))}</p><dl><div><dt>Last verified</dt><dd><time datetime="${escapeHtml(entry.verification.last_verified || "")}">${escapeHtml(entry.verification.last_verified || "Not dated")}</time></dd></div>${entry.verification.tested_version ? `<div><dt>Tested version</dt><dd>${escapeHtml(entry.verification.tested_version)}</dd></div>` : ""}</dl>${entry.sources.map((source) => `<a class="official-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">Official ${escapeHtml(label(source.kind))} <span aria-hidden="true">↗</span></a>`).join("")}</section>
+      </aside>
+    </div>
+  </article>`;
+}
+
+function compareView(capabilityId = "") {
+  const capability = capabilityId ? state.capabilities.find((item) => item.id === capabilityId) : null;
+  if (capabilityId && !capability) return notFoundView();
+  if (!capability) {
+    return `<div class="page-head"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><span>Compare</span></nav><p class="eyebrow">Cross-tool atlas</p><h1>Compare capabilities</h1><p>Start with a developer task, then inspect each tool’s mapped control and the evidence-backed relationship. Unknown is not treated as none.</p></div>
+      <section class="capability-section"><div class="capability-grid">${state.capabilities.map(capabilityCard).join("")}</div></section>`;
+  }
+  return `<div class="page-head"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><a href="compare/">Compare</a><span aria-hidden="true">/</span><span>${escapeHtml(capability.display_name)}</span></nav><p class="eyebrow">Cross-tool comparison</p><h1>${escapeHtml(capability.display_name)}</h1><p>${escapeHtml(capability.description)}</p></div>
+    <section class="comparison-page"><div class="comparison-note"><strong>How to read this:</strong> relationships compare each control with the vendor-neutral task—not with a command that merely has a similar name.</div>${relationshipTable(capability)}<p class="comparison-legend"><strong>Relationship labels:</strong> Exact, Similar, Partial, None, and Unknown. Unknown means the dataset does not yet support a conclusion.</p></section>`;
+}
+
+function notFoundView() {
+  document.title = "Not found | Agent Command Atlas";
+  return `<div class="not-found"><p class="eyebrow">404</p><h1>Reference page not found</h1><p>This route is not present in the generated Atlas catalog.</p><a class="button" href="">Return to the reference</a></div>`;
+}
+
+function syncUrl(filters, fixedTool = "") {
+  const params = new URLSearchParams();
+  if (filters.q) params.set("q", filters.q);
+  if (!fixedTool && filters.tool) params.set("tool", filters.tool);
+  if (filters.type) params.set("type", filters.type);
+  if (filters.category) params.set("category", filters.category);
+  if (filters.maturity) params.set("maturity", filters.maturity);
+  history.replaceState(null, "", `${location.pathname}${params.size ? `?${params}` : ""}`);
+}
+
+function bindReference(fixedTool = "") {
+  const getFilters = () => ({
+    q: $("#q")?.value.trim() || "",
+    tool: fixedTool || $("#tool")?.value || "",
+    type: $("#type")?.value || "",
+    category: $("#category")?.value || "",
+    maturity: $("#maturity")?.value || "",
+  });
+  const update = () => {
+    state.visibleLimit = 24;
+    const filters = getFilters();
+    syncUrl(filters, fixedTool);
+    $("#results-region").outerHTML = resultsMarkup(filters);
+    bindShowMore(filters);
+  };
+  ["q", "tool", "type", "category", "maturity"].forEach((id) => $(`#${id}`)?.addEventListener("input", update));
+  $("#search-form")?.addEventListener("submit", (event) => event.preventDefault());
+  $("#reset")?.addEventListener("click", () => {
+    ["q", "tool", "type", "category", "maturity"].forEach((id) => { if ($(`#${id}`)) $(`#${id}`).value = ""; });
+    update();
+    $("#q")?.focus();
+  });
+  bindShowMore(getFilters());
+}
+
+function bindShowMore(filters) {
+  $("#show-more")?.addEventListener("click", () => {
+    state.visibleLimit += 24;
+    $("#results-region").outerHTML = resultsMarkup(filters);
+    bindShowMore(filters);
+  });
+}
+
+function renderRoute() {
+  const route = document.body.dataset.route || "home";
+  const [kind, ...parts] = route.split(":");
+  let markup;
+  if (kind === "tool") markup = toolView(parts.join(":"));
+  else if (kind === "entry") markup = detailView(parts.join(":"));
+  else if (kind === "compare") markup = compareView();
+  else if (kind === "capability") markup = compareView(parts.join(":"));
+  else markup = homeView();
+  $("#main-content").innerHTML = markup;
+  if (kind === "home") bindReference();
+  if (kind === "tool") bindReference(parts.join(":"));
+}
+
+function bindGlobalShortcuts() {
+  document.addEventListener("keydown", (event) => {
+    const target = event.target;
+    const isEditing = target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement;
+    if (event.key === "/" && !isEditing && $("#q")) {
+      event.preventDefault();
+      $("#q").focus();
+    }
+  });
+}
+
+async function init() {
+  try {
+    const [entries, tools, categories, capabilities] = await Promise.all([
+      fetch("catalog.json").then((response) => {
+        if (!response.ok) throw new Error(`Catalog request failed: ${response.status}`);
+        return response.json();
+      }),
+      fetch("tools.json").then((response) => response.json()),
+      fetch("categories.json").then((response) => response.json()),
+      fetch("capabilities.json").then((response) => response.json()),
+    ]);
+    state.entries = entries;
+    state.tools = new Map(tools.map((tool) => [tool.id, tool]));
+    state.categories = new Map(categories.map((category) => [category.id, category]));
+    state.capabilities = capabilities;
+    state.entriesById = new Map(entries.map((entry) => [entry.id, entry]));
+    prepareSearchIndex();
+    renderRoute();
+    bindGlobalShortcuts();
+  } catch (error) {
+    $("#main-content").innerHTML = `<div class="not-found"><p class="eyebrow">Load error</p><h1>The reference could not be loaded</h1><p>Serve the <code>site/</code> directory over HTTP and try again.</p></div>`;
+    console.error(error);
+  }
+}
+
+init();

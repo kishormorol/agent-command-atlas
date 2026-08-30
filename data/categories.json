@@ -1,0 +1,23 @@
+[
+  {"id":"agents","display_name":"Agents and subagents","description":"Selecting, inspecting, or coordinating agents and subagents."},
+  {"id":"authentication","display_name":"Authentication","description":"Signing in, signing out, and configuring credentials."},
+  {"id":"code-review","display_name":"Code review","description":"Reviewing code or changes for actionable issues."},
+  {"id":"context","display_name":"Context","description":"Inspecting, adding, compacting, or clearing model context."},
+  {"id":"configuration","display_name":"Configuration","description":"Configuring persistent product, user, project, or workspace behavior."},
+  {"id":"diagnostics","display_name":"Diagnostics","description":"Debugging the tool, session, or project behavior."},
+  {"id":"git","display_name":"Git and changes","description":"Inspecting or controlling repository changes."},
+  {"id":"help","display_name":"Help","description":"Discovering commands and usage information."},
+  {"id":"hooks","display_name":"Hooks","description":"Configuring or inspecting lifecycle hooks and automation callbacks."},
+  {"id":"mcp","display_name":"MCP","description":"Inspecting or managing Model Context Protocol integrations."},
+  {"id":"modes","display_name":"Modes","description":"Changing an agent's interaction or execution mode."},
+  {"id":"models","display_name":"Models","description":"Selecting or configuring models and reasoning controls."},
+  {"id":"permissions","display_name":"Permissions","description":"Configuring approvals, trust, sandboxing, and access."},
+  {"id":"planning","display_name":"Planning","description":"Creating plans or tracking long-running objectives."},
+  {"id":"plugins","display_name":"Plugins and extensions","description":"Discovering, installing, configuring, or removing plugins and extensions."},
+  {"id":"project-instructions","display_name":"Project instructions","description":"Creating or managing persistent repository instructions."},
+  {"id":"session","display_name":"Sessions","description":"Starting, inspecting, resuming, or branching sessions."},
+  {"id":"skills","display_name":"Skills","description":"Discovering, invoking, or managing reusable agent skills."},
+  {"id":"system","display_name":"System","description":"Inspecting installation or system information."},
+  {"id":"terminal","display_name":"Terminal","description":"Executing or managing shell commands and processes."},
+  {"id":"worktrees","display_name":"Worktrees","description":"Creating, moving, or managing isolated Git worktrees."}
+]

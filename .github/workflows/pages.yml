@@ -1,0 +1,58 @@
+name: Publish Atlas website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate canonical data
+        run: python scripts/validate.py
+      - name: Run repository tests
+        run: python -m unittest discover -s tests
+      - name: Validate website JavaScript
+        run: node --check site/app.js
+      - name: Test search and filters
+        run: node tests/test_site_search.js
+      - name: Generate website
+        run: python scripts/build_catalog.py
+      - name: Confirm generated files are current
+        run: git diff --exit-code
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

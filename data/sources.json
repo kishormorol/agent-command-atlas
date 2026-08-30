@@ -1,0 +1,45 @@
+{
+  "codex": [
+    {"url":"https://developers.openai.com/codex/cli/reference/","kind":"official-docs","scope":"CLI commands and flags"},
+    {"url":"https://developers.openai.com/codex/cli/slash-commands/","kind":"official-docs","scope":"Interactive commands and shortcuts"},
+    {"url":"https://learn.chatgpt.com/docs/developer-commands?surface=cli","kind":"official-docs","scope":"Current consolidated CLI, interactive command, flag, and shortcut reference"},
+    {"url":"https://learn.chatgpt.com/docs/config-file/config-reference","kind":"official-docs","scope":"Configuration files and options"},
+    {"url":"https://learn.chatgpt.com/docs/config-file/environment-variables","kind":"official-docs","scope":"Public environment variables"},
+    {"url":"https://learn.chatgpt.com/docs/agent-configuration/agents-md","kind":"official-docs","scope":"AGENTS.md instruction discovery"},
+    {"url":"https://learn.chatgpt.com/docs/agent-configuration/subagents","kind":"official-docs","scope":"Built-in and custom subagents"},
+    {"url":"https://learn.chatgpt.com/docs/build-skills","kind":"official-docs","scope":"Skill structure and discovery"},
+    {"url":"https://learn.chatgpt.com/docs/hooks","kind":"official-docs","scope":"Hook events, handlers, and trust"},
+    {"url":"https://learn.chatgpt.com/docs/extend/mcp?surface=cli","kind":"official-docs","scope":"MCP configuration and CLI management"}
+  ],
+  "claude-code": [
+    {"url":"https://code.claude.com/docs/en/cli-usage","kind":"official-docs","scope":"CLI commands and flags"},
+    {"url":"https://code.claude.com/docs/en/commands","kind":"official-docs","scope":"Built-in commands, bundled skills, and workflows"},
+    {"url":"https://code.claude.com/docs/en/interactive-mode","kind":"official-docs","scope":"Interactive prefixes and keyboard shortcuts"},
+    {"url":"https://code.claude.com/docs/en/env-vars","kind":"official-docs","scope":"Environment variables"},
+    {"url":"https://code.claude.com/docs/en/settings-reference","kind":"official-docs","scope":"Configuration files and settings"},
+    {"url":"https://code.claude.com/docs/en/permissions","kind":"official-docs","scope":"Permission modes and policy"},
+    {"url":"https://code.claude.com/docs/en/hooks","kind":"official-docs","scope":"Hook events and handlers"},
+    {"url":"https://code.claude.com/docs/en/memory","kind":"official-docs","scope":"CLAUDE.md memory and instruction discovery"}
+  ],
+  "gemini-cli": [
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md","kind":"official-source","scope":"Slash, at-sign, and shell commands"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md","kind":"official-source","scope":"CLI commands, subcommands, and flags"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md","kind":"official-source","scope":"Configuration files, settings, and environment variables"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md","kind":"official-source","scope":"Interactive keyboard shortcuts"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md","kind":"official-source","scope":"Agent Skills commands and discovery"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md","kind":"official-source","scope":"Hook events and configuration"},
+    {"url":"https://geminicli.com/docs/cli/auto-memory/","kind":"official-docs","scope":"Experimental Auto Memory commands"},
+    {"url":"https://geminicli.com/docs/core/gemma-setup/","kind":"official-docs","scope":"Experimental local Gemma routing"}
+  ],
+  "cursor": [
+    {"url":"https://cursor.com/docs/cli/reference/slash-commands","kind":"official-docs","scope":"Slash commands"},
+    {"url":"https://cursor.com/docs/cli/overview","kind":"official-docs","scope":"CLI modes and usage"},
+    {"url":"https://cursor.com/docs/cli/reference/parameters","kind":"official-docs","scope":"CLI commands, nested subcommands, and flags"},
+    {"url":"https://cursor.com/docs/cli/reference/authentication","kind":"official-docs","scope":"CLI authentication commands, flags, and environment variables"},
+    {"url":"https://cursor.com/docs/cli/reference/permissions","kind":"official-docs","scope":"CLI permission configuration"},
+    {"url":"https://cursor.com/docs/cli/reference/configuration","kind":"official-docs","scope":"CLI configuration files, options, and environment variables"}
+  ],
+  "github-copilot": [
+    {"url":"https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference","kind":"official-docs","scope":"CLI and interactive commands, shortcuts, flags, configuration, hooks, MCP, skills, and agents"}
+  ]
+}

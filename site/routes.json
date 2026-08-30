@@ -1,0 +1,1852 @@
+[
+  {
+    "path": "codex/",
+    "kind": "tool",
+    "id": "codex"
+  },
+  {
+    "path": "claude-code/",
+    "kind": "tool",
+    "id": "claude-code"
+  },
+  {
+    "path": "gemini-cli/",
+    "kind": "tool",
+    "id": "gemini-cli"
+  },
+  {
+    "path": "cursor/",
+    "kind": "tool",
+    "id": "cursor"
+  },
+  {
+    "path": "github-copilot/",
+    "kind": "tool",
+    "id": "github-copilot"
+  },
+  {
+    "path": "codex/codex/",
+    "kind": "entry",
+    "id": "codex.cli-command.launch"
+  },
+  {
+    "path": "codex/ask-for-approval/",
+    "kind": "entry",
+    "id": "codex.cli-flag.ask-for-approval"
+  },
+  {
+    "path": "codex/cli-flag-model/",
+    "kind": "entry",
+    "id": "codex.cli-flag.model"
+  },
+  {
+    "path": "codex/sandbox/",
+    "kind": "entry",
+    "id": "codex.cli-flag.sandbox"
+  },
+  {
+    "path": "codex/codex-exec/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.exec"
+  },
+  {
+    "path": "codex/codex-login/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.login"
+  },
+  {
+    "path": "codex/codex-logout/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.logout"
+  },
+  {
+    "path": "codex/codex-mcp/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.mcp"
+  },
+  {
+    "path": "codex/codex-resume/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.resume"
+  },
+  {
+    "path": "codex/codex-review/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.review"
+  },
+  {
+    "path": "codex/codex-update/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.update"
+  },
+  {
+    "path": "codex/codex-home-config-toml/",
+    "kind": "entry",
+    "id": "codex.config-file.user-config"
+  },
+  {
+    "path": "codex/codex-home/",
+    "kind": "entry",
+    "id": "codex.environment-variable.codex-home"
+  },
+  {
+    "path": "codex/agents-md/",
+    "kind": "entry",
+    "id": "codex.instruction-file.agents-md"
+  },
+  {
+    "path": "codex/bang/",
+    "kind": "entry",
+    "id": "codex.prefix-command.bang"
+  },
+  {
+    "path": "codex/dollar/",
+    "kind": "entry",
+    "id": "codex.prefix-command.dollar"
+  },
+  {
+    "path": "codex/at/",
+    "kind": "entry",
+    "id": "codex.prefix-command.at"
+  },
+  {
+    "path": "codex/alt-r/",
+    "kind": "entry",
+    "id": "codex.shortcut.raw-output"
+  },
+  {
+    "path": "codex/ctrl-c/",
+    "kind": "entry",
+    "id": "codex.shortcut.exit"
+  },
+  {
+    "path": "codex/ctrl-l/",
+    "kind": "entry",
+    "id": "codex.shortcut.clear-view"
+  },
+  {
+    "path": "codex/ctrl-o/",
+    "kind": "entry",
+    "id": "codex.shortcut.copy-output"
+  },
+  {
+    "path": "codex/ctrl-r/",
+    "kind": "entry",
+    "id": "codex.shortcut.history-search"
+  },
+  {
+    "path": "codex/enter-while-working/",
+    "kind": "entry",
+    "id": "codex.shortcut.steer-turn"
+  },
+  {
+    "path": "codex/esc-esc/",
+    "kind": "entry",
+    "id": "codex.shortcut.fork-message"
+  },
+  {
+    "path": "codex/tab-while-working/",
+    "kind": "entry",
+    "id": "codex.shortcut.queue-prompt"
+  },
+  {
+    "path": "codex/up-down/",
+    "kind": "entry",
+    "id": "codex.shortcut.draft-history"
+  },
+  {
+    "path": "codex/agent/",
+    "kind": "entry",
+    "id": "codex.slash-command.agent"
+  },
+  {
+    "path": "codex/app/",
+    "kind": "entry",
+    "id": "codex.slash-command.app"
+  },
+  {
+    "path": "codex/approve/",
+    "kind": "entry",
+    "id": "codex.slash-command.approve"
+  },
+  {
+    "path": "codex/apps/",
+    "kind": "entry",
+    "id": "codex.slash-command.apps"
+  },
+  {
+    "path": "codex/archive/",
+    "kind": "entry",
+    "id": "codex.slash-command.archive"
+  },
+  {
+    "path": "codex/clear/",
+    "kind": "entry",
+    "id": "codex.slash-command.clear"
+  },
+  {
+    "path": "codex/compact/",
+    "kind": "entry",
+    "id": "codex.slash-command.compact"
+  },
+  {
+    "path": "codex/copy/",
+    "kind": "entry",
+    "id": "codex.slash-command.copy"
+  },
+  {
+    "path": "codex/debug-config/",
+    "kind": "entry",
+    "id": "codex.slash-command.debug-config"
+  },
+  {
+    "path": "codex/delete/",
+    "kind": "entry",
+    "id": "codex.slash-command.delete"
+  },
+  {
+    "path": "codex/diff/",
+    "kind": "entry",
+    "id": "codex.slash-command.diff"
+  },
+  {
+    "path": "codex/exit/",
+    "kind": "entry",
+    "id": "codex.slash-command.exit"
+  },
+  {
+    "path": "codex/experimental/",
+    "kind": "entry",
+    "id": "codex.slash-command.experimental"
+  },
+  {
+    "path": "codex/fast/",
+    "kind": "entry",
+    "id": "codex.slash-command.fast"
+  },
+  {
+    "path": "codex/feedback/",
+    "kind": "entry",
+    "id": "codex.slash-command.feedback"
+  },
+  {
+    "path": "codex/fork/",
+    "kind": "entry",
+    "id": "codex.slash-command.fork"
+  },
+  {
+    "path": "codex/goal/",
+    "kind": "entry",
+    "id": "codex.slash-command.goal"
+  },
+  {
+    "path": "codex/hooks/",
+    "kind": "entry",
+    "id": "codex.slash-command.hooks"
+  },
+  {
+    "path": "codex/ide/",
+    "kind": "entry",
+    "id": "codex.slash-command.ide"
+  },
+  {
+    "path": "codex/import/",
+    "kind": "entry",
+    "id": "codex.slash-command.import"
+  },
+  {
+    "path": "codex/init/",
+    "kind": "entry",
+    "id": "codex.slash-command.init"
+  },
+  {
+    "path": "codex/keymap/",
+    "kind": "entry",
+    "id": "codex.slash-command.keymap"
+  },
+  {
+    "path": "codex/logout/",
+    "kind": "entry",
+    "id": "codex.slash-command.logout"
+  },
+  {
+    "path": "codex/mcp/",
+    "kind": "entry",
+    "id": "codex.slash-command.mcp"
+  },
+  {
+    "path": "codex/memories/",
+    "kind": "entry",
+    "id": "codex.slash-command.memories"
+  },
+  {
+    "path": "codex/mention/",
+    "kind": "entry",
+    "id": "codex.slash-command.mention"
+  },
+  {
+    "path": "codex/slash-command-model/",
+    "kind": "entry",
+    "id": "codex.slash-command.model"
+  },
+  {
+    "path": "codex/new/",
+    "kind": "entry",
+    "id": "codex.slash-command.new"
+  },
+  {
+    "path": "codex/permissions/",
+    "kind": "entry",
+    "id": "codex.slash-command.permissions"
+  },
+  {
+    "path": "codex/personality/",
+    "kind": "entry",
+    "id": "codex.slash-command.personality"
+  },
+  {
+    "path": "codex/pets/",
+    "kind": "entry",
+    "id": "codex.slash-command.pets"
+  },
+  {
+    "path": "codex/plan/",
+    "kind": "entry",
+    "id": "codex.slash-command.plan"
+  },
+  {
+    "path": "codex/plugins/",
+    "kind": "entry",
+    "id": "codex.slash-command.plugins"
+  },
+  {
+    "path": "codex/ps/",
+    "kind": "entry",
+    "id": "codex.slash-command.ps"
+  },
+  {
+    "path": "codex/raw/",
+    "kind": "entry",
+    "id": "codex.slash-command.raw"
+  },
+  {
+    "path": "codex/rename/",
+    "kind": "entry",
+    "id": "codex.slash-command.rename"
+  },
+  {
+    "path": "codex/resume/",
+    "kind": "entry",
+    "id": "codex.slash-command.resume"
+  },
+  {
+    "path": "codex/review/",
+    "kind": "entry",
+    "id": "codex.slash-command.review"
+  },
+  {
+    "path": "codex/sandbox-add-read-dir/",
+    "kind": "entry",
+    "id": "codex.slash-command.sandbox-add-read-dir"
+  },
+  {
+    "path": "codex/setup-default-sandbox/",
+    "kind": "entry",
+    "id": "codex.slash-command.setup-default-sandbox"
+  },
+  {
+    "path": "codex/side/",
+    "kind": "entry",
+    "id": "codex.slash-command.side"
+  },
+  {
+    "path": "codex/skills/",
+    "kind": "entry",
+    "id": "codex.slash-command.skills"
+  },
+  {
+    "path": "codex/status/",
+    "kind": "entry",
+    "id": "codex.slash-command.status"
+  },
+  {
+    "path": "codex/statusline/",
+    "kind": "entry",
+    "id": "codex.slash-command.statusline"
+  },
+  {
+    "path": "codex/stop/",
+    "kind": "entry",
+    "id": "codex.slash-command.stop"
+  },
+  {
+    "path": "codex/theme/",
+    "kind": "entry",
+    "id": "codex.slash-command.theme"
+  },
+  {
+    "path": "codex/title/",
+    "kind": "entry",
+    "id": "codex.slash-command.title"
+  },
+  {
+    "path": "codex/usage/",
+    "kind": "entry",
+    "id": "codex.slash-command.usage"
+  },
+  {
+    "path": "codex/vim/",
+    "kind": "entry",
+    "id": "codex.slash-command.vim"
+  },
+  {
+    "path": "claude-code/claude/",
+    "kind": "entry",
+    "id": "claude-code.cli-command.interactive"
+  },
+  {
+    "path": "claude-code/continue/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.continue"
+  },
+  {
+    "path": "claude-code/cli-flag-model/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.model"
+  },
+  {
+    "path": "claude-code/permission-mode/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.permission-mode"
+  },
+  {
+    "path": "claude-code/print/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.print"
+  },
+  {
+    "path": "claude-code/cli-flag-resume/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.resume"
+  },
+  {
+    "path": "claude-code/claude-auth-login/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auth-login"
+  },
+  {
+    "path": "claude-code/claude-auth-logout/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auth-logout"
+  },
+  {
+    "path": "claude-code/claude-settings-json/",
+    "kind": "entry",
+    "id": "claude-code.config-file.project-settings"
+  },
+  {
+    "path": "claude-code/anthropic-api-key/",
+    "kind": "entry",
+    "id": "claude-code.environment-variable.api-key"
+  },
+  {
+    "path": "claude-code/anthropic-small-fast-model/",
+    "kind": "entry",
+    "id": "claude-code.environment-variable.small-fast-model"
+  },
+  {
+    "path": "claude-code/claude-md/",
+    "kind": "entry",
+    "id": "claude-code.instruction-file.claude-md"
+  },
+  {
+    "path": "claude-code/bang/",
+    "kind": "entry",
+    "id": "claude-code.prefix-command.bang"
+  },
+  {
+    "path": "claude-code/at/",
+    "kind": "entry",
+    "id": "claude-code.prefix-command.at"
+  },
+  {
+    "path": "claude-code/batch/",
+    "kind": "entry",
+    "id": "claude-code.skill.batch"
+  },
+  {
+    "path": "claude-code/code-review/",
+    "kind": "entry",
+    "id": "claude-code.skill.code-review"
+  },
+  {
+    "path": "claude-code/debug/",
+    "kind": "entry",
+    "id": "claude-code.skill.debug"
+  },
+  {
+    "path": "claude-code/doctor/",
+    "kind": "entry",
+    "id": "claude-code.skill.doctor"
+  },
+  {
+    "path": "claude-code/loop/",
+    "kind": "entry",
+    "id": "claude-code.skill.loop"
+  },
+  {
+    "path": "claude-code/simplify/",
+    "kind": "entry",
+    "id": "claude-code.skill.simplify"
+  },
+  {
+    "path": "claude-code/verify/",
+    "kind": "entry",
+    "id": "claude-code.skill.verify"
+  },
+  {
+    "path": "claude-code/add-dir/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.add-dir"
+  },
+  {
+    "path": "claude-code/agents/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.agents"
+  },
+  {
+    "path": "claude-code/autocompact/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.autocompact"
+  },
+  {
+    "path": "claude-code/background/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.background"
+  },
+  {
+    "path": "claude-code/branch/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.branch"
+  },
+  {
+    "path": "claude-code/btw/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.btw"
+  },
+  {
+    "path": "claude-code/bug/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.bug"
+  },
+  {
+    "path": "claude-code/cd/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.cd"
+  },
+  {
+    "path": "claude-code/clear/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.clear"
+  },
+  {
+    "path": "claude-code/compact/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.compact"
+  },
+  {
+    "path": "claude-code/config/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.config"
+  },
+  {
+    "path": "claude-code/context/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.context"
+  },
+  {
+    "path": "claude-code/copy/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.copy"
+  },
+  {
+    "path": "claude-code/diff/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.diff"
+  },
+  {
+    "path": "claude-code/effort/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.effort"
+  },
+  {
+    "path": "claude-code/exit/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.exit"
+  },
+  {
+    "path": "claude-code/export/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.export"
+  },
+  {
+    "path": "claude-code/fast/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.fast"
+  },
+  {
+    "path": "claude-code/fork/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.fork"
+  },
+  {
+    "path": "claude-code/goal/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.goal"
+  },
+  {
+    "path": "claude-code/help/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.help"
+  },
+  {
+    "path": "claude-code/hooks/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.hooks"
+  },
+  {
+    "path": "claude-code/ide/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.ide"
+  },
+  {
+    "path": "claude-code/import/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.import"
+  },
+  {
+    "path": "claude-code/init/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.init"
+  },
+  {
+    "path": "claude-code/login/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.login"
+  },
+  {
+    "path": "claude-code/logout/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.logout"
+  },
+  {
+    "path": "claude-code/mcp/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.mcp"
+  },
+  {
+    "path": "claude-code/memory/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.memory"
+  },
+  {
+    "path": "claude-code/slash-command-model/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.model"
+  },
+  {
+    "path": "claude-code/permissions/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.permissions"
+  },
+  {
+    "path": "claude-code/plan/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.plan"
+  },
+  {
+    "path": "claude-code/plugin/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.plugin"
+  },
+  {
+    "path": "claude-code/pr-comments/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.pr-comments"
+  },
+  {
+    "path": "claude-code/reload-plugins/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.reload-plugins"
+  },
+  {
+    "path": "claude-code/reload-skills/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.reload-skills"
+  },
+  {
+    "path": "claude-code/rename/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.rename"
+  },
+  {
+    "path": "claude-code/slash-command-resume/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.resume"
+  },
+  {
+    "path": "claude-code/rewind/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.rewind"
+  },
+  {
+    "path": "claude-code/sandbox/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.sandbox"
+  },
+  {
+    "path": "claude-code/security-review/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.security-review"
+  },
+  {
+    "path": "claude-code/skills/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.skills"
+  },
+  {
+    "path": "claude-code/status/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.status"
+  },
+  {
+    "path": "claude-code/stop/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.stop"
+  },
+  {
+    "path": "claude-code/subtask/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.subtask"
+  },
+  {
+    "path": "claude-code/tasks/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.tasks"
+  },
+  {
+    "path": "claude-code/ultraplan/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.ultraplan"
+  },
+  {
+    "path": "claude-code/usage/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.usage"
+  },
+  {
+    "path": "claude-code/vim/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.vim"
+  },
+  {
+    "path": "claude-code/workflows/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.workflows"
+  },
+  {
+    "path": "claude-code/deep-research/",
+    "kind": "entry",
+    "id": "claude-code.workflow.deep-research"
+  },
+  {
+    "path": "gemini-cli/gemini/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-command.launch"
+  },
+  {
+    "path": "gemini-cli/approval-mode/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.approval-mode"
+  },
+  {
+    "path": "gemini-cli/prompt/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.prompt"
+  },
+  {
+    "path": "gemini-cli/worktree/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.worktree"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions"
+  },
+  {
+    "path": "gemini-cli/gemini-mcp/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.mcp"
+  },
+  {
+    "path": "gemini-cli/gemini-skills/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.skills"
+  },
+  {
+    "path": "gemini-cli/gemini-update/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.update"
+  },
+  {
+    "path": "gemini-cli/gemini-settings-json/",
+    "kind": "entry",
+    "id": "gemini-cli.config-file.project-settings"
+  },
+  {
+    "path": "gemini-cli/gemini-api-key/",
+    "kind": "entry",
+    "id": "gemini-cli.environment-variable.api-key"
+  },
+  {
+    "path": "gemini-cli/gemini-md/",
+    "kind": "entry",
+    "id": "gemini-cli.instruction-file.gemini-md"
+  },
+  {
+    "path": "gemini-cli/bang/",
+    "kind": "entry",
+    "id": "gemini-cli.prefix-command.bang"
+  },
+  {
+    "path": "gemini-cli/at/",
+    "kind": "entry",
+    "id": "gemini-cli.prefix-command.at"
+  },
+  {
+    "path": "gemini-cli/about/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.about"
+  },
+  {
+    "path": "gemini-cli/agents/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.agents"
+  },
+  {
+    "path": "gemini-cli/agents-list/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.agents-list"
+  },
+  {
+    "path": "gemini-cli/auth/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.auth"
+  },
+  {
+    "path": "gemini-cli/bug/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.bug"
+  },
+  {
+    "path": "gemini-cli/clear/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.clear"
+  },
+  {
+    "path": "gemini-cli/commands/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.commands"
+  },
+  {
+    "path": "gemini-cli/compress/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.compress"
+  },
+  {
+    "path": "gemini-cli/copy/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.copy"
+  },
+  {
+    "path": "gemini-cli/directory/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.directory"
+  },
+  {
+    "path": "gemini-cli/docs/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.docs"
+  },
+  {
+    "path": "gemini-cli/editor/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.editor"
+  },
+  {
+    "path": "gemini-cli/extensions/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.extensions"
+  },
+  {
+    "path": "gemini-cli/gemma/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.gemma"
+  },
+  {
+    "path": "gemini-cli/help/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.help"
+  },
+  {
+    "path": "gemini-cli/hooks/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.hooks"
+  },
+  {
+    "path": "gemini-cli/ide/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.ide"
+  },
+  {
+    "path": "gemini-cli/init/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.init"
+  },
+  {
+    "path": "gemini-cli/mcp/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.mcp"
+  },
+  {
+    "path": "gemini-cli/memory/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.memory"
+  },
+  {
+    "path": "gemini-cli/memory-inbox/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.memory-inbox"
+  },
+  {
+    "path": "gemini-cli/model/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.model"
+  },
+  {
+    "path": "gemini-cli/permissions/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.permissions"
+  },
+  {
+    "path": "gemini-cli/plan/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.plan"
+  },
+  {
+    "path": "gemini-cli/policies/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.policies"
+  },
+  {
+    "path": "gemini-cli/privacy/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.privacy"
+  },
+  {
+    "path": "gemini-cli/quit/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.quit"
+  },
+  {
+    "path": "gemini-cli/restore/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.restore"
+  },
+  {
+    "path": "gemini-cli/resume/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.resume"
+  },
+  {
+    "path": "gemini-cli/rewind/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.rewind"
+  },
+  {
+    "path": "gemini-cli/settings/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.settings"
+  },
+  {
+    "path": "gemini-cli/setup-github/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.setup-github"
+  },
+  {
+    "path": "gemini-cli/shells/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.shells"
+  },
+  {
+    "path": "gemini-cli/skills/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.skills"
+  },
+  {
+    "path": "gemini-cli/stats/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.stats"
+  },
+  {
+    "path": "gemini-cli/terminal-setup/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.terminal-setup"
+  },
+  {
+    "path": "gemini-cli/theme/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.theme"
+  },
+  {
+    "path": "gemini-cli/tools/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.tools"
+  },
+  {
+    "path": "gemini-cli/upgrade/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.upgrade"
+  },
+  {
+    "path": "gemini-cli/vim/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.vim"
+  },
+  {
+    "path": "gemini-cli/voice/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.voice"
+  },
+  {
+    "path": "cursor/agent/",
+    "kind": "entry",
+    "id": "cursor.cli-command.agent"
+  },
+  {
+    "path": "cursor/print/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.print"
+  },
+  {
+    "path": "cursor/worktree/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.worktree"
+  },
+  {
+    "path": "cursor/agent-about/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.about"
+  },
+  {
+    "path": "cursor/agent-acp/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.acp"
+  },
+  {
+    "path": "cursor/agent-create-chat/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.create-chat"
+  },
+  {
+    "path": "cursor/agent-generate-rule/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.generate-rule"
+  },
+  {
+    "path": "cursor/agent-help/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.help"
+  },
+  {
+    "path": "cursor/agent-install-shell-integration/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.install-shell-integration"
+  },
+  {
+    "path": "cursor/agent-login/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.login"
+  },
+  {
+    "path": "cursor/agent-logout/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.logout"
+  },
+  {
+    "path": "cursor/agent-ls/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.ls"
+  },
+  {
+    "path": "cursor/agent-mcp/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.mcp"
+  },
+  {
+    "path": "cursor/agent-mcp-disable/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.mcp-disable"
+  },
+  {
+    "path": "cursor/agent-mcp-enable/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.mcp-enable"
+  },
+  {
+    "path": "cursor/agent-mcp-list/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.mcp-list"
+  },
+  {
+    "path": "cursor/agent-mcp-list-tools/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.mcp-list-tools"
+  },
+  {
+    "path": "cursor/agent-mcp-login/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.mcp-login"
+  },
+  {
+    "path": "cursor/agent-models/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.models"
+  },
+  {
+    "path": "cursor/agent-resume/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.resume"
+  },
+  {
+    "path": "cursor/agent-sandbox/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.sandbox"
+  },
+  {
+    "path": "cursor/agent-sandbox-disable/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.sandbox-disable"
+  },
+  {
+    "path": "cursor/agent-sandbox-enable/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.sandbox-enable"
+  },
+  {
+    "path": "cursor/agent-sandbox-reset/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.sandbox-reset"
+  },
+  {
+    "path": "cursor/agent-sandbox-run/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.sandbox-run"
+  },
+  {
+    "path": "cursor/agent-status/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.status"
+  },
+  {
+    "path": "cursor/agent-uninstall-shell-integration/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.uninstall-shell-integration"
+  },
+  {
+    "path": "cursor/agent-update/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.update"
+  },
+  {
+    "path": "cursor/agent-worker/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.worker"
+  },
+  {
+    "path": "cursor/agent-worker-debug/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.worker-debug"
+  },
+  {
+    "path": "cursor/agent-worker-start/",
+    "kind": "entry",
+    "id": "cursor.cli-subcommand.worker-start"
+  },
+  {
+    "path": "cursor/cursor-cli-json/",
+    "kind": "entry",
+    "id": "cursor.config-file.project-config"
+  },
+  {
+    "path": "cursor/cursor-cli-config-json/",
+    "kind": "entry",
+    "id": "cursor.config-file.user-config"
+  },
+  {
+    "path": "cursor/cursor-api-key/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.api-key"
+  },
+  {
+    "path": "cursor/about/",
+    "kind": "entry",
+    "id": "cursor.slash-command.about"
+  },
+  {
+    "path": "cursor/ask/",
+    "kind": "entry",
+    "id": "cursor.slash-command.ask"
+  },
+  {
+    "path": "cursor/bedrock/",
+    "kind": "entry",
+    "id": "cursor.slash-command.bedrock"
+  },
+  {
+    "path": "cursor/clear/",
+    "kind": "entry",
+    "id": "cursor.slash-command.clear"
+  },
+  {
+    "path": "cursor/config/",
+    "kind": "entry",
+    "id": "cursor.slash-command.config"
+  },
+  {
+    "path": "cursor/copy/",
+    "kind": "entry",
+    "id": "cursor.slash-command.copy"
+  },
+  {
+    "path": "cursor/copy-conversation-id/",
+    "kind": "entry",
+    "id": "cursor.slash-command.copy-conversation-id"
+  },
+  {
+    "path": "cursor/copy-request-id/",
+    "kind": "entry",
+    "id": "cursor.slash-command.copy-request-id"
+  },
+  {
+    "path": "cursor/debug/",
+    "kind": "entry",
+    "id": "cursor.slash-command.debug"
+  },
+  {
+    "path": "cursor/exit/",
+    "kind": "entry",
+    "id": "cursor.slash-command.exit"
+  },
+  {
+    "path": "cursor/feedback/",
+    "kind": "entry",
+    "id": "cursor.slash-command.feedback"
+  },
+  {
+    "path": "cursor/fork/",
+    "kind": "entry",
+    "id": "cursor.slash-command.fork"
+  },
+  {
+    "path": "cursor/goal/",
+    "kind": "entry",
+    "id": "cursor.slash-command.goal"
+  },
+  {
+    "path": "cursor/help/",
+    "kind": "entry",
+    "id": "cursor.slash-command.help"
+  },
+  {
+    "path": "cursor/line-numbers/",
+    "kind": "entry",
+    "id": "cursor.slash-command.line-numbers"
+  },
+  {
+    "path": "cursor/logout/",
+    "kind": "entry",
+    "id": "cursor.slash-command.logout"
+  },
+  {
+    "path": "cursor/logs/",
+    "kind": "entry",
+    "id": "cursor.slash-command.logs"
+  },
+  {
+    "path": "cursor/max-mode/",
+    "kind": "entry",
+    "id": "cursor.slash-command.max-mode"
+  },
+  {
+    "path": "cursor/mcp/",
+    "kind": "entry",
+    "id": "cursor.slash-command.mcp"
+  },
+  {
+    "path": "cursor/model/",
+    "kind": "entry",
+    "id": "cursor.slash-command.model"
+  },
+  {
+    "path": "cursor/open/",
+    "kind": "entry",
+    "id": "cursor.slash-command.open"
+  },
+  {
+    "path": "cursor/plan/",
+    "kind": "entry",
+    "id": "cursor.slash-command.plan"
+  },
+  {
+    "path": "cursor/plugin/",
+    "kind": "entry",
+    "id": "cursor.slash-command.plugin"
+  },
+  {
+    "path": "cursor/quit/",
+    "kind": "entry",
+    "id": "cursor.slash-command.quit"
+  },
+  {
+    "path": "cursor/rename/",
+    "kind": "entry",
+    "id": "cursor.slash-command.rename"
+  },
+  {
+    "path": "cursor/resume/",
+    "kind": "entry",
+    "id": "cursor.slash-command.resume"
+  },
+  {
+    "path": "cursor/rewind/",
+    "kind": "entry",
+    "id": "cursor.slash-command.rewind"
+  },
+  {
+    "path": "cursor/run-everything/",
+    "kind": "entry",
+    "id": "cursor.slash-command.run-everything"
+  },
+  {
+    "path": "cursor/sandbox/",
+    "kind": "entry",
+    "id": "cursor.slash-command.sandbox"
+  },
+  {
+    "path": "cursor/setup-terminal/",
+    "kind": "entry",
+    "id": "cursor.slash-command.setup-terminal"
+  },
+  {
+    "path": "cursor/shell/",
+    "kind": "entry",
+    "id": "cursor.slash-command.shell"
+  },
+  {
+    "path": "cursor/show-thinking/",
+    "kind": "entry",
+    "id": "cursor.slash-command.show-thinking"
+  },
+  {
+    "path": "cursor/status-indicators/",
+    "kind": "entry",
+    "id": "cursor.slash-command.status-indicators"
+  },
+  {
+    "path": "cursor/summarize/",
+    "kind": "entry",
+    "id": "cursor.slash-command.summarize"
+  },
+  {
+    "path": "cursor/update/",
+    "kind": "entry",
+    "id": "cursor.slash-command.update"
+  },
+  {
+    "path": "cursor/vim/",
+    "kind": "entry",
+    "id": "cursor.slash-command.vim"
+  },
+  {
+    "path": "github-copilot/copilot/",
+    "kind": "entry",
+    "id": "github-copilot.cli-command.launch"
+  },
+  {
+    "path": "github-copilot/copilot-init/",
+    "kind": "entry",
+    "id": "github-copilot.cli-command.init"
+  },
+  {
+    "path": "github-copilot/allow-tool/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.allow-tool"
+  },
+  {
+    "path": "github-copilot/autopilot/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.autopilot"
+  },
+  {
+    "path": "github-copilot/cli-flag-model/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.model"
+  },
+  {
+    "path": "github-copilot/copilot-completion/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.completion"
+  },
+  {
+    "path": "github-copilot/copilot-help/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.help"
+  },
+  {
+    "path": "github-copilot/copilot-login/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.login"
+  },
+  {
+    "path": "github-copilot/copilot-home-settings-json/",
+    "kind": "entry",
+    "id": "github-copilot.config-file.user-settings"
+  },
+  {
+    "path": "github-copilot/copilot-home/",
+    "kind": "entry",
+    "id": "github-copilot.environment-variable.copilot-home"
+  },
+  {
+    "path": "github-copilot/github-copilot-instructions-md/",
+    "kind": "entry",
+    "id": "github-copilot.instruction-file.project-instructions"
+  },
+  {
+    "path": "github-copilot/bang/",
+    "kind": "entry",
+    "id": "github-copilot.prefix-command.bang"
+  },
+  {
+    "path": "github-copilot/at/",
+    "kind": "entry",
+    "id": "github-copilot.prefix-command.at"
+  },
+  {
+    "path": "github-copilot/shift-tab/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.mode-cycle"
+  },
+  {
+    "path": "github-copilot/add-dir/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.add-dir"
+  },
+  {
+    "path": "github-copilot/after/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.after"
+  },
+  {
+    "path": "github-copilot/agent/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.agent"
+  },
+  {
+    "path": "github-copilot/allow-all/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.allow-all"
+  },
+  {
+    "path": "github-copilot/app/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.app"
+  },
+  {
+    "path": "github-copilot/ask/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.ask"
+  },
+  {
+    "path": "github-copilot/changelog/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.changelog"
+  },
+  {
+    "path": "github-copilot/clear/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.clear"
+  },
+  {
+    "path": "github-copilot/compact/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.compact"
+  },
+  {
+    "path": "github-copilot/context/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.context"
+  },
+  {
+    "path": "github-copilot/delegate/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.delegate"
+  },
+  {
+    "path": "github-copilot/diagnose/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.diagnose"
+  },
+  {
+    "path": "github-copilot/diff/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.diff"
+  },
+  {
+    "path": "github-copilot/env/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.env"
+  },
+  {
+    "path": "github-copilot/every/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.every"
+  },
+  {
+    "path": "github-copilot/exit/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.exit"
+  },
+  {
+    "path": "github-copilot/experimental/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.experimental"
+  },
+  {
+    "path": "github-copilot/extensions/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.extensions"
+  },
+  {
+    "path": "github-copilot/feedback/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.feedback"
+  },
+  {
+    "path": "github-copilot/fork/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.fork"
+  },
+  {
+    "path": "github-copilot/goal/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.goal"
+  },
+  {
+    "path": "github-copilot/help/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.help"
+  },
+  {
+    "path": "github-copilot/ide/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.ide"
+  },
+  {
+    "path": "github-copilot/init/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.init"
+  },
+  {
+    "path": "github-copilot/instructions/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.instructions"
+  },
+  {
+    "path": "github-copilot/limits/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.limits"
+  },
+  {
+    "path": "github-copilot/login/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.login"
+  },
+  {
+    "path": "github-copilot/logout/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.logout"
+  },
+  {
+    "path": "github-copilot/mcp/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.mcp"
+  },
+  {
+    "path": "github-copilot/slash-command-model/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.model"
+  },
+  {
+    "path": "github-copilot/move/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.move"
+  },
+  {
+    "path": "github-copilot/permissions/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.permissions"
+  },
+  {
+    "path": "github-copilot/plan/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.plan"
+  },
+  {
+    "path": "github-copilot/plugin/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.plugin"
+  },
+  {
+    "path": "github-copilot/plugins/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.plugins"
+  },
+  {
+    "path": "github-copilot/pr/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.pr"
+  },
+  {
+    "path": "github-copilot/rename/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.rename"
+  },
+  {
+    "path": "github-copilot/research/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.research"
+  },
+  {
+    "path": "github-copilot/reset-allowed-tools/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.reset-allowed-tools"
+  },
+  {
+    "path": "github-copilot/resume/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.resume"
+  },
+  {
+    "path": "github-copilot/review/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.review"
+  },
+  {
+    "path": "github-copilot/sandbox/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.sandbox"
+  },
+  {
+    "path": "github-copilot/search/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.search"
+  },
+  {
+    "path": "github-copilot/security-review/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.security-review"
+  },
+  {
+    "path": "github-copilot/session/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.session"
+  },
+  {
+    "path": "github-copilot/settings/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.settings"
+  },
+  {
+    "path": "github-copilot/share/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.share"
+  },
+  {
+    "path": "github-copilot/skills/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.skills"
+  },
+  {
+    "path": "github-copilot/statusline/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.statusline"
+  },
+  {
+    "path": "github-copilot/subagents/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.subagents"
+  },
+  {
+    "path": "github-copilot/tasks/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.tasks"
+  },
+  {
+    "path": "github-copilot/undo/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.undo"
+  },
+  {
+    "path": "github-copilot/update/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.update"
+  },
+  {
+    "path": "github-copilot/usage/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.usage"
+  },
+  {
+    "path": "github-copilot/version/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.version"
+  },
+  {
+    "path": "github-copilot/worktree/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.worktree"
+  },
+  {
+    "path": "github-copilot/worktree-new/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.worktree-new"
+  },
+  {
+    "path": "compare/",
+    "kind": "compare",
+    "id": null
+  },
+  {
+    "path": "compare/agents-manage/",
+    "kind": "capability",
+    "id": "agents.manage"
+  },
+  {
+    "path": "compare/auth-login/",
+    "kind": "capability",
+    "id": "auth.login"
+  },
+  {
+    "path": "compare/auth-logout/",
+    "kind": "capability",
+    "id": "auth.logout"
+  },
+  {
+    "path": "compare/code-review/",
+    "kind": "capability",
+    "id": "code.review"
+  },
+  {
+    "path": "compare/context-attach-file/",
+    "kind": "capability",
+    "id": "context.attach-file"
+  },
+  {
+    "path": "compare/context-clear/",
+    "kind": "capability",
+    "id": "context.clear"
+  },
+  {
+    "path": "compare/context-compact/",
+    "kind": "capability",
+    "id": "context.compact"
+  },
+  {
+    "path": "compare/context-inspect/",
+    "kind": "capability",
+    "id": "context.inspect"
+  },
+  {
+    "path": "compare/git-diff/",
+    "kind": "capability",
+    "id": "git.diff"
+  },
+  {
+    "path": "compare/instructions-initialize/",
+    "kind": "capability",
+    "id": "instructions.initialize"
+  },
+  {
+    "path": "compare/mcp-manage/",
+    "kind": "capability",
+    "id": "mcp.manage"
+  },
+  {
+    "path": "compare/mode-select/",
+    "kind": "capability",
+    "id": "mode.select"
+  },
+  {
+    "path": "compare/model-select/",
+    "kind": "capability",
+    "id": "model.select"
+  },
+  {
+    "path": "compare/permissions-configure/",
+    "kind": "capability",
+    "id": "permissions.configure"
+  },
+  {
+    "path": "compare/planning-goal/",
+    "kind": "capability",
+    "id": "planning.goal"
+  },
+  {
+    "path": "compare/planning-start/",
+    "kind": "capability",
+    "id": "planning.start"
+  },
+  {
+    "path": "compare/session-fork/",
+    "kind": "capability",
+    "id": "session.fork"
+  },
+  {
+    "path": "compare/session-resume/",
+    "kind": "capability",
+    "id": "session.resume"
+  },
+  {
+    "path": "compare/session-status/",
+    "kind": "capability",
+    "id": "session.status"
+  },
+  {
+    "path": "compare/skills-manage/",
+    "kind": "capability",
+    "id": "skills.manage"
+  },
+  {
+    "path": "compare/terminal-execute/",
+    "kind": "capability",
+    "id": "terminal.execute"
+  },
+  {
+    "path": "compare/worktree-manage/",
+    "kind": "capability",
+    "id": "worktree.manage"
+  }
+]

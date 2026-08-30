@@ -1,0 +1,37 @@
+[
+  {
+    "id": "codex",
+    "name": "OpenAI Codex",
+    "vendor": "OpenAI",
+    "order": 1,
+    "status": "active"
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "vendor": "Anthropic",
+    "order": 2,
+    "status": "active"
+  },
+  {
+    "id": "gemini-cli",
+    "name": "Gemini CLI",
+    "vendor": "Google",
+    "order": 3,
+    "status": "active"
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "vendor": "Cursor",
+    "order": 4,
+    "status": "active"
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot CLI",
+    "vendor": "GitHub",
+    "order": 5,
+    "status": "active"
+  }
+]
