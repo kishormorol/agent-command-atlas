@@ -1,8 +1,14 @@
 # Agent Command Atlas
 
-**The living reference for AI coding agent commands.**
+**Stop guessing which AI coding-agent command to use.**
 
-Agent Command Atlas is an open-source, source-linked reference for commands, flags, shortcuts, configuration, and control surfaces across leading AI coding agents:
+[![Live reference](https://img.shields.io/badge/live-reference-visit_atlas-c8ff53?style=flat&labelColor=111318&color=354f00)](https://kishormorol.github.io/agent-command-atlas/)
+[![GitHub stars](https://img.shields.io/github/stars/kishormorol/agent-command-atlas?style=flat&label=stars)](https://github.com/kishormorol/agent-command-atlas/stargazers)
+[![License](https://img.shields.io/github/license/kishormorol/agent-command-atlas?style=flat)](LICENSE)
+
+Agent Command Atlas is a searchable, source-linked reference for the commands and control surfaces developers use every day with AI coding agents.
+
+It covers five ecosystems in one consistent, honest interface:
 
 1. OpenAI Codex
 2. Anthropic Claude Code
@@ -10,12 +16,24 @@ Agent Command Atlas is an open-source, source-linked reference for commands, fla
 4. Cursor
 5. GitHub Copilot CLI
 
-The project turns one canonical dataset into two complementary outputs:
+The project turns one canonical dataset into complementary outputs:
 
 - an open GitHub command and capability database;
 - a fast, searchable documentation website.
 
-Browse the live reference at [kishormorol.github.io/agent-command-atlas](https://kishormorol.github.io/agent-command-atlas/). The website includes task-aware search, permanent command pages, cross-tool comparisons, copy-ready examples, guided usage, and a transparent dataset coverage dashboard.
+**[Open the live Atlas →](https://kishormorol.github.io/agent-command-atlas/)**
+
+Search `compact`, `resume old session`, `MCP`, or `model` and get useful results across tools—not just exact command-name matches. Every result links to an official source and shows syntax, examples, maturity, availability, and verification state.
+
+![Agent Command Atlas interface](site/og.png)
+
+## Why developers use it
+
+- **Find commands by intent.** Search what you want to do, even when vendors use different names.
+- **Compare semantics honestly.** Relationships are labeled exact, similar, partial, none, or unknown.
+- **Copy a real example.** Command pages include minimal and practical invocations with usage guidance.
+- **Trust the source.** Records link to official vendor documentation or source repositories.
+- **See what is changing.** Experimental, conditional, rolling-out, deprecated, and removed controls stay visible.
 
 ## What the atlas covers
 
@@ -28,6 +46,19 @@ Browse the live reference at [kishormorol.github.io/agent-command-atlas](https:/
 - Sessions, models, Git, and worktrees
 
 Accuracy takes priority over command count. Entries link to official documentation or official source repositories, record verification state and date, and preserve experimental, conditional, rolling-out, deprecated, or removed status.
+
+## A quick tour
+
+| You want to… | Start here |
+| --- | --- |
+| Find a context-compaction command | [Search compact context](https://kishormorol.github.io/agent-command-atlas/?q=compact%20context) |
+| Resume an earlier session | [Search resume session](https://kishormorol.github.io/agent-command-atlas/?q=resume%20old%20session) |
+| Compare MCP controls | [Open the capability atlas](https://kishormorol.github.io/agent-command-atlas/compare/) |
+| Browse one ecosystem | [Open coverage](https://kishormorol.github.io/agent-command-atlas/coverage/) |
+
+## Built for contributors
+
+This is a living open-source reference. If a command is missing, renamed, conditional, or inaccurately described, contribute the structured record and its authoritative source. The website, indexes, and capability views are generated from that data so corrections propagate consistently.
 
 ## Data is the source of truth
 
