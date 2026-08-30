@@ -186,6 +186,17 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
         ),
     )
     routes.append({"path": "coverage/", "kind": "coverage", "id": None})
+    write_route(
+        site / "guide",
+        route_page(
+            template,
+            "guide",
+            "How to Use the Atlas | Agent Command Atlas",
+            "Learn how to search, filter, compare, and verify AI coding-agent commands in Agent Command Atlas.",
+            1,
+        ),
+    )
+    routes.append({"path": "guide/", "kind": "guide", "id": None})
     for capability in capabilities:
         capability["path"] = f"compare/{slugify(capability['id'], 'capability')}/"
         write_route(

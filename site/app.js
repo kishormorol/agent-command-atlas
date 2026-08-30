@@ -199,6 +199,7 @@ function searchBox(filters) {
       <input id="q" name="q" type="search" value="${escapeHtml(filters.q)}" placeholder="Search commands, flags, tasks, tools…" autocomplete="off" spellcheck="false">
       <kbd aria-label="Keyboard shortcut: slash">/</kbd>
     </div>
+    <p class="search-hint">Type naturally—results update as you type. Try <button class="search-hint__link" type="button" data-query="model">model</button> or <button class="search-hint__link" type="button" data-query="compact context">compact context</button>.</p>
   </form>`;
 }
 
@@ -316,7 +317,7 @@ function homeView() {
         <div class="hero__command-palette">
           <div class="command-palette__bar"><span></span><span></span><span></span><strong>atlas / search</strong></div>
           ${searchBox(filters)}
-          <div class="quick-searches" aria-label="Suggested searches"><span>Try</span><button class="quick-search" data-query="compact context" type="button">compact context</button><button class="quick-search" data-query="resume old session" type="button">resume session</button><button class="quick-search" data-query="configure permissions" type="button">permissions</button></div>
+          <div class="quick-searches" aria-label="Suggested searches"><span>Try</span><button class="quick-search" data-query="model" type="button">model</button><button class="quick-search" data-query="compact context" type="button">compact context</button><button class="quick-search" data-query="resume old session" type="button">resume session</button><button class="quick-search" data-query="configure permissions" type="button">permissions</button></div>
         </div>
       </div>
       <div class="hero__footer">
@@ -505,6 +506,19 @@ function coverageView() {
     </section>`;
 }
 
+function guideView() {
+  return `<div class="page-head"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><span>How to use</span></nav><p class="eyebrow">Quick start</p><h1>Find an answer in seconds.</h1><p>Use the Atlas when you know the task but not the vendor-specific command. Search by intent, filter the results, then open a command page for examples and verification details.</p></div>
+    <section class="guide-page" aria-labelledby="guide-heading">
+      <div class="section-heading"><div><p class="eyebrow">Three steps</p><h2 id="guide-heading">A simple way to use the Atlas</h2></div><p>Everything is generated from the canonical dataset and linked to official sources.</p></div>
+      <div class="guide-grid">
+        <article class="guide-card"><span>01</span><h2>Search by goal</h2><p>Type what you want to accomplish, not only the exact command. Try <code>model</code>, <code>resume old session</code>, or <code>compact context</code>.</p><a href="?q=model">Try a model search →</a></article>
+        <article class="guide-card"><span>02</span><h2>Narrow the list</h2><p>Use tool, type, category, and maturity filters together. This is useful when you need only stable Codex flags or experimental Copilot controls.</p><a href="">Browse the full reference →</a></article>
+        <article class="guide-card"><span>03</span><h2>Open the evidence</h2><p>Command pages include copy-ready syntax, minimal and practical examples, usage guidelines, lifecycle status, and a direct official source.</p><a href="compare/">Compare capabilities →</a></article>
+      </div>
+      <div class="guide-callout"><strong>Tip:</strong> matching names do not guarantee equivalent behavior. Read the relationship label—Exact, Similar, Partial, None, or Unknown—before translating a workflow between tools.</div>
+    </section>`;
+}
+
 function notFoundView() {
   document.title = "Not found | Agent Command Atlas";
   return `<div class="not-found"><p class="eyebrow">404</p><h1>Reference page not found</h1><p>This route is not present in the generated Atlas catalog.</p><a class="button" href="">Return to the reference</a></div>`;
@@ -556,7 +570,7 @@ function bindReference(fixedTool = "") {
     update();
     $("#q")?.focus();
   });
-  document.querySelectorAll(".quick-search").forEach((button) => button.addEventListener("click", () => {
+  document.querySelectorAll(".quick-search, .search-hint__link").forEach((button) => button.addEventListener("click", () => {
     if (!$("#q")) return;
     $("#q").value = button.dataset.query || "";
     update();
@@ -595,6 +609,7 @@ function renderRoute() {
   else if (kind === "compare") markup = compareView();
   else if (kind === "capability") markup = compareView(parts.join(":"));
   else if (kind === "coverage") markup = coverageView();
+  else if (kind === "guide") markup = guideView();
   else markup = homeView();
   $("#main-content").innerHTML = markup;
   bindCopyExamples();

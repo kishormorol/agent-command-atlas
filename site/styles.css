@@ -219,6 +219,10 @@ code { overflow-wrap: anywhere; }
 .search input::placeholder { color: #777d85; }
 .search input:focus { border-color: var(--accent-dark); outline-color: var(--accent); }
 .search kbd { position: absolute; right: 15px; min-width: 29px; padding: 4px 7px; color: #555b64; background: #eeece5; border: 1px solid #cdccc5; border-bottom-width: 2px; border-radius: 5px; text-align: center; }
+.search-hint { margin: 10px 2px 0; color: #858c97; font-size: .66rem; line-height: 1.45; }
+.search-hint__link { padding: 0; color: var(--accent); background: transparent; border: 0; font-family: var(--mono); font-size: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.search-hint__link:hover { color: #e4ffad; }
+.search-hint__link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .quick-searches { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 24px 22px; align-items: center; }
 .quick-searches > span { margin-right: 3px; color: #747c88; font-family: var(--mono); font-size: .62rem; text-transform: uppercase; }
 .quick-search {
@@ -527,6 +531,14 @@ pre { max-width: 100%; margin: 0; padding: 17px 19px; overflow-x: auto; color: #
 .coverage-method dl div { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 20px; }
 .coverage-method dt { font-size: .73rem; font-weight: 820; }
 .coverage-method dd { margin: 0; color: var(--muted); font-size: .76rem; line-height: 1.55; }
+.guide-page { width: min(1080px, calc(100% - 48px)); margin: 0 auto; padding: 54px 0 84px; }
+.guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+.guide-card { min-height: 250px; padding: 22px; background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--accent-dark); border-radius: 9px; box-shadow: 0 8px 22px rgba(33, 36, 42, .05); }
+.guide-card > span { color: var(--link); font-family: var(--mono); font-size: .7rem; font-weight: 850; }
+.guide-card h2 { margin: 28px 0 10px; font-size: 1.15rem; letter-spacing: -.03em; }
+.guide-card p { min-height: 92px; margin: 0 0 18px; color: var(--muted); font-size: .79rem; line-height: 1.6; }
+.guide-card a { font-size: .73rem; font-weight: 800; }
+.guide-callout { margin-top: 18px; padding: 16px 18px; color: #3d434d; background: #eef4d9; border-left: 4px solid #8aae2f; border-radius: 0 7px 7px 0; font-size: .78rem; line-height: 1.56; }
 
 .not-found p { color: var(--muted); line-height: 1.6; }
 .site-footer { display: flex; width: min(1320px, calc(100% - 48px)); min-height: 86px; margin: 0 auto; padding: 26px 0 36px; align-items: center; justify-content: space-between; color: var(--muted); border-top: 1px solid var(--line); font-size: .7rem; }
@@ -613,6 +625,10 @@ pre { max-width: 100%; margin: 0; padding: 17px 19px; overflow-x: auto; color: #
   .coverage-totals > div:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
   .coverage-totals > div:nth-child(4) { border-top: 1px solid var(--line); }
   .coverage-grid { grid-template-columns: 1fr; }
+  .guide-page { width: min(100% - 28px, 1080px); padding-top: 40px; }
+  .guide-grid { grid-template-columns: 1fr; }
+  .guide-card { min-height: 0; }
+  .guide-card p { min-height: 0; }
   .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; }
 }
 

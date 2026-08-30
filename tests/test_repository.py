@@ -91,7 +91,7 @@ class RepositoryTests(unittest.TestCase):
 
         paths = [route["path"] for route in routes]
         self.assertEqual(len(paths), len(set(paths)))
-        self.assertEqual(len(routes), len(catalog) + len(capabilities) + len(tools) + 2)
+        self.assertEqual(len(routes), len(catalog) + len(capabilities) + len(tools) + 3)
         self.assertIn({"path": "coverage/", "kind": "coverage", "id": None}, routes)
         self.assertEqual({entry["path"] for entry in catalog}, {route["path"] for route in routes if route["kind"] == "entry"})
         self.assertEqual({capability["path"] for capability in capabilities}, {route["path"] for route in routes if route["kind"] == "capability"})
