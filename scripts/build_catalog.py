@@ -90,7 +90,7 @@ def write_route(path: Path, page: str) -> None:
 def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilities: list[dict]) -> list[dict]:
     """Generate static shells so tool, entry, and comparison URLs work on static hosts."""
     template = (site / "index.html").read_text(encoding="utf-8")
-    for route_root in [tool["id"] for tool in tools] + ["compare"]:
+    for route_root in [tool["id"] for tool in tools] + ["compare", "coverage"]:
         target = site / route_root
         if target.exists():
             shutil.rmtree(target)
@@ -130,6 +130,17 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
         ),
     )
     routes.append({"path": "compare/", "kind": "compare", "id": None})
+    write_route(
+        site / "coverage",
+        route_page(
+            template,
+            "coverage",
+            "Dataset Coverage | Agent Command Atlas",
+            "Inspect record counts, verification, lifecycle states, and structured coverage across all five Agent Command Atlas ecosystems.",
+            1,
+        ),
+    )
+    routes.append({"path": "coverage/", "kind": "coverage", "id": None})
     for capability in capabilities:
         capability["path"] = f"compare/{slugify(capability['id'], 'capability')}/"
         write_route(

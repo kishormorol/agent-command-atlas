@@ -510,6 +510,11 @@
     "id": "claude-code.slash-command.add-dir"
   },
   {
+    "path": "claude-code/advisor/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.advisor"
+  },
+  {
     "path": "claude-code/agents/",
     "kind": "entry",
     "id": "claude-code.slash-command.agents"
@@ -570,6 +575,11 @@
     "id": "claude-code.slash-command.copy"
   },
   {
+    "path": "claude-code/desktop/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.desktop"
+  },
+  {
     "path": "claude-code/diff/",
     "kind": "entry",
     "id": "claude-code.slash-command.diff"
@@ -593,6 +603,11 @@
     "path": "claude-code/fast/",
     "kind": "entry",
     "id": "claude-code.slash-command.fast"
+  },
+  {
+    "path": "claude-code/feedback/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.feedback"
   },
   {
     "path": "claude-code/fork/",
@@ -630,6 +645,11 @@
     "id": "claude-code.slash-command.init"
   },
   {
+    "path": "claude-code/keybindings/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.keybindings"
+  },
+  {
     "path": "claude-code/login/",
     "kind": "entry",
     "id": "claude-code.slash-command.login"
@@ -648,6 +668,11 @@
     "path": "claude-code/memory/",
     "kind": "entry",
     "id": "claude-code.slash-command.memory"
+  },
+  {
+    "path": "claude-code/mobile/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.mobile"
   },
   {
     "path": "claude-code/slash-command-model/",
@@ -685,6 +710,11 @@
     "id": "claude-code.slash-command.reload-skills"
   },
   {
+    "path": "claude-code/remote-control/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.remote-control"
+  },
+  {
     "path": "claude-code/rename/",
     "kind": "entry",
     "id": "claude-code.slash-command.rename"
@@ -720,6 +750,11 @@
     "id": "claude-code.slash-command.status"
   },
   {
+    "path": "claude-code/statusline/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.statusline"
+  },
+  {
     "path": "claude-code/stop/",
     "kind": "entry",
     "id": "claude-code.slash-command.stop"
@@ -735,9 +770,29 @@
     "id": "claude-code.slash-command.tasks"
   },
   {
+    "path": "claude-code/teleport/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.teleport"
+  },
+  {
+    "path": "claude-code/terminal-setup/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.terminal-setup"
+  },
+  {
+    "path": "claude-code/theme/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.theme"
+  },
+  {
     "path": "claude-code/ultraplan/",
     "kind": "entry",
     "id": "claude-code.slash-command.ultraplan"
+  },
+  {
+    "path": "claude-code/upgrade/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.upgrade"
   },
   {
     "path": "claude-code/usage/",
@@ -835,9 +890,29 @@
     "id": "gemini-cli.slash-command.agents"
   },
   {
+    "path": "gemini-cli/agents-config/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.agents-config"
+  },
+  {
+    "path": "gemini-cli/agents-disable/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.agents-disable"
+  },
+  {
+    "path": "gemini-cli/agents-enable/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.agents-enable"
+  },
+  {
     "path": "gemini-cli/agents-list/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.agents-list"
+  },
+  {
+    "path": "gemini-cli/agents-reload/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.agents-reload"
   },
   {
     "path": "gemini-cli/auth/",
@@ -858,6 +933,16 @@
     "path": "gemini-cli/commands/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.commands"
+  },
+  {
+    "path": "gemini-cli/commands-list/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.commands-list"
+  },
+  {
+    "path": "gemini-cli/commands-reload/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.commands-reload"
   },
   {
     "path": "gemini-cli/compress/",
@@ -920,6 +1005,31 @@
     "id": "gemini-cli.slash-command.mcp"
   },
   {
+    "path": "gemini-cli/mcp-auth/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.mcp-auth"
+  },
+  {
+    "path": "gemini-cli/mcp-disable/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.mcp-disable"
+  },
+  {
+    "path": "gemini-cli/mcp-enable/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.mcp-enable"
+  },
+  {
+    "path": "gemini-cli/mcp-list/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.mcp-list"
+  },
+  {
+    "path": "gemini-cli/mcp-reload/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.mcp-reload"
+  },
+  {
     "path": "gemini-cli/memory/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.memory"
@@ -930,9 +1040,29 @@
     "id": "gemini-cli.slash-command.memory-inbox"
   },
   {
+    "path": "gemini-cli/memory-list/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.memory-list"
+  },
+  {
+    "path": "gemini-cli/memory-refresh/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.memory-refresh"
+  },
+  {
+    "path": "gemini-cli/memory-show/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.memory-show"
+  },
+  {
     "path": "gemini-cli/model/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.model"
+  },
+  {
+    "path": "gemini-cli/model-set/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.model-set"
   },
   {
     "path": "gemini-cli/permissions/",
@@ -940,9 +1070,19 @@
     "id": "gemini-cli.slash-command.permissions"
   },
   {
+    "path": "gemini-cli/permissions-trust/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.permissions-trust"
+  },
+  {
     "path": "gemini-cli/plan/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.plan"
+  },
+  {
+    "path": "gemini-cli/plan-copy/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.plan-copy"
   },
   {
     "path": "gemini-cli/policies/",
@@ -995,9 +1135,44 @@
     "id": "gemini-cli.slash-command.skills"
   },
   {
+    "path": "gemini-cli/skills-disable/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.skills-disable"
+  },
+  {
+    "path": "gemini-cli/skills-enable/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.skills-enable"
+  },
+  {
+    "path": "gemini-cli/skills-list/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.skills-list"
+  },
+  {
+    "path": "gemini-cli/skills-reload/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.skills-reload"
+  },
+  {
     "path": "gemini-cli/stats/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.stats"
+  },
+  {
+    "path": "gemini-cli/stats-model/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.stats-model"
+  },
+  {
+    "path": "gemini-cli/stats-session/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.stats-session"
+  },
+  {
+    "path": "gemini-cli/stats-tools/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.stats-tools"
   },
   {
     "path": "gemini-cli/terminal-setup/",
@@ -1013,6 +1188,11 @@
     "path": "gemini-cli/tools/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.tools"
+  },
+  {
+    "path": "gemini-cli/tools-desc/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.tools-desc"
   },
   {
     "path": "gemini-cli/upgrade/",
@@ -1405,6 +1585,11 @@
     "id": "github-copilot.cli-flag.model"
   },
   {
+    "path": "github-copilot/copilot-app/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.app"
+  },
+  {
     "path": "github-copilot/copilot-completion/",
     "kind": "entry",
     "id": "github-copilot.cli-subcommand.completion"
@@ -1418,6 +1603,26 @@
     "path": "github-copilot/copilot-login/",
     "kind": "entry",
     "id": "github-copilot.cli-subcommand.login"
+  },
+  {
+    "path": "github-copilot/copilot-mcp/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.mcp"
+  },
+  {
+    "path": "github-copilot/copilot-skill/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.skill"
+  },
+  {
+    "path": "github-copilot/copilot-update/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.update"
+  },
+  {
+    "path": "github-copilot/copilot-version/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.version"
   },
   {
     "path": "github-copilot/copilot-home-settings-json/",
@@ -1500,6 +1705,16 @@
     "id": "github-copilot.slash-command.context"
   },
   {
+    "path": "github-copilot/copy/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.copy"
+  },
+  {
+    "path": "github-copilot/cwd/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.cwd"
+  },
+  {
     "path": "github-copilot/delegate/",
     "kind": "entry",
     "id": "github-copilot.slash-command.delegate"
@@ -1513,6 +1728,11 @@
     "path": "github-copilot/diff/",
     "kind": "entry",
     "id": "github-copilot.slash-command.diff"
+  },
+  {
+    "path": "github-copilot/downgrade/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.downgrade"
   },
   {
     "path": "github-copilot/env/",
@@ -1543,6 +1763,11 @@
     "path": "github-copilot/feedback/",
     "kind": "entry",
     "id": "github-copilot.slash-command.feedback"
+  },
+  {
+    "path": "github-copilot/fleet/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.fleet"
   },
   {
     "path": "github-copilot/fork/",
@@ -1580,6 +1805,16 @@
     "id": "github-copilot.slash-command.limits"
   },
   {
+    "path": "github-copilot/limits-set/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.limits-set"
+  },
+  {
+    "path": "github-copilot/limits-unset/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.limits-unset"
+  },
+  {
     "path": "github-copilot/login/",
     "kind": "entry",
     "id": "github-copilot.slash-command.login"
@@ -1610,6 +1845,11 @@
     "id": "github-copilot.slash-command.permissions"
   },
   {
+    "path": "github-copilot/permissions-reset/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.permissions-reset"
+  },
+  {
     "path": "github-copilot/plan/",
     "kind": "entry",
     "id": "github-copilot.slash-command.plan"
@@ -1630,6 +1870,11 @@
     "id": "github-copilot.slash-command.pr"
   },
   {
+    "path": "github-copilot/remote/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.remote"
+  },
+  {
     "path": "github-copilot/rename/",
     "kind": "entry",
     "id": "github-copilot.slash-command.rename"
@@ -1643,6 +1888,11 @@
     "path": "github-copilot/reset-allowed-tools/",
     "kind": "entry",
     "id": "github-copilot.slash-command.reset-allowed-tools"
+  },
+  {
+    "path": "github-copilot/restart/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.restart"
   },
   {
     "path": "github-copilot/resume/",
@@ -1690,6 +1940,31 @@
     "id": "github-copilot.slash-command.skills"
   },
   {
+    "path": "github-copilot/skills-add/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.skills-add"
+  },
+  {
+    "path": "github-copilot/skills-info/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.skills-info"
+  },
+  {
+    "path": "github-copilot/skills-list/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.skills-list"
+  },
+  {
+    "path": "github-copilot/skills-reload/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.skills-reload"
+  },
+  {
+    "path": "github-copilot/skills-remove/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.skills-remove"
+  },
+  {
     "path": "github-copilot/statusline/",
     "kind": "entry",
     "id": "github-copilot.slash-command.statusline"
@@ -1703,6 +1978,16 @@
     "path": "github-copilot/tasks/",
     "kind": "entry",
     "id": "github-copilot.slash-command.tasks"
+  },
+  {
+    "path": "github-copilot/terminal-setup/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.terminal-setup"
+  },
+  {
+    "path": "github-copilot/theme/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.theme"
   },
   {
     "path": "github-copilot/undo/",
@@ -1720,9 +2005,19 @@
     "id": "github-copilot.slash-command.usage"
   },
   {
+    "path": "github-copilot/user/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.user"
+  },
+  {
     "path": "github-copilot/version/",
     "kind": "entry",
     "id": "github-copilot.slash-command.version"
+  },
+  {
+    "path": "github-copilot/voice/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.voice"
   },
   {
     "path": "github-copilot/worktree/",
@@ -1740,9 +2035,19 @@
     "id": null
   },
   {
+    "path": "coverage/",
+    "kind": "coverage",
+    "id": null
+  },
+  {
     "path": "compare/agents-manage/",
     "kind": "capability",
     "id": "agents.manage"
+  },
+  {
+    "path": "compare/agents-parallel/",
+    "kind": "capability",
+    "id": "agents.parallel"
   },
   {
     "path": "compare/auth-login/",
@@ -1778,6 +2083,11 @@
     "path": "compare/context-inspect/",
     "kind": "capability",
     "id": "context.inspect"
+  },
+  {
+    "path": "compare/context-side-question/",
+    "kind": "capability",
+    "id": "context.side-question"
   },
   {
     "path": "compare/git-diff/",
@@ -1823,6 +2133,11 @@
     "path": "compare/session-fork/",
     "kind": "capability",
     "id": "session.fork"
+  },
+  {
+    "path": "compare/session-remote-control/",
+    "kind": "capability",
+    "id": "session.remote-control"
   },
   {
     "path": "compare/session-resume/",

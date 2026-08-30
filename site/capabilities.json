@@ -36,6 +36,43 @@
     "path": "compare/agents-manage/"
   },
   {
+    "id": "agents.parallel",
+    "display_name": "Run agents in parallel",
+    "description": "Fan a task out across multiple agents or subagents and coordinate their work.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": null,
+        "relationship": "unknown",
+        "notes": "Agent-thread navigation is documented, but this capability does not yet map a dedicated parallel launcher."
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.skill.batch",
+        "relationship": "exact",
+        "notes": "The bundled batch skill decomposes work and runs units in separate worktrees."
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": null,
+        "relationship": "unknown",
+        "notes": "Agent management is documented, but a dedicated parallel fan-out command is not mapped."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": null,
+        "relationship": "unknown",
+        "notes": "No official Cursor CLI command is currently mapped for parallel subagent fan-out."
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.slash-command.fleet",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/agents-parallel/"
+  },
+  {
     "id": "auth.login",
     "display_name": "Log in",
     "description": "Authenticate the command-line agent with its service or configured identity provider.",
@@ -254,15 +291,15 @@
       },
       {
         "tool": "gemini-cli",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No context-usage entry has been mapped yet."
+        "entry_id": "gemini-cli.slash-command.memory-show",
+        "relationship": "partial",
+        "notes": "This shows loaded instruction memory, not total context-window utilization."
       },
       {
         "tool": "cursor",
         "entry_id": null,
         "relationship": "unknown",
-        "notes": "No context-usage entry has been mapped yet."
+        "notes": "No documented context-usage control is currently mapped."
       },
       {
         "tool": "github-copilot",
@@ -271,6 +308,42 @@
       }
     ],
     "path": "compare/context-inspect/"
+  },
+  {
+    "id": "context.side-question",
+    "display_name": "Ask a side question",
+    "description": "Ask a temporary question without adding it to the main conversation history.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.slash-command.side",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.slash-command.btw",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "The official interactive command reference does not document an ephemeral side-question control."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "Ask mode is read-only but remains part of the active conversation."
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "The /ask command asks a question but does not document exclusion from conversation history."
+      }
+    ],
+    "path": "compare/context-side-question/"
   },
   {
     "id": "git.diff",
@@ -290,14 +363,14 @@
       {
         "tool": "gemini-cli",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No dedicated diff command is mapped in the starter dataset."
+        "relationship": "none",
+        "notes": "The official interactive command reference does not document a dedicated diff command."
       },
       {
         "tool": "cursor",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No dedicated diff command is documented in the current Cursor CLI slash-command reference."
+        "relationship": "none",
+        "notes": "The official Cursor CLI slash-command reference does not document a dedicated diff command."
       },
       {
         "tool": "github-copilot",
@@ -329,9 +402,9 @@
       },
       {
         "tool": "cursor",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No initialization entry is currently mapped."
+        "entry_id": "cursor.cli-subcommand.generate-rule",
+        "relationship": "similar",
+        "notes": "Cursor generates a rule through prompts rather than scaffolding the other tools' instruction-file format."
       },
       {
         "tool": "github-copilot",
@@ -383,27 +456,27 @@
     "mappings": [
       {
         "tool": "codex",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Codex mode controls are not yet mapped as a unified selector."
+        "entry_id": "codex.slash-command.plan",
+        "relationship": "partial",
+        "notes": "The command selects Plan mode rather than cycling every interaction mode."
       },
       {
         "tool": "claude-code",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Claude Code mode controls are not yet mapped as a unified selector."
+        "entry_id": "claude-code.slash-command.plan",
+        "relationship": "partial",
+        "notes": "The command enters Plan mode rather than exposing a unified mode selector."
       },
       {
         "tool": "gemini-cli",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Gemini CLI mode controls are not yet mapped as a unified selector."
+        "entry_id": "gemini-cli.slash-command.plan",
+        "relationship": "partial",
+        "notes": "The command enters read-only Plan Mode rather than selecting every approval mode."
       },
       {
         "tool": "cursor",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Cursor exposes individual mode commands rather than a mapped cycle control."
+        "entry_id": "cursor.slash-command.plan",
+        "relationship": "partial",
+        "notes": "Cursor exposes separate mode commands; /plan selects only Plan mode."
       },
       {
         "tool": "github-copilot",
@@ -585,6 +658,42 @@
     "path": "compare/session-fork/"
   },
   {
+    "id": "session.remote-control",
+    "display_name": "Control a session remotely",
+    "description": "Expose a local agent session so it can be continued or steered from another device.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": null,
+        "relationship": "unknown",
+        "notes": "Desktop handoff is documented, but a matching remote-steering control is not currently mapped."
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.slash-command.remote-control",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "The official interactive command reference does not document remote session steering."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "The official Cursor CLI command reference does not document remote session steering."
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.slash-command.remote",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/session-remote-control/"
+  },
+  {
     "id": "session.resume",
     "display_name": "Resume session",
     "description": "Continue a previously saved agent conversation.",
@@ -642,13 +751,13 @@
         "tool": "cursor",
         "entry_id": null,
         "relationship": "unknown",
-        "notes": "No direct session-status entry is currently mapped."
+        "notes": "Cursor's documented status subcommand reports authentication rather than active-session configuration."
       },
       {
         "tool": "github-copilot",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Copilot session information commands are not yet represented in the dataset."
+        "entry_id": "github-copilot.slash-command.session",
+        "relationship": "partial",
+        "notes": "The nested session manager includes session information alongside cleanup and checkpoint operations."
       }
     ],
     "path": "compare/session-status/"

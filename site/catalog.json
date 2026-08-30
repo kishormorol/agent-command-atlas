@@ -2627,7 +2627,8 @@
       "codex.slash-command.goal"
     ],
     "capabilities": [
-      "planning.start"
+      "planning.start",
+      "mode.select"
     ],
     "maturity": "stable",
     "availability": {
@@ -3042,6 +3043,9 @@
         "explanation": "Ask a side question without changing main context.",
         "level": "practical"
       }
+    ],
+    "capabilities": [
+      "context.side-question"
     ],
     "maturity": "conditional",
     "availability": {
@@ -4086,7 +4090,8 @@
       }
     ],
     "capabilities": [
-      "worktree.manage"
+      "worktree.manage",
+      "agents.parallel"
     ],
     "maturity": "conditional",
     "availability": {
@@ -4430,6 +4435,50 @@
     "path": "claude-code/add-dir/"
   },
   {
+    "id": "claude-code.slash-command.advisor",
+    "tool": "claude-code",
+    "name": "/advisor",
+    "display_name": "Configure advisor",
+    "type": "slash-command",
+    "category": "agents",
+    "role": "Second-model consultation",
+    "description": "Enable, disable, or choose the advisor model Claude consults during a task.",
+    "syntax": [
+      "/advisor [model|off]"
+    ],
+    "examples": [
+      {
+        "command": "/advisor sonnet",
+        "explanation": "Use Sonnet as the advisor model for this session.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available models and Fable access depend on the account."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/advisor/"
+  },
+  {
     "id": "claude-code.slash-command.agents",
     "tool": "claude-code",
     "name": "/agents",
@@ -4646,6 +4695,9 @@
         "explanation": "Ask a contextual side question.",
         "level": "practical"
       }
+    ],
+    "capabilities": [
+      "context.side-question"
     ],
     "maturity": "stable",
     "availability": {
@@ -5015,6 +5067,58 @@
     "path": "claude-code/copy/"
   },
   {
+    "id": "claude-code.slash-command.desktop",
+    "tool": "claude-code",
+    "name": "/desktop",
+    "display_name": "Continue in Desktop",
+    "type": "slash-command",
+    "aliases": [
+      "/app"
+    ],
+    "category": "session",
+    "role": "Desktop handoff",
+    "description": "Continue the current terminal session in the Claude Code Desktop app.",
+    "syntax": [
+      "/desktop"
+    ],
+    "examples": [
+      {
+        "command": "/desktop",
+        "explanation": "Move the active session into Claude Code Desktop.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "desktop"
+      ],
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "conditions": [
+        "Requires a Claude subscription; Windows support is x64 only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/desktop/"
+  },
+  {
     "id": "claude-code.slash-command.diff",
     "tool": "claude-code",
     "name": "/diff",
@@ -5241,6 +5345,48 @@
       ]
     },
     "path": "claude-code/fast/"
+  },
+  {
+    "id": "claude-code.slash-command.feedback",
+    "tool": "claude-code",
+    "name": "/feedback",
+    "display_name": "Send feedback",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Issue reporting",
+    "description": "Report an issue with session context attached.",
+    "syntax": [
+      "/feedback [report]"
+    ],
+    "examples": [
+      {
+        "command": "/feedback MCP reconnect failed after sleep",
+        "explanation": "Report a focused issue with the current session context.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/feedback/"
   },
   {
     "id": "claude-code.slash-command.fork",
@@ -5572,6 +5718,48 @@
     "path": "claude-code/init/"
   },
   {
+    "id": "claude-code.slash-command.keybindings",
+    "tool": "claude-code",
+    "name": "/keybindings",
+    "display_name": "Configure keybindings",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Keyboard customization",
+    "description": "Open the Claude Code keybinding configuration interface.",
+    "syntax": [
+      "/keybindings"
+    ],
+    "examples": [
+      {
+        "command": "/keybindings",
+        "explanation": "Inspect or change interactive keyboard bindings.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/keybindings/"
+  },
+  {
     "id": "claude-code.slash-command.login",
     "tool": "claude-code",
     "name": "/login",
@@ -5755,6 +5943,55 @@
     "path": "claude-code/memory/"
   },
   {
+    "id": "claude-code.slash-command.mobile",
+    "tool": "claude-code",
+    "name": "/mobile",
+    "display_name": "Set up mobile access",
+    "type": "slash-command",
+    "aliases": [
+      "/ios",
+      "/android"
+    ],
+    "category": "session",
+    "role": "Mobile handoff",
+    "description": "Open the documented setup flow for continuing Claude Code from a mobile device.",
+    "syntax": [
+      "/mobile"
+    ],
+    "examples": [
+      {
+        "command": "/mobile",
+        "explanation": "Start mobile access setup for the current account.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "web"
+      ],
+      "conditions": [
+        "Availability depends on plan and environment."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/mobile/"
+  },
+  {
     "id": "claude-code.slash-command.model",
     "tool": "claude-code",
     "name": "/model",
@@ -5879,7 +6116,8 @@
       "Develop and review an approach before implementation."
     ],
     "capabilities": [
-      "planning.start"
+      "planning.start",
+      "mode.select"
     ],
     "maturity": "stable",
     "availability": {
@@ -6082,6 +6320,63 @@
       ]
     },
     "path": "claude-code/reload-skills/"
+  },
+  {
+    "id": "claude-code.slash-command.remote-control",
+    "tool": "claude-code",
+    "name": "/remote-control",
+    "display_name": "Enable Remote Control",
+    "type": "slash-command",
+    "aliases": [
+      "/rc"
+    ],
+    "category": "session",
+    "role": "Remote session access",
+    "description": "Make the local session available for Remote Control from claude.ai.",
+    "syntax": [
+      "/remote-control"
+    ],
+    "examples": [
+      {
+        "command": "/remote-control",
+        "explanation": "Continue monitoring or steering this local session from another device.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "session.remote-control"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "web"
+      ],
+      "conditions": [
+        "Requires a claude.ai subscription and Claude Code 2.1.206 or later."
+      ]
+    },
+    "version": {
+      "introduced": "2.1.206",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/remote-control/"
   },
   {
     "id": "claude-code.slash-command.rename",
@@ -6410,6 +6705,48 @@
     "path": "claude-code/status/"
   },
   {
+    "id": "claude-code.slash-command.statusline",
+    "tool": "claude-code",
+    "name": "/statusline",
+    "display_name": "Configure status line",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Status-line configuration",
+    "description": "Configure the information shown in the Claude Code status line.",
+    "syntax": [
+      "/statusline"
+    ],
+    "examples": [
+      {
+        "command": "/statusline",
+        "explanation": "Open status-line configuration.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/statusline/"
+  },
+  {
     "id": "claude-code.slash-command.stop",
     "tool": "claude-code",
     "name": "/stop",
@@ -6546,6 +6883,140 @@
     "path": "claude-code/tasks/"
   },
   {
+    "id": "claude-code.slash-command.teleport",
+    "tool": "claude-code",
+    "name": "/teleport",
+    "display_name": "Pull web session",
+    "type": "slash-command",
+    "aliases": [
+      "/tp"
+    ],
+    "category": "session",
+    "role": "Web-to-terminal handoff",
+    "description": "Pull a Claude Code on the web session, its branch, and conversation into this terminal.",
+    "syntax": [
+      "/teleport"
+    ],
+    "examples": [
+      {
+        "command": "/teleport",
+        "explanation": "Choose a web session to continue locally.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "web"
+      ],
+      "conditions": [
+        "Requires a claude.ai subscription."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/teleport/"
+  },
+  {
+    "id": "claude-code.slash-command.terminal-setup",
+    "tool": "claude-code",
+    "name": "/terminal-setup",
+    "display_name": "Configure terminal",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Terminal keybinding setup",
+    "description": "Install or guide terminal keybindings for multiline input and clipboard support.",
+    "syntax": [
+      "/terminal-setup"
+    ],
+    "examples": [
+      {
+        "command": "/terminal-setup",
+        "explanation": "Configure multiline input in the current terminal.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Behavior varies by supported terminal."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/terminal-setup/"
+  },
+  {
+    "id": "claude-code.slash-command.theme",
+    "tool": "claude-code",
+    "name": "/theme",
+    "display_name": "Select theme",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Theme configuration",
+    "description": "Open the Claude Code theme selector.",
+    "syntax": [
+      "/theme"
+    ],
+    "examples": [
+      {
+        "command": "/theme",
+        "explanation": "Choose the interactive interface theme.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/theme/"
+  },
+  {
     "id": "claude-code.slash-command.ultraplan",
     "tool": "claude-code",
     "name": "/ultraplan",
@@ -6594,6 +7065,50 @@
       ]
     },
     "path": "claude-code/ultraplan/"
+  },
+  {
+    "id": "claude-code.slash-command.upgrade",
+    "tool": "claude-code",
+    "name": "/upgrade",
+    "display_name": "Upgrade plan",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Account upgrade",
+    "description": "Open the Claude plan upgrade flow when it is available for the account.",
+    "syntax": [
+      "/upgrade"
+    ],
+    "examples": [
+      {
+        "command": "/upgrade",
+        "explanation": "Review account upgrade options.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Not shown on Enterprise plans."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/upgrade/"
   },
   {
     "id": "claude-code.slash-command.usage",
@@ -7467,6 +7982,150 @@
     "path": "gemini-cli/agents/"
   },
   {
+    "id": "gemini-cli.slash-command.agents-config",
+    "tool": "gemini-cli",
+    "name": "/agents config",
+    "display_name": "Configure agent",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.agents",
+    "category": "agents",
+    "role": "Agent configuration",
+    "description": "Open configuration for an agent's model, temperature, and execution limits.",
+    "syntax": [
+      "/agents config <agent-name>"
+    ],
+    "examples": [
+      {
+        "command": "/agents config code-reviewer",
+        "explanation": "Configure the code-reviewer agent.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires the experimental agent feature."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/agents-config/"
+  },
+  {
+    "id": "gemini-cli.slash-command.agents-disable",
+    "tool": "gemini-cli",
+    "name": "/agents disable",
+    "display_name": "Disable agent",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.agents",
+    "category": "agents",
+    "role": "Agent deactivation",
+    "description": "Disable a discovered Gemini CLI subagent by name.",
+    "syntax": [
+      "/agents disable <agent-name>"
+    ],
+    "examples": [
+      {
+        "command": "/agents disable code-reviewer",
+        "explanation": "Disable the discovered code-reviewer agent.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires the experimental agent feature."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/agents-disable/"
+  },
+  {
+    "id": "gemini-cli.slash-command.agents-enable",
+    "tool": "gemini-cli",
+    "name": "/agents enable",
+    "display_name": "Enable agent",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.agents",
+    "category": "agents",
+    "role": "Agent activation",
+    "description": "Enable a discovered Gemini CLI subagent by name.",
+    "syntax": [
+      "/agents enable <agent-name>"
+    ],
+    "examples": [
+      {
+        "command": "/agents enable code-reviewer",
+        "explanation": "Enable the discovered code-reviewer agent.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires the experimental agent feature."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/agents-enable/"
+  },
+  {
     "id": "gemini-cli.slash-command.agents-list",
     "tool": "gemini-cli",
     "name": "/agents list",
@@ -7519,6 +8178,57 @@
       ]
     },
     "path": "gemini-cli/agents-list/"
+  },
+  {
+    "id": "gemini-cli.slash-command.agents-reload",
+    "tool": "gemini-cli",
+    "name": "/agents reload",
+    "display_name": "Reload agents",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.agents",
+    "aliases": [
+      "/agents refresh"
+    ],
+    "category": "agents",
+    "role": "Agent registry refresh",
+    "description": "Rescan the user and project agent directories and reload discovered agents.",
+    "syntax": [
+      "/agents reload"
+    ],
+    "examples": [
+      {
+        "command": "/agents reload",
+        "explanation": "Load agent definitions changed during the current session.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires the experimental agent feature."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/agents-reload/"
   },
   {
     "id": "gemini-cli.slash-command.auth",
@@ -7704,6 +8414,92 @@
       ]
     },
     "path": "gemini-cli/commands/"
+  },
+  {
+    "id": "gemini-cli.slash-command.commands-list",
+    "tool": "gemini-cli",
+    "name": "/commands list",
+    "display_name": "List custom commands",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.commands",
+    "category": "configuration",
+    "role": "Custom-command discovery",
+    "description": "List custom command definitions discovered from user, project, extension, and MCP sources.",
+    "syntax": [
+      "/commands list"
+    ],
+    "examples": [
+      {
+        "command": "/commands list",
+        "explanation": "List the custom commands available in this session.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/commands-list/"
+  },
+  {
+    "id": "gemini-cli.slash-command.commands-reload",
+    "tool": "gemini-cli",
+    "name": "/commands reload",
+    "display_name": "Reload custom commands",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.commands",
+    "category": "configuration",
+    "role": "Custom-command refresh",
+    "description": "Reload custom command definitions without restarting Gemini CLI.",
+    "syntax": [
+      "/commands reload"
+    ],
+    "examples": [
+      {
+        "command": "/commands reload",
+        "explanation": "Pick up a newly added project command.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/commands-reload/"
   },
   {
     "id": "gemini-cli.slash-command.compress",
@@ -8250,6 +9046,241 @@
     "path": "gemini-cli/mcp/"
   },
   {
+    "id": "gemini-cli.slash-command.mcp-auth",
+    "tool": "gemini-cli",
+    "name": "/mcp auth",
+    "display_name": "Authenticate MCP server",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.mcp",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "Start OAuth authentication for a configured MCP server.",
+    "syntax": [
+      "/mcp auth <server-name>"
+    ],
+    "examples": [
+      {
+        "command": "/mcp auth github",
+        "explanation": "Authenticate the MCP server named github.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "The server must support OAuth."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/mcp-auth/"
+  },
+  {
+    "id": "gemini-cli.slash-command.mcp-disable",
+    "tool": "gemini-cli",
+    "name": "/mcp disable",
+    "display_name": "Disable MCP server",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.mcp",
+    "category": "mcp",
+    "role": "MCP deactivation",
+    "description": "Disable a configured MCP server.",
+    "syntax": [
+      "/mcp disable <server-name>"
+    ],
+    "examples": [
+      {
+        "command": "/mcp disable github",
+        "explanation": "Disable the configured github server.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/mcp-disable/"
+  },
+  {
+    "id": "gemini-cli.slash-command.mcp-enable",
+    "tool": "gemini-cli",
+    "name": "/mcp enable",
+    "display_name": "Enable MCP server",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.mcp",
+    "category": "mcp",
+    "role": "MCP activation",
+    "description": "Enable a disabled MCP server.",
+    "syntax": [
+      "/mcp enable <server-name>"
+    ],
+    "examples": [
+      {
+        "command": "/mcp enable github",
+        "explanation": "Enable the configured github server.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/mcp-enable/"
+  },
+  {
+    "id": "gemini-cli.slash-command.mcp-list",
+    "tool": "gemini-cli",
+    "name": "/mcp list",
+    "display_name": "List MCP servers",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.mcp",
+    "aliases": [
+      "/mcp ls"
+    ],
+    "category": "mcp",
+    "role": "MCP discovery",
+    "description": "List configured MCP servers and their tools.",
+    "syntax": [
+      "/mcp list"
+    ],
+    "examples": [
+      {
+        "command": "/mcp list",
+        "explanation": "Inspect configured MCP servers and tools.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/mcp-list/"
+  },
+  {
+    "id": "gemini-cli.slash-command.mcp-reload",
+    "tool": "gemini-cli",
+    "name": "/mcp reload",
+    "display_name": "Reload MCP servers",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.mcp",
+    "category": "mcp",
+    "role": "MCP refresh",
+    "description": "Reload all MCP servers and rediscover their tools.",
+    "syntax": [
+      "/mcp reload"
+    ],
+    "examples": [
+      {
+        "command": "/mcp reload",
+        "explanation": "Reconnect servers after changing MCP configuration.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/mcp-reload/"
+  },
+  {
     "id": "gemini-cli.slash-command.memory",
     "tool": "gemini-cli",
     "name": "/memory",
@@ -8339,6 +9370,141 @@
     "path": "gemini-cli/memory-inbox/"
   },
   {
+    "id": "gemini-cli.slash-command.memory-list",
+    "tool": "gemini-cli",
+    "name": "/memory list",
+    "display_name": "List memory files",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.memory",
+    "category": "context",
+    "role": "Instruction-source discovery",
+    "description": "List the GEMINI.md files contributing hierarchical memory.",
+    "syntax": [
+      "/memory list"
+    ],
+    "examples": [
+      {
+        "command": "/memory list",
+        "explanation": "Inspect which instruction files are loaded.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "context.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/memory-list/"
+  },
+  {
+    "id": "gemini-cli.slash-command.memory-refresh",
+    "tool": "gemini-cli",
+    "name": "/memory refresh",
+    "display_name": "Refresh memory",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.memory",
+    "category": "context",
+    "role": "Instruction reload",
+    "description": "Reload hierarchical memory from GEMINI.md files.",
+    "syntax": [
+      "/memory refresh"
+    ],
+    "examples": [
+      {
+        "command": "/memory refresh",
+        "explanation": "Apply edits to GEMINI.md without restarting.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/memory-refresh/"
+  },
+  {
+    "id": "gemini-cli.slash-command.memory-show",
+    "tool": "gemini-cli",
+    "name": "/memory show",
+    "display_name": "Show loaded memory",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.memory",
+    "category": "context",
+    "role": "Instruction inspection",
+    "description": "Display the concatenated GEMINI.md content loaded as hierarchical memory.",
+    "syntax": [
+      "/memory show"
+    ],
+    "examples": [
+      {
+        "command": "/memory show",
+        "explanation": "Review the instructions currently supplied to Gemini.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "context.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/memory-show/"
+  },
+  {
     "id": "gemini-cli.slash-command.model",
     "tool": "gemini-cli",
     "name": "/model",
@@ -8387,6 +9553,52 @@
       ]
     },
     "path": "gemini-cli/model/"
+  },
+  {
+    "id": "gemini-cli.slash-command.model-set",
+    "tool": "gemini-cli",
+    "name": "/model set",
+    "display_name": "Set model",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.model",
+    "category": "models",
+    "role": "Model selection",
+    "description": "Set the active model and optionally persist the selection.",
+    "syntax": [
+      "/model set <model-name> [--persist]"
+    ],
+    "examples": [
+      {
+        "command": "/model set gemini-2.5-pro --persist",
+        "explanation": "Select a model and persist it for later sessions.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/model-set/"
   },
   {
     "id": "gemini-cli.slash-command.permissions",
@@ -8441,6 +9653,52 @@
     "path": "gemini-cli/permissions/"
   },
   {
+    "id": "gemini-cli.slash-command.permissions-trust",
+    "tool": "gemini-cli",
+    "name": "/permissions trust",
+    "display_name": "Manage folder trust",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.permissions",
+    "category": "permissions",
+    "role": "Folder trust",
+    "description": "Open folder-trust management for the current or supplied directory.",
+    "syntax": [
+      "/permissions trust [<directory-path>]"
+    ],
+    "examples": [
+      {
+        "command": "/permissions trust ../shared",
+        "explanation": "Manage trust for the shared directory.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/permissions-trust/"
+  },
+  {
     "id": "gemini-cli.slash-command.plan",
     "tool": "gemini-cli",
     "name": "/plan",
@@ -8464,7 +9722,8 @@
       "Analyze and plan a change before allowing implementation."
     ],
     "capabilities": [
-      "planning.start"
+      "planning.start",
+      "mode.select"
     ],
     "maturity": "conditional",
     "availability": {
@@ -8490,6 +9749,54 @@
       ]
     },
     "path": "gemini-cli/plan/"
+  },
+  {
+    "id": "gemini-cli.slash-command.plan-copy",
+    "tool": "gemini-cli",
+    "name": "/plan copy",
+    "display_name": "Copy approved plan",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.plan",
+    "category": "planning",
+    "role": "Plan export",
+    "description": "Copy the currently approved plan to the clipboard.",
+    "syntax": [
+      "/plan copy"
+    ],
+    "examples": [
+      {
+        "command": "/plan copy",
+        "explanation": "Copy the approved plan for a pull request description.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "planning.start"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Plan mode must be enabled and a plan must be approved."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/plan-copy/"
   },
   {
     "id": "gemini-cli.slash-command.policies",
@@ -8957,6 +10264,190 @@
     "path": "gemini-cli/skills/"
   },
   {
+    "id": "gemini-cli.slash-command.skills-disable",
+    "tool": "gemini-cli",
+    "name": "/skills disable",
+    "display_name": "Disable skill",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.skills",
+    "category": "skills",
+    "role": "Skill deactivation",
+    "description": "Disable a discovered skill by name.",
+    "syntax": [
+      "/skills disable <name>"
+    ],
+    "examples": [
+      {
+        "command": "/skills disable testing",
+        "explanation": "Disable the discovered testing skill.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/skills-disable/"
+  },
+  {
+    "id": "gemini-cli.slash-command.skills-enable",
+    "tool": "gemini-cli",
+    "name": "/skills enable",
+    "display_name": "Enable skill",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.skills",
+    "category": "skills",
+    "role": "Skill activation",
+    "description": "Enable a discovered skill by name.",
+    "syntax": [
+      "/skills enable <name>"
+    ],
+    "examples": [
+      {
+        "command": "/skills enable testing",
+        "explanation": "Enable the discovered testing skill.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/skills-enable/"
+  },
+  {
+    "id": "gemini-cli.slash-command.skills-list",
+    "tool": "gemini-cli",
+    "name": "/skills list",
+    "display_name": "List skills",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.skills",
+    "category": "skills",
+    "role": "Skill discovery",
+    "description": "List discovered skills and their enabled state.",
+    "syntax": [
+      "/skills list"
+    ],
+    "examples": [
+      {
+        "command": "/skills list",
+        "explanation": "Inspect skills available to the current workspace.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/skills-list/"
+  },
+  {
+    "id": "gemini-cli.slash-command.skills-reload",
+    "tool": "gemini-cli",
+    "name": "/skills reload",
+    "display_name": "Reload skills",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.skills",
+    "category": "skills",
+    "role": "Skill registry refresh",
+    "description": "Refresh discovered skills from workspace, user, and extension tiers.",
+    "syntax": [
+      "/skills reload"
+    ],
+    "examples": [
+      {
+        "command": "/skills reload",
+        "explanation": "Load a skill added during the current session.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/skills-reload/"
+  },
+  {
     "id": "gemini-cli.slash-command.stats",
     "tool": "gemini-cli",
     "name": "/stats",
@@ -9000,6 +10491,138 @@
       ]
     },
     "path": "gemini-cli/stats/"
+  },
+  {
+    "id": "gemini-cli.slash-command.stats-model",
+    "tool": "gemini-cli",
+    "name": "/stats model",
+    "display_name": "Show model statistics",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.stats",
+    "category": "models",
+    "role": "Model usage metrics",
+    "description": "Show model-specific token counts and quota information.",
+    "syntax": [
+      "/stats model"
+    ],
+    "examples": [
+      {
+        "command": "/stats model",
+        "explanation": "Inspect model token usage and quota.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/stats-model/"
+  },
+  {
+    "id": "gemini-cli.slash-command.stats-session",
+    "tool": "gemini-cli",
+    "name": "/stats session",
+    "display_name": "Show session statistics",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.stats",
+    "category": "session",
+    "role": "Session metrics",
+    "description": "Show session duration, tool calls, and performance metrics.",
+    "syntax": [
+      "/stats session"
+    ],
+    "examples": [
+      {
+        "command": "/stats session",
+        "explanation": "Inspect current session activity.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "session.status"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/stats-session/"
+  },
+  {
+    "id": "gemini-cli.slash-command.stats-tools",
+    "tool": "gemini-cli",
+    "name": "/stats tools",
+    "display_name": "Show tool statistics",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.stats",
+    "category": "system",
+    "role": "Tool usage metrics",
+    "description": "Show tool-specific usage statistics for the current session.",
+    "syntax": [
+      "/stats tools"
+    ],
+    "examples": [
+      {
+        "command": "/stats tools",
+        "explanation": "Inspect which tools the session used.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/stats-tools/"
   },
   {
     "id": "gemini-cli.slash-command.terminal-setup",
@@ -9126,6 +10749,52 @@
       ]
     },
     "path": "gemini-cli/tools/"
+  },
+  {
+    "id": "gemini-cli.slash-command.tools-desc",
+    "tool": "gemini-cli",
+    "name": "/tools desc",
+    "display_name": "Describe tools",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.tools",
+    "aliases": [
+      "/tools descriptions"
+    ],
+    "category": "system",
+    "role": "Tool description",
+    "description": "List available tools with the full descriptions supplied to the model.",
+    "syntax": [
+      "/tools desc"
+    ],
+    "examples": [
+      {
+        "command": "/tools desc",
+        "explanation": "Inspect full tool descriptions.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/tools-desc/"
   },
   {
     "id": "gemini-cli.slash-command.upgrade",
@@ -9549,6 +11218,9 @@
         "explanation": "Create a repository rule interactively.",
         "level": "minimal"
       }
+    ],
+    "capabilities": [
+      "instructions.initialize"
     ],
     "maturity": "stable",
     "availability": {
@@ -11728,7 +13400,8 @@
       "Work out an implementation approach before making changes."
     ],
     "capabilities": [
-      "planning.start"
+      "planning.start",
+      "mode.select"
     ],
     "maturity": "stable",
     "availability": {
@@ -12630,6 +14303,52 @@
     "path": "github-copilot/cli-flag-model/"
   },
   {
+    "id": "github-copilot.cli-subcommand.app",
+    "tool": "github-copilot",
+    "name": "copilot app",
+    "display_name": "Open Copilot app",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-command.launch",
+    "category": "session",
+    "role": "Desktop app launch",
+    "description": "Open the GitHub Copilot app in the current directory or provide its download URL.",
+    "syntax": [
+      "copilot app"
+    ],
+    "examples": [
+      {
+        "command": "copilot app",
+        "explanation": "Open a new app session rooted in the current directory.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli",
+        "desktop"
+      ],
+      "conditions": [
+        "Falls back to a download page or printed URL when the app or browser is unavailable."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/copilot-app/"
+  },
+  {
     "id": "github-copilot.cli-subcommand.completion",
     "tool": "github-copilot",
     "name": "copilot completion",
@@ -12760,6 +14479,184 @@
       ]
     },
     "path": "github-copilot/copilot-login/"
+  },
+  {
+    "id": "github-copilot.cli-subcommand.mcp",
+    "tool": "github-copilot",
+    "name": "copilot mcp",
+    "display_name": "Manage MCP servers",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-command.launch",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "List, inspect, add, or remove MCP server configurations without starting an interactive session.",
+    "syntax": [
+      "copilot mcp <list|get|add|remove>"
+    ],
+    "examples": [
+      {
+        "command": "copilot mcp list",
+        "explanation": "List all configured MCP servers by source.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/copilot-mcp/"
+  },
+  {
+    "id": "github-copilot.cli-subcommand.skill",
+    "tool": "github-copilot",
+    "name": "copilot skill",
+    "display_name": "Manage skills",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-command.launch",
+    "category": "skills",
+    "role": "Skill management",
+    "description": "List, add, or remove agent skills from the command line.",
+    "syntax": [
+      "copilot skill <list|add|remove>"
+    ],
+    "examples": [
+      {
+        "command": "copilot skill list",
+        "explanation": "List skills without entering an interactive session.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/copilot-skill/"
+  },
+  {
+    "id": "github-copilot.cli-subcommand.update",
+    "tool": "github-copilot",
+    "name": "copilot update",
+    "display_name": "Update Copilot CLI",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-command.launch",
+    "category": "system",
+    "role": "CLI update",
+    "description": "Download and install the latest Copilot CLI version.",
+    "syntax": [
+      "copilot update"
+    ],
+    "examples": [
+      {
+        "command": "copilot update",
+        "explanation": "Install the latest available CLI version.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/copilot-update/"
+  },
+  {
+    "id": "github-copilot.cli-subcommand.version",
+    "tool": "github-copilot",
+    "name": "copilot version",
+    "display_name": "Show Copilot CLI version",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-command.launch",
+    "category": "system",
+    "role": "Version inspection",
+    "description": "Display version information and check for updates.",
+    "syntax": [
+      "copilot version"
+    ],
+    "examples": [
+      {
+        "command": "copilot version",
+        "explanation": "Show the installed CLI version and update status.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/copilot-version/"
   },
   {
     "id": "github-copilot.config-file.user-settings",
@@ -13497,6 +15394,93 @@
     "path": "github-copilot/context/"
   },
   {
+    "id": "github-copilot.slash-command.copy",
+    "tool": "github-copilot",
+    "name": "/copy",
+    "display_name": "Copy response",
+    "type": "slash-command",
+    "category": "context",
+    "role": "Response copying",
+    "description": "Copy the last Copilot response to the clipboard.",
+    "syntax": [
+      "/copy"
+    ],
+    "examples": [
+      {
+        "command": "/copy",
+        "explanation": "Copy the most recent response.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/copy/"
+  },
+  {
+    "id": "github-copilot.slash-command.cwd",
+    "tool": "github-copilot",
+    "name": "/cwd",
+    "display_name": "Change working directory",
+    "type": "slash-command",
+    "aliases": [
+      "/cd"
+    ],
+    "category": "session",
+    "role": "Working-directory control",
+    "description": "Show the current working directory or change it to a supplied path.",
+    "syntax": [
+      "/cwd [path]"
+    ],
+    "examples": [
+      {
+        "command": "/cwd ../api",
+        "explanation": "Continue the session from the sibling api directory.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/cwd/"
+  },
+  {
     "id": "github-copilot.slash-command.delegate",
     "tool": "github-copilot",
     "name": "/delegate",
@@ -13634,6 +15618,50 @@
       ]
     },
     "path": "github-copilot/diff/"
+  },
+  {
+    "id": "github-copilot.slash-command.downgrade",
+    "tool": "github-copilot",
+    "name": "/downgrade",
+    "display_name": "Downgrade CLI",
+    "type": "slash-command",
+    "category": "system",
+    "role": "Version rollback",
+    "description": "Download a specified Copilot CLI version and restart into it.",
+    "syntax": [
+      "/downgrade <version>"
+    ],
+    "examples": [
+      {
+        "command": "/downgrade 1.2.3",
+        "explanation": "Restart into version 1.2.3 when a team rollback is required.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available for team accounts."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/downgrade/"
   },
   {
     "id": "github-copilot.slash-command.env",
@@ -13903,6 +15931,51 @@
       ]
     },
     "path": "github-copilot/feedback/"
+  },
+  {
+    "id": "github-copilot.slash-command.fleet",
+    "tool": "github-copilot",
+    "name": "/fleet",
+    "display_name": "Run parallel subagents",
+    "type": "slash-command",
+    "category": "agents",
+    "role": "Parallel task execution",
+    "description": "Split a prompt into parts and execute them with parallel subagents.",
+    "syntax": [
+      "/fleet [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "/fleet update each package and run its tests",
+        "explanation": "Run independent package updates in parallel.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "agents.parallel"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/fleet/"
   },
   {
     "id": "github-copilot.slash-command.fork",
@@ -14232,6 +16305,94 @@
     "path": "github-copilot/limits/"
   },
   {
+    "id": "github-copilot.slash-command.limits-set",
+    "tool": "github-copilot",
+    "name": "/limits set",
+    "display_name": "Set response limit",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.limits",
+    "category": "permissions",
+    "role": "AI-credit limit",
+    "description": "Set a soft per-response maximum for AI Credits.",
+    "syntax": [
+      "/limits set max-ai-credits <value>"
+    ],
+    "examples": [
+      {
+        "command": "/limits set max-ai-credits 5",
+        "explanation": "Set a five-credit soft limit for each response.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "The soft limit resets for each user message."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/limits-set/"
+  },
+  {
+    "id": "github-copilot.slash-command.limits-unset",
+    "tool": "github-copilot",
+    "name": "/limits unset",
+    "display_name": "Remove response limit",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.limits",
+    "category": "permissions",
+    "role": "AI-credit limit removal",
+    "description": "Remove the AI-credit response limit or all configured response limits.",
+    "syntax": [
+      "/limits unset [max-ai-credits|all]"
+    ],
+    "examples": [
+      {
+        "command": "/limits unset max-ai-credits",
+        "explanation": "Remove the AI-credit response limit.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/limits-unset/"
+  },
+  {
     "id": "github-copilot.slash-command.login",
     "tool": "github-copilot",
     "name": "/login",
@@ -14521,6 +16682,52 @@
     "path": "github-copilot/permissions/"
   },
   {
+    "id": "github-copilot.slash-command.permissions-reset",
+    "tool": "github-copilot",
+    "name": "/permissions reset",
+    "display_name": "Reset session approvals",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.permissions",
+    "category": "permissions",
+    "role": "Approval reset",
+    "description": "Clear in-memory tool and path approvals so Copilot prompts again on their next use.",
+    "syntax": [
+      "/permissions reset"
+    ],
+    "examples": [
+      {
+        "command": "/permissions reset",
+        "explanation": "Clear approvals before reviewing an untrusted workflow.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/permissions-reset/"
+  },
+  {
     "id": "github-copilot.slash-command.plan",
     "tool": "github-copilot",
     "name": "/plan",
@@ -14708,6 +16915,52 @@
     "path": "github-copilot/pr/"
   },
   {
+    "id": "github-copilot.slash-command.remote",
+    "tool": "github-copilot",
+    "name": "/remote",
+    "display_name": "Control remote steering",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Remote session access",
+    "description": "Show, enable, or end remote steering for the current session.",
+    "syntax": [
+      "/remote [on|off]"
+    ],
+    "examples": [
+      {
+        "command": "/remote on",
+        "explanation": "Make the current session available for remote steering.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "session.remote-control"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "web"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/remote/"
+  },
+  {
     "id": "github-copilot.slash-command.rename",
     "tool": "github-copilot",
     "name": "/rename",
@@ -14832,6 +17085,48 @@
       ]
     },
     "path": "github-copilot/reset-allowed-tools/"
+  },
+  {
+    "id": "github-copilot.slash-command.restart",
+    "tool": "github-copilot",
+    "name": "/restart",
+    "display_name": "Restart CLI",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Session-preserving restart",
+    "description": "Restart Copilot CLI while preserving the current session.",
+    "syntax": [
+      "/restart"
+    ],
+    "examples": [
+      {
+        "command": "/restart",
+        "explanation": "Restart after changing configuration that requires a reload.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/restart/"
   },
   {
     "id": "github-copilot.slash-command.resume",
@@ -15094,6 +17389,9 @@
         "level": "minimal"
       }
     ],
+    "capabilities": [
+      "session.status"
+    ],
     "maturity": "stable",
     "availability": {
       "channels": [
@@ -15263,6 +17561,236 @@
     "path": "github-copilot/skills/"
   },
   {
+    "id": "github-copilot.slash-command.skills-add",
+    "tool": "github-copilot",
+    "name": "/skills add",
+    "display_name": "Add skill",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.skills",
+    "category": "skills",
+    "role": "Skill installation",
+    "description": "Add a skill from a file, URL, or directory, optionally scoped to the repository.",
+    "syntax": [
+      "/skills add [--project] <file|url|directory>"
+    ],
+    "examples": [
+      {
+        "command": "/skills add --project .github/skills/release",
+        "explanation": "Add a repository-scoped release skill.",
+        "level": "practical"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/skills-add/"
+  },
+  {
+    "id": "github-copilot.slash-command.skills-info",
+    "tool": "github-copilot",
+    "name": "/skills info",
+    "display_name": "Inspect skill",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.skills",
+    "category": "skills",
+    "role": "Skill inspection",
+    "description": "Show details for a named skill.",
+    "syntax": [
+      "/skills info <name>"
+    ],
+    "examples": [
+      {
+        "command": "/skills info testing",
+        "explanation": "Inspect the testing skill before using it.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/skills-info/"
+  },
+  {
+    "id": "github-copilot.slash-command.skills-list",
+    "tool": "github-copilot",
+    "name": "/skills list",
+    "display_name": "List skills",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.skills",
+    "category": "skills",
+    "role": "Skill discovery",
+    "description": "List all skills available to Copilot CLI.",
+    "syntax": [
+      "/skills list"
+    ],
+    "examples": [
+      {
+        "command": "/skills list",
+        "explanation": "Inspect available user and project skills.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/skills-list/"
+  },
+  {
+    "id": "github-copilot.slash-command.skills-reload",
+    "tool": "github-copilot",
+    "name": "/skills reload",
+    "display_name": "Reload skills",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.skills",
+    "category": "skills",
+    "role": "Skill registry refresh",
+    "description": "Reload skills from all configured directories.",
+    "syntax": [
+      "/skills reload"
+    ],
+    "examples": [
+      {
+        "command": "/skills reload",
+        "explanation": "Pick up a skill added during the session.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/skills-reload/"
+  },
+  {
+    "id": "github-copilot.slash-command.skills-remove",
+    "tool": "github-copilot",
+    "name": "/skills remove",
+    "display_name": "Remove skill",
+    "type": "slash-command",
+    "parent_id": "github-copilot.slash-command.skills",
+    "category": "skills",
+    "role": "Skill removal",
+    "description": "Remove a skill by name or unregister a custom skill directory.",
+    "syntax": [
+      "/skills remove <name|directory>"
+    ],
+    "examples": [
+      {
+        "command": "/skills remove testing",
+        "explanation": "Remove the testing skill.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/skills-remove/"
+  },
+  {
     "id": "github-copilot.slash-command.statusline",
     "tool": "github-copilot",
     "name": "/statusline",
@@ -15398,6 +17926,90 @@
     "path": "github-copilot/tasks/"
   },
   {
+    "id": "github-copilot.slash-command.terminal-setup",
+    "tool": "github-copilot",
+    "name": "/terminal-setup",
+    "display_name": "Configure terminal",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Terminal keybinding setup",
+    "description": "Configure Shift+Enter and Ctrl+Enter multiline input support.",
+    "syntax": [
+      "/terminal-setup"
+    ],
+    "examples": [
+      {
+        "command": "/terminal-setup",
+        "explanation": "Configure multiline input for the current terminal.",
+        "level": "minimal"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/terminal-setup/"
+  },
+  {
+    "id": "github-copilot.slash-command.theme",
+    "tool": "github-copilot",
+    "name": "/theme",
+    "display_name": "Select theme",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Color-mode configuration",
+    "description": "View or set the Copilot CLI color mode.",
+    "syntax": [
+      "/theme [default|github|dim|high-contrast|colorblind]"
+    ],
+    "examples": [
+      {
+        "command": "/theme high-contrast",
+        "explanation": "Use the high-contrast color mode.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/theme/"
+  },
+  {
     "id": "github-copilot.slash-command.undo",
     "tool": "github-copilot",
     "name": "/undo",
@@ -15530,6 +18142,48 @@
     "path": "github-copilot/usage/"
   },
   {
+    "id": "github-copilot.slash-command.user",
+    "tool": "github-copilot",
+    "name": "/user",
+    "display_name": "Manage GitHub user",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Account selection",
+    "description": "Show, list, or switch the GitHub user used by Copilot CLI.",
+    "syntax": [
+      "/user [show|list|switch]"
+    ],
+    "examples": [
+      {
+        "command": "/user switch",
+        "explanation": "Choose a different signed-in GitHub user.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/user/"
+  },
+  {
     "id": "github-copilot.slash-command.version",
     "tool": "github-copilot",
     "name": "/version",
@@ -15570,6 +18224,50 @@
       ]
     },
     "path": "github-copilot/version/"
+  },
+  {
+    "id": "github-copilot.slash-command.voice",
+    "tool": "github-copilot",
+    "name": "/voice",
+    "display_name": "Configure voice mode",
+    "type": "slash-command",
+    "category": "modes",
+    "role": "Voice-mode control",
+    "description": "Toggle voice mode, browse voice models, or choose the microphone.",
+    "syntax": [
+      "/voice [on|off|models|devices]"
+    ],
+    "examples": [
+      {
+        "command": "/voice devices",
+        "explanation": "Choose the input device used by voice mode.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires an available audio input device."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-29",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/voice/"
   },
   {
     "id": "github-copilot.slash-command.worktree",

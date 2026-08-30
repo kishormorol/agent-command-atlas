@@ -79,7 +79,8 @@ class RepositoryTests(unittest.TestCase):
 
         paths = [route["path"] for route in routes]
         self.assertEqual(len(paths), len(set(paths)))
-        self.assertEqual(len(routes), len(catalog) + len(capabilities) + len(tools) + 1)
+        self.assertEqual(len(routes), len(catalog) + len(capabilities) + len(tools) + 2)
+        self.assertIn({"path": "coverage/", "kind": "coverage", "id": None}, routes)
         self.assertEqual({entry["path"] for entry in catalog}, {route["path"] for route in routes if route["kind"] == "entry"})
         self.assertEqual({capability["path"] for capability in capabilities}, {route["path"] for route in routes if route["kind"] == "capability"})
 
@@ -126,6 +127,17 @@ class RepositoryTests(unittest.TestCase):
         ):
             self.assertIn(expected, workflow)
         self.assertTrue((ROOT / "site" / ".nojekyll").is_file())
+
+    def test_site_has_keyboard_and_responsive_accessibility_guards(self):
+        homepage = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        for expected in ('class="skip-link"', 'aria-label="Primary navigation"', 'id="main-content"'):
+            self.assertIn(expected, homepage)
+        for expected in (":focus-visible", "prefers-reduced-motion", "@media (max-width: 680px)"):
+            self.assertIn(expected, styles)
+        for expected in ('role="status"', 'aria-live="polite"', 'aria-label="Reference filters"'):
+            self.assertIn(expected, app)
 
 
 if __name__ == "__main__":

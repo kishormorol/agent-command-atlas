@@ -367,6 +367,30 @@ function bulletSection(title, values) {
   return `<section class="detail-section"><h2>${escapeHtml(title)}</h2><ul>${values.map((value) => `<li>${escapeHtml(value)}</li>`).join("")}</ul></section>`;
 }
 
+function tutorialSteps(entry, example) {
+  const channels = (entry.availability?.channels || []).map(label).join(", ");
+  const conditions = entry.availability?.conditions || [];
+  const useInstruction = entry.type === "shortcut"
+    ? `Focus the relevant ${channels || "interactive"} surface, then press ${example.command}.`
+    : `Use the documented form: ${example.command}`;
+  return [
+    `Check availability${channels ? ` for ${channels}` : ""} and note the ${label(entry.maturity)} lifecycle state.`,
+    useInstruction,
+    `Confirm the result matches the documented role: ${entry.role}.`,
+    ...(conditions.length ? [`Account for this condition: ${conditions[0]}`] : []),
+  ];
+}
+
+function guidelines(entry) {
+  return [
+    ...(entry.when_to_use || []).map((value) => ({ label: "Use when", value })),
+    ...(!(entry.when_to_use || []).length ? [{ label: "Use for", value: entry.description }] : []),
+    ...(entry.when_not_to_use || []).map((value) => ({ label: "Avoid when", value })),
+    ...(entry.availability?.conditions || []).map((value) => ({ label: "Check first", value })),
+    ...(entry.maturity !== "stable" ? [{ label: "Lifecycle", value: `This control is ${label(entry.maturity).toLowerCase()}; confirm it is available in your installed release and account.` }] : []),
+  ];
+}
+
 function relationshipTable(capability, activeEntryId = "") {
   return `<div class="comparison-table-wrap"><table class="comparison-table" aria-label="${escapeHtml(capability.display_name)} comparison">
     <thead><tr><th scope="col">Tool</th><th scope="col">Control</th><th scope="col">Relationship</th><th scope="col">Notes</th></tr></thead><tbody>
@@ -386,7 +410,10 @@ function relationshipTable(capability, activeEntryId = "") {
 function detailView(entryId) {
   const entry = state.entriesById.get(entryId);
   if (!entry) return notFoundView();
-  const examples = entry.examples || [];
+  const examples = entry.examples?.length ? entry.examples : [{ command: entry.syntax[0], explanation: "Use the documented form shown in the canonical Atlas entry.", level: "reference" }];
+  const primaryExample = examples.find((example) => example.level === "practical") || examples[0];
+  const steps = tutorialSteps(entry, primaryExample);
+  const guidance = guidelines(entry);
   const related = (entry.related_commands || []).map((id) => state.entriesById.get(id)).filter(Boolean);
   const capabilities = entryCapabilities(entry);
   const availability = entry.availability || {};
@@ -404,7 +431,9 @@ function detailView(entryId) {
     <div class="detail-layout">
       <div class="detail-main">
         <section class="detail-section"><h2>Syntax</h2>${codeList(entry.syntax)}</section>
-        ${examples.length ? `<section class="detail-section"><h2>Examples</h2><div class="examples">${examples.map((example) => `<div><h3>${escapeHtml(label(example.level))} example</h3><pre><code>${escapeHtml(example.command)}</code></pre><p>${escapeHtml(example.explanation)}</p></div>`).join("")}</div></section>` : ""}
+        <section class="detail-section"><div class="section-heading"><div><p class="eyebrow">Copy-ready</p><h2>Examples</h2></div><span class="section-note">Use only in the documented surface and availability conditions.</span></div><div class="examples">${examples.map((example) => `<div><div class="example-head"><h3>${escapeHtml(label(example.level))} example</h3><button class="copy-example" type="button" data-copy="${escapeHtml(example.command)}" aria-label="Copy example: ${escapeHtml(example.command)}">Copy</button></div><pre><code>${escapeHtml(example.command)}</code></pre><p>${escapeHtml(example.explanation)}</p></div>`).join("")}</div></section>
+        <section class="detail-section quick-tutorial" aria-labelledby="tutorial-heading"><p class="eyebrow">Guided use</p><h2 id="tutorial-heading">Quick tutorial</h2><ol>${steps.map((step, index) => `<li><span>${index + 1}</span><p>${escapeHtml(step)}</p></li>`).join("")}</ol></section>
+        <section class="detail-section guidelines"><h2>Guidelines</h2><dl>${guidance.map((item) => `<div><dt>${escapeHtml(item.label)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join("")}</dl></section>
         ${bulletSection("When to use", entry.when_to_use)}
         ${bulletSection("When not to use", entry.when_not_to_use)}
         ${related.length ? `<section class="detail-section"><h2>Related commands</h2><div class="related-links">${related.map((item) => `<a href="${routeHref(item.path)}"><code>${escapeHtml(item.name)}</code><span>${escapeHtml(item.display_name)}</span></a>`).join("")}</div></section>` : ""}
@@ -429,6 +458,42 @@ function compareView(capabilityId = "") {
   }
   return `<div class="page-head"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><a href="compare/">Compare</a><span aria-hidden="true">/</span><span>${escapeHtml(capability.display_name)}</span></nav><p class="eyebrow">Cross-tool comparison</p><h1>${escapeHtml(capability.display_name)}</h1><p>${escapeHtml(capability.description)}</p></div>
     <section class="comparison-page"><div class="comparison-note"><strong>How to read this:</strong> relationships compare each control with the vendor-neutral task—not with a command that merely has a similar name.</div>${relationshipTable(capability)}<p class="comparison-legend"><strong>Relationship labels:</strong> Exact, Similar, Partial, None, and Unknown. Unknown means the dataset does not yet support a conclusion.</p></section>`;
+}
+
+function coverageView() {
+  const officiallyDocumented = state.entries.filter((entry) => entry.verification.status === "officially-documented").length;
+  const lifecycleFlagged = state.entries.filter((entry) => entry.maturity !== "stable").length;
+  const mappedRelationships = state.capabilities.flatMap((capability) => capability.mappings).filter((mapping) => mapping.entry_id).length;
+  const totalRelationships = state.capabilities.length * state.tools.size;
+  const toolCards = [...state.tools.values()].map((tool) => {
+    const entries = state.entries.filter((entry) => entry.tool === tool.id);
+    const types = new Set(entries.map((entry) => entry.type)).size;
+    const categories = new Set(entries.map((entry) => entry.category)).size;
+    const documented = entries.filter((entry) => entry.verification.status === "officially-documented").length;
+    const flagged = entries.filter((entry) => entry.maturity !== "stable").length;
+    const dates = entries.map((entry) => entry.verification.last_verified).filter(Boolean).sort();
+    const documentedPercent = entries.length ? Math.round((documented / entries.length) * 100) : 0;
+    return `<article class="coverage-card coverage-card--${escapeHtml(tool.id)}">
+      <div class="coverage-card__head"><span aria-hidden="true"></span><div><p>${escapeHtml(tool.vendor)}</p><h2><a href="${routeHref(`${tool.id}/`)}">${escapeHtml(tool.name)}</a></h2></div><strong>${entries.length}</strong></div>
+      <dl><div><dt>Officially documented</dt><dd>${documentedPercent}%</dd></div><div><dt>Entry types</dt><dd>${types}</dd></div><div><dt>Categories</dt><dd>${categories}</dd></div><div><dt>Lifecycle flagged</dt><dd>${flagged}</dd></div></dl>
+      <div class="coverage-meter" aria-label="${documentedPercent} percent of Atlas records for ${escapeHtml(tool.name)} are officially documented"><i style="width:${documentedPercent}%"></i></div>
+      <p>Latest verification <time datetime="${escapeHtml(dates.at(-1) || "")}">${escapeHtml(dates.at(-1) || "Not dated")}</time></p>
+    </article>`;
+  }).join("");
+  return `<div class="page-head"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><span>Coverage</span></nav><p class="eyebrow">Trust and scope</p><h1>Dataset coverage</h1><p>See what the canonical Atlas data contains, how it is verified, and where lifecycle caveats are recorded.</p></div>
+    <section class="coverage-page" aria-labelledby="coverage-heading">
+      <div class="coverage-note"><strong>Dataset coverage, not vendor completeness.</strong><span>These figures describe records currently maintained by Atlas. Vendors change quickly, and a record count is not a claim that every private, conditional, or newly released surface has been captured.</span></div>
+      <h2 id="coverage-heading" class="visually-hidden">Coverage summary</h2>
+      <div class="coverage-totals">
+        <div><strong>${state.entries.length}</strong><span>Total records</span></div>
+        <div><strong>${officiallyDocumented}</strong><span>Officially documented</span></div>
+        <div><strong>${lifecycleFlagged}</strong><span>Lifecycle flagged</span></div>
+        <div><strong>${mappedRelationships}/${totalRelationships}</strong><span>Capability mappings</span></div>
+      </div>
+      <div class="section-heading"><div><p class="eyebrow">By ecosystem</p><h2>Structured coverage at a glance</h2></div><p>Counts, breadth, verification, and non-stable lifecycle records.</p></div>
+      <div class="coverage-grid">${toolCards}</div>
+      <div class="coverage-method"><div><p class="eyebrow">Method</p><h2>What these numbers mean</h2></div><dl><div><dt>Officially documented</dt><dd>The entry cites official vendor documentation or an official source repository and has a verification date.</dd></div><div><dt>Lifecycle flagged</dt><dd>The entry is experimental, rolling out, conditional, deprecated, removed, or unknown instead of broadly stable.</dd></div><div><dt>Capability mapping</dt><dd>A vendor-neutral task has an evidence-backed command relationship. Unmapped does not automatically mean unsupported.</dd></div></dl></div>
+    </section>`;
 }
 
 function notFoundView() {
@@ -485,6 +550,19 @@ function bindShowMore(filters) {
   });
 }
 
+function bindCopyExamples() {
+  document.querySelectorAll(".copy-example").forEach((button) => button.addEventListener("click", async () => {
+    const original = button.textContent;
+    try {
+      await navigator.clipboard.writeText(button.dataset.copy || "");
+      button.textContent = "Copied";
+    } catch {
+      button.textContent = "Select code";
+    }
+    window.setTimeout(() => { button.textContent = original; }, 1600);
+  }));
+}
+
 function renderRoute() {
   const route = document.body.dataset.route || "home";
   const [kind, ...parts] = route.split(":");
@@ -493,8 +571,10 @@ function renderRoute() {
   else if (kind === "entry") markup = detailView(parts.join(":"));
   else if (kind === "compare") markup = compareView();
   else if (kind === "capability") markup = compareView(parts.join(":"));
+  else if (kind === "coverage") markup = coverageView();
   else markup = homeView();
   $("#main-content").innerHTML = markup;
+  bindCopyExamples();
   if (kind === "home") bindReference();
   if (kind === "tool") bindReference(parts.join(":"));
 }

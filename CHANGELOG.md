@@ -4,6 +4,8 @@ All notable project changes are documented here.
 
 ## Unreleased
 
+## [0.1.0] - 2026-08-30
+
 ### Added
 
 - A validated GitHub Pages workflow that publishes the generated `site/` directory from `main`.
@@ -14,6 +16,11 @@ All notable project changes are documented here.
 - Generated website manifests and reference routes.
 - Repository integrity tests, optional official-source URL checks, and GitHub Actions validation.
 - A task-first cross-tool capability atlas spanning all five ecosystems.
+- A generated coverage dashboard with per-tool record, verification, lifecycle, type, and category summaries.
+- Copy-ready examples, concise tutorials, and usage guidelines on every generated reference page.
+- Current Gemini nested agent, command, MCP, memory, model, permission, plan, skill, statistics, and tool controls.
+- Current Claude Code session handoff, remote-control, terminal, theme, keybinding, feedback, and account controls.
+- Current GitHub Copilot CLI skill, permission, limit, remote-session, parallel-agent, terminal, account, voice, and CLI command families.
 
 ### Changed
 
@@ -25,6 +32,8 @@ All notable project changes are documented here.
 - Upgraded the static website with tool, type, category, and maturity filters plus richer result details.
 - Expanded README, contribution guidance, and architecture documentation.
 - Improved generated command pages with stable anchors, precise control types, conditional sections, availability details, and version or replacement notes.
+- Expanded the canonical dataset from 342 to 401 official-source-backed records and the capability atlas from 22 to 25 tasks.
+- Reclassified cross-tool context, diff, instruction, mode, session, parallel-agent, side-question, and remote-control relationships using evidence-backed semantics.
 
 ### Fixed
 

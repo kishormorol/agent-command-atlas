@@ -30,6 +30,9 @@ vm.runInNewContext(`${app}
   globalThis.testHomeMarkup = homeView();
   globalThis.testEntryMarkup = entryCard(testEntries[0]);
   globalThis.testCapabilityMarkup = capabilityCard(testCapabilities[0]);
+  globalThis.testCoverageMarkup = coverageView();
+  globalThis.testDetailMarkup = detailView(testEntries[0].id);
+  globalThis.testDetailCoverage = testEntries.map((entry) => ({ id: entry.id, markup: detailView(entry.id) }));
 `, context);
 
 const compactIds = new Set(context.testSearch("compact").slice(0, 6).map((entry) => entry.id));
@@ -74,5 +77,21 @@ assert(context.testEntryMarkup.includes('class="entry-card__title"'));
 assert(context.testEntryMarkup.includes("Open reference"));
 assert(context.testCapabilityMarkup.includes('class="capability-card__top"'));
 assert(context.testCapabilityMarkup.includes('class="capability-card__coverage"'));
+assert(context.testCoverageMarkup.includes('class="coverage-grid"'));
+assert(context.testCoverageMarkup.includes("Dataset coverage, not vendor completeness"));
+for (const tool of tools) {
+  assert(context.testCoverageMarkup.includes(tool.name), `coverage should include ${tool.name}`);
+}
+assert(context.testCoverageMarkup.includes(`${entries.length}</strong><span>Total records`));
+assert(context.testCoverageMarkup.includes("Officially documented"));
+assert(context.testDetailMarkup.includes("quick-tutorial"));
+assert(context.testDetailMarkup.includes("Quick tutorial"));
+assert(context.testDetailMarkup.includes('class="copy-example"'));
+assert(context.testDetailMarkup.includes("Guidelines"));
+for (const detail of context.testDetailCoverage) {
+  assert(detail.markup.includes("Quick tutorial"), `${detail.id} should include a tutorial`);
+  assert(detail.markup.includes('class="copy-example"'), `${detail.id} should include a copy-ready example`);
+  assert(detail.markup.includes("Guidelines"), `${detail.id} should include usage guidelines`);
+}
 
 console.log("Website search and filter behavior: valid");

@@ -15,7 +15,7 @@ The project turns one canonical dataset into two complementary outputs:
 - an open GitHub command and capability database;
 - a fast, searchable documentation website.
 
-Browse the live reference at [kishormorol.github.io/agent-command-atlas](https://kishormorol.github.io/agent-command-atlas/).
+Browse the live reference at [kishormorol.github.io/agent-command-atlas](https://kishormorol.github.io/agent-command-atlas/). The website includes task-aware search, permanent command pages, cross-tool comparisons, copy-ready examples, guided usage, and a transparent dataset coverage dashboard.
 
 ## What the atlas covers
 
