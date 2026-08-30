@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Agent Command Atlas">
+  <rect width="64" height="64" rx="14" fill="#111318"/>
+  <path d="M11 49 27.5 12h9L53 49h-9l-3.8-9.2H24.3L20.5 49H11Zm16.2-17h9.6L32 20.5 27.2 32Z" fill="#c8ff53"/>
+  <path d="M42 12h11v7H42zM42 23h11v7H42zM42 34h11v7H42z" fill="#fffefa" opacity=".9"/>
+</svg>

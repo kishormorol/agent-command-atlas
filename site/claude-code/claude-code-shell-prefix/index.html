@@ -12,6 +12,7 @@
     <meta name="twitter:title" content="CLAUDE_CODE_SHELL_PREFIX — Claude Code Shell Prefix | Agent Command Atlas">
     <meta name="twitter:description" content="CLAUDE_CODE_SHELL_PREFIX for Claude Code: Command prefix that wraps shell commands Claude Code spawns: Bash tool calls, hook commands, status line commands, and stdio MCP server startup commands. PowerShell hooks and exec-form hooks run without the prefix. Useful for logging or auditing. Setting a bare executable path such as /path/to/logger.sh runs each command as /path/to/logger.sh &#x27;&#x27;. The wrapper receives the command line as a single shell-quoted argument in $1, so the wrapper must re-evaluate $1 with a shell, for example exec bash -c &quot;$1&quot;. Treating $1 as a bare executable path breaks stdio MCP servers that pass arguments such as npx -y . For Bash tool calls, $1 contains the full shell invocation Claude Code assembles, including environment setup, not only the command Claude ran">
     <title>CLAUDE_CODE_SHELL_PREFIX — Claude Code Shell Prefix | Agent Command Atlas</title>
+    <link rel="icon" href="favicon.svg?v=20260830" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body data-route="entry:claude-code.environment-variable.claude-code-shell-prefix">

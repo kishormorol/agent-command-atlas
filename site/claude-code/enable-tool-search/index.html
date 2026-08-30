@@ -12,6 +12,7 @@
     <meta name="twitter:title" content="ENABLE_TOOL_SEARCH — Enable Tool Search | Agent Command Atlas">
     <meta name="twitter:description" content="ENABLE_TOOL_SEARCH for Claude Code: Controls MCP tool search. Unset, Claude Code defers all MCP tools by default. It still loads them upfront on Google Cloud&#x27;s Agent Platform models earlier than the Claude 4.5 generation, on a Microsoft Foundry deployment hosted on Azure, and when ANTHROPIC_BASE_URL points to a non-first-party host. true always defers and sends the beta header, except on those same Agent Platform models and Microsoft Foundry deployments; requests fail on proxies that don&#x27;t support tool_reference. auto loads upfront when tool definitions fit within 10% of context. auto:N sets a custom threshold, such as auto:5 for 5%. false loads all tools upfront. A value you set yourself is ignored when CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS is set. Before v2.1.221, Claude Code disabled tool search for all models on Google Cloud&#x27;s Agent Platform unless you set this variable to true">
     <title>ENABLE_TOOL_SEARCH — Enable Tool Search | Agent Command Atlas</title>
+    <link rel="icon" href="favicon.svg?v=20260830" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body data-route="entry:claude-code.environment-variable.enable-tool-search">
