@@ -99,6 +99,18 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(by_id["claude-code.slash-command.compact"]["path"], "claude-code/compact/")
         self.assertEqual(by_id["gemini-cli.slash-command.compress"]["path"], "gemini-cli/compress/")
 
+    def test_social_metadata_is_specific_to_shareable_pages(self):
+        homepage = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta property="og:title" content="Agent Command Atlas">', homepage)
+        self.assertIn('<meta property="og:image" content="https://kishormorol.github.io/agent-command-atlas/og.png">', homepage)
+        self.assertTrue((ROOT / "site" / "og.png").is_file())
+
+        detail = (ROOT / "site" / "codex" / "compact" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta property="og:title" content="/compact — Compact context | Agent Command Atlas">', detail)
+        self.assertIn('<meta name="twitter:title" content="/compact — Compact context | Agent Command Atlas">', detail)
+        self.assertNotIn('property="og:image"', detail)
+        self.assertNotIn('name="twitter:image"', detail)
+
     def test_pages_workflow_publishes_validated_site_directory(self):
         workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
         for expected in (

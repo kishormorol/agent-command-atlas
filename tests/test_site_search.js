@@ -63,12 +63,16 @@ const configuration = context.testSearch("", { type: "configuration" });
 assert(configuration.length > 0);
 assert(configuration.every((entry) => ["config", "config-file", "config-option", "instruction-file", "environment-variable"].includes(entry.type)));
 
-assert(context.testHomeMarkup.includes('class="hero__grid"'));
+assert(context.testHomeMarkup.includes('class="hero__content"'));
+assert(context.testHomeMarkup.includes('class="hero__command-palette"'));
 assert(context.testHomeMarkup.includes('class="atlas-stats"'));
 assert(context.testHomeMarkup.includes(`${entries.length}</dt><dd>reference entries`));
+assert(context.testHomeMarkup.includes('data-query="compact context"'));
 assert(context.testEntryMarkup.includes(`entry-card--${entries[0].tool}`));
 assert(context.testEntryMarkup.includes('class="entry-card__identity"'));
+assert(context.testEntryMarkup.includes('class="entry-card__title"'));
 assert(context.testEntryMarkup.includes("Open reference"));
 assert(context.testCapabilityMarkup.includes('class="capability-card__top"'));
+assert(context.testCapabilityMarkup.includes('class="capability-card__coverage"'));
 
 console.log("Website search and filter behavior: valid");

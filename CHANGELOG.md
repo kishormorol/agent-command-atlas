@@ -17,6 +17,7 @@ All notable project changes are documented here.
 
 ### Changed
 
+- Redesigned the reference website with a command-console visual system, task shortcuts, a filter rail, denser results, responsive layouts, and route-specific social metadata.
 - Upgraded the website with task-aware ranked search, combined filters, compact paginated cards, full command details, tool landing pages, and capability comparisons.
 - Expanded and clarified the official-source-backed starter dataset across all five supported ecosystems.
 - Corrected Claude Code interactive sources to the current official command reference.

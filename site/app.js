@@ -202,13 +202,14 @@ function filterPanel(filters, fixedTool = "") {
   const maturityOptions = [option("", "All maturity states", filters.maturity)]
     .concat(MATURITY_ORDER.filter((value) => state.entries.some((entry) => entry.maturity === value)).map((value) => option(value, label(value), filters.maturity)));
   const toolField = fixedTool ? "" : `<label class="field" for="tool"><span>Tool</span><select id="tool">${[option("", "All tools", filters.tool), ...[...state.tools.values()].map((tool) => option(tool.id, tool.name, filters.tool))].join("")}</select></label>`;
-  return `<div class="filter-panel" aria-label="Reference filters">
+  return `<aside class="filter-panel" aria-label="Reference filters">
+    <div class="filter-panel__head"><div><p class="eyebrow">Refine</p><h3>Filter reference</h3></div><span aria-hidden="true">⌘</span></div>
     ${toolField}
     <label class="field" for="type"><span>Type</span><select id="type">${typeOptions.join("")}</select></label>
     <label class="field" for="category"><span>Category</span><select id="category">${categoryOptions.join("")}</select></label>
     <label class="field" for="maturity"><span>Maturity</span><select id="maturity">${maturityOptions.join("")}</select></label>
     <button class="button button--quiet" id="reset" type="button">Clear filters</button>
-  </div>`;
+  </aside>`;
 }
 
 function maturityBadge(entry) {
@@ -227,7 +228,7 @@ function entryCard(entry) {
         <span>${escapeHtml(categoryName(entry.category))}</span>
         ${maturityBadge(entry)}
       </div>
-      <h3 id="${titleId}"><a href="${routeHref(entry.path)}"><code>${escapeHtml(entry.name)}</code></a></h3>
+      <div class="entry-card__title"><h3 id="${titleId}"><a href="${routeHref(entry.path)}"><code>${escapeHtml(entry.name)}</code></a></h3><span>${escapeHtml(entry.display_name)}</span></div>
       <p class="entry-card__role">${escapeHtml(entry.role)}</p>
     </div>
     <div class="entry-card__usage">
@@ -247,7 +248,7 @@ function capabilityCard(capability) {
     <span class="capability-card__top"><span class="capability-card__id">${escapeHtml(capability.id)}</span><span aria-hidden="true">↗</span></span>
     <strong>${escapeHtml(capability.display_name)}</strong>
     <span>${escapeHtml(capability.description)}</span>
-    <small>${mapped}/5 tools mapped</small>
+    <span class="capability-card__footer"><span class="capability-card__coverage" aria-label="${mapped} of 5 tools mapped">${capability.mappings.map((mapping) => `<i class="${mapping.entry_id ? "is-mapped" : ""}" aria-hidden="true"></i>`).join("")}</span><small>${mapped}/5 mapped</small></span>
   </a>`;
 }
 
@@ -289,9 +290,11 @@ function resultsMarkup(filters) {
 
 function referenceSection(filters, fixedTool = "") {
   return `<section class="reference-section" aria-labelledby="reference-heading">
-    <div class="section-heading"><div><p class="eyebrow">Complete reference</p><h2 id="reference-heading">Commands and control surfaces</h2></div></div>
-    ${filterPanel(filters, fixedTool)}
-    ${resultsMarkup(filters)}
+    <div class="section-heading section-heading--reference"><div><p class="eyebrow">Complete reference</p><h2 id="reference-heading">Commands and control surfaces</h2></div><p>Search the full verified catalog, then narrow by ecosystem, surface, task, or lifecycle.</p></div>
+    <div class="reference-shell">
+      ${filterPanel(filters, fixedTool)}
+      <div class="reference-results">${resultsMarkup(filters)}</div>
+    </div>
   </section>`;
 }
 
@@ -299,21 +302,22 @@ function homeView() {
   const filters = currentFilters();
   const verifiedDates = state.entries.map((entry) => entry.verification.last_verified).filter(Boolean).sort();
   return `<section class="hero">
-      <div class="hero__grid">
-        <div class="hero__copy"><p class="eyebrow">Living, verified reference</p><h1>Agent Command<br><span>Atlas</span></h1><p>Find commands, flags, shortcuts, and control surfaces across the five leading AI coding agent ecosystems.</p></div>
-        <div class="hero__search-panel">
+      <div class="hero__content">
+        <div class="hero__copy"><p class="eyebrow">Agent Command Atlas · Verified reference</p><h1>Find the right<br><span>agent command.</span></h1><p>Search commands, flags, shortcuts, and control surfaces across Codex, Claude Code, Gemini CLI, Cursor, and GitHub Copilot CLI.</p></div>
+        <div class="hero__command-palette">
+          <div class="command-palette__bar"><span></span><span></span><span></span><strong>atlas / search</strong></div>
           ${searchBox(filters)}
-          <p class="search-hint"><strong>Try a task:</strong> compact context, resume old session, configure permissions</p>
+          <div class="quick-searches" aria-label="Suggested searches"><span>Try</span><button class="quick-search" data-query="compact context" type="button">compact context</button><button class="quick-search" data-query="resume old session" type="button">resume session</button><button class="quick-search" data-query="configure permissions" type="button">permissions</button></div>
         </div>
       </div>
-      <div class="hero__utility">
+      <div class="hero__footer">
         <dl class="atlas-stats"><div><dt>${state.entries.length}</dt><dd>reference entries</dd></div><div><dt>${state.tools.size}</dt><dd>ecosystems</dd></div><div><dt>${state.capabilities.length}</dt><dd>cross-tool tasks</dd></div><div><dt>${escapeHtml(verifiedDates.at(-1) || "Undated")}</dt><dd>latest verification</dd></div></dl>
+        ${toolLinks(filters.tool)}
       </div>
-      ${toolLinks(filters.tool)}
     </section>
     <section class="capability-section" aria-labelledby="capability-heading">
-      <div class="section-heading"><div><p class="eyebrow">Browse by task</p><h2 id="capability-heading">What do you need to do?</h2></div><a href="compare/">View all comparisons <span aria-hidden="true">→</span></a></div>
-      <div class="capability-grid">${state.capabilities.slice(0, 12).map(capabilityCard).join("")}</div>
+      <div class="section-heading"><div><p class="eyebrow">Cross-tool atlas</p><h2 id="capability-heading">Start with the task</h2></div><a href="compare/">Explore all ${state.capabilities.length} tasks <span aria-hidden="true">→</span></a></div>
+      <div class="capability-grid">${state.capabilities.slice(0, 8).map(capabilityCard).join("")}</div>
     </section>
     ${referenceSection(filters)}`;
 }
@@ -464,6 +468,12 @@ function bindReference(fixedTool = "") {
     update();
     $("#q")?.focus();
   });
+  document.querySelectorAll(".quick-search").forEach((button) => button.addEventListener("click", () => {
+    if (!$("#q")) return;
+    $("#q").value = button.dataset.query || "";
+    update();
+    $("#reference-heading")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
   bindShowMore(getFilters());
 }
 

@@ -65,6 +65,20 @@ def route_page(template: str, route: str, title: str, description: str, depth: i
         page,
         count=1,
     )
+    for attribute, name, content in (
+        ("property", "og:title", title),
+        ("property", "og:description", description),
+        ("name", "twitter:title", title),
+        ("name", "twitter:description", description),
+    ):
+        page = re.sub(
+            rf'<meta {attribute}="{name}" content="[^"]*">',
+            f'<meta {attribute}="{name}" content="{escape(content, quote=True)}">',
+            page,
+            count=1,
+        )
+    page = re.sub(r'\n\s*<meta property="og:image(?::(?:width|height))?" content="[^"]*">', "", page)
+    page = re.sub(r'\n\s*<meta name="twitter:image" content="[^"]*">', "", page)
     return page.replace('<body data-route="home">', f'<body data-route="{escape(route, quote=True)}">', 1)
 
 
