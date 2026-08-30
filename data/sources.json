@@ -19,7 +19,10 @@
     {"url":"https://code.claude.com/docs/en/settings-reference","kind":"official-docs","scope":"Configuration files and settings"},
     {"url":"https://code.claude.com/docs/en/permissions","kind":"official-docs","scope":"Permission modes and policy"},
     {"url":"https://code.claude.com/docs/en/hooks","kind":"official-docs","scope":"Hook events and handlers"},
-    {"url":"https://code.claude.com/docs/en/memory","kind":"official-docs","scope":"CLAUDE.md memory and instruction discovery"}
+    {"url":"https://code.claude.com/docs/en/memory","kind":"official-docs","scope":"CLAUDE.md memory and instruction discovery"},
+    {"url":"https://code.claude.com/docs/en/features-overview","kind":"official-docs","scope":"Skills, subagents, hooks, MCP, plugins, and extension selection"},
+    {"url":"https://code.claude.com/docs/en/sub-agents","kind":"official-docs","scope":"Custom subagents and agent teams"},
+    {"url":"https://code.claude.com/docs/en/plugins-reference","kind":"official-docs","scope":"Plugin components and schemas"}
   ],
   "gemini-cli": [
     {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md","kind":"official-source","scope":"Slash, at-sign, and shell commands"},
@@ -38,8 +41,14 @@
     {"url":"https://cursor.com/docs/cli/reference/authentication","kind":"official-docs","scope":"CLI authentication commands, flags, and environment variables"},
     {"url":"https://cursor.com/docs/cli/reference/permissions","kind":"official-docs","scope":"CLI permission configuration"},
     {"url":"https://cursor.com/docs/cli/reference/configuration","kind":"official-docs","scope":"CLI configuration files, options, and environment variables"}
+    ,{"url":"https://cursor.com/docs/hooks","kind":"official-docs","scope":"Hook events, configuration, execution, and cloud support"}
+    ,{"url":"https://cursor.com/docs/rules","kind":"official-docs","scope":"Project and user rules"}
+    ,{"url":"https://cursor.com/docs/mcp","kind":"official-docs","scope":"MCP server configuration"}
+    ,{"url":"https://cursor.com/docs/skills","kind":"official-docs","scope":"Agent Skills discovery and use"}
+    ,{"url":"https://cursor.com/docs/subagents","kind":"official-docs","scope":"Built-in and custom subagents"}
   ],
   "github-copilot": [
-    {"url":"https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference","kind":"official-docs","scope":"CLI and interactive commands, shortcuts, flags, configuration, hooks, MCP, skills, and agents"}
+    {"url":"https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference","kind":"official-docs","scope":"CLI and interactive commands, shortcuts, flags, configuration, hooks, MCP, skills, and agents"},
+    {"url":"https://docs.github.com/en/copilot/reference/hooks-reference","kind":"official-docs","scope":"Hook events, configuration, payloads, and decision control"}
   ]
 }

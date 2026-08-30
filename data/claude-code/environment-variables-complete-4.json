@@ -1,0 +1,1340 @@
+[
+  {
+    "id": "claude-code.environment-variable.mcp-protocol-negotiation",
+    "tool": "claude-code",
+    "name": "MCP_PROTOCOL_NEGOTIATION",
+    "display_name": "Mcp Protocol Negotiation",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Mcp Protocol Negotiation configuration",
+    "description": "On the v2 MCP client runtime only, whether Claude Code probes servers for MCP protocol revision 2026-07-28. Set auto to probe HTTP, claude.ai connector, and stdio servers; a server that doesn't answer the probe connects on the earlier protocol instead, as SSE and WebSocket servers always do. Set legacy to skip the probe for every server. Without the variable, Claude Code probes HTTP and claude.ai connector servers on Claude Code v2.1.232 or later, with the exceptions the MCP client runtimes section lists. Any other value is ignored with a warning in the debug log. Requires Claude Code v2.1.221 or later",
+    "syntax": [
+      "MCP_PROTOCOL_NEGOTIATION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.221",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.mcp-remote-server-connection-batch-size",
+    "tool": "claude-code",
+    "name": "MCP_REMOTE_SERVER_CONNECTION_BATCH_SIZE",
+    "display_name": "Mcp Remote Server Connection Batch Size",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Mcp Remote Server Connection Batch Size configuration",
+    "description": "Maximum number of remote MCP servers (HTTP/SSE) to connect in parallel during startup (default: 20)",
+    "syntax": [
+      "MCP_REMOTE_SERVER_CONNECTION_BATCH_SIZE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.mcp-sdk-generation",
+    "tool": "claude-code",
+    "name": "MCP_SDK_GENERATION",
+    "display_name": "Mcp Sdk Generation",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Mcp Sdk Generation configuration",
+    "description": "Pin which MCP client runtime this process connects to MCP servers with: v1, built on MCP TypeScript SDK 1.x, or v2, built on MCP TypeScript SDK 2.0. Without the variable, Claude Code uses v2 on Claude Code v2.1.232 or later, except where that section says it uses v1. On Claude Code v2.1.221 or later, the v2 runtime checks the issuer an MCP OAuth server returns in its authorization response and fails the sign-in with an error that begins Issuer mismatch in authorization response when it doesn't match. The v1 runtime doesn't run this check. If you set an unrecognized value, Claude Code ignores it and writes a warning to the debug log. Claude Code reads the value once per process. Requires Claude Code v2.1.218 or later",
+    "syntax": [
+      "MCP_SDK_GENERATION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when it doesn't match."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.218",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.mcp-server-connection-batch-size",
+    "tool": "claude-code",
+    "name": "MCP_SERVER_CONNECTION_BATCH_SIZE",
+    "display_name": "Mcp Server Connection Batch Size",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Mcp Server Connection Batch Size configuration",
+    "description": "Maximum number of local MCP servers (stdio) to connect in parallel during startup (default: 3)",
+    "syntax": [
+      "MCP_SERVER_CONNECTION_BATCH_SIZE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.mcp-timeout",
+    "tool": "claude-code",
+    "name": "MCP_TIMEOUT",
+    "display_name": "Mcp Timeout",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Mcp Timeout configuration",
+    "description": "Timeout in milliseconds for MCP server startup (default: 30000, or 30 seconds)",
+    "syntax": [
+      "MCP_TIMEOUT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.mcp-tool-timeout",
+    "tool": "claude-code",
+    "name": "MCP_TOOL_TIMEOUT",
+    "display_name": "Mcp Tool Timeout",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Mcp Tool Timeout configuration",
+    "description": "Timeout in milliseconds for MCP tool execution (default: 100000000, about 28 hours). For an HTTP, SSE, or claude.ai connector server, each request also times out after 60 seconds by default; set this variable, or the per-server timeout, above 60000 to raise that per-request limit. A lower value still shortens the overall tool-execution timeout but leaves the per-request limit at 60 seconds. Stdio and WebSocket servers have no per-request timer. A per-server timeout field in .mcp.json overrides this for that server. A per-server timeout of at least 1000 also sets the minimum idle window for that server's tool calls, so CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT never aborts them sooner; this floor requires Claude Code v2.1.203 or later. For the env variable, values below 1000 are floored to one second; for the per-server field, values below 1000 are ignored",
+    "syntax": [
+      "MCP_TOOL_TIMEOUT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.203",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.no-proxy",
+    "tool": "claude-code",
+    "name": "NO_PROXY",
+    "display_name": "No Proxy",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "No Proxy configuration",
+    "description": "List of domains and IPs to which requests will be directly issued, bypassing proxy",
+    "syntax": [
+      "NO_PROXY=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-attribute-value-length-limit",
+    "tool": "claude-code",
+    "name": "OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT",
+    "display_name": "Otel Attribute Value Length Limit",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Otel Attribute Value Length Limit configuration",
+    "description": "Standard OpenTelemetry SDK limit on attribute value length. Claude Code caps content-bearing telemetry attributes at the smaller of this and CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH, so the truncation marker stays within the SDK limit. Claude Code reads the OTEL_LOGRECORD_ATTRIBUTE_VALUE_LENGTH_LIMIT and OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT variants the same way, and the smallest set value applies to all signals. Requires Claude Code v2.1.214 or later. See Monitoring",
+    "syntax": [
+      "OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.214",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-log-assistant-responses",
+    "tool": "claude-code",
+    "name": "OTEL_LOG_ASSISTANT_RESPONSES",
+    "display_name": "Otel Log Assistant Responses",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Otel Log Assistant Responses configuration",
+    "description": "Set to 1 to include the model's response text on assistant_response OpenTelemetry log events. When unset, the value of OTEL_LOG_USER_PROMPTS is used instead. Set to 0 to keep responses redacted even when OTEL_LOG_USER_PROMPTS is set. Requires Claude Code v2.1.193 or later. See Monitoring",
+    "syntax": [
+      "OTEL_LOG_ASSISTANT_RESPONSES=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When unset, the value of OTEL_LOG_USER_PROMPTS is used instead."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.193",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-log-raw-api-bodies",
+    "tool": "claude-code",
+    "name": "OTEL_LOG_RAW_API_BODIES",
+    "display_name": "Otel Log Raw Api Bodies",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Otel Log Raw Api Bodies configuration",
+    "description": "Emit Anthropic Messages API request and response JSON as api_request_body / api_response_body log events. Set to 1 for inline bodies truncated at the content limit, or file: to write untruncated bodies to disk and emit a body_ref path instead. CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH configures the content limit, 60 KB by default. Disabled by default; bodies include the entire conversation history. See Monitoring",
+    "syntax": [
+      "OTEL_LOG_RAW_API_BODIES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-log-tool-content",
+    "tool": "claude-code",
+    "name": "OTEL_LOG_TOOL_CONTENT",
+    "display_name": "Otel Log Tool Content",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Otel Log Tool Content configuration",
+    "description": "Set to 1 to include tool input and output content in OpenTelemetry span events. Disabled by default to protect sensitive data. See Monitoring",
+    "syntax": [
+      "OTEL_LOG_TOOL_CONTENT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-log-tool-details",
+    "tool": "claude-code",
+    "name": "OTEL_LOG_TOOL_DETAILS",
+    "display_name": "Otel Log Tool Details",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Otel Log Tool Details configuration",
+    "description": "Set to 1 to include tool input arguments, MCP server names, user-authored workflow names, raw error strings on tool failures, the refusal category on api_refusal events, and other tool details in OpenTelemetry traces and logs. Disabled by default to protect PII. See Monitoring",
+    "syntax": [
+      "OTEL_LOG_TOOL_DETAILS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-log-user-prompts",
+    "tool": "claude-code",
+    "name": "OTEL_LOG_USER_PROMPTS",
+    "display_name": "Otel Log User Prompts",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Otel Log User Prompts configuration",
+    "description": "Set to 1 to include user prompt text in OpenTelemetry traces and logs. Disabled by default (prompts are redacted). See Monitoring",
+    "syntax": [
+      "OTEL_LOG_USER_PROMPTS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-metrics-include-account-uuid",
+    "tool": "claude-code",
+    "name": "OTEL_METRICS_INCLUDE_ACCOUNT_UUID",
+    "display_name": "Otel Metrics Include Account Uuid",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Metrics Include Account Uuid configuration",
+    "description": "Set to false to exclude account UUID from metrics attributes (default: included). See Monitoring",
+    "syntax": [
+      "OTEL_METRICS_INCLUDE_ACCOUNT_UUID=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-metrics-include-entrypoint",
+    "tool": "claude-code",
+    "name": "OTEL_METRICS_INCLUDE_ENTRYPOINT",
+    "display_name": "Otel Metrics Include Entrypoint",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Otel Metrics Include Entrypoint configuration",
+    "description": "Set to true to include the session entrypoint in metrics attributes (default: excluded). Added in v2.1.152. See Monitoring",
+    "syntax": [
+      "OTEL_METRICS_INCLUDE_ENTRYPOINT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-metrics-include-resource-attributes",
+    "tool": "claude-code",
+    "name": "OTEL_METRICS_INCLUDE_RESOURCE_ATTRIBUTES",
+    "display_name": "Otel Metrics Include Resource Attributes",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Metrics Include Resource Attributes configuration",
+    "description": "As of v2.1.161, Claude Code attaches OTEL_RESOURCE_ATTRIBUTES keys to metric datapoint labels. Set to false to exclude them (default: included). See Monitoring",
+    "syntax": [
+      "OTEL_METRICS_INCLUDE_RESOURCE_ATTRIBUTES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.161",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-metrics-include-session-id",
+    "tool": "claude-code",
+    "name": "OTEL_METRICS_INCLUDE_SESSION_ID",
+    "display_name": "Otel Metrics Include Session Id",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Otel Metrics Include Session Id configuration",
+    "description": "Set to false to exclude session ID from metrics attributes (default: included). See Monitoring",
+    "syntax": [
+      "OTEL_METRICS_INCLUDE_SESSION_ID=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.otel-metrics-include-version",
+    "tool": "claude-code",
+    "name": "OTEL_METRICS_INCLUDE_VERSION",
+    "display_name": "Otel Metrics Include Version",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Metrics Include Version configuration",
+    "description": "Set to true to include Claude Code version in metrics attributes (default: excluded). See Monitoring",
+    "syntax": [
+      "OTEL_METRICS_INCLUDE_VERSION=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.slash-command-tool-char-budget",
+    "tool": "claude-code",
+    "name": "SLASH_COMMAND_TOOL_CHAR_BUDGET",
+    "display_name": "Slash Command Tool Char Budget",
+    "type": "environment-variable",
+    "category": "context",
+    "role": "Slash Command Tool Char Budget configuration",
+    "description": "Override the character budget for skill metadata shown to the Skill tool. The budget scales dynamically at 1% of the context window, with a fallback of 8,000 characters. Legacy name kept for backwards compatibility",
+    "syntax": [
+      "SLASH_COMMAND_TOOL_CHAR_BUDGET=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.task-max-output-length",
+    "tool": "claude-code",
+    "name": "TASK_MAX_OUTPUT_LENGTH",
+    "display_name": "Task Max Output Length",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Task Max Output Length configuration",
+    "description": "Maximum number of characters in subagent output before truncation (default: 32000, maximum: 160000). When truncated, the full output is saved to disk and the path is included in the truncated response",
+    "syntax": [
+      "TASK_MAX_OUTPUT_LENGTH=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When truncated, the full output is saved to disk and the path is included in the truncated response"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.use-builtin-ripgrep",
+    "tool": "claude-code",
+    "name": "USE_BUILTIN_RIPGREP",
+    "display_name": "Use Builtin Ripgrep",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Use Builtin Ripgrep configuration",
+    "description": "Set to 0 to use system-installed rg instead of rg included with Claude Code",
+    "syntax": [
+      "USE_BUILTIN_RIPGREP=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-3-5-haiku",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_3_5_HAIKU",
+    "display_name": "Vertex Region Claude 3 5 Haiku",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 3 5 Haiku configuration",
+    "description": "Override region for Claude 3.5 Haiku when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_3_5_HAIKU=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-3-5-sonnet",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_3_5_SONNET",
+    "display_name": "Vertex Region Claude 3 5 Sonnet",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 3 5 Sonnet configuration",
+    "description": "Override region for Claude 3.5 Sonnet when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_3_5_SONNET=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-3-7-sonnet",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_3_7_SONNET",
+    "display_name": "Vertex Region Claude 3 7 Sonnet",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 3 7 Sonnet configuration",
+    "description": "Override region for Claude 3.7 Sonnet when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_3_7_SONNET=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-0-opus",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_0_OPUS",
+    "display_name": "Vertex Region Claude 4 0 Opus",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 0 Opus configuration",
+    "description": "Override region for Claude 4.0 Opus when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_0_OPUS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-0-sonnet",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_0_SONNET",
+    "display_name": "Vertex Region Claude 4 0 Sonnet",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 0 Sonnet configuration",
+    "description": "Override region for Claude 4.0 Sonnet when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_0_SONNET=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-1-opus",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_1_OPUS",
+    "display_name": "Vertex Region Claude 4 1 Opus",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 1 Opus configuration",
+    "description": "Override region for Claude 4.1 Opus when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_1_OPUS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-5-opus",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_5_OPUS",
+    "display_name": "Vertex Region Claude 4 5 Opus",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 5 Opus configuration",
+    "description": "Override region for Claude Opus 4.5 when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_5_OPUS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-5-sonnet",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_5_SONNET",
+    "display_name": "Vertex Region Claude 4 5 Sonnet",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 5 Sonnet configuration",
+    "description": "Override region for Claude Sonnet 4.5 when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_5_SONNET=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-6-opus",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_6_OPUS",
+    "display_name": "Vertex Region Claude 4 6 Opus",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 6 Opus configuration",
+    "description": "Override region for Claude Opus 4.6 when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_6_OPUS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-6-sonnet",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_6_SONNET",
+    "display_name": "Vertex Region Claude 4 6 Sonnet",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 6 Sonnet configuration",
+    "description": "Override region for Claude Sonnet 4.6 when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_6_SONNET=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-7-opus",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_7_OPUS",
+    "display_name": "Vertex Region Claude 4 7 Opus",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 7 Opus configuration",
+    "description": "Override region for Claude Opus 4.7 when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_7_OPUS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-4-8-opus",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_4_8_OPUS",
+    "display_name": "Vertex Region Claude 4 8 Opus",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 4 8 Opus configuration",
+    "description": "Override region for Claude Opus 4.8 when using Google Cloud's Agent Platform. Added in v2.1.154",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_4_8_OPUS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-5-opus",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_5_OPUS",
+    "display_name": "Vertex Region Claude 5 Opus",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 5 Opus configuration",
+    "description": "Override region for Claude Opus 5 when using Google Cloud's Agent Platform. Added in v2.1.219",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_5_OPUS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-5-sonnet",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_5_SONNET",
+    "display_name": "Vertex Region Claude 5 Sonnet",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude 5 Sonnet configuration",
+    "description": "Override region for Claude Sonnet 5 when using Google Cloud's Agent Platform. Added in v2.1.197",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_5_SONNET=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-fable-5",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_FABLE_5",
+    "display_name": "Vertex Region Claude Fable 5",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude Fable 5 configuration",
+    "description": "Override region for Claude Fable 5 when using Google Cloud's Agent Platform. Added in v2.1.170",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_FABLE_5=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.vertex-region-claude-haiku-4-5",
+    "tool": "claude-code",
+    "name": "VERTEX_REGION_CLAUDE_HAIKU_4_5",
+    "display_name": "Vertex Region Claude Haiku 4 5",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Vertex Region Claude Haiku 4 5 configuration",
+    "description": "Override region for Claude Haiku 4.5 when using Google Cloud's Agent Platform",
+    "syntax": [
+      "VERTEX_REGION_CLAUDE_HAIKU_4_5=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using Google Cloud's Agent Platform"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

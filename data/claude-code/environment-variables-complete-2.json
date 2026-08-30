@@ -1,0 +1,2406 @@
+[
+  {
+    "id": "claude-code.environment-variable.claude-code-glob-timeout-seconds",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_GLOB_TIMEOUT_SECONDS",
+    "display_name": "Claude Code Glob Timeout Seconds",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Glob Timeout Seconds configuration",
+    "description": "Timeout in seconds for Glob tool file discovery. Defaults to 20 seconds on most platforms and 60 seconds on WSL",
+    "syntax": [
+      "CLAUDE_CODE_GLOB_TIMEOUT_SECONDS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-goal-checkin-minutes",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_GOAL_CHECKIN_MINUTES",
+    "display_name": "Claude Code Goal Checkin Minutes",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Goal Checkin Minutes configuration",
+    "description": "How many minutes background work can keep an active goal waiting before Claude Code asks Claude to check on it. Default 30. Set 0 to turn check-ins off. Give whole minutes in plain digits, at most 10080, which is one week. Claude Code treats any other value as unset and uses the default. Requires Claude Code v2.1.234 or later",
+    "syntax": [
+      "CLAUDE_CODE_GOAL_CHECKIN_MINUTES=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.234",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-hide-cwd",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_HIDE_CWD",
+    "display_name": "Claude Code Hide Cwd",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Code Hide Cwd configuration",
+    "description": "Set to 1 to hide the working directory in the startup logo. Useful for screenshares or recordings where the path exposes your OS username",
+    "syntax": [
+      "CLAUDE_CODE_HIDE_CWD=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-ide-host-override",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_IDE_HOST_OVERRIDE",
+    "display_name": "Claude Code Ide Host Override",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Claude Code Ide Host Override configuration",
+    "description": "Override the host address used to connect to the IDE extension. By default Claude Code auto-detects the correct address, including WSL-to-Windows routing",
+    "syntax": [
+      "CLAUDE_CODE_IDE_HOST_OVERRIDE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-ide-skip-auto-install",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL",
+    "display_name": "Claude Code Ide Skip Auto Install",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Claude Code Ide Skip Auto Install configuration",
+    "description": "Set to 1 to skip auto-installation of IDE extensions. Equivalent to setting autoInstallIdeExtension to false",
+    "syntax": [
+      "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-ide-skip-valid-check",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_IDE_SKIP_VALID_CHECK",
+    "display_name": "Claude Code Ide Skip Valid Check",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Ide Skip Valid Check configuration",
+    "description": "Set to 1 to skip validation of IDE lockfile entries during connection. Use when auto-connect fails to find your IDE despite it running",
+    "syntax": [
+      "CLAUDE_CODE_IDE_SKIP_VALID_CHECK=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when auto-connect fails to find your IDE despite it running"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-concurrent-subagents",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS",
+    "display_name": "Claude Code Max Concurrent Subagents",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Max Concurrent Subagents configuration",
+    "description": "How many subagents can be running in one session before the Agent tool refuses to spawn another (default: 20). Accepts a positive whole number in plain digits; anything else is ignored, so the variable can adjust the cap but can't disable it. Requires Claude Code v2.1.217 or later",
+    "syntax": [
+      "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.217",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-context-tokens",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_CONTEXT_TOKENS",
+    "display_name": "Claude Code Max Context Tokens",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Max Context Tokens configuration",
+    "description": "Override the context window size Claude Code assumes for the active model. As of v2.1.193, how it applies depends on how Claude Code resolves the model ID; see Correct the window for a gateway or custom model ID. Use this when routing to a model through ANTHROPIC_BASE_URL whose context window does not match the built-in size for its name",
+    "syntax": [
+      "CLAUDE_CODE_MAX_CONTEXT_TOKENS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when routing to a model through ANTHROPIC_BASE_URL whose context window does not match the built-in size for its name"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.193",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-output-tokens",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
+    "display_name": "Claude Code Max Output Tokens",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Max Output Tokens configuration",
+    "description": "Set the maximum number of output tokens for most requests. Defaults and caps vary by model; see max output tokens. Claude Code defaults to 32000 for model IDs it doesn't recognize, such as gateway-specific names, and lowers values above a model's cap to the cap. Increasing this value reduces the effective context window available before auto-compaction triggers",
+    "syntax": [
+      "CLAUDE_CODE_MAX_OUTPUT_TOKENS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "available before auto-compaction triggers"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-retries",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_RETRIES",
+    "display_name": "Claude Code Max Retries",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Max Retries configuration",
+    "description": "Override the number of times to retry failed API requests (default: 10). Capped at 15 as of v2.1.186; as of v2.1.199, CLAUDE_CODE_RETRY_WATCHDOG raises the default and removes the cap. For unattended sessions that need to wait through longer outages, set CLAUDE_CODE_RETRY_WATCHDOG instead",
+    "syntax": [
+      "CLAUDE_CODE_MAX_RETRIES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.186",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-subagents-per-session",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION",
+    "display_name": "Claude Code Max Subagents Per Session",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Max Subagents Per Session configuration",
+    "description": "Removed in v2.1.224 and now a no-op. Previously capped the total number of subagents Claude could spawn with the Agent tool in one session (default: 200); spawning past the cap failed with Subagent spawn limit reached. The concurrent subagent limit and the depth limit still apply",
+    "syntax": [
+      "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION=<value>"
+    ],
+    "maturity": "removed",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-subagent-spawn-depth",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH",
+    "display_name": "Claude Code Max Subagent Spawn Depth",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Max Subagent Spawn Depth configuration",
+    "description": "Number of subagent layers allowed below the main conversation (default: 3). At the default, subagents can spawn their own subagents, and a subagent at the third layer can't spawn further; set 1 to turn nesting off. In v2.1.217 through v2.1.218, the default was 1, so a subagent couldn't spawn its own unless you raised the limit; v2.1.219 raised the default to 3. Accepts a positive whole number in plain digits; anything else is ignored, so the limit can be adjusted but not removed. Requires Claude Code v2.1.217 or later",
+    "syntax": [
+      "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=<value>"
+    ],
+    "maturity": "removed",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.217",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-tool-use-concurrency",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY",
+    "display_name": "Claude Code Max Tool Use Concurrency",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Max Tool Use Concurrency configuration",
+    "description": "Maximum number of read-only tools and subagents that can execute in parallel (default: 10). Higher values increase parallelism but consume more resources",
+    "syntax": [
+      "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-turns",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_TURNS",
+    "display_name": "Claude Code Max Turns",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Max Turns configuration",
+    "description": "Cap the number of agentic turns when no explicit limit is passed. Equivalent to passing --max-turns, which takes precedence when both are set. A value that is not a positive integer is rejected at startup with an error rather than treated as no cap",
+    "syntax": [
+      "CLAUDE_CODE_MAX_TURNS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when no explicit limit is passed."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-max-web-searches-per-session",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION",
+    "display_name": "Claude Code Max Web Searches Per Session",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Max Web Searches Per Session configuration",
+    "description": "Cap on the total number of WebSearch calls one session can make (default: 200). When Claude reaches the cap, further WebSearch calls return a notice telling it to continue with the information it already gathered. Accepts a positive whole number with no upper bound. Anything else is ignored and the default applies, so the cap can be raised but not turned off. Requires Claude Code v2.1.212 or later",
+    "syntax": [
+      "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When Claude reaches the cap, further WebSearch calls return a notice telling it to continue with the information it already gathered."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.212",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-mcp-allowlist-env",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MCP_ALLOWLIST_ENV",
+    "display_name": "Claude Code Mcp Allowlist Env",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Code Mcp Allowlist Env configuration",
+    "description": "Set to 1 to spawn stdio MCP servers with only a safe baseline environment plus the server's configured env, instead of inheriting your shell environment",
+    "syntax": [
+      "CLAUDE_CODE_MCP_ALLOWLIST_ENV=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-mcp-auto-background-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS",
+    "display_name": "Claude Code Mcp Auto Background Ms",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Code Mcp Auto Background Ms configuration",
+    "description": "Elapsed time in milliseconds before a still-running MCP tool call moves to a background task (default: 120000, or 2 minutes). Set to 0 to turn automatic backgrounding off. Requires Claude Code v2.1.212 or later",
+    "syntax": [
+      "CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.212",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-mcp-tool-idle-timeout",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT",
+    "display_name": "Claude Code Mcp Tool Idle Timeout",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Code Mcp Tool Idle Timeout configuration",
+    "description": "Idle timeout in milliseconds for MCP tool calls. When a stdio, HTTP, SSE, WebSocket, or claude.ai connector MCP server sends no response and no progress notification for this long, the tool call aborts with an error instead of waiting for the overall MCP_TOOL_TIMEOUT. Overrides the per-transport defaults of 300000 (5 minutes) for network servers and 1800000 (30 minutes) for stdio servers. Set to 0 to disable the idle check. Values below 1000 are raised to one second, and the value is capped at the effective MCP_TOOL_TIMEOUT. A per-server timeout in .mcp.json of at least 1000 raises that server's idle window to at least the timeout value. Doesn't apply to IDE servers or SDK in-process servers. Requires Claude Code v2.1.187 or later. Before v2.1.203, stdio servers were exempt from the idle timeout",
+    "syntax": [
+      "CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When a stdio, HTTP, SSE, WebSocket, or claude."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.187",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-messaging-socket",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+    "display_name": "Claude Code Messaging Socket",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Messaging Socket configuration",
+    "description": "Set by Claude Code, not by you: in sessions that bind an inbox socket, Claude Code exports that socket's path to hooks and Bash commands when it binds the socket. In a session that starts with messaging on, Claude Code binds the socket before any hook runs. Other sessions on the machine deliver messages to this path. Each session exports its own socket rather than one inherited from a parent, and messages arriving on it go through the session's inbound controls. Settings env blocks can't set it. Requires Claude Code v2.1.224 or later",
+    "syntax": [
+      "CLAUDE_CODE_MESSAGING_SOCKET=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when it binds the socket."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.224",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-messaging-token",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+    "display_name": "Claude Code Messaging Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Messaging Token configuration",
+    "description": "Set by Claude Code, not by you: in sessions that bind an inbox socket, Claude Code exports this per-session token to hooks and Bash commands alongside CLAUDE_CODE_MESSAGING_SOCKET. A script posting to the socket can send {\"type\":\"auth\",\"token\":\"\"} as its first line to prove it belongs to the session. On native Windows, Claude Code requires this line and closes any connection that doesn't open with a valid one. The own-child rules say when Claude Code consults the token. Each session exports its own token, never one inherited from a parent session. Settings env blocks can't set it. Requires Claude Code v2.1.228 or later",
+    "syntax": [
+      "CLAUDE_CODE_MESSAGING_TOKEN=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "requires this line and closes any connection that doesn't open with a valid one."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.228",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-native-cursor",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_NATIVE_CURSOR",
+    "display_name": "Claude Code Native Cursor",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Claude Code Native Cursor configuration",
+    "description": "Set to 1 to show the terminal's own cursor at the input caret instead of a drawn block. The cursor respects the terminal's blink, shape, and focus settings",
+    "syntax": [
+      "CLAUDE_CODE_NATIVE_CURSOR=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-new-init",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_NEW_INIT",
+    "display_name": "Claude Code New Init",
+    "type": "environment-variable",
+    "category": "context",
+    "role": "Claude Code New Init configuration",
+    "description": "Set to 1 to make /init run an interactive setup flow. The flow asks which files to generate, including CLAUDE.md, skills, and hooks, before exploring the codebase and writing them. Without this variable, /init generates a CLAUDE.md automatically without prompting",
+    "syntax": [
+      "CLAUDE_CODE_NEW_INIT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-no-flicker",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_NO_FLICKER",
+    "display_name": "Claude Code No Flicker",
+    "type": "environment-variable",
+    "category": "context",
+    "role": "Claude Code No Flicker configuration",
+    "description": "Set to 1 to enable fullscreen rendering, a research preview that reduces flicker and keeps memory flat in long conversations. Overrides the tui setting; you can also switch with /tui fullscreen",
+    "syntax": [
+      "CLAUDE_CODE_NO_FLICKER=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-oauth-refresh-token",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OAUTH_REFRESH_TOKEN",
+    "display_name": "Claude Code Oauth Refresh Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Oauth Refresh Token configuration",
+    "description": "OAuth refresh token for Claude.ai authentication. When set, claude auth login exchanges this token directly instead of opening a browser. Requires CLAUDE_CODE_OAUTH_SCOPES. Useful for provisioning authentication in automated environments",
+    "syntax": [
+      "CLAUDE_CODE_OAUTH_REFRESH_TOKEN=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When set, claude auth login exchanges this token directly instead of opening a browser."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-oauth-scopes",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OAUTH_SCOPES",
+    "display_name": "Claude Code Oauth Scopes",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Oauth Scopes configuration",
+    "description": "Space-separated OAuth scopes the refresh token was issued with, such as \"user:profile user:inference user:sessions:claude_code\". Required when CLAUDE_CODE_OAUTH_REFRESH_TOKEN is set",
+    "syntax": [
+      "CLAUDE_CODE_OAUTH_SCOPES=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when CLAUDE_CODE_OAUTH_REFRESH_TOKEN is set"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-oauth-token",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OAUTH_TOKEN",
+    "display_name": "Claude Code Oauth Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Oauth Token configuration",
+    "description": "OAuth access token for claude.ai authentication. Alternative to /login for SDK and automated environments. Takes precedence over keychain-stored credentials. Generate one with claude setup-token. Unless you run /login, Claude Code uses the token you set for the whole session. To replace an expired token, generate a new one and restart",
+    "syntax": [
+      "CLAUDE_CODE_OAUTH_TOKEN=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-opus-4-6-fast-mode-override",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE",
+    "display_name": "Claude Code Opus 4 6 Fast Mode Override",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Opus 4 6 Fast Mode Override configuration",
+    "description": "Removed in v2.1.160 and now a no-op. Previously pinned fast mode to Claude Opus 4.6 instead of the current default. Opus 4.6 no longer supports fast mode",
+    "syntax": [
+      "CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=<value>"
+    ],
+    "maturity": "removed",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-otel-content-max-length",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH",
+    "display_name": "Claude Code Otel Content Max Length",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Claude Code Otel Content Max Length configuration",
+    "description": "Maximum length of content-bearing OpenTelemetry attributes (model responses, tool content, system prompts, raw API bodies), truncation marker included, in UTF-16 code units (default: 61440, i.e. 60 KB). Raise it only if your telemetry backend accepts attribute values larger than 64 KB, or lower it to cut telemetry volume. Requires Claude Code v2.1.214 or later. See Monitoring",
+    "syntax": [
+      "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if your telemetry backend accepts attribute values larger than 64 KB, or lower it to cut telemetry volume."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.214",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-otel-diag-stderr",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OTEL_DIAG_STDERR",
+    "display_name": "Claude Code Otel Diag Stderr",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Code Otel Diag Stderr configuration",
+    "description": "Set to 1 to write OpenTelemetry exporter diagnostic errors to stderr. By default these errors only appear with --debug, so a misconfigured exporter such as a Prometheus port collision otherwise fails silently. Requires Claude Code v2.1.179 or later. See Monitoring",
+    "syntax": [
+      "CLAUDE_CODE_OTEL_DIAG_STDERR=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.179",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-otel-flush-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS",
+    "display_name": "Claude Code Otel Flush Timeout Ms",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Code Otel Flush Timeout Ms configuration",
+    "description": "Timeout in milliseconds for flushing pending OpenTelemetry spans (default: 5000). See Monitoring",
+    "syntax": [
+      "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-otel-headers-helper-debounce-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS",
+    "display_name": "Claude Code Otel Headers Helper Debounce Ms",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Code Otel Headers Helper Debounce Ms configuration",
+    "description": "Interval for refreshing dynamic OpenTelemetry headers in milliseconds (default: 1740000 / 29 minutes). See Dynamic headers",
+    "syntax": [
+      "CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-otel-shutdown-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS",
+    "display_name": "Claude Code Otel Shutdown Timeout Ms",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Code Otel Shutdown Timeout Ms configuration",
+    "description": "Timeout in milliseconds for the OpenTelemetry exporter to finish on shutdown (default: 2000). Increase if metrics are dropped at exit. See Monitoring",
+    "syntax": [
+      "CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if metrics are dropped at exit."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-package-manager-auto-update",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE",
+    "display_name": "Claude Code Package Manager Auto Update",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Package Manager Auto Update configuration",
+    "description": "Set to 1 to let Claude Code run your package manager's upgrade command in the background when a new version is available. Applies to Homebrew and WinGet installations. Other package managers continue to show the upgrade command without running it. See Auto updates",
+    "syntax": [
+      "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when a new version is available."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-perforce-mode",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PERFORCE_MODE",
+    "display_name": "Claude Code Perforce Mode",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Perforce Mode configuration",
+    "description": "Set to 1 to enable Perforce-aware write protection. When set, Edit, Write, and NotebookEdit fail with a p4 edit hint if the target file lacks the owner-write bit, which Perforce clears on synced files until p4 edit opens them. This prevents Claude Code from bypassing Perforce change tracking",
+    "syntax": [
+      "CLAUDE_CODE_PERFORCE_MODE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When set, Edit, Write, and NotebookEdit fail with a p4 edit hint if the target file lacks the owner-write bit, which Perforce clears on synced files until p4 edit opens them."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-plugin-cache-dir",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PLUGIN_CACHE_DIR",
+    "display_name": "Claude Code Plugin Cache Dir",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Claude Code Plugin Cache Dir configuration",
+    "description": "Override the plugins root directory. Despite the name, this sets the parent directory, not the cache itself: marketplaces and the plugin cache live in subdirectories under this path. Defaults to ~/.claude/plugins",
+    "syntax": [
+      "CLAUDE_CODE_PLUGIN_CACHE_DIR=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-plugin-git-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS",
+    "display_name": "Claude Code Plugin Git Timeout Ms",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Claude Code Plugin Git Timeout Ms configuration",
+    "description": "Timeout in milliseconds for git operations when installing or updating plugins (default: 120000). Increase this value for large repositories or slow network connections. See Git operations time out",
+    "syntax": [
+      "CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when installing or updating plugins (default: 120000)."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-plugin-keep-marketplace-on-failure",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE",
+    "display_name": "Claude Code Plugin Keep Marketplace On Failure",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Claude Code Plugin Keep Marketplace On Failure configuration",
+    "description": "Set to 1 to skip the re-clone attempt and keep using the existing marketplace cache when a git pull fails. Useful in offline or airgapped environments where re-cloning would fail the same way. See Marketplace updates fail in offline environments",
+    "syntax": [
+      "CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when a git pull fails."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-plugin-prefer-https",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PLUGIN_PREFER_HTTPS",
+    "display_name": "Claude Code Plugin Prefer Https",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Claude Code Plugin Prefer Https configuration",
+    "description": "Set to 1 to clone GitHub owner/repo shorthand sources over HTTPS instead of SSH. Applies to plugin install and update, and to /plugin marketplace add and update. Useful in CI runners, containers, or any environment without a configured SSH key for github.com",
+    "syntax": [
+      "CLAUDE_CODE_PLUGIN_PREFER_HTTPS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-plugin-seed-dir",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PLUGIN_SEED_DIR",
+    "display_name": "Claude Code Plugin Seed Dir",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Claude Code Plugin Seed Dir configuration",
+    "description": "Path to one or more read-only plugin seed directories, separated by : on Unix or ; on Windows. Use this to bundle a pre-populated plugins directory into a container image. Claude Code registers marketplaces from these directories at startup and uses pre-cached plugins without re-cloning. See Pre-populate plugins for containers",
+    "syntax": [
+      "CLAUDE_CODE_PLUGIN_SEED_DIR=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-powershell-respect-execution-policy",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY",
+    "display_name": "Claude Code Powershell Respect Execution Policy",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Claude Code Powershell Respect Execution Policy configuration",
+    "description": "Set to 1 to stop Claude Code from passing -ExecutionPolicy Bypass when spawning PowerShell for tool calls, hooks, and status line commands, and respect the machine's effective execution policy instead. By default Claude Code bypasses execution policy at process scope so .ps1 scripts and module imports work on default-Restricted Windows installs. Process-scope bypass never overrides Group Policy MachinePolicy or UserPolicy regardless of this setting",
+    "syntax": [
+      "CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when spawning PowerShell for tool calls, hooks, and status line commands, and respect the machine's effective execution policy instead."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-print-bg-wait-ceiling-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS",
+    "display_name": "Claude Code Print Bg Wait Ceiling Ms",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Print Bg Wait Ceiling Ms configuration",
+    "description": "Maximum time in milliseconds that non-interactive mode with the -p flag waits after the final turn for background subagents and workflows whose result is part of the output. Default: 600000, or 10 minutes. When the cap is exceeded, remaining background tasks are terminated and the process exits. Set to 0 to wait indefinitely. This cap is separate from the five-second grace period that applies to plain background shells",
+    "syntax": [
+      "CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When the cap is exceeded, remaining background tasks are terminated and the process exits."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-process-wrapper",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PROCESS_WRAPPER",
+    "display_name": "Claude Code Process Wrapper",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Process Wrapper configuration",
+    "description": "Launch the processes Claude Code starts from its own binary, such as the background service that hosts agent view sessions, through a corporate launcher given as an argv prefix like /opt/corp/launcher. Set it in the env block of user or managed settings, not as a shell export, so the detached background service inherits it; project and local settings can't set it. Equivalent to the processWrapper setting, which requires Claude Code v2.1.210 or later; this variable takes precedence when both are set. The VS Code extension configures its own launcher separately through its claudeProcessWrapper setting. Ignored on Windows. See Run Claude Code behind a corporate launcher for the value format, what the launcher covers, and the contract the launcher must satisfy. Requires Claude Code v2.1.208 or later",
+    "syntax": [
+      "CLAUDE_CODE_PROCESS_WRAPPER=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.210",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-project-dir-name",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PROJECT_DIR_NAME",
+    "display_name": "Claude Code Project Dir Name",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Project Dir Name configuration",
+    "description": "Set together with CLAUDE_CONFIG_DIR to choose the projects/ directory name Claude Code stores that session's transcripts and auto memory under, in place of one derived from the working directory path. For example, starting Claude Code with CLAUDE_CONFIG_DIR=/srv/tenant-a CLAUDE_CODE_PROJECT_DIR_NAME=work claude stores them under /srv/tenant-a/projects/work/. Claude Code ignores this variable when CLAUDE_CONFIG_DIR is unset, and reads it only from the environment you start claude from, never from a settings file env block. See Name the project directory yourself. Requires Claude Code v2.1.234 or later",
+    "syntax": [
+      "CLAUDE_CODE_PROJECT_DIR_NAME=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when CLAUDE_CONFIG_DIR is unset, and reads it only from the environment you start claude from, never from a settings file env block."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.234",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-prompt-cache-ttl",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PROMPT_CACHE_TTL",
+    "display_name": "Claude Code Prompt Cache Ttl",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Prompt Cache Ttl configuration",
+    "description": "Set 5m or 1h, the only values Claude Code accepts, to choose the prompt cache TTL for the main conversation: your interactive, -p, and SDK turns, plus the helpers that run inline with them. Takes precedence over the promptCacheTtl setting and over ENABLE_PROMPT_CACHING_1H, and FORCE_PROMPT_CACHING_5M overrides it. The API bills 1-hour cache writes at a higher rate. Requires Claude Code v2.1.242 or later",
+    "syntax": [
+      "CLAUDE_CODE_PROMPT_CACHE_TTL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.242",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-propagate-traceparent",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PROPAGATE_TRACEPARENT",
+    "display_name": "Claude Code Propagate Traceparent",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Propagate Traceparent configuration",
+    "description": "Set to 1 to propagate W3C trace context when ANTHROPIC_BASE_URL points at a custom proxy. Propagation covers the traceparent header on model and HTTP MCP requests and the TRACEPARENT environment variable for Bash, PowerShell, and hook subprocesses. By default, propagation is enabled only when connected directly to the Anthropic API. Added in v2.1.152. See Traces (beta)",
+    "syntax": [
+      "CLAUDE_CODE_PROPAGATE_TRACEPARENT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when ANTHROPIC_BASE_URL points at a custom proxy."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-provider-managed-by-host",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST",
+    "display_name": "Claude Code Provider Managed By Host",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Provider Managed By Host configuration",
+    "description": "Set by host platforms that embed Claude Code and manage model provider routing on its behalf. When set, Claude Code ignores provider-selection, endpoint, and authentication variables such as CLAUDE_CODE_USE_BEDROCK, ANTHROPIC_BASE_URL, and ANTHROPIC_API_KEY in settings files, so user settings can't override the host's routing. Claude Code also ignores model-selection keys such as model, fallbackModel, and modelOverrides in managed settings, whichever managed source delivers them, so the host's model configuration takes precedence over an out-of-date managed model pin. Claude Code also ignores model-selection variables such as ANTHROPIC_MODEL and the ANTHROPIC_DEFAULT_*_MODEL family in a managed env block; an availableModels allowlist in managed settings still applies unless the host supplies its own. Claude Code also skips the automatic telemetry opt-out it otherwise applies on third-party providers such as Amazon Bedrock, Claude Platform on AWS, Google Cloud's Agent Platform, and Microsoft Foundry, so telemetry follows the standard DISABLE_TELEMETRY opt-out. See Default behaviors by API provider",
+    "syntax": [
+      "CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When set, Claude Code ignores provider-selection, endpoint, and authentication variables such as CLAUDE_CODE_USE_BEDROCK, ANTHROPIC_BASE_URL, and ANTHROPIC_API_KEY in settings files, so user settings can't override the host's routing."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-proxy-resolves-hosts",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_PROXY_RESOLVES_HOSTS",
+    "display_name": "Claude Code Proxy Resolves Hosts",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Proxy Resolves Hosts configuration",
+    "description": "Set to 1 to allow the proxy to perform DNS resolution instead of the caller. Opt-in for environments where the proxy should handle hostname resolution",
+    "syntax": [
+      "CLAUDE_CODE_PROXY_RESOLVES_HOSTS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-remote",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_REMOTE",
+    "display_name": "Claude Code Remote",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Remote configuration",
+    "description": "Set automatically to true when Claude Code is running as a cloud session. Read this from a hook or setup script to detect whether you are in a cloud session",
+    "syntax": [
+      "CLAUDE_CODE_REMOTE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when Claude Code is running as a cloud session."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-remote-session-id",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_REMOTE_SESSION_ID",
+    "display_name": "Claude Code Remote Session Id",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Remote Session Id configuration",
+    "description": "Set automatically in cloud sessions to the current session's ID. Read this to construct a link back to the session transcript. See Link output back to the session",
+    "syntax": [
+      "CLAUDE_CODE_REMOTE_SESSION_ID=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-restricted",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_RESTRICTED",
+    "display_name": "Claude Code Restricted",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Restricted configuration",
+    "description": "Set to 1 to start the session in restricted mode, the same as passing --restricted. Claude Code ignores this variable in a settings file's env block. Requires Claude Code v2.1.248 or later",
+    "syntax": [
+      "CLAUDE_CODE_RESTRICTED=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.248",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-resume-interrupted-turn",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_RESUME_INTERRUPTED_TURN",
+    "display_name": "Claude Code Resume Interrupted Turn",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Claude Code Resume Interrupted Turn configuration",
+    "description": "Set to 1 to automatically resume if the previous session ended mid-turn. Used in SDK mode so the model continues without requiring the SDK to re-send the prompt. To turn this off, unset the variable or set it to 0. Before v2.1.221, Claude Code ignored 0 and other falsy values, so setting 0 still triggered the resume in non-interactive mode and unsetting the variable was the only way to turn it off",
+    "syntax": [
+      "CLAUDE_CODE_RESUME_INTERRUPTED_TURN=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if the previous session ended mid-turn."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-resume-interrupted-turn-max-age-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS",
+    "display_name": "Claude Code Resume Interrupted Turn Max Age Ms",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Resume Interrupted Turn Max Age Ms configuration",
+    "description": "Maximum age in milliseconds of the last transcript message for a session that ended mid-turn to continue automatically on resume. When the last message is older than this bound, Claude Code skips both the CLAUDE_CODE_RESUME_INTERRUPTED_TURN automatic resume and the injected CLAUDE_CODE_RESUME_PROMPT continuation message, and the session starts idle so you continue explicitly. Unset or 0 means no bound; a negative or non-numeric value applies a one-hour bound. Spawn scripts for long-running agents can set this so a restart against an old transcript doesn't re-run a stale prompt. Claude Code sets a one-hour bound itself when it restarts a crashed agent view session that inherited its conversation from an interactive session. Requires Claude Code v2.1.211 or later",
+    "syntax": [
+      "CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When the last message is older than this bound, Claude Code skips both the CLAUDE_CODE_RESUME_INTERRUPTED_TURN automatic resume and the injected CLAUDE_CODE_RESUME_PROMPT continuation message, and the session starts idle so you continue explicitly."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.211",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-resume-prompt",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_RESUME_PROMPT",
+    "display_name": "Claude Code Resume Prompt",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Resume Prompt configuration",
+    "description": "Override the continuation message injected when resuming a session that ended mid-turn. Defaults to Continue from where you left off.. Spawn scripts for long-running agents can set this to a more directive boot message. An empty string uses the default",
+    "syntax": [
+      "CLAUDE_CODE_RESUME_PROMPT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when resuming a session that ended mid-turn."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-retry-watchdog",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_RETRY_WATCHDOG",
+    "display_name": "Claude Code Retry Watchdog",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Retry Watchdog configuration",
+    "description": "Set to 1 for unattended sessions such as eval harnesses, CI jobs, or remote workers. Retries 429 and 529 capacity errors indefinitely instead of failing after CLAUDE_CODE_MAX_RETRIES attempts. Claude Code fails at once on a 429 that reports a spend limit or exhausted usage credits, even one from a gateway spend cap that resets on a schedule. Before v2.1.239, the watchdog retried these indefinitely. The watchdog backs off up to 5 minutes between attempts, or until the limit resets when the response carries a rate-limit reset time, so a session that hits a usage limit waits out the remaining window. On v2.1.199 or later it also raises the default retry count for other transient errors, such as server errors, timeouts, and dropped connections, to 300, roughly three hours of backoff, and removes the cap of 15 on CLAUDE_CODE_MAX_RETRIES if you set that variable explicitly. Requires Claude Code v2.1.186 or later",
+    "syntax": [
+      "CLAUDE_CODE_RETRY_WATCHDOG=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when the response carries a rate-limit reset time, so a session that hits a usage limit waits out the remaining window."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.186",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-safe-mode",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SAFE_MODE",
+    "display_name": "Claude Code Safe Mode",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Code Safe Mode configuration",
+    "description": "Set to 1 to start in safe mode: CLAUDE.md, skills, plugins, hooks, MCP servers, custom commands and agents, output styles, workflows, custom themes, custom keybindings, status line and file-suggestion commands, LSP servers, and auto memory do not load, for troubleshooting a broken configuration. Managed settings policy still applies, including policy-configured hooks, status line, and file-suggestion commands; managed plugins, managed skills, managed CLAUDE.md, and policy-configured MCP servers do not. Equivalent to passing --safe-mode. Directly spawned child processes inherit the variable",
+    "syntax": [
+      "CLAUDE_CODE_SAFE_MODE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-script-caps",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SCRIPT_CAPS",
+    "display_name": "Claude Code Script Caps",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Script Caps configuration",
+    "description": "JSON object limiting how many times specific scripts may be invoked per session when CLAUDE_CODE_SUBPROCESS_ENV_SCRUB is set. Keys are substrings matched against the command text; values are integer call limits. For example, {\"deploy.sh\": 2} allows deploy.sh to be called at most twice. Matching is substring-based so shell-expansion tricks like ./scripts/deploy.sh $(evil) still count against the cap. Runtime fan-out via xargs or find -exec is not detected; this is a defense-in-depth control",
+    "syntax": [
+      "CLAUDE_CODE_SCRIPT_CAPS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when CLAUDE_CODE_SUBPROCESS_ENV_SCRUB is set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-scroll-speed",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SCROLL_SPEED",
+    "display_name": "Claude Code Scroll Speed",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Claude Code Scroll Speed configuration",
+    "description": "Set the mouse wheel scroll multiplier in fullscreen rendering. Accepts any positive value up to 20, including fractional values below 1 such as 0.5 to slow accelerated trackpad and wheel scrolling in terminals that already amplify wheel events. Set to 3 to match vim if your terminal sends one wheel event per notch without amplification. Ignored in the JetBrains IDE terminal, where Claude Code uses its own scroll handling",
+    "syntax": [
+      "CLAUDE_CODE_SCROLL_SPEED=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if your terminal sends one wheel event per notch without amplification."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-send-feedback",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SEND_FEEDBACK",
+    "display_name": "Claude Code Send Feedback",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Send Feedback configuration",
+    "description": "Set to 0 to turn off Claude-drafted feedback for a session. Set to 1 to turn it on where your account already has access; the variable can't grant access itself, and the other switches that turn feedback off, such as DISABLE_FEEDBACK_COMMAND and the feedbackDrafts setting's off value, still apply",
+    "syntax": [
+      "CLAUDE_CODE_SEND_FEEDBACK=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-sessionend-hooks-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS",
+    "display_name": "Claude Code Sessionend Hooks Timeout Ms",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Sessionend Hooks Timeout Ms configuration",
+    "description": "Override the time budget in milliseconds for SessionEnd hooks. Applies to session exit, /clear, and switching sessions via interactive /resume. By default the budget is 1.5 seconds, automatically raised to the highest per-hook timeout configured in settings files, up to 60 seconds. Timeouts on plugin-provided hooks do not raise the budget",
+    "syntax": [
+      "CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-session-id",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SESSION_ID",
+    "display_name": "Claude Code Session Id",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Code Session Id configuration",
+    "description": "Set automatically to the current session ID in Bash and PowerShell tool subprocesses, hook command subprocesses, and stdio MCP server subprocesses. For Bash, PowerShell, and hooks this matches the session_id field in the hook JSON input and is updated on /clear. An MCP server subprocess retains the ID it was spawned with. On --resume it receives the resumed ID, matching hooks and Bash. On --continue or --resume without an explicit ID it may receive the initial startup ID instead. Use to correlate scripts and external tools with the Claude Code session that launched them",
+    "syntax": [
+      "CLAUDE_CODE_SESSION_ID=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-shell",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SHELL",
+    "display_name": "Claude Code Shell",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Claude Code Shell configuration",
+    "description": "Set the shell Claude Code uses to run Bash tool commands. Accepts a path to a bash or zsh binary, for example /opt/homebrew/bin/bash. Other shells such as fish are not supported. If the value is not a working bash or zsh path, Claude Code ignores it and falls back to auto-detection. Auto-detection uses your $SHELL when it points to bash or zsh, otherwise it picks the first working zsh then bash found on your PATH and standard install locations",
+    "syntax": [
+      "CLAUDE_CODE_SHELL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "If the value is not a working bash or zsh path, Claude Code ignores it and falls back to auto-detection."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-shell-prefix",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SHELL_PREFIX",
+    "display_name": "Claude Code Shell Prefix",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Code Shell Prefix configuration",
+    "description": "Command prefix that wraps shell commands Claude Code spawns: Bash tool calls, hook commands, status line commands, and stdio MCP server startup commands. PowerShell hooks and exec-form hooks run without the prefix. Useful for logging or auditing. Setting a bare executable path such as /path/to/logger.sh runs each command as /path/to/logger.sh ''. The wrapper receives the command line as a single shell-quoted argument in $1, so the wrapper must re-evaluate $1 with a shell, for example exec bash -c \"$1\". Treating $1 as a bare executable path breaks stdio MCP servers that pass arguments such as npx -y . For Bash tool calls, $1 contains the full shell invocation Claude Code assembles, including environment setup, not only the command Claude ran",
+    "syntax": [
+      "CLAUDE_CODE_SHELL_PREFIX=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-simple",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SIMPLE",
+    "display_name": "Claude Code Simple",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Simple configuration",
+    "description": "Set to 1 to run with a minimal system prompt and only the Bash, file read, and file edit tools. MCP tools from --mcp-config are still available. Disables auto-discovery of hooks, skills, custom commands, subagents, plugins, MCP servers, auto memory, and CLAUDE.md. Skills in a directory you pass with --add-dir still load. OAuth tokens and keychain credentials are not read, so Anthropic authentication must come from ANTHROPIC_API_KEY or an apiKeyHelper in --settings. Equivalent to passing --bare",
+    "syntax": [
+      "CLAUDE_CODE_SIMPLE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "available."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-simple-system-prompt",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT",
+    "display_name": "Claude Code Simple System Prompt",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Claude Code Simple System Prompt configuration",
+    "description": "Set to 1 to use a shorter system prompt and abbreviated tool descriptions on any model. Set to 0, false, no, or off to opt out even on models where the experiment or server configuration would otherwise enable it. The full tool set, hooks, MCP servers, and CLAUDE.md discovery remain enabled",
+    "syntax": [
+      "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-skip-anthropic-aws-auth",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_SKIP_ANTHROPIC_AWS_AUTH",
+    "display_name": "Claude Code Skip Anthropic Aws Auth",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Skip Anthropic Aws Auth configuration",
+    "description": "Skip client-side authentication for Claude Platform on AWS, for gateways that sign requests themselves",
+    "syntax": [
+      "CLAUDE_CODE_SKIP_ANTHROPIC_AWS_AUTH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

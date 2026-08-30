@@ -1,0 +1,1586 @@
+[
+  {
+    "id": "claude-code.hook.session-start",
+    "tool": "claude-code",
+    "name": "SessionStart",
+    "display_name": "Session Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A session begins or resumes.",
+    "syntax": [
+      "hooks.SessionStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SessionStart\": [/* handler */] } }",
+        "explanation": "Register a handler for SessionStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a session begins or resumes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.setup",
+    "tool": "claude-code",
+    "name": "Setup",
+    "display_name": "Setup",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Claude Code starts with --init-only, or with --init or --maintenance in print mode.",
+    "syntax": [
+      "hooks.Setup"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"Setup\": [/* handler */] } }",
+        "explanation": "Register a handler for Setup.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when claude Code starts with --init-only, or with --init or --maintenance in print mode."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.user-prompt-submit",
+    "tool": "claude-code",
+    "name": "UserPromptSubmit",
+    "display_name": "User Prompt Submit",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A prompt is submitted before Claude processes it.",
+    "syntax": [
+      "hooks.UserPromptSubmit"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"UserPromptSubmit\": [/* handler */] } }",
+        "explanation": "Register a handler for UserPromptSubmit.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a prompt is submitted before Claude processes it."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.user-prompt-expansion",
+    "tool": "claude-code",
+    "name": "UserPromptExpansion",
+    "display_name": "User Prompt Expansion",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A user-typed command expands into a prompt.",
+    "syntax": [
+      "hooks.UserPromptExpansion"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"UserPromptExpansion\": [/* handler */] } }",
+        "explanation": "Register a handler for UserPromptExpansion.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a user-typed command expands into a prompt."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.pre-tool-use",
+    "tool": "claude-code",
+    "name": "PreToolUse",
+    "display_name": "Pre Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool call is about to execute and may be blocked.",
+    "syntax": [
+      "hooks.PreToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PreToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for PreToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool call is about to execute and may be blocked."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.permission-request",
+    "tool": "claude-code",
+    "name": "PermissionRequest",
+    "display_name": "Permission Request",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool call needs a permission decision.",
+    "syntax": [
+      "hooks.PermissionRequest"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PermissionRequest\": [/* handler */] } }",
+        "explanation": "Register a handler for PermissionRequest.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool call needs a permission decision."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.permission-denied",
+    "tool": "claude-code",
+    "name": "PermissionDenied",
+    "display_name": "Permission Denied",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Auto mode denies a tool call.",
+    "syntax": [
+      "hooks.PermissionDenied"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PermissionDenied\": [/* handler */] } }",
+        "explanation": "Register a handler for PermissionDenied.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when auto mode denies a tool call."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.post-tool-use",
+    "tool": "claude-code",
+    "name": "PostToolUse",
+    "display_name": "Post Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool call succeeds.",
+    "syntax": [
+      "hooks.PostToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PostToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for PostToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool call succeeds."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.post-tool-use-failure",
+    "tool": "claude-code",
+    "name": "PostToolUseFailure",
+    "display_name": "Post Tool Use Failure",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool call fails.",
+    "syntax": [
+      "hooks.PostToolUseFailure"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PostToolUseFailure\": [/* handler */] } }",
+        "explanation": "Register a handler for PostToolUseFailure.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool call fails."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.post-tool-batch",
+    "tool": "claude-code",
+    "name": "PostToolBatch",
+    "display_name": "Post Tool Batch",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A batch of parallel tool calls resolves.",
+    "syntax": [
+      "hooks.PostToolBatch"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PostToolBatch\": [/* handler */] } }",
+        "explanation": "Register a handler for PostToolBatch.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a batch of parallel tool calls resolves."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.notification",
+    "tool": "claude-code",
+    "name": "Notification",
+    "display_name": "Notification",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Claude Code sends a notification.",
+    "syntax": [
+      "hooks.Notification"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"Notification\": [/* handler */] } }",
+        "explanation": "Register a handler for Notification.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when claude Code sends a notification."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.message-display",
+    "tool": "claude-code",
+    "name": "MessageDisplay",
+    "display_name": "Message Display",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Assistant message text is displayed.",
+    "syntax": [
+      "hooks.MessageDisplay"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"MessageDisplay\": [/* handler */] } }",
+        "explanation": "Register a handler for MessageDisplay.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when assistant message text is displayed."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.subagent-start",
+    "tool": "claude-code",
+    "name": "SubagentStart",
+    "display_name": "Subagent Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent is spawned.",
+    "syntax": [
+      "hooks.SubagentStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SubagentStart\": [/* handler */] } }",
+        "explanation": "Register a handler for SubagentStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a subagent is spawned."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.subagent-stop",
+    "tool": "claude-code",
+    "name": "SubagentStop",
+    "display_name": "Subagent Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent finishes.",
+    "syntax": [
+      "hooks.SubagentStop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SubagentStop\": [/* handler */] } }",
+        "explanation": "Register a handler for SubagentStop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a subagent finishes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.task-created",
+    "tool": "claude-code",
+    "name": "TaskCreated",
+    "display_name": "Task Created",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A task is being created through TaskCreate.",
+    "syntax": [
+      "hooks.TaskCreated"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"TaskCreated\": [/* handler */] } }",
+        "explanation": "Register a handler for TaskCreated.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a task is being created through TaskCreate."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.task-completed",
+    "tool": "claude-code",
+    "name": "TaskCompleted",
+    "display_name": "Task Completed",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A task is being marked complete.",
+    "syntax": [
+      "hooks.TaskCompleted"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"TaskCompleted\": [/* handler */] } }",
+        "explanation": "Register a handler for TaskCompleted.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a task is being marked complete."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.stop",
+    "tool": "claude-code",
+    "name": "Stop",
+    "display_name": "Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Claude finishes responding.",
+    "syntax": [
+      "hooks.Stop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"Stop\": [/* handler */] } }",
+        "explanation": "Register a handler for Stop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when claude finishes responding."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.stop-failure",
+    "tool": "claude-code",
+    "name": "StopFailure",
+    "display_name": "Stop Failure",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A turn ends because of an API error.",
+    "syntax": [
+      "hooks.StopFailure"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"StopFailure\": [/* handler */] } }",
+        "explanation": "Register a handler for StopFailure.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a turn ends because of an API error."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.teammate-idle",
+    "tool": "claude-code",
+    "name": "TeammateIdle",
+    "display_name": "Teammate Idle",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An agent-team teammate is about to become idle.",
+    "syntax": [
+      "hooks.TeammateIdle"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"TeammateIdle\": [/* handler */] } }",
+        "explanation": "Register a handler for TeammateIdle.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an agent-team teammate is about to become idle."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.instructions-loaded",
+    "tool": "claude-code",
+    "name": "InstructionsLoaded",
+    "display_name": "Instructions Loaded",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A CLAUDE.md or .claude/rules file is loaded.",
+    "syntax": [
+      "hooks.InstructionsLoaded"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"InstructionsLoaded\": [/* handler */] } }",
+        "explanation": "Register a handler for InstructionsLoaded.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a CLAUDE.md or .claude/rules file is loaded."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.config-change",
+    "tool": "claude-code",
+    "name": "ConfigChange",
+    "display_name": "Config Change",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A configuration file changes during a session.",
+    "syntax": [
+      "hooks.ConfigChange"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"ConfigChange\": [/* handler */] } }",
+        "explanation": "Register a handler for ConfigChange.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a configuration file changes during a session."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.cwd-changed",
+    "tool": "claude-code",
+    "name": "CwdChanged",
+    "display_name": "Cwd Changed",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The working directory changes.",
+    "syntax": [
+      "hooks.CwdChanged"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"CwdChanged\": [/* handler */] } }",
+        "explanation": "Register a handler for CwdChanged.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the working directory changes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.directory-added",
+    "tool": "claude-code",
+    "name": "DirectoryAdded",
+    "display_name": "Directory Added",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A working directory is added during a session.",
+    "syntax": [
+      "hooks.DirectoryAdded"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"DirectoryAdded\": [/* handler */] } }",
+        "explanation": "Register a handler for DirectoryAdded.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a working directory is added during a session."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.file-changed",
+    "tool": "claude-code",
+    "name": "FileChanged",
+    "display_name": "File Changed",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A configured watched file changes.",
+    "syntax": [
+      "hooks.FileChanged"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"FileChanged\": [/* handler */] } }",
+        "explanation": "Register a handler for FileChanged.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a configured watched file changes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.worktree-create",
+    "tool": "claude-code",
+    "name": "WorktreeCreate",
+    "display_name": "Worktree Create",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A worktree is about to be created.",
+    "syntax": [
+      "hooks.WorktreeCreate"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"WorktreeCreate\": [/* handler */] } }",
+        "explanation": "Register a handler for WorktreeCreate.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a worktree is about to be created."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.worktree-remove",
+    "tool": "claude-code",
+    "name": "WorktreeRemove",
+    "display_name": "Worktree Remove",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A worktree is about to be removed.",
+    "syntax": [
+      "hooks.WorktreeRemove"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"WorktreeRemove\": [/* handler */] } }",
+        "explanation": "Register a handler for WorktreeRemove.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a worktree is about to be removed."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.pre-compact",
+    "tool": "claude-code",
+    "name": "PreCompact",
+    "display_name": "Pre Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction is about to begin.",
+    "syntax": [
+      "hooks.PreCompact"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PreCompact\": [/* handler */] } }",
+        "explanation": "Register a handler for PreCompact.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when context compaction is about to begin."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.post-compact",
+    "tool": "claude-code",
+    "name": "PostCompact",
+    "display_name": "Post Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction completes.",
+    "syntax": [
+      "hooks.PostCompact"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PostCompact\": [/* handler */] } }",
+        "explanation": "Register a handler for PostCompact.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when context compaction completes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.pre-model-switch",
+    "tool": "claude-code",
+    "name": "PreModelSwitch",
+    "display_name": "Pre Model Switch",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A requested model switch is about to be applied and may be blocked.",
+    "syntax": [
+      "hooks.PreModelSwitch"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PreModelSwitch\": [/* handler */] } }",
+        "explanation": "Register a handler for PreModelSwitch.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a requested model switch is about to be applied and may be blocked."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.post-model-switch",
+    "tool": "claude-code",
+    "name": "PostModelSwitch",
+    "display_name": "Post Model Switch",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The session model changes.",
+    "syntax": [
+      "hooks.PostModelSwitch"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PostModelSwitch\": [/* handler */] } }",
+        "explanation": "Register a handler for PostModelSwitch.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the session model changes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.elicitation",
+    "tool": "claude-code",
+    "name": "Elicitation",
+    "display_name": "Elicitation",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An MCP server requests user input.",
+    "syntax": [
+      "hooks.Elicitation"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"Elicitation\": [/* handler */] } }",
+        "explanation": "Register a handler for Elicitation.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an MCP server requests user input."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.elicitation-result",
+    "tool": "claude-code",
+    "name": "ElicitationResult",
+    "display_name": "Elicitation Result",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A response to MCP elicitation is about to be returned.",
+    "syntax": [
+      "hooks.ElicitationResult"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"ElicitationResult\": [/* handler */] } }",
+        "explanation": "Register a handler for ElicitationResult.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a response to MCP elicitation is about to be returned."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.hook.session-end",
+    "tool": "claude-code",
+    "name": "SessionEnd",
+    "display_name": "Session End",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A session terminates.",
+    "syntax": [
+      "hooks.SessionEnd"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SessionEnd\": [/* handler */] } }",
+        "explanation": "Register a handler for SessionEnd.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a session terminates."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

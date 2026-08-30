@@ -1,0 +1,1648 @@
+[
+  {
+    "id": "gemini-cli.shortcut.basic-quit",
+    "tool": "gemini-cli",
+    "name": "Ctrl+C",
+    "display_name": "Cancel the current request or quit the CLI when input is empty.",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Cancel the current request or quit the CLI when input is empty.",
+    "description": "Cancel the current request or quit the CLI when input is empty.",
+    "syntax": [
+      "Ctrl+C"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+C",
+        "explanation": "Cancel the current request or quit the CLI when input is empty..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Cancel the current request or quit the CLI when input is empty.."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Cancel the current request or quit the CLI when input is empty."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.basic-exit",
+    "tool": "gemini-cli",
+    "name": "Ctrl+D",
+    "display_name": "Exit the CLI when the input buffer is empty.",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Exit the CLI when the input buffer is empty.",
+    "description": "Exit the CLI when the input buffer is empty.",
+    "syntax": [
+      "Ctrl+D"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+D",
+        "explanation": "Exit the CLI when the input buffer is empty..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Exit the CLI when the input buffer is empty.."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Exit the CLI when the input buffer is empty."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.history-search-start",
+    "tool": "gemini-cli",
+    "name": "Ctrl+R",
+    "display_name": "Start reverse search through history.",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Start reverse search through history.",
+    "description": "Start reverse search through history.",
+    "syntax": [
+      "Ctrl+R"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+R",
+        "explanation": "Start reverse search through history..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Start reverse search through history.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.input-submit",
+    "tool": "gemini-cli",
+    "name": "Enter",
+    "display_name": "Submit the current prompt.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Submit the current prompt.",
+    "description": "Submit the current prompt.",
+    "syntax": [
+      "Enter"
+    ],
+    "examples": [
+      {
+        "command": "Enter",
+        "explanation": "Submit the current prompt..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Submit the current prompt.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.input-queuemessage",
+    "tool": "gemini-cli",
+    "name": "Tab",
+    "display_name": "Queue the current prompt to be processed after the current task finishes.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Queue the current prompt to be processed after the current task finishes.",
+    "description": "Queue the current prompt to be processed after the current task finishes.",
+    "syntax": [
+      "Tab"
+    ],
+    "examples": [
+      {
+        "command": "Tab",
+        "explanation": "Queue the current prompt to be processed after the current task finishes..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Queue the current prompt to be processed after the current task finishes.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.input-newline",
+    "tool": "gemini-cli",
+    "name": "Ctrl+Enter / Cmd/Win+Enter / Alt+Enter / Shift+Enter / Ctrl+J",
+    "display_name": "Insert a newline without submitting.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Insert a newline without submitting.",
+    "description": "Insert a newline without submitting.",
+    "syntax": [
+      "Ctrl+Enter / Cmd/Win+Enter / Alt+Enter / Shift+Enter / Ctrl+J"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+Enter / Cmd/Win+Enter / Alt+Enter / Shift+Enter / Ctrl+J",
+        "explanation": "Insert a newline without submitting..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Insert a newline without submitting.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.input-openexternaleditor",
+    "tool": "gemini-cli",
+    "name": "Ctrl+G / Ctrl+Shift+G",
+    "display_name": "Open the current prompt or the plan in an external editor.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Open the current prompt or the plan in an external editor.",
+    "description": "Open the current prompt or the plan in an external editor.",
+    "syntax": [
+      "Ctrl+G / Ctrl+Shift+G"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+G / Ctrl+Shift+G",
+        "explanation": "Open the current prompt or the plan in an external editor..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Open the current prompt or the plan in an external editor.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.input-deprecatedopenexternaleditor",
+    "tool": "gemini-cli",
+    "name": "Ctrl+X",
+    "display_name": "Deprecated command to open external editor.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Deprecated command to open external editor.",
+    "description": "Deprecated command to open external editor.",
+    "syntax": [
+      "Ctrl+X"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+X",
+        "explanation": "Deprecated command to open external editor..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Deprecated command to open external editor.."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Deprecated command to open external editor."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.input-paste",
+    "tool": "gemini-cli",
+    "name": "Ctrl+V / Cmd/Win+V / Alt+V",
+    "display_name": "Paste from the clipboard.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Paste from the clipboard.",
+    "description": "Paste from the clipboard.",
+    "syntax": [
+      "Ctrl+V / Cmd/Win+V / Alt+V"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+V / Cmd/Win+V / Alt+V",
+        "explanation": "Paste from the clipboard..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Paste from the clipboard.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-showerrordetails",
+    "tool": "gemini-cli",
+    "name": "F12",
+    "display_name": "Toggle the debug console for detailed error information.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Toggle the debug console for detailed error information.",
+    "description": "Toggle the debug console for detailed error information.",
+    "syntax": [
+      "F12"
+    ],
+    "examples": [
+      {
+        "command": "F12",
+        "explanation": "Toggle the debug console for detailed error information..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle the debug console for detailed error information.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-showfulltodos",
+    "tool": "gemini-cli",
+    "name": "Ctrl+T",
+    "display_name": "Toggle the full TODO list.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Toggle the full TODO list.",
+    "description": "Toggle the full TODO list.",
+    "syntax": [
+      "Ctrl+T"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+T",
+        "explanation": "Toggle the full TODO list..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle the full TODO list.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-showidecontextdetail",
+    "tool": "gemini-cli",
+    "name": "F4",
+    "display_name": "Show IDE context details.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Show IDE context details.",
+    "description": "Show IDE context details.",
+    "syntax": [
+      "F4"
+    ],
+    "examples": [
+      {
+        "command": "F4",
+        "explanation": "Show IDE context details..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Show IDE context details.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-togglemarkdown",
+    "tool": "gemini-cli",
+    "name": "Alt+M",
+    "display_name": "Toggle Markdown rendering.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Toggle Markdown rendering.",
+    "description": "Toggle Markdown rendering.",
+    "syntax": [
+      "Alt+M"
+    ],
+    "examples": [
+      {
+        "command": "Alt+M",
+        "explanation": "Toggle Markdown rendering..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle Markdown rendering.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-togglecopymode",
+    "tool": "gemini-cli",
+    "name": "F9",
+    "display_name": "Toggle copy mode when in alternate buffer mode.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Toggle copy mode when in alternate buffer mode.",
+    "description": "Toggle copy mode when in alternate buffer mode.",
+    "syntax": [
+      "F9"
+    ],
+    "examples": [
+      {
+        "command": "F9",
+        "explanation": "Toggle copy mode when in alternate buffer mode..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle copy mode when in alternate buffer mode.."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Toggle copy mode when in alternate buffer mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-togglemousemode",
+    "tool": "gemini-cli",
+    "name": "Ctrl+S",
+    "display_name": "Toggle mouse mode (scrolling and clicking).",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Toggle mouse mode (scrolling and clicking).",
+    "description": "Toggle mouse mode (scrolling and clicking).",
+    "syntax": [
+      "Ctrl+S"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+S",
+        "explanation": "Toggle mouse mode (scrolling and clicking)..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle mouse mode (scrolling and clicking).."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-toggleyolo",
+    "tool": "gemini-cli",
+    "name": "Ctrl+Y",
+    "display_name": "Toggle YOLO (auto-approval) mode for tool calls.",
+    "type": "shortcut",
+    "category": "permissions",
+    "role": "Toggle YOLO (auto-approval) mode for tool calls.",
+    "description": "Toggle YOLO (auto-approval) mode for tool calls.",
+    "syntax": [
+      "Ctrl+Y"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+Y",
+        "explanation": "Toggle YOLO (auto-approval) mode for tool calls..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle YOLO (auto-approval) mode for tool calls.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-cycleapprovalmode",
+    "tool": "gemini-cli",
+    "name": "Shift+Tab",
+    "display_name": "Cycle through approval modes: default (prompt), auto_edit (auto-approve edits), and plan (read-only). Plan mode is skipped when the agent is busy.",
+    "type": "shortcut",
+    "category": "permissions",
+    "role": "Cycle through approval modes: default (prompt), auto_edit (auto-approve edits), and plan (read-only). Plan mode is skipped when the agent is busy.",
+    "description": "Cycle through approval modes: default (prompt), auto_edit (auto-approve edits), and plan (read-only). Plan mode is skipped when the agent is busy.",
+    "syntax": [
+      "Shift+Tab"
+    ],
+    "examples": [
+      {
+        "command": "Shift+Tab",
+        "explanation": "Cycle through approval modes: default (prompt), auto_edit (auto-approve edits), and plan (read-only). Plan mode is skipped when the agent is busy..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Cycle through approval modes: default (prompt), auto_edit (auto-approve edits), and plan (read-only)."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Cycle through approval modes: default (prompt), auto_edit (auto-approve edits), and plan (read-only). Plan mode is skipped when the agent is busy."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-showmorelines",
+    "tool": "gemini-cli",
+    "name": "Ctrl+O",
+    "display_name": "Expand and collapse blocks of content when not in alternate buffer mode.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Expand and collapse blocks of content when not in alternate buffer mode.",
+    "description": "Expand and collapse blocks of content when not in alternate buffer mode.",
+    "syntax": [
+      "Ctrl+O"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+O",
+        "explanation": "Expand and collapse blocks of content when not in alternate buffer mode..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Expand and collapse blocks of content when not in alternate buffer mode.."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Expand and collapse blocks of content when not in alternate buffer mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-expandpaste",
+    "tool": "gemini-cli",
+    "name": "Ctrl+O (app context)",
+    "display_name": "Expand or collapse a paste placeholder when cursor is over placeholder.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Expand or collapse a paste placeholder when cursor is over placeholder.",
+    "description": "Expand or collapse a paste placeholder when cursor is over placeholder.",
+    "syntax": [
+      "Ctrl+O (app context)"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+O (app context)",
+        "explanation": "Expand or collapse a paste placeholder when cursor is over placeholder..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Expand or collapse a paste placeholder when cursor is over placeholder.."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Expand or collapse a paste placeholder when cursor is over placeholder."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-focusshellinput",
+    "tool": "gemini-cli",
+    "name": "Tab (shell-unfocus warning)",
+    "display_name": "Move focus from Gemini to the active shell.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Move focus from Gemini to the active shell.",
+    "description": "Move focus from Gemini to the active shell.",
+    "syntax": [
+      "Tab (shell-unfocus warning)"
+    ],
+    "examples": [
+      {
+        "command": "Tab (shell-unfocus warning)",
+        "explanation": "Move focus from Gemini to the active shell..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Move focus from Gemini to the active shell.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-unfocusshellinput",
+    "tool": "gemini-cli",
+    "name": "Shift+Tab (app context)",
+    "display_name": "Move focus from the shell back to Gemini.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Move focus from the shell back to Gemini.",
+    "description": "Move focus from the shell back to Gemini.",
+    "syntax": [
+      "Shift+Tab (app context)"
+    ],
+    "examples": [
+      {
+        "command": "Shift+Tab (app context)",
+        "explanation": "Move focus from the shell back to Gemini..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Move focus from the shell back to Gemini.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-clearscreen",
+    "tool": "gemini-cli",
+    "name": "Ctrl+L",
+    "display_name": "Clear the terminal screen and redraw the UI.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Clear the terminal screen and redraw the UI.",
+    "description": "Clear the terminal screen and redraw the UI.",
+    "syntax": [
+      "Ctrl+L"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+L",
+        "explanation": "Clear the terminal screen and redraw the UI..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Clear the terminal screen and redraw the UI.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-restart",
+    "tool": "gemini-cli",
+    "name": "R / Shift+R",
+    "display_name": "Restart the application.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Restart the application.",
+    "description": "Restart the application.",
+    "syntax": [
+      "R / Shift+R"
+    ],
+    "examples": [
+      {
+        "command": "R / Shift+R",
+        "explanation": "Restart the application..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Restart the application.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-suspend",
+    "tool": "gemini-cli",
+    "name": "Ctrl+Z",
+    "display_name": "Suspend the CLI and move it to the background.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Suspend the CLI and move it to the background.",
+    "description": "Suspend the CLI and move it to the background.",
+    "syntax": [
+      "Ctrl+Z"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+Z",
+        "explanation": "Suspend the CLI and move it to the background..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Suspend the CLI and move it to the background.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-showshellunfocuswarning",
+    "tool": "gemini-cli",
+    "name": "Tab (app context)",
+    "display_name": "Show warning when trying to move focus away from shell input.",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Show warning when trying to move focus away from shell input.",
+    "description": "Show warning when trying to move focus away from shell input.",
+    "syntax": [
+      "Tab (app context)"
+    ],
+    "examples": [
+      {
+        "command": "Tab (app context)",
+        "explanation": "Show warning when trying to move focus away from shell input..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Show warning when trying to move focus away from shell input.."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Show warning when trying to move focus away from shell input."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-voicemodeptt",
+    "tool": "gemini-cli",
+    "name": "Space",
+    "display_name": "Hold to speak in Voice Mode.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Hold to speak in Voice Mode.",
+    "description": "Hold to speak in Voice Mode.",
+    "syntax": [
+      "Space"
+    ],
+    "examples": [
+      {
+        "command": "Space",
+        "explanation": "Hold to speak in Voice Mode..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Hold to speak in Voice Mode.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-escape",
+    "tool": "gemini-cli",
+    "name": "Esc",
+    "display_name": "Dismiss background shell list.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Dismiss background shell list.",
+    "description": "Dismiss background shell list.",
+    "syntax": [
+      "Esc"
+    ],
+    "examples": [
+      {
+        "command": "Esc",
+        "explanation": "Dismiss background shell list..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Dismiss background shell list.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-select",
+    "tool": "gemini-cli",
+    "name": "Enter (background context)",
+    "display_name": "Confirm selection in background shell list.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Confirm selection in background shell list.",
+    "description": "Confirm selection in background shell list.",
+    "syntax": [
+      "Enter (background context)"
+    ],
+    "examples": [
+      {
+        "command": "Enter (background context)",
+        "explanation": "Confirm selection in background shell list..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Confirm selection in background shell list.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-toggle",
+    "tool": "gemini-cli",
+    "name": "Ctrl+B",
+    "display_name": "Toggle current background shell visibility.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Toggle current background shell visibility.",
+    "description": "Toggle current background shell visibility.",
+    "syntax": [
+      "Ctrl+B"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+B",
+        "explanation": "Toggle current background shell visibility..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle current background shell visibility.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-togglelist",
+    "tool": "gemini-cli",
+    "name": "Ctrl+L (background context)",
+    "display_name": "Toggle background shell list.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Toggle background shell list.",
+    "description": "Toggle background shell list.",
+    "syntax": [
+      "Ctrl+L (background context)"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+L (background context)",
+        "explanation": "Toggle background shell list..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Toggle background shell list.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-kill",
+    "tool": "gemini-cli",
+    "name": "Ctrl+K",
+    "display_name": "Kill the active background shell.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Kill the active background shell.",
+    "description": "Kill the active background shell.",
+    "syntax": [
+      "Ctrl+K"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+K",
+        "explanation": "Kill the active background shell..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Kill the active background shell.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-unfocus",
+    "tool": "gemini-cli",
+    "name": "Shift+Tab (background context)",
+    "display_name": "Move focus from background shell to Gemini.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Move focus from background shell to Gemini.",
+    "description": "Move focus from background shell to Gemini.",
+    "syntax": [
+      "Shift+Tab (background context)"
+    ],
+    "examples": [
+      {
+        "command": "Shift+Tab (background context)",
+        "explanation": "Move focus from background shell to Gemini..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Move focus from background shell to Gemini.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-unfocuslist",
+    "tool": "gemini-cli",
+    "name": "Tab (background-unfocus warning)",
+    "display_name": "Move focus from background shell list to Gemini.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Move focus from background shell list to Gemini.",
+    "description": "Move focus from background shell list to Gemini.",
+    "syntax": [
+      "Tab (background-unfocus warning)"
+    ],
+    "examples": [
+      {
+        "command": "Tab (background-unfocus warning)",
+        "explanation": "Move focus from background shell list to Gemini..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Move focus from background shell list to Gemini.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.background-unfocuswarning",
+    "tool": "gemini-cli",
+    "name": "Tab (background context)",
+    "display_name": "Show warning when trying to move focus away from background shell.",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Show warning when trying to move focus away from background shell.",
+    "description": "Show warning when trying to move focus away from background shell.",
+    "syntax": [
+      "Tab (background context)"
+    ],
+    "examples": [
+      {
+        "command": "Tab (background context)",
+        "explanation": "Show warning when trying to move focus away from background shell..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Show warning when trying to move focus away from background shell.."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Show warning when trying to move focus away from background shell."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-dumpframe",
+    "tool": "gemini-cli",
+    "name": "F8",
+    "display_name": "Dump the current frame as a snapshot.",
+    "type": "shortcut",
+    "category": "configuration",
+    "role": "Dump the current frame as a snapshot.",
+    "description": "Dump the current frame as a snapshot.",
+    "syntax": [
+      "F8"
+    ],
+    "examples": [
+      {
+        "command": "F8",
+        "explanation": "Dump the current frame as a snapshot..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Dump the current frame as a snapshot.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-startrecording",
+    "tool": "gemini-cli",
+    "name": "F6",
+    "display_name": "Start recording the session.",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Start recording the session.",
+    "description": "Start recording the session.",
+    "syntax": [
+      "F6"
+    ],
+    "examples": [
+      {
+        "command": "F6",
+        "explanation": "Start recording the session..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Start recording the session.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.shortcut.app-stoprecording",
+    "tool": "gemini-cli",
+    "name": "F7",
+    "display_name": "Stop recording the session.",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Stop recording the session.",
+    "description": "Stop recording the session.",
+    "syntax": [
+      "F7"
+    ],
+    "examples": [
+      {
+        "command": "F7",
+        "explanation": "Stop recording the session..",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Stop recording the session.."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  }
+]

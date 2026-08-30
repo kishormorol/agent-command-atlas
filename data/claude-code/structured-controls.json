@@ -1,0 +1,466 @@
+[
+  {
+    "id": "claude-code.agent.claude-agents-name-md",
+    "tool": "claude-code",
+    "name": ".claude/agents/<name>.md",
+    "capabilities": ["agents.define"],
+    "display_name": "Custom subagent definition",
+    "type": "agent",
+    "category": "agents",
+    "role": "Custom subagent definition",
+    "description": "Define a task-specific Claude Code subagent with YAML frontmatter and a system prompt.",
+    "syntax": [
+      ".claude/agents/<name>.md"
+    ],
+    "examples": [
+      {
+        "command": ".claude/agents/<name>.md",
+        "explanation": "Isolate a specialist task or preload agent-specific tools, skills, model, and permissions.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Isolate a specialist task or preload agent-specific tools, skills, model, and permissions."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/sub-agents",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.agent.agent-team",
+    "tool": "claude-code",
+    "name": "agent team",
+    "display_name": "Agent team",
+    "type": "agent",
+    "category": "agents",
+    "role": "Agent team",
+    "description": "Coordinate multiple independent Claude Code sessions through shared tasks and peer messaging.",
+    "syntax": [
+      "agent team"
+    ],
+    "examples": [
+      {
+        "command": "agent team",
+        "explanation": "Parallelize work that benefits from independent contexts and coordination.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Parallelize work that benefits from independent contexts and coordination."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/features-overview",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.skill.claude-skills-name-skill-md",
+    "tool": "claude-code",
+    "name": ".claude/skills/<name>/SKILL.md",
+    "capabilities": ["skills.define"],
+    "display_name": "Custom Agent Skill",
+    "type": "skill",
+    "category": "skills",
+    "role": "Custom Agent Skill",
+    "description": "Define reusable knowledge or an invocable workflow in a SKILL.md directory.",
+    "syntax": [
+      ".claude/skills/<name>/SKILL.md"
+    ],
+    "examples": [
+      {
+        "command": ".claude/skills/<name>/SKILL.md",
+        "explanation": "Keep reusable instructions out of always-loaded CLAUDE.md context.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Keep reusable instructions out of always-loaded CLAUDE.md context."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/features-overview",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.plugin.claude-plugin-plugin-json",
+    "tool": "claude-code",
+    "name": ".claude-plugin/plugin.json",
+    "display_name": "Claude Code plugin",
+    "type": "plugin",
+    "category": "plugins",
+    "role": "Claude Code plugin",
+    "description": "Package skills, agents, hooks, MCP servers, LSP servers, and monitors for installation and distribution.",
+    "syntax": [
+      ".claude-plugin/plugin.json"
+    ],
+    "examples": [
+      {
+        "command": ".claude-plugin/plugin.json",
+        "explanation": "Distribute a reusable extension bundle across projects or teams.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Distribute a reusable extension bundle across projects or teams."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.mcp.mcp-json",
+    "tool": "claude-code",
+    "name": ".mcp.json",
+    "display_name": "Project MCP configuration",
+    "type": "mcp",
+    "category": "mcp",
+    "role": "Project MCP configuration",
+    "description": "Declare project-scoped MCP servers for Claude Code.",
+    "syntax": [
+      ".mcp.json"
+    ],
+    "examples": [
+      {
+        "command": ".mcp.json",
+        "explanation": "Share reviewed MCP connections with a project.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Share reviewed MCP connections with a project."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/features-overview",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.permission.default",
+    "tool": "claude-code",
+    "name": "default",
+    "display_name": "Default permission mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Default permission mode",
+    "description": "Prompt according to configured permission rules.",
+    "syntax": [
+      "default"
+    ],
+    "examples": [
+      {
+        "command": "default",
+        "explanation": "Use normal interactive approval behavior.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use normal interactive approval behavior."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.permission.acceptedits",
+    "tool": "claude-code",
+    "name": "acceptEdits",
+    "display_name": "Accept-edits permission mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Accept-edits permission mode",
+    "description": "Automatically accept file edits while retaining other permission checks.",
+    "syntax": [
+      "acceptEdits"
+    ],
+    "examples": [
+      {
+        "command": "acceptEdits",
+        "explanation": "Reduce edit prompts while keeping command and external-action controls.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Reduce edit prompts while keeping command and external-action controls."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.permission.plan",
+    "tool": "claude-code",
+    "name": "plan",
+    "display_name": "Plan permission mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Plan permission mode",
+    "description": "Keep the agent in a read-only planning workflow.",
+    "syntax": [
+      "plan"
+    ],
+    "examples": [
+      {
+        "command": "plan",
+        "explanation": "Explore and design an implementation before allowing edits.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Explore and design an implementation before allowing edits."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.permission.dontask",
+    "tool": "claude-code",
+    "name": "dontAsk",
+    "display_name": "Do-not-ask permission mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Do-not-ask permission mode",
+    "description": "Deny operations that are not already allowed instead of prompting.",
+    "syntax": [
+      "dontAsk"
+    ],
+    "examples": [
+      {
+        "command": "dontAsk",
+        "explanation": "Run unattended workflows that must fail closed on unapproved actions.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run unattended workflows that must fail closed on unapproved actions."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.permission.bypasspermissions",
+    "tool": "claude-code",
+    "name": "bypassPermissions",
+    "display_name": "Bypass-permissions mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Bypass-permissions mode",
+    "description": "Bypass permission prompts and policy checks for agent actions.",
+    "syntax": [
+      "bypassPermissions"
+    ],
+    "examples": [
+      {
+        "command": "bypassPermissions",
+        "explanation": "Use only inside a trusted external sandbox with explicit risk acceptance.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use only inside a trusted external sandbox with explicit risk acceptance."
+    ],
+    "when_not_to_use": [
+      "Do not use this control on untrusted code or outside a separately isolated environment."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

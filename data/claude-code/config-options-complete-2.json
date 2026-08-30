@@ -1,0 +1,2700 @@
+[
+  {
+    "id": "claude-code.config-option.claudemd",
+    "tool": "claude-code",
+    "name": "claudeMd",
+    "display_name": "claudeMd",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Inject CLAUDE.md-style instructions as organization-managed memory without deploying a separate file. Claude Code loads the text as a managed memory entry ahead of user and project CLAUDE.md files.",
+    "syntax": [
+      "claudeMd: <string, the text of a CLAUDE.md file; write it as you would the file, Markdown included, with line breaks as \\n>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented claudeMd behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.claudemdexcludes",
+    "tool": "claude-code",
+    "name": "claudeMdExcludes",
+    "display_name": "claudeMdExcludes",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Skip specific CLAUDE.md files when Claude Code loads memory. In a large monorepo, use it to skip CLAUDE.md files from other teams that aren't relevant to your work; Exclude irrelevant CLAUDE.md files in the large-codebases guide walks through that case. Patterns match against absolute file paths.",
+    "syntax": [
+      "claudeMdExcludes: <array of strings, each a glob pattern or absolute path>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented claudeMdExcludes behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.env",
+    "tool": "claude-code",
+    "name": "env",
+    "display_name": "env",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Set environment variables for every session and for the subprocesses Claude Code starts from it. Any variable in the environment variables reference can go here, which is how you apply one to every session or roll it out to your team.",
+    "syntax": [
+      "env: <object mapping variable names to string values>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented env behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.filecheckpointingenabled",
+    "tool": "claude-code",
+    "name": "fileCheckpointingEnabled",
+    "display_name": "fileCheckpointingEnabled",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Have Claude Code snapshot files before each edit so /rewind can restore them. Appears in /config as Rewind code (checkpoints), and toggling it there writes this key to your user settings.",
+    "syntax": [
+      "fileCheckpointingEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented fileCheckpointingEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.plansdirectory",
+    "tool": "claude-code",
+    "name": "plansDirectory",
+    "display_name": "plansDirectory",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Choose where Claude Code stores the plan files it writes in plan mode. Claude Code resolves the path relative to the project root and keeps the default when the path resolves outside it.",
+    "syntax": [
+      "plansDirectory: <string, a path relative to the project root>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented plansDirectory behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.skilllistingbudgetfraction",
+    "tool": "claude-code",
+    "name": "skillListingBudgetFraction",
+    "display_name": "skillListingBudgetFraction",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Each turn, Claude sees a listing of your skills with their descriptions, and Claude Code caps that listing at a share of the context window. When the listing is over the cap, Claude Code keeps every skill's name but drops the descriptions of the least-used skills, so Claude can still invoke those skills but is less likely to choose one on its own. Raise this key to keep more descriptions visible at the cost of more context per turn.",
+    "syntax": [
+      "skillListingBudgetFraction: <number, a fraction greater than 0 and at most 1>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skillListingBudgetFraction behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.skilllistingmaxdescchars",
+    "tool": "claude-code",
+    "name": "skillListingMaxDescChars",
+    "display_name": "skillListingMaxDescChars",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Each turn, Claude sees a listing of your skills that shows each skill's description and when_to_use text. This key caps how many characters of that text Claude Code shows per skill; longer text is cut at the cap.",
+    "syntax": [
+      "skillListingMaxDescChars: <number of characters, a positive integer>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skillListingMaxDescChars behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.askuserquestiontimeout",
+    "tool": "claude-code",
+    "name": "askUserQuestionTimeout",
+    "display_name": "askUserQuestionTimeout",
+    "type": "config-option",
+    "category": "diagnostics",
+    "role": "Configuration setting",
+    "description": "Let an unanswered AskUserQuestion dialog auto-continue after a period of idle time, submitting whatever options you had already selected. Set it when you step away and want Claude to continue without you. With the default, questions wait until you answer them. Requires Claude Code v2.1.200 or later.",
+    "syntax": [
+      "askUserQuestionTimeout: <string, one of \"60s\", \"5m\", \"10m\", or \"never\">"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented askUserQuestionTimeout behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Let an unanswered AskUserQuestion dialog auto-continue after a period of idle time, submitting whatever options you had already selected. Set it when you step away and want Claude to continue without you. With the default, questions wait until you answer them. Requires Claude Code v2.1.200 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.autocontinueatusagelimit",
+    "tool": "claude-code",
+    "name": "autoContinueAtUsageLimit",
+    "display_name": "autoContinueAtUsageLimit",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "After a claude.ai usage limit stops your session, wait in the open session and continue the task automatically after the reset. See Turn automatic continue off. Requires Claude Code v2.1.234 or later.",
+    "syntax": [
+      "autoContinueAtUsageLimit: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoContinueAtUsageLimit behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "After a claude.ai usage limit stops your session, wait in the open session and continue the task automatically after the reset. See Turn automatic continue off. Requires Claude Code v2.1.234 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.autoscrollenabled",
+    "tool": "claude-code",
+    "name": "autoScrollEnabled",
+    "display_name": "autoScrollEnabled",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Follow new output to the bottom of the conversation in fullscreen rendering. Turn it off to stay where you scrolled while Claude keeps working; permission prompts still scroll into view.",
+    "syntax": [
+      "autoScrollEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoScrollEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.axscreenreader",
+    "tool": "claude-code",
+    "name": "axScreenReader",
+    "display_name": "axScreenReader",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Render screen-reader friendly output: flat text without decorative borders or animations. Screen-reader mode uses the classic renderer, so the tui setting has no effect while it is active; attached background sessions still render fullscreen. Requires Claude Code v2.1.181 or later.",
+    "syntax": [
+      "axScreenReader: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented axScreenReader behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Render screen-reader friendly output: flat text without decorative borders or animations. Screen-reader mode uses the classic renderer, so the tui setting has no effect while it is active; attached background sessions still render fullscreen. Requires Claude Code v2.1.181 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.companyannouncements",
+    "tool": "claude-code",
+    "name": "companyAnnouncements",
+    "display_name": "companyAnnouncements",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Show your organization's announcements to users at startup. When you list more than one, Claude Code picks one at random for each session; on a person's very first launch it shows the first entry.",
+    "syntax": [
+      "companyAnnouncements: <array of strings>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented companyAnnouncements behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.defaultshell",
+    "tool": "claude-code",
+    "name": "defaultShell",
+    "display_name": "defaultShell",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Choose whether Bash or PowerShell runs the shell commands you type with the ! prefix in the input box, the ones Claude Code runs directly and adds to the session.",
+    "syntax": [
+      "defaultShell: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented defaultShell behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.dialogexpiry",
+    "tool": "claude-code",
+    "name": "dialogExpiry",
+    "display_name": "dialogExpiry",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Set the deadline for dialogs Claude Code forwards to a remote client, such as a Remote Control or SDK host, for the approval dialog for a held cross-session message, and for the mid-session Fable 5 usage-credits consent prompt in a session that may have nobody at the terminal. When no answer arrives before the deadline, Claude Code cancels the dialog and continues with its no-action default. Requires Claude Code v2.1.224 or later.",
+    "syntax": [
+      "dialogExpiry: <string, one of \"60s\", \"5m\", \"10m\", or \"never\", which disables the deadline>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented dialogExpiry behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Set the deadline for dialogs Claude Code forwards to a remote client, such as a Remote Control or SDK host, for the approval dialog for a held cross-session message, and for the mid-session Fable 5 usage-credits consent prompt in a session that may have nobody at the terminal. When no answer arrives before the deadline, Claude Code cancels the dialog and continues with its no-action default. Requires Claude Code v2.1.224 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.editormode",
+    "tool": "claude-code",
+    "name": "editorMode",
+    "display_name": "editorMode",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Choose the key binding mode for the input prompt.",
+    "syntax": [
+      "editorMode: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented editorMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.emojicompletionenabled",
+    "tool": "claude-code",
+    "name": "emojiCompletionEnabled",
+    "display_name": "emojiCompletionEnabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Show emoji suggestions when you type : plus a shortcode in the prompt input, and replace a completed shortcode such as :heart: with its emoji. Set it to false to turn off both.",
+    "syntax": [
+      "emojiCompletionEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented emojiCompletionEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.filesuggestion",
+    "tool": "claude-code",
+    "name": "fileSuggestion",
+    "display_name": "fileSuggestion",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Run your own command to supply @ file path autocomplete instead of the built-in file suggestion. The built-in suggestion uses fast filesystem traversal; a large monorepo may do better with project-specific indexing such as a pre-built file index.",
+    "syntax": [
+      "fileSuggestion: <object with type, always \"command\", and command, the shell command to run>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented fileSuggestion behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.footerlinksregexes",
+    "tool": "claude-code",
+    "name": "footerLinksRegexes",
+    "display_name": "footerLinksRegexes",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Render extra clickable badges in the footer below the input box when a regex matches turn output: tool results, including file contents and fetched pages, and Claude's own responses. Use it to turn IDs printed by project CLIs, such as review tools and issue trackers, into session links. Requires Claude Code v2.1.176 or later.",
+    "syntax": [
+      "footerLinksRegexes: <array of objects, each with type set to \"regex\", a pattern regex, a url template, and an optional label; {name} placeholders in url and label are filled from named capture groups in pattern>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented footerLinksRegexes behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Render extra clickable badges in the footer below the input box when a regex matches turn output: tool results, including file contents and fetched pages, and Claude's own responses. Use it to turn IDs printed by project CLIs, such as review tools and issue trackers, into session links. Requires Claude Code v2.1.176 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.keybindingflavor",
+    "tool": "claude-code",
+    "name": "keybindingFlavor",
+    "display_name": "keybindingFlavor",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Choose which convention Ctrl+W follows in the prompt input. Set it to \"readline\" to make Ctrl+W delete back to the previous whitespace, as Bash does, so a path or a --flag=value goes in one press. Requires Claude Code v2.1.238 or later.",
+    "syntax": [
+      "keybindingFlavor: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented keybindingFlavor behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Choose which convention Ctrl+W follows in the prompt input. Set it to \"readline\" to make Ctrl+W delete back to the previous whitespace, as Bash does, so a path or a --flag=value goes in one press. Requires Claude Code v2.1.238 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.prefersreducedmotion",
+    "tool": "claude-code",
+    "name": "prefersReducedMotion",
+    "display_name": "prefersReducedMotion",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Reduce or turn off interface animations such as the spinner, shimmer, and flash effects. Appears in /config as Reduce motion.",
+    "syntax": [
+      "prefersReducedMotion: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented prefersReducedMotion behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.promptsuggestionenabled",
+    "tool": "claude-code",
+    "name": "promptSuggestionEnabled",
+    "display_name": "promptSuggestionEnabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Show or hide prompt suggestions, the grayed-out predictions that appear in your prompt input. Set it to false, or turn off Prompt suggestions in /config, to hide them.",
+    "syntax": [
+      "promptSuggestionEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented promptSuggestionEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.respectgitignore",
+    "tool": "claude-code",
+    "name": "respectGitignore",
+    "display_name": "respectGitignore",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "Control whether the @ file picker leaves out files that match .gitignore patterns. Appears in /config as Respect .gitignore in file picker.",
+    "syntax": [
+      "respectGitignore: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented respectGitignore behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.respondtobashcommands",
+    "tool": "claude-code",
+    "name": "respondToBashCommands",
+    "display_name": "respondToBashCommands",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Choose whether Claude responds after you run a shell command with the ! prefix in the input box. By default, Claude Code adds the command's output to the conversation and Claude replies to it. Set this key to false to add the output to context without a reply, so you can run several commands and ask about them together. Requires Claude Code v2.1.186 or later.",
+    "syntax": [
+      "respondToBashCommands: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented respondToBashCommands behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Choose whether Claude responds after you run a shell command with the ! prefix in the input box. By default, Claude Code adds the command's output to the conversation and Claude replies to it. Set this key to false to add the output to context without a reply, so you can run several commands and ask about them together. Requires Claude Code v2.1.186 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.showclearcontextonplanaccept",
+    "tool": "claude-code",
+    "name": "showClearContextOnPlanAccept",
+    "display_name": "showClearContextOnPlanAccept",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "When Claude finishes a plan in plan mode, it shows an approval menu. Planning can use a lot of context, so this key adds a first option to that menu, Yes, clear context and …, that approves the plan, clears the conversation context, and starts implementing from the plan alone. The rest of the label names the permission mode the session continues in, and shows how much of your context the planning used.",
+    "syntax": [
+      "showClearContextOnPlanAccept: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented showClearContextOnPlanAccept behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.showturnduration",
+    "tool": "claude-code",
+    "name": "showTurnDuration",
+    "display_name": "showTurnDuration",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Show or hide the turn duration message after each response, such as \"Cooked for 1m 6s\". Appears in /config as Show turn duration.",
+    "syntax": [
+      "showTurnDuration: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented showTurnDuration behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.spellcheck",
+    "tool": "claude-code",
+    "name": "spellcheck",
+    "display_name": "spellcheck",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Underline misspelled words in the prompt input as you type, using a spell checker you install. Claude Code checks only the text in the input box. Check spelling as you type covers installing aspell, hunspell, or ispell and what the checker covers. Requires Claude Code v2.1.235 or later.",
+    "syntax": [
+      "spellcheck: <object with enabled (Boolean), checker (\"aspell\", \"hunspell\", \"ispell\", or \"auto\"), language (string, passed to the checker as its dictionary name), and color (string, a terminal color name, #rrggbb, rgb(r,g,b), ansi256(n), or ansi:)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented spellcheck behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Underline misspelled words in the prompt input as you type, using a spell checker you install. Claude Code checks only the text in the input box. Check spelling as you type covers installing aspell, hunspell, or ispell and what the checker covers. Requires Claude Code v2.1.235 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.spinnertipsenabled",
+    "tool": "claude-code",
+    "name": "spinnerTipsEnabled",
+    "display_name": "spinnerTipsEnabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "While Claude works, the spinner line rotates through short tips about Claude Code features, such as \"Use Plan Mode to prepare for a complex request before making changes. Press Shift+Tab twice to enable.\" Set this key to false to hide them. Appears in /config as Show tips.",
+    "syntax": [
+      "spinnerTipsEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented spinnerTipsEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.spinnertipsoverride",
+    "tool": "claude-code",
+    "name": "spinnerTipsOverride",
+    "display_name": "spinnerTipsOverride",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Add your own tips to the spinner tips that Claude Code shows while Claude works, or replace the built-in tips with yours. Claude Code puts your tips in the same rotation as the built-in ones: it picks the tip that has gone unshown the longest, skips tips still in their cooldown, and breaks ties by priority.",
+    "syntax": [
+      "spinnerTipsOverride: <object with tips, tipsFile, label, and excludeDefault fields, each optional>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented spinnerTipsOverride behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.spinnerverbs",
+    "tool": "claude-code",
+    "name": "spinnerVerbs",
+    "display_name": "spinnerVerbs",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "While a turn is in progress, the spinner shows a rotating verb such as \"Accomplishing\", \"Architecting\", or \"Baking\". Use this key to add your own verbs to that rotation or replace the built-in list with yours.",
+    "syntax": [
+      "spinnerVerbs: <object with a verbs array of strings and mode, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented spinnerVerbs behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.statusline",
+    "tool": "claude-code",
+    "name": "statusLine",
+    "display_name": "statusLine",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Run your own command to render a status line below the prompt with context such as the model, cost, or git branch. Optional fields adjust spacing, add periodic re-runs, and hide the built-in vim mode indicator when your script renders vim.mode itself.",
+    "syntax": [
+      "statusLine: <object with type set to \"command\" and a command string, plus optional padding as a number of characters, refreshInterval as a number of seconds, minimum 1, and hideVimModeIndicator as a Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented statusLine behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.subagentstatusline",
+    "tool": "claude-code",
+    "name": "subagentStatusLine",
+    "display_name": "subagentStatusLine",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "When Claude runs subagents, Claude Code lists them in a task display below the prompt, one row per subagent showing name · description · token count. This key lets you run your own command to rewrite those rows, for example to show each subagent's context usage as a percentage. On each refresh, Claude Code sends the visible rows as one JSON object on stdin, with a tasks array carrying each subagent's id, name, status, model, tokenCount, and more, and replaces the row for each id you write back as a {\"id\", \"content\"} line. Rows you don't write back keep the default rendering.",
+    "syntax": [
+      "subagentStatusLine: <object with type set to \"command\" and a command string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented subagentStatusLine behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.syntaxhighlightingdisabled",
+    "tool": "claude-code",
+    "name": "syntaxHighlightingDisabled",
+    "display_name": "syntaxHighlightingDisabled",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Claude Code colors code by language in the diffs, code blocks, and file previews it shows in the terminal, with its built-in highlighter; no plugin or language server is involved. Set this key to true to show them as plain text instead, for example if the colors clash with your terminal theme or slow a screen reader.",
+    "syntax": [
+      "syntaxHighlightingDisabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented syntaxHighlightingDisabled behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.terminalprogressbarenabled",
+    "tool": "claude-code",
+    "name": "terminalProgressBarEnabled",
+    "display_name": "terminalProgressBarEnabled",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Some terminals can show a progress indicator on the tab or in the taskbar for the program running in them. While Claude is working, Claude Code reports an in-progress state to the terminal and clears it when the turn ends, so you can see from another tab or window whether Claude is still busy. It does so only in terminals that support the indicator: ConEmu, Ghostty 1.2.0 or later, and iTerm2 3.6.6 or later. Set this key to false to stop reporting it. Appears in /config as Terminal progress bar.",
+    "syntax": [
+      "terminalProgressBarEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented terminalProgressBarEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.terminaltitlefromrename",
+    "tool": "claude-code",
+    "name": "terminalTitleFromRename",
+    "display_name": "terminalTitleFromRename",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Claude Code sets your terminal tab's title. By default it uses a title it generates from the conversation, and once you give the session a name with /rename or --name, the tab shows that name instead. Set this key to false to keep the generated title on the tab even after you name the session. The name itself still applies, so /resume and the session picker find it.",
+    "syntax": [
+      "terminalTitleFromRename: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented terminalTitleFromRename behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.theme",
+    "tool": "claude-code",
+    "name": "theme",
+    "display_name": "theme",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Pick the color theme for the interface. Appears in /config as Theme.",
+    "syntax": [
+      "theme: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented theme behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.tui",
+    "tool": "claude-code",
+    "name": "tui",
+    "display_name": "tui",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Choose the terminal UI renderer. Use \"fullscreen\" for the flicker-free alt-screen renderer with virtualized scrollback, or \"default\" for the classic main-screen renderer. Running /tui fullscreen or /tui default writes this key for you.",
+    "syntax": [
+      "tui: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tui behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.verbose",
+    "tool": "claude-code",
+    "name": "verbose",
+    "display_name": "verbose",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "By default, the transcript collapses each tool call to a short summary, such as the command Claude ran and a line count of its output, and you press Ctrl+O to switch the whole transcript to the expanded view when you want the details. Set this key to true to show every tool call's full input and output inline as it happens, which is useful when you're debugging a hook, an MCP server, or a long shell command. Appears in /config as Verbose output.",
+    "syntax": [
+      "verbose: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented verbose behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.viewmode",
+    "tool": "claude-code",
+    "name": "viewMode",
+    "display_name": "viewMode",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Set the transcript view Claude Code starts in: \"default\", \"verbose\", or \"focus\". When set, it overrides both the sticky /focus selection and the verbose setting.",
+    "syntax": [
+      "viewMode: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented viewMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.viminsertmoderemaps",
+    "tool": "claude-code",
+    "name": "vimInsertModeRemaps",
+    "display_name": "vimInsertModeRemaps",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Map two-key INSERT-mode sequences to Escape in vim editor mode. Each key is exactly two printable characters typed in sequence, and \"\" is the only supported target; Claude Code ignores other entries. Requires Claude Code v2.1.208 or later.",
+    "syntax": [
+      "vimInsertModeRemaps: <object mapping a two-character sequence to \"\">"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented vimInsertModeRemaps behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Map two-key INSERT-mode sequences to Escape in vim editor mode. Each key is exactly two printable characters typed in sequence, and \"\" is the only supported target; Claude Code ignores other entries. Requires Claude Code v2.1.208 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.voice",
+    "tool": "claude-code",
+    "name": "voice",
+    "display_name": "voice",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Turn on voice dictation and choose how the dictation key behaves. Claude Code writes this object for you when you run /voice.",
+    "syntax": [
+      "voice: <object with enabled as a Boolean, autoSubmit as a Boolean that applies in hold mode only, and mode, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented voice behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.voiceenabled",
+    "tool": "claude-code",
+    "name": "voiceEnabled",
+    "display_name": "voiceEnabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Deprecated since v2.1.92, when the voice object replaced it. Claude Code still reads it so older settings files keep working, but new configurations should set voice.enabled.",
+    "syntax": [
+      "voiceEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented voiceEnabled behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "claude-code.config-option.wheelscrollaccelerationenabled",
+    "tool": "claude-code",
+    "name": "wheelScrollAccelerationEnabled",
+    "display_name": "wheelScrollAccelerationEnabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Accelerate mouse-wheel scroll speed during fast scrolls in fullscreen rendering. Set it to false for a constant scroll rate per wheel notch. Requires Claude Code v2.1.174 or later.",
+    "syntax": [
+      "wheelScrollAccelerationEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented wheelScrollAccelerationEnabled behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Accelerate mouse-wheel scroll speed during fast scrolls in fullscreen rendering. Set it to false for a constant scroll rate per wheel notch. Requires Claude Code v2.1.174 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.attribution",
+    "tool": "claude-code",
+    "name": "attribution",
+    "display_name": "attribution",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Customize the attribution Claude Code adds to git commits and pull requests. Commits get a git trailer such as Co-Authored-By by default; pull request descriptions get plain text. Set each part separately with the sub-keys below.",
+    "syntax": [
+      "attribution: <object with commit and pr strings and a sessionUrl Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented attribution behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.includecoauthoredby",
+    "tool": "claude-code",
+    "name": "includeCoAuthoredBy",
+    "display_name": "includeCoAuthoredBy",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Deprecated since v2.0.62, when attribution replaced it. Claude Code still reads it, but new configurations should set attribution.",
+    "syntax": [
+      "includeCoAuthoredBy: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented includeCoAuthoredBy behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "claude-code.config-option.includegitinstructions",
+    "tool": "claude-code",
+    "name": "includeGitInstructions",
+    "display_name": "includeGitInstructions",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "At session start, Claude Code adds two git-related pieces to Claude's prompt: its built-in instructions for how to write commits and pull requests, in the Bash tool's description, and a git status snapshot of your repository in the system prompt, meaning the current branch, the main branch, git status output, and recent commits. Set this key to false to leave both out, for example when you use your own git workflow skills.",
+    "syntax": [
+      "includeGitInstructions: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented includeGitInstructions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.prurltemplate",
+    "tool": "claude-code",
+    "name": "prUrlTemplate",
+    "display_name": "prUrlTemplate",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "Point the PR links Claude Code renders, in the footer badge and in tool-result summaries, at an internal code-review tool instead of github.com. Claude Code substitutes {host}, {owner}, {repo}, {number}, and {url} from the gh-reported PR URL. The GitLab merge request badge keeps its GitLab URL.",
+    "syntax": [
+      "prUrlTemplate: <string, a URL template using any of the five placeholders>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented prUrlTemplate behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.attribution-commit",
+    "tool": "claude-code",
+    "name": "attribution.commit",
+    "display_name": "attribution.commit",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "Set the attribution text Claude Code adds to git commits, including any trailers. Set it to an empty string to hide commit attribution.",
+    "syntax": [
+      "attribution.commit: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented attribution.commit behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.attribution-pr",
+    "tool": "claude-code",
+    "name": "attribution.pr",
+    "display_name": "attribution.pr",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Set the attribution text Claude Code adds to pull request descriptions. Set it to an empty string to hide pull request attribution.",
+    "syntax": [
+      "attribution.pr: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented attribution.pr behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.attribution-sessionurl",
+    "tool": "claude-code",
+    "name": "attribution.sessionUrl",
+    "display_name": "attribution.sessionUrl",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Choose whether Claude Code appends the claude.ai session link when it commits or opens a pull request from a cloud or Remote Control session. Claude Code adds the link as a Claude-Session trailer on commits and as a link in pull request descriptions. Set it to false to omit the link.",
+    "syntax": [
+      "attribution.sessionUrl: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented attribution.sessionUrl behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.allowedhttphookurls",
+    "tool": "claude-code",
+    "name": "allowedHttpHookUrls",
+    "display_name": "allowedHttpHookUrls",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Limit which URLs HTTP hooks can target. When you define this key, Claude Code runs an HTTP hook only if its URL matches one of the patterns and blocks the rest without running them; an empty array blocks every HTTP hook.",
+    "syntax": [
+      "allowedHttpHookUrls: <array of URL patterns, with * as a wildcard>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented allowedHttpHookUrls behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.allowmanagedhooksonly",
+    "tool": "claude-code",
+    "name": "allowManagedHooksOnly",
+    "display_name": "allowManagedHooksOnly",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Restrict hook execution to hooks your organization deploys.",
+    "syntax": [
+      "allowManagedHooksOnly: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented allowManagedHooksOnly behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.disableallhooks",
+    "tool": "claude-code",
+    "name": "disableAllHooks",
+    "display_name": "disableAllHooks",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Turn off hooks, any custom status line, and any custom file suggestion command. Use it to turn all of these off temporarily without deleting them from your settings.",
+    "syntax": [
+      "disableAllHooks: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disableAllHooks behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.disableworkflows",
+    "tool": "claude-code",
+    "name": "disableWorkflows",
+    "display_name": "disableWorkflows",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Turn off dynamic workflows and the bundled workflow commands for everyone your settings reach, such as an organization through managed settings. To turn workflows on or off just for yourself, use enableWorkflows instead, which the Dynamic workflows toggle in /config writes to your user settings.",
+    "syntax": [
+      "disableWorkflows: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disableWorkflows behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.enableworkflows",
+    "tool": "claude-code",
+    "name": "enableWorkflows",
+    "display_name": "enableWorkflows",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Turn dynamic workflows on or off for yourself when your plan's default isn't what you want. Appears in /config as Dynamic workflows, which writes this key to your user settings and removes it again when you toggle back to your plan's default. To turn workflows off for everyone from managed settings, use disableWorkflows instead.",
+    "syntax": [
+      "enableWorkflows: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented enableWorkflows behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.hooks",
+    "tool": "claude-code",
+    "name": "hooks",
+    "display_name": "hooks",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Run your own commands, prompts, agents, HTTP requests, or MCP tools as hooks at points in Claude Code's lifecycle, such as before a tool call or when a session starts; the hooks reference lists every event, its payload, and its exit codes. Each event maps to a list of matcher groups, and each group lists the handlers to run when the matcher applies.",
+    "syntax": [
+      "hooks: <object keyed by hook event; each value is an array of { \"matcher\", \"hooks\" } groups whose hooks entries have a type of \"command\", \"prompt\", \"agent\", \"http\", or \"mcp_tool\">"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.httphookallowedenvvars",
+    "tool": "claude-code",
+    "name": "httpHookAllowedEnvVars",
+    "display_name": "httpHookAllowedEnvVars",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "An HTTP hook can put the value of an environment variable into a request header, for example an Authorization: Bearer $HOOK_TOKEN header, but only for variables the hook lists in its own allowedEnvVars. This key sets an outer limit on that list for every HTTP hook: a hook can use a variable only if both its own allowedEnvVars and this key name it. Use it to stop a hook from reading a secret it shouldn't, even when the hook's definition asks for it.",
+    "syntax": [
+      "httpHookAllowedEnvVars: <array of environment variable names>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented httpHookAllowedEnvVars behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.workflowkeywordtriggerenabled",
+    "tool": "claude-code",
+    "name": "workflowKeywordTriggerEnabled",
+    "display_name": "workflowKeywordTriggerEnabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Choose whether typing the keyword ultracode in a prompt triggers a dynamic workflow. Set it to false to type the word without triggering one. Requires Claude Code v2.1.157 or later.",
+    "syntax": [
+      "workflowKeywordTriggerEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented workflowKeywordTriggerEnabled behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Choose whether typing the keyword ultracode in a prompt triggers a dynamic workflow. Set it to false to type the word without triggering one. Requires Claude Code v2.1.157 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.workflowsizeguideline",
+    "tool": "claude-code",
+    "name": "workflowSizeGuideline",
+    "display_name": "workflowSizeGuideline",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Set the agent count Claude aims for in the dynamic workflows it writes. Claude Code sends the value to Claude as advice, not an enforced cap: \"small\" asks for fewer than 5 agents, \"medium\" fewer than 15, and \"large\" fewer than 50. Choose \"small\" when you want to bound what a workflow spends. Requires Claude Code v2.1.219 or later.",
+    "syntax": [
+      "workflowSizeGuideline: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented workflowSizeGuideline behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Set the agent count Claude aims for in the dynamic workflows it writes. Claude Code sends the value to Claude as advice, not an enforced cap: \"small\" asks for fewer than 5 agents, \"medium\" fewer than 15, and \"large\" fewer than 50. Choose \"small\" when you want to bound what a workflow spends. Requires Claude Code v2.1.219 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.disablebundledskills",
+    "tool": "claude-code",
+    "name": "disableBundledSkills",
+    "display_name": "disableBundledSkills",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Turn off the skills and workflows included with Claude Code. Claude Code removes bundled skills and workflows entirely, while built-in commands such as /init stay typable but are hidden from the model.",
+    "syntax": [
+      "disableBundledSkills: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disableBundledSkills behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.disableskillshellexecution",
+    "tool": "claude-code",
+    "name": "disableSkillShellExecution",
+    "display_name": "disableSkillShellExecution",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Turn off inline shell execution for !... and ! blocks in skills and custom commands from user, project, plugin, or additional-directory sources. Claude Code replaces each command with [shell command execution disabled by policy] instead of running it.",
+    "syntax": [
+      "disableSkillShellExecution: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disableSkillShellExecution behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.skilloverrides",
+    "tool": "claude-code",
+    "name": "skillOverrides",
+    "display_name": "skillOverrides",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Hide or collapse a skill without editing its SKILL.md. Claude Code applies the value under each skill's name to the skill list Claude sees and to your / autocomplete.",
+    "syntax": [
+      "skillOverrides: <object mapping skill name to one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skillOverrides behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.syncclaudeaiskills",
+    "tool": "claude-code",
+    "name": "syncClaudeAiSkills",
+    "display_name": "syncClaudeAiSkills",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Turn off the download of the skills you enable on claude.ai. Claude Code downloads them into ~/.claude/skills/synced/ when you run it in non-interactive mode with the -p flag and CLAUDE_CODE_SYNC_SKILLS set. Set false to stop that download and hide the skills it already synced. Claude Code honors only false: true is the same as unset and doesn't turn syncing on.",
+    "syntax": [
+      "syncClaudeAiSkills: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented syncClaudeAiSkills behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.allowedchannelplugins",
+    "tool": "claude-code",
+    "name": "allowedChannelPlugins",
+    "display_name": "allowedChannelPlugins",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Choose which channel plugins can push messages into sessions in your organization. When you set it, Claude Code uses your list in place of the default Anthropic allowlist; each entry names a plugin and the marketplace it comes from.",
+    "syntax": [
+      "allowedChannelPlugins: <array of objects, each with marketplace and plugin strings>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented allowedChannelPlugins behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.blockedmarketplaces",
+    "tool": "claude-code",
+    "name": "blockedMarketplaces",
+    "display_name": "blockedMarketplaces",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Block plugin marketplace sources for your organization. Claude Code checks the blocklist on marketplace add and on plugin install, update, refresh, and auto-update, so a marketplace someone added before you set the policy can't be used to fetch plugins either. Blocked sources are checked before download, so they never touch the filesystem.",
+    "syntax": [
+      "blockedMarketplaces: <array of marketplace source objects, in the same forms as strictKnownMarketplaces>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented blockedMarketplaces behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.channelsenabled",
+    "tool": "claude-code",
+    "name": "channelsEnabled",
+    "display_name": "channelsEnabled",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Allow channels for your organization. On claude.ai Team and Enterprise plans, Claude Code blocks channels until you set this to true. For Anthropic Console accounts that authenticate with an API key, channels are allowed by default. If your organization deploys managed settings, Claude Code blocks channels on those accounts too until you set this key to true.",
+    "syntax": [
+      "channelsEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented channelsEnabled behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Allow channels for your organization. On claude.ai Team and Enterprise plans, Claude Code blocks channels until you set this to true. For Anthropic Console accounts that authenticate with an API key, channels are allowed by default. If your organization deploys managed settings, Claude Code blocks channels on those accounts too until you set this key to true."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.disablecommandpluginsources",
+    "tool": "claude-code",
+    "name": "disableCommandPluginSources",
+    "display_name": "disableCommandPluginSources",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Block the command plugin source, which installs a plugin by running a marketplace-declared command on the user's machine. When you set it to true, Claude Code never runs the command, doesn't install or update command-sourced plugins, and stops loading the ones already installed. Set it to false to allow them explicitly. Whenever it blocks command sources, whether you set it to true or leave it unset under allowManagedHooksOnly, it also blocks marketplace headersHelper commands, except for a marketplace that managed settings themselves declare. Requires Claude Code v2.1.229 or later, and the headersHelper block requires v2.1.238 or later.",
+    "syntax": [
+      "disableCommandPluginSources: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disableCommandPluginSources behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Block the command plugin source, which installs a plugin by running a marketplace-declared command on the user's machine. When you set it to true, Claude Code never runs the command, doesn't install or update command-sourced plugins, and stops loading the ones already installed. Set it to false to allow them explicitly. Whenever it blocks command sources, whether you set it to true or leave it unset under allowManagedHooksOnly, it also blocks marketplace headersHelper commands, except for a marketplace that managed settings themselves declare. Requires Claude Code v2.1.229 or later, and the headersHelper block requires v2.1.238 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.pluginsuggestionmarketplaces",
+    "tool": "claude-code",
+    "name": "pluginSuggestionMarketplaces",
+    "display_name": "pluginSuggestionMarketplaces",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Name the marketplaces whose plugins can appear as contextual install suggestions, in spinner tips and pinned at the top of the /plugin Discover tab. The built-in first-party frontend-design tip is unaffected. Suggestions come from each plugin's relevance declaration in its marketplace entry.",
+    "syntax": [
+      "pluginSuggestionMarketplaces: <array of marketplace names>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented pluginSuggestionMarketplaces behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.plugintrustmessage",
+    "tool": "claude-code",
+    "name": "pluginTrustMessage",
+    "display_name": "pluginTrustMessage",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Add your organization's own text to the plugin trust warning Claude Code shows before installation, for example to confirm that plugins from your internal marketplace are vetted.",
+    "syntax": [
+      "pluginTrustMessage: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented pluginTrustMessage behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.strictknownmarketplaces",
+    "tool": "claude-code",
+    "name": "strictKnownMarketplaces",
+    "display_name": "strictKnownMarketplaces",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Restrict which plugin marketplace sources people in your organization can add and install plugins from. Claude Code enforces the allowlist on marketplace add and on plugin install, update, refresh, and auto-update, before any network or filesystem operation, so a marketplace someone added before you set the policy can't be used to fetch plugins once its source no longer matches. Blocked users see an error naming the managed policy.",
+    "syntax": [
+      "strictKnownMarketplaces: <array of marketplace source objects; see Allowed source types>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented strictKnownMarketplaces behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.strictpluginonlycustomization",
+    "tool": "claude-code",
+    "name": "strictPluginOnlyCustomization",
+    "display_name": "strictPluginOnlyCustomization",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Block skills, agents, hooks, and MCP servers from user and project sources, so they can come only from plugins or managed settings. Combine it with strictKnownMarketplaces to control the full customization supply chain: the marketplace allowlist controls which plugins users can install.",
+    "syntax": [
+      "strictPluginOnlyCustomization: <true to lock all four kinds of customization, or an array naming the kinds to lock, from \"skills\", \"agents\", \"hooks\", and \"mcp\">"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented strictPluginOnlyCustomization behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.strictpluginonlycustomization-skills",
+    "tool": "claude-code",
+    "name": "strictPluginOnlyCustomization.skills",
+    "display_name": "strictPluginOnlyCustomization.skills",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Lock the skills surface. Claude Code stops loading skills from ~/.claude/skills/ and .claude/skills/, custom commands from ~/.claude/commands/ and .claude/commands/, skills under --add-dir directories, and skills synced from your claude.ai account, and keeps loading plugin skills, bundled skills, and skills in the managed policy directory.",
+    "syntax": [
+      "strictPluginOnlyCustomization.skills: <the string \"skills\" in the strictPluginOnlyCustomization array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented strictPluginOnlyCustomization.skills behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.strictpluginonlycustomization-agents",
+    "tool": "claude-code",
+    "name": "strictPluginOnlyCustomization.agents",
+    "display_name": "strictPluginOnlyCustomization.agents",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Lock the agents surface. Claude Code stops loading agents from ~/.claude/agents/ and .claude/agents/, and keeps loading plugin agents, built-in agents, and agents in the managed policy directory.",
+    "syntax": [
+      "strictPluginOnlyCustomization.agents: <the string \"agents\" in the strictPluginOnlyCustomization array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented strictPluginOnlyCustomization.agents behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

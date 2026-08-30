@@ -1,0 +1,530 @@
+[
+  {
+    "id": "codex.hook.session-start",
+    "tool": "codex",
+    "name": "SessionStart",
+    "display_name": "Session Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A session starts, resumes, clears, or returns from compaction.",
+    "syntax": [
+      "hooks.SessionStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SessionStart\": [/* handler */] } }",
+        "explanation": "Register a handler for SessionStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a session starts, resumes, clears, or returns from compaction."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.session-end",
+    "tool": "codex",
+    "name": "SessionEnd",
+    "display_name": "Session End",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The main session ends.",
+    "syntax": [
+      "hooks.SessionEnd"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SessionEnd\": [/* handler */] } }",
+        "explanation": "Register a handler for SessionEnd.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the main session ends."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.pre-tool-use",
+    "tool": "codex",
+    "name": "PreToolUse",
+    "display_name": "Pre Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A supported local tool is about to run; the hook can inspect, block, or rewrite it.",
+    "syntax": [
+      "hooks.PreToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PreToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for PreToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a supported local tool is about to run; the hook can inspect, block, or rewrite it."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.permission-request",
+    "tool": "codex",
+    "name": "PermissionRequest",
+    "display_name": "Permission Request",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool requests an approval decision.",
+    "syntax": [
+      "hooks.PermissionRequest"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PermissionRequest\": [/* handler */] } }",
+        "explanation": "Register a handler for PermissionRequest.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool requests an approval decision."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.post-tool-use",
+    "tool": "codex",
+    "name": "PostToolUse",
+    "display_name": "Post Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A supported local tool finishes.",
+    "syntax": [
+      "hooks.PostToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PostToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for PostToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a supported local tool finishes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.pre-compact",
+    "tool": "codex",
+    "name": "PreCompact",
+    "display_name": "Pre Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction is about to begin.",
+    "syntax": [
+      "hooks.PreCompact"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PreCompact\": [/* handler */] } }",
+        "explanation": "Register a handler for PreCompact.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when context compaction is about to begin."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.post-compact",
+    "tool": "codex",
+    "name": "PostCompact",
+    "display_name": "Post Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction completes.",
+    "syntax": [
+      "hooks.PostCompact"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PostCompact\": [/* handler */] } }",
+        "explanation": "Register a handler for PostCompact.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when context compaction completes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.user-prompt-submit",
+    "tool": "codex",
+    "name": "UserPromptSubmit",
+    "display_name": "User Prompt Submit",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A user prompt is submitted.",
+    "syntax": [
+      "hooks.UserPromptSubmit"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"UserPromptSubmit\": [/* handler */] } }",
+        "explanation": "Register a handler for UserPromptSubmit.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a user prompt is submitted."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.subagent-start",
+    "tool": "codex",
+    "name": "SubagentStart",
+    "display_name": "Subagent Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent starts.",
+    "syntax": [
+      "hooks.SubagentStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SubagentStart\": [/* handler */] } }",
+        "explanation": "Register a handler for SubagentStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a subagent starts."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.subagent-stop",
+    "tool": "codex",
+    "name": "SubagentStop",
+    "display_name": "Subagent Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent stops.",
+    "syntax": [
+      "hooks.SubagentStop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SubagentStop\": [/* handler */] } }",
+        "explanation": "Register a handler for SubagentStop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a subagent stops."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.hook.stop",
+    "tool": "codex",
+    "name": "Stop",
+    "display_name": "Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The main agent is about to stop.",
+    "syntax": [
+      "hooks.Stop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"Stop\": [/* handler */] } }",
+        "explanation": "Register a handler for Stop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the main agent is about to stop."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

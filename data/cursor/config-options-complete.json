@@ -1,0 +1,779 @@
+[
+  {
+    "id": "cursor.config-option.global",
+    "tool": "cursor",
+    "name": "Global",
+    "display_name": "Global",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "$env:USERPROFILE\\.cursor\\cli-config.json",
+    "syntax": [
+      "Global: <Windows>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented Global behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.project",
+    "tool": "cursor",
+    "name": "Project",
+    "display_name": "Project",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "/.cursor/cli.json",
+    "syntax": [
+      "Project: <All>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented Project behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.version",
+    "tool": "cursor",
+    "name": "version",
+    "display_name": "version",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Config schema version (current: 1)",
+    "syntax": [
+      "version: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented version behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.editor-vimmode",
+    "tool": "cursor",
+    "name": "editor.vimMode",
+    "display_name": "editor.vimMode",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Enable Vim keybindings (default: false)",
+    "syntax": [
+      "editor.vimMode: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented editor.vimMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.permissions-deny",
+    "tool": "cursor",
+    "name": "permissions.deny",
+    "display_name": "permissions.deny",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Forbidden operations (see Permissions)",
+    "syntax": [
+      "permissions.deny: <string\\[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions.deny behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.channel",
+    "tool": "cursor",
+    "name": "channel",
+    "display_name": "channel",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Release channel used for CLI updates",
+    "syntax": [
+      "channel: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented channel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.model",
+    "tool": "cursor",
+    "name": "model",
+    "display_name": "model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Selected model configuration",
+    "syntax": [
+      "model: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.maxmode",
+    "tool": "cursor",
+    "name": "maxMode",
+    "display_name": "maxMode",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Persisted preference for max mode in the model picker",
+    "syntax": [
+      "maxMode: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented maxMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.haschangeddefaultmodel",
+    "tool": "cursor",
+    "name": "hasChangedDefaultModel",
+    "display_name": "hasChangedDefaultModel",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "CLI-managed model override flag",
+    "syntax": [
+      "hasChangedDefaultModel: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hasChangedDefaultModel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.notifications",
+    "tool": "cursor",
+    "name": "notifications",
+    "display_name": "notifications",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Send a terminal notification when the agent finishes or needs input",
+    "syntax": [
+      "notifications: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented notifications behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.hints",
+    "tool": "cursor",
+    "name": "hints",
+    "display_name": "hints",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Show CLI hints while the agent is working",
+    "syntax": [
+      "hints: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hints behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.rewind",
+    "tool": "cursor",
+    "name": "rewind",
+    "display_name": "rewind",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Enable /rewind to restore an earlier message in the session",
+    "syntax": [
+      "rewind: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented rewind behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.suggestnextprompt",
+    "tool": "cursor",
+    "name": "suggestNextPrompt",
+    "display_name": "suggestNextPrompt",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Suggest a follow-up prompt at the end of each turn",
+    "syntax": [
+      "suggestNextPrompt: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented suggestNextPrompt behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.display-showlinenumbers",
+    "tool": "cursor",
+    "name": "display.showLineNumbers",
+    "display_name": "display.showLineNumbers",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Show line numbers in rendered code blocks",
+    "syntax": [
+      "display.showLineNumbers: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented display.showLineNumbers behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.display-showthinkingblocks",
+    "tool": "cursor",
+    "name": "display.showThinkingBlocks",
+    "display_name": "display.showThinkingBlocks",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Render model thinking blocks when available",
+    "syntax": [
+      "display.showThinkingBlocks: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented display.showThinkingBlocks behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.display-showstatusindicators",
+    "tool": "cursor",
+    "name": "display.showStatusIndicators",
+    "display_name": "display.showStatusIndicators",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Enable terminal title status indicators",
+    "syntax": [
+      "display.showStatusIndicators: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented display.showStatusIndicators behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.display-showstatuslinerunningtime",
+    "tool": "cursor",
+    "name": "display.showStatusLineRunningTime",
+    "display_name": "display.showStatusLineRunningTime",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Show elapsed running time in the status line",
+    "syntax": [
+      "display.showStatusLineRunningTime: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented display.showStatusLineRunningTime behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.sandbox-networkaccess",
+    "tool": "cursor",
+    "name": "sandbox.networkAccess",
+    "display_name": "sandbox.networkAccess",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Network access setting for sandbox mode",
+    "syntax": [
+      "sandbox.networkAccess: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.networkAccess behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.network-usehttp1foragent",
+    "tool": "cursor",
+    "name": "network.useHttp1ForAgent",
+    "display_name": "network.useHttp1ForAgent",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Use HTTP/1.1 instead of HTTP/2 for agent connections (default: false)",
+    "syntax": [
+      "network.useHttp1ForAgent: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented network.useHttp1ForAgent behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.attribution-attributecommitstoagent",
+    "tool": "cursor",
+    "name": "attribution.attributeCommitsToAgent",
+    "display_name": "attribution.attributeCommitsToAgent",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Add \"Made with Cursor\" trailer to Agent commits (default: true)",
+    "syntax": [
+      "attribution.attributeCommitsToAgent: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented attribution.attributeCommitsToAgent behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.config-option.attribution-attributeprstoagent",
+    "tool": "cursor",
+    "name": "attribution.attributePRsToAgent",
+    "display_name": "attribution.attributePRsToAgent",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Add \"Made with Cursor\" footer to Agent PRs (default: true)",
+    "syntax": [
+      "attribution.attributePRsToAgent: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented attribution.attributePRsToAgent behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

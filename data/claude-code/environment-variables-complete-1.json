@@ -1,0 +1,3141 @@
+[
+  {
+    "id": "claude-code.environment-variable.anthropic-auth-token",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_AUTH_TOKEN",
+    "display_name": "Anthropic Auth Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Auth Token configuration",
+    "description": "Custom value for the Authorization header (the value you set here will be prefixed with Bearer )",
+    "syntax": [
+      "ANTHROPIC_AUTH_TOKEN=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-aws-api-key",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_AWS_API_KEY",
+    "display_name": "Anthropic Aws Api Key",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Aws Api Key configuration",
+    "description": "Workspace API key for Claude Platform on AWS, generated in the AWS Console. Sent as x-api-key and takes precedence over AWS SigV4",
+    "syntax": [
+      "ANTHROPIC_AWS_API_KEY=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-aws-base-url",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_AWS_BASE_URL",
+    "display_name": "Anthropic Aws Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Aws Base Url configuration",
+    "description": "Override the Claude Platform on AWS endpoint URL. Use for custom regions or when routing through an LLM gateway. Defaults to https://aws-external-anthropic.{region}.api.aws. Claude Code resolves the region with the same precedence as on Amazon Bedrock",
+    "syntax": [
+      "ANTHROPIC_AWS_BASE_URL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when routing through an LLM gateway."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-aws-workspace-id",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_AWS_WORKSPACE_ID",
+    "display_name": "Anthropic Aws Workspace Id",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Anthropic Aws Workspace Id configuration",
+    "description": "Required for Claude Platform on AWS. Sent on every request as the anthropic-workspace-id header",
+    "syntax": [
+      "ANTHROPIC_AWS_WORKSPACE_ID=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-base-url",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_BASE_URL",
+    "display_name": "Anthropic Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Base Url configuration",
+    "description": "Override the API endpoint to route requests through a proxy or gateway. When set to a non-first-party host, MCP tool search is disabled by default. Set ENABLE_TOOL_SEARCH=true if your proxy forwards tool_reference blocks. As of v2.1.196, Remote Control is disabled when this points at a host other than api.anthropic.com, matching its behavior on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry",
+    "syntax": [
+      "ANTHROPIC_BASE_URL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When set to a non-first-party host, MCP tool search is disabled by default."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.196",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-bedrock-base-url",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_BEDROCK_BASE_URL",
+    "display_name": "Anthropic Bedrock Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Bedrock Base Url configuration",
+    "description": "Override the Amazon Bedrock endpoint URL. Use for custom Amazon Bedrock endpoints or when routing through an LLM gateway. See Amazon Bedrock",
+    "syntax": [
+      "ANTHROPIC_BEDROCK_BASE_URL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when routing through an LLM gateway."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-bedrock-mantle-base-url",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_BEDROCK_MANTLE_BASE_URL",
+    "display_name": "Anthropic Bedrock Mantle Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Bedrock Mantle Base Url configuration",
+    "description": "Override the Amazon Bedrock Mantle endpoint URL. See Mantle endpoint",
+    "syntax": [
+      "ANTHROPIC_BEDROCK_MANTLE_BASE_URL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-bedrock-region-prefix",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_BEDROCK_REGION_PREFIX",
+    "display_name": "Anthropic Bedrock Region Prefix",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Bedrock Region Prefix configuration",
+    "description": "Cross-region inference profile prefix (us, eu, apac, jp, au, or global) Claude Code tries first instead of the one derived from the AWS region. Ignored in AWS GovCloud regions. Requires Claude Code v2.1.224 or later. See Amazon Bedrock",
+    "syntax": [
+      "ANTHROPIC_BEDROCK_REGION_PREFIX=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.224",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-bedrock-service-tier",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_BEDROCK_SERVICE_TIER",
+    "display_name": "Anthropic Bedrock Service Tier",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Bedrock Service Tier configuration",
+    "description": "Amazon Bedrock service tier (default, flex, or priority). Sent as the X-Amzn-Bedrock-Service-Tier header. See Amazon Bedrock",
+    "syntax": [
+      "ANTHROPIC_BEDROCK_SERVICE_TIER=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-betas",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_BETAS",
+    "display_name": "Anthropic Betas",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Betas configuration",
+    "description": "Comma-separated list of additional anthropic-beta header values to include in API requests. Claude Code already sends the beta headers it needs; use this to opt into an Anthropic API beta before Claude Code adds native support. Unlike the --betas flag, which requires API key authentication, this variable works with all auth methods including Claude.ai subscription",
+    "syntax": [
+      "ANTHROPIC_BETAS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "requires API key authentication, this variable works with all auth methods including Claude."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-custom-headers",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_CUSTOM_HEADERS",
+    "display_name": "Anthropic Custom Headers",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Anthropic Custom Headers configuration",
+    "description": "Custom headers to add to requests (Name: Value format, newline-separated for multiple headers). If a name or value contains a character an HTTP header can't carry, such as a curly quote or a zero-width space, Claude Code fails the request with an error that identifies the pair by position. Requires Claude Code v2.1.227 or later. Invalid request header value lists the exact character set and where the check runs",
+    "syntax": [
+      "ANTHROPIC_CUSTOM_HEADERS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "If a name or value contains a character an HTTP header can't carry, such as a curly quote or a zero-width space, Claude Code fails the request with an error that identifies the pair by position."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.227",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-custom-model-option",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_CUSTOM_MODEL_OPTION",
+    "display_name": "Anthropic Custom Model Option",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Custom Model Option configuration",
+    "description": "Model ID to add as a custom entry in the /model picker. Use this to make a non-standard or gateway-specific model selectable without replacing built-in aliases. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_CUSTOM_MODEL_OPTION=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-custom-model-option-description",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION",
+    "display_name": "Anthropic Custom Model Option Description",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Custom Model Option Description configuration",
+    "description": "Display description for the custom model entry in the /model picker. Defaults to Custom model () when not set",
+    "syntax": [
+      "ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-custom-model-option-name",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME",
+    "display_name": "Anthropic Custom Model Option Name",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Custom Model Option Name configuration",
+    "description": "Display name for the custom model entry in the /model picker. Defaults to the model ID when not set",
+    "syntax": [
+      "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-custom-model-option-supported-capabilities",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_CUSTOM_MODEL_OPTION_SUPPORTED_CAPABILITIES",
+    "display_name": "Anthropic Custom Model Option Supported Capabilities",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Custom Model Option Supported Capabilities configuration",
+    "description": "Comma-separated list of capabilities the custom model supports, for example effort,thinking. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_CUSTOM_MODEL_OPTION_SUPPORTED_CAPABILITIES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-fable-model",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_FABLE_MODEL",
+    "display_name": "Anthropic Default Fable Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Fable Model configuration",
+    "description": "Model ID that the fable alias resolves to, and the ID Claude Code recognizes as Fable 5 for automatic model fallback on third-party providers. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_FABLE_MODEL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-fable-model-description",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_FABLE_MODEL_DESCRIPTION",
+    "display_name": "Anthropic Default Fable Model Description",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Fable Model Description configuration",
+    "description": "Display description for the pinned Fable model in the /model picker. Defaults to Custom Fable model when not set. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_FABLE_MODEL_DESCRIPTION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-fable-model-name",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME",
+    "display_name": "Anthropic Default Fable Model Name",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Fable Model Name configuration",
+    "description": "Display name for the pinned Fable model in the /model picker. Defaults to the model ID when not set. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-fable-model-supported-capabilities",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_FABLE_MODEL_SUPPORTED_CAPABILITIES",
+    "display_name": "Anthropic Default Fable Model Supported Capabilities",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Fable Model Supported Capabilities configuration",
+    "description": "Comma-separated list of capabilities the pinned Fable model supports, for example effort,thinking. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_FABLE_MODEL_SUPPORTED_CAPABILITIES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-haiku-model",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+    "display_name": "Anthropic Default Haiku Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Haiku Model configuration",
+    "description": "Model ID that the haiku alias resolves to, also used for background functionality. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-haiku-model-description",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTION",
+    "display_name": "Anthropic Default Haiku Model Description",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Haiku Model Description configuration",
+    "description": "Display description for the pinned Haiku model in the /model picker. Defaults to Custom Haiku model when not set. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-haiku-model-name",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME",
+    "display_name": "Anthropic Default Haiku Model Name",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Haiku Model Name configuration",
+    "description": "Display name for the pinned Haiku model in the /model picker. Defaults to the model ID when not set. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-haiku-model-supported-capabilities",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL_SUPPORTED_CAPABILITIES",
+    "display_name": "Anthropic Default Haiku Model Supported Capabilities",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Haiku Model Supported Capabilities configuration",
+    "description": "Comma-separated list of capabilities the pinned Haiku model supports, for example effort,thinking. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL_SUPPORTED_CAPABILITIES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-model",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_MODEL",
+    "display_name": "Anthropic Default Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Model configuration",
+    "description": "Model that new sessions start on by default. Requires Claude Code v2.1.236 or later. See Set a default model for new sessions",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_MODEL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.236",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-opus-model",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+    "display_name": "Anthropic Default Opus Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Opus Model configuration",
+    "description": "Model ID that the opus alias resolves to, and that opusplan uses while Plan Mode is active. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_OPUS_MODEL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-opus-model-description",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_OPUS_MODEL_DESCRIPTION",
+    "display_name": "Anthropic Default Opus Model Description",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Opus Model Description configuration",
+    "description": "Display description for the pinned Opus model in the /model picker. When not set, defaults to Custom Opus model, or Custom Opus model (1M context) if the pinned model ID has the [1m] suffix and CLAUDE_CODE_DISABLE_1M_CONTEXT isn't turned on. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_OPUS_MODEL_DESCRIPTION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When not set, defaults to Custom Opus model, or Custom Opus model (1M context) if the pinned model ID has the [1m] suffix and CLAUDE_CODE_DISABLE_1M_CONTEXT isn't turned on."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-opus-model-name",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME",
+    "display_name": "Anthropic Default Opus Model Name",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Opus Model Name configuration",
+    "description": "Display name for the pinned Opus model in the /model picker. Defaults to the model ID when not set. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-opus-model-supported-capabilities",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_OPUS_MODEL_SUPPORTED_CAPABILITIES",
+    "display_name": "Anthropic Default Opus Model Supported Capabilities",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Opus Model Supported Capabilities configuration",
+    "description": "Comma-separated list of capabilities the pinned Opus model supports, for example effort,thinking. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_OPUS_MODEL_SUPPORTED_CAPABILITIES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-sonnet-model",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
+    "display_name": "Anthropic Default Sonnet Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Sonnet Model configuration",
+    "description": "Model ID that the sonnet alias resolves to, and that opusplan uses when Plan Mode is not active. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_SONNET_MODEL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when Plan Mode is not active."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-sonnet-model-description",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_SONNET_MODEL_DESCRIPTION",
+    "display_name": "Anthropic Default Sonnet Model Description",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Sonnet Model Description configuration",
+    "description": "Display description for the pinned Sonnet model in the /model picker. When not set, defaults to Custom Sonnet model, or Custom Sonnet model (1M context) if the pinned model ID has the [1m] suffix and CLAUDE_CODE_DISABLE_1M_CONTEXT isn't turned on. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_SONNET_MODEL_DESCRIPTION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When not set, defaults to Custom Sonnet model, or Custom Sonnet model (1M context) if the pinned model ID has the [1m] suffix and CLAUDE_CODE_DISABLE_1M_CONTEXT isn't turned on."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-sonnet-model-name",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME",
+    "display_name": "Anthropic Default Sonnet Model Name",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Sonnet Model Name configuration",
+    "description": "Display name for the pinned Sonnet model in the /model picker. Defaults to the model ID when not set. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when not set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-default-sonnet-model-supported-capabilities",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_DEFAULT_SONNET_MODEL_SUPPORTED_CAPABILITIES",
+    "display_name": "Anthropic Default Sonnet Model Supported Capabilities",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Default Sonnet Model Supported Capabilities configuration",
+    "description": "Comma-separated list of capabilities the pinned Sonnet model supports, for example effort,thinking. See Model configuration",
+    "syntax": [
+      "ANTHROPIC_DEFAULT_SONNET_MODEL_SUPPORTED_CAPABILITIES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-federation-rule-id",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_FEDERATION_RULE_ID",
+    "display_name": "Anthropic Federation Rule Id",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Federation Rule Id configuration",
+    "description": "Federation rule ID for Workload Identity Federation. When you set it together with ANTHROPIC_ORGANIZATION_ID, Claude Code selects federation credentials, which rank above your /login credential. See authentication precedence",
+    "syntax": [
+      "ANTHROPIC_FEDERATION_RULE_ID=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When you set it together with ANTHROPIC_ORGANIZATION_ID, Claude Code selects federation credentials, which rank above your /login credential."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-foundry-api-key",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_FOUNDRY_API_KEY",
+    "display_name": "Anthropic Foundry Api Key",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Foundry Api Key configuration",
+    "description": "API key for Microsoft Foundry authentication (see Microsoft Foundry)",
+    "syntax": [
+      "ANTHROPIC_FOUNDRY_API_KEY=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-foundry-auth-token",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_FOUNDRY_AUTH_TOKEN",
+    "display_name": "Anthropic Foundry Auth Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Foundry Auth Token configuration",
+    "description": "Bearer token for Microsoft Foundry authentication, such as a Microsoft Entra access token. Claude Code sends it as the Authorization: Bearer header. Takes precedence over ANTHROPIC_FOUNDRY_API_KEY and over the Azure default credential chain. See Microsoft Foundry. Requires Claude Code v2.1.203 or later",
+    "syntax": [
+      "ANTHROPIC_FOUNDRY_AUTH_TOKEN=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.203",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-foundry-base-url",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_FOUNDRY_BASE_URL",
+    "display_name": "Anthropic Foundry Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Foundry Base Url configuration",
+    "description": "Full base URL for the Microsoft Foundry resource (for example, https://my-resource.services.ai.azure.com/anthropic). Alternative to ANTHROPIC_FOUNDRY_RESOURCE (see Microsoft Foundry)",
+    "syntax": [
+      "ANTHROPIC_FOUNDRY_BASE_URL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-foundry-resource",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_FOUNDRY_RESOURCE",
+    "display_name": "Anthropic Foundry Resource",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Foundry Resource configuration",
+    "description": "Microsoft Foundry resource name (for example, my-resource). Required if ANTHROPIC_FOUNDRY_BASE_URL is not set (see Microsoft Foundry)",
+    "syntax": [
+      "ANTHROPIC_FOUNDRY_RESOURCE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if ANTHROPIC_FOUNDRY_BASE_URL is not set (see Microsoft Foundry)"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-model",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_MODEL",
+    "display_name": "Anthropic Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Anthropic Model configuration",
+    "description": "Name of the model setting to use (see Model Configuration)",
+    "syntax": [
+      "ANTHROPIC_MODEL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-organization-id",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_ORGANIZATION_ID",
+    "display_name": "Anthropic Organization Id",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Organization Id configuration",
+    "description": "Organization ID for Workload Identity Federation. Set it together with ANTHROPIC_FEDERATION_RULE_ID. See authentication precedence",
+    "syntax": [
+      "ANTHROPIC_ORGANIZATION_ID=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-profile",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_PROFILE",
+    "display_name": "Anthropic Profile",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Profile configuration",
+    "description": "Name of the Anthropic profile to authenticate with, such as one created by ant auth login. The named profile ranks above your /login credential. See authentication precedence",
+    "syntax": [
+      "ANTHROPIC_PROFILE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-small-fast-model-aws-region",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION",
+    "display_name": "Anthropic Small Fast Model Aws Region",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Small Fast Model Aws Region configuration",
+    "description": "Override AWS region for the Haiku-class model when using Amazon Bedrock or Amazon Bedrock Mantle. On Amazon Bedrock, this only takes effect when ANTHROPIC_DEFAULT_HAIKU_MODEL or the deprecated ANTHROPIC_SMALL_FAST_MODEL is also set, since Amazon Bedrock otherwise runs background tasks on the default Sonnet model or the primary model in the session region",
+    "syntax": [
+      "ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION=<value>"
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Do not use this variable in new configuration; use the replacement documented by the vendor when one is provided."
+    ]
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-vertex-base-url",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_VERTEX_BASE_URL",
+    "display_name": "Anthropic Vertex Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Vertex Base Url configuration",
+    "description": "Override Google Cloud's Agent Platform endpoint URL. Use for custom Google Cloud's Agent Platform endpoints or when routing through an LLM gateway. See Google Cloud's Agent Platform",
+    "syntax": [
+      "ANTHROPIC_VERTEX_BASE_URL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when routing through an LLM gateway."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-vertex-project-id",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_VERTEX_PROJECT_ID",
+    "display_name": "Anthropic Vertex Project Id",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Vertex Project Id configuration",
+    "description": "GCP project ID for Google Cloud's Agent Platform requests. Overridden by GCLOUD_PROJECT, GOOGLE_CLOUD_PROJECT, or the project in your GOOGLE_APPLICATION_CREDENTIALS credential file. See Google Cloud's Agent Platform",
+    "syntax": [
+      "ANTHROPIC_VERTEX_PROJECT_ID=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.anthropic-workspace-id",
+    "tool": "claude-code",
+    "name": "ANTHROPIC_WORKSPACE_ID",
+    "display_name": "Anthropic Workspace Id",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Anthropic Workspace Id configuration",
+    "description": "Workspace ID for workload identity federation. Set this when your federation rule is scoped to more than one workspace so the token exchange knows which workspace to target",
+    "syntax": [
+      "ANTHROPIC_WORKSPACE_ID=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when your federation rule is scoped to more than one workspace so the token exchange knows which workspace to target"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.api-force-idle-timeout",
+    "tool": "claude-code",
+    "name": "API_FORCE_IDLE_TIMEOUT",
+    "display_name": "Api Force Idle Timeout",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Api Force Idle Timeout configuration",
+    "description": "Override the 5-minute body idle timeout that aborts a streaming model response when no bytes arrive. Set to 0 to turn the timeout off, for example when a slow gateway or local model pauses longer than 5 minutes between chunks, or 1 to keep it on for every provider. When unset, the timeout is active on providers other than the direct Anthropic API and Claude Platform on AWS. The stream watchdogs run independently of it and abort a long silent pause even when you set 0 here. Requires Claude Code v2.1.169 or later",
+    "syntax": [
+      "API_FORCE_IDLE_TIMEOUT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when no bytes arrive."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.169",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.api-timeout-ms",
+    "tool": "claude-code",
+    "name": "API_TIMEOUT_MS",
+    "display_name": "Api Timeout Ms",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Api Timeout Ms configuration",
+    "description": "Timeout for API requests in milliseconds (default: 600000, or 10 minutes; maximum: 2147483647). Increase this when requests time out on slow networks or when routing through a proxy. Values above the maximum overflow the underlying timer and cause requests to fail immediately",
+    "syntax": [
+      "API_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when requests time out on slow networks or when routing through a proxy."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.aws-bearer-token-bedrock",
+    "tool": "claude-code",
+    "name": "AWS_BEARER_TOKEN_BEDROCK",
+    "display_name": "Aws Bearer Token Bedrock",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Aws Bearer Token Bedrock configuration",
+    "description": "Amazon Bedrock API key for authentication (see Amazon Bedrock API keys)",
+    "syntax": [
+      "AWS_BEARER_TOKEN_BEDROCK=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.bash-default-timeout-ms",
+    "tool": "claude-code",
+    "name": "BASH_DEFAULT_TIMEOUT_MS",
+    "display_name": "Bash Default Timeout Ms",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Bash Default Timeout Ms configuration",
+    "description": "Default timeout for long-running bash commands (default: 120000, or 2 minutes)",
+    "syntax": [
+      "BASH_DEFAULT_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.bash-max-output-length",
+    "tool": "claude-code",
+    "name": "BASH_MAX_OUTPUT_LENGTH",
+    "display_name": "Bash Max Output Length",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Bash Max Output Length configuration",
+    "description": "Maximum number of characters of bash output that Claude Code reads back into a command's result (default: 30000; maximum: 150000). See Output limits",
+    "syntax": [
+      "BASH_MAX_OUTPUT_LENGTH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.bash-max-timeout-ms",
+    "tool": "claude-code",
+    "name": "BASH_MAX_TIMEOUT_MS",
+    "display_name": "Bash Max Timeout Ms",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Bash Max Timeout Ms configuration",
+    "description": "Maximum timeout the model can set for long-running bash commands (default: 600000, or 10 minutes). The effective ceiling is the larger of this and BASH_DEFAULT_TIMEOUT_MS",
+    "syntax": [
+      "BASH_MAX_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.ccr-force-bundle",
+    "tool": "claude-code",
+    "name": "CCR_FORCE_BUNDLE",
+    "display_name": "Ccr Force Bundle",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Ccr Force Bundle configuration",
+    "description": "Set to 1 to force claude --cloud to bundle and upload your local repository even when GitHub access is available",
+    "syntax": [
+      "CCR_FORCE_BUNDLE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when GitHub access is available"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claudecode",
+    "tool": "claude-code",
+    "name": "CLAUDECODE",
+    "display_name": "Claudecode",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claudecode configuration",
+    "description": "Set to 1 in subprocesses Claude Code spawns (Bash and PowerShell tools, tmux sessions, hook commands, status line commands, stdio MCP server subprocesses). IDE extensions also set this in their integrated terminals. Use to detect when a script is running inside a subprocess spawned by Claude Code. To check whether the current process was spawned directly by a tool call or hook, rather than inside a stdio MCP server that Claude Code started, use CLAUDE_CODE_CHILD_SESSION instead",
+    "syntax": [
+      "CLAUDECODE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when a script is running inside a subprocess spawned by Claude Code."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-afk-countdown-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_AFK_COUNTDOWN_MS",
+    "display_name": "Claude Afk Countdown Ms",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Afk Countdown Ms configuration",
+    "description": "How many milliseconds before auto-continue the on-screen countdown appears on an unanswered AskUserQuestion dialog. Default 20000 (20 seconds), capped at the auto-continue timeout. Has no effect unless auto-continue is on; see the askUserQuestionTimeout setting and CLAUDE_AFK_TIMEOUT_MS. Requires Claude Code v2.1.198 or later",
+    "syntax": [
+      "CLAUDE_AFK_COUNTDOWN_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.198",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-afk-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_AFK_TIMEOUT_MS",
+    "display_name": "Claude Afk Timeout Ms",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Afk Timeout Ms configuration",
+    "description": "How many milliseconds of idle time before an unanswered AskUserQuestion dialog auto-continues without you. Auto-continue is off by default; opt in with the askUserQuestionTimeout setting. This variable is an override for demos and automated tests: when set, it takes precedence over that setting and turns auto-continue on even when the setting is unset or never. Setting 0 doesn't turn the timeout off; it closes the dialog immediately. In v2.1.198 and v2.1.199, auto-continue was on by default with a 60000 (60 seconds) timeout. Requires Claude Code v2.1.198 or later",
+    "syntax": [
+      "CLAUDE_AFK_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when set, it takes precedence over that setting and turns auto-continue on even when the setting is unset or never."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.198",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-agent-sdk-disable-builtin-agents",
+    "tool": "claude-code",
+    "name": "CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS",
+    "display_name": "Claude Agent Sdk Disable Builtin Agents",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Agent Sdk Disable Builtin Agents configuration",
+    "description": "Set to 1 to disable all built-in subagent types such as Explore and Plan. Only applies in non-interactive mode (the -p flag). Useful for SDK users who want a blank slate. This also removes general-purpose, the subagent Claude Code runs when an Agent tool call omits subagent_type. Such a call then fails with subagent_type is required",
+    "syntax": [
+      "CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Only applies in non-interactive mode (the -p flag)."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-agent-sdk-mcp-no-prefix",
+    "tool": "claude-code",
+    "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+    "display_name": "Claude Agent Sdk Mcp No Prefix",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Agent Sdk Mcp No Prefix configuration",
+    "description": "Set to 1 to skip the mcp____ prefix on tool names from SDK-created MCP servers. Tools use their original names. SDK usage only",
+    "syntax": [
+      "CLAUDE_AGENT_SDK_MCP_NO_PREFIX=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-async-agent-stall-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS",
+    "display_name": "Claude Async Agent Stall Timeout Ms",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Async Agent Stall Timeout Ms configuration",
+    "description": "Stall timeout in milliseconds for background subagents. Default 600000 (10 minutes). The timer resets on each streaming progress event; if no progress arrives within the window, the subagent is aborted and the task is marked failed, surfacing any partial result to the parent",
+    "syntax": [
+      "CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if no progress arrives within the window, the subagent is aborted and the task is marked failed, surfacing any partial result to the parent"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-autocompact-pct-override",
+    "tool": "claude-code",
+    "name": "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE",
+    "display_name": "Claude Autocompact Pct Override",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Claude Autocompact Pct Override configuration",
+    "description": "Set the percentage (1-100) of the auto-compact window at which auto-compaction triggers. Use lower values like 50 to compact earlier; the variable can't raise the threshold, so values above the default percentage are ignored. It applies only in sessions that compact before the model's context limit. Applies to both main conversations and subagents",
+    "syntax": [
+      "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-auto-background-tasks",
+    "tool": "claude-code",
+    "name": "CLAUDE_AUTO_BACKGROUND_TASKS",
+    "display_name": "Claude Auto Background Tasks",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Auto Background Tasks configuration",
+    "description": "Set to 1 to force-enable automatic backgrounding of long-running agent tasks. When enabled, subagents are moved to the background after running for approximately two minutes. Also enables automatic backgrounding of long MCP tool calls in non-interactive mode on Claude Code v2.1.212 or later",
+    "syntax": [
+      "CLAUDE_AUTO_BACKGROUND_TASKS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When enabled, subagents are moved to the background after running for approximately two minutes."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-ax-prepark-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_AX_PREPARK_MS",
+    "display_name": "Claude Ax Prepark Ms",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Ax Prepark Ms configuration",
+    "description": "In screen reader mode, how many milliseconds Claude Code waits, with the cursor at the start of the line, before it writes a new or changed line. Default 50. Set 0 to write immediately. Claude Code caps the wait at 5000. Requires Claude Code v2.1.233 or later",
+    "syntax": [
+      "CLAUDE_AX_PREPARK_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.233",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-ax-screen-reader",
+    "tool": "claude-code",
+    "name": "CLAUDE_AX_SCREEN_READER",
+    "display_name": "Claude Ax Screen Reader",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Ax Screen Reader configuration",
+    "description": "Set to 1 to render screen-reader friendly output: flat text without decorative borders or animations. Set to 0 to force screen-reader mode off even when axScreenReader is true. The --ax-screen-reader flag takes precedence. Requires Claude Code v2.1.181 or later",
+    "syntax": [
+      "CLAUDE_AX_SCREEN_READER=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when axScreenReader is true."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.181",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-ax-startup-quiet-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_AX_STARTUP_QUIET_MS",
+    "display_name": "Claude Ax Startup Quiet Ms",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Ax Startup Quiet Ms configuration",
+    "description": "In screen reader mode, how many milliseconds Claude Code holds the first interface render after the startup confirmation line, so your screen reader can speak the line in full before new output interrupts it. Default 3000. Set 0 to render immediately. Claude Code caps the hold at 600000 (10 minutes). Your first keystroke ends the hold early. Requires Claude Code v2.1.217 or later",
+    "syntax": [
+      "CLAUDE_AX_STARTUP_QUIET_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.217",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-bash-maintain-project-working-dir",
+    "tool": "claude-code",
+    "name": "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR",
+    "display_name": "Claude Bash Maintain Project Working Dir",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Bash Maintain Project Working Dir configuration",
+    "description": "Return to the original working directory after each Bash or PowerShell command in the main session",
+    "syntax": [
+      "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-byte-stream-idle-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS",
+    "display_name": "Claude Byte Stream Idle Timeout Ms",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Byte Stream Idle Timeout Ms configuration",
+    "description": "Timeout in milliseconds for the byte-level streaming idle watchdog; when set, it takes precedence over CLAUDE_STREAM_IDLE_TIMEOUT_MS for that watchdog and leaves the event-level watchdog unchanged. Claude Code clamps this variable to between 10 seconds and 30 minutes. Requires Claude Code v2.1.210 or later",
+    "syntax": [
+      "CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when set, it takes precedence over CLAUDE_STREAM_IDLE_TIMEOUT_MS for that watchdog and leaves the event-level watchdog unchanged."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.210",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-client-presence-file",
+    "tool": "claude-code",
+    "name": "CLAUDE_CLIENT_PRESENCE_FILE",
+    "display_name": "Claude Client Presence File",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Client Presence File configuration",
+    "description": "Path to a file that an external tool, such as a screen-lock listener, creates when you unlock your screen and deletes when you lock it. While the file exists, Claude Code skips Remote Control mobile push notifications, so you stop getting pushes while you are actively using the computer. When the file is absent or unreadable, notifications are sent as normal. Claude Code checks the file once per push-triggering event rather than polling it. Requires Claude Code v2.1.181 or later",
+    "syntax": [
+      "CLAUDE_CLIENT_PRESENCE_FILE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when you unlock your screen and deletes when you lock it."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.181",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-accessibility",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ACCESSIBILITY",
+    "display_name": "Claude Code Accessibility",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Claude Code Accessibility configuration",
+    "description": "Set to 1 to keep the native terminal cursor visible and disable the inverted-text cursor indicator. Allows screen magnifiers like macOS Zoom to track cursor position",
+    "syntax": [
+      "CLAUDE_CODE_ACCESSIBILITY=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-additional-directories-claude-md",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD",
+    "display_name": "Claude Code Additional Directories Claude Md",
+    "type": "environment-variable",
+    "category": "context",
+    "role": "Claude Code Additional Directories Claude Md configuration",
+    "description": "Set to 1 to load memory files from directories specified with --add-dir. Loads CLAUDE.md, .claude/CLAUDE.md, .claude/rules/*.md, and CLAUDE.local.md. By default, additional directories do not load memory files",
+    "syntax": [
+      "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-alt-screen-full-repaint",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT",
+    "display_name": "Claude Code Alt Screen Full Repaint",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Claude Code Alt Screen Full Repaint configuration",
+    "description": "Set to 1 to repaint the entire screen on every frame in fullscreen rendering instead of sending incremental updates. Use this if fullscreen mode shows stale or misplaced text fragments. Claude Code enables this automatically for background sessions and agent view on Windows",
+    "syntax": [
+      "CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if fullscreen mode shows stale or misplaced text fragments."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-always-enable-effort",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ALWAYS_ENABLE_EFFORT",
+    "display_name": "Claude Code Always Enable Effort",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Claude Code Always Enable Effort configuration",
+    "description": "Set to 1 to send the effort parameter with every request, even when Claude Code does not recognize the model ID as effort-capable. Use this when routing through an LLM gateway or third-party provider that serves models under custom identifiers. Models that reject the effort parameter at the API, including Claude 3 models, Sonnet 4.0 and 4.5, Opus 4.0 and 4.1, and Haiku 4.5, are still excluded so requests do not fail",
+    "syntax": [
+      "CLAUDE_CODE_ALWAYS_ENABLE_EFFORT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when Claude Code does not recognize the model ID as effort-capable."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-api-key-helper-ttl-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_API_KEY_HELPER_TTL_MS",
+    "display_name": "Claude Code Api Key Helper Ttl Ms",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Api Key Helper Ttl Ms configuration",
+    "description": "Interval in milliseconds at which credentials should be refreshed (when using apiKeyHelper)",
+    "syntax": [
+      "CLAUDE_CODE_API_KEY_HELPER_TTL_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using apiKeyHelper)"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-artifact-auto-open",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ARTIFACT_AUTO_OPEN",
+    "display_name": "Claude Code Artifact Auto Open",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Artifact Auto Open configuration",
+    "description": "Set to 0 to stop Claude Code from opening the browser automatically when a new artifact is published. Republishing an existing artifact does not open the browser regardless of this setting",
+    "syntax": [
+      "CLAUDE_CODE_ARTIFACT_AUTO_OPEN=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when a new artifact is published."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-artifact-comments",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ARTIFACT_COMMENTS",
+    "display_name": "Claude Code Artifact Comments",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Artifact Comments configuration",
+    "description": "Set to 0 to stop Claude reading and replying to comments on an artifact. Has no effect when CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC has turned artifacts off. Requires Claude Code v2.1.221 or later",
+    "syntax": [
+      "CLAUDE_CODE_ARTIFACT_COMMENTS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC has turned artifacts off."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.221",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-artifact-comments-autoreact",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT",
+    "display_name": "Claude Code Artifact Comments Autoreact",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Artifact Comments Autoreact configuration",
+    "description": "Set to 0 to stop Claude replying on its own to comments sent to it. Requires Claude Code v2.1.228 or later",
+    "syntax": [
+      "CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.228",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-attribution-header",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_ATTRIBUTION_HEADER",
+    "display_name": "Claude Code Attribution Header",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Attribution Header configuration",
+    "description": "Set to 0 to omit the attribution block, which carries the client version and a prompt fingerprint, from the start of the system prompt. Caching on a direct connection to the Anthropic API is unaffected either way. In some direct-connection setups, Claude Code keeps the block on auto mode classifier requests even when you set 0. In System prompt attribution block, check which connections and credentials this covers. Before v2.1.181 the block included a per-request token on custom base URLs and Microsoft Foundry connections, so on those versions set it to 0 when your LLM gateway caches on the request body or forwards requests to a third-party provider, or when you connect to Microsoft Foundry directly",
+    "syntax": [
+      "CLAUDE_CODE_ATTRIBUTION_HEADER=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when you set 0."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-auto-compact-window",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_AUTO_COMPACT_WINDOW",
+    "display_name": "Claude Code Auto Compact Window",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Auto Compact Window configuration",
+    "description": "Set the auto-compact window in tokens, from 100000 to 1000000. Accepts a plain integer such as 500000 only: a value like 500k reads as 500 and clamps to the 100K minimum. Takes precedence over the /autocompact command, the --autocompact flag, and the autoCompactWindow setting. The status line's used_percentage always measures against the model's full context window, so once this variable is set, that percentage no longer indicates when compaction will run",
+    "syntax": [
+      "CLAUDE_CODE_AUTO_COMPACT_WINDOW=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when compaction will run"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-auto-connect-ide",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_AUTO_CONNECT_IDE",
+    "display_name": "Claude Code Auto Connect Ide",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Claude Code Auto Connect Ide configuration",
+    "description": "Override automatic IDE connection. By default, Claude Code connects automatically when launched inside a supported IDE's integrated terminal. Set to false to prevent this. Set to true to force a connection attempt when auto-detection fails, such as when tmux obscures the parent terminal. Takes precedence over the autoConnectIde global config setting",
+    "syntax": [
+      "CLAUDE_CODE_AUTO_CONNECT_IDE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when launched inside a supported IDE's integrated terminal."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-aws-chain-resolve-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS",
+    "display_name": "Claude Code Aws Chain Resolve Timeout Ms",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Aws Chain Resolve Timeout Ms configuration",
+    "description": "Time in milliseconds Claude Code waits for the AWS default credential provider chain to produce credentials before the request fails with AWS default-chain credential resolve timed out (default: 60000). Raise it when a step in your chain legitimately needs longer, such as a browser-based SSO sign-in with MFA through a wrapper like aws-vault. Applies wherever Claude Code signs with the default chain: Amazon Bedrock, Claude Platform on AWS, and the Mantle endpoint. Requires Claude Code v2.1.207 or later",
+    "syntax": [
+      "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when a step in your chain legitimately needs longer, such as a browser-based SSO sign-in with MFA through a wrapper like aws-vault."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.207",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-bridge-session-id",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_BRIDGE_SESSION_ID",
+    "display_name": "Claude Code Bridge Session Id",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Claude Code Bridge Session Id configuration",
+    "description": "Set automatically in Bash tool and hook command subprocesses while the session has an active Remote Control connection, and removed when the connection ends. The value is the session's ID in session_ form, the same identifier that appears in the session's claude.ai/code URL, so a script can link back to the session that ran it. Requires Claude Code v2.1.199 or later. In cloud sessions, read CLAUDE_CODE_REMOTE_SESSION_ID instead",
+    "syntax": [
+      "CLAUDE_CODE_BRIDGE_SESSION_ID=<value>"
+    ],
+    "maturity": "removed",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.199",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-bs-as-ctrl-backspace",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_BS_AS_CTRL_BACKSPACE",
+    "display_name": "Claude Code Bs As Ctrl Backspace",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Claude Code Bs As Ctrl Backspace configuration",
+    "description": "Set to 0 to make Claude Code read the 0x08 byte, also written ^H, as plain Backspace, or 1 to read it as Ctrl+Backspace. Either value replaces the platform default. By default, Claude Code reads it as Ctrl+Backspace on Windows, except when TERM_PROGRAM is mintty or TERM is cygwin, and as plain Backspace on macOS and Linux. Set 0 in a Windows terminal where Backspace deletes a whole word",
+    "syntax": [
+      "CLAUDE_CODE_BS_AS_CTRL_BACKSPACE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when TERM_PROGRAM is mintty or TERM is cygwin, and as plain Backspace on macOS and Linux."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-cert-store",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_CERT_STORE",
+    "display_name": "Claude Code Cert Store",
+    "type": "environment-variable",
+    "category": "permissions",
+    "role": "Claude Code Cert Store configuration",
+    "description": "Comma-separated list of CA certificate sources for TLS connections. bundled is the Mozilla CA set shipped with Claude Code. system is the operating system trust store, read only on runtimes with tls.getCACertificates: the native binary, or Node 22.15 or later for npm installs. See CA certificate store. Default is bundled,system",
+    "syntax": [
+      "CLAUDE_CODE_CERT_STORE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-child-session",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_CHILD_SESSION",
+    "display_name": "Claude Code Child Session",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Claude Code Child Session configuration",
+    "description": "Set to 1 in subprocesses Claude Code spawns via the Bash, PowerShell, and Monitor tools, hook commands, and status line commands. Not set for stdio MCP server subprocesses, which are long-lived and outlive the session that spawned them. Unlike CLAUDECODE, this is only set by Claude Code itself when it launches a subprocess and not by IDE extensions, so it reliably distinguishes a nested session from a top-level claude launched in an IDE-integrated terminal. A nested interactive claude TUI started this way is automatically excluded from --resume, --continue, up-arrow history, and the claude agents list. Non-interactive claude -p sessions still persist. Set CLAUDE_CODE_FORCE_SESSION_PERSISTENCE=1 to override this exclusion. Requires Claude Code v2.1.172 or later",
+    "syntax": [
+      "CLAUDE_CODE_CHILD_SESSION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when it launches a subprocess and not by IDE extensions, so it reliably distinguishes a nested session from a top-level claude launched in an IDE-integrated terminal."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.172",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-client-cert",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_CLIENT_CERT",
+    "display_name": "Claude Code Client Cert",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Client Cert configuration",
+    "description": "Path to client certificate file for mTLS authentication",
+    "syntax": [
+      "CLAUDE_CODE_CLIENT_CERT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-client-key",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_CLIENT_KEY",
+    "display_name": "Claude Code Client Key",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Claude Code Client Key configuration",
+    "description": "Path to client private key file for mTLS authentication",
+    "syntax": [
+      "CLAUDE_CODE_CLIENT_KEY=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-client-key-passphrase",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_CLIENT_KEY_PASSPHRASE",
+    "display_name": "Claude Code Client Key Passphrase",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Client Key Passphrase configuration",
+    "description": "Passphrase for encrypted CLAUDE\\_CODE\\_CLIENT\\_KEY (optional)",
+    "syntax": [
+      "CLAUDE_CODE_CLIENT_KEY_PASSPHRASE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-connect-timeout-ms",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_CONNECT_TIMEOUT_MS",
+    "display_name": "Claude Code Connect Timeout Ms",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Claude Code Connect Timeout Ms configuration",
+    "description": "Removed in v2.1.186 and now a no-op. Previously set a separate timeout for the connect, TLS, and response-header phase of a streaming API request. Use API_TIMEOUT_MS for the per-request timeout. For the response-header phase of a streaming request, see CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS",
+    "syntax": [
+      "CLAUDE_CODE_CONNECT_TIMEOUT_MS=<value>"
+    ],
+    "maturity": "removed",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.environment-variable.claude-code-debug-logs-dir",
+    "tool": "claude-code",
+    "name": "CLAUDE_CODE_DEBUG_LOGS_DIR",
+    "display_name": "Claude Code Debug Logs Dir",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Claude Code Debug Logs Dir configuration",
+    "description": "Override the debug log file path. Despite the name, this is a file path, not a directory. Requires debug mode to be enabled separately via --debug, /debug, or the DEBUG environment variable: setting this variable alone does not enable logging. The --debug-file flag does both at once. Defaults to ~/.claude/debug/.txt",
+    "syntax": [
+      "CLAUDE_CODE_DEBUG_LOGS_DIR=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires debug mode to be enabled separately via --debug, /debug, or the DEBUG environment variable: setting this variable alone does not enable logging."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/env-vars",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

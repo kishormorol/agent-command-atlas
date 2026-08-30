@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../">
+    <meta name="description" content="MCP_TOOL_TIMEOUT for Claude Code: Timeout in milliseconds for MCP tool execution (default: 100000000, about 28 hours). For an HTTP, SSE, or claude.ai connector server, each request also times out after 60 seconds by default; set this variable, or the per-server timeout, above 60000 to raise that per-request limit. A lower value still shortens the overall tool-execution timeout but leaves the per-request limit at 60 seconds. Stdio and WebSocket servers have no per-request timer. A per-server timeout field in .mcp.json overrides this for that server. A per-server timeout of at least 1000 also sets the minimum idle window for that server&#x27;s tool calls, so CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT never aborts them sooner; this floor requires Claude Code v2.1.203 or later. For the env variable, values below 1000 are floored to one second; for the per-server field, values below 1000 are ignored">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MCP_TOOL_TIMEOUT — Mcp Tool Timeout | Agent Command Atlas">
+    <meta property="og:description" content="MCP_TOOL_TIMEOUT for Claude Code: Timeout in milliseconds for MCP tool execution (default: 100000000, about 28 hours). For an HTTP, SSE, or claude.ai connector server, each request also times out after 60 seconds by default; set this variable, or the per-server timeout, above 60000 to raise that per-request limit. A lower value still shortens the overall tool-execution timeout but leaves the per-request limit at 60 seconds. Stdio and WebSocket servers have no per-request timer. A per-server timeout field in .mcp.json overrides this for that server. A per-server timeout of at least 1000 also sets the minimum idle window for that server&#x27;s tool calls, so CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT never aborts them sooner; this floor requires Claude Code v2.1.203 or later. For the env variable, values below 1000 are floored to one second; for the per-server field, values below 1000 are ignored">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MCP_TOOL_TIMEOUT — Mcp Tool Timeout | Agent Command Atlas">
+    <meta name="twitter:description" content="MCP_TOOL_TIMEOUT for Claude Code: Timeout in milliseconds for MCP tool execution (default: 100000000, about 28 hours). For an HTTP, SSE, or claude.ai connector server, each request also times out after 60 seconds by default; set this variable, or the per-server timeout, above 60000 to raise that per-request limit. A lower value still shortens the overall tool-execution timeout but leaves the per-request limit at 60 seconds. Stdio and WebSocket servers have no per-request timer. A per-server timeout field in .mcp.json overrides this for that server. A per-server timeout of at least 1000 also sets the minimum idle window for that server&#x27;s tool calls, so CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT never aborts them sooner; this floor requires Claude Code v2.1.203 or later. For the env variable, values below 1000 are floored to one second; for the per-server field, values below 1000 are ignored">
+    <title>MCP_TOOL_TIMEOUT — Mcp Tool Timeout | Agent Command Atlas</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-route="entry:claude-code.environment-variable.mcp-tool-timeout">
+    <a class="skip-link" href="#main-content">Skip to reference</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="" aria-label="Agent Command Atlas home">
+          <span class="brand__mark" aria-hidden="true">A/</span>
+          <span class="brand__name"><strong>Agent Command</strong><em>Atlas</em></span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="">Reference</a>
+          <a href="compare/">Compare</a>
+          <a href="coverage/">Coverage</a>
+          <a class="site-nav__github" href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <div class="loading" role="status">
+        <p class="eyebrow">Verified command reference</p>
+        <h1>Agent Command Atlas</h1>
+        <p>Loading the reference…</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong>Agent Command Atlas</strong> · Built from canonical structured data and official sources.</p>
+      <a href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

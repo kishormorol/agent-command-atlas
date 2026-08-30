@@ -1,5 +1,39 @@
 [
   {
+    "id": "agents.define",
+    "display_name": "Define custom agents",
+    "description": "Create a reusable specialist agent or subagent definition.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.agent.codex-agents-name-toml",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.agent.claude-agents-name-md",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": "gemini-cli.agent.agents-overrides",
+        "relationship": "partial",
+        "notes": "The documented setting overrides named agents; it is not a general file format for defining arbitrary agents."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.agent.project-cursor-agents-name-md",
+        "relationship": "exact"
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.agent.github-agents-name-agent-md",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/agents-define/"
+  },
+  {
     "id": "agents.manage",
     "display_name": "Manage agents",
     "description": "Discover, select, inspect, or coordinate agents and subagents.",
@@ -172,6 +206,43 @@
       }
     ],
     "path": "compare/code-review/"
+  },
+  {
+    "id": "config.inspect",
+    "display_name": "Inspect effective configuration",
+    "description": "Open or diagnose the configuration that controls the current agent session.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.slash-command.debug-config",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.skill.doctor",
+        "relationship": "similar",
+        "notes": "Claude doctor checks installation and configuration health rather than exposing a full resolved-layer view."
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": "gemini-cli.slash-command.settings",
+        "relationship": "similar",
+        "notes": "Gemini opens settings rather than a dedicated configuration-precedence diagnostic."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.cli-subcommand.about",
+        "relationship": "partial",
+        "notes": "Cursor about exposes runtime and account details but not all effective configuration."
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.slash-command.settings",
+        "relationship": "similar",
+        "notes": "Copilot opens the settings interface rather than a resolved configuration trace."
+      }
+    ],
+    "path": "compare/config-inspect/"
   },
   {
     "id": "context.attach-file",
@@ -381,6 +452,40 @@
     "path": "compare/git-diff/"
   },
   {
+    "id": "hooks.configure",
+    "display_name": "Configure lifecycle hooks",
+    "description": "Inspect, register, enable, or manage automation triggered by agent lifecycle events.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.slash-command.hooks",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.slash-command.hooks",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": "gemini-cli.slash-command.hooks",
+        "relationship": "exact"
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.hook.pre-tool-use",
+        "relationship": "partial",
+        "notes": "Cursor documents hook configuration and events, but the mapped record is the representative pre-tool event rather than an interactive hook manager."
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.config-option.hooks",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/hooks-configure/"
+  },
+  {
     "id": "instructions.initialize",
     "display_name": "Initialize project instructions",
     "description": "Create a starter repository instruction file for future agent sessions.",
@@ -555,6 +660,44 @@
     "path": "compare/permissions-configure/"
   },
   {
+    "id": "permissions.sandbox",
+    "display_name": "Configure execution isolation",
+    "description": "Constrain agent command execution with a documented sandbox or isolation control.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.permission.workspace-write",
+        "relationship": "similar",
+        "notes": "Codex workspace-write limits writes to approved roots and applies its own network policy."
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.config-option.sandbox-enabled",
+        "relationship": "similar",
+        "notes": "Claude Code exposes a configurable command sandbox with platform-specific behavior."
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": "gemini-cli.config-option.tools-sandbox",
+        "relationship": "similar",
+        "notes": "Gemini CLI selects a sandbox implementation through tools.sandbox."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.permission.sandbox-enabled",
+        "relationship": "similar",
+        "notes": "Cursor sandbox mode constrains its command execution surface."
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.config-option.sandbox-enabled",
+        "relationship": "similar",
+        "notes": "Copilot CLI sandboxing covers shell, MCP/LSP, and built-in file and web tools under its own policy model."
+      }
+    ],
+    "path": "compare/permissions-sandbox/"
+  },
+  {
     "id": "planning.goal",
     "display_name": "Track a persistent goal",
     "description": "Attach a long-running objective to an agent session.",
@@ -621,6 +764,40 @@
       }
     ],
     "path": "compare/planning-start/"
+  },
+  {
+    "id": "plugins.manage",
+    "display_name": "Manage plugins or extensions",
+    "description": "Discover, install, configure, or remove packaged agent customizations.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.slash-command.plugins",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.slash-command.plugin",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": "gemini-cli.slash-command.extensions",
+        "relationship": "similar",
+        "notes": "Gemini CLI calls its packaged customization unit an extension rather than a plugin."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.slash-command.plugin",
+        "relationship": "exact"
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.slash-command.plugin",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/plugins-manage/"
   },
   {
     "id": "session.fork",
@@ -694,6 +871,40 @@
     "path": "compare/session-remote-control/"
   },
   {
+    "id": "session.rename",
+    "display_name": "Rename a session",
+    "description": "Assign or change a human-readable name for the current conversation.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.slash-command.rename",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.slash-command.rename",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "The current official command reference does not document a session-rename command."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.slash-command.rename",
+        "relationship": "exact"
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.slash-command.rename",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/session-rename/"
+  },
+  {
     "id": "session.resume",
     "display_name": "Resume session",
     "description": "Continue a previously saved agent conversation.",
@@ -763,6 +974,39 @@
     "path": "compare/session-status/"
   },
   {
+    "id": "skills.define",
+    "display_name": "Define agent skills",
+    "description": "Package reusable agent instructions and optional supporting resources in a skill directory.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.skill.skill-md",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.skill.claude-skills-name-skill-md",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": "gemini-cli.skill.gemini-skills-name-skill-md",
+        "relationship": "exact"
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.skill.cursor-skills-name-skill-md",
+        "relationship": "exact"
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.skill.github-skills-name-skill-md",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/skills-define/"
+  },
+  {
     "id": "skills.manage",
     "display_name": "Manage skills",
     "description": "Discover, select, enable, disable, install, or reload reusable skills.",
@@ -830,6 +1074,41 @@
       }
     ],
     "path": "compare/terminal-execute/"
+  },
+  {
+    "id": "usage.inspect",
+    "display_name": "Inspect usage and statistics",
+    "description": "View account usage, session statistics, or related runtime totals.",
+    "mappings": [
+      {
+        "tool": "codex",
+        "entry_id": "codex.slash-command.usage",
+        "relationship": "exact"
+      },
+      {
+        "tool": "claude-code",
+        "entry_id": "claude-code.slash-command.usage",
+        "relationship": "exact"
+      },
+      {
+        "tool": "gemini-cli",
+        "entry_id": "gemini-cli.slash-command.stats",
+        "relationship": "similar",
+        "notes": "Gemini reports session, model, and tool statistics rather than subscription usage."
+      },
+      {
+        "tool": "cursor",
+        "entry_id": "cursor.cli-subcommand.about",
+        "relationship": "partial",
+        "notes": "Cursor about reports version, system, and account information but is not a detailed usage view."
+      },
+      {
+        "tool": "github-copilot",
+        "entry_id": "github-copilot.slash-command.usage",
+        "relationship": "exact"
+      }
+    ],
+    "path": "compare/usage-inspect/"
   },
   {
     "id": "worktree.manage",

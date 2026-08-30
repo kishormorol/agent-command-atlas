@@ -1,0 +1,1011 @@
+[
+  {
+    "id": "cursor.hook.session-start",
+    "tool": "cursor",
+    "name": "sessionStart",
+    "display_name": "Session Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An Agent or Cmd+K session starts.",
+    "syntax": [
+      "hooks.sessionStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"sessionStart\": [/* handler */] } }",
+        "explanation": "Register a handler for sessionStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an Agent or Cmd+K session starts."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.session-end",
+    "tool": "cursor",
+    "name": "sessionEnd",
+    "display_name": "Session End",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An Agent or Cmd+K session ends.",
+    "syntax": [
+      "hooks.sessionEnd"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"sessionEnd\": [/* handler */] } }",
+        "explanation": "Register a handler for sessionEnd.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an Agent or Cmd+K session ends."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.pre-tool-use",
+    "tool": "cursor",
+    "name": "preToolUse",
+    "capabilities": ["hooks.configure"],
+    "display_name": "Pre Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Any agent tool is about to run.",
+    "syntax": [
+      "hooks.preToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"preToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for preToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when any agent tool is about to run."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.post-tool-use",
+    "tool": "cursor",
+    "name": "postToolUse",
+    "display_name": "Post Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An agent tool completes successfully.",
+    "syntax": [
+      "hooks.postToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"postToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for postToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an agent tool completes successfully."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.post-tool-use-failure",
+    "tool": "cursor",
+    "name": "postToolUseFailure",
+    "display_name": "Post Tool Use Failure",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An agent tool fails.",
+    "syntax": [
+      "hooks.postToolUseFailure"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"postToolUseFailure\": [/* handler */] } }",
+        "explanation": "Register a handler for postToolUseFailure.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an agent tool fails."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.subagent-start",
+    "tool": "cursor",
+    "name": "subagentStart",
+    "display_name": "Subagent Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A Task-tool subagent starts.",
+    "syntax": [
+      "hooks.subagentStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"subagentStart\": [/* handler */] } }",
+        "explanation": "Register a handler for subagentStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a Task-tool subagent starts."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.subagent-stop",
+    "tool": "cursor",
+    "name": "subagentStop",
+    "display_name": "Subagent Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A Task-tool subagent stops.",
+    "syntax": [
+      "hooks.subagentStop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"subagentStop\": [/* handler */] } }",
+        "explanation": "Register a handler for subagentStop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a Task-tool subagent stops."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.before-shell-execution",
+    "tool": "cursor",
+    "name": "beforeShellExecution",
+    "display_name": "Before Shell Execution",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A shell command is about to execute.",
+    "syntax": [
+      "hooks.beforeShellExecution"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"beforeShellExecution\": [/* handler */] } }",
+        "explanation": "Register a handler for beforeShellExecution.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a shell command is about to execute."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.after-shell-execution",
+    "tool": "cursor",
+    "name": "afterShellExecution",
+    "display_name": "After Shell Execution",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A shell command completes.",
+    "syntax": [
+      "hooks.afterShellExecution"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"afterShellExecution\": [/* handler */] } }",
+        "explanation": "Register a handler for afterShellExecution.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a shell command completes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.before-mcpexecution",
+    "tool": "cursor",
+    "name": "beforeMCPExecution",
+    "display_name": "Before MCPExecution",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An MCP tool is about to run.",
+    "syntax": [
+      "hooks.beforeMCPExecution"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"beforeMCPExecution\": [/* handler */] } }",
+        "explanation": "Register a handler for beforeMCPExecution.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an MCP tool is about to run."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.after-mcpexecution",
+    "tool": "cursor",
+    "name": "afterMCPExecution",
+    "display_name": "After MCPExecution",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An MCP tool completes.",
+    "syntax": [
+      "hooks.afterMCPExecution"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"afterMCPExecution\": [/* handler */] } }",
+        "explanation": "Register a handler for afterMCPExecution.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an MCP tool completes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.before-read-file",
+    "tool": "cursor",
+    "name": "beforeReadFile",
+    "display_name": "Before Read File",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The agent is about to read a file.",
+    "syntax": [
+      "hooks.beforeReadFile"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"beforeReadFile\": [/* handler */] } }",
+        "explanation": "Register a handler for beforeReadFile.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the agent is about to read a file."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.after-file-edit",
+    "tool": "cursor",
+    "name": "afterFileEdit",
+    "display_name": "After File Edit",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The agent edits a file.",
+    "syntax": [
+      "hooks.afterFileEdit"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"afterFileEdit\": [/* handler */] } }",
+        "explanation": "Register a handler for afterFileEdit.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the agent edits a file."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.before-submit-prompt",
+    "tool": "cursor",
+    "name": "beforeSubmitPrompt",
+    "display_name": "Before Submit Prompt",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A prompt is about to be submitted.",
+    "syntax": [
+      "hooks.beforeSubmitPrompt"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"beforeSubmitPrompt\": [/* handler */] } }",
+        "explanation": "Register a handler for beforeSubmitPrompt.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a prompt is about to be submitted."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.pre-compact",
+    "tool": "cursor",
+    "name": "preCompact",
+    "display_name": "Pre Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction is about to run.",
+    "syntax": [
+      "hooks.preCompact"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"preCompact\": [/* handler */] } }",
+        "explanation": "Register a handler for preCompact.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when context compaction is about to run."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.stop",
+    "tool": "cursor",
+    "name": "stop",
+    "display_name": "Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The agent is about to finish.",
+    "syntax": [
+      "hooks.stop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"stop\": [/* handler */] } }",
+        "explanation": "Register a handler for stop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the agent is about to finish."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.after-agent-response",
+    "tool": "cursor",
+    "name": "afterAgentResponse",
+    "display_name": "After Agent Response",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An agent response is produced.",
+    "syntax": [
+      "hooks.afterAgentResponse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"afterAgentResponse\": [/* handler */] } }",
+        "explanation": "Register a handler for afterAgentResponse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an agent response is produced."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.after-agent-thought",
+    "tool": "cursor",
+    "name": "afterAgentThought",
+    "display_name": "After Agent Thought",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An agent thought is produced.",
+    "syntax": [
+      "hooks.afterAgentThought"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"afterAgentThought\": [/* handler */] } }",
+        "explanation": "Register a handler for afterAgentThought.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an agent thought is produced."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.before-tab-file-read",
+    "tool": "cursor",
+    "name": "beforeTabFileRead",
+    "display_name": "Before Tab File Read",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Cursor Tab is about to read a file.",
+    "syntax": [
+      "hooks.beforeTabFileRead"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"beforeTabFileRead\": [/* handler */] } }",
+        "explanation": "Register a handler for beforeTabFileRead.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when cursor Tab is about to read a file."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.after-tab-file-edit",
+    "tool": "cursor",
+    "name": "afterTabFileEdit",
+    "display_name": "After Tab File Edit",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Cursor Tab edits a file.",
+    "syntax": [
+      "hooks.afterTabFileEdit"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"afterTabFileEdit\": [/* handler */] } }",
+        "explanation": "Register a handler for afterTabFileEdit.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when cursor Tab edits a file."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.hook.workspace-open",
+    "tool": "cursor",
+    "name": "workspaceOpen",
+    "display_name": "Workspace Open",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A workspace opens or its folder set changes.",
+    "syntax": [
+      "hooks.workspaceOpen"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"workspaceOpen\": [/* handler */] } }",
+        "explanation": "Register a handler for workspaceOpen.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a workspace opens or its folder set changes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/hooks",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

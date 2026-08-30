@@ -4,6 +4,25 @@ All notable project changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- Expanded the canonical dataset from 508 to more than 2,200 official-source-backed records across all five ecosystems.
+- Complete documented flag, environment-variable, configuration-option, hook-event, shortcut, and structured-control families found in the current official references.
+- Structured entries for agents, skills, plugins and extensions, MCP, permission modes, sandbox controls, and project instruction surfaces.
+- Eight task capabilities covering hook and plugin management, agent and skill definitions, sandboxing, session naming, usage inspection, and configuration inspection.
+
+### Changed
+
+- Improved usage guidance for every command-like entry and expanded copy-ready examples throughout the catalog.
+- Ranked primary capability implementations above incidental configuration matches in task-oriented website searches.
+- Preserved stable clean command URLs when multiple record types share a slug, while generating compatibility aliases for older type-prefixed URLs.
+- Extended generated command pages and comparison pages to cover the larger reference catalog.
+
+### Fixed
+
+- Made static route metadata generation safe for literal backslashes in documented syntax and examples.
+- Added regression coverage for route collisions and metadata containing regular-expression replacement characters.
+
 ## [0.1.0] - 2026-08-30
 
 ### Added

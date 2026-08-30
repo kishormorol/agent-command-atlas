@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from scripts.build_catalog import route_page
 from scripts.validate import validate_repository
 
 
@@ -11,6 +12,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class RepositoryTests(unittest.TestCase):
+    def test_route_page_treats_metadata_backslashes_as_literal_text(self):
+        template = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        page = route_page(
+            template,
+            "entry:test.windows-path",
+            "Windows path",
+            r"Configure C:\Program Files\Agent without interpreting replacement escapes.",
+            2,
+        )
+        self.assertIn(r"C:\Program Files\Agent", page)
+
     def test_repository_data_is_valid(self):
         errors, entry_count, capability_count = validate_repository(ROOT)
         self.assertEqual(errors, [])
@@ -99,6 +111,17 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(by_id["codex.slash-command.compact"]["path"], "codex/compact/")
         self.assertEqual(by_id["claude-code.slash-command.compact"]["path"], "claude-code/compact/")
         self.assertEqual(by_id["gemini-cli.slash-command.compress"]["path"], "gemini-cli/compress/")
+
+    def test_clean_routes_stay_with_the_primary_control_when_slugs_collide(self):
+        catalog = json.loads((ROOT / "site" / "catalog.json").read_text(encoding="utf-8"))
+        by_id = {entry["id"]: entry for entry in catalog}
+        self.assertEqual(by_id["claude-code.slash-command.advisor"]["path"], "claude-code/advisor/")
+        self.assertEqual(by_id["cursor.cli-command.agent"]["path"], "cursor/agent/")
+        self.assertEqual(by_id["claude-code.cli-flag.version"]["path"], "claude-code/version/")
+        self.assertEqual(by_id["claude-code.cli-flag.advisor"]["path"], "claude-code/cli-flag-advisor/")
+        legacy_page = ROOT / "site" / "claude-code" / "slash-command-advisor" / "index.html"
+        self.assertTrue(legacy_page.is_file())
+        self.assertIn('data-route="entry:claude-code.slash-command.advisor"', legacy_page.read_text(encoding="utf-8"))
 
     def test_social_metadata_is_specific_to_shareable_pages(self):
         homepage = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

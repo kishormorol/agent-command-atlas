@@ -1,0 +1,2755 @@
+[
+  {
+    "id": "codex.config-option.mcp-servers-id-env",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.env",
+    "display_name": "mcp_servers.<id>.env",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Environment variables forwarded to the MCP stdio server.",
+    "syntax": [
+      "mcp_servers.<id>.env: <map>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.env behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-env-vars",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.env_vars",
+    "display_name": "mcp_servers.<id>.env_vars",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Additional environment variables to whitelist for an MCP stdio server. String entries default to source = \"local\"; use source = \"remote\" only with executor-backed remote stdio.",
+    "syntax": [
+      "mcp_servers.<id>.env_vars: <documented value>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.env_vars behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-cwd",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.cwd",
+    "display_name": "mcp_servers.<id>.cwd",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Working directory for the MCP stdio server process.",
+    "syntax": [
+      "mcp_servers.<id>.cwd: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.cwd behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-url",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.url",
+    "display_name": "mcp_servers.<id>.url",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Endpoint for an MCP streamable HTTP server.",
+    "syntax": [
+      "mcp_servers.<id>.url: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.url behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-auth",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.auth",
+    "display_name": "mcp_servers.<id>.auth",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Authentication fallback for an MCP HTTP server after configured bearer tokens and authorization headers. oauth (default) uses stored MCP OAuth credentials when available. chatgpt uses the current ChatGPT session for the trusted first-party ChatGPT origin, then falls back to stored OAuth. Both modes can connect without authentication if no credential source resolves.",
+    "syntax": [
+      "mcp_servers.<id>.auth: <oauth | chatgpt>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.auth behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-oauth-client-id",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.oauth.client_id",
+    "display_name": "mcp_servers.<id>.oauth.client_id",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Pre-registered OAuth client ID used for authorization and token exchange with this MCP server.",
+    "syntax": [
+      "mcp_servers.<id>.oauth.client_id: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.oauth.client_id behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-oauth-callback-url",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.oauth.callback_url",
+    "display_name": "mcp_servers.<id>.oauth.callback_url",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Server-specific OAuth callback. Pre-registered clients reuse it when issuer identification is supported or the URL already ends in the server-specific callback ID. Otherwise, Codex uses the global or default callback with that ID appended. Clients without a pre-registered ID use this callback during client registration.",
+    "syntax": [
+      "mcp_servers.<id>.oauth.callback_url: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.oauth.callback_url behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-oauth-callback-port",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.oauth.callback_port",
+    "display_name": "mcp_servers.<id>.oauth.callback_port",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Fixed OAuth callback listener port for this MCP server. Overrides mcp_oauth_callback_port. For a direct loopback callback with an explicit URL port, configure the same listener port.",
+    "syntax": [
+      "mcp_servers.<id>.oauth.callback_port: <integer>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.oauth.callback_port behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-bearer-token-env-var",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.bearer_token_env_var",
+    "display_name": "mcp_servers.<id>.bearer_token_env_var",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Environment variable sourcing the bearer token for an MCP HTTP server.",
+    "syntax": [
+      "mcp_servers.<id>.bearer_token_env_var: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.bearer_token_env_var behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-http-headers",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.http_headers",
+    "display_name": "mcp_servers.<id>.http_headers",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Static HTTP headers included with each MCP HTTP request.",
+    "syntax": [
+      "mcp_servers.<id>.http_headers: <map>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.http_headers behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-env-http-headers",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.env_http_headers",
+    "display_name": "mcp_servers.<id>.env_http_headers",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "HTTP headers populated from environment variables for an MCP HTTP server.",
+    "syntax": [
+      "mcp_servers.<id>.env_http_headers: <map>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.env_http_headers behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-enabled",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.enabled",
+    "display_name": "mcp_servers.<id>.enabled",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Disable an MCP server without removing its configuration.",
+    "syntax": [
+      "mcp_servers.<id>.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-required",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.required",
+    "display_name": "mcp_servers.<id>.required",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "When true, fail startup/resume if this enabled MCP server cannot initialize.",
+    "syntax": [
+      "mcp_servers.<id>.required: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.required behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-startup-timeout-sec",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.startup_timeout_sec",
+    "display_name": "mcp_servers.<id>.startup_timeout_sec",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Override the default 10s startup timeout for an MCP server.",
+    "syntax": [
+      "mcp_servers.<id>.startup_timeout_sec: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.startup_timeout_sec behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-startup-timeout-ms",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.startup_timeout_ms",
+    "display_name": "mcp_servers.<id>.startup_timeout_ms",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Alias for startup_timeout_sec in milliseconds.",
+    "syntax": [
+      "mcp_servers.<id>.startup_timeout_ms: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.startup_timeout_ms behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-tool-timeout-sec",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.tool_timeout_sec",
+    "display_name": "mcp_servers.<id>.tool_timeout_sec",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Override the default 60s per-tool timeout for an MCP server.",
+    "syntax": [
+      "mcp_servers.<id>.tool_timeout_sec: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.tool_timeout_sec behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-enabled-tools",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.enabled_tools",
+    "display_name": "mcp_servers.<id>.enabled_tools",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Allow list of tool names exposed by the MCP server.",
+    "syntax": [
+      "mcp_servers.<id>.enabled_tools: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.enabled_tools behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-disabled-tools",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.disabled_tools",
+    "display_name": "mcp_servers.<id>.disabled_tools",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Deny list applied after enabled_tools for the MCP server.",
+    "syntax": [
+      "mcp_servers.<id>.disabled_tools: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.disabled_tools behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-default-tools-approval-mode",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.default_tools_approval_mode",
+    "display_name": "mcp_servers.<id>.default_tools_approval_mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Default approval behavior for MCP tools on this server unless a per-tool override exists.",
+    "syntax": [
+      "mcp_servers.<id>.default_tools_approval_mode: <auto | prompt | writes | approve>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.default_tools_approval_mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-tools-tool-approval-mode",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.tools.<tool>.approval_mode",
+    "display_name": "mcp_servers.<id>.tools.<tool>.approval_mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Per-tool approval behavior override for one MCP tool on this server.",
+    "syntax": [
+      "mcp_servers.<id>.tools.<tool>.approval_mode: <auto | prompt | writes | approve>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.tools.<tool>.approval_mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-scopes",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.scopes",
+    "display_name": "mcp_servers.<id>.scopes",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "OAuth scopes to request when authenticating to that MCP server.",
+    "syntax": [
+      "mcp_servers.<id>.scopes: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.scopes behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-oauth-resource",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.oauth_resource",
+    "display_name": "mcp_servers.<id>.oauth_resource",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Optional RFC 8707 OAuth resource parameter to include during MCP login.",
+    "syntax": [
+      "mcp_servers.<id>.oauth_resource: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.oauth_resource behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-experimental-environment",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.experimental_environment",
+    "display_name": "mcp_servers.<id>.experimental_environment",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Experimental placement for an MCP server. remote starts stdio servers through a remote executor environment; streamable HTTP remote placement is not implemented.",
+    "syntax": [
+      "mcp_servers.<id>.experimental_environment: <local | remote>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.experimental_environment behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents",
+    "tool": "codex",
+    "name": "agents",
+    "display_name": "agents",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Multi-agent settings and custom role declarations. Scalar setting names are reserved and can't be used as custom role names.",
+    "syntax": [
+      "agents: <table>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents-enabled",
+    "tool": "codex",
+    "name": "agents.enabled",
+    "display_name": "agents.enabled",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Enable or disable multi-agent tools (default: true).",
+    "syntax": [
+      "agents.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents-max-concurrent-threads-per-session",
+    "tool": "codex",
+    "name": "agents.max_concurrent_threads_per_session",
+    "display_name": "agents.max_concurrent_threads_per_session",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Maximum number of spawned-agent threads that can be open concurrently, excluding the primary thread. When unset, Codex chooses the default.",
+    "syntax": [
+      "agents.max_concurrent_threads_per_session: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.max_concurrent_threads_per_session behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents-max-threads",
+    "tool": "codex",
+    "name": "agents.max_threads",
+    "display_name": "agents.max_threads",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Legacy alias for agents.max_concurrent_threads_per_session.",
+    "syntax": [
+      "agents.max_threads: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.max_threads behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "codex.config-option.agents-default-subagent-model",
+    "tool": "codex",
+    "name": "agents.default_subagent_model",
+    "display_name": "agents.default_subagent_model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Default model for spawned agents. An explicit spawn model takes precedence.",
+    "syntax": [
+      "agents.default_subagent_model: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.default_subagent_model behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents-default-subagent-reasoning-effort",
+    "tool": "codex",
+    "name": "agents.default_subagent_reasoning_effort",
+    "display_name": "agents.default_subagent_reasoning_effort",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Default reasoning effort for spawned agents. An explicit spawn effort takes precedence.",
+    "syntax": [
+      "agents.default_subagent_reasoning_effort: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.default_subagent_reasoning_effort behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents-interrupt-message",
+    "tool": "codex",
+    "name": "agents.interrupt_message",
+    "display_name": "agents.interrupt_message",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Record a model-visible message when an agent turn is interrupted (default: true).",
+    "syntax": [
+      "agents.interrupt_message: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.interrupt_message behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents-name-description",
+    "tool": "codex",
+    "name": "agents.<name>.description",
+    "display_name": "agents.<name>.description",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Role guidance shown to Codex when choosing and spawning that agent type.",
+    "syntax": [
+      "agents.<name>.description: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.<name>.description behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.agents-name-config-file",
+    "tool": "codex",
+    "name": "agents.<name>.config_file",
+    "display_name": "agents.<name>.config_file",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Path to a TOML config layer for that role; relative paths resolve from the config file that declares the role.",
+    "syntax": [
+      "agents.<name>.config_file: <string (path)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.<name>.config_file behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-generate-memories",
+    "tool": "codex",
+    "name": "memories.generate_memories",
+    "display_name": "memories.generate_memories",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "When false, newly created threads are not stored as memory-generation inputs. Defaults to true.",
+    "syntax": [
+      "memories.generate_memories: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.generate_memories behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-use-memories",
+    "tool": "codex",
+    "name": "memories.use_memories",
+    "display_name": "memories.use_memories",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "When false, Codex skips injecting existing memories into future sessions. Defaults to true.",
+    "syntax": [
+      "memories.use_memories: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.use_memories behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-disable-on-external-context",
+    "tool": "codex",
+    "name": "memories.disable_on_external_context",
+    "display_name": "memories.disable_on_external_context",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "When true, threads that use external context such as MCP tool calls, web search, or tool search are kept out of memory generation. Defaults to false. Legacy alias: memories.no_memories_if_mcp_or_web_search.",
+    "syntax": [
+      "memories.disable_on_external_context: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.disable_on_external_context behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "codex.config-option.memories-max-raw-memories-for-consolidation",
+    "tool": "codex",
+    "name": "memories.max_raw_memories_for_consolidation",
+    "display_name": "memories.max_raw_memories_for_consolidation",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Maximum recent raw memories retained for global consolidation. Defaults to 256 and is capped at 4096.",
+    "syntax": [
+      "memories.max_raw_memories_for_consolidation: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.max_raw_memories_for_consolidation behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-max-unused-days",
+    "tool": "codex",
+    "name": "memories.max_unused_days",
+    "display_name": "memories.max_unused_days",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Maximum days since a memory was last used before it becomes ineligible for consolidation. Defaults to 30 and is clamped to 0-365.",
+    "syntax": [
+      "memories.max_unused_days: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.max_unused_days behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-max-rollout-age-days",
+    "tool": "codex",
+    "name": "memories.max_rollout_age_days",
+    "display_name": "memories.max_rollout_age_days",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Maximum age of threads considered for memory generation. Defaults to 30 and is clamped to 0-90.",
+    "syntax": [
+      "memories.max_rollout_age_days: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.max_rollout_age_days behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-max-rollouts-per-startup",
+    "tool": "codex",
+    "name": "memories.max_rollouts_per_startup",
+    "display_name": "memories.max_rollouts_per_startup",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Maximum rollout candidates processed per startup pass. Defaults to 16 and is capped at 128.",
+    "syntax": [
+      "memories.max_rollouts_per_startup: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.max_rollouts_per_startup behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-min-rollout-idle-hours",
+    "tool": "codex",
+    "name": "memories.min_rollout_idle_hours",
+    "display_name": "memories.min_rollout_idle_hours",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Minimum idle time before a thread is considered for memory generation. Defaults to 6 and is clamped to 1-48.",
+    "syntax": [
+      "memories.min_rollout_idle_hours: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.min_rollout_idle_hours behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-min-rate-limit-remaining-percent",
+    "tool": "codex",
+    "name": "memories.min_rate_limit_remaining_percent",
+    "display_name": "memories.min_rate_limit_remaining_percent",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Minimum remaining percentage required in Codex rate-limit windows before memory generation starts. Defaults to 25 and is clamped to 0-100.",
+    "syntax": [
+      "memories.min_rate_limit_remaining_percent: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.min_rate_limit_remaining_percent behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-extract-model",
+    "tool": "codex",
+    "name": "memories.extract_model",
+    "display_name": "memories.extract_model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Optional model override for per-thread memory extraction.",
+    "syntax": [
+      "memories.extract_model: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.extract_model behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.memories-consolidation-model",
+    "tool": "codex",
+    "name": "memories.consolidation_model",
+    "display_name": "memories.consolidation_model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Optional model override for global memory consolidation.",
+    "syntax": [
+      "memories.consolidation_model: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented memories.consolidation_model behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-unified-exec",
+    "tool": "codex",
+    "name": "features.unified_exec",
+    "display_name": "features.unified_exec",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Use the unified PTY-backed exec tool (stable; enabled by default except on Windows).",
+    "syntax": [
+      "features.unified_exec: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.unified_exec behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-shell-snapshot",
+    "tool": "codex",
+    "name": "features.shell_snapshot",
+    "display_name": "features.shell_snapshot",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Snapshot shell environment to speed up repeated commands (stable; on by default).",
+    "syntax": [
+      "features.shell_snapshot: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.shell_snapshot behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-multi-agent",
+    "tool": "codex",
+    "name": "features.multi_agent",
+    "display_name": "features.multi_agent",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Pin multi-agent availability on or off for managed users.",
+    "syntax": [
+      "features.multi_agent: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.multi_agent behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-goals",
+    "tool": "codex",
+    "name": "features.goals",
+    "display_name": "features.goals",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable persisted goals and automatic continuation (stable; on by default).",
+    "syntax": [
+      "features.goals: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.goals behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-remote-plugin",
+    "tool": "codex",
+    "name": "features.remote_plugin",
+    "display_name": "features.remote_plugin",
+    "type": "config-option",
+    "category": "diagnostics",
+    "role": "Configuration setting",
+    "description": "Pin remote plugin catalog availability on or off for managed users.",
+    "syntax": [
+      "features.remote_plugin: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.remote_plugin behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-personality",
+    "tool": "codex",
+    "name": "features.personality",
+    "display_name": "features.personality",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable personality selection controls (stable; on by default).",
+    "syntax": [
+      "features.personality: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.personality behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy",
+    "tool": "codex",
+    "name": "features.network_proxy",
+    "display_name": "features.network_proxy",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Start the network proxy for sandboxed commands (experimental; off by default). Required to enforce permission-profile domain rules unless enabled administrator-managed experimental_network requirements start the proxy. Use a table when setting feature-level policy options such as domains. Does not filter web search, apps, MCP, or other hosted tools.",
+    "syntax": [
+      "features.network_proxy: <boolean | table>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-enabled",
+    "tool": "codex",
+    "name": "features.network_proxy.enabled",
+    "display_name": "features.network_proxy.enabled",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Start the sandboxed-command network proxy when command network access is enabled. Defaults to false; permission-profile domain rules are not enforced while the proxy is off.",
+    "syntax": [
+      "features.network_proxy.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-domains",
+    "tool": "codex",
+    "name": "features.network_proxy.domains",
+    "display_name": "features.network_proxy.domains",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Domain policy for sandboxed networking. Unset by default, which means no external destinations are allowed until you add allow rules. Supports exact hosts, *.example.com for subdomains only, .example.com for apex plus subdomains, and global * allow rules; prefer scoped rules because * broadly opens public outbound access. Add deny rules for blocked destinations; deny wins on conflicts.",
+    "syntax": [
+      "features.network_proxy.domains: <map>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.domains behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-unix-sockets",
+    "tool": "codex",
+    "name": "features.network_proxy.unix_sockets",
+    "display_name": "features.network_proxy.unix_sockets",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Unix socket policy for sandboxed networking. Unset by default; add allow entries for permitted sockets.",
+    "syntax": [
+      "features.network_proxy.unix_sockets: <map>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.unix_sockets behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-allow-local-binding",
+    "tool": "codex",
+    "name": "features.network_proxy.allow_local_binding",
+    "display_name": "features.network_proxy.allow_local_binding",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Allow broader local/private-network access. Defaults to false; exact local IP literal or localhost allow rules can still permit specific local targets.",
+    "syntax": [
+      "features.network_proxy.allow_local_binding: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.allow_local_binding behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-enable-socks5",
+    "tool": "codex",
+    "name": "features.network_proxy.enable_socks5",
+    "display_name": "features.network_proxy.enable_socks5",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Expose SOCKS5 support. Defaults to true.",
+    "syntax": [
+      "features.network_proxy.enable_socks5: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.enable_socks5 behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-enable-socks5-udp",
+    "tool": "codex",
+    "name": "features.network_proxy.enable_socks5_udp",
+    "display_name": "features.network_proxy.enable_socks5_udp",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Allow UDP over SOCKS5. Defaults to true.",
+    "syntax": [
+      "features.network_proxy.enable_socks5_udp: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.enable_socks5_udp behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-allow-upstream-proxy",
+    "tool": "codex",
+    "name": "features.network_proxy.allow_upstream_proxy",
+    "display_name": "features.network_proxy.allow_upstream_proxy",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Allow chaining through an upstream proxy from the environment. Defaults to true.",
+    "syntax": [
+      "features.network_proxy.allow_upstream_proxy: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.allow_upstream_proxy behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-dangerously-allow-non-loopback-proxy",
+    "tool": "codex",
+    "name": "features.network_proxy.dangerously_allow_non_loopback_proxy",
+    "display_name": "features.network_proxy.dangerously_allow_non_loopback_proxy",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Permit non-loopback listener addresses. Defaults to false; enabling it can expose proxy listeners beyond localhost.",
+    "syntax": [
+      "features.network_proxy.dangerously_allow_non_loopback_proxy: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.dangerously_allow_non_loopback_proxy behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-dangerously-allow-all-unix-sockets",
+    "tool": "codex",
+    "name": "features.network_proxy.dangerously_allow_all_unix_sockets",
+    "display_name": "features.network_proxy.dangerously_allow_all_unix_sockets",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Permit arbitrary Unix socket destinations instead of allowlist-only access. Defaults to false; use only in tightly controlled environments.",
+    "syntax": [
+      "features.network_proxy.dangerously_allow_all_unix_sockets: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.dangerously_allow_all_unix_sockets behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-proxy-url",
+    "tool": "codex",
+    "name": "features.network_proxy.proxy_url",
+    "display_name": "features.network_proxy.proxy_url",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "HTTP listener URL for sandboxed networking. Defaults to \"http://127.0.0.1:3128\".",
+    "syntax": [
+      "features.network_proxy.proxy_url: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.proxy_url behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-network-proxy-socks-url",
+    "tool": "codex",
+    "name": "features.network_proxy.socks_url",
+    "display_name": "features.network_proxy.socks_url",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "SOCKS5 listener URL. Defaults to \"http://127.0.0.1:8081\".",
+    "syntax": [
+      "features.network_proxy.socks_url: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.network_proxy.socks_url behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-web-search",
+    "tool": "codex",
+    "name": "features.web_search",
+    "display_name": "features.web_search",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Deprecated legacy toggle; prefer the top-level web_search setting.",
+    "syntax": [
+      "features.web_search: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.web_search behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "codex.config-option.features-web-search-cached",
+    "tool": "codex",
+    "name": "features.web_search_cached",
+    "display_name": "features.web_search_cached",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Deprecated legacy toggle. When web_search is unset, true maps to web_search = \"cached\".",
+    "syntax": [
+      "features.web_search_cached: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.web_search_cached behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "codex.config-option.features-web-search-request",
+    "tool": "codex",
+    "name": "features.web_search_request",
+    "display_name": "features.web_search_request",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Deprecated legacy toggle. When web_search is unset, true maps to web_search = \"live\".",
+    "syntax": [
+      "features.web_search_request: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.web_search_request behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "codex.config-option.features-shell-tool",
+    "tool": "codex",
+    "name": "features.shell_tool",
+    "display_name": "features.shell_tool",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Enable the default shell tool for running commands (stable; on by default).",
+    "syntax": [
+      "features.shell_tool: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.shell_tool behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-enable-request-compression",
+    "tool": "codex",
+    "name": "features.enable_request_compression",
+    "display_name": "features.enable_request_compression",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Compress streaming request bodies with zstd when supported (stable; on by default).",
+    "syntax": [
+      "features.enable_request_compression: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.enable_request_compression behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-skill-mcp-dependency-install",
+    "tool": "codex",
+    "name": "features.skill_mcp_dependency_install",
+    "display_name": "features.skill_mcp_dependency_install",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Allow prompting and installing missing MCP dependencies for skills (stable; on by default).",
+    "syntax": [
+      "features.skill_mcp_dependency_install: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.skill_mcp_dependency_install behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-fast-mode",
+    "tool": "codex",
+    "name": "features.fast_mode",
+    "display_name": "features.fast_mode",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Pin the canonical fast_mode feature on or off for managed users.",
+    "syntax": [
+      "features.fast_mode: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.fast_mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-prevent-idle-sleep",
+    "tool": "codex",
+    "name": "features.prevent_idle_sleep",
+    "display_name": "features.prevent_idle_sleep",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Prevent the machine from sleeping while a turn is actively running (experimental; off by default).",
+    "syntax": [
+      "features.prevent_idle_sleep: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.prevent_idle_sleep behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.suppress-unstable-features-warning",
+    "tool": "codex",
+    "name": "suppress_unstable_features_warning",
+    "display_name": "suppress_unstable_features_warning",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Suppress the warning that appears when under-development feature flags are enabled.",
+    "syntax": [
+      "suppress_unstable_features_warning: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented suppress_unstable_features_warning behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-providers-id",
+    "tool": "codex",
+    "name": "model_providers.<id>",
+    "display_name": "model_providers.<id>",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Custom provider definition. Built-in provider IDs (openai, ollama, and lmstudio) are reserved and cannot be overridden.",
+    "syntax": [
+      "model_providers.<id>: <table>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_providers.<id> behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-providers-id-name",
+    "tool": "codex",
+    "name": "model_providers.<id>.name",
+    "display_name": "model_providers.<id>.name",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Display name for a custom model provider.",
+    "syntax": [
+      "model_providers.<id>.name: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_providers.<id>.name behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-providers-id-base-url",
+    "tool": "codex",
+    "name": "model_providers.<id>.base_url",
+    "display_name": "model_providers.<id>.base_url",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "API base URL for the model provider.",
+    "syntax": [
+      "model_providers.<id>.base_url: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_providers.<id>.base_url behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-providers-id-env-key",
+    "tool": "codex",
+    "name": "model_providers.<id>.env_key",
+    "display_name": "model_providers.<id>.env_key",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Environment variable supplying the provider API key.",
+    "syntax": [
+      "model_providers.<id>.env_key: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_providers.<id>.env_key behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

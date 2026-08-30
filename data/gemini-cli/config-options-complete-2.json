@@ -1,0 +1,2596 @@
+[
+  {
+    "id": "gemini-cli.config-option.billing-vertexai-requesttype",
+    "tool": "gemini-cli",
+    "name": "billing.vertexAi.requestType",
+    "display_name": "billing.vertexAi.requestType",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Sets the X-Vertex-AI-LLM-Request-Type header for Vertex AI requests.",
+    "syntax": [
+      "billing.vertexAi.requestType: <enum>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented billing.vertexAi.requestType behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.billing-vertexai-sharedrequesttype",
+    "tool": "gemini-cli",
+    "name": "billing.vertexAi.sharedRequestType",
+    "display_name": "billing.vertexAi.sharedRequestType",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Sets the X-Vertex-AI-LLM-Shared-Request-Type header for Vertex AI requests.",
+    "syntax": [
+      "billing.vertexAi.sharedRequestType: <enum>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented billing.vertexAi.sharedRequestType behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.model-maxsessionturns",
+    "tool": "gemini-cli",
+    "name": "model.maxSessionTurns",
+    "display_name": "model.maxSessionTurns",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Maximum number of user/model/tool turns to keep in a session. -1 means unlimited.",
+    "syntax": [
+      "model.maxSessionTurns: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model.maxSessionTurns behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.model-summarizetooloutput",
+    "tool": "gemini-cli",
+    "name": "model.summarizeToolOutput",
+    "display_name": "model.summarizeToolOutput",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Enables or disables summarization of tool output. Configure per-tool token budgets (for example {\"run_shell_command\": {\"tokenBudget\": 2000}}). Currently only the run_shell_command tool supports summarization.",
+    "syntax": [
+      "model.summarizeToolOutput: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model.summarizeToolOutput behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.model-compressionthreshold",
+    "tool": "gemini-cli",
+    "name": "model.compressionThreshold",
+    "display_name": "model.compressionThreshold",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "The fraction of context usage at which to trigger context compression (e.g. 0.2, 0.3).",
+    "syntax": [
+      "model.compressionThreshold: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model.compressionThreshold behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.model-disableloopdetection",
+    "tool": "gemini-cli",
+    "name": "model.disableLoopDetection",
+    "display_name": "model.disableLoopDetection",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Disable automatic detection and prevention of infinite loops.",
+    "syntax": [
+      "model.disableLoopDetection: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model.disableLoopDetection behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.model-skipnextspeakercheck",
+    "tool": "gemini-cli",
+    "name": "model.skipNextSpeakerCheck",
+    "display_name": "model.skipNextSpeakerCheck",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Skip the next speaker check.",
+    "syntax": [
+      "model.skipNextSpeakerCheck: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model.skipNextSpeakerCheck behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-aliases",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.aliases",
+    "display_name": "modelConfigs.aliases",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Named presets for model configs. Can be used in place of a model name and can inherit from other aliases using an extends property.",
+    "syntax": [
+      "modelConfigs.aliases: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.aliases behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-customaliases",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.customAliases",
+    "display_name": "modelConfigs.customAliases",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Custom named presets for model configs. These are merged with (and override) the built-in aliases.",
+    "syntax": [
+      "modelConfigs.customAliases: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.customAliases behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-customoverrides",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.customOverrides",
+    "display_name": "modelConfigs.customOverrides",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Custom model config overrides. These are merged with (and added to) the built-in overrides.",
+    "syntax": [
+      "modelConfigs.customOverrides: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.customOverrides behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-overrides",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.overrides",
+    "display_name": "modelConfigs.overrides",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Apply specific configuration overrides based on matches, with a primary key of model (or alias). The most specific match will be used.",
+    "syntax": [
+      "modelConfigs.overrides: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.overrides behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-modeldefinitions",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.modelDefinitions",
+    "display_name": "modelConfigs.modelDefinitions",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Registry of model metadata, including tier, family, and features.",
+    "syntax": [
+      "modelConfigs.modelDefinitions: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.modelDefinitions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-modelidresolutions",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.modelIdResolutions",
+    "display_name": "modelConfigs.modelIdResolutions",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Rules for resolving requested model names to concrete model IDs based on context.",
+    "syntax": [
+      "modelConfigs.modelIdResolutions: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.modelIdResolutions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-classifieridresolutions",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.classifierIdResolutions",
+    "display_name": "modelConfigs.classifierIdResolutions",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Rules for resolving classifier tiers (flash, pro) to concrete model IDs.",
+    "syntax": [
+      "modelConfigs.classifierIdResolutions: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.classifierIdResolutions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.modelconfigs-modelchains",
+    "tool": "gemini-cli",
+    "name": "modelConfigs.modelChains",
+    "display_name": "modelConfigs.modelChains",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Availability policy chains defining fallback behavior for models.",
+    "syntax": [
+      "modelConfigs.modelChains: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelConfigs.modelChains behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-overrides",
+    "tool": "gemini-cli",
+    "name": "agents.overrides",
+    "display_name": "agents.overrides",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Override settings for specific agents, e.g. to disable the agent, set a custom model config, or run config.",
+    "syntax": [
+      "agents.overrides: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.overrides behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-sessionmode",
+    "tool": "gemini-cli",
+    "name": "agents.browser.sessionMode",
+    "display_name": "agents.browser.sessionMode",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Session mode: 'persistent', 'isolated', or 'existing'.",
+    "syntax": [
+      "agents.browser.sessionMode: <enum>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.sessionMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-headless",
+    "tool": "gemini-cli",
+    "name": "agents.browser.headless",
+    "display_name": "agents.browser.headless",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Run browser in headless mode.",
+    "syntax": [
+      "agents.browser.headless: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.headless behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-profilepath",
+    "tool": "gemini-cli",
+    "name": "agents.browser.profilePath",
+    "display_name": "agents.browser.profilePath",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Path to browser profile directory for session persistence.",
+    "syntax": [
+      "agents.browser.profilePath: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.profilePath behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-visualmodel",
+    "tool": "gemini-cli",
+    "name": "agents.browser.visualModel",
+    "display_name": "agents.browser.visualModel",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Model for the visual agent's analyze_screenshot tool. When set, enables the tool.",
+    "syntax": [
+      "agents.browser.visualModel: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.visualModel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-alloweddomains",
+    "tool": "gemini-cli",
+    "name": "agents.browser.allowedDomains",
+    "display_name": "agents.browser.allowedDomains",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "A list of allowed domains for the browser agent (e.g., [\"github.com\", \"*.google.com\"]).",
+    "syntax": [
+      "agents.browser.allowedDomains: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.allowedDomains behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-disableuserinput",
+    "tool": "gemini-cli",
+    "name": "agents.browser.disableUserInput",
+    "display_name": "agents.browser.disableUserInput",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Disable user input on browser window during automation.",
+    "syntax": [
+      "agents.browser.disableUserInput: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.disableUserInput behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-maxactionspertask",
+    "tool": "gemini-cli",
+    "name": "agents.browser.maxActionsPerTask",
+    "display_name": "agents.browser.maxActionsPerTask",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "The maximum number of tool calls allowed per browser task. Enforcement is hard: the agent will be terminated when the limit is reached.",
+    "syntax": [
+      "agents.browser.maxActionsPerTask: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.maxActionsPerTask behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-confirmsensitiveactions",
+    "tool": "gemini-cli",
+    "name": "agents.browser.confirmSensitiveActions",
+    "display_name": "agents.browser.confirmSensitiveActions",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Require manual confirmation for sensitive browser actions (e.g., fill_form, evaluate_script).",
+    "syntax": [
+      "agents.browser.confirmSensitiveActions: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.confirmSensitiveActions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.agents-browser-blockfileuploads",
+    "tool": "gemini-cli",
+    "name": "agents.browser.blockFileUploads",
+    "display_name": "agents.browser.blockFileUploads",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Hard-block file upload requests from the browser agent.",
+    "syntax": [
+      "agents.browser.blockFileUploads: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented agents.browser.blockFileUploads behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-filename",
+    "tool": "gemini-cli",
+    "name": "context.fileName",
+    "display_name": "context.fileName",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "The name of the context file or files to load into memory. Accepts either a single string or an array of strings.",
+    "syntax": [
+      "context.fileName: <string | string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.fileName behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-importformat",
+    "tool": "gemini-cli",
+    "name": "context.importFormat",
+    "display_name": "context.importFormat",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "The format to use when importing memory.",
+    "syntax": [
+      "context.importFormat: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.importFormat behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-includedirectorytree",
+    "tool": "gemini-cli",
+    "name": "context.includeDirectoryTree",
+    "display_name": "context.includeDirectoryTree",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Whether to include the directory tree of the current working directory in the initial request to the model.",
+    "syntax": [
+      "context.includeDirectoryTree: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.includeDirectoryTree behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-discoverymaxdirs",
+    "tool": "gemini-cli",
+    "name": "context.discoveryMaxDirs",
+    "display_name": "context.discoveryMaxDirs",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Maximum number of directories to search for memory.",
+    "syntax": [
+      "context.discoveryMaxDirs: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.discoveryMaxDirs behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-memoryboundarymarkers",
+    "tool": "gemini-cli",
+    "name": "context.memoryBoundaryMarkers",
+    "display_name": "context.memoryBoundaryMarkers",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "File or directory names that mark the boundary for GEMINI.md discovery. The upward traversal stops at the first directory containing any of these markers. An empty array disables parent traversal.",
+    "syntax": [
+      "context.memoryBoundaryMarkers: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.memoryBoundaryMarkers behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-includedirectories",
+    "tool": "gemini-cli",
+    "name": "context.includeDirectories",
+    "display_name": "context.includeDirectories",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Additional directories to include in the workspace context. Missing directories will be skipped with a warning.",
+    "syntax": [
+      "context.includeDirectories: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.includeDirectories behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-loadmemoryfromincludedirectories",
+    "tool": "gemini-cli",
+    "name": "context.loadMemoryFromIncludeDirectories",
+    "display_name": "context.loadMemoryFromIncludeDirectories",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Controls how /memory reload loads GEMINI.md files. When true, include directories are scanned; when false, only the current directory is used.",
+    "syntax": [
+      "context.loadMemoryFromIncludeDirectories: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.loadMemoryFromIncludeDirectories behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-filefiltering-respectgitignore",
+    "tool": "gemini-cli",
+    "name": "context.fileFiltering.respectGitIgnore",
+    "display_name": "context.fileFiltering.respectGitIgnore",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Respect .gitignore files when searching.",
+    "syntax": [
+      "context.fileFiltering.respectGitIgnore: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.fileFiltering.respectGitIgnore behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-filefiltering-respectgeminiignore",
+    "tool": "gemini-cli",
+    "name": "context.fileFiltering.respectGeminiIgnore",
+    "display_name": "context.fileFiltering.respectGeminiIgnore",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Respect .geminiignore files when searching.",
+    "syntax": [
+      "context.fileFiltering.respectGeminiIgnore: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.fileFiltering.respectGeminiIgnore behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-filefiltering-enablefilewatcher",
+    "tool": "gemini-cli",
+    "name": "context.fileFiltering.enableFileWatcher",
+    "display_name": "context.fileFiltering.enableFileWatcher",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Enable file watcher updates for @ file suggestions (experimental).",
+    "syntax": [
+      "context.fileFiltering.enableFileWatcher: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.fileFiltering.enableFileWatcher behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-filefiltering-enablerecursivefilesearch",
+    "tool": "gemini-cli",
+    "name": "context.fileFiltering.enableRecursiveFileSearch",
+    "display_name": "context.fileFiltering.enableRecursiveFileSearch",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Enable recursive file search functionality when completing @ references in the prompt.",
+    "syntax": [
+      "context.fileFiltering.enableRecursiveFileSearch: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.fileFiltering.enableRecursiveFileSearch behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-filefiltering-enablefuzzysearch",
+    "tool": "gemini-cli",
+    "name": "context.fileFiltering.enableFuzzySearch",
+    "display_name": "context.fileFiltering.enableFuzzySearch",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Enable fuzzy search when searching for files.",
+    "syntax": [
+      "context.fileFiltering.enableFuzzySearch: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.fileFiltering.enableFuzzySearch behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.context-filefiltering-customignorefilepaths",
+    "tool": "gemini-cli",
+    "name": "context.fileFiltering.customIgnoreFilePaths",
+    "display_name": "context.fileFiltering.customIgnoreFilePaths",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Additional ignore file paths to respect. These files take precedence over .geminiignore and .gitignore. Files earlier in the array take precedence over files later in the array, e.g. the first file takes precedence over the second one.",
+    "syntax": [
+      "context.fileFiltering.customIgnoreFilePaths: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented context.fileFiltering.customIgnoreFilePaths behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-sandbox",
+    "tool": "gemini-cli",
+    "name": "tools.sandbox",
+    "capabilities": ["permissions.sandbox"],
+    "display_name": "tools.sandbox",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Legacy full-process sandbox execution environment. Set to a boolean to enable or disable the sandbox, provide a string path to a sandbox profile, or specify an explicit sandbox command (e.g., \"docker\", \"podman\", \"lxc\", \"windows-native\").",
+    "syntax": [
+      "tools.sandbox: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.sandbox behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "gemini-cli.config-option.tools-sandboxallowedpaths",
+    "tool": "gemini-cli",
+    "name": "tools.sandboxAllowedPaths",
+    "display_name": "tools.sandboxAllowedPaths",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "List of additional paths that the sandbox is allowed to access.",
+    "syntax": [
+      "tools.sandboxAllowedPaths: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.sandboxAllowedPaths behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-sandboxnetworkaccess",
+    "tool": "gemini-cli",
+    "name": "tools.sandboxNetworkAccess",
+    "display_name": "tools.sandboxNetworkAccess",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Whether the sandbox is allowed to access the network.",
+    "syntax": [
+      "tools.sandboxNetworkAccess: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.sandboxNetworkAccess behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-shell-enableinteractiveshell",
+    "tool": "gemini-cli",
+    "name": "tools.shell.enableInteractiveShell",
+    "display_name": "tools.shell.enableInteractiveShell",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Use node-pty for an interactive shell experience. Fallback to child_process still applies.",
+    "syntax": [
+      "tools.shell.enableInteractiveShell: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.shell.enableInteractiveShell behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-shell-backgroundcompletionbehavior",
+    "tool": "gemini-cli",
+    "name": "tools.shell.backgroundCompletionBehavior",
+    "display_name": "tools.shell.backgroundCompletionBehavior",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Controls what happens when a background shell command finishes. 'silent' (default): quietly exits in background. 'inject': automatically returns output to agent. 'notify': shows brief message in chat.",
+    "syntax": [
+      "tools.shell.backgroundCompletionBehavior: <enum>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.shell.backgroundCompletionBehavior behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-shell-pager",
+    "tool": "gemini-cli",
+    "name": "tools.shell.pager",
+    "display_name": "tools.shell.pager",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "The pager command to use for shell output. Defaults to cat.",
+    "syntax": [
+      "tools.shell.pager: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.shell.pager behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-shell-showcolor",
+    "tool": "gemini-cli",
+    "name": "tools.shell.showColor",
+    "display_name": "tools.shell.showColor",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Show color in shell output.",
+    "syntax": [
+      "tools.shell.showColor: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.shell.showColor behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-shell-inactivitytimeout",
+    "tool": "gemini-cli",
+    "name": "tools.shell.inactivityTimeout",
+    "display_name": "tools.shell.inactivityTimeout",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "The maximum time in seconds allowed without output from the shell command. Defaults to 5 minutes.",
+    "syntax": [
+      "tools.shell.inactivityTimeout: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.shell.inactivityTimeout behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-shell-enableshelloutputefficiency",
+    "tool": "gemini-cli",
+    "name": "tools.shell.enableShellOutputEfficiency",
+    "display_name": "tools.shell.enableShellOutputEfficiency",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Enable shell output efficiency optimizations for better performance.",
+    "syntax": [
+      "tools.shell.enableShellOutputEfficiency: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.shell.enableShellOutputEfficiency behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-core",
+    "tool": "gemini-cli",
+    "name": "tools.core",
+    "display_name": "tools.core",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Restrict the set of built-in tools with an allowlist. Match semantics mirror tools.allowed; see the built-in tools documentation for available names.",
+    "syntax": [
+      "tools.core: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.core behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-allowed",
+    "tool": "gemini-cli",
+    "name": "tools.allowed",
+    "display_name": "tools.allowed",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Tool names that bypass the confirmation dialog. Useful for trusted commands (for example [\"run_shell_command(git)\", \"run_shell_command(npm test)\"]). See shell tool command restrictions for matching details.",
+    "syntax": [
+      "tools.allowed: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.allowed behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-confirmationrequired",
+    "tool": "gemini-cli",
+    "name": "tools.confirmationRequired",
+    "display_name": "tools.confirmationRequired",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Tool names that always require user confirmation. Takes precedence over allowed tools and core tool allowlists.",
+    "syntax": [
+      "tools.confirmationRequired: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.confirmationRequired behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-exclude",
+    "tool": "gemini-cli",
+    "name": "tools.exclude",
+    "display_name": "tools.exclude",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Tool names to exclude from discovery.",
+    "syntax": [
+      "tools.exclude: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.exclude behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-discoverycommand",
+    "tool": "gemini-cli",
+    "name": "tools.discoveryCommand",
+    "display_name": "tools.discoveryCommand",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Command to run for tool discovery.",
+    "syntax": [
+      "tools.discoveryCommand: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.discoveryCommand behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-callcommand",
+    "tool": "gemini-cli",
+    "name": "tools.callCommand",
+    "display_name": "tools.callCommand",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Defines a custom shell command for invoking discovered tools. The command must take the tool name as the first argument, read JSON arguments from stdin, and emit JSON results on stdout.",
+    "syntax": [
+      "tools.callCommand: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.callCommand behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-useripgrep",
+    "tool": "gemini-cli",
+    "name": "tools.useRipgrep",
+    "display_name": "tools.useRipgrep",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Use ripgrep for file content search instead of the fallback implementation. Provides faster search performance.",
+    "syntax": [
+      "tools.useRipgrep: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.useRipgrep behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-truncatetooloutputthreshold",
+    "tool": "gemini-cli",
+    "name": "tools.truncateToolOutputThreshold",
+    "display_name": "tools.truncateToolOutputThreshold",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Maximum characters to show when truncating large tool outputs. Set to 0 or negative to disable truncation.",
+    "syntax": [
+      "tools.truncateToolOutputThreshold: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.truncateToolOutputThreshold behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.tools-disablellmcorrection",
+    "tool": "gemini-cli",
+    "name": "tools.disableLLMCorrection",
+    "display_name": "tools.disableLLMCorrection",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Disable LLM-based error correction for edit tools. When enabled, tools will fail immediately if exact string matches are not found, instead of attempting to self-correct.",
+    "syntax": [
+      "tools.disableLLMCorrection: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tools.disableLLMCorrection behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.mcp-servercommand",
+    "tool": "gemini-cli",
+    "name": "mcp.serverCommand",
+    "display_name": "mcp.serverCommand",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Command to start an MCP server.",
+    "syntax": [
+      "mcp.serverCommand: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp.serverCommand behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.mcp-allowed",
+    "tool": "gemini-cli",
+    "name": "mcp.allowed",
+    "display_name": "mcp.allowed",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "A list of MCP servers to allow.",
+    "syntax": [
+      "mcp.allowed: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp.allowed behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.mcp-excluded",
+    "tool": "gemini-cli",
+    "name": "mcp.excluded",
+    "display_name": "mcp.excluded",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "A list of MCP servers to exclude.",
+    "syntax": [
+      "mcp.excluded: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp.excluded behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.usewritetodos",
+    "tool": "gemini-cli",
+    "name": "useWriteTodos",
+    "display_name": "useWriteTodos",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable the write_todos tool.",
+    "syntax": [
+      "useWriteTodos: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented useWriteTodos behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-toolsandboxing",
+    "tool": "gemini-cli",
+    "name": "security.toolSandboxing",
+    "display_name": "security.toolSandboxing",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Tool-level sandboxing. Isolates individual tools instead of the entire CLI process.",
+    "syntax": [
+      "security.toolSandboxing: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.toolSandboxing behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-disableyolomode",
+    "tool": "gemini-cli",
+    "name": "security.disableYoloMode",
+    "display_name": "security.disableYoloMode",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Disable YOLO mode, even if enabled by a flag.",
+    "syntax": [
+      "security.disableYoloMode: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.disableYoloMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-disablealwaysallow",
+    "tool": "gemini-cli",
+    "name": "security.disableAlwaysAllow",
+    "display_name": "security.disableAlwaysAllow",
+    "type": "config-option",
+    "category": "diagnostics",
+    "role": "Configuration setting",
+    "description": "Disable \"Always allow\" options in tool confirmation dialogs.",
+    "syntax": [
+      "security.disableAlwaysAllow: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.disableAlwaysAllow behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-enablepermanenttoolapproval",
+    "tool": "gemini-cli",
+    "name": "security.enablePermanentToolApproval",
+    "display_name": "security.enablePermanentToolApproval",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Enable the \"Allow for all future sessions\" option in tool confirmation dialogs.",
+    "syntax": [
+      "security.enablePermanentToolApproval: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.enablePermanentToolApproval behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-autoaddtopolicybydefault",
+    "tool": "gemini-cli",
+    "name": "security.autoAddToPolicyByDefault",
+    "display_name": "security.autoAddToPolicyByDefault",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "When enabled, the \"Allow for all future sessions\" option becomes the default choice for low-risk tools in trusted workspaces.",
+    "syntax": [
+      "security.autoAddToPolicyByDefault: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.autoAddToPolicyByDefault behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-blockgitextensions",
+    "tool": "gemini-cli",
+    "name": "security.blockGitExtensions",
+    "display_name": "security.blockGitExtensions",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "Blocks installing and loading extensions from Git.",
+    "syntax": [
+      "security.blockGitExtensions: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.blockGitExtensions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-allowedextensions",
+    "tool": "gemini-cli",
+    "name": "security.allowedExtensions",
+    "display_name": "security.allowedExtensions",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "List of Regex patterns for allowed extensions. If nonempty, only extensions that match the patterns in this list are allowed. Overrides the blockGitExtensions setting.",
+    "syntax": [
+      "security.allowedExtensions: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.allowedExtensions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-environmentvariableredaction-allowed",
+    "tool": "gemini-cli",
+    "name": "security.environmentVariableRedaction.allowed",
+    "display_name": "security.environmentVariableRedaction.allowed",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Environment variables to always allow (bypass redaction).",
+    "syntax": [
+      "security.environmentVariableRedaction.allowed: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.environmentVariableRedaction.allowed behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-environmentvariableredaction-blocked",
+    "tool": "gemini-cli",
+    "name": "security.environmentVariableRedaction.blocked",
+    "display_name": "security.environmentVariableRedaction.blocked",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Environment variables to always redact.",
+    "syntax": [
+      "security.environmentVariableRedaction.blocked: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.environmentVariableRedaction.blocked behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.config-option.security-environmentvariableredaction-enabled",
+    "tool": "gemini-cli",
+    "name": "security.environmentVariableRedaction.enabled",
+    "display_name": "security.environmentVariableRedaction.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable redaction of environment variables that may contain secrets.",
+    "syntax": [
+      "security.environmentVariableRedaction.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented security.environmentVariableRedaction.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  }
+]

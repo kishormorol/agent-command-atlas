@@ -1,0 +1,2709 @@
+[
+  {
+    "id": "claude-code.cli-flag.advisor",
+    "tool": "claude-code",
+    "name": "--advisor",
+    "display_name": "Advisor",
+    "type": "cli-flag",
+    "category": "models",
+    "role": "Model control",
+    "description": "Enable the server-side advisor tool for this session with a model alias, fable, opus, or sonnet, or a full model ID. Takes precedence over the advisorModel setting for the session. fable requires Fable 5 access",
+    "syntax": [
+      "claude --advisor <model>"
+    ],
+    "examples": [
+      {
+        "command": "claude --advisor opus",
+        "explanation": "Enable the server-side advisor tool for this session with a model alias, fable, opus, or sonnet, or a full model ID. Takes precedence over the advisorModel setting for the session. fable requires Fable 5 access",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented advisor behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "fable requires Fable 5 access"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.allow-dangerously-skip-permissions",
+    "tool": "claude-code",
+    "name": "--allow-dangerously-skip-permissions",
+    "display_name": "Allow dangerously skip permissions",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "Add bypassPermissions to the Shift+Tab mode cycle without starting in it. Lets you begin in a different mode like plan and switch to bypassPermissions later. See permission modes",
+    "syntax": [
+      "claude --allow-dangerously-skip-permissions"
+    ],
+    "examples": [
+      {
+        "command": "claude --permission-mode plan --allow-dangerously-skip-permissions",
+        "explanation": "Add bypassPermissions to the Shift+Tab mode cycle without starting in it. Lets you begin in a different mode like plan and switch to bypassPermissions later. See permission modes",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented allow dangerously skip permissions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.append-subagent-system-prompt",
+    "tool": "claude-code",
+    "name": "--append-subagent-system-prompt",
+    "display_name": "Append subagent system prompt",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Append custom text to the end of every subagent's system prompt, nested subagents included, apart from a forked subagent, which reuses the conversation's own prompt. Only applies in non-interactive mode with -p. Requires Claude Code v2.1.205 or later",
+    "syntax": [
+      "claude --append-subagent-system-prompt"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --append-subagent-system-prompt \"Cite file paths in every answer\" \"query\"",
+        "explanation": "Append custom text to the end of every subagent's system prompt, nested subagents included, apart from a forked subagent, which reuses the conversation's own prompt. Only applies in non-interactive mode with -p. Requires Claude Code v2.1.205 or later",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented append subagent system prompt behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2.1.205 or later"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.205",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.append-system-prompt",
+    "tool": "claude-code",
+    "name": "--append-system-prompt",
+    "display_name": "Append system prompt",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Append custom text to the end of the default system prompt",
+    "syntax": [
+      "claude --append-system-prompt"
+    ],
+    "examples": [
+      {
+        "command": "claude --append-system-prompt \"Always use TypeScript\"",
+        "explanation": "Append custom text to the end of the default system prompt",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented append system prompt behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.append-system-prompt-file",
+    "tool": "claude-code",
+    "name": "--append-system-prompt-file",
+    "display_name": "Append system prompt file",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Load additional system prompt text from a file and append to the default prompt",
+    "syntax": [
+      "claude --append-system-prompt-file"
+    ],
+    "examples": [
+      {
+        "command": "claude --append-system-prompt-file ./extra-rules.txt",
+        "explanation": "Load additional system prompt text from a file and append to the default prompt",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented append system prompt file behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.autocompact",
+    "tool": "claude-code",
+    "name": "--autocompact",
+    "display_name": "Autocompact",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "tokens>`",
+    "syntax": [
+      "claude --autocompact"
+    ],
+    "examples": [
+      {
+        "command": "claude --autocompact",
+        "explanation": "tokens>`",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented autocompact behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.ax-screen-reader",
+    "tool": "claude-code",
+    "name": "--ax-screen-reader",
+    "display_name": "Ax screen reader",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Render screen-reader friendly output: flat text without decorative borders or animations. Forces the classic renderer, so the tui setting has no effect; attached background sessions still render fullscreen. Takes precedence over CLAUDE_AX_SCREEN_READER and the axScreenReader setting. Requires Claude Code v2.1.181 or later",
+    "syntax": [
+      "claude --ax-screen-reader"
+    ],
+    "examples": [
+      {
+        "command": "claude --ax-screen-reader",
+        "explanation": "Render screen-reader friendly output: flat text without decorative borders or animations. Forces the classic renderer, so the tui setting has no effect; attached background sessions still render fullscreen. Takes precedence over CLAUDE_AX_SCREEN_READER and the axScreenReader setting. Requires Claude Code v2.1.181 or later",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented ax screen reader behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2.1.181 or later"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.181",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.bare",
+    "tool": "claude-code",
+    "name": "--bare",
+    "display_name": "Bare",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Minimal mode: skip auto-discovery of hooks, skills, custom commands, subagents, plugins, MCP servers, auto memory, and CLAUDE.md so scripted calls start faster. Skills in a directory you pass with --add-dir still load. Claude has access to Bash, file read, and file edit tools. Sets CLAUDE_CODE_SIMPLE. See bare mode",
+    "syntax": [
+      "claude --bare"
+    ],
+    "examples": [
+      {
+        "command": "claude --bare -p \"query\"",
+        "explanation": "Minimal mode: skip auto-discovery of hooks, skills, custom commands, subagents, plugins, MCP servers, auto memory, and CLAUDE.md so scripted calls start faster. Skills in a directory you pass with --add-dir still load. Claude has access to Bash, file read, and file edit tools. Sets CLAUDE_CODE_SIMPLE. See bare mode",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented bare behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.betas",
+    "tool": "claude-code",
+    "name": "--betas",
+    "display_name": "Betas",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Beta headers to include in API requests (API key users only)",
+    "syntax": [
+      "claude --betas"
+    ],
+    "examples": [
+      {
+        "command": "claude --betas interleaved-thinking",
+        "explanation": "Beta headers to include in API requests (API key users only)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented betas behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.bg",
+    "tool": "claude-code",
+    "name": "--bg",
+    "display_name": "Bg",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Start the session as a background agent and return immediately. Prints the session ID and management commands. Combine with --exec to run a shell command as a background job instead of a Claude session, or with --agent to run a specific subagent. Cannot be combined with -p/--print; see the error reference",
+    "syntax": [
+      "claude --bg"
+    ],
+    "examples": [
+      {
+        "command": "claude --bg \"investigate the flaky test\"",
+        "explanation": "Start the session as a background agent and return immediately. Prints the session ID and management commands. Combine with --exec to run a shell command as a background job instead of a Claude session, or with --agent to run a specific subagent. Cannot be combined with -p/--print; see the error reference",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented bg behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.background",
+    "tool": "claude-code",
+    "name": "--background",
+    "display_name": "Background",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Start the session as a background agent and return immediately. Prints the session ID and management commands. Combine with --exec to run a shell command as a background job instead of a Claude session, or with --agent to run a specific subagent. Cannot be combined with -p/--print; see the error reference",
+    "syntax": [
+      "claude --background"
+    ],
+    "examples": [
+      {
+        "command": "claude --background",
+        "explanation": "Start the session as a background agent and return immediately. Prints the session ID and management commands. Combine with --exec to run a shell command as a background job instead of a Claude session, or with --agent to run a specific subagent. Cannot be combined with -p/--print; see the error reference",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented background behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.channels",
+    "tool": "claude-code",
+    "name": "--channels",
+    "display_name": "Channels",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "(Research preview) MCP servers whose channel notifications Claude should listen for in this session. Space-separated list of plugin:@ entries. Requires Anthropic authentication through claude.ai or a Console API key",
+    "syntax": [
+      "claude --channels"
+    ],
+    "examples": [
+      {
+        "command": "claude --channels plugin:my-notifier@my-marketplace",
+        "explanation": "(Research preview) MCP servers whose channel notifications Claude should listen for in this session. Space-separated list of plugin:@ entries. Requires Anthropic authentication through claude.ai or a Console API key",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented channels behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Anthropic authentication through claude.ai or a Console API key"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.chrome",
+    "tool": "claude-code",
+    "name": "--chrome",
+    "display_name": "Chrome",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Enable Chrome browser integration for web automation and testing",
+    "syntax": [
+      "claude --chrome"
+    ],
+    "examples": [
+      {
+        "command": "claude --chrome",
+        "explanation": "Enable Chrome browser integration for web automation and testing",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented chrome behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.cloud",
+    "tool": "claude-code",
+    "name": "--cloud",
+    "display_name": "Cloud",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "With a task description, create a new web session on claude.ai. With a session ID (session_... or cse_...) or a claude.ai/code URL, queue a message into that existing session instead, with -p. See send a follow-up message.",
+    "syntax": [
+      "claude --cloud"
+    ],
+    "examples": [
+      {
+        "command": "claude --cloud \"Fix the login bug\"",
+        "explanation": "With a task description, create a new web session on claude.ai. With a session ID (session_... or cse_...) or a claude.ai/code URL, queue a message into that existing session instead, with -p. See send a follow-up message.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented cloud behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.dangerously-load-development-channels",
+    "tool": "claude-code",
+    "name": "--dangerously-load-development-channels",
+    "display_name": "Dangerously load development channels",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Extension control",
+    "description": "Enable channels that are not on the approved allowlist, for local development. Accepts plugin:@ and server: entries. Prompts for confirmation",
+    "syntax": [
+      "claude --dangerously-load-development-channels"
+    ],
+    "examples": [
+      {
+        "command": "claude --dangerously-load-development-channels server:webhook",
+        "explanation": "Enable channels that are not on the approved allowlist, for local development. Accepts plugin:@ and server: entries. Prompts for confirmation",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented dangerously load development channels behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.debug",
+    "tool": "claude-code",
+    "name": "--debug",
+    "display_name": "Debug",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Enable debug mode with optional category filtering, such as --debug='mcp,startup' or --debug='!1p'. The filter binds only in the = form; a space-separated filter enables debug mode without filtering",
+    "syntax": [
+      "claude --debug"
+    ],
+    "examples": [
+      {
+        "command": "claude --debug='mcp,startup'",
+        "explanation": "Enable debug mode with optional category filtering, such as --debug='mcp,startup' or --debug='!1p'. The filter binds only in the = form; a space-separated filter enables debug mode without filtering",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented debug behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.debug-file",
+    "tool": "claude-code",
+    "name": "--debug-file",
+    "display_name": "Debug file",
+    "type": "cli-flag",
+    "category": "diagnostics",
+    "role": "Diagnostics",
+    "description": "Write debug logs to a specific file path. Implicitly enables debug mode. Takes precedence over CLAUDE_CODE_DEBUG_LOGS_DIR",
+    "syntax": [
+      "claude --debug-file <path>"
+    ],
+    "examples": [
+      {
+        "command": "claude --debug-file /tmp/claude-debug.log",
+        "explanation": "Write debug logs to a specific file path. Implicitly enables debug mode. Takes precedence over CLAUDE_CODE_DEBUG_LOGS_DIR",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented debug file behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.disable-slash-commands",
+    "tool": "claude-code",
+    "name": "--disable-slash-commands",
+    "display_name": "Disable slash commands",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Disable all skills and commands for this session",
+    "syntax": [
+      "claude --disable-slash-commands"
+    ],
+    "examples": [
+      {
+        "command": "claude --disable-slash-commands",
+        "explanation": "Disable all skills and commands for this session",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented disable slash commands behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.enable-auto-mode",
+    "tool": "claude-code",
+    "name": "--enable-auto-mode",
+    "display_name": "Enable auto mode",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "Removed in v2.1.111. Auto mode is now in the Shift+Tab cycle by default; use --permission-mode auto to start in it",
+    "syntax": [
+      "claude --enable-auto-mode"
+    ],
+    "examples": [
+      {
+        "command": "claude --enable-auto-mode",
+        "explanation": "Removed in v2.1.111. Auto mode is now in the Shift+Tab cycle by default; use --permission-mode auto to start in it",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented enable auto mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.environment",
+    "tool": "claude-code",
+    "name": "--environment",
+    "display_name": "Environment",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Create a new cloud session that runs on the self-hosted environment with the given ID. Environment IDs start with ccpool_. See --environment dispatch behavior for dispatch behavior and the flag combinations it rejects. Requires Claude Code v2.1.224 or later",
+    "syntax": [
+      "claude --environment <environment-id>"
+    ],
+    "examples": [
+      {
+        "command": "claude -p \"Fix the login bug\" --environment ccpool_abc123",
+        "explanation": "Create a new cloud session that runs on the self-hosted environment with the given ID. Environment IDs start with ccpool_. See --environment dispatch behavior for dispatch behavior and the flag combinations it rejects. Requires Claude Code v2.1.224 or later",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented environment behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2.1.224 or later"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.224",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.exclude-dynamic-system-prompt-sections",
+    "tool": "claude-code",
+    "name": "--exclude-dynamic-system-prompt-sections",
+    "display_name": "Exclude dynamic system prompt sections",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Move per-machine sections from the system prompt (working directory, environment info, memory paths, git-repo flag) into the first user message. Improves prompt-cache reuse across different users and machines running the same task. Only applies with the default system prompt; ignored when --system-prompt or --system-prompt-file is set. Use with -p for scripted, multi-user workloads",
+    "syntax": [
+      "claude --exclude-dynamic-system-prompt-sections"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --exclude-dynamic-system-prompt-sections \"query\"",
+        "explanation": "Move per-machine sections from the system prompt (working directory, environment info, memory paths, git-repo flag) into the first user message. Improves prompt-cache reuse across different users and machines running the same task. Only applies with the default system prompt; ignored when --system-prompt or --system-prompt-file is set. Use with -p for scripted, multi-user workloads",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented exclude dynamic system prompt sections behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.exec",
+    "tool": "claude-code",
+    "name": "--exec",
+    "display_name": "Exec",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Run a shell command as a PTY-backed background job instead of starting a Claude session. Use with --bg to launch from the shell",
+    "syntax": [
+      "claude --exec"
+    ],
+    "examples": [
+      {
+        "command": "claude --bg --exec 'pytest -x'",
+        "explanation": "Run a shell command as a PTY-backed background job instead of starting a Claude session. Use with --bg to launch from the shell",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented exec behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.fallback-model",
+    "tool": "claude-code",
+    "name": "--fallback-model",
+    "display_name": "Fallback model",
+    "type": "cli-flag",
+    "category": "models",
+    "role": "Model control",
+    "description": "Enable automatic fallback to the specified model(s) when the primary model is overloaded or not available, for example a retired model. Accepts a comma-separated list tried in order. See Fallback model chains. To persist a chain across sessions, use the fallbackModel setting, which this flag overrides",
+    "syntax": [
+      "claude --fallback-model"
+    ],
+    "examples": [
+      {
+        "command": "claude --fallback-model sonnet,haiku",
+        "explanation": "Enable automatic fallback to the specified model(s) when the primary model is overloaded or not available, for example a retired model. Accepts a comma-separated list tried in order. See Fallback model chains. To persist a chain across sessions, use the fallbackModel setting, which this flag overrides",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented fallback model behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.forward-subagent-text",
+    "tool": "claude-code",
+    "name": "--forward-subagent-text",
+    "display_name": "Forward subagent text",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Emit subagent text and thinking blocks in the output stream as assistant and user messages with parent_tool_use_id set, so you can reconstruct each subagent's transcript. Without this flag, Claude Code emits only subagent tool_use and tool_result blocks. Requires --print and --output-format stream-json. Claude Code also forwards messages from nested subagents, setting parent_tool_use_id to the ID of the Agent tool call that spawned each one; this requires Claude Code v2.1.219 or later. The CLAUDE_CODE_FORWARD_SUBAGENT_TEXT environment variable enables the same behavior. Requires Claude Code v2.1.211 or later",
+    "syntax": [
+      "claude --forward-subagent-text"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --output-format stream-json --verbose --forward-subagent-text \"query\"",
+        "explanation": "Emit subagent text and thinking blocks in the output stream as assistant and user messages with parent_tool_use_id set, so you can reconstruct each subagent's transcript. Without this flag, Claude Code emits only subagent tool_use and tool_result blocks. Requires --print and --output-format stream-json. Claude Code also forwards messages from nested subagents, setting parent_tool_use_id to the ID of the Agent tool call that spawned each one; this requires Claude Code v2.1.219 or later. The CLAUDE_CODE_FORWARD_SUBAGENT_TEXT environment variable enables the same behavior. Requires Claude Code v2.1.211 or later",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented forward subagent text behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --print and --output-format stream-json.",
+        "Claude Code also forwards messages from nested subagents, setting parent_tool_use_id to the ID of the Agent tool call that spawned each one; this requires Claude Code v2.1.219 or later.",
+        "Requires Claude Code v2.1.211 or later"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.219",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.from-pr",
+    "tool": "claude-code",
+    "name": "--from-pr",
+    "display_name": "From pr",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Open the session picker filtered to sessions linked to a specific pull request. Accepts a PR number, a GitHub or GitHub Enterprise PR URL, a GitLab merge request URL, or a Bitbucket pull request URL. Sessions are linked automatically when Claude creates the pull request",
+    "syntax": [
+      "claude --from-pr"
+    ],
+    "examples": [
+      {
+        "command": "claude --from-pr 123",
+        "explanation": "Open the session picker filtered to sessions linked to a specific pull request. Accepts a PR number, a GitHub or GitHub Enterprise PR URL, a GitLab merge request URL, or a Bitbucket pull request URL. Sessions are linked automatically when Claude creates the pull request",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented from pr behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.ide",
+    "tool": "claude-code",
+    "name": "--ide",
+    "display_name": "Ide",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Automatically connect to IDE on startup if exactly one valid IDE is available",
+    "syntax": [
+      "claude --ide"
+    ],
+    "examples": [
+      {
+        "command": "claude --ide",
+        "explanation": "Automatically connect to IDE on startup if exactly one valid IDE is available",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented ide behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.init",
+    "tool": "claude-code",
+    "name": "--init",
+    "display_name": "Init",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Run Setup hooks with the init matcher before the session (print mode only)",
+    "syntax": [
+      "claude --init"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --init \"query\"",
+        "explanation": "Run Setup hooks with the init matcher before the session (print mode only)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented init behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.init-only",
+    "tool": "claude-code",
+    "name": "--init-only",
+    "display_name": "Init only",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Run Setup and SessionStart hooks, then exit without starting a conversation",
+    "syntax": [
+      "claude --init-only"
+    ],
+    "examples": [
+      {
+        "command": "claude --init-only",
+        "explanation": "Run Setup and SessionStart hooks, then exit without starting a conversation",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented init only behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.include-hook-events",
+    "tool": "claude-code",
+    "name": "--include-hook-events",
+    "display_name": "Include hook events",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Include hook lifecycle events in the output stream. SessionStart and Setup hook events are always included and don't need this flag. Some hook events, such as Notification, SessionEnd, PreCompact, and PostCompact, never produce a hook_started event, even with this flag. For those events, Claude Code still emits hook_progress while a command hook that runs for more than a second produces output, and emits hook_response only when a hook that runs in the background finishes. Requires --output-format stream-json",
+    "syntax": [
+      "claude --include-hook-events"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --output-format stream-json --verbose --include-hook-events \"query\"",
+        "explanation": "Include hook lifecycle events in the output stream. SessionStart and Setup hook events are always included and don't need this flag. Some hook events, such as Notification, SessionEnd, PreCompact, and PostCompact, never produce a hook_started event, even with this flag. For those events, Claude Code still emits hook_progress while a command hook that runs for more than a second produces output, and emits hook_response only when a hook that runs in the background finishes. Requires --output-format stream-json",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented include hook events behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --output-format stream-json"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.include-partial-messages",
+    "tool": "claude-code",
+    "name": "--include-partial-messages",
+    "display_name": "Include partial messages",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Include partial streaming events in output. Requires --print and --output-format stream-json",
+    "syntax": [
+      "claude --include-partial-messages"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --output-format stream-json --verbose --include-partial-messages \"query\"",
+        "explanation": "Include partial streaming events in output. Requires --print and --output-format stream-json",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented include partial messages behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --print and --output-format stream-json"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.input-format",
+    "tool": "claude-code",
+    "name": "--input-format",
+    "display_name": "Input format",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Specify input format for print mode (options: text, stream-json)",
+    "syntax": [
+      "claude --input-format"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --output-format json --input-format stream-json",
+        "explanation": "Specify input format for print mode (options: text, stream-json)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented input format behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.maintenance",
+    "tool": "claude-code",
+    "name": "--maintenance",
+    "display_name": "Maintenance",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Run Setup hooks with the maintenance matcher before the session (print mode only)",
+    "syntax": [
+      "claude --maintenance"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --maintenance \"query\"",
+        "explanation": "Run Setup hooks with the maintenance matcher before the session (print mode only)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented maintenance behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.max-turns",
+    "tool": "claude-code",
+    "name": "--max-turns",
+    "display_name": "Max turns",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Limit the number of agentic turns (print mode only). Exits with an error when the limit is reached. No limit by default. With --input-format stream-json, a message still queued when the limit ends a turn stays queued and starts a new turn with its own limit",
+    "syntax": [
+      "claude --max-turns"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --max-turns 3 \"query\"",
+        "explanation": "Limit the number of agentic turns (print mode only). Exits with an error when the limit is reached. No limit by default. With --input-format stream-json, a message still queued when the limit ends a turn stays queued and starts a new turn with its own limit",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented max turns behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.name",
+    "tool": "claude-code",
+    "name": "--name",
+    "display_name": "Name",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Set a display name for the session, shown in /resume and the terminal title. You can resume a named session with claude --resume . In an interactive session, if another live session on this machine already uses the name, Claude Code applies a variant of it instead. /rename changes the name mid-session and also shows it on the prompt bar",
+    "syntax": [
+      "claude --name"
+    ],
+    "examples": [
+      {
+        "command": "claude --name",
+        "explanation": "Set a display name for the session, shown in /resume and the terminal title. You can resume a named session with claude --resume . In an interactive session, if another live session on this machine already uses the name, Claude Code applies a variant of it instead. /rename changes the name mid-session and also shows it on the prompt bar",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented name behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.no-chrome",
+    "tool": "claude-code",
+    "name": "--no-chrome",
+    "display_name": "No chrome",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Disable Chrome browser integration for this session",
+    "syntax": [
+      "claude --no-chrome"
+    ],
+    "examples": [
+      {
+        "command": "claude --no-chrome",
+        "explanation": "Disable Chrome browser integration for this session",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented no chrome behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.no-session-persistence",
+    "tool": "claude-code",
+    "name": "--no-session-persistence",
+    "display_name": "No session persistence",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Disable session persistence so sessions are not saved to disk and cannot be resumed. Print mode only. The CLAUDE_CODE_SKIP_PROMPT_HISTORY environment variable does the same in any mode",
+    "syntax": [
+      "claude --no-session-persistence"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --no-session-persistence \"query\"",
+        "explanation": "Disable session persistence so sessions are not saved to disk and cannot be resumed. Print mode only. The CLAUDE_CODE_SKIP_PROMPT_HISTORY environment variable does the same in any mode",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented no session persistence behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.permission-prompt-tool",
+    "tool": "claude-code",
+    "name": "--permission-prompt-tool",
+    "display_name": "Permission prompt tool",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Specify an MCP tool to handle permission prompts in non-interactive mode. Claude Code waits for that tool's MCP server to connect before running the first turn, up to the MCP_TIMEOUT startup timeout, 30 seconds by default. The prompt tool can't approve an MCP tool marked as requiring user interaction: Claude Code converts an allow result for one to a deny. This restriction requires Claude Code v2.1.199 or later",
+    "syntax": [
+      "claude --permission-prompt-tool"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --permission-prompt-tool mcp_auth_tool \"query\"",
+        "explanation": "Specify an MCP tool to handle permission prompts in non-interactive mode. Claude Code waits for that tool's MCP server to connect before running the first turn, up to the MCP_TIMEOUT startup timeout, 30 seconds by default. The prompt tool can't approve an MCP tool marked as requiring user interaction: Claude Code converts an allow result for one to a deny. This restriction requires Claude Code v2.1.199 or later",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented permission prompt tool behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "This restriction requires Claude Code v2.1.199 or later"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.199",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.plugin-dir",
+    "tool": "claude-code",
+    "name": "--plugin-dir",
+    "display_name": "Plugin dir",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Extension control",
+    "description": "Load a plugin from a directory or .zip archive for this session only. Each flag takes one path. Repeat the flag for multiple plugins: --plugin-dir A --plugin-dir B.zip",
+    "syntax": [
+      "claude --plugin-dir"
+    ],
+    "examples": [
+      {
+        "command": "claude --plugin-dir ./my-plugin",
+        "explanation": "Load a plugin from a directory or .zip archive for this session only. Each flag takes one path. Repeat the flag for multiple plugins: --plugin-dir A --plugin-dir B.zip",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented plugin dir behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.plugin-url",
+    "tool": "claude-code",
+    "name": "--plugin-url",
+    "display_name": "Plugin url",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Extension control",
+    "description": "Fetch a plugin .zip archive from a URL for this session only. Repeat the flag for multiple plugins, or pass space-separated URLs in a single quoted value",
+    "syntax": [
+      "claude --plugin-url"
+    ],
+    "examples": [
+      {
+        "command": "claude --plugin-url https://example.com/plugin.zip",
+        "explanation": "Fetch a plugin .zip archive from a URL for this session only. Repeat the flag for multiple plugins, or pass space-separated URLs in a single quoted value",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented plugin url behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.prompt-suggestions",
+    "tool": "claude-code",
+    "name": "--prompt-suggestions",
+    "display_name": "Prompt suggestions",
+    "type": "cli-flag",
+    "category": "diagnostics",
+    "role": "Diagnostics",
+    "description": "Emit a prompt_suggestion message with a predicted next user prompt after each turn that generates one; very short conversations can produce none. Requires --print, --output-format stream-json, and --verbose. See Prompt suggestions",
+    "syntax": [
+      "claude --prompt-suggestions"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --prompt-suggestions --output-format stream-json --verbose \"query\"",
+        "explanation": "Emit a prompt_suggestion message with a predicted next user prompt after each turn that generates one; very short conversations can produce none. Requires --print, --output-format stream-json, and --verbose. See Prompt suggestions",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented prompt suggestions behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --print, --output-format stream-json, and --verbose."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.ref",
+    "tool": "claude-code",
+    "name": "--ref",
+    "display_name": "Ref",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "With --environment, base the new session's checkout on a named ref instead of local HEAD",
+    "syntax": [
+      "claude --ref <branch>"
+    ],
+    "examples": [
+      {
+        "command": "claude -p \"Run the smoke test\" --environment ccpool_abc123 --ref main",
+        "explanation": "With --environment, base the new session's checkout on a named ref instead of local HEAD",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented ref behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.remote",
+    "tool": "claude-code",
+    "name": "--remote",
+    "display_name": "Remote",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Deprecated alias for --cloud, including the existing-session form",
+    "syntax": [
+      "claude --remote"
+    ],
+    "examples": [
+      {
+        "command": "claude --remote \"Fix the login bug\"",
+        "explanation": "Deprecated alias for --cloud, including the existing-session form",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented remote behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Do not add this deprecated option to new workflows; follow the replacement named in the official description when one is provided."
+    ]
+  },
+  {
+    "id": "claude-code.cli-flag.remote-control",
+    "tool": "claude-code",
+    "name": "--remote-control",
+    "display_name": "Remote control",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Start an interactive session with Remote Control enabled so you can also control it from claude.ai or the Claude app. Optionally pass a name for the session",
+    "syntax": [
+      "claude --remote-control"
+    ],
+    "examples": [
+      {
+        "command": "claude --remote-control \"My Project\"",
+        "explanation": "Start an interactive session with Remote Control enabled so you can also control it from claude.ai or the Claude app. Optionally pass a name for the session",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented remote control behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.rc",
+    "tool": "claude-code",
+    "name": "--rc",
+    "display_name": "Rc",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Start an interactive session with Remote Control enabled so you can also control it from claude.ai or the Claude app. Optionally pass a name for the session",
+    "syntax": [
+      "claude --rc"
+    ],
+    "examples": [
+      {
+        "command": "claude --rc",
+        "explanation": "Start an interactive session with Remote Control enabled so you can also control it from claude.ai or the Claude app. Optionally pass a name for the session",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented rc behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.remote-control-session-name-prefix",
+    "tool": "claude-code",
+    "name": "--remote-control-session-name-prefix",
+    "display_name": "Remote control session name prefix",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Prefix for auto-generated Remote Control session names when no explicit name is set. Defaults to your machine's hostname, producing names like myhost-graceful-unicorn. Set CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX for the same effect",
+    "syntax": [
+      "claude --remote-control-session-name-prefix <prefix>"
+    ],
+    "examples": [
+      {
+        "command": "claude remote-control --remote-control-session-name-prefix dev-box",
+        "explanation": "Prefix for auto-generated Remote Control session names when no explicit name is set. Defaults to your machine's hostname, producing names like myhost-graceful-unicorn. Set CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX for the same effect",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented remote control session name prefix behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.replay-user-messages",
+    "tool": "claude-code",
+    "name": "--replay-user-messages",
+    "display_name": "Replay user messages",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Re-emit user messages from stdin back on stdout for acknowledgment. Requires --input-format stream-json and --output-format stream-json",
+    "syntax": [
+      "claude --replay-user-messages"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --input-format stream-json --output-format stream-json --verbose --replay-user-messages",
+        "explanation": "Re-emit user messages from stdin back on stdout for acknowledgment. Requires --input-format stream-json and --output-format stream-json",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented replay user messages behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --input-format stream-json and --output-format stream-json"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.restricted",
+    "tool": "claude-code",
+    "name": "--restricted",
+    "display_name": "Restricted",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "Start in restricted mode. Use it when an evaluation harness drives claude on a shared machine and Claude Code must not run commands or read that machine's user and project settings. Claude Code removes the built-in tools that run commands or code, and WebFetch, unless you name them individually in --tools, not through the default preset. It also confines the built-in file tools to the working directories, loads only managed settings and --settings, refuses bypassPermissions, and refuses to create cloud sessions. Requires Claude Code v2.1.248 or later",
+    "syntax": [
+      "claude --restricted"
+    ],
+    "examples": [
+      {
+        "command": "claude --restricted -p \"query\"",
+        "explanation": "Start in restricted mode. Use it when an evaluation harness drives claude on a shared machine and Claude Code must not run commands or read that machine's user and project settings. Claude Code removes the built-in tools that run commands or code, and WebFetch, unless you name them individually in --tools, not through the default preset. It also confines the built-in file tools to the working directories, loads only managed settings and --settings, refuses bypassPermissions, and refuses to create cloud sessions. Requires Claude Code v2.1.248 or later",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented restricted behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2.1.248 or later"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.248",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.safe-mode",
+    "tool": "claude-code",
+    "name": "--safe-mode",
+    "display_name": "Safe mode",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Start with all customizations disabled to troubleshoot a broken configuration: CLAUDE.md, skills, plugins, hooks, MCP servers, custom commands and agents, output styles, workflows, custom themes, custom keybindings, status line and file-suggestion commands, LSP servers, and auto memory do not load. Authentication, model selection, built-in tools, and permissions work normally, which differs from --bare. Managed settings policy still applies, including policy-configured hooks, status line, and file-suggestion commands; managed plugins, managed skills, managed CLAUDE.md, and policy-configured MCP servers do not. Useful for checking whether a customization is what triggers automatic model fallback. Sets CLAUDE_CODE_SAFE_MODE",
+    "syntax": [
+      "claude --safe-mode"
+    ],
+    "examples": [
+      {
+        "command": "claude --safe-mode",
+        "explanation": "Start with all customizations disabled to troubleshoot a broken configuration: CLAUDE.md, skills, plugins, hooks, MCP servers, custom commands and agents, output styles, workflows, custom themes, custom keybindings, status line and file-suggestion commands, LSP servers, and auto memory do not load. Authentication, model selection, built-in tools, and permissions work normally, which differs from --bare. Managed settings policy still applies, including policy-configured hooks, status line, and file-suggestion commands; managed plugins, managed skills, managed CLAUDE.md, and policy-configured MCP servers do not. Useful for checking whether a customization is what triggers automatic model fallback. Sets CLAUDE_CODE_SAFE_MODE",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented safe mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.session-id",
+    "tool": "claude-code",
+    "name": "--session-id",
+    "display_name": "Session id",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Use a specific session ID for the conversation (must be a valid UUID)",
+    "syntax": [
+      "claude --session-id"
+    ],
+    "examples": [
+      {
+        "command": "claude --session-id \"550e8400-e29b-41d4-a716-446655440000\"",
+        "explanation": "Use a specific session ID for the conversation (must be a valid UUID)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented session id behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.setting-sources",
+    "tool": "claude-code",
+    "name": "--setting-sources",
+    "display_name": "Setting sources",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Comma-separated list of setting sources to load (user, project, local)",
+    "syntax": [
+      "claude --setting-sources"
+    ],
+    "examples": [
+      {
+        "command": "claude --setting-sources user,project",
+        "explanation": "Comma-separated list of setting sources to load (user, project, local)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented setting sources behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.settings",
+    "tool": "claude-code",
+    "name": "--settings",
+    "display_name": "Settings",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Path to a settings JSON file or an inline JSON string. Values you set here override the same keys in your settings.json files for this session. Keys you omit keep their file-based values. The file must be a regular file no larger than 2 MiB. See settings precedence",
+    "syntax": [
+      "claude --settings"
+    ],
+    "examples": [
+      {
+        "command": "claude --settings ./settings.json",
+        "explanation": "Path to a settings JSON file or an inline JSON string. Values you set here override the same keys in your settings.json files for this session. Keys you omit keep their file-based values. The file must be a regular file no larger than 2 MiB. See settings precedence",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented settings behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.strict-mcp-config",
+    "tool": "claude-code",
+    "name": "--strict-mcp-config",
+    "display_name": "Strict mcp config",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Only use MCP servers from --mcp-config, ignoring all other MCP configurations. See Exclusive control with managed-mcp.json for what the flag does under a managed MCP file",
+    "syntax": [
+      "claude --strict-mcp-config"
+    ],
+    "examples": [
+      {
+        "command": "claude --strict-mcp-config --mcp-config ./mcp.json",
+        "explanation": "Only use MCP servers from --mcp-config, ignoring all other MCP configurations. See Exclusive control with managed-mcp.json for what the flag does under a managed MCP file",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented strict mcp config behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.system-prompt",
+    "tool": "claude-code",
+    "name": "--system-prompt",
+    "display_name": "System prompt",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Replace the entire system prompt with custom text",
+    "syntax": [
+      "claude --system-prompt"
+    ],
+    "examples": [
+      {
+        "command": "claude --system-prompt \"You are a Python expert\"",
+        "explanation": "Replace the entire system prompt with custom text",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented system prompt behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.system-prompt-file",
+    "tool": "claude-code",
+    "name": "--system-prompt-file",
+    "display_name": "System prompt file",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Load system prompt from a file, replacing the default prompt",
+    "syntax": [
+      "claude --system-prompt-file"
+    ],
+    "examples": [
+      {
+        "command": "claude --system-prompt-file ./custom-prompt.txt",
+        "explanation": "Load system prompt from a file, replacing the default prompt",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented system prompt file behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.teleport",
+    "tool": "claude-code",
+    "name": "--teleport",
+    "display_name": "Teleport",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Resume a web session in your local terminal",
+    "syntax": [
+      "claude --teleport"
+    ],
+    "examples": [
+      {
+        "command": "claude --teleport",
+        "explanation": "Resume a web session in your local terminal",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented teleport behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.teammate-mode",
+    "tool": "claude-code",
+    "name": "--teammate-mode",
+    "display_name": "Teammate mode",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Set how agent team teammates display: in-process (default), auto, tmux, or iterm2 (added in v2.1.186). Overrides the teammateMode setting for this session. See Choose a display mode",
+    "syntax": [
+      "claude --teammate-mode"
+    ],
+    "examples": [
+      {
+        "command": "claude --teammate-mode auto",
+        "explanation": "Set how agent team teammates display: in-process (default), auto, tmux, or iterm2 (added in v2.1.186). Overrides the teammateMode setting for this session. See Choose a display mode",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented teammate mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.tmux",
+    "tool": "claude-code",
+    "name": "--tmux",
+    "display_name": "Tmux",
+    "type": "cli-flag",
+    "category": "worktrees",
+    "role": "Worktree control",
+    "description": "Create a tmux session for the worktree. Requires --worktree. Uses iTerm2 native panes when available; pass --tmux=classic for traditional tmux",
+    "syntax": [
+      "claude --tmux"
+    ],
+    "examples": [
+      {
+        "command": "claude -w feature-auth --tmux",
+        "explanation": "Create a tmux session for the worktree. Requires --worktree. Uses iTerm2 native panes when available; pass --tmux=classic for traditional tmux",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented tmux behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --worktree."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.tools",
+    "tool": "claude-code",
+    "name": "--tools",
+    "display_name": "Tools",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Restrict which built-in tools Claude can use. Use \"\" to disable all, \"default\" for all, or tool names like \"Bash,Edit,Read\". If you name one of the task-tracking tools here, Claude Code also opts the session in. The flag doesn't affect MCP tools; to deny those too, use --disallowedTools \"mcp__*\". A list that omits EndConversation doesn't remove it; \"\" removes it only when no MCP tools remain",
+    "syntax": [
+      "claude --tools"
+    ],
+    "examples": [
+      {
+        "command": "claude --tools \"Bash,Edit,Read\"",
+        "explanation": "Restrict which built-in tools Claude can use. Use \"\" to disable all, \"default\" for all, or tool names like \"Bash,Edit,Read\". If you name one of the task-tracking tools here, Claude Code also opts the session in. The flag doesn't affect MCP tools; to deny those too, use --disallowedTools \"mcp__*\". A list that omits EndConversation doesn't remove it; \"\" removes it only when no MCP tools remain",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented tools behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.verbose",
+    "tool": "claude-code",
+    "name": "--verbose",
+    "display_name": "Verbose",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Enable verbose logging, shows full turn-by-turn output. Overrides the viewMode setting for this session",
+    "syntax": [
+      "claude --verbose"
+    ],
+    "examples": [
+      {
+        "command": "claude --verbose",
+        "explanation": "Enable verbose logging, shows full turn-by-turn output. Overrides the viewMode setting for this session",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented verbose behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.version",
+    "tool": "claude-code",
+    "name": "--version",
+    "display_name": "Version",
+    "type": "cli-flag",
+    "category": "system",
+    "role": "CLI information",
+    "description": "Output the version number",
+    "syntax": [
+      "claude --version"
+    ],
+    "examples": [
+      {
+        "command": "claude --version",
+        "explanation": "Output the version number",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented version behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

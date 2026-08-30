@@ -1,0 +1,915 @@
+[
+  {
+    "id": "claude-code.slash-command.chrome",
+    "tool": "claude-code",
+    "name": "/chrome",
+    "display_name": "Chrome",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Interactive control",
+    "description": "Configure Claude in Chrome settings",
+    "syntax": [
+      "/chrome"
+    ],
+    "examples": [
+      {
+        "command": "/chrome",
+        "explanation": "Open the documented chrome workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Configure Claude in Chrome settings."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.design-login",
+    "tool": "claude-code",
+    "name": "/design-login",
+    "display_name": "Design Login",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Integration setup",
+    "description": "Authorize design-system access for /design-sync with your claude.ai account",
+    "syntax": [
+      "/design-login"
+    ],
+    "examples": [
+      {
+        "command": "/design-login",
+        "explanation": "Open the documented design login workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Authorize design-system access for /design-sync with your claude.ai account."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.skill.fewer-permission-prompts",
+    "tool": "claude-code",
+    "name": "/fewer-permission-prompts",
+    "display_name": "Fewer Permission Prompts",
+    "type": "skill",
+    "category": "permissions",
+    "role": "Permission guidance",
+    "description": "Skill. Scan your transcripts for common read-only Bash and MCP tool calls, then add a prioritized allowlist to project .claude/settings.json to reduce permission prompts",
+    "syntax": [
+      "/fewer-permission-prompts"
+    ],
+    "examples": [
+      {
+        "command": "/fewer-permission-prompts",
+        "explanation": "Open the documented fewer permission prompts workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Skill."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Skill. Scan your transcripts for common read-only Bash and MCP tool calls, then add a prioritized allowlist to project .claude/settings.json to reduce permission prompts"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "capabilities": [
+      "skills.manage"
+    ]
+  },
+  {
+    "id": "claude-code.slash-command.install-github-app",
+    "tool": "claude-code",
+    "name": "/install-github-app",
+    "display_name": "Install Github App",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Integration setup",
+    "description": "Install the Claude GitHub App for a repository, with an optional step to set up GitHub Actions workflows and secrets. Walks you through selecting a repo and configuring the integration",
+    "syntax": [
+      "/install-github-app"
+    ],
+    "examples": [
+      {
+        "command": "/install-github-app",
+        "explanation": "Open the documented install github app workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Install the Claude GitHub App for a repository, with an optional step to set up GitHub Actions workflows and secrets."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.install-slack-app",
+    "tool": "claude-code",
+    "name": "/install-slack-app",
+    "display_name": "Install Slack App",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Integration setup",
+    "description": "Install the Claude Slack app. Opens a browser to complete the OAuth flow",
+    "syntax": [
+      "/install-slack-app"
+    ],
+    "examples": [
+      {
+        "command": "/install-slack-app",
+        "explanation": "Open the documented install slack app workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Install the Claude Slack app."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.passes",
+    "tool": "claude-code",
+    "name": "/passes",
+    "display_name": "Passes",
+    "type": "slash-command",
+    "category": "system",
+    "role": "Account and usage control",
+    "description": "Share a free week of Claude Code with friends. Only visible if your account is eligible",
+    "syntax": [
+      "/passes"
+    ],
+    "examples": [
+      {
+        "command": "/passes",
+        "explanation": "Open the documented passes workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Share a free week of Claude Code with friends."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Share a free week of Claude Code with friends. Only visible if your account is eligible"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.powerup",
+    "tool": "claude-code",
+    "name": "/powerup",
+    "display_name": "Powerup",
+    "type": "slash-command",
+    "category": "skills",
+    "role": "Bundled workflow",
+    "description": "Discover Claude Code features through quick interactive lessons with animated demos",
+    "syntax": [
+      "/powerup"
+    ],
+    "examples": [
+      {
+        "command": "/powerup",
+        "explanation": "Open the documented powerup workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Discover Claude Code features through quick interactive lessons with animated demos."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.privacy-settings",
+    "tool": "claude-code",
+    "name": "/privacy-settings",
+    "display_name": "Privacy Settings",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Interactive control",
+    "description": "View and update your privacy settings. Only available for Pro and Max plan subscribers",
+    "syntax": [
+      "/privacy-settings"
+    ],
+    "examples": [
+      {
+        "command": "/privacy-settings",
+        "explanation": "Open the documented privacy settings workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "View and update your privacy settings."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "View and update your privacy settings. Only available for Pro and Max plan subscribers"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.radio",
+    "tool": "claude-code",
+    "name": "/radio",
+    "display_name": "Radio",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Interactive control",
+    "description": "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available",
+    "syntax": [
+      "/radio"
+    ],
+    "examples": [
+      {
+        "command": "/radio",
+        "explanation": "Open the documented radio workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Open Claude FM lo-fi radio in your browser."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Open Claude FM lo-fi radio in your browser. Prints the stream URL when no browser is available"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.rate-limit-options",
+    "tool": "claude-code",
+    "name": "/rate-limit-options",
+    "display_name": "Rate Limit Options",
+    "type": "slash-command",
+    "category": "system",
+    "role": "Account and usage control",
+    "description": "Show ways to keep working when a claude.ai usage limit blocks a request: wait and continue automatically when the limit resets, add usage credits, or upgrade your plan. Claude Code can also open this menu on its own when you hit a limit at your own terminal. See Turn automatic continue off. Requires a claude.ai subscription. Doesn't appear in the command menu; type it in full. The wait-and-continue rows require Claude Code v2.1.234 or later",
+    "syntax": [
+      "/rate-limit-options"
+    ],
+    "examples": [
+      {
+        "command": "/rate-limit-options",
+        "explanation": "Open the documented rate limit options workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Show ways to keep working when a claude.ai usage limit blocks a request: wait and continue automatically when the limit resets, add usage credits, or upgrade your plan."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Show ways to keep working when a claude.ai usage limit blocks a request: wait and continue automatically when the limit resets, add usage credits, or upgrade your plan. Claude Code can also open this menu on its own when you hit a limit at your own terminal. See Turn automatic continue off. Requires a claude.ai subscription. Doesn't appear in the command menu; type it in full. The wait-and-continue rows require Claude Code v2.1.234 or later"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.recap",
+    "tool": "claude-code",
+    "name": "/recap",
+    "display_name": "Recap",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Session summary",
+    "description": "Generate a one-line summary of the current session on demand. See Session recap for the automatic recap that appears after you've been away",
+    "syntax": [
+      "/recap"
+    ],
+    "examples": [
+      {
+        "command": "/recap",
+        "explanation": "Open the documented recap workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Generate a one-line summary of the current session on demand."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.release-notes",
+    "tool": "claude-code",
+    "name": "/release-notes",
+    "display_name": "Release Notes",
+    "type": "slash-command",
+    "category": "system",
+    "role": "Release information",
+    "description": "View the changelog in an interactive version picker. Select a specific version to see its release notes, or choose to show all versions. The notes appear in your transcript without entering the conversation Claude sees",
+    "syntax": [
+      "/release-notes"
+    ],
+    "examples": [
+      {
+        "command": "/release-notes",
+        "explanation": "Open the documented release notes workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "View the changelog in an interactive version picker."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.remote-env",
+    "tool": "claude-code",
+    "name": "/remote-env",
+    "display_name": "Remote Env",
+    "type": "slash-command",
+    "category": "agents",
+    "role": "Cloud-agent environment",
+    "description": "Choose the default environment for cloud agents",
+    "syntax": [
+      "/remote-env"
+    ],
+    "examples": [
+      {
+        "command": "/remote-env",
+        "explanation": "Open the documented remote env workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Choose the default environment for cloud agents."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.skill.run",
+    "tool": "claude-code",
+    "name": "/run",
+    "display_name": "Run",
+    "type": "skill",
+    "category": "skills",
+    "role": "Bundled workflow",
+    "description": "Skill. Launch and drive your project's app to see a change working, not only passing tests. See Run and verify your app",
+    "syntax": [
+      "/run"
+    ],
+    "examples": [
+      {
+        "command": "/run",
+        "explanation": "Open the documented run workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Skill."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Skill. Launch and drive your project's app to see a change working, not only passing tests. See Run and verify your app"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "capabilities": [
+      "skills.manage"
+    ]
+  },
+  {
+    "id": "claude-code.skill.run-skill-generator",
+    "tool": "claude-code",
+    "name": "/run-skill-generator",
+    "display_name": "Run Skill Generator",
+    "type": "skill",
+    "category": "skills",
+    "role": "Bundled workflow",
+    "description": "Skill. Teach /run and /verify how to build, launch, and drive your project's app from a clean environment by writing a per-project skill",
+    "syntax": [
+      "/run-skill-generator"
+    ],
+    "examples": [
+      {
+        "command": "/run-skill-generator",
+        "explanation": "Open the documented run skill generator workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Skill."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "capabilities": [
+      "skills.manage"
+    ]
+  },
+  {
+    "id": "claude-code.slash-command.scroll-speed",
+    "tool": "claude-code",
+    "name": "/scroll-speed",
+    "display_name": "Scroll Speed",
+    "type": "slash-command",
+    "category": "terminal",
+    "role": "Terminal display",
+    "description": "Adjust mouse wheel scroll speed interactively, with a ruler you can scroll while the dialog is open to preview the change. Available in fullscreen rendering only and not in the JetBrains IDE terminal",
+    "syntax": [
+      "/scroll-speed"
+    ],
+    "examples": [
+      {
+        "command": "/scroll-speed",
+        "explanation": "Open the documented scroll speed workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Adjust mouse wheel scroll speed interactively, with a ruler you can scroll while the dialog is open to preview the change."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Adjust mouse wheel scroll speed interactively, with a ruler you can scroll while the dialog is open to preview the change. Available in fullscreen rendering only and not in the JetBrains IDE terminal"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.stickers",
+    "tool": "claude-code",
+    "name": "/stickers",
+    "display_name": "Stickers",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Interactive control",
+    "description": "Order Claude Code stickers",
+    "syntax": [
+      "/stickers"
+    ],
+    "examples": [
+      {
+        "command": "/stickers",
+        "explanation": "Open the documented stickers workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Order Claude Code stickers."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.team-onboarding",
+    "tool": "claude-code",
+    "name": "/team-onboarding",
+    "display_name": "Team Onboarding",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Interactive control",
+    "description": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days and produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Pro, Max, Team, and Enterprise plans, also returns a share link teammates can open directly in Claude Code",
+    "syntax": [
+      "/team-onboarding"
+    ],
+    "examples": [
+      {
+        "command": "/team-onboarding",
+        "explanation": "Open the documented team onboarding workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Generate a team onboarding guide from your Claude Code usage history."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days and produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Pro, Max, Team, and Enterprise plans, also returns a share link teammates can open directly in Claude Code"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.usage-credits",
+    "tool": "claude-code",
+    "name": "/usage-credits",
+    "display_name": "Usage Credits",
+    "type": "slash-command",
+    "category": "system",
+    "role": "Account and usage control",
+    "description": "Configure usage credits, or request them from your admin, when you hit a limit. Opens your usage-credits billing settings in the browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI, after confirming in a dialog that the request notifies their admins. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage",
+    "syntax": [
+      "/usage-credits"
+    ],
+    "examples": [
+      {
+        "command": "/usage-credits",
+        "explanation": "Open the documented usage credits workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Configure usage credits, or request them from your admin, when you hit a limit."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Configure usage credits, or request them from your admin, when you hit a limit. Opens your usage-credits billing settings in the browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI, after confirming in a dialog that the request notifies their admins. When no browser can open the billing page, for example over SSH, the command prints the URL to visit instead; this requires Claude Code v2.1.205 or later, and earlier versions showed nothing in that case. Previously /extra-usage"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "version": {
+      "introduced": "2.1.205",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    }
+  },
+  {
+    "id": "claude-code.slash-command.web-setup",
+    "tool": "claude-code",
+    "name": "/web-setup",
+    "display_name": "Web Setup",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Integration setup",
+    "description": "Connect your GitHub account to Claude Code on the web using your local gh CLI credentials",
+    "syntax": [
+      "/web-setup"
+    ],
+    "examples": [
+      {
+        "command": "/web-setup",
+        "explanation": "Open the documented web setup workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Connect your GitHub account to Claude Code on the web using your local gh CLI credentials."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

@@ -1,0 +1,420 @@
+[
+  {
+    "id": "github-copilot.agent.github-agents-name-agent-md",
+    "tool": "github-copilot",
+    "name": ".github/agents/<name>.agent.md",
+    "capabilities": ["agents.define"],
+    "display_name": "Custom agent profile",
+    "type": "agent",
+    "category": "agents",
+    "role": "Custom agent profile",
+    "description": "Define a reusable Copilot custom agent with tools, model, effort, and optional MCP servers.",
+    "syntax": [
+      ".github/agents/<name>.agent.md"
+    ],
+    "examples": [
+      {
+        "command": ".github/agents/<name>.agent.md",
+        "explanation": "Delegate a specialist task or start a session with a focused agent profile.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Delegate a specialist task or start a session with a focused agent profile."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.agent.subagent",
+    "tool": "github-copilot",
+    "name": "subagent",
+    "display_name": "Copilot subagent",
+    "type": "agent",
+    "category": "agents",
+    "role": "Copilot subagent",
+    "description": "Run an isolated child agent and return its result to the parent session.",
+    "syntax": [
+      "subagent"
+    ],
+    "examples": [
+      {
+        "command": "subagent",
+        "explanation": "Parallelize or isolate a task that would otherwise consume the main context.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Parallelize or isolate a task that would otherwise consume the main context."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.skill.github-skills-name-skill-md",
+    "tool": "github-copilot",
+    "name": ".github/skills/<name>/SKILL.md",
+    "capabilities": ["skills.define"],
+    "display_name": "Copilot Agent Skill",
+    "type": "skill",
+    "category": "skills",
+    "role": "Copilot Agent Skill",
+    "description": "Define an Agent Skill whose instructions are injected when invoked manually or selected by the agent.",
+    "syntax": [
+      ".github/skills/<name>/SKILL.md"
+    ],
+    "examples": [
+      {
+        "command": ".github/skills/<name>/SKILL.md",
+        "explanation": "Package reusable project workflows or specialist knowledge.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Package reusable project workflows or specialist knowledge."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.plugin.copilot-cli-plugin",
+    "tool": "github-copilot",
+    "name": "Copilot CLI plugin",
+    "display_name": "Copilot CLI plugin",
+    "type": "plugin",
+    "category": "plugins",
+    "role": "Copilot CLI plugin",
+    "description": "Package and distribute skills, hooks, agents, MCP servers, instructions, and related extensions.",
+    "syntax": [
+      "Copilot CLI plugin"
+    ],
+    "examples": [
+      {
+        "command": "Copilot CLI plugin",
+        "explanation": "Install or distribute a cohesive Copilot CLI customization.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Install or distribute a cohesive Copilot CLI customization."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.mcp.copilot-mcp-config-json",
+    "tool": "github-copilot",
+    "name": "~/.copilot/mcp-config.json",
+    "display_name": "Copilot MCP configuration",
+    "type": "mcp",
+    "category": "mcp",
+    "role": "Copilot MCP configuration",
+    "description": "Configure local or remote MCP servers for Copilot CLI.",
+    "syntax": [
+      "~/.copilot/mcp-config.json"
+    ],
+    "examples": [
+      {
+        "command": "~/.copilot/mcp-config.json",
+        "explanation": "Connect Copilot CLI to reviewed external tools and data sources.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Connect Copilot CLI to reviewed external tools and data sources."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.mode.interactive",
+    "tool": "github-copilot",
+    "name": "interactive",
+    "display_name": "Interactive mode",
+    "type": "mode",
+    "category": "session",
+    "role": "Interactive mode",
+    "description": "Run a normal interactive Copilot CLI session.",
+    "syntax": [
+      "interactive"
+    ],
+    "examples": [
+      {
+        "command": "interactive",
+        "explanation": "Work turn by turn with permission prompts and interactive controls.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Work turn by turn with permission prompts and interactive controls."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.mode.plan",
+    "tool": "github-copilot",
+    "name": "plan",
+    "display_name": "Plan mode",
+    "type": "mode",
+    "category": "planning",
+    "role": "Plan mode",
+    "description": "Start with planning controls enabled.",
+    "syntax": [
+      "plan"
+    ],
+    "examples": [
+      {
+        "command": "plan",
+        "explanation": "Review an implementation approach before normal execution.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Review an implementation approach before normal execution."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.mode.autopilot",
+    "tool": "github-copilot",
+    "name": "autopilot",
+    "display_name": "Autopilot mode",
+    "type": "mode",
+    "category": "agents",
+    "role": "Autopilot mode",
+    "description": "Continue autonomously under configured limits and permissions.",
+    "syntax": [
+      "autopilot"
+    ],
+    "examples": [
+      {
+        "command": "autopilot",
+        "explanation": "Run a bounded hands-off workflow after reviewing its authority and limits.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run a bounded hands-off workflow after reviewing its authority and limits."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.permission.allow-all",
+    "tool": "github-copilot",
+    "name": "allow-all",
+    "display_name": "Allow-all permissions",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Allow-all permissions",
+    "description": "Grant all tool, path, and URL permissions for the session.",
+    "syntax": [
+      "allow-all"
+    ],
+    "examples": [
+      {
+        "command": "allow-all",
+        "explanation": "Use only in a trusted and appropriately isolated environment.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use only in a trusted and appropriately isolated environment."
+    ],
+    "when_not_to_use": [
+      "Do not use this control on untrusted code or outside a separately isolated environment."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

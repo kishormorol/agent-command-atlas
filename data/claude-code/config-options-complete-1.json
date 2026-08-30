@@ -1,0 +1,2699 @@
+[
+  {
+    "id": "claude-code.config-option.advisormodel",
+    "tool": "claude-code",
+    "name": "advisorModel",
+    "display_name": "advisorModel",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Pick which model answers when Claude calls the server-side advisor tool. Unset it to turn the advisor off. The advisor must be at least as capable as your main model; when it isn't, Claude Code sends requests without the advisor. See Choose an advisor model.",
+    "syntax": [
+      "advisorModel: <string, one of the aliases \"fable\", \"opus\", or \"sonnet\", which resolve to Claude Code's current default version of that model family, or a full model ID such as \"claude-opus-5\">"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented advisorModel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.alwaysthinkingenabled",
+    "tool": "claude-code",
+    "name": "alwaysThinkingEnabled",
+    "display_name": "alwaysThinkingEnabled",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Turn extended thinking off for every session by setting this to false. Thinking is on by default, so true changes nothing. Most people set this through /config rather than by editing the file.",
+    "syntax": [
+      "alwaysThinkingEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented alwaysThinkingEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.availablemodels",
+    "tool": "claude-code",
+    "name": "availableModels",
+    "display_name": "availableModels",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Restrict which models people can select for the main session, subagents, skills, and the advisor. A managed list constrains /model, --model, and the model key in a developer's own files; a model outside it can't be selected. On its own this doesn't touch the Default option; pair it with enforceAvailableModels for that.",
+    "syntax": [
+      "availableModels: <array of model aliases or IDs>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented availableModels behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.enforceavailablemodels",
+    "tool": "claude-code",
+    "name": "enforceAvailableModels",
+    "display_name": "enforceAvailableModels",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "The /model picker has a Default option that resolves to your organization default model when one applies, and otherwise to your account type's default. An availableModels allowlist limits the models you can name, but on its own it leaves Default alone, so Default can still resolve to a model outside the list. This key closes that gap. Requires Claude Code v2.1.175 or later.",
+    "syntax": [
+      "enforceAvailableModels: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented enforceAvailableModels behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "The /model picker has a Default option that resolves to your organization default model when one applies, and otherwise to your account type's default. An availableModels allowlist limits the models you can name, but on its own it leaves Default alone, so Default can still resolve to a model outside the list. This key closes that gap. Requires Claude Code v2.1.175 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.fallbackmodel",
+    "tool": "claude-code",
+    "name": "fallbackModel",
+    "display_name": "fallbackModel",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Name backup models for Claude Code to try, in order, when your primary model is overloaded or unavailable. Claude Code switches to the next available model in the chain for the rest of the turn and shows a notice. Without a chain, Claude Code retries the same model and then surfaces the server's error, and you retry or switch models yourself.",
+    "syntax": [
+      "fallbackModel: <array of model aliases or IDs; \"default\" expands to the default model>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented fallbackModel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.fastmode",
+    "tool": "claude-code",
+    "name": "fastMode",
+    "display_name": "fastMode",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Turn fast mode on for sessions where it's available, for interactive work like rapid iteration or live debugging where you want speed at a higher cost per token. You don't usually edit this key by hand: running /fast writes fastMode: true to ~/.claude/settings.json, and running it again to turn fast mode off removes the key. Fast mode runs only on Opus 5 and Opus 4.8: turning it on from another model switches you to Opus, and switching to an unsupported model turns it off. See Switch models while fast mode is on.",
+    "syntax": [
+      "fastMode: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented fastMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.fastmodepersessionoptin",
+    "tool": "claude-code",
+    "name": "fastModePerSessionOptIn",
+    "display_name": "fastModePerSessionOptIn",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Normally, running /fast saves fastMode to a person's user settings, so fast mode is on at the start of every later session. Set this key to true to stop that: a saved fastMode: true no longer turns fast mode on at session start, and each person has to run /fast in each session they want it. Claude Code leaves the fastMode key in their file, so turning this key off restores the old behavior. Owners on Team or Enterprise plans can deploy it organization-wide through server-managed settings.",
+    "syntax": [
+      "fastModePerSessionOptIn: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented fastModePerSessionOptIn behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Normally, running /fast saves fastMode to a person's user settings, so fast mode is on at the start of every later session. Set this key to true to stop that: a saved fastMode: true no longer turns fast mode on at session start, and each person has to run /fast in each session they want it. Claude Code leaves the fastMode key in their file, so turning this key off restores the old behavior. Owners on Team or Enterprise plans can deploy it organization-wide through server-managed settings."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.language",
+    "tool": "claude-code",
+    "name": "language",
+    "display_name": "language",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Have Claude respond in a language other than English by default. There is no fixed list for responses: Claude Code adds the value verbatim to the system prompt as an instruction to always respond in that language, so any language name Claude can read works. Claude Code doesn't check the value, so a misspelled name reaches Claude as written rather than producing an error. The same value sets the language for voice dictation, which does have a fixed list of supported dictation languages, and for auto-generated session titles.",
+    "syntax": [
+      "language: <string, any language name, such as \"japanese\", \"spanish\", or \"french\"; Claude Code doesn't validate it>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented language behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.modeloverrides",
+    "tool": "claude-code",
+    "name": "modelOverrides",
+    "display_name": "modelOverrides",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Map Anthropic model IDs to provider-specific model IDs, such as Amazon Bedrock inference profile ARNs. Each model picker entry then uses its mapped value when calling the provider API. Administrators use this on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry to route each model version to a specific inference profile, version name, or deployment for governance, cost allocation, or regional routing.",
+    "syntax": [
+      "modelOverrides: <object mapping model ID to provider model ID>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelOverrides behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.modelpicker",
+    "tool": "claude-code",
+    "name": "modelPicker",
+    "display_name": "modelPicker",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "List the models the /model picker offers, in the order you write them and under labels you choose, so the picker lists the models your organization runs, after the built-in lineup or instead of it. Each row's model is taken verbatim, so it accepts anything --model accepts: an alias such as opus, an Anthropic model ID, or a provider-format ID for Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or an LLM gateway. Requires Claude Code v2.1.242 or later.",
+    "syntax": [
+      "modelPicker: <object with an options array of rows and an optional replaceBuiltInOptions Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelPicker behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "List the models the /model picker offers, in the order you write them and under labels you choose, so the picker lists the models your organization runs, after the built-in lineup or instead of it. Each row's model is taken verbatim, so it accepts anything --model accepts: an alias such as opus, an Anthropic model ID, or a provider-format ID for Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or an LLM gateway. Requires Claude Code v2.1.242 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.modelpricing",
+    "tool": "claude-code",
+    "name": "modelPricing",
+    "display_name": "modelPricing",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Report spend at the rates your organization pays instead of list price. Set it when your organization has contracted rates, so the dollar figures developers see match your bill. Claude Code applies the rates in /usage, the status line, the Agent SDK's total_cost_usd, the --max-budget-usd limit, and the OpenTelemetry cost metric and events. You supply the rates: Claude Code doesn't read them from your contract or the Claude Console. Requires Claude Code v2.1.242 or later.",
+    "syntax": [
+      "modelPricing: <object with an optional multiplier and an optional overrides map>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented modelPricing behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Report spend at the rates your organization pays instead of list price. Set it when your organization has contracted rates, so the dollar figures developers see match your bill. Claude Code applies the rates in /usage, the status line, the Agent SDK's total_cost_usd, the --max-budget-usd limit, and the OpenTelemetry cost metric and events. You supply the rates: Claude Code doesn't read them from your contract or the Claude Console. Requires Claude Code v2.1.242 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.outputstyle",
+    "tool": "claude-code",
+    "name": "outputStyle",
+    "display_name": "outputStyle",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Select an output style by name. An output style is a saved set of instructions that Claude Code adds to the system prompt to change Claude's role, tone, and output format, such as the built-in Explanatory and Learning styles or one you wrote yourself.",
+    "syntax": [
+      "outputStyle: <string, the name of a built-in or custom output style>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented outputStyle behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.promptcachettl",
+    "tool": "claude-code",
+    "name": "promptCacheTtl",
+    "display_name": "promptCacheTtl",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Choose how long the prompt cache holds the main conversation. This key applies to your interactive, -p, and Agent SDK turns, together with the helpers Claude Code runs inline with them. The one-hour lifetime keeps the cache warm across longer breaks, and the API bills each cache write at a higher rate than at the five-minute lifetime. Requires Claude Code v2.1.242 or later.",
+    "syntax": [
+      "promptCacheTtl: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented promptCacheTtl behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Choose how long the prompt cache holds the main conversation. This key applies to your interactive, -p, and Agent SDK turns, together with the helpers Claude Code runs inline with them. The one-hour lifetime keeps the cache warm across longer breaks, and the API bills each cache write at a higher rate than at the five-minute lifetime. Requires Claude Code v2.1.242 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.showthinkingsummaries",
+    "tool": "claude-code",
+    "name": "showThinkingSummaries",
+    "display_name": "showThinkingSummaries",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "See summaries of Claude's extended thinking in interactive sessions. Set it if you want the full summaries when you expand thinking with Ctrl+O. When unset or false, the Anthropic API redacts thinking blocks and Claude Code shows a collapsed stub; third-party providers don't redact.",
+    "syntax": [
+      "showThinkingSummaries: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented showThinkingSummaries behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.subagentpromptcachettl",
+    "tool": "claude-code",
+    "name": "subagentPromptCacheTtl",
+    "display_name": "subagentPromptCacheTtl",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Choose how long the prompt cache holds the requests Claude Code makes outside the main conversation. This key applies to subagents, workflows, and Claude Code's own background and helper requests, such as compaction and session titles. The one-hour lifetime keeps the cache warm across longer breaks, and the API bills each cache write at a higher rate than at the five-minute lifetime. Requires Claude Code v2.1.242 or later.",
+    "syntax": [
+      "subagentPromptCacheTtl: <string, one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented subagentPromptCacheTtl behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Choose how long the prompt cache holds the requests Claude Code makes outside the main conversation. This key applies to subagents, workflows, and Claude Code's own background and helper requests, such as compaction and session titles. The one-hour lifetime keeps the cache warm across longer breaks, and the API bills each cache write at a higher rate than at the five-minute lifetime. Requires Claude Code v2.1.242 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.switchmodelsonflag",
+    "tool": "claude-code",
+    "name": "switchModelsOnFlag",
+    "display_name": "switchModelsOnFlag",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Choose what happens when a safety classifier flags a request: switch to the fallback model and continue, or pause so you can choose between switching and editing the prompt.",
+    "syntax": [
+      "switchModelsOnFlag: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented switchModelsOnFlag behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.ultracode",
+    "tool": "claude-code",
+    "name": "ultracode",
+    "display_name": "ultracode",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Start sessions with ultracode on. With it on, Claude plans a workflow for each substantive task instead of waiting for you to ask. Claude plans workflows only when dynamic workflows are enabled for you and your model supports xhigh effort. Either way, ultracode: true runs the session at xhigh effort. Claude Code reads this key but never writes it: /effort ultracode turns ultracode on for the current session only.",
+    "syntax": [
+      "ultracode: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented ultracode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.allowmanagedpermissionrulesonly",
+    "tool": "claude-code",
+    "name": "allowManagedPermissionRulesOnly",
+    "display_name": "allowManagedPermissionRulesOnly",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Make managed settings the only source of allow, ask, and deny permission rules. Claude Code then ignores rules in user, project, local, and --settings files, ignores --allowedTools, hides the always-allow choices in permission prompts, and stops saving new rules. When parent settings from an embedding host apply, Claude Code treats them as part of the managed tier: it keeps their deny and ask rules and drops their allow rules and additionalDirectories.",
+    "syntax": [
+      "allowManagedPermissionRulesOnly: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented allowManagedPermissionRulesOnly behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.automode",
+    "tool": "claude-code",
+    "name": "autoMode",
+    "display_name": "autoMode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Add your own rules to what the auto mode classifier blocks and allows. Use it to tell the classifier which repos, buckets, and domains your organization trusts, so it stops blocking routine internal operations. The classifier ships with built-in allow and deny rules. Include the literal string \"$defaults\" in an array to keep those built-in rules at that position and add yours around them; leave it out to replace them with yours.",
+    "syntax": [
+      "autoMode: <object with environment, allow, soft_deny, and hard_deny arrays of prose rules, plus the classifyAllShell Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.automode-classifyallshell",
+    "tool": "claude-code",
+    "name": "autoMode.classifyAllShell",
+    "display_name": "autoMode.classifyAllShell",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Send every Bash and PowerShell command through the auto mode classifier while auto mode is active. By default, auto mode suspends only allow rules that could run arbitrary code: tool-wide and wildcard rules such as Bash(*), and interpreter or shell-wrapper prefixes such as Bash(python *). A command that any other allow rule matches, such as Bash(npm test), skips the classifier, and a destructive argument the rule's prefix didn't anticipate can get through unseen. Setting this key suspends every shell allow rule for the session so the classifier sees every command. Requires Claude Code v2.1.193 or later.",
+    "syntax": [
+      "autoMode.classifyAllShell: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoMode.classifyAllShell behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Send every Bash and PowerShell command through the auto mode classifier while auto mode is active. By default, auto mode suspends only allow rules that could run arbitrary code: tool-wide and wildcard rules such as Bash(*), and interpreter or shell-wrapper prefixes such as Bash(python *). A command that any other allow rule matches, such as Bash(npm test), skips the classifier, and a destructive argument the rule's prefix didn't anticipate can get through unseen. Setting this key suspends every shell allow rule for the session so the classifier sees every command. Requires Claude Code v2.1.193 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.disableautomode",
+    "tool": "claude-code",
+    "name": "disableAutoMode",
+    "display_name": "disableAutoMode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Remove auto mode from the Shift+Tab cycle. Any session that would otherwise start in auto mode, whether from --permission-mode auto, a settings file, or the built-in default, starts in default instead. Administrators set it in managed settings to prevent developers in their organization from using auto mode.",
+    "syntax": [
+      "disableAutoMode: <the string \"disable\">"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disableAutoMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.permissions",
+    "tool": "claude-code",
+    "name": "permissions",
+    "display_name": "permissions",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Control which tools Claude can use without asking, which ones always prompt, and which ones are blocked, and set the permission mode a session starts in. Every permissions.* key below nests under this object.",
+    "syntax": [
+      "permissions: <object with allow, ask, deny, additionalDirectories, defaultMode, disableBypassPermissionsMode, and disableAutoMode>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.useautomodeduringplan",
+    "tool": "claude-code",
+    "name": "useAutoModeDuringPlan",
+    "display_name": "useAutoModeDuringPlan",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Choose whether Claude Code uses the auto mode classifier to review shell commands in plan mode. With the default true, the classifier reviews each command during planning when auto mode is available and you see no prompt. Set false to get a permission prompt for every command outside the built-in read-only set. Appears in /config as Use auto mode during plan.",
+    "syntax": [
+      "useAutoModeDuringPlan: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented useAutoModeDuringPlan behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.permissions-allow",
+    "tool": "claude-code",
+    "name": "permissions.allow",
+    "display_name": "permissions.allow",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "List the tool uses Claude Code approves without asking you. In an MCP rule, * can appear only in the tool name after the mcp____ prefix, such as mcp__github__get_*; it can't appear in the server name.",
+    "syntax": [
+      "permissions.allow: <array of permission rule strings>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions.allow behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.permissions-ask",
+    "tool": "claude-code",
+    "name": "permissions.ask",
+    "display_name": "permissions.ask",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "List the tool uses that prompt you for confirmation even in a permission mode that would otherwise approve them, such as acceptEdits or bypassPermissions. In dontAsk mode Claude Code denies a matching tool use instead of prompting.",
+    "syntax": [
+      "permissions.ask: <array of permission rule strings>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions.ask behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.permissions-deny",
+    "tool": "claude-code",
+    "name": "permissions.deny",
+    "display_name": "permissions.deny",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "List the tool uses Claude Code blocks. Use it for files that hold API keys, secrets, or environment values: Claude Code excludes matching files from file discovery and search results, denies reads of them, and blocks the Edit and Write tools on the matching paths. Read and Edit deny rules apply to Claude's built-in file tools and to file commands Claude Code recognizes in Bash, such as cat, head, tail, and sed; they don't apply to arbitrary subprocesses, so for OS-level enforcement enable the sandbox.",
+    "syntax": [
+      "permissions.deny: <array of permission rule strings>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions.deny behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.permissions-additionaldirectories",
+    "tool": "claude-code",
+    "name": "permissions.additionalDirectories",
+    "display_name": "permissions.additionalDirectories",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Give Claude file access to directories outside the one you started in, as additional working directories. Most .claude/ configuration is not discovered from these directories.",
+    "syntax": [
+      "permissions.additionalDirectories: <array of directory paths>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions.additionalDirectories behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.permissions-disablebypasspermissionsmode",
+    "tool": "claude-code",
+    "name": "permissions.disableBypassPermissionsMode",
+    "display_name": "permissions.disableBypassPermissionsMode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Prevent anyone from entering bypassPermissions mode. Claude Code then rejects the --dangerously-skip-permissions flag, and ignores an agent definition's permissionMode: bypassPermissions, so the subagent runs with the parent session's permission mode.",
+    "syntax": [
+      "permissions.disableBypassPermissionsMode: <the string \"disable\">"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions.disableBypassPermissionsMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.skipautopermissionprompt",
+    "tool": "claude-code",
+    "name": "skipAutoPermissionPrompt",
+    "display_name": "skipAutoPermissionPrompt",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Skip the one-time notice describing auto mode that Claude Code shows when you first enter auto mode yourself, for example through your own settings or the mode selector, rather than when the built-in default starts a session in it. Claude Code shows that notice once and then records that it was shown, so this key only matters where the notice hasn't appeared yet.",
+    "syntax": [
+      "skipAutoPermissionPrompt: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skipAutoPermissionPrompt behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.skipdangerousmodepermissionprompt",
+    "tool": "claude-code",
+    "name": "skipDangerousModePermissionPrompt",
+    "display_name": "skipDangerousModePermissionPrompt",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Skip the confirmation dialog Claude Code shows before a session enters bypassPermissions mode, whether from --dangerously-skip-permissions or from defaultMode: \"bypassPermissions\". Claude Code writes true here in your user settings when you accept that dialog once.",
+    "syntax": [
+      "skipDangerousModePermissionPrompt: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skipDangerousModePermissionPrompt behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox",
+    "tool": "claude-code",
+    "name": "sandbox",
+    "display_name": "sandbox",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Isolate the Bash commands Claude runs from your filesystem and network with sandboxing. Turn the sandbox on with enabled, then narrow or widen what sandboxed commands can touch with the filesystem, network, and credentials sub-objects. The sandbox runs on macOS, Linux, and WSL2.",
+    "syntax": [
+      "sandbox: <object with enabled, failIfUnavailable, autoAllowBashIfSandboxed, excludedCommands, allowUnsandboxedCommands, enableWeakerNestedSandbox, enableWeakerNetworkIsolation, allowAppleEvents, bwrapPath, socatPath, ignoreViolations, and ripgrep, plus the filesystem, network, and credentials objects>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-enabled",
+    "tool": "claude-code",
+    "name": "sandbox.enabled",
+    "capabilities": ["permissions.sandbox"],
+    "display_name": "sandbox.enabled",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Turn on sandboxing for Bash commands. When you pick a mode in the /sandbox panel, Claude Code writes this key to .claude/settings.local.json for the current project; set it in ~/.claude/settings.json to sandbox every project.",
+    "syntax": [
+      "sandbox.enabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-failifunavailable",
+    "tool": "claude-code",
+    "name": "sandbox.failIfUnavailable",
+    "display_name": "sandbox.failIfUnavailable",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Make Claude Code exit with an error at startup when sandbox.enabled is true but the sandbox can't start, because a dependency is missing or the platform is unsupported. Without it, Claude Code shows a warning and runs commands unsandboxed. Use it in managed settings when your organization requires sandboxing as a hard gate.",
+    "syntax": [
+      "sandbox.failIfUnavailable: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.failIfUnavailable behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Make Claude Code exit with an error at startup when sandbox.enabled is true but the sandbox can't start, because a dependency is missing or the platform is unsupported. Without it, Claude Code shows a warning and runs commands unsandboxed. Use it in managed settings when your organization requires sandboxing as a hard gate."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-autoallowbashifsandboxed",
+    "tool": "claude-code",
+    "name": "sandbox.autoAllowBashIfSandboxed",
+    "display_name": "sandbox.autoAllowBashIfSandboxed",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Let Claude Code run sandboxed Bash commands without a permission prompt. Commands that can't run in the sandbox still go through the regular permission flow, and deny rules and content-scoped ask rules such as Bash(git push *) still apply; a bare Bash ask rule is skipped for sandboxed commands. Set it to false to send sandboxed commands through the regular permission flow too, which the /sandbox Mode tab calls regular permissions mode.",
+    "syntax": [
+      "sandbox.autoAllowBashIfSandboxed: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.autoAllowBashIfSandboxed behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-excludedcommands",
+    "tool": "claude-code",
+    "name": "sandbox.excludedCommands",
+    "display_name": "sandbox.excludedCommands",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Name commands that Claude Code always runs outside the sandbox, such as tools that don't work under it. Each entry uses the same syntax as the content of a Bash(...) permission rule: an exact command, a prefix such as docker *, or a wildcard pattern. When any part of a compound command matches an entry, Claude Code runs the whole command unsandboxed.",
+    "syntax": [
+      "sandbox.excludedCommands: <array of command patterns>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.excludedCommands behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-allowunsandboxedcommands",
+    "tool": "claude-code",
+    "name": "sandbox.allowUnsandboxedCommands",
+    "display_name": "sandbox.allowUnsandboxedCommands",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Let Claude retry a command outside the sandbox with the dangerouslyDisableSandbox parameter after the sandbox blocks it. Set it to false so Claude Code ignores that parameter completely and every command must run sandboxed or appear in excludedCommands, which the /sandbox Overrides tab shows as Strict sandbox mode. Use false in managed settings for policies that require strict sandboxing.",
+    "syntax": [
+      "sandbox.allowUnsandboxedCommands: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.allowUnsandboxedCommands behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-filesystem",
+    "tool": "claude-code",
+    "name": "sandbox.filesystem",
+    "display_name": "sandbox.filesystem",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Control which paths sandboxed commands can read and write. By default they can write to the working directory, any directories you add with --add-dir, and the session temp directory, and can read the rest of the filesystem, including credential files. Widen or narrow that with the four path lists, or switch the filesystem layer off with disabled. See Filesystem isolation for the default boundaries.",
+    "syntax": [
+      "sandbox.filesystem: <object with allowWrite, denyWrite, denyRead, and allowRead arrays, plus the allowManagedReadPathsOnly and disabled Booleans>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.filesystem behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-filesystem-allowwrite",
+    "tool": "claude-code",
+    "name": "sandbox.filesystem.allowWrite",
+    "display_name": "sandbox.filesystem.allowWrite",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Add paths where sandboxed commands can write, beyond the working directory, the directories you've added with --add-dir or /add-dir, and the session temp directory. Use it when a subprocess such as kubectl or a build tool needs to write outside the project.",
+    "syntax": [
+      "sandbox.filesystem.allowWrite: <array of path strings, using the sandbox path prefixes>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.filesystem.allowWrite behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-filesystem-denywrite",
+    "tool": "claude-code",
+    "name": "sandbox.filesystem.denyWrite",
+    "display_name": "sandbox.filesystem.denyWrite",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Block sandboxed commands from writing to specific paths, including paths inside a directory that is otherwise writable.",
+    "syntax": [
+      "sandbox.filesystem.denyWrite: <array of path strings, using the sandbox path prefixes>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.filesystem.denyWrite behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-filesystem-denyread",
+    "tool": "claude-code",
+    "name": "sandbox.filesystem.denyRead",
+    "display_name": "sandbox.filesystem.denyRead",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Block sandboxed commands from reading specific paths, such as credential files that the default read policy would otherwise expose. To protect a credential file and keep it usable through the sandbox proxy, see sandbox.credentials instead.",
+    "syntax": [
+      "sandbox.filesystem.denyRead: <array of path strings, using the sandbox path prefixes>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.filesystem.denyRead behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-filesystem-allowread",
+    "tool": "claude-code",
+    "name": "sandbox.filesystem.allowRead",
+    "display_name": "sandbox.filesystem.allowRead",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Re-open reading for specific paths inside a region that denyRead blocks, to build workspace-only read access. An exact or wildcard denyRead entry stays blocked inside a broader allowRead, as the overlap table shows. When a wildcard denyRead entry such as ~//.env matches a directory, Claude Code blocks reads of its contents as well. Before v2.1.236 on macOS, Claude Code re-opened the paths a wildcard denyRead entry matched wherever a broader allowRead entry covered them, and left a matched directory's contents readable.",
+    "syntax": [
+      "sandbox.filesystem.allowRead: <array of path strings, using the sandbox path prefixes>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.filesystem.allowRead behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-filesystem-allowmanagedreadpathsonly",
+    "tool": "claude-code",
+    "name": "sandbox.filesystem.allowManagedReadPathsOnly",
+    "display_name": "sandbox.filesystem.allowManagedReadPathsOnly",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Honor only the allowRead entries that come from managed settings, so developers can't re-open read access to paths your organization blocked. Claude Code still merges denyRead entries from every settings file the session loads.",
+    "syntax": [
+      "sandbox.filesystem.allowManagedReadPathsOnly: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.filesystem.allowManagedReadPathsOnly behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-filesystem-disabled",
+    "tool": "claude-code",
+    "name": "sandbox.filesystem.disabled",
+    "display_name": "sandbox.filesystem.disabled",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Skip filesystem isolation while keeping network isolation. Sandboxed commands get unrestricted read and write access to the host filesystem, and their network egress stays confined to network.allowedDomains. Use it when you sandbox to control where commands connect rather than what they write. Requires Claude Code v2.1.216 or later.",
+    "syntax": [
+      "sandbox.filesystem.disabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.filesystem.disabled behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Skip filesystem isolation while keeping network isolation. Sandboxed commands get unrestricted read and write access to the host filesystem, and their network egress stays confined to network.allowedDomains. Use it when you sandbox to control where commands connect rather than what they write. Requires Claude Code v2.1.216 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-ignoreviolations",
+    "tool": "claude-code",
+    "name": "sandbox.ignoreViolations",
+    "display_name": "sandbox.ignoreViolations",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Silence sandbox violation reports for paths you expect a command to probe and be refused, such as a tool that checks /etc/hosts on startup, so those denials don't show up as violations or in what Claude sees. The sandbox still blocks the access; only the report is suppressed. Keys are substrings to match against the command, with * matching every command, and values are substrings of the violation to ignore for that command, such as a filesystem path.",
+    "syntax": [
+      "sandbox.ignoreViolations: <object mapping a command substring to an array of violation substrings, usually paths>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.ignoreViolations behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-enableweakernestedsandbox",
+    "tool": "claude-code",
+    "name": "sandbox.enableWeakerNestedSandbox",
+    "display_name": "sandbox.enableWeakerNestedSandbox",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Run the Linux sandbox inside an unprivileged Docker container, where bubblewrap can't mount a fresh /proc. Instead the inner sandbox bind-mounts the container's existing /proc, which exposes process information that a fresh mount would hide. This reduces security; use it only when the outer container already provides the isolation you need.",
+    "syntax": [
+      "sandbox.enableWeakerNestedSandbox: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.enableWeakerNestedSandbox behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-enableweakernetworkisolation",
+    "tool": "claude-code",
+    "name": "sandbox.enableWeakerNetworkIsolation",
+    "display_name": "sandbox.enableWeakerNetworkIsolation",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Let sandboxed commands on macOS reach the system TLS trust service, com.apple.trustd.agent. Go-based tools such as gh, gcloud, and terraform need it to verify TLS certificates when you use network.httpProxyPort with a MITM proxy and a custom CA. This reduces security by opening a potential data exfiltration path through the trust service.",
+    "syntax": [
+      "sandbox.enableWeakerNetworkIsolation: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.enableWeakerNetworkIsolation behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-allowappleevents",
+    "tool": "claude-code",
+    "name": "sandbox.allowAppleEvents",
+    "display_name": "sandbox.allowAppleEvents",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Let sandboxed commands on macOS send Apple Events, which open, osascript, and tools that open URLs in a browser need; without it they fail with error -600. This removes code-execution isolation: sandboxed commands can launch other applications unsandboxed with no user prompt, and can send AppleScript commands to running applications such as Terminal, subject to the per-app macOS automation-consent prompt (TCC).",
+    "syntax": [
+      "sandbox.allowAppleEvents: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.allowAppleEvents behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-ripgrep",
+    "tool": "claude-code",
+    "name": "sandbox.ripgrep",
+    "display_name": "sandbox.ripgrep",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Point the sandbox at a ripgrep binary of your own instead of the one Claude Code uses, for example when your platform needs a differently built rg.",
+    "syntax": [
+      "sandbox.ripgrep: <object with command, the path to the ripgrep binary, and optional args, an array of arguments to prepend>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.ripgrep behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-bwrappath",
+    "tool": "claude-code",
+    "name": "sandbox.bwrapPath",
+    "display_name": "sandbox.bwrapPath",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Point the sandbox at a bubblewrap binary installed outside PATH, such as a vendored copy on an air-gapped host. Claude Code uses the path both for the startup dependency check and when it wraps each sandboxed command.",
+    "syntax": [
+      "sandbox.bwrapPath: <string, an absolute path; Claude Code drops a relative path and falls back to PATH lookup>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.bwrapPath behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-socatpath",
+    "tool": "claude-code",
+    "name": "sandbox.socatPath",
+    "display_name": "sandbox.socatPath",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Point the sandbox network proxy at a socat binary installed outside PATH.",
+    "syntax": [
+      "sandbox.socatPath: <string, an absolute path; Claude Code drops a relative path and falls back to PATH lookup>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.socatPath behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-credentials",
+    "tool": "claude-code",
+    "name": "sandbox.credentials",
+    "display_name": "sandbox.credentials",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Declare the credential files and environment variables to protect from sandboxed commands. Each entry names a file path or a variable name and a mode: deny hides the credential inside the sandbox, and mask shows sandboxed commands a placeholder while the sandbox proxy substitutes the real value on outbound requests. Claude Code protects only the entries you list; there is no built-in credential deny list. Requires Claude Code v2.1.187 or later.",
+    "syntax": [
+      "sandbox.credentials: <object with files, envVars, allowPlaintextInject, awsPairs, and sigv4>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.credentials behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Declare the credential files and environment variables to protect from sandboxed commands. Each entry names a file path or a variable name and a mode: deny hides the credential inside the sandbox, and mask shows sandboxed commands a placeholder while the sandbox proxy substitutes the real value on outbound requests. Claude Code protects only the entries you list; there is no built-in credential deny list. Requires Claude Code v2.1.187 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-credentials-files",
+    "tool": "claude-code",
+    "name": "sandbox.credentials.files",
+    "display_name": "sandbox.credentials.files",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Protect credential files or directories from sandboxed commands. With \"mode\": \"deny\", Claude Code blocks reads of the path inside the sandbox, the same read block as sandbox.filesystem.denyRead. With \"mode\": \"mask\", sandboxed commands on Linux and WSL2 read a sentinel copy of the file, and the sandbox proxy substitutes the real value on outbound requests to that entry's injectHosts; on macOS the file is unreadable inside the sandbox instead. Requires Claude Code v2.1.187 or later, and \"mode\": \"mask\" requires v2.1.221 or later.",
+    "syntax": [
+      "sandbox.credentials.files: <array of objects, each with path and a mode of \"deny\" or \"mask\", plus the optional mask fields for files>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.credentials.files behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Protect credential files or directories from sandboxed commands. With \"mode\": \"deny\", Claude Code blocks reads of the path inside the sandbox, the same read block as sandbox.filesystem.denyRead. With \"mode\": \"mask\", sandboxed commands on Linux and WSL2 read a sentinel copy of the file, and the sandbox proxy substitutes the real value on outbound requests to that entry's injectHosts; on macOS the file is unreadable inside the sandbox instead. Requires Claude Code v2.1.187 or later, and \"mode\": \"mask\" requires v2.1.221 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-credentials-envvars",
+    "tool": "claude-code",
+    "name": "sandbox.credentials.envVars",
+    "display_name": "sandbox.credentials.envVars",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Protect environment variables from sandboxed commands. With \"mode\": \"deny\", Claude Code removes the variable from the environment of sandboxed commands. With \"mode\": \"mask\", sandboxed commands see a per-session sentinel value, and the sandbox proxy substitutes the real value on outbound requests to that entry's injectHosts, so tools such as gh and npm keep authenticating without ever holding the real credential. Requires Claude Code v2.1.187 or later, and \"mode\": \"mask\" requires v2.1.199 or later.",
+    "syntax": [
+      "sandbox.credentials.envVars: <array of objects, each with name and a mode of \"deny\" or \"mask\", plus the optional mask fields for environment variables>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.credentials.envVars behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Protect environment variables from sandboxed commands. With \"mode\": \"deny\", Claude Code removes the variable from the environment of sandboxed commands. With \"mode\": \"mask\", sandboxed commands see a per-session sentinel value, and the sandbox proxy substitutes the real value on outbound requests to that entry's injectHosts, so tools such as gh and npm keep authenticating without ever holding the real credential. Requires Claude Code v2.1.187 or later, and \"mode\": \"mask\" requires v2.1.199 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-credentials-allowplaintextinject",
+    "tool": "claude-code",
+    "name": "sandbox.credentials.allowPlaintextInject",
+    "display_name": "sandbox.credentials.allowPlaintextInject",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Allow mask substitution on plain HTTP requests as well as TLS-terminated HTTPS. On plain HTTP the upstream identity is unverified and the credential travels in cleartext, so leave this off outside trusted test networks. Requires Claude Code v2.1.199 or later.",
+    "syntax": [
+      "sandbox.credentials.allowPlaintextInject: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.credentials.allowPlaintextInject behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Allow mask substitution on plain HTTP requests as well as TLS-terminated HTTPS. On plain HTTP the upstream identity is unverified and the credential travels in cleartext, so leave this off outside trusted test networks. Requires Claude Code v2.1.199 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-credentials-awspairs",
+    "tool": "claude-code",
+    "name": "sandbox.credentials.awsPairs",
+    "display_name": "sandbox.credentials.awsPairs",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Group masked environment variables that form one AWS credential for SigV4 re-signing when your credential lives in variables with non-standard names. Claude Code links the conventional AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN trio automatically when you mask their whole values, so you need this key only for other names. Requires Claude Code v2.1.224 or later.",
+    "syntax": [
+      "sandbox.credentials.awsPairs: <array of objects, each with accessKeyIdVar, secretAccessKeyVar, and optionally sessionTokenVar, naming sandbox.credentials.envVars entries>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.credentials.awsPairs behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Group masked environment variables that form one AWS credential for SigV4 re-signing when your credential lives in variables with non-standard names. Claude Code links the conventional AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN trio automatically when you mask their whole values, so you need this key only for other names. Requires Claude Code v2.1.224 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-credentials-sigv4",
+    "tool": "claude-code",
+    "name": "sandbox.credentials.sigv4",
+    "display_name": "sandbox.credentials.sigv4",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Choose what the sandbox proxy does with AWS request forms it can't re-sign: streaming for aws-chunked streaming uploads, presigned for presigned URLs, and sigv4a for SigV4A asymmetric signatures. This applies only to requests signed with a masked pair's placeholder access key ID. Requires Claude Code v2.1.224 or later.",
+    "syntax": [
+      "sandbox.credentials.sigv4: <object with streaming, presigned, and sigv4a, each one of:>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.credentials.sigv4 behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Choose what the sandbox proxy does with AWS request forms it can't re-sign: streaming for aws-chunked streaming uploads, presigned for presigned URLs, and sigv4a for SigV4A asymmetric signatures. This applies only to requests signed with a masked pair's placeholder access key ID. Requires Claude Code v2.1.224 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network",
+    "tool": "claude-code",
+    "name": "sandbox.network",
+    "display_name": "sandbox.network",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Control which hosts, ports, and sockets sandboxed commands can reach. The sandbox routes outbound traffic through a proxy that enforces these lists; see Network isolation for how the proxy decides and when it prompts.",
+    "syntax": [
+      "sandbox.network: <object with the sub-keys below>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-allowunixsockets",
+    "tool": "claude-code",
+    "name": "sandbox.network.allowUnixSockets",
+    "display_name": "sandbox.network.allowUnixSockets",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "List the Unix socket paths sandboxed commands can connect to on macOS. Claude Code ignores this list on Linux and WSL2, where the seccomp filter can't inspect socket paths; use allowAllUnixSockets there instead.",
+    "syntax": [
+      "sandbox.network.allowUnixSockets: <array of strings, each a socket path>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.allowUnixSockets behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-allowallunixsockets",
+    "tool": "claude-code",
+    "name": "sandbox.network.allowAllUnixSockets",
+    "display_name": "sandbox.network.allowAllUnixSockets",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Let sandboxed commands connect to every Unix socket. On Linux and WSL2, the sandbox's seccomp filter blocks socket(AF_UNIX, ...) calls, so this is the only way to permit Unix sockets there. When the filter is missing, which /sandbox reports on its Dependencies tab, the sandbox doesn't block Unix-socket calls. See Set up Linux and WSL2 for where the filter comes from.",
+    "syntax": [
+      "sandbox.network.allowAllUnixSockets: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.allowAllUnixSockets behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-allowlocalbinding",
+    "tool": "claude-code",
+    "name": "sandbox.network.allowLocalBinding",
+    "display_name": "sandbox.network.allowLocalBinding",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Let sandboxed commands bind to localhost ports on macOS, for example to start a dev server.",
+    "syntax": [
+      "sandbox.network.allowLocalBinding: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.allowLocalBinding behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-allowmachlookup",
+    "tool": "claude-code",
+    "name": "sandbox.network.allowMachLookup",
+    "display_name": "sandbox.network.allowMachLookup",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "List additional XPC and Mach service names the macOS sandbox may look up. Tools that communicate over XPC, such as the iOS Simulator or Playwright, need their services listed here.",
+    "syntax": [
+      "sandbox.network.allowMachLookup: <array of strings, each a service name; a single trailing * matches a prefix, and \"*\" alone matches every service>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.allowMachLookup behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-alloweddomains",
+    "tool": "claude-code",
+    "name": "sandbox.network.allowedDomains",
+    "display_name": "sandbox.network.allowedDomains",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Pre-allow domains for outbound traffic from sandboxed commands, so the sandbox doesn't prompt for them. Wildcards such as *.example.com match subdomains, and an optional :port suffix limits an entry to one port; an entry without a port matches every port.",
+    "syntax": [
+      "sandbox.network.allowedDomains: <array of strings, each a domain, wildcard pattern, or IP literal, with an optional :port suffix>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.allowedDomains behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-denieddomains",
+    "tool": "claude-code",
+    "name": "sandbox.network.deniedDomains",
+    "display_name": "sandbox.network.deniedDomains",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Block domains for outbound traffic from sandboxed commands, using the same wildcard, port, and IPv6 syntax as allowedDomains. A denied domain stays blocked even when an allowedDomains entry matches it too.",
+    "syntax": [
+      "sandbox.network.deniedDomains: <array of strings, each a domain, wildcard pattern, or IP literal, with an optional :port suffix>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.deniedDomains behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-strictallowlist",
+    "tool": "claude-code",
+    "name": "sandbox.network.strictAllowlist",
+    "display_name": "sandbox.network.strictAllowlist",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Deny sandboxed commands access to hosts outside the allowlist instead of prompting for approval. The allowlist is allowedDomains plus domains from WebFetch(domain:...) allow rules, or only the managed settings entries when allowManagedDomainsOnly is set. Requires Claude Code v2.1.219 or later.",
+    "syntax": [
+      "sandbox.network.strictAllowlist: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.strictAllowlist behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Deny sandboxed commands access to hosts outside the allowlist instead of prompting for approval. The allowlist is allowedDomains plus domains from WebFetch(domain:...) allow rules, or only the managed settings entries when allowManagedDomainsOnly is set. Requires Claude Code v2.1.219 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-allowmanageddomainsonly",
+    "tool": "claude-code",
+    "name": "sandbox.network.allowManagedDomainsOnly",
+    "display_name": "sandbox.network.allowManagedDomainsOnly",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Lock the network allowlist to what managed settings define. Claude Code then honors only allowedDomains and WebFetch(domain:...) allow rules from managed settings, ignores domains from user, project, local, and --settings settings, and blocks a non-allowed domain automatically instead of prompting.",
+    "syntax": [
+      "sandbox.network.allowManagedDomainsOnly: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.allowManagedDomainsOnly behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-httpproxyport",
+    "tool": "claude-code",
+    "name": "sandbox.network.httpProxyPort",
+    "display_name": "sandbox.network.httpProxyPort",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Point the sandbox at your own HTTP proxy instead of the one Claude Code runs. Organizations do this to inspect HTTPS traffic, apply their own filtering rules, or log every request. When unset, Claude Code starts its own proxy for HTTP traffic.",
+    "syntax": [
+      "sandbox.network.httpProxyPort: <number, a local TCP port>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.httpProxyPort behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-socksproxyport",
+    "tool": "claude-code",
+    "name": "sandbox.network.socksProxyPort",
+    "display_name": "sandbox.network.socksProxyPort",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Point the sandbox at your own SOCKS5 proxy instead of the one Claude Code runs. When unset, Claude Code starts its own proxy for SOCKS traffic.",
+    "syntax": [
+      "sandbox.network.socksProxyPort: <number, a local TCP port>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.socksProxyPort behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.sandbox-network-tlsterminate",
+    "tool": "claude-code",
+    "name": "sandbox.network.tlsTerminate",
+    "display_name": "sandbox.network.tlsTerminate",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Make the sandbox proxy terminate TLS so it can read the contents of HTTPS requests. This is experimental, and mask credential substitution requires it. Set {} to generate an ephemeral certificate authority for the session, or set caCertPath and caKeyPath to use your own.",
+    "syntax": [
+      "sandbox.network.tlsTerminate: <object with optional caCertPath and caKeyPath strings, each a file path>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.network.tlsTerminate behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.autocompactenabled",
+    "tool": "claude-code",
+    "name": "autoCompactEnabled",
+    "display_name": "autoCompactEnabled",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Have Claude Code compact the conversation automatically when context approaches the limit. Appears in /config as Auto-compact, and toggling it there writes this key to your user settings.",
+    "syntax": [
+      "autoCompactEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoCompactEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.autocompactwindow",
+    "tool": "claude-code",
+    "name": "autoCompactWindow",
+    "display_name": "autoCompactWindow",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Set how full the context window gets before Claude Code compacts automatically.",
+    "syntax": [
+      "autoCompactWindow: <number of tokens, from 100000 to 1000000. Claude Code caps the value at your model's context window; the models overview lists each model's window>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoCompactWindow behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.automemorydirectory",
+    "tool": "claude-code",
+    "name": "autoMemoryDirectory",
+    "display_name": "autoMemoryDirectory",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Store auto memory in a directory of your choice instead of the per-project default.",
+    "syntax": [
+      "autoMemoryDirectory: <string, an absolute or ~/-prefixed directory path>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoMemoryDirectory behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.config-option.automemoryenabled",
+    "tool": "claude-code",
+    "name": "autoMemoryEnabled",
+    "display_name": "autoMemoryEnabled",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Turn auto memory on or off. When false, Claude doesn't read from or write to the auto memory directory. You can also toggle it with /memory during a session, which writes this key to your user settings.",
+    "syntax": [
+      "autoMemoryEnabled: <Boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoMemoryEnabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

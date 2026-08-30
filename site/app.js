@@ -5,6 +5,7 @@ const state = {
   categories: new Map(),
   entriesById: new Map(),
   capabilitiesByEntry: new Map(),
+  primaryCapabilitiesByEntry: new Map(),
   visibleLimit: 24,
 };
 
@@ -85,12 +86,16 @@ function entryCapabilities(entry) {
 
 function prepareSearchIndex() {
   state.capabilitiesByEntry = new Map();
+  state.primaryCapabilitiesByEntry = new Map();
   state.capabilities.forEach((capability) => {
     capability.mappings.forEach((mapping) => {
       if (!mapping.entry_id) return;
       const rows = state.capabilitiesByEntry.get(mapping.entry_id) || [];
       rows.push(capability);
       state.capabilitiesByEntry.set(mapping.entry_id, rows);
+      const primaryRows = state.primaryCapabilitiesByEntry.get(mapping.entry_id) || [];
+      primaryRows.push(capability);
+      state.primaryCapabilitiesByEntry.set(mapping.entry_id, primaryRows);
     });
   });
 
@@ -106,9 +111,11 @@ function prepareSearchIndex() {
 
   state.entries.forEach((entry) => {
     const capabilities = entryCapabilities(entry);
+    const primaryCapabilities = state.primaryCapabilitiesByEntry.get(entry.id) || [];
     entry._searchFields = [
       { text: normalize([entry.name, entry.display_name, ...(entry.aliases || [])].join(" ")), weight: 12 },
-      { text: normalize(capabilities.flatMap((item) => [item.id, item.display_name, item.description]).join(" ")), weight: 9 },
+      { text: normalize(primaryCapabilities.flatMap((item) => [item.id, item.display_name, item.description]).join(" ")), weight: 24 },
+      { text: normalize(capabilities.flatMap((item) => [item.id, item.display_name, item.description]).join(" ")), weight: 10 },
       { text: normalize([toolName(entry.tool), state.tools.get(entry.tool)?.vendor, entry.type, categoryName(entry.category), entry.role].join(" ")), weight: 6 },
       { text: normalize([entry.description, ...(entry.when_to_use || []), ...(entry.when_not_to_use || [])].join(" ")), weight: 4 },
       { text: normalize((entry.examples || []).flatMap((item) => [item.command, item.explanation]).join(" ")), weight: 3 },
@@ -519,6 +526,7 @@ function bindReference(fixedTool = "") {
     category: $("#category")?.value || "",
     maturity: $("#maturity")?.value || "",
   });
+  let updateTimer;
   const update = () => {
     state.visibleLimit = 24;
     const filters = getFilters();
@@ -526,8 +534,21 @@ function bindReference(fixedTool = "") {
     $("#results-region").outerHTML = resultsMarkup(filters);
     bindShowMore(filters);
   };
-  ["q", "tool", "type", "category", "maturity"].forEach((id) => $(`#${id}`)?.addEventListener("input", update));
-  $("#search-form")?.addEventListener("submit", (event) => event.preventDefault());
+  const updateFromTyping = () => {
+    window.clearTimeout(updateTimer);
+    updateTimer = window.setTimeout(update, 90);
+  };
+  ["tool", "type", "category", "maturity"].forEach((id) => {
+    $(`#${id}`)?.addEventListener("change", update);
+  });
+  $("#q")?.addEventListener("input", updateFromTyping);
+  $("#q")?.addEventListener("search", update);
+  $("#search-form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    window.clearTimeout(updateTimer);
+    update();
+    $("#q")?.focus();
+  });
   $("#reset")?.addEventListener("click", () => {
     ["q", "tool", "type", "category", "maturity"].forEach((id) => { if ($(`#${id}`)) $(`#${id}`).value = ""; });
     update();

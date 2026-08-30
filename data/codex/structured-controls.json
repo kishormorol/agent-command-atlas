@@ -1,0 +1,283 @@
+[
+  {
+    "id": "codex.agent.codex-agents-name-toml",
+    "tool": "codex",
+    "name": ".codex/agents/<name>.toml",
+    "capabilities": ["agents.define"],
+    "display_name": "Custom subagent definition",
+    "type": "agent",
+    "category": "agents",
+    "role": "Custom subagent definition",
+    "description": "Define a reusable Codex subagent role in project scope.",
+    "syntax": [
+      ".codex/agents/<name>.toml"
+    ],
+    "examples": [
+      {
+        "command": ".codex/agents/<name>.toml",
+        "explanation": "Create a focused worker with its own instructions and tool policy.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Create a focused worker with its own instructions and tool policy."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.skill.skill-md",
+    "tool": "codex",
+    "name": "SKILL.md",
+    "capabilities": ["skills.define"],
+    "display_name": "Agent Skill",
+    "type": "skill",
+    "category": "skills",
+    "role": "Agent Skill",
+    "description": "Define reusable instructions, references, scripts, and assets in an Agent Skill directory.",
+    "syntax": [
+      "SKILL.md"
+    ],
+    "examples": [
+      {
+        "command": "SKILL.md",
+        "explanation": "Package a repeatable workflow or specialized knowledge for on-demand use.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Package a repeatable workflow or specialized knowledge for on-demand use."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/build-skills",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.mcp.mcp-servers-name",
+    "tool": "codex",
+    "name": "[mcp_servers.<name>]",
+    "display_name": "MCP server configuration",
+    "type": "mcp",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Configure an MCP server and its transport in config.toml.",
+    "syntax": [
+      "[mcp_servers.<name>]"
+    ],
+    "examples": [
+      {
+        "command": "[mcp_servers.<name>]",
+        "explanation": "Connect Codex to an official or reviewed external tool server.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Connect Codex to an official or reviewed external tool server."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.permission.read-only",
+    "tool": "codex",
+    "name": "read-only",
+    "display_name": "Read-only sandbox",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Read-only sandbox",
+    "description": "Allow reads while preventing workspace writes by agent commands.",
+    "syntax": [
+      "read-only"
+    ],
+    "examples": [
+      {
+        "command": "read-only",
+        "explanation": "Inspect or review a repository without granting edit access.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Inspect or review a repository without granting edit access."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.permission.workspace-write",
+    "tool": "codex",
+    "name": "workspace-write",
+    "capabilities": ["permissions.sandbox"],
+    "display_name": "Workspace-write sandbox",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Workspace-write sandbox",
+    "description": "Allow writes inside the workspace while restricting access outside allowed roots.",
+    "syntax": [
+      "workspace-write"
+    ],
+    "examples": [
+      {
+        "command": "workspace-write",
+        "explanation": "Implement repository changes with bounded filesystem access.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Implement repository changes with bounded filesystem access."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.permission.danger-full-access",
+    "tool": "codex",
+    "name": "danger-full-access",
+    "display_name": "Unrestricted sandbox mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Unrestricted sandbox mode",
+    "description": "Run without Codex sandbox restrictions.",
+    "syntax": [
+      "danger-full-access"
+    ],
+    "examples": [
+      {
+        "command": "danger-full-access",
+        "explanation": "Use only in an already isolated and trusted environment that requires unrestricted access.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use only in an already isolated and trusted environment that requires unrestricted access."
+    ],
+    "when_not_to_use": [
+      "Do not use this control on untrusted code or outside a separately isolated environment."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

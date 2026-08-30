@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../">
+    <meta name="description" content="CODE_ASSIST_ENDPOINT for Gemini CLI: Specifies the endpoint for the code assist server. This is useful for development and testing. ### Environment variable redaction To prevent accidental leakage of sensitive information, Gemini CLI automatically redacts potential secrets from environment variables when executing tools (such as shell commands). This &quot;best effort&quot; redaction applies to variables inherited from the system or loaded from .env files. Default Redaction Rules: By Name: Variables are redacted if their names contain sensitive terms like TOKEN, SECRET, PASSWORD, KEY, AUTH, CREDENTIAL, PRIVATE, or CERT. By Value: Variables are redacted if their values match known secret patterns, such as: Private keys (RSA, OpenSSH, PGP, etc.) Certificates URLs containing credentials API keys and tokens (GitHub, Google, AWS, Stripe, Slack, etc.) Specific Blocklist: Certain variables like CLIENT_ID, DB_URI, DATABASE_URL, and CONNECTION_STRING are always redacted by default. Allowlist (Never Redacted): Common system variables (for example, PATH, HOME, USER, SHELL, TERM, LANG). Variables starting with GEMINI_CLI_. GitHub Action specific variables. Configuration: You can customize this behavior in your settings.json file: security.allowedEnvironmentVariables: A list of variable names to _never_ redact, even if they match sensitive patterns. security.blockedEnvironmentVariables: A list of variable names to _always_ redact, even if they don&#x27;t match sensitive patterns. json { &quot;security&quot;: { &quot;allowedEnvironmentVariables&quot;: [&quot;MY_PUBLIC_KEY&quot;, &quot;NOT_A_SECRET_TOKEN&quot;], &quot;blockedEnvironmentVariables&quot;: [&quot;INTERNAL_IP_ADDRESS&quot;] } }">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CODE_ASSIST_ENDPOINT — Code Assist Endpoint | Agent Command Atlas">
+    <meta property="og:description" content="CODE_ASSIST_ENDPOINT for Gemini CLI: Specifies the endpoint for the code assist server. This is useful for development and testing. ### Environment variable redaction To prevent accidental leakage of sensitive information, Gemini CLI automatically redacts potential secrets from environment variables when executing tools (such as shell commands). This &quot;best effort&quot; redaction applies to variables inherited from the system or loaded from .env files. Default Redaction Rules: By Name: Variables are redacted if their names contain sensitive terms like TOKEN, SECRET, PASSWORD, KEY, AUTH, CREDENTIAL, PRIVATE, or CERT. By Value: Variables are redacted if their values match known secret patterns, such as: Private keys (RSA, OpenSSH, PGP, etc.) Certificates URLs containing credentials API keys and tokens (GitHub, Google, AWS, Stripe, Slack, etc.) Specific Blocklist: Certain variables like CLIENT_ID, DB_URI, DATABASE_URL, and CONNECTION_STRING are always redacted by default. Allowlist (Never Redacted): Common system variables (for example, PATH, HOME, USER, SHELL, TERM, LANG). Variables starting with GEMINI_CLI_. GitHub Action specific variables. Configuration: You can customize this behavior in your settings.json file: security.allowedEnvironmentVariables: A list of variable names to _never_ redact, even if they match sensitive patterns. security.blockedEnvironmentVariables: A list of variable names to _always_ redact, even if they don&#x27;t match sensitive patterns. json { &quot;security&quot;: { &quot;allowedEnvironmentVariables&quot;: [&quot;MY_PUBLIC_KEY&quot;, &quot;NOT_A_SECRET_TOKEN&quot;], &quot;blockedEnvironmentVariables&quot;: [&quot;INTERNAL_IP_ADDRESS&quot;] } }">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CODE_ASSIST_ENDPOINT — Code Assist Endpoint | Agent Command Atlas">
+    <meta name="twitter:description" content="CODE_ASSIST_ENDPOINT for Gemini CLI: Specifies the endpoint for the code assist server. This is useful for development and testing. ### Environment variable redaction To prevent accidental leakage of sensitive information, Gemini CLI automatically redacts potential secrets from environment variables when executing tools (such as shell commands). This &quot;best effort&quot; redaction applies to variables inherited from the system or loaded from .env files. Default Redaction Rules: By Name: Variables are redacted if their names contain sensitive terms like TOKEN, SECRET, PASSWORD, KEY, AUTH, CREDENTIAL, PRIVATE, or CERT. By Value: Variables are redacted if their values match known secret patterns, such as: Private keys (RSA, OpenSSH, PGP, etc.) Certificates URLs containing credentials API keys and tokens (GitHub, Google, AWS, Stripe, Slack, etc.) Specific Blocklist: Certain variables like CLIENT_ID, DB_URI, DATABASE_URL, and CONNECTION_STRING are always redacted by default. Allowlist (Never Redacted): Common system variables (for example, PATH, HOME, USER, SHELL, TERM, LANG). Variables starting with GEMINI_CLI_. GitHub Action specific variables. Configuration: You can customize this behavior in your settings.json file: security.allowedEnvironmentVariables: A list of variable names to _never_ redact, even if they match sensitive patterns. security.blockedEnvironmentVariables: A list of variable names to _always_ redact, even if they don&#x27;t match sensitive patterns. json { &quot;security&quot;: { &quot;allowedEnvironmentVariables&quot;: [&quot;MY_PUBLIC_KEY&quot;, &quot;NOT_A_SECRET_TOKEN&quot;], &quot;blockedEnvironmentVariables&quot;: [&quot;INTERNAL_IP_ADDRESS&quot;] } }">
+    <title>CODE_ASSIST_ENDPOINT — Code Assist Endpoint | Agent Command Atlas</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-route="entry:gemini-cli.environment-variable.code-assist-endpoint">
+    <a class="skip-link" href="#main-content">Skip to reference</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="" aria-label="Agent Command Atlas home">
+          <span class="brand__mark" aria-hidden="true">A/</span>
+          <span class="brand__name"><strong>Agent Command</strong><em>Atlas</em></span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="">Reference</a>
+          <a href="compare/">Compare</a>
+          <a href="coverage/">Coverage</a>
+          <a class="site-nav__github" href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <div class="loading" role="status">
+        <p class="eyebrow">Verified command reference</p>
+        <h1>Agent Command Atlas</h1>
+        <p>Loading the reference…</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong>Agent Command Atlas</strong> · Built from canonical structured data and official sources.</p>
+      <a href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

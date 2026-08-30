@@ -1,0 +1,674 @@
+[
+  {
+    "id": "github-copilot.hook.agent-stop",
+    "tool": "github-copilot",
+    "name": "agentStop",
+    "display_name": "Agent Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The main agent finishes a turn.",
+    "syntax": [
+      "hooks.agentStop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"agentStop\": [/* handler */] } }",
+        "explanation": "Register a handler for agentStop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the main agent finishes a turn."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.error-occurred",
+    "tool": "github-copilot",
+    "name": "errorOccurred",
+    "display_name": "Error Occurred",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An execution error occurs.",
+    "syntax": [
+      "hooks.errorOccurred"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"errorOccurred\": [/* handler */] } }",
+        "explanation": "Register a handler for errorOccurred.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when an execution error occurs."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.notification",
+    "tool": "github-copilot",
+    "name": "notification",
+    "display_name": "Notification",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Copilot CLI emits a system notification.",
+    "syntax": [
+      "hooks.notification"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"notification\": [/* handler */] } }",
+        "explanation": "Register a handler for notification.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when copilot CLI emits a system notification."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.permission-request",
+    "tool": "github-copilot",
+    "name": "permissionRequest",
+    "display_name": "Permission Request",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The permission service is about to decide a tool request.",
+    "syntax": [
+      "hooks.permissionRequest"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"permissionRequest\": [/* handler */] } }",
+        "explanation": "Register a handler for permissionRequest.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the permission service is about to decide a tool request."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.post-tool-use",
+    "tool": "github-copilot",
+    "name": "postToolUse",
+    "display_name": "Post Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool completes successfully.",
+    "syntax": [
+      "hooks.postToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"postToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for postToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool completes successfully."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.post-tool-use-failure",
+    "tool": "github-copilot",
+    "name": "postToolUseFailure",
+    "display_name": "Post Tool Use Failure",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool fails.",
+    "syntax": [
+      "hooks.postToolUseFailure"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"postToolUseFailure\": [/* handler */] } }",
+        "explanation": "Register a handler for postToolUseFailure.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool fails."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.pre-compact",
+    "tool": "github-copilot",
+    "name": "preCompact",
+    "display_name": "Pre Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction is about to begin.",
+    "syntax": [
+      "hooks.preCompact"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"preCompact\": [/* handler */] } }",
+        "explanation": "Register a handler for preCompact.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when context compaction is about to begin."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.pre-tool-use",
+    "tool": "github-copilot",
+    "name": "preToolUse",
+    "display_name": "Pre Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool is about to execute.",
+    "syntax": [
+      "hooks.preToolUse"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"preToolUse\": [/* handler */] } }",
+        "explanation": "Register a handler for preToolUse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool is about to execute."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.session-end",
+    "tool": "github-copilot",
+    "name": "sessionEnd",
+    "display_name": "Session End",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A session terminates.",
+    "syntax": [
+      "hooks.sessionEnd"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"sessionEnd\": [/* handler */] } }",
+        "explanation": "Register a handler for sessionEnd.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a session terminates."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.session-start",
+    "tool": "github-copilot",
+    "name": "sessionStart",
+    "display_name": "Session Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A new or resumed session begins.",
+    "syntax": [
+      "hooks.sessionStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"sessionStart\": [/* handler */] } }",
+        "explanation": "Register a handler for sessionStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a new or resumed session begins."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.subagent-start",
+    "tool": "github-copilot",
+    "name": "subagentStart",
+    "display_name": "Subagent Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent is spawned.",
+    "syntax": [
+      "hooks.subagentStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"subagentStart\": [/* handler */] } }",
+        "explanation": "Register a handler for subagentStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a subagent is spawned."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.subagent-stop",
+    "tool": "github-copilot",
+    "name": "subagentStop",
+    "display_name": "Subagent Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent completes.",
+    "syntax": [
+      "hooks.subagentStop"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"subagentStop\": [/* handler */] } }",
+        "explanation": "Register a handler for subagentStop.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a subagent completes."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.user-prompt-submitted",
+    "tool": "github-copilot",
+    "name": "userPromptSubmitted",
+    "display_name": "User Prompt Submitted",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The user submits a prompt.",
+    "syntax": [
+      "hooks.userPromptSubmitted"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"userPromptSubmitted\": [/* handler */] } }",
+        "explanation": "Register a handler for userPromptSubmitted.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the user submits a prompt."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.hook.user-prompt-transformed",
+    "tool": "github-copilot",
+    "name": "userPromptTransformed",
+    "display_name": "User Prompt Transformed",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The runtime has transformed a prompt into model-facing content.",
+    "syntax": [
+      "hooks.userPromptTransformed"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"userPromptTransformed\": [/* handler */] } }",
+        "explanation": "Register a handler for userPromptTransformed.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the runtime has transformed a prompt into model-facing content."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/hooks-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

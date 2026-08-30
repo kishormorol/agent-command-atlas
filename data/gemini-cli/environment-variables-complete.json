@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "gemini-cli.environment-variable.gemini-model",
+    "tool": "gemini-cli",
+    "name": "GEMINI_MODEL",
+    "display_name": "Gemini Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Gemini Model configuration",
+    "description": "Specifies the default Gemini model to use. Overrides the hardcoded default Example: export GEMINI_MODEL=\"gemini-3-flash-preview\" (Windows PowerShell: $env:GEMINI_MODEL=\"gemini-3-flash-preview\")",
+    "syntax": [
+      "GEMINI_MODEL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-cli-trust-workspace",
+    "tool": "gemini-cli",
+    "name": "GEMINI_CLI_TRUST_WORKSPACE",
+    "display_name": "Gemini Cli Trust Workspace",
+    "type": "environment-variable",
+    "category": "permissions",
+    "role": "Gemini Cli Trust Workspace configuration",
+    "description": "If set to \"true\", trusts the current workspace for the duration of the session, bypassing the folder trust check. Useful for headless environments (for example, CI/CD pipelines).",
+    "syntax": [
+      "GEMINI_CLI_TRUST_WORKSPACE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "If set to \"true\", trusts the current workspace for the duration of the session, bypassing the folder trust check."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-cli-trusted-folders-path",
+    "tool": "gemini-cli",
+    "name": "GEMINI_CLI_TRUSTED_FOLDERS_PATH",
+    "display_name": "Gemini Cli Trusted Folders Path",
+    "type": "environment-variable",
+    "category": "permissions",
+    "role": "Gemini Cli Trusted Folders Path configuration",
+    "description": "Overrides the default location for the trustedFolders.json file. Useful if you want to store this configuration in a custom location instead of the default ~/.gemini/.",
+    "syntax": [
+      "GEMINI_CLI_TRUSTED_FOLDERS_PATH=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if you want to store this configuration in a custom location instead of the default ~/."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-cli-ide-pid",
+    "tool": "gemini-cli",
+    "name": "GEMINI_CLI_IDE_PID",
+    "display_name": "Gemini Cli Ide Pid",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Cli Ide Pid configuration",
+    "description": "Manually specifies the PID of the IDE process to use for integration. This is useful when running Gemini CLI in a standalone terminal while still wanting to associate it with a specific IDE instance. Overrides the automatic IDE detection logic.",
+    "syntax": [
+      "GEMINI_CLI_IDE_PID=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when running Gemini CLI in a standalone terminal while still wanting to associate it with a specific IDE instance."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-cli-home",
+    "tool": "gemini-cli",
+    "name": "GEMINI_CLI_HOME",
+    "display_name": "Gemini Cli Home",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Gemini Cli Home configuration",
+    "description": "Specifies the root directory for Gemini CLI's user-level configuration and storage. By default, this is the user's system home directory. The CLI will create a .gemini folder inside this directory. Useful for shared compute environments or keeping CLI state isolated. Example: export GEMINI_CLI_HOME=\"/path/to/user/config\" (Windows PowerShell: $env:GEMINI_CLI_HOME=\"C:\\path\\to\\user\\config\")",
+    "syntax": [
+      "GEMINI_CLI_HOME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-cli-surface",
+    "tool": "gemini-cli",
+    "name": "GEMINI_CLI_SURFACE",
+    "display_name": "Gemini Cli Surface",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Gemini Cli Surface configuration",
+    "description": "Specifies a custom label to include in the User-Agent header for API traffic reporting. This is useful for tracking specific internal tools or distribution channels. Example: export GEMINI_CLI_SURFACE=\"my-custom-tool\" (Windows PowerShell: $env:GEMINI_CLI_SURFACE=\"my-custom-tool\")",
+    "syntax": [
+      "GEMINI_CLI_SURFACE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.google-api-key",
+    "tool": "gemini-cli",
+    "name": "GOOGLE_API_KEY",
+    "display_name": "Google Api Key",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Google Api Key configuration",
+    "description": "Your Google Cloud API key. Required for using Vertex AI in express mode. Ensure you have the necessary permissions. Example: export GOOGLE_API_KEY=\"YOUR_GOOGLE_API_KEY\" (Windows PowerShell: $env:GOOGLE_API_KEY=\"YOUR_GOOGLE_API_KEY\").",
+    "syntax": [
+      "GOOGLE_API_KEY=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.google-cloud-project",
+    "tool": "gemini-cli",
+    "name": "GOOGLE_CLOUD_PROJECT",
+    "display_name": "Google Cloud Project",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Google Cloud Project configuration",
+    "description": "Your Google Cloud Project ID. Required for using Code Assist or Vertex AI. If using Vertex AI, ensure you have the necessary permissions in this project. Cloud Shell note: When running in a Cloud Shell environment, this variable defaults to a special project allocated for Cloud Shell users. If you have GOOGLE_CLOUD_PROJECT set in your global environment in Cloud Shell, it will be overridden by this default. To use a different project in Cloud Shell, you must define GOOGLE_CLOUD_PROJECT in a .env file. Example: export GOOGLE_CLOUD_PROJECT=\"YOUR_PROJECT_ID\" (Windows PowerShell: $env:GOOGLE_CLOUD_PROJECT=\"YOUR_PROJECT_ID\").",
+    "syntax": [
+      "GOOGLE_CLOUD_PROJECT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "If using Vertex AI, ensure you have the necessary permissions in this project."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.google-application-credentials",
+    "tool": "gemini-cli",
+    "name": "GOOGLE_APPLICATION_CREDENTIALS",
+    "display_name": "Google Application Credentials",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Google Application Credentials configuration",
+    "description": "Description: The path to your Google Application Credentials JSON file. Example: export GOOGLE_APPLICATION_CREDENTIALS=\"/path/to/your/credentials.json\" (Windows PowerShell: $env:GOOGLE_APPLICATION_CREDENTIALS=\"C:\\path\\to\\your\\credentials.json\")",
+    "syntax": [
+      "GOOGLE_APPLICATION_CREDENTIALS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.google-genai-api-version",
+    "tool": "gemini-cli",
+    "name": "GOOGLE_GENAI_API_VERSION",
+    "display_name": "Google Genai Api Version",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Google Genai Api Version configuration",
+    "description": "Specifies the API version to use for Gemini API requests. When set, overrides the default API version used by the SDK. Example: export GOOGLE_GENAI_API_VERSION=\"v1\" (Windows PowerShell: $env:GOOGLE_GENAI_API_VERSION=\"v1\")",
+    "syntax": [
+      "GOOGLE_GENAI_API_VERSION=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When set, overrides the default API version used by the SDK."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.google-gemini-base-url",
+    "tool": "gemini-cli",
+    "name": "GOOGLE_GEMINI_BASE_URL",
+    "display_name": "Google Gemini Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Google Gemini Base Url configuration",
+    "description": "Overrides the default base URL for Gemini API requests (when using gemini-api-key authentication). Must be a valid URL. For security, it must use HTTPS unless pointing to localhost (or 127.0.0.1 / [::1]). Example: export GOOGLE_GEMINI_BASE_URL=\"https://my-proxy.com\" (Windows PowerShell: $env:GOOGLE_GEMINI_BASE_URL=\"https://my-proxy.com\")",
+    "syntax": [
+      "GOOGLE_GEMINI_BASE_URL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using gemini-api-key authentication)."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.google-vertex-base-url",
+    "tool": "gemini-cli",
+    "name": "GOOGLE_VERTEX_BASE_URL",
+    "display_name": "Google Vertex Base Url",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Google Vertex Base Url configuration",
+    "description": "Overrides the default base URL for Vertex AI API requests (when using vertex-ai authentication). Must be a valid URL. For security, it must use HTTPS unless pointing to localhost (or 127.0.0.1 / [::1]). Example: export GOOGLE_VERTEX_BASE_URL=\"https://my-vertex-proxy.com\" (Windows PowerShell: $env:GOOGLE_VERTEX_BASE_URL=\"https://my-vertex-proxy.com\")",
+    "syntax": [
+      "GOOGLE_VERTEX_BASE_URL=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when using vertex-ai authentication)."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.otlp-google-cloud-project",
+    "tool": "gemini-cli",
+    "name": "OTLP_GOOGLE_CLOUD_PROJECT",
+    "display_name": "Otlp Google Cloud Project",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Otlp Google Cloud Project configuration",
+    "description": "Your Google Cloud Project ID for Telemetry in Google Cloud Example: export OTLP_GOOGLE_CLOUD_PROJECT=\"YOUR_PROJECT_ID\" (Windows PowerShell: $env:OTLP_GOOGLE_CLOUD_PROJECT=\"YOUR_PROJECT_ID\").",
+    "syntax": [
+      "OTLP_GOOGLE_CLOUD_PROJECT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-enabled",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_ENABLED",
+    "display_name": "Gemini Telemetry Enabled",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Telemetry Enabled configuration",
+    "description": "Set to true or 1 to enable telemetry. Any other value is treated as disabling it. Overrides the telemetry.enabled setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_ENABLED=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-traces-enabled",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_TRACES_ENABLED",
+    "display_name": "Gemini Telemetry Traces Enabled",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Telemetry Traces Enabled configuration",
+    "description": "Set to true or 1 to enable detailed tracing with large attributes. Any other value is treated as disabling it. Overrides the telemetry.traces setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_TRACES_ENABLED=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-target",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_TARGET",
+    "display_name": "Gemini Telemetry Target",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Telemetry Target configuration",
+    "description": "Sets the telemetry target (local or gcp). Overrides the telemetry.target setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_TARGET=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-otlp-endpoint",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_OTLP_ENDPOINT",
+    "display_name": "Gemini Telemetry Otlp Endpoint",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Gemini Telemetry Otlp Endpoint configuration",
+    "description": "Sets the OTLP endpoint for telemetry. Overrides the telemetry.otlpEndpoint setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_OTLP_ENDPOINT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-otlp-protocol",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_OTLP_PROTOCOL",
+    "display_name": "Gemini Telemetry Otlp Protocol",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Telemetry Otlp Protocol configuration",
+    "description": "Sets the OTLP protocol (grpc or http). Overrides the telemetry.otlpProtocol setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_OTLP_PROTOCOL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-log-prompts",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_LOG_PROMPTS",
+    "display_name": "Gemini Telemetry Log Prompts",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Telemetry Log Prompts configuration",
+    "description": "Set to true or 1 to enable or disable logging of user prompts. Any other value is treated as disabling it. Overrides the telemetry.logPrompts setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_LOG_PROMPTS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-outfile",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_OUTFILE",
+    "display_name": "Gemini Telemetry Outfile",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Telemetry Outfile configuration",
+    "description": "Sets the file path to write telemetry to when the target is local. Overrides the telemetry.outfile setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_OUTFILE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when the target is local."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-telemetry-use-collector",
+    "tool": "gemini-cli",
+    "name": "GEMINI_TELEMETRY_USE_COLLECTOR",
+    "display_name": "Gemini Telemetry Use Collector",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Gemini Telemetry Use Collector configuration",
+    "description": "Set to true or 1 to enable or disable using an external OTLP collector. Any other value is treated as disabling it. Overrides the telemetry.useCollector setting.",
+    "syntax": [
+      "GEMINI_TELEMETRY_USE_COLLECTOR=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.google-cloud-location",
+    "tool": "gemini-cli",
+    "name": "GOOGLE_CLOUD_LOCATION",
+    "display_name": "Google Cloud Location",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Google Cloud Location configuration",
+    "description": "Your Google Cloud Project Location (for example, us-central1). Required for using Vertex AI in non-express mode. Example: export GOOGLE_CLOUD_LOCATION=\"YOUR_PROJECT_LOCATION\" (Windows PowerShell: $env:GOOGLE_CLOUD_LOCATION=\"YOUR_PROJECT_LOCATION\").",
+    "syntax": [
+      "GOOGLE_CLOUD_LOCATION=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-sandbox",
+    "tool": "gemini-cli",
+    "name": "GEMINI_SANDBOX",
+    "display_name": "Gemini Sandbox",
+    "type": "environment-variable",
+    "category": "permissions",
+    "role": "Gemini Sandbox configuration",
+    "description": "Alternative to the sandbox setting in settings.json. Accepts true, false, docker, podman, or a custom command string.",
+    "syntax": [
+      "GEMINI_SANDBOX=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-system-md",
+    "tool": "gemini-cli",
+    "name": "GEMINI_SYSTEM_MD",
+    "display_name": "Gemini System Md",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Gemini System Md configuration",
+    "description": "Replaces the built‑in system prompt with content from a Markdown file. true/1: Use project default path ./.gemini/system.md. Any other string: Treat as a path (relative/absolute supported, ~ expands). false/0 or unset: Use the built‑in prompt. See System Prompt Override.",
+    "syntax": [
+      "GEMINI_SYSTEM_MD=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.gemini-write-system-md",
+    "tool": "gemini-cli",
+    "name": "GEMINI_WRITE_SYSTEM_MD",
+    "display_name": "Gemini Write System Md",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Gemini Write System Md configuration",
+    "description": "Writes the current built‑in system prompt to a file for review. true/1: Write to ./.gemini/system.md. Otherwise treat the value as a path. Run the CLI once with this set to generate the file.",
+    "syntax": [
+      "GEMINI_WRITE_SYSTEM_MD=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.seatbelt-profile",
+    "tool": "gemini-cli",
+    "name": "SEATBELT_PROFILE",
+    "display_name": "Seatbelt Profile",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Seatbelt Profile configuration",
+    "description": "Switches the Seatbelt (sandbox-exec) profile on macOS. permissive-open: (Default) Denies operations by default, confining writes to the project folder (and a few other folders, see packages/cli/src/utils/sandbox-macos-permissive-open.sb) while allowing broad file reads and network access. restrictive-open: Declines operations by default, allows network. strict-open: Restricts both reads and writes to the working directory, allows network. strict-proxied: Same as strict-open but routes network through proxy. : Uses a custom profile. To define a custom profile, create a file named sandbox-macos-.sb in your project's .gemini/ directory (for example, my-project/.gemini/sandbox-macos-custom.sb). DEBUG or DEBUG_MODE (often used by underlying libraries or the CLI itself): Set to true or 1 to enable verbose debug logging, which can be helpful for troubleshooting. Note: These variables are automatically excluded from project .env files by default to prevent interference with gemini-cli behavior. Use .gemini/.env files if you need to set these for gemini-cli specifically.",
+    "syntax": [
+      "SEATBELT_PROFILE=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if you need to set these for gemini-cli specifically."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.no-color",
+    "tool": "gemini-cli",
+    "name": "NO_COLOR",
+    "display_name": "No Color",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "No Color configuration",
+    "description": "Set to any value to disable all color output in the CLI.",
+    "syntax": [
+      "NO_COLOR=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.cli-title",
+    "tool": "gemini-cli",
+    "name": "CLI_TITLE",
+    "display_name": "Cli Title",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Cli Title configuration",
+    "description": "Set to a string to customize the title of the CLI.",
+    "syntax": [
+      "CLI_TITLE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.environment-variable.code-assist-endpoint",
+    "tool": "gemini-cli",
+    "name": "CODE_ASSIST_ENDPOINT",
+    "display_name": "Code Assist Endpoint",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Code Assist Endpoint configuration",
+    "description": "Specifies the endpoint for the code assist server. This is useful for development and testing. ### Environment variable redaction To prevent accidental leakage of sensitive information, Gemini CLI automatically redacts potential secrets from environment variables when executing tools (such as shell commands). This \"best effort\" redaction applies to variables inherited from the system or loaded from .env files. Default Redaction Rules: By Name: Variables are redacted if their names contain sensitive terms like TOKEN, SECRET, PASSWORD, KEY, AUTH, CREDENTIAL, PRIVATE, or CERT. By Value: Variables are redacted if their values match known secret patterns, such as: Private keys (RSA, OpenSSH, PGP, etc.) Certificates URLs containing credentials API keys and tokens (GitHub, Google, AWS, Stripe, Slack, etc.) Specific Blocklist: Certain variables like CLIENT_ID, DB_URI, DATABASE_URL, and CONNECTION_STRING are always redacted by default. Allowlist (Never Redacted): Common system variables (for example, PATH, HOME, USER, SHELL, TERM, LANG). Variables starting with GEMINI_CLI_. GitHub Action specific variables. Configuration: You can customize this behavior in your settings.json file: security.allowedEnvironmentVariables: A list of variable names to _never_ redact, even if they match sensitive patterns. security.blockedEnvironmentVariables: A list of variable names to _always_ redact, even if they don't match sensitive patterns. json { \"security\": { \"allowedEnvironmentVariables\": [\"MY_PUBLIC_KEY\", \"NOT_A_SECRET_TOKEN\"], \"blockedEnvironmentVariables\": [\"INTERNAL_IP_ADDRESS\"] } }",
+    "syntax": [
+      "CODE_ASSIST_ENDPOINT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when executing tools (such as shell commands)."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  }
+]

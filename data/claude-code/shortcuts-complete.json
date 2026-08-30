@@ -1,0 +1,950 @@
+[
+  {
+    "id": "claude-code.shortcut.interrupt-or-clear-input",
+    "tool": "claude-code",
+    "name": "Ctrl+C",
+    "display_name": "Interrupt, or clear input",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Interrupt, or clear input",
+    "description": "Interrupts a running operation. If nothing is running, the first press clears the prompt input and a second press exits Claude Code",
+    "syntax": [
+      "Ctrl+C"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+C",
+        "explanation": "Interrupt, or clear input.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Interrupts a running operation."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Interrupts a running operation. If nothing is running, the first press clears the prompt input and a second press exits Claude Code"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.stop-all-running-background-subagents-in-this-session-and-turn-off-artifact-auto-replies-f",
+    "tool": "claude-code",
+    "name": "Ctrl+X Ctrl+K",
+    "display_name": "Stop all running background subagents in this session, and turn off artifact auto-replies for the rest of it. Press twice within 3 seconds to confirm",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Stop all running background subagents in this session, and turn off artifact auto-replies for the rest of it. Press twice within 3 seconds to confirm",
+    "description": "Subagent control",
+    "syntax": [
+      "Ctrl+X Ctrl+K"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+X Ctrl+K",
+        "explanation": "Stop all running background subagents in this session, and turn off artifact auto-replies for the rest of it. Press twice within 3 seconds to confirm.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Subagent control."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.exit-claude-code-session",
+    "tool": "claude-code",
+    "name": "Ctrl+D",
+    "display_name": "Exit Claude Code session",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Exit Claude Code session",
+    "description": "The first press shows a confirmation hint and a second press within 800ms exits. When the prompt has text, Ctrl+D deletes the character after the cursor instead",
+    "syntax": [
+      "Ctrl+D"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+D",
+        "explanation": "Exit Claude Code session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "The first press shows a confirmation hint and a second press within 800ms exits."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "The first press shows a confirmation hint and a second press within 800ms exits. When the prompt has text, Ctrl+D deletes the character after the cursor instead"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.open-in-default-text-editor",
+    "tool": "claude-code",
+    "name": "Ctrl+G / Ctrl+X Ctrl+E",
+    "display_name": "Open in default text editor",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Open in default text editor",
+    "description": "Edit your prompt or custom response in your default text editor. Ctrl+X Ctrl+E is the readline-native binding. Turn on Show last response in external editor in /config to prepend Claude's previous reply as #-commented context above your prompt; Claude Code strips the comment block when you save",
+    "syntax": [
+      "Ctrl+G / Ctrl+X Ctrl+E"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+G / Ctrl+X Ctrl+E",
+        "explanation": "Open in default text editor.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Edit your prompt or custom response in your default text editor."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Edit your prompt or custom response in your default text editor. Ctrl+X Ctrl+E is the readline-native binding. Turn on Show last response in external editor in /config to prepend Claude's previous reply as #-commented context above your prompt; Claude Code strips the comment block when you save"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.redraw-screen",
+    "tool": "claude-code",
+    "name": "Ctrl+L",
+    "display_name": "Redraw screen",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Redraw screen",
+    "description": "Forces a full terminal redraw, keeping input and conversation history. Use this to recover if the display becomes garbled or partially blank",
+    "syntax": [
+      "Ctrl+L"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+L",
+        "explanation": "Redraw screen.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Forces a full terminal redraw, keeping input and conversation history."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Forces a full terminal redraw, keeping input and conversation history. Use this to recover if the display becomes garbled or partially blank"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.toggle-transcript-viewer",
+    "tool": "claude-code",
+    "name": "Ctrl+O",
+    "display_name": "Toggle transcript viewer",
+    "type": "shortcut",
+    "category": "models",
+    "role": "Toggle transcript viewer",
+    "description": "Shows detailed tool usage and execution, with a timestamp and the model used on each assistant message. Also expands lines that collapse by default, such as MCP calls, shown as a single Called slack 3 times line, and messages from your other sessions, shown as a one-line Message from @<sender> preview",
+    "syntax": [
+      "Ctrl+O"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+O",
+        "explanation": "Toggle transcript viewer.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Shows detailed tool usage and execution, with a timestamp and the model used on each assistant message."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.reverse-search-command-history",
+    "tool": "claude-code",
+    "name": "Ctrl+R",
+    "display_name": "Reverse search command history",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Reverse search command history",
+    "description": "Search through previous commands interactively",
+    "syntax": [
+      "Ctrl+R"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+R",
+        "explanation": "Reverse search command history.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Search through previous commands interactively."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.paste-image-from-clipboard",
+    "tool": "claude-code",
+    "name": "Ctrl+V / Cmd+V",
+    "display_name": "Paste image from clipboard",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Paste image from clipboard",
+    "description": "Inserts an [Image #N] chip at the cursor so you can reference it positionally in your prompt. On WSL, both Ctrl+V and Alt+V are bound; use Alt+V if your terminal intercepts Ctrl+V",
+    "syntax": [
+      "Ctrl+V / Cmd+V"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+V / Cmd+V",
+        "explanation": "Paste image from clipboard.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Inserts an [Image #N] chip at the cursor so you can reference it positionally in your prompt."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Inserts an [Image #N] chip at the cursor so you can reference it positionally in your prompt. On WSL, both Ctrl+V and Alt+V are bound; use Alt+V if your terminal intercepts Ctrl+V"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.background-running-tasks",
+    "tool": "claude-code",
+    "name": "Ctrl+B",
+    "display_name": "Background running tasks",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Background running tasks",
+    "description": "Backgrounds Bash commands and agents. Tmux users press twice",
+    "syntax": [
+      "Ctrl+B"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+B",
+        "explanation": "Background running tasks.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Backgrounds Bash commands and agents."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.toggle-claude-s-task-checklist",
+    "tool": "claude-code",
+    "name": "Ctrl+T",
+    "display_name": "Toggle Claude's task checklist",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Toggle Claude's task checklist",
+    "description": "Show or hide Claude's to-do checklist in the status area. This is not the background-task view; use /tasks to see running shells and subagents",
+    "syntax": [
+      "Ctrl+T"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+T",
+        "explanation": "Toggle Claude's task checklist.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Show or hide Claude's to-do checklist in the status area."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.stash-or-restore-prompt",
+    "tool": "claude-code",
+    "name": "Ctrl+S",
+    "display_name": "Stash or restore prompt",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Stash or restore prompt",
+    "description": "With text in the input, stashes it and clears the prompt. Pressed again on an empty prompt, restores the stashed text, cursor position, and pasted content",
+    "syntax": [
+      "Ctrl+S"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+S",
+        "explanation": "Stash or restore prompt.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "With text in the input, stashes it and clears the prompt."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.suspend-claude-code",
+    "tool": "claude-code",
+    "name": "Ctrl+Z",
+    "display_name": "Suspend Claude Code",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Suspend Claude Code",
+    "description": "Unix only. Suspends the process to your shell; run fg to resume",
+    "syntax": [
+      "Ctrl+Z"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+Z",
+        "explanation": "Suspend Claude Code.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Unix only."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Unix only. Suspends the process to your shell; run fg to resume"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.cycle-through-dialog-tabs",
+    "tool": "claude-code",
+    "name": "Left/Right arrows",
+    "display_name": "Cycle through dialog tabs",
+    "type": "shortcut",
+    "category": "permissions",
+    "role": "Cycle through dialog tabs",
+    "description": "Navigate between tabs in permission dialogs and menus",
+    "syntax": [
+      "Left/Right arrows"
+    ],
+    "examples": [
+      {
+        "command": "Left/Right arrows",
+        "explanation": "Cycle through dialog tabs.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Navigate between tabs in permission dialogs and menus."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.accept-an-autocomplete-suggestion-or-add-a-comment-to-a-permission-answer",
+    "tool": "claude-code",
+    "name": "Tab",
+    "display_name": "Accept an autocomplete suggestion, or add a comment to a permission answer",
+    "type": "shortcut",
+    "category": "permissions",
+    "role": "Accept an autocomplete suggestion, or add a comment to a permission answer",
+    "description": "While autocomplete suggestions are showing in the prompt input, accepts the selected suggestion. On most permission prompts, with Yes or No focused, opens a comment field on that option, and pressing it again closes the field. See add a comment when you answer a permission prompt",
+    "syntax": [
+      "Tab"
+    ],
+    "examples": [
+      {
+        "command": "Tab",
+        "explanation": "Accept an autocomplete suggestion, or add a comment to a permission answer.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "While autocomplete suggestions are showing in the prompt input, accepts the selected suggestion."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "While autocomplete suggestions are showing in the prompt input, accepts the selected suggestion. On most permission prompts, with Yes or No focused, opens a comment field on that option, and pressing it again closes the field. See add a comment when you answer a permission prompt"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.move-cursor-or-navigate-command-history",
+    "tool": "claude-code",
+    "name": "Up/Down arrows / Ctrl+P",
+    "display_name": "Move cursor or navigate command history",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Move cursor or navigate command history",
+    "description": "When the input spans more than one visual row, whether wrapped or multiline, first moves the cursor within the prompt. Once the cursor is on the first or last visual row, pressing again navigates command history. While you have messages queued, Up from the first row instead takes them back",
+    "syntax": [
+      "Up/Down arrows / Ctrl+P"
+    ],
+    "examples": [
+      {
+        "command": "Up/Down arrows / Ctrl+P",
+        "explanation": "Move cursor or navigate command history.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "When the input spans more than one visual row, whether wrapped or multiline, first moves the cursor within the prompt."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "When the input spans more than one visual row, whether wrapped or multiline, first moves the cursor within the prompt. Once the cursor is on the first or last visual row, pressing again navigates command history. While you have messages queued, Up from the first row instead takes them back"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.interrupt-claude-or-close-a-dialog",
+    "tool": "claude-code",
+    "name": "Esc",
+    "display_name": "Interrupt Claude, or close a dialog",
+    "type": "shortcut",
+    "category": "permissions",
+    "role": "Interrupt Claude, or close a dialog",
+    "description": "Stop the current response or tool call mid-turn so you can redirect. Claude keeps the work done so far. If you have messages queued, Claude Code sends them next. When a dialog is open, Esc closes the dialog. On a permission prompt, Esc declines the action, the same as No without a comment",
+    "syntax": [
+      "Esc"
+    ],
+    "examples": [
+      {
+        "command": "Esc",
+        "explanation": "Interrupt Claude, or close a dialog.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Stop the current response or tool call mid-turn so you can redirect."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Stop the current response or tool call mid-turn so you can redirect. Claude keeps the work done so far. If you have messages queued, Claude Code sends them next. When a dialog is open, Esc closes the dialog. On a permission prompt, Esc declines the action, the same as No without a comment"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.clear-input-draft-or-rewind",
+    "tool": "claude-code",
+    "name": "Esc Esc",
+    "display_name": "Clear input draft, or rewind",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Clear input draft, or rewind",
+    "description": "When the prompt input contains text, double Esc clears it and saves the draft to history so Up recalls it. When the input is empty, double Esc opens the rewind menu to restore or summarize code and conversation from a previous point",
+    "syntax": [
+      "Esc Esc"
+    ],
+    "examples": [
+      {
+        "command": "Esc Esc",
+        "explanation": "Clear input draft, or rewind.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "When the prompt input contains text, double Esc clears it and saves the draft to history so Up recalls it."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "When the prompt input contains text, double Esc clears it and saves the draft to history so Up recalls it. When the input is empty, double Esc opens the rewind menu to restore or summarize code and conversation from a previous point"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.cycle-permission-modes",
+    "tool": "claude-code",
+    "name": "Shift+Tab",
+    "display_name": "Cycle permission modes",
+    "type": "shortcut",
+    "category": "permissions",
+    "role": "Cycle permission modes",
+    "description": "Cycle through default (labeled Manual in the mode indicator), acceptEdits, plan, and, when available, bypassPermissions and then auto. From auto, the first press switches to default. See permission modes. On a file permission prompt, the same key closes an open comment field. With no field open, it selects the option that allows the action for the rest of the session, when the prompt offers that option",
+    "syntax": [
+      "Shift+Tab"
+    ],
+    "examples": [
+      {
+        "command": "Shift+Tab",
+        "explanation": "Cycle permission modes.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Cycle through default (labeled Manual in the mode indicator), acceptEdits, plan, and, when available, bypassPermissions and then auto."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Cycle through default (labeled Manual in the mode indicator), acceptEdits, plan, and, when available, bypassPermissions and then auto. From auto, the first press switches to default. See permission modes. On a file permission prompt, the same key closes an open comment field. With no field open, it selects the option that allows the action for the rest of the session, when the prompt offers that option"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.switch-model",
+    "tool": "claude-code",
+    "name": "Option+P",
+    "display_name": "Switch model",
+    "type": "shortcut",
+    "category": "models",
+    "role": "Switch model",
+    "description": "Switch models without clearing your prompt",
+    "syntax": [
+      "Option+P"
+    ],
+    "examples": [
+      {
+        "command": "Option+P",
+        "explanation": "Switch model.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Switch models without clearing your prompt."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.toggle-extended-thinking",
+    "tool": "claude-code",
+    "name": "Option+T",
+    "display_name": "Toggle extended thinking",
+    "type": "shortcut",
+    "category": "models",
+    "role": "Toggle extended thinking",
+    "description": "Enable or disable extended thinking mode. Has no effect on Fable 5, which always uses extended thinking. Works on macOS without configuring Option as Meta",
+    "syntax": [
+      "Option+T"
+    ],
+    "examples": [
+      {
+        "command": "Option+T",
+        "explanation": "Toggle extended thinking.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Enable or disable extended thinking mode."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Enable or disable extended thinking mode. Has no effect on Fable 5, which always uses extended thinking. Works on macOS without configuring Option as Meta"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.shortcut.toggle-fast-mode",
+    "tool": "claude-code",
+    "name": "Option+O",
+    "display_name": "Toggle fast mode",
+    "type": "shortcut",
+    "category": "models",
+    "role": "Toggle fast mode",
+    "description": "Enable or disable fast mode",
+    "syntax": [
+      "Option+O"
+    ],
+    "examples": [
+      {
+        "command": "Option+O",
+        "explanation": "Toggle fast mode.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Enable or disable fast mode."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/interactive-mode",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

@@ -6,7 +6,6 @@ from __future__ import annotations
 import json
 import re
 import shutil
-from collections import Counter
 from html import escape
 from pathlib import Path
 
@@ -29,16 +28,49 @@ def slugify(value: str, fallback: str) -> str:
 
 def add_entry_paths(entries: list[dict]) -> None:
     """Add deterministic, collision-safe website paths to generated entries."""
+    type_priority = {
+        "slash-command": 0,
+        "prefix-command": 1,
+        "cli-command": 2,
+        "cli-subcommand": 3,
+        "cli-flag": 4,
+        "shortcut": 5,
+        "mode": 6,
+        "permission": 7,
+        "workflow": 8,
+        "skill": 9,
+        "agent": 10,
+        "mcp": 11,
+        "hook": 12,
+        "plugin": 13,
+        "extension": 14,
+        "config-file": 15,
+        "instruction-file": 16,
+        "config-option": 17,
+        "environment-variable": 18,
+    }
     raw_slugs = {
         entry["id"]: slugify(entry["name"], entry["id"].rsplit(".", 1)[-1])
         for entry in entries
     }
-    counts = Counter((entry["tool"], raw_slugs[entry["id"]]) for entry in entries)
+    groups: dict[tuple[str, str], list[dict]] = {}
+    for entry in entries:
+        groups.setdefault((entry["tool"], raw_slugs[entry["id"]]), []).append(entry)
+    primary_ids = {
+        min(group, key=lambda entry: (type_priority.get(entry["type"], 99), entry["id"]))["id"]
+        for group in groups.values()
+    }
     used: set[str] = set()
     for entry in entries:
         raw = raw_slugs[entry["id"]]
-        if counts[(entry["tool"], raw)] == 1:
+        if entry["id"] in primary_ids:
             slug = raw
+            group = groups[(entry["tool"], raw)]
+            if len(group) > 1 and not any(
+                candidate["id"] != entry["id"] and candidate["type"] == entry["type"]
+                for candidate in group
+            ):
+                entry["legacy_paths"] = [f"{entry['tool']}/{entry['type']}-{raw}/"]
         else:
             slug = f"{entry['type']}-{raw}"
         path = f"{entry['tool']}/{slug}/"
@@ -61,7 +93,7 @@ def route_page(template: str, route: str, title: str, description: str, depth: i
     page = page.replace("<title>Agent Command Atlas</title>", f"<title>{escape(title)}</title>", 1)
     page = re.sub(
         r'<meta name="description" content="[^"]*">',
-        f'<meta name="description" content="{escape(description, quote=True)}">',
+        lambda _match: f'<meta name="description" content="{escape(description, quote=True)}">',
         page,
         count=1,
     )
@@ -73,7 +105,9 @@ def route_page(template: str, route: str, title: str, description: str, depth: i
     ):
         page = re.sub(
             rf'<meta {attribute}="{name}" content="[^"]*">',
-            f'<meta {attribute}="{name}" content="{escape(content, quote=True)}">',
+            lambda _match, attribute=attribute, name=name, content=content: (
+                f'<meta {attribute}="{name}" content="{escape(content, quote=True)}">'
+            ),
             page,
             count=1,
         )
@@ -118,6 +152,17 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
             ),
         )
         routes.append({"path": entry["path"], "kind": "entry", "id": entry["id"]})
+        for legacy_path in entry.get("legacy_paths", []):
+            write_route(
+                site / legacy_path,
+                route_page(
+                    template,
+                    f"entry:{entry['id']}",
+                    f"{entry['name']} — {entry['display_name']} | Agent Command Atlas",
+                    description,
+                    2,
+                ),
+            )
 
     write_route(
         site / "compare",

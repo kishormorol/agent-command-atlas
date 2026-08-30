@@ -1,0 +1,2745 @@
+[
+  {
+    "id": "codex.config-option.model",
+    "tool": "codex",
+    "name": "model",
+    "display_name": "model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Model to use (e.g., gpt-5.5).",
+    "syntax": [
+      "model: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.review-model",
+    "tool": "codex",
+    "name": "review_model",
+    "display_name": "review_model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Optional model override used by /review (defaults to the current session model).",
+    "syntax": [
+      "review_model: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented review_model behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-provider",
+    "tool": "codex",
+    "name": "model_provider",
+    "display_name": "model_provider",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Provider id from model_providers (default: openai).",
+    "syntax": [
+      "model_provider: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_provider behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.openai-base-url",
+    "tool": "codex",
+    "name": "openai_base_url",
+    "display_name": "openai_base_url",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Base URL override for the built-in openai model provider.",
+    "syntax": [
+      "openai_base_url: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented openai_base_url behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-context-window",
+    "tool": "codex",
+    "name": "model_context_window",
+    "display_name": "model_context_window",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Context window tokens available to the active model.",
+    "syntax": [
+      "model_context_window: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_context_window behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-auto-compact-token-limit",
+    "tool": "codex",
+    "name": "model_auto_compact_token_limit",
+    "display_name": "model_auto_compact_token_limit",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Token threshold that triggers automatic history compaction (unset uses model defaults).",
+    "syntax": [
+      "model_auto_compact_token_limit: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_auto_compact_token_limit behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-auto-compact-token-limit-scope",
+    "tool": "codex",
+    "name": "model_auto_compact_token_limit_scope",
+    "display_name": "model_auto_compact_token_limit_scope",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Controls whether the auto-compaction threshold counts the full active context (total, the default) or only growth after the carried compaction-window prefix (body_after_prefix).",
+    "syntax": [
+      "model_auto_compact_token_limit_scope: <total | body_after_prefix>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_auto_compact_token_limit_scope behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-catalog-json",
+    "tool": "codex",
+    "name": "model_catalog_json",
+    "display_name": "model_catalog_json",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Enforce the JSON model catalog Codex uses at startup.",
+    "syntax": [
+      "model_catalog_json: <string (path)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_catalog_json behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.oss-provider",
+    "tool": "codex",
+    "name": "oss_provider",
+    "display_name": "oss_provider",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Default local provider used when running with --oss (defaults to prompting if unset).",
+    "syntax": [
+      "oss_provider: <lmstudio | ollama>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented oss_provider behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.approval-policy-granular-sandbox-approval",
+    "tool": "codex",
+    "name": "approval_policy.granular.sandbox_approval",
+    "display_name": "approval_policy.granular.sandbox_approval",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "When true, sandbox escalation approval prompts are allowed to surface.",
+    "syntax": [
+      "approval_policy.granular.sandbox_approval: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented approval_policy.granular.sandbox_approval behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.approval-policy-granular-rules",
+    "tool": "codex",
+    "name": "approval_policy.granular.rules",
+    "display_name": "approval_policy.granular.rules",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "When true, approvals triggered by execpolicy prompt rules are allowed to surface.",
+    "syntax": [
+      "approval_policy.granular.rules: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented approval_policy.granular.rules behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.approval-policy-granular-mcp-elicitations",
+    "tool": "codex",
+    "name": "approval_policy.granular.mcp_elicitations",
+    "display_name": "approval_policy.granular.mcp_elicitations",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "When true, MCP elicitation prompts are allowed to surface instead of being auto-rejected.",
+    "syntax": [
+      "approval_policy.granular.mcp_elicitations: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented approval_policy.granular.mcp_elicitations behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.approval-policy-granular-request-permissions",
+    "tool": "codex",
+    "name": "approval_policy.granular.request_permissions",
+    "display_name": "approval_policy.granular.request_permissions",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "When true, prompts from the request_permissions tool are allowed to surface.",
+    "syntax": [
+      "approval_policy.granular.request_permissions: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented approval_policy.granular.request_permissions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.approval-policy-granular-skill-approval",
+    "tool": "codex",
+    "name": "approval_policy.granular.skill_approval",
+    "display_name": "approval_policy.granular.skill_approval",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "When true, skill-script approval prompts are allowed to surface.",
+    "syntax": [
+      "approval_policy.granular.skill_approval: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented approval_policy.granular.skill_approval behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.approvals-reviewer",
+    "tool": "codex",
+    "name": "approvals_reviewer",
+    "display_name": "approvals_reviewer",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Who reviews eligible approval prompts under on-request or granular approval policies. Defaults to user; auto_review uses the reviewer subagent. This setting doesn't change sandboxing or review actions already allowed inside the sandbox.",
+    "syntax": [
+      "approvals_reviewer: <user | auto_review>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented approvals_reviewer behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.auto-review-policy",
+    "tool": "codex",
+    "name": "auto_review.policy",
+    "display_name": "auto_review.policy",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Local Markdown policy instructions for automatic review. Managed guardian_policy_config takes precedence. Blank values are ignored.",
+    "syntax": [
+      "auto_review.policy: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented auto_review.policy behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.allow-login-shell",
+    "tool": "codex",
+    "name": "allow_login_shell",
+    "display_name": "allow_login_shell",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Enforce whether shell tools can start a login shell.",
+    "syntax": [
+      "allow_login_shell: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented allow_login_shell behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.sandbox-workspace-write-writable-roots",
+    "tool": "codex",
+    "name": "sandbox_workspace_write.writable_roots",
+    "display_name": "sandbox_workspace_write.writable_roots",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Additional writable roots when sandbox_mode = \"workspace-write\".",
+    "syntax": [
+      "sandbox_workspace_write.writable_roots: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox_workspace_write.writable_roots behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.sandbox-workspace-write-network-access",
+    "tool": "codex",
+    "name": "sandbox_workspace_write.network_access",
+    "display_name": "sandbox_workspace_write.network_access",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Allow outbound network access inside the workspace-write sandbox.",
+    "syntax": [
+      "sandbox_workspace_write.network_access: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox_workspace_write.network_access behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.sandbox-workspace-write-exclude-tmpdir-env-var",
+    "tool": "codex",
+    "name": "sandbox_workspace_write.exclude_tmpdir_env_var",
+    "display_name": "sandbox_workspace_write.exclude_tmpdir_env_var",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Exclude $TMPDIR from writable roots in workspace-write mode.",
+    "syntax": [
+      "sandbox_workspace_write.exclude_tmpdir_env_var: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox_workspace_write.exclude_tmpdir_env_var behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.sandbox-workspace-write-exclude-slash-tmp",
+    "tool": "codex",
+    "name": "sandbox_workspace_write.exclude_slash_tmp",
+    "display_name": "sandbox_workspace_write.exclude_slash_tmp",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Exclude /tmp from writable roots in workspace-write mode.",
+    "syntax": [
+      "sandbox_workspace_write.exclude_slash_tmp: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox_workspace_write.exclude_slash_tmp behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.windows-sandbox",
+    "tool": "codex",
+    "name": "windows.sandbox",
+    "display_name": "windows.sandbox",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Windows-only native sandbox mode when running Codex natively on Windows.",
+    "syntax": [
+      "windows.sandbox: <unelevated | elevated>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented windows.sandbox behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.windows-sandbox-private-desktop",
+    "tool": "codex",
+    "name": "windows.sandbox_private_desktop",
+    "display_name": "windows.sandbox_private_desktop",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Enforce whether the native Windows sandbox starts its child process on a private desktop.",
+    "syntax": [
+      "windows.sandbox_private_desktop: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented windows.sandbox_private_desktop behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.computer-use-windows-always-allowed-app-ids",
+    "tool": "codex",
+    "name": "computer_use.windows.always_allowed_app_ids",
+    "display_name": "computer_use.windows.always_allowed_app_ids",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Windows app identifiers that Computer Use can open without prompting. Apps not in the list require approval; remove saved entries from the ChatGPT desktop app's Computer Use settings.",
+    "syntax": [
+      "computer_use.windows.always_allowed_app_ids: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented computer_use.windows.always_allowed_app_ids behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.notify",
+    "tool": "codex",
+    "name": "notify",
+    "display_name": "notify",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Command invoked for notifications; receives a JSON payload from Codex.",
+    "syntax": [
+      "notify: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented notify behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.check-for-update-on-startup",
+    "tool": "codex",
+    "name": "check_for_update_on_startup",
+    "display_name": "check_for_update_on_startup",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enforce whether Codex checks for updates when it starts.",
+    "syntax": [
+      "check_for_update_on_startup: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented check_for_update_on_startup behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.feedback-enabled",
+    "tool": "codex",
+    "name": "feedback.enabled",
+    "display_name": "feedback.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enforce whether users can submit feedback across Codex clients.",
+    "syntax": [
+      "feedback.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented feedback.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.analytics-enabled",
+    "tool": "codex",
+    "name": "analytics.enabled",
+    "display_name": "analytics.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable or disable analytics for this machine/profile. When unset, the client default applies.",
+    "syntax": [
+      "analytics.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented analytics.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.instructions",
+    "tool": "codex",
+    "name": "instructions",
+    "display_name": "instructions",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Reserved for future use; prefer model_instructions_file or AGENTS.md.",
+    "syntax": [
+      "instructions: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented instructions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.developer-instructions",
+    "tool": "codex",
+    "name": "developer_instructions",
+    "display_name": "developer_instructions",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Additional developer instructions injected into the session (optional).",
+    "syntax": [
+      "developer_instructions: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented developer_instructions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.log-dir",
+    "tool": "codex",
+    "name": "log_dir",
+    "display_name": "log_dir",
+    "type": "config-option",
+    "category": "diagnostics",
+    "role": "Configuration setting",
+    "description": "Enforce the directory where Codex writes local log files.",
+    "syntax": [
+      "log_dir: <string (path)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented log_dir behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.sqlite-home",
+    "tool": "codex",
+    "name": "sqlite_home",
+    "display_name": "sqlite_home",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enforce the directory where Codex stores SQLite-backed runtime state.",
+    "syntax": [
+      "sqlite_home: <string (path)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sqlite_home behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.compact-prompt",
+    "tool": "codex",
+    "name": "compact_prompt",
+    "display_name": "compact_prompt",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Inline override for the history compaction prompt.",
+    "syntax": [
+      "compact_prompt: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented compact_prompt behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.model-instructions-file",
+    "tool": "codex",
+    "name": "model_instructions_file",
+    "display_name": "model_instructions_file",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Replacement for built-in instructions instead of AGENTS.md.",
+    "syntax": [
+      "model_instructions_file: <string (path)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented model_instructions_file behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.personality",
+    "tool": "codex",
+    "name": "personality",
+    "display_name": "personality",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Default communication style for models that advertise supportsPersonality; can be overridden per thread/turn or via /personality.",
+    "syntax": [
+      "personality: <none | friendly | pragmatic>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented personality behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.service-tier",
+    "tool": "codex",
+    "name": "service_tier",
+    "display_name": "service_tier",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Preferred service tier for new turns. Use fast or another tier advertised by the active model; fast maps to the request value priority.",
+    "syntax": [
+      "service_tier: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented service_tier behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.experimental-compact-prompt-file",
+    "tool": "codex",
+    "name": "experimental_compact_prompt_file",
+    "display_name": "experimental_compact_prompt_file",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Load the compaction prompt override from a file (experimental).",
+    "syntax": [
+      "experimental_compact_prompt_file: <string (path)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented experimental_compact_prompt_file behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.skills-config",
+    "tool": "codex",
+    "name": "skills.config",
+    "display_name": "skills.config",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Per-skill enablement overrides stored in config.toml.",
+    "syntax": [
+      "skills.config: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skills.config behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.skills-config-index-path",
+    "tool": "codex",
+    "name": "skills.config.<index>.path",
+    "display_name": "skills.config.<index>.path",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Path to a skill folder containing SKILL.md.",
+    "syntax": [
+      "skills.config.<index>.path: <string (path)>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skills.config.<index>.path behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.skills-config-index-enabled",
+    "tool": "codex",
+    "name": "skills.config.<index>.enabled",
+    "display_name": "skills.config.<index>.enabled",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Enable or disable the referenced skill.",
+    "syntax": [
+      "skills.config.<index>.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skills.config.<index>.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-enabled",
+    "tool": "codex",
+    "name": "apps.<id>.enabled",
+    "display_name": "apps.<id>.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Set to false to disable an app. A disabled requirement remains restrictive when multiple requirements sources are merged.",
+    "syntax": [
+      "apps.<id>.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-default-enabled",
+    "tool": "codex",
+    "name": "apps._default.enabled",
+    "display_name": "apps._default.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Default app enabled state for all apps unless overridden per app.",
+    "syntax": [
+      "apps._default.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps._default.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-default-destructive-enabled",
+    "tool": "codex",
+    "name": "apps._default.destructive_enabled",
+    "display_name": "apps._default.destructive_enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Default allow/deny for app tools with destructive_hint = true.",
+    "syntax": [
+      "apps._default.destructive_enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps._default.destructive_enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-default-open-world-enabled",
+    "tool": "codex",
+    "name": "apps._default.open_world_enabled",
+    "display_name": "apps._default.open_world_enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Default allow/deny for app tools with open_world_hint = true.",
+    "syntax": [
+      "apps._default.open_world_enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps._default.open_world_enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-default-approvals-reviewer",
+    "tool": "codex",
+    "name": "apps._default.approvals_reviewer",
+    "display_name": "apps._default.approvals_reviewer",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Default reviewer for app tool approval prompts unless overridden per app. When omitted, apps inherit the top-level approvals_reviewer value.",
+    "syntax": [
+      "apps._default.approvals_reviewer: <user | auto_review>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps._default.approvals_reviewer behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-default-default-tools-approval-mode",
+    "tool": "codex",
+    "name": "apps._default.default_tools_approval_mode",
+    "display_name": "apps._default.default_tools_approval_mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Default approval behavior for app tools without per-app or per-tool overrides.",
+    "syntax": [
+      "apps._default.default_tools_approval_mode: <auto | prompt | writes | approve>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps._default.default_tools_approval_mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-destructive-enabled",
+    "tool": "codex",
+    "name": "apps.<id>.destructive_enabled",
+    "display_name": "apps.<id>.destructive_enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Allow or block tools in this app that advertise destructive_hint = true.",
+    "syntax": [
+      "apps.<id>.destructive_enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.destructive_enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-open-world-enabled",
+    "tool": "codex",
+    "name": "apps.<id>.open_world_enabled",
+    "display_name": "apps.<id>.open_world_enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Allow or block tools in this app that advertise open_world_hint = true.",
+    "syntax": [
+      "apps.<id>.open_world_enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.open_world_enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-default-tools-enabled",
+    "tool": "codex",
+    "name": "apps.<id>.default_tools_enabled",
+    "display_name": "apps.<id>.default_tools_enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Default enabled state for tools in this app unless a per-tool override exists.",
+    "syntax": [
+      "apps.<id>.default_tools_enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.default_tools_enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-approvals-reviewer",
+    "tool": "codex",
+    "name": "apps.<id>.approvals_reviewer",
+    "display_name": "apps.<id>.approvals_reviewer",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Reviewer for this app's tool approval prompts. Overrides apps._default.approvals_reviewer.",
+    "syntax": [
+      "apps.<id>.approvals_reviewer: <user | auto_review>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.approvals_reviewer behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-default-tools-approval-mode",
+    "tool": "codex",
+    "name": "apps.<id>.default_tools_approval_mode",
+    "display_name": "apps.<id>.default_tools_approval_mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Default approval behavior for tools in this app unless a per-tool override exists.",
+    "syntax": [
+      "apps.<id>.default_tools_approval_mode: <auto | prompt | writes | approve>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.default_tools_approval_mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-tools-tool-enabled",
+    "tool": "codex",
+    "name": "apps.<id>.tools.<tool>.enabled",
+    "display_name": "apps.<id>.tools.<tool>.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Per-tool enabled override for an app tool (for example repos/list).",
+    "syntax": [
+      "apps.<id>.tools.<tool>.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.tools.<tool>.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.apps-id-tools-tool-approval-mode",
+    "tool": "codex",
+    "name": "apps.<id>.tools.<tool>.approval_mode",
+    "display_name": "apps.<id>.tools.<tool>.approval_mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Set the managed approval mode for one app tool.",
+    "syntax": [
+      "apps.<id>.tools.<tool>.approval_mode: <auto | prompt | writes | approve>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented apps.<id>.tools.<tool>.approval_mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.tool-suggest-discoverables",
+    "tool": "codex",
+    "name": "tool_suggest.discoverables",
+    "display_name": "tool_suggest.discoverables",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Allow tool suggestions for additional discoverable connectors or plugins. Each entry uses type = \"connector\" or \"plugin\" and an id.",
+    "syntax": [
+      "tool_suggest.discoverables: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tool_suggest.discoverables behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.tool-suggest-disabled-tools",
+    "tool": "codex",
+    "name": "tool_suggest.disabled_tools",
+    "display_name": "tool_suggest.disabled_tools",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Disable suggestions for specific discoverable connectors or plugins. Each entry uses type = \"connector\" or \"plugin\" and an id.",
+    "syntax": [
+      "tool_suggest.disabled_tools: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tool_suggest.disabled_tools behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-apps",
+    "tool": "codex",
+    "name": "features.apps",
+    "display_name": "features.apps",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Pin Apps integration availability on or off for managed users.",
+    "syntax": [
+      "features.apps: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.apps behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-hooks",
+    "tool": "codex",
+    "name": "features.hooks",
+    "display_name": "features.hooks",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Enable lifecycle hooks loaded from hooks.json or inline [hooks] config. features.codex_hooks is a deprecated alias.",
+    "syntax": [
+      "features.hooks: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.hooks behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "when_not_to_use": [
+      "Avoid this deprecated setting in new configuration; use the documented replacement when available."
+    ]
+  },
+  {
+    "id": "codex.config-option.features-code-mode-enabled",
+    "tool": "codex",
+    "name": "features.code_mode.enabled",
+    "display_name": "features.code_mode.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable code mode feature configuration. This feature is under development and off by default.",
+    "syntax": [
+      "features.code_mode.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.code_mode.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-code-mode-excluded-tool-namespaces",
+    "tool": "codex",
+    "name": "features.code_mode.excluded_tool_namespaces",
+    "display_name": "features.code_mode.excluded_tool_namespaces",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Tool namespaces code mode excludes from nested code-mode tool guidance and executor exposure.",
+    "syntax": [
+      "features.code_mode.excluded_tool_namespaces: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.code_mode.excluded_tool_namespaces behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-code-mode-direct-only-tool-namespaces",
+    "tool": "codex",
+    "name": "features.code_mode.direct_only_tool_namespaces",
+    "display_name": "features.code_mode.direct_only_tool_namespaces",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Tool namespaces code mode can use only through direct tool calls.",
+    "syntax": [
+      "features.code_mode.direct_only_tool_namespaces: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.code_mode.direct_only_tool_namespaces behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-rollout-budget-enabled",
+    "tool": "codex",
+    "name": "features.rollout_budget.enabled",
+    "display_name": "features.rollout_budget.enabled",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Enable rollout budget tracking. This feature is under development and off by default. When enabled, features.rollout_budget.limit_tokens is required.",
+    "syntax": [
+      "features.rollout_budget.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.rollout_budget.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-rollout-budget-limit-tokens",
+    "tool": "codex",
+    "name": "features.rollout_budget.limit_tokens",
+    "display_name": "features.rollout_budget.limit_tokens",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Positive token limit for rollout budget tracking. Required when rollout budget is enabled.",
+    "syntax": [
+      "features.rollout_budget.limit_tokens: <integer>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.rollout_budget.limit_tokens behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-rollout-budget-reminder-interval-tokens",
+    "tool": "codex",
+    "name": "features.rollout_budget.reminder_interval_tokens",
+    "display_name": "features.rollout_budget.reminder_interval_tokens",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Positive token interval between rollout budget reminders. Defaults to 10% of limit_tokens, with a minimum of 1 token.",
+    "syntax": [
+      "features.rollout_budget.reminder_interval_tokens: <integer>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.rollout_budget.reminder_interval_tokens behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-rollout-budget-sampling-token-weight",
+    "tool": "codex",
+    "name": "features.rollout_budget.sampling_token_weight",
+    "display_name": "features.rollout_budget.sampling_token_weight",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Finite non-negative multiplier for sampled tokens in rollout budget accounting. Defaults to 1.0.",
+    "syntax": [
+      "features.rollout_budget.sampling_token_weight: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.rollout_budget.sampling_token_weight behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-rollout-budget-prefill-token-weight",
+    "tool": "codex",
+    "name": "features.rollout_budget.prefill_token_weight",
+    "display_name": "features.rollout_budget.prefill_token_weight",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Finite non-negative multiplier for prefill tokens in rollout budget accounting. Defaults to 1.0.",
+    "syntax": [
+      "features.rollout_budget.prefill_token_weight: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.rollout_budget.prefill_token_weight behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.hooks",
+    "tool": "codex",
+    "name": "hooks",
+    "display_name": "hooks",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Admin-enforced managed lifecycle hooks. Requires a managed hook directory and uses the same event schema as inline [hooks] in config.toml.",
+    "syntax": [
+      "hooks: <table>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Admin-enforced managed lifecycle hooks. Requires a managed hook directory and uses the same event schema as inline [hooks] in config.toml."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.hooks-event",
+    "tool": "codex",
+    "name": "hooks.<Event>",
+    "display_name": "hooks.<Event>",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Matcher groups for a hook event such as PreToolUse, PermissionRequest, PostToolUse, PreCompact, PostCompact, SessionStart, SessionEnd, SubagentStart, SubagentStop, UserPromptSubmit, or Stop.",
+    "syntax": [
+      "hooks.<Event>: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks.<Event> behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.hooks-event-hooks",
+    "tool": "codex",
+    "name": "hooks.<Event>[].hooks",
+    "display_name": "hooks.<Event>[].hooks",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Hook handlers for a matcher group. Command and MCP tool hooks are supported while prompt and agent hook handlers are parsed but skipped.",
+    "syntax": [
+      "hooks.<Event>[].hooks: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks.<Event>[].hooks behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.hooks-event-hooks-async",
+    "tool": "codex",
+    "name": "hooks.<Event>[].hooks[].async",
+    "display_name": "hooks.<Event>[].hooks[].async",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Run a command hook in the background without delaying the triggering operation. Defaults to false; SessionEnd always runs synchronously. See Run hooks in the background.",
+    "syntax": [
+      "hooks.<Event>[].hooks[].async: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks.<Event>[].hooks[].async behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.hooks-event-hooks-additionalcontextlimit",
+    "tool": "codex",
+    "name": "hooks.<Event>[].hooks[].additionalContextLimit",
+    "display_name": "hooks.<Event>[].hooks[].additionalContextLimit",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Approximate per-handler token threshold for saving oversized additionalContext to disk and showing the model a shorter preview. Defaults to 2500; 0 passes the full context directly to the model. See Large hook output.",
+    "syntax": [
+      "hooks.<Event>[].hooks[].additionalContextLimit: <integer>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks.<Event>[].hooks[].additionalContextLimit behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.hooks-event-hooks-commandwindows",
+    "tool": "codex",
+    "name": "hooks.<Event>[].hooks[].commandWindows",
+    "display_name": "hooks.<Event>[].hooks[].commandWindows",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Windows-only command override for command hooks. The TOML alias command_windows is also accepted.",
+    "syntax": [
+      "hooks.<Event>[].hooks[].commandWindows: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks.<Event>[].hooks[].commandWindows behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.features-memories",
+    "tool": "codex",
+    "name": "features.memories",
+    "display_name": "features.memories",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Pin Memories availability on or off for managed users.",
+    "syntax": [
+      "features.memories: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented features.memories behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-command",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.command",
+    "display_name": "mcp_servers.<id>.command",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Launcher command for an MCP stdio server.",
+    "syntax": [
+      "mcp_servers.<id>.command: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.command behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.config-option.mcp-servers-id-args",
+    "tool": "codex",
+    "name": "mcp_servers.<id>.args",
+    "display_name": "mcp_servers.<id>.args",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Arguments passed to the MCP stdio server command.",
+    "syntax": [
+      "mcp_servers.<id>.args: <array>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mcp_servers.<id>.args behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

@@ -1,0 +1,664 @@
+[
+  {
+    "id": "cursor.cli-flag.header",
+    "tool": "cursor",
+    "name": "--header",
+    "display_name": "Header",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Add custom header to agent requests (format: Name: Value, can be used multiple times)",
+    "syntax": [
+      "agent --header <header>"
+    ],
+    "examples": [
+      {
+        "command": "agent --header <header>",
+        "explanation": "Add custom header to agent requests (format: Name: Value, can be used multiple times)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented header behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.stream-partial-output",
+    "tool": "cursor",
+    "name": "--stream-partial-output",
+    "display_name": "Stream partial output",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Invocation control",
+    "description": "Stream partial output as individual text deltas (only works with --print and stream-json format)",
+    "syntax": [
+      "agent --stream-partial-output"
+    ],
+    "examples": [
+      {
+        "command": "agent --stream-partial-output",
+        "explanation": "Stream partial output as individual text deltas (only works with --print and stream-json format)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented stream partial output behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Stream partial output as individual text deltas (only works with --print and stream-json format)"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.continue",
+    "tool": "cursor",
+    "name": "--continue",
+    "display_name": "Continue",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Continue the previous session (alias for --resume=-1)",
+    "syntax": [
+      "agent --continue"
+    ],
+    "examples": [
+      {
+        "command": "agent --continue",
+        "explanation": "Continue the previous session (alias for --resume=-1)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented continue behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.mode",
+    "tool": "cursor",
+    "name": "--mode",
+    "display_name": "Mode",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent control",
+    "description": "Set agent mode: plan or ask (agent is the default when no mode is specified)",
+    "syntax": [
+      "agent --mode <mode>"
+    ],
+    "examples": [
+      {
+        "command": "agent --mode <mode>",
+        "explanation": "Set agent mode: plan or ask (agent is the default when no mode is specified)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented mode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.plan",
+    "tool": "cursor",
+    "name": "--plan",
+    "display_name": "Plan",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Start in plan mode (shorthand for --mode=plan)",
+    "syntax": [
+      "agent --plan"
+    ],
+    "examples": [
+      {
+        "command": "agent --plan",
+        "explanation": "Start in plan mode (shorthand for --mode=plan)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented plan behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.list-models",
+    "tool": "cursor",
+    "name": "--list-models",
+    "display_name": "List models",
+    "type": "cli-flag",
+    "category": "models",
+    "role": "Model control",
+    "description": "List all available models",
+    "syntax": [
+      "agent --list-models"
+    ],
+    "examples": [
+      {
+        "command": "agent --list-models",
+        "explanation": "List all available models",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented list models behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.yolo",
+    "tool": "cursor",
+    "name": "--yolo",
+    "display_name": "Yolo",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "Alias for --force",
+    "syntax": [
+      "agent --yolo"
+    ],
+    "examples": [
+      {
+        "command": "agent --yolo",
+        "explanation": "Alias for --force",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented yolo behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.sandbox",
+    "tool": "cursor",
+    "name": "--sandbox",
+    "display_name": "Sandbox",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "Set sandbox mode: enabled or disabled",
+    "syntax": [
+      "agent --sandbox <mode>"
+    ],
+    "examples": [
+      {
+        "command": "agent --sandbox <mode>",
+        "explanation": "Set sandbox mode: enabled or disabled",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented sandbox behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.approve-mcps",
+    "tool": "cursor",
+    "name": "--approve-mcps",
+    "display_name": "Approve mcps",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Automatically approve all MCP servers",
+    "syntax": [
+      "agent --approve-mcps"
+    ],
+    "examples": [
+      {
+        "command": "agent --approve-mcps",
+        "explanation": "Automatically approve all MCP servers",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented approve mcps behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.trust",
+    "tool": "cursor",
+    "name": "--trust",
+    "display_name": "Trust",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "Trust the workspace without prompting (headless mode only)",
+    "syntax": [
+      "agent --trust"
+    ],
+    "examples": [
+      {
+        "command": "agent --trust",
+        "explanation": "Trust the workspace without prompting (headless mode only)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented trust behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.workspace",
+    "tool": "cursor",
+    "name": "--workspace",
+    "display_name": "Workspace",
+    "type": "cli-flag",
+    "category": "context",
+    "role": "Context input",
+    "description": "Workspace directory to use",
+    "syntax": [
+      "agent --workspace <path>"
+    ],
+    "examples": [
+      {
+        "command": "agent --workspace <path>",
+        "explanation": "Workspace directory to use",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented workspace behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.plugin-dir",
+    "tool": "cursor",
+    "name": "--plugin-dir",
+    "display_name": "Plugin dir",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Extension control",
+    "description": "Load a local plugin directory (can be specified multiple times)",
+    "syntax": [
+      "agent --plugin-dir <path>"
+    ],
+    "examples": [
+      {
+        "command": "agent --plugin-dir <path>",
+        "explanation": "Load a local plugin directory (can be specified multiple times)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented plugin dir behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.worktree-base",
+    "tool": "cursor",
+    "name": "--worktree-base",
+    "display_name": "Worktree base",
+    "type": "cli-flag",
+    "category": "worktrees",
+    "role": "Worktree control",
+    "description": "Branch or ref to base the new worktree on (default: current HEAD)",
+    "syntax": [
+      "agent --worktree-base <branch>"
+    ],
+    "examples": [
+      {
+        "command": "agent --worktree-base <branch>",
+        "explanation": "Branch or ref to base the new worktree on (default: current HEAD)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented worktree base behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.skip-worktree-setup",
+    "tool": "cursor",
+    "name": "--skip-worktree-setup",
+    "display_name": "Skip worktree setup",
+    "type": "cli-flag",
+    "category": "worktrees",
+    "role": "Worktree control",
+    "description": "Skip running worktree setup scripts from .cursor/worktrees.json",
+    "syntax": [
+      "agent --skip-worktree-setup"
+    ],
+    "examples": [
+      {
+        "command": "agent --skip-worktree-setup",
+        "explanation": "Skip running worktree setup scripts from .cursor/worktrees.json",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented skip worktree setup behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "cursor.cli-flag.help",
+    "tool": "cursor",
+    "name": "--help",
+    "display_name": "Help",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Display help for command",
+    "syntax": [
+      "agent --help"
+    ],
+    "examples": [
+      {
+        "command": "agent --help",
+        "explanation": "Display help for command",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented help behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

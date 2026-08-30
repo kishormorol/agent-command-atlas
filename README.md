@@ -81,4 +81,4 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for detailed requirements.
 
 ## Project status
 
-The repository is an early, structurally sound foundation, not a claim of complete vendor coverage. The current priority is accurate interactive-command coverage across all five ecosystems, followed by nested subcommands, CLI trees and flags, configuration, MCP, permissions, skills, hooks, agents, and shortcuts. See [the roadmap](docs/ROADMAP.md).
+The atlas now covers interactive commands, nested subcommands, CLI flags, configuration, environment variables, shortcuts, hooks, permissions, MCP, skills, and agent controls across all five ecosystems. It remains a living reference rather than a claim that fast-changing vendor surfaces can ever be permanently complete. See [the roadmap](docs/ROADMAP.md).

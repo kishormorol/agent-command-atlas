@@ -1,0 +1,357 @@
+[
+  {
+    "id": "gemini-cli.cli-flag.version",
+    "tool": "gemini-cli",
+    "name": "--version",
+    "display_name": "Version",
+    "type": "cli-flag",
+    "category": "system",
+    "role": "CLI information",
+    "description": "Show CLI version number and exit",
+    "syntax": [
+      "gemini --version"
+    ],
+    "examples": [
+      {
+        "command": "gemini --version",
+        "explanation": "Show CLI version number and exit",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented version behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.cli-flag.help",
+    "tool": "gemini-cli",
+    "name": "--help",
+    "display_name": "Help",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Show help information",
+    "syntax": [
+      "gemini --help"
+    ],
+    "examples": [
+      {
+        "command": "gemini --help",
+        "explanation": "Show help information",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented help behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.cli-flag.skip-trust",
+    "tool": "gemini-cli",
+    "name": "--skip-trust",
+    "display_name": "Skip trust",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "Trust the current workspace for this session, skipping the folder trust check.",
+    "syntax": [
+      "gemini --skip-trust"
+    ],
+    "examples": [
+      {
+        "command": "gemini --skip-trust",
+        "explanation": "Trust the current workspace for this session, skipping the folder trust check.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented skip trust behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.cli-flag.experimental-zed-integration",
+    "tool": "gemini-cli",
+    "name": "--experimental-zed-integration",
+    "display_name": "Experimental zed integration",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Run in Zed editor integration mode. **Experimental feature.**",
+    "syntax": [
+      "gemini --experimental-zed-integration"
+    ],
+    "examples": [
+      {
+        "command": "gemini --experimental-zed-integration",
+        "explanation": "Run in Zed editor integration mode. **Experimental feature.**",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented experimental zed integration behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.cli-flag.allowed-tools",
+    "tool": "gemini-cli",
+    "name": "--allowed-tools",
+    "display_name": "Allowed tools",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission control",
+    "description": "**Deprecated.** Use the Policy Engine instead. Tools that are allowed to run without confirmation (comma-separated or multiple flags)",
+    "syntax": [
+      "gemini --allowed-tools"
+    ],
+    "examples": [
+      {
+        "command": "gemini --allowed-tools",
+        "explanation": "**Deprecated.** Use the Policy Engine instead. Tools that are allowed to run without confirmation (comma-separated or multiple flags)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented allowed tools behavior."
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "when_not_to_use": [
+      "Do not add this deprecated option to new workflows; follow the replacement named in the official description when one is provided."
+    ]
+  },
+  {
+    "id": "gemini-cli.cli-flag.list-sessions",
+    "tool": "gemini-cli",
+    "name": "--list-sessions",
+    "display_name": "List sessions",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "List available sessions for the current project and exit",
+    "syntax": [
+      "gemini --list-sessions"
+    ],
+    "examples": [
+      {
+        "command": "gemini --list-sessions",
+        "explanation": "List available sessions for the current project and exit",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented list sessions behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.cli-flag.delete-session",
+    "tool": "gemini-cli",
+    "name": "--delete-session",
+    "display_name": "Delete session",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Delete a session by index number (use --list-sessions to see available sessions)",
+    "syntax": [
+      "gemini --delete-session"
+    ],
+    "examples": [
+      {
+        "command": "gemini --delete-session",
+        "explanation": "Delete a session by index number (use --list-sessions to see available sessions)",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented delete session behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.cli-flag.screen-reader",
+    "tool": "gemini-cli",
+    "name": "--screen-reader",
+    "display_name": "Screen reader",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "CLI configuration",
+    "description": "Enable screen reader mode for accessibility",
+    "syntax": [
+      "gemini --screen-reader"
+    ],
+    "examples": [
+      {
+        "command": "gemini --screen-reader",
+        "explanation": "Enable screen reader mode for accessibility",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use this option when the invocation needs the documented screen reader behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  }
+]

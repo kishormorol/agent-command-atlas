@@ -1,0 +1,3117 @@
+[
+  {
+    "id": "github-copilot.config-option.allowedurls",
+    "tool": "github-copilot",
+    "name": "allowedUrls",
+    "display_name": "allowedUrls",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "URLs or domains allowed without prompting. Supports exact URLs, domain patterns, and wildcard subdomains (for example, \"*.github.com\").",
+    "syntax": [
+      "allowedUrls: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented allowedUrls behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.askuser",
+    "tool": "github-copilot",
+    "name": "askUser",
+    "display_name": "askUser",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Allow the agent to ask clarifying questions. Set to false for fully autonomous operation. Can also be set with --no-ask-user.",
+    "syntax": [
+      "askUser: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented askUser behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.autoupdate",
+    "tool": "github-copilot",
+    "name": "autoUpdate",
+    "display_name": "autoUpdate",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Automatically download CLI updates and update first-party plugins at the start of each session.",
+    "syntax": [
+      "autoUpdate: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoUpdate behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.autoupdateschannel",
+    "tool": "github-copilot",
+    "name": "autoUpdatesChannel",
+    "display_name": "autoUpdatesChannel",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "\"stable\"",
+    "syntax": [
+      "autoUpdatesChannel: <\"stable\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented autoUpdatesChannel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.banner",
+    "tool": "github-copilot",
+    "name": "banner",
+    "display_name": "banner",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "\"never\"",
+    "syntax": [
+      "banner: <\"always\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented banner behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.bashenv",
+    "tool": "github-copilot",
+    "name": "bashEnv",
+    "display_name": "bashEnv",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Enable BASH_ENV support for bash shells. Can also be set with --bash-env or --no-bash-env.",
+    "syntax": [
+      "bashEnv: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented bashEnv behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.beep",
+    "tool": "github-copilot",
+    "name": "beep",
+    "display_name": "beep",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Play an audible beep when attention is required.",
+    "syntax": [
+      "beep: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented beep behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.beeponschedule",
+    "tool": "github-copilot",
+    "name": "beepOnSchedule",
+    "display_name": "beepOnSchedule",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Play an audible beep when a scheduled /every or /after run finishes.",
+    "syntax": [
+      "beepOnSchedule: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented beepOnSchedule behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.builtinagents-rubberduck",
+    "tool": "github-copilot",
+    "name": "builtInAgents.rubberDuck",
+    "display_name": "builtInAgents.rubberDuck",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Enable the rubber-duck subagent that provides adversarial feedback on agent plans.",
+    "syntax": [
+      "builtInAgents.rubberDuck: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented builtInAgents.rubberDuck behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.builtinagents-rubberduckautoinvoke",
+    "tool": "github-copilot",
+    "name": "builtInAgents.rubberDuckAutoInvoke",
+    "display_name": "builtInAgents.rubberDuckAutoInvoke",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Include proactive prompting for automatic rubber-duck invocation. Set to true to opt into additional rubber-duck nudges during agent turns.",
+    "syntax": [
+      "builtInAgents.rubberDuckAutoInvoke: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented builtInAgents.rubberDuckAutoInvoke behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.colormode",
+    "tool": "github-copilot",
+    "name": "colorMode",
+    "display_name": "colorMode",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "\"dim\" \\",
+    "syntax": [
+      "colorMode: <\"default\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented colorMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.commandhistorymaxsize",
+    "tool": "github-copilot",
+    "name": "commandHistoryMaxSize",
+    "display_name": "commandHistoryMaxSize",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Maximum number of recent commands retained for input history and reverse search. Must be an integer between 1 and 1000.",
+    "syntax": [
+      "commandHistoryMaxSize: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented commandHistoryMaxSize behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.compactpaste",
+    "tool": "github-copilot",
+    "name": "compactPaste",
+    "display_name": "compactPaste",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Collapse large pastes (more than 10 lines) into compact tokens.",
+    "syntax": [
+      "compactPaste: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented compactPaste behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.companyannouncements",
+    "tool": "github-copilot",
+    "name": "companyAnnouncements",
+    "display_name": "companyAnnouncements",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Messages shown randomly on startup.",
+    "syntax": [
+      "companyAnnouncements: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented companyAnnouncements behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.continueonautomode",
+    "tool": "github-copilot",
+    "name": "continueOnAutoMode",
+    "display_name": "continueOnAutoMode",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Automatically switch to auto mode when rate-limited. When true, eligible rate limit errors trigger an automatic switch to auto mode and retry. Does not apply to global rate limits or BYOK providers.",
+    "syntax": [
+      "continueOnAutoMode: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented continueOnAutoMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.copyonselect",
+    "tool": "github-copilot",
+    "name": "copyOnSelect",
+    "display_name": "copyOnSelect",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Automatically copy mouse-selected text to the system clipboard.",
+    "syntax": [
+      "copyOnSelect: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented copyOnSelect behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.customagents-defaultlocalonly",
+    "tool": "github-copilot",
+    "name": "customAgents.defaultLocalOnly",
+    "display_name": "customAgents.defaultLocalOnly",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Only use local custom agents (no remote organization or enterprise agents).",
+    "syntax": [
+      "customAgents.defaultLocalOnly: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented customAgents.defaultLocalOnly behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Only use local custom agents (no remote organization or enterprise agents)."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.deniedurls",
+    "tool": "github-copilot",
+    "name": "deniedUrls",
+    "display_name": "deniedUrls",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "URLs or domains blocked.",
+    "syntax": [
+      "deniedUrls: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented deniedUrls behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.disableallhooks",
+    "tool": "github-copilot",
+    "name": "disableAllHooks",
+    "display_name": "disableAllHooks",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Disable all hooks.",
+    "syntax": [
+      "disableAllHooks: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disableAllHooks behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.disabledmcpservers",
+    "tool": "github-copilot",
+    "name": "disabledMcpServers",
+    "display_name": "disabledMcpServers",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "MCP servers configured but not started.",
+    "syntax": [
+      "disabledMcpServers: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disabledMcpServers behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.disabledskills",
+    "tool": "github-copilot",
+    "name": "disabledSkills",
+    "display_name": "disabledSkills",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Skills discovered but not loaded.",
+    "syntax": [
+      "disabledSkills: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented disabledSkills behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.dynamicretrieval",
+    "tool": "github-copilot",
+    "name": "dynamicRetrieval",
+    "display_name": "dynamicRetrieval",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Per-category control of embeddings-based dynamic instruction retrieval. Set skills to false to disable retrieval for skills.",
+    "syntax": [
+      "dynamicRetrieval: <{ skills?: boolean }>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented dynamicRetrieval behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.effortlevel",
+    "tool": "github-copilot",
+    "name": "effortLevel",
+    "display_name": "effortLevel",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Pin the default reasoning effort.",
+    "syntax": [
+      "effortLevel: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented effortLevel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.enabledmcpservers",
+    "tool": "github-copilot",
+    "name": "enabledMcpServers",
+    "display_name": "enabledMcpServers",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "Configuration setting",
+    "description": "Enable built-in MCP servers that are disabled by default.",
+    "syntax": [
+      "enabledMcpServers: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented enabledMcpServers behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.enabledplugins",
+    "tool": "github-copilot",
+    "name": "enabledPlugins",
+    "display_name": "enabledPlugins",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Declarative plugin auto-install.",
+    "syntax": [
+      "enabledPlugins: <Record>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented enabledPlugins behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.experimental",
+    "tool": "github-copilot",
+    "name": "experimental",
+    "display_name": "experimental",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable experimental features. Can also be enabled with the --experimental command-line option or the /experimental slash command.",
+    "syntax": [
+      "experimental: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented experimental behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.extraknownmarketplaces",
+    "tool": "github-copilot",
+    "name": "extraKnownMarketplaces",
+    "display_name": "extraKnownMarketplaces",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Plugin marketplaces available in this repository. Each entry's source is required. An autoUpdate: true on an entry is accepted at the repository level but currently ignored—the auto-update opt-in is only honored when set in the user's own settings or in managed (MDM/server) settings.",
+    "syntax": [
+      "extraKnownMarketplaces: <Record>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented extraKnownMarketplaces behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.footer",
+    "tool": "github-copilot",
+    "name": "footer",
+    "display_name": "footer",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Controls which items appear in the status line. Sub-keys include showModelEffort, showDirectory, showBranch, showContextWindow, showQuota, showAgent, showAiUsed, showCodeChanges, showUsername, showSandbox, showYolo, and showCustom (all boolean). Managed by the /statusline slash command.",
+    "syntax": [
+      "footer: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented footer behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.hooks",
+    "tool": "github-copilot",
+    "name": "hooks",
+    "capabilities": ["hooks.configure"],
+    "display_name": "hooks",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Configuration setting",
+    "description": "Hook definitions scoped to this repository. See Using hooks with GitHub Copilot CLI.",
+    "syntax": [
+      "hooks: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented hooks behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.ide-autoconnect",
+    "tool": "github-copilot",
+    "name": "ide.autoConnect",
+    "display_name": "ide.autoConnect",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Automatically connect to an IDE workspace on startup. When false, you can still connect manually using the /ide command.",
+    "syntax": [
+      "ide.autoConnect: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented ide.autoConnect behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.ide-opendiffonedit",
+    "tool": "github-copilot",
+    "name": "ide.openDiffOnEdit",
+    "display_name": "ide.openDiffOnEdit",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Open file edit diffs in the connected IDE for approval. When false, file edit approvals are shown only in the terminal.",
+    "syntax": [
+      "ide.openDiffOnEdit: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented ide.openDiffOnEdit behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.includecoauthoredby",
+    "tool": "github-copilot",
+    "name": "includeCoAuthoredBy",
+    "display_name": "includeCoAuthoredBy",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Add a Co-authored-by trailer to commits.",
+    "syntax": [
+      "includeCoAuthoredBy: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented includeCoAuthoredBy behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.keepalive",
+    "tool": "github-copilot",
+    "name": "keepAlive",
+    "display_name": "keepAlive",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "\"busy\"",
+    "syntax": [
+      "keepAlive: <\"on\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented keepAlive behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.loglevel",
+    "tool": "github-copilot",
+    "name": "logLevel",
+    "display_name": "logLevel",
+    "type": "config-option",
+    "category": "diagnostics",
+    "role": "Configuration setting",
+    "description": "\"warning\" \\",
+    "syntax": [
+      "logLevel: <\"none\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented logLevel behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.mergestrategy",
+    "tool": "github-copilot",
+    "name": "mergeStrategy",
+    "display_name": "mergeStrategy",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Replaced—repository takes precedence",
+    "syntax": [
+      "mergeStrategy: <\"rebase\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mergeStrategy behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.mouse",
+    "tool": "github-copilot",
+    "name": "mouse",
+    "display_name": "mouse",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable mouse support. Can also be set with --mouse or --no-mouse.",
+    "syntax": [
+      "mouse: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented mouse behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.permissions-disablebypasspermissionsmode",
+    "tool": "github-copilot",
+    "name": "permissions.disableBypassPermissionsMode",
+    "display_name": "permissions.disableBypassPermissionsMode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Set to \"disable\" to suppress all allow-all flags (--allow-all-tools, --allow-all-paths, --allow-all-urls, --allow-all, --yolo) at startup so they cannot be used to grant elevated permissions. Set to \"allow-auto-only\" to keep blocking full allow-all while still permitting /allow-all auto (LLM-assisted auto-approval). See GitHub Copilot CLI command reference.",
+    "syntax": [
+      "permissions.disableBypassPermissionsMode: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented permissions.disableBypassPermissionsMode behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.pinnedprompts",
+    "tool": "github-copilot",
+    "name": "pinnedPrompts",
+    "display_name": "pinnedPrompts",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Pin the current section's user prompt just below the top bar while scrolling the timeline, so it stays clear which request the visible output belongs to. CLI UI only—has no effect on prompts sent to the model.",
+    "syntax": [
+      "pinnedPrompts: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented pinnedPrompts behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.powershellflags",
+    "tool": "github-copilot",
+    "name": "powershellFlags",
+    "display_name": "powershellFlags",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Flags passed to PowerShell on startup. On Windows, the CLI prefers PowerShell 7+ (pwsh) and falls back to Windows PowerShell (powershell.exe) when pwsh is unavailable. Windows only.",
+    "syntax": [
+      "powershellFlags: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented powershellFlags behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Flags passed to PowerShell on startup. On Windows, the CLI prefers PowerShell 7+ (pwsh) and falls back to Windows PowerShell (powershell.exe) when pwsh is unavailable. Windows only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.proxykerberosserviceprincipal",
+    "tool": "github-copilot",
+    "name": "proxyKerberosServicePrincipal",
+    "display_name": "proxyKerberosServicePrincipal",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Service principal name (SPN) for Kerberos/Negotiate proxy authentication, overriding the derived HTTP/.",
+    "syntax": [
+      "proxyKerberosServicePrincipal: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented proxyKerberosServicePrincipal behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.proxyurl",
+    "tool": "github-copilot",
+    "name": "proxyUrl",
+    "display_name": "proxyUrl",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Proxy URL for HTTP(S) requests (for example, http://proxy.corp.example:3128). Overridden by the HTTP_PROXY or HTTPS_PROXY environment variables (any casing).",
+    "syntax": [
+      "proxyUrl: <string>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented proxyUrl behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.remote",
+    "tool": "github-copilot",
+    "name": "remote",
+    "display_name": "remote",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "\"on\"",
+    "syntax": [
+      "remote: <\"on\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented remote behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.renderhexcolors",
+    "tool": "github-copilot",
+    "name": "renderHexColors",
+    "display_name": "renderHexColors",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "Show six-digit hex color codes written as inline code (for example, #FF0000 ) as color swatches.",
+    "syntax": [
+      "renderHexColors: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented renderHexColors behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.rendermarkdown",
+    "tool": "github-copilot",
+    "name": "renderMarkdown",
+    "display_name": "renderMarkdown",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Render Markdown in terminal output.",
+    "syntax": [
+      "renderMarkdown: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented renderMarkdown behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.remoteexport",
+    "tool": "github-copilot",
+    "name": "remoteExport",
+    "display_name": "remoteExport",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Export sessions remotely when session sync is available. Set to false to opt out of remote export by default. The remoteSessions setting when set to true, or the --remote flag, still enables export and steering regardless of this setting.",
+    "syntax": [
+      "remoteExport: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented remoteExport behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.respectgitignore",
+    "tool": "github-copilot",
+    "name": "respectGitignore",
+    "display_name": "respectGitignore",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "Exclude gitignored files from the @ file mention picker.",
+    "syntax": [
+      "respectGitignore: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented respectGitignore behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-allowbypass",
+    "tool": "github-copilot",
+    "name": "sandbox.allowBypass",
+    "display_name": "sandbox.allowBypass",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Allow sandboxed commands to request a bypass for specific operations (surfaces a permission prompt) so tools like grep and glob keep working when the sandbox would otherwise block them. Set to false to opt out.",
+    "syntax": [
+      "sandbox.allowBypass: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.allowBypass behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-auth-git",
+    "tool": "github-copilot",
+    "name": "sandbox.auth.git",
+    "display_name": "sandbox.auth.git",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Inject Git credentials into the sandbox so commands running inside it can authenticate with Git. Set to false to opt out. Renamed from sandbox.gitAuth; the old key has no migration and is ignored wherever it still appears.",
+    "syntax": [
+      "sandbox.auth.git: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.auth.git behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-auth-gh",
+    "tool": "github-copilot",
+    "name": "sandbox.auth.gh",
+    "display_name": "sandbox.auth.gh",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Inject GitHub CLI (gh) credentials into the sandbox so commands running inside it can authenticate with the GitHub CLI. Set to false to opt out. Renamed from sandbox.ghAuth; the old key has no migration and is ignored wherever it still appears.",
+    "syntax": [
+      "sandbox.auth.gh: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.auth.gh behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-userpolicy-network-allowlocalnetwork",
+    "tool": "github-copilot",
+    "name": "sandbox.userPolicy.network.allowLocalNetwork",
+    "display_name": "sandbox.userPolicy.network.allowLocalNetwork",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Allow sandboxed commands to reach local network addresses (for example, local dev servers). Set to false to opt out.",
+    "syntax": [
+      "sandbox.userPolicy.network.allowLocalNetwork: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.userPolicy.network.allowLocalNetwork behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-userpolicy-network-proxy",
+    "tool": "github-copilot",
+    "name": "sandbox.userPolicy.network.proxy",
+    "display_name": "sandbox.userPolicy.network.proxy",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Route sandboxed network traffic through an HTTP proxy. Fields: url (required), username (optional), password (optional). Configure it from the /sandbox dialog's Network tab, which masks the password field. The password itself is stored in the OS keychain rather than in settings.json, so it isn't editable via /settings. On Linux and macOS the proxy is cooperative (not strictly enforced); Windows enforces it.",
+    "syntax": [
+      "sandbox.userPolicy.network.proxy: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.userPolicy.network.proxy behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-userpolicy-deniedpaths",
+    "tool": "github-copilot",
+    "name": "sandbox.userPolicy.deniedPaths",
+    "display_name": "sandbox.userPolicy.deniedPaths",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Paths that sandboxed commands are denied access to. On Windows, the ProcessContainer sandbox backend cannot enforce per-path deny rules, so entries have no effect—therefore don't rely on deniedPaths to protect a sensitive directory on Windows.",
+    "syntax": [
+      "sandbox.userPolicy.deniedPaths: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.userPolicy.deniedPaths behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-userpolicy-seatbelt-keychainaccess",
+    "tool": "github-copilot",
+    "name": "sandbox.userPolicy.seatbelt.keychainAccess",
+    "display_name": "sandbox.userPolicy.seatbelt.keychainAccess",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "macOS only. Grant sandboxed commands access to the system keychain. Can also be toggled from the /sandbox dialog.",
+    "syntax": [
+      "sandbox.userPolicy.seatbelt.keychainAccess: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented sandbox.userPolicy.seatbelt.keychainAccess behavior."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "macOS only. Grant sandboxed commands access to the system keychain. Can also be toggled from the /sandbox dialog."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.screenreader",
+    "tool": "github-copilot",
+    "name": "screenReader",
+    "display_name": "screenReader",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable screen reader optimizations.",
+    "syntax": [
+      "screenReader: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented screenReader behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.scrollbar",
+    "tool": "github-copilot",
+    "name": "scrollbar",
+    "display_name": "scrollbar",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Show the scrollbar in scrollable views. Set to false to hide it and use the full terminal width.",
+    "syntax": [
+      "scrollbar: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented scrollbar behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.shellshortcut",
+    "tool": "github-copilot",
+    "name": "shellShortcut",
+    "display_name": "shellShortcut",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Configuration setting",
+    "description": "Let a lone $ at the prompt, followed by Enter, open an interactive shell rooted at the session's working directory (activates only for a local, trusted, idle session on a real TTY). User- or managed-scoped only—not repo-overridable.",
+    "syntax": [
+      "shellShortcut: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented shellShortcut behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.showtimestamps",
+    "tool": "github-copilot",
+    "name": "showTimestamps",
+    "display_name": "showTimestamps",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Show dim HH:mm timestamps next to user messages in the timeline.",
+    "syntax": [
+      "showTimestamps: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented showTimestamps behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.showtipsonstartup",
+    "tool": "github-copilot",
+    "name": "showTipsOnStartup",
+    "display_name": "showTipsOnStartup",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Show a random command tip when the CLI starts.",
+    "syntax": [
+      "showTipsOnStartup: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented showTipsOnStartup behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.skilldirectories",
+    "tool": "github-copilot",
+    "name": "skillDirectories",
+    "display_name": "skillDirectories",
+    "type": "config-option",
+    "category": "skills",
+    "role": "Configuration setting",
+    "description": "Additional directories to search for custom skill definitions (in addition to ~/.copilot/skills/).",
+    "syntax": [
+      "skillDirectories: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented skillDirectories behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.statusline",
+    "tool": "github-copilot",
+    "name": "statusLine",
+    "display_name": "statusLine",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Custom status line display. type: must be \"command\". command: path to an executable script that receives session JSON on stdin and prints status content to stdout. padding: optional number of left-padding spaces. refreshInterval: optional integer number of seconds (1–2147483) to re-run the command on a timer instead of only on events; omit it to refresh only when the session state changes. If the command fails to spawn, exits non-zero, or fails to receive the status JSON on stdin, the CLI logs a warning once per continuous failure episode and leaves the status line blank instead of failing silently. Run with --log-level all to see the underlying error detail.",
+    "syntax": [
+      "statusLine: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented statusLine behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.stayinautopilot",
+    "tool": "github-copilot",
+    "name": "stayInAutopilot",
+    "display_name": "stayInAutopilot",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "Remain in autopilot mode after each task completes. When enabled, the next prompt you enter after a task completes is also handled in autopilot mode. For more information, see Allowing GitHub Copilot CLI to work autonomously.",
+    "syntax": [
+      "stayInAutopilot: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented stayInAutopilot behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.storetokenplaintext",
+    "tool": "github-copilot",
+    "name": "storeTokenPlaintext",
+    "display_name": "storeTokenPlaintext",
+    "type": "config-option",
+    "category": "authentication",
+    "role": "Configuration setting",
+    "description": "Allow authentication tokens to be stored in plain text in config.json when no system keychain is available.",
+    "syntax": [
+      "storeTokenPlaintext: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented storeTokenPlaintext behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.stream",
+    "tool": "github-copilot",
+    "name": "stream",
+    "display_name": "stream",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Enable streaming responses.",
+    "syntax": [
+      "stream: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented stream behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.streamermode",
+    "tool": "github-copilot",
+    "name": "streamerMode",
+    "display_name": "streamerMode",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Hide preview model names, quota details, prompt timestamps, and the update-available notice. Useful when demonstrating Copilot CLI or screen sharing.",
+    "syntax": [
+      "streamerMode: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented streamerMode behavior."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.subagents-agents",
+    "tool": "github-copilot",
+    "name": "subagents.agents",
+    "display_name": "subagents.agents",
+    "type": "config-option",
+    "category": "models",
+    "role": "Configuration setting",
+    "description": "Per-agent model configuration, keyed by agent name. Each value is an object with optional model (string), effortLevel (string), and contextTier (\"default\", \"long_context\", or \"inherit\") fields. Set any field to \"inherit\" to use the parent session's value at dispatch time. Use the /subagents slash command to configure these settings interactively.",
+    "syntax": [
+      "subagents.agents: <object>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented subagents.agents behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.subagents-disabledsubagents",
+    "tool": "github-copilot",
+    "name": "subagents.disabledSubagents",
+    "display_name": "subagents.disabledSubagents",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Agent names to prevent from being dispatched. Only the rubber-duck agent cannot be disabled via this setting. All other built-in agents—including explore, task, code-review, general-purpose, research, and security-review—can be disabled.",
+    "syntax": [
+      "subagents.disabledSubagents: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented subagents.disabledSubagents behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.subagents-maxconcurrency",
+    "tool": "github-copilot",
+    "name": "subagents.maxConcurrency",
+    "display_name": "subagents.maxConcurrency",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Maximum concurrent subagents for this session. Only honored for usage-based billing users; ignored for all other plans. Capped at 32. See GitHub Copilot CLI command reference.",
+    "syntax": [
+      "subagents.maxConcurrency: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented subagents.maxConcurrency behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.subagents-maxdepth",
+    "tool": "github-copilot",
+    "name": "subagents.maxDepth",
+    "display_name": "subagents.maxDepth",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Maximum subagent nesting depth. Only honored for usage-based billing users; ignored for all other plans. Capped at 256. See GitHub Copilot CLI command reference.",
+    "syntax": [
+      "subagents.maxDepth: <number>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented subagents.maxDepth behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.tabs-enabled",
+    "tool": "github-copilot",
+    "name": "tabs.enabled",
+    "display_name": "tabs.enabled",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Show the home tab bar. Set to false to hide it entirely.",
+    "syntax": [
+      "tabs.enabled: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tabs.enabled behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.tabs-hide",
+    "tool": "github-copilot",
+    "name": "tabs.hide",
+    "display_name": "tabs.hide",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Tab identifiers to hide. Accepted values: \"copilot\", \"agents\", \"issues\", \"pull-requests\", \"gists\" (matched case-insensitively).",
+    "syntax": [
+      "tabs.hide: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tabs.hide behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.tabs-sort",
+    "tool": "github-copilot",
+    "name": "tabs.sort",
+    "display_name": "tabs.sort",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Order in which tabs are displayed. Tabs not listed keep their default relative order after the listed ones. Unknown identifiers are ignored.",
+    "syntax": [
+      "tabs.sort: <string[]>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented tabs.sort behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.terminalprogress",
+    "tool": "github-copilot",
+    "name": "terminalProgress",
+    "display_name": "terminalProgress",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Configuration setting",
+    "description": "Emit OSC 9;4 terminal progress indicators while the agent is working. Supported terminals include Windows Terminal, iTerm2, Ghostty, and ConEmu.",
+    "syntax": [
+      "terminalProgress: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented terminalProgress behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.theme",
+    "tool": "github-copilot",
+    "name": "theme",
+    "display_name": "theme",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "\"dim\" \\",
+    "syntax": [
+      "theme: <\"default\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented theme behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.toolsearch",
+    "tool": "github-copilot",
+    "name": "toolSearch",
+    "display_name": "toolSearch",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Controls tool search (deferred tool loading). Set toolSearch: false to opt out of tool search.",
+    "syntax": [
+      "toolSearch: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented toolSearch behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.updateterminaltitle",
+    "tool": "github-copilot",
+    "name": "updateTerminalTitle",
+    "display_name": "updateTerminalTitle",
+    "type": "config-option",
+    "category": "terminal",
+    "role": "Configuration setting",
+    "description": "Show the current intent in the terminal tab or window title.",
+    "syntax": [
+      "updateTerminalTitle: <boolean>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented updateTerminalTitle behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.contexttier",
+    "tool": "github-copilot",
+    "name": "contextTier",
+    "display_name": "contextTier",
+    "type": "config-option",
+    "category": "context",
+    "role": "Configuration setting",
+    "description": "Replaced—repository takes precedence",
+    "syntax": [
+      "contextTier: <\"default\" \\>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented contextTier behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.platform",
+    "tool": "github-copilot",
+    "name": "Platform",
+    "display_name": "Platform",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Location",
+    "syntax": [
+      "Platform: <Source type>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented Platform behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.macos",
+    "tool": "github-copilot",
+    "name": "macOS",
+    "display_name": "macOS",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "/Library/Application Support/GitHubCopilot/managed-settings.json",
+    "syntax": [
+      "macOS: <File>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented macOS behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.windows",
+    "tool": "github-copilot",
+    "name": "Windows",
+    "display_name": "Windows",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "%ProgramFiles%\\GitHubCopilot\\managed-settings.json",
+    "syntax": [
+      "Windows: <File>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented Windows behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.linux",
+    "tool": "github-copilot",
+    "name": "Linux",
+    "display_name": "Linux",
+    "type": "config-option",
+    "category": "git",
+    "role": "Configuration setting",
+    "description": "/etc/github-copilot/managed-settings.json",
+    "syntax": [
+      "Linux: <File>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented Linux behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.matcher",
+    "tool": "github-copilot",
+    "name": "Matcher",
+    "display_name": "Matcher",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Notes",
+    "syntax": [
+      "Matcher: <Matches>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented Matcher behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.serverurl",
+    "tool": "github-copilot",
+    "name": "serverUrl",
+    "display_name": "serverUrl",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Supports * wildcards; scheme and host match case-insensitively, path case-sensitively. ${VAR} references expand before matching.",
+    "syntax": [
+      "serverUrl: <A remote (HTTP/SSE) server by URL>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented serverUrl behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.servercommand",
+    "tool": "github-copilot",
+    "name": "serverCommand",
+    "display_name": "serverCommand",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "${VAR} references expand before matching.",
+    "syntax": [
+      "serverCommand: <A stdio server by its exact command and arguments, in order>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented serverCommand behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.config-option.servername",
+    "tool": "github-copilot",
+    "name": "serverName",
+    "display_name": "serverName",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Configuration setting",
+    "description": "Allowlist entries are restricted to [A-Za-z0-9_-]+ (no wildcards); denylist entries accept any non-empty string.",
+    "syntax": [
+      "serverName: <A server by its assigned label>"
+    ],
+    "when_to_use": [
+      "Set this option when you need the documented serverName behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

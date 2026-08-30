@@ -1,0 +1,374 @@
+[
+  {
+    "id": "gemini-cli.skill.gemini-skills-name-skill-md",
+    "tool": "gemini-cli",
+    "name": ".gemini/skills/<name>/SKILL.md",
+    "capabilities": ["skills.define"],
+    "display_name": "Gemini Agent Skill",
+    "type": "skill",
+    "category": "skills",
+    "role": "Gemini Agent Skill",
+    "description": "Define an Agent Skill that Gemini CLI can discover and invoke.",
+    "syntax": [
+      ".gemini/skills/<name>/SKILL.md"
+    ],
+    "examples": [
+      {
+        "command": ".gemini/skills/<name>/SKILL.md",
+        "explanation": "Package a repeatable workflow, scripts, or domain reference.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Package a repeatable workflow, scripts, or domain reference."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.extension.gemini-extension-json",
+    "tool": "gemini-cli",
+    "name": "gemini-extension.json",
+    "display_name": "Gemini CLI extension",
+    "type": "extension",
+    "category": "plugins",
+    "role": "Gemini CLI extension",
+    "description": "Package prompts, MCP servers, commands, hooks, and configuration as an extension.",
+    "syntax": [
+      "gemini-extension.json"
+    ],
+    "examples": [
+      {
+        "command": "gemini-extension.json",
+        "explanation": "Install or distribute a cohesive Gemini CLI customization.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Install or distribute a cohesive Gemini CLI customization."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.mcp.mcpservers-name",
+    "tool": "gemini-cli",
+    "name": "mcpServers.<name>",
+    "display_name": "MCP server configuration",
+    "type": "mcp",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Declare a named MCP server in Gemini CLI settings.",
+    "syntax": [
+      "mcpServers.<name>"
+    ],
+    "examples": [
+      {
+        "command": "mcpServers.<name>",
+        "explanation": "Connect Gemini CLI to a reviewed local or remote MCP server.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Connect Gemini CLI to a reviewed local or remote MCP server."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.agent.agents-overrides",
+    "tool": "gemini-cli",
+    "name": "agents.overrides",
+    "capabilities": ["agents.define"],
+    "display_name": "Agent override configuration",
+    "type": "agent",
+    "category": "agents",
+    "role": "Agent override configuration",
+    "description": "Override documented settings for a named Gemini CLI agent.",
+    "syntax": [
+      "agents.overrides"
+    ],
+    "examples": [
+      {
+        "command": "agents.overrides",
+        "explanation": "Tune or disable a specific built-in or extension-provided agent.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Tune or disable a specific built-in or extension-provided agent."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.permission.default",
+    "tool": "gemini-cli",
+    "name": "default",
+    "display_name": "Default approval mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Default approval mode",
+    "description": "Prompt before tool actions that require approval.",
+    "syntax": [
+      "default"
+    ],
+    "examples": [
+      {
+        "command": "default",
+        "explanation": "Use normal interactive safeguards.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use normal interactive safeguards."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.permission.auto-edit",
+    "tool": "gemini-cli",
+    "name": "auto_edit",
+    "display_name": "Auto-edit approval mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Auto-edit approval mode",
+    "description": "Automatically approve edit operations while retaining other approval prompts.",
+    "syntax": [
+      "auto_edit"
+    ],
+    "examples": [
+      {
+        "command": "auto_edit",
+        "explanation": "Iterate quickly on local file changes without enabling full YOLO mode.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Iterate quickly on local file changes without enabling full YOLO mode."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.permission.plan",
+    "tool": "gemini-cli",
+    "name": "plan",
+    "display_name": "Plan approval mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Plan approval mode",
+    "description": "Use a read-only planning mode and skip it while the agent is busy.",
+    "syntax": [
+      "plan"
+    ],
+    "examples": [
+      {
+        "command": "plan",
+        "explanation": "Analyze work before granting editing authority.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Analyze work before granting editing authority."
+    ],
+    "when_not_to_use": [],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.permission.yolo",
+    "tool": "gemini-cli",
+    "name": "yolo",
+    "display_name": "YOLO approval mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "YOLO approval mode",
+    "description": "Automatically approve tool calls.",
+    "syntax": [
+      "yolo"
+    ],
+    "examples": [
+      {
+        "command": "yolo",
+        "explanation": "Use only in an isolated, trusted environment where automatic execution is acceptable.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use only in an isolated, trusted environment where automatic execution is acceptable."
+    ],
+    "when_not_to_use": [
+      "Do not use this control on untrusted code or outside a separately isolated environment."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/keyboard-shortcuts.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  }
+]

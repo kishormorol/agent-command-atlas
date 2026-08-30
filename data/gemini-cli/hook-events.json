@@ -1,0 +1,530 @@
+[
+  {
+    "id": "gemini-cli.hook.before-tool",
+    "tool": "gemini-cli",
+    "name": "BeforeTool",
+    "display_name": "Before Tool",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool is about to run; the hook can validate, block, or rewrite arguments.",
+    "syntax": [
+      "hooks.BeforeTool"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"BeforeTool\": [/* handler */] } }",
+        "explanation": "Register a handler for BeforeTool.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool is about to run; the hook can validate, block, or rewrite arguments."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.after-tool",
+    "tool": "gemini-cli",
+    "name": "AfterTool",
+    "display_name": "After Tool",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool finishes; the hook can audit or alter what the agent sees.",
+    "syntax": [
+      "hooks.AfterTool"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"AfterTool\": [/* handler */] } }",
+        "explanation": "Register a handler for AfterTool.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a tool finishes; the hook can audit or alter what the agent sees."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.before-agent",
+    "tool": "gemini-cli",
+    "name": "BeforeAgent",
+    "display_name": "Before Agent",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A prompt is submitted before agent planning.",
+    "syntax": [
+      "hooks.BeforeAgent"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"BeforeAgent\": [/* handler */] } }",
+        "explanation": "Register a handler for BeforeAgent.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a prompt is submitted before agent planning."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.after-agent",
+    "tool": "gemini-cli",
+    "name": "AfterAgent",
+    "display_name": "After Agent",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A turn finishes with a final response.",
+    "syntax": [
+      "hooks.AfterAgent"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"AfterAgent\": [/* handler */] } }",
+        "explanation": "Register a handler for AfterAgent.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a turn finishes with a final response."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.before-model",
+    "tool": "gemini-cli",
+    "name": "BeforeModel",
+    "display_name": "Before Model",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A request is about to be sent to the model.",
+    "syntax": [
+      "hooks.BeforeModel"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"BeforeModel\": [/* handler */] } }",
+        "explanation": "Register a handler for BeforeModel.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a request is about to be sent to the model."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.before-tool-selection",
+    "tool": "gemini-cli",
+    "name": "BeforeToolSelection",
+    "display_name": "Before Tool Selection",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The model is about to select tools.",
+    "syntax": [
+      "hooks.BeforeToolSelection"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"BeforeToolSelection\": [/* handler */] } }",
+        "explanation": "Register a handler for BeforeToolSelection.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the model is about to select tools."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.after-model",
+    "tool": "gemini-cli",
+    "name": "AfterModel",
+    "display_name": "After Model",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A model response chunk arrives.",
+    "syntax": [
+      "hooks.AfterModel"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"AfterModel\": [/* handler */] } }",
+        "explanation": "Register a handler for AfterModel.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when a model response chunk arrives."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.session-start",
+    "tool": "gemini-cli",
+    "name": "SessionStart",
+    "display_name": "Session Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The application starts, resumes, or clears a session.",
+    "syntax": [
+      "hooks.SessionStart"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SessionStart\": [/* handler */] } }",
+        "explanation": "Register a handler for SessionStart.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the application starts, resumes, or clears a session."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.session-end",
+    "tool": "gemini-cli",
+    "name": "SessionEnd",
+    "display_name": "Session End",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The CLI exits or clears a session.",
+    "syntax": [
+      "hooks.SessionEnd"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"SessionEnd\": [/* handler */] } }",
+        "explanation": "Register a handler for SessionEnd.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the CLI exits or clears a session."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.notification",
+    "tool": "gemini-cli",
+    "name": "Notification",
+    "display_name": "Notification",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The CLI emits a system notification.",
+    "syntax": [
+      "hooks.Notification"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"Notification\": [/* handler */] } }",
+        "explanation": "Register a handler for Notification.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when the CLI emits a system notification."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.hook.pre-compress",
+    "tool": "gemini-cli",
+    "name": "PreCompress",
+    "display_name": "Pre Compress",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "History is about to be compressed.",
+    "syntax": [
+      "hooks.PreCompress"
+    ],
+    "examples": [
+      {
+        "command": "{ \"hooks\": { \"PreCompress\": [/* handler */] } }",
+        "explanation": "Register a handler for PreCompress.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run documented automation when history is about to be compressed."
+    ],
+    "when_not_to_use": [
+      "Do not install repository hooks you have not reviewed; hook handlers can execute with local or managed permissions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    }
+  }
+]

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../">
+    <meta name="description" content="ENABLE_TOOL_SEARCH for Claude Code: Controls MCP tool search. Unset, Claude Code defers all MCP tools by default. It still loads them upfront on Google Cloud&#x27;s Agent Platform models earlier than the Claude 4.5 generation, on a Microsoft Foundry deployment hosted on Azure, and when ANTHROPIC_BASE_URL points to a non-first-party host. true always defers and sends the beta header, except on those same Agent Platform models and Microsoft Foundry deployments; requests fail on proxies that don&#x27;t support tool_reference. auto loads upfront when tool definitions fit within 10% of context. auto:N sets a custom threshold, such as auto:5 for 5%. false loads all tools upfront. A value you set yourself is ignored when CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS is set. Before v2.1.221, Claude Code disabled tool search for all models on Google Cloud&#x27;s Agent Platform unless you set this variable to true">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ENABLE_TOOL_SEARCH — Enable Tool Search | Agent Command Atlas">
+    <meta property="og:description" content="ENABLE_TOOL_SEARCH for Claude Code: Controls MCP tool search. Unset, Claude Code defers all MCP tools by default. It still loads them upfront on Google Cloud&#x27;s Agent Platform models earlier than the Claude 4.5 generation, on a Microsoft Foundry deployment hosted on Azure, and when ANTHROPIC_BASE_URL points to a non-first-party host. true always defers and sends the beta header, except on those same Agent Platform models and Microsoft Foundry deployments; requests fail on proxies that don&#x27;t support tool_reference. auto loads upfront when tool definitions fit within 10% of context. auto:N sets a custom threshold, such as auto:5 for 5%. false loads all tools upfront. A value you set yourself is ignored when CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS is set. Before v2.1.221, Claude Code disabled tool search for all models on Google Cloud&#x27;s Agent Platform unless you set this variable to true">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ENABLE_TOOL_SEARCH — Enable Tool Search | Agent Command Atlas">
+    <meta name="twitter:description" content="ENABLE_TOOL_SEARCH for Claude Code: Controls MCP tool search. Unset, Claude Code defers all MCP tools by default. It still loads them upfront on Google Cloud&#x27;s Agent Platform models earlier than the Claude 4.5 generation, on a Microsoft Foundry deployment hosted on Azure, and when ANTHROPIC_BASE_URL points to a non-first-party host. true always defers and sends the beta header, except on those same Agent Platform models and Microsoft Foundry deployments; requests fail on proxies that don&#x27;t support tool_reference. auto loads upfront when tool definitions fit within 10% of context. auto:N sets a custom threshold, such as auto:5 for 5%. false loads all tools upfront. A value you set yourself is ignored when CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS is set. Before v2.1.221, Claude Code disabled tool search for all models on Google Cloud&#x27;s Agent Platform unless you set this variable to true">
+    <title>ENABLE_TOOL_SEARCH — Enable Tool Search | Agent Command Atlas</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-route="entry:claude-code.environment-variable.enable-tool-search">
+    <a class="skip-link" href="#main-content">Skip to reference</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="" aria-label="Agent Command Atlas home">
+          <span class="brand__mark" aria-hidden="true">A/</span>
+          <span class="brand__name"><strong>Agent Command</strong><em>Atlas</em></span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="">Reference</a>
+          <a href="compare/">Compare</a>
+          <a href="coverage/">Coverage</a>
+          <a class="site-nav__github" href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <div class="loading" role="status">
+        <p class="eyebrow">Verified command reference</p>
+        <h1>Agent Command Atlas</h1>
+        <p>Loading the reference…</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong>Agent Command Atlas</strong> · Built from canonical structured data and official sources.</p>
+      <a href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

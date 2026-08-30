@@ -1,0 +1,2022 @@
+[
+  {
+    "id": "github-copilot.environment-variable.copilot-allow-all",
+    "tool": "github-copilot",
+    "name": "COPILOT_ALLOW_ALL",
+    "display_name": "Copilot Allow All",
+    "type": "environment-variable",
+    "category": "permissions",
+    "role": "Copilot Allow All configuration",
+    "description": "Set to true to allow all permissions automatically (equivalent to --allow-all).",
+    "syntax": [
+      "COPILOT_ALLOW_ALL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-auto-update",
+    "tool": "github-copilot",
+    "name": "COPILOT_AUTO_UPDATE",
+    "display_name": "Copilot Auto Update",
+    "type": "environment-variable",
+    "category": "plugins",
+    "role": "Copilot Auto Update configuration",
+    "description": "Set to false to disable automatic updates of the CLI and first-party plugins.",
+    "syntax": [
+      "COPILOT_AUTO_UPDATE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-cache-home",
+    "tool": "github-copilot",
+    "name": "COPILOT_CACHE_HOME",
+    "display_name": "Copilot Cache Home",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Cache Home configuration",
+    "description": "Override the cache directory (used for marketplace caches, auto-update packages, and other ephemeral data). See GitHub Copilot CLI configuration directory for platform defaults.",
+    "syntax": [
+      "COPILOT_CACHE_HOME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-custom-instructions-dirs",
+    "tool": "github-copilot",
+    "name": "COPILOT_CUSTOM_INSTRUCTIONS_DIRS",
+    "display_name": "Copilot Custom Instructions Dirs",
+    "type": "environment-variable",
+    "category": "context",
+    "role": "Copilot Custom Instructions Dirs configuration",
+    "description": "Additional directories via environment variable.",
+    "syntax": [
+      "COPILOT_CUSTOM_INSTRUCTIONS_DIRS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-editor",
+    "tool": "github-copilot",
+    "name": "COPILOT_EDITOR",
+    "display_name": "Copilot Editor",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Copilot Editor configuration",
+    "description": "Editor command for interactive editing (checked after $VISUAL and $EDITOR). Defaults to vi if none are set.",
+    "syntax": [
+      "COPILOT_EDITOR=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "if none are set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-enable-http2",
+    "tool": "github-copilot",
+    "name": "COPILOT_ENABLE_HTTP2",
+    "display_name": "Copilot Enable Http2",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Enable Http2 configuration",
+    "description": "Set to 1 or true to opt into HTTP/2 transport. HTTP/1.1 is the default.",
+    "syntax": [
+      "COPILOT_ENABLE_HTTP2=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-gh-host",
+    "tool": "github-copilot",
+    "name": "COPILOT_GH_HOST",
+    "display_name": "Copilot Gh Host",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Copilot Gh Host configuration",
+    "description": "GitHub hostname for Copilot CLI only, overriding GH_HOST. Use when GH_HOST targets GitHub Enterprise Server but Copilot needs to authenticate against GitHub.com or a GitHub Enterprise Cloud hostname.",
+    "syntax": [
+      "COPILOT_GH_HOST=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when GH_HOST targets GitHub Enterprise Server but Copilot needs to authenticate against GitHub."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-github-token",
+    "tool": "github-copilot",
+    "name": "COPILOT_GITHUB_TOKEN",
+    "display_name": "Copilot Github Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Copilot Github Token configuration",
+    "description": "Authentication token. Takes precedence over GH_TOKEN and GITHUB_TOKEN.",
+    "syntax": [
+      "COPILOT_GITHUB_TOKEN=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-large-output-threshold-bytes",
+    "tool": "github-copilot",
+    "name": "COPILOT_LARGE_OUTPUT_THRESHOLD_BYTES",
+    "display_name": "Copilot Large Output Threshold Bytes",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Copilot Large Output Threshold Bytes configuration",
+    "description": "Maximum UTF-8 byte size for tool output returned directly to the model. Default: 20480 (20 KiB). See Managing context in GitHub Copilot CLI.",
+    "syntax": [
+      "COPILOT_LARGE_OUTPUT_THRESHOLD_BYTES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-mcp-tool-cache",
+    "tool": "github-copilot",
+    "name": "COPILOT_MCP_TOOL_CACHE",
+    "display_name": "Copilot Mcp Tool Cache",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Copilot Mcp Tool Cache configuration",
+    "description": "Set to false to disable loading and persisting local MCP server tool snapshots for the entire process. See Tool snapshot caching.",
+    "syntax": [
+      "COPILOT_MCP_TOOL_CACHE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-model",
+    "tool": "github-copilot",
+    "name": "COPILOT_MODEL",
+    "display_name": "Copilot Model",
+    "type": "environment-variable",
+    "category": "models",
+    "role": "Copilot Model configuration",
+    "description": "Set the AI model.",
+    "syntax": [
+      "COPILOT_MODEL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-plan-then-autopilot",
+    "tool": "github-copilot",
+    "name": "COPILOT_PLAN_THEN_AUTOPILOT",
+    "display_name": "Copilot Plan Then Autopilot",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Plan Then Autopilot configuration",
+    "description": "Set to 1, true, yes, or on to request plan-then-autopilot (equivalent to --plan --mode autopilot) for harnesses that can only inject environment variables. Ignored, with a warning, when an explicit --mode, --autopilot, or --plan option is passed. See Plan-then-autopilot.",
+    "syntax": [
+      "COPILOT_PLAN_THEN_AUTOPILOT=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when an explicit --mode, --autopilot, or --plan option is passed."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-prompt-frame",
+    "tool": "github-copilot",
+    "name": "COPILOT_PROMPT_FRAME",
+    "display_name": "Copilot Prompt Frame",
+    "type": "environment-variable",
+    "category": "session",
+    "role": "Copilot Prompt Frame configuration",
+    "description": "Set to 1 to enable the decorative UI frame around the input prompt, or 0 to disable it. Overrides the PROMPT_FRAME experimental feature flag for the current session.",
+    "syntax": [
+      "COPILOT_PROMPT_FRAME=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the documented provider, platform, version, or execution mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-skills-dirs",
+    "tool": "github-copilot",
+    "name": "COPILOT_SKILLS_DIRS",
+    "display_name": "Copilot Skills Dirs",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Skills Dirs configuration",
+    "description": "Custom",
+    "syntax": [
+      "COPILOT_SKILLS_DIRS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.plugins-dashboard",
+    "tool": "github-copilot",
+    "name": "PLUGINS_DASHBOARD",
+    "display_name": "Plugins Dashboard",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Plugins Dashboard configuration",
+    "description": "Set to false to disable the plugins dashboard opened by bare /plugin, /mcp, and /skills, and to disable the non-interactive copilot plugin/copilot plugins commands.",
+    "syntax": [
+      "PLUGINS_DASHBOARD=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-strip-reasoning-on-resume",
+    "tool": "github-copilot",
+    "name": "COPILOT_STRIP_REASONING_ON_RESUME",
+    "display_name": "Copilot Strip Reasoning On Resume",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Copilot Strip Reasoning On Resume configuration",
+    "description": "Set to 0 or false to keep BYOK reasoning tokens across a session resume instead of stripping them. Defaults to stripping them.",
+    "syntax": [
+      "COPILOT_STRIP_REASONING_ON_RESUME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-subagent-max-concurrent",
+    "tool": "github-copilot",
+    "name": "COPILOT_SUBAGENT_MAX_CONCURRENT",
+    "display_name": "Copilot Subagent Max Concurrent",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Copilot Subagent Max Concurrent configuration",
+    "description": "Maximum concurrent subagents per session (default: 32, range: 1–256).",
+    "syntax": [
+      "COPILOT_SUBAGENT_MAX_CONCURRENT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-subagent-max-depth",
+    "tool": "github-copilot",
+    "name": "COPILOT_SUBAGENT_MAX_DEPTH",
+    "display_name": "Copilot Subagent Max Depth",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Copilot Subagent Max Depth configuration",
+    "description": "Maximum subagent nesting depth (default: 4, range: 1–128).",
+    "syntax": [
+      "COPILOT_SUBAGENT_MAX_DEPTH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-task-wait-timeout-seconds",
+    "tool": "github-copilot",
+    "name": "COPILOT_TASK_WAIT_TIMEOUT_SECONDS",
+    "display_name": "Copilot Task Wait Timeout Seconds",
+    "type": "environment-variable",
+    "category": "agents",
+    "role": "Copilot Task Wait Timeout Seconds configuration",
+    "description": "Maximum seconds -p (and -p --autopilot) waits for pending background agents or shell commands to finish before exiting (default: 600; 0 exits immediately without waiting).",
+    "syntax": [
+      "COPILOT_TASK_WAIT_TIMEOUT_SECONDS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.gh-host",
+    "tool": "github-copilot",
+    "name": "GH_HOST",
+    "display_name": "Gh Host",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Gh Host configuration",
+    "description": "GitHub hostname for both GitHub CLI and Copilot CLI (default: github.com). Set to your GitHub Enterprise Cloud with data residency hostname. Override with COPILOT_GH_HOST for Copilot CLI only.",
+    "syntax": [
+      "GH_HOST=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.gh-token",
+    "tool": "github-copilot",
+    "name": "GH_TOKEN",
+    "display_name": "Gh Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Gh Token configuration",
+    "description": "Authentication token. Takes precedence over GITHUB_TOKEN.",
+    "syntax": [
+      "GH_TOKEN=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.github-copilot-prompt-mode-extensions",
+    "tool": "github-copilot",
+    "name": "GITHUB_COPILOT_PROMPT_MODE_EXTENSIONS",
+    "display_name": "Github Copilot Prompt Mode Extensions",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Github Copilot Prompt Mode Extensions configuration",
+    "description": "Set to true to load project extensions and allow extension management tools in prompt mode (-p). Disabled by default to prevent running repository-controlled extension code without interactive trust.",
+    "syntax": [
+      "GITHUB_COPILOT_PROMPT_MODE_EXTENSIONS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.github-copilot-prompt-mode-repo-hooks",
+    "tool": "github-copilot",
+    "name": "GITHUB_COPILOT_PROMPT_MODE_REPO_HOOKS",
+    "display_name": "Github Copilot Prompt Mode Repo Hooks",
+    "type": "environment-variable",
+    "category": "permissions",
+    "role": "Github Copilot Prompt Mode Repo Hooks configuration",
+    "description": "Set to true to load repository hooks in prompt mode (-p). Repository hooks also load automatically when the folder is already trusted or COPILOT_ALLOW_ALL is set.",
+    "syntax": [
+      "GITHUB_COPILOT_PROMPT_MODE_REPO_HOOKS=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "when the folder is already trusted or COPILOT_ALLOW_ALL is set."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.github-copilot-prompt-mode-workspace-mcp",
+    "tool": "github-copilot",
+    "name": "GITHUB_COPILOT_PROMPT_MODE_WORKSPACE_MCP",
+    "display_name": "Github Copilot Prompt Mode Workspace Mcp",
+    "type": "environment-variable",
+    "category": "mcp",
+    "role": "Github Copilot Prompt Mode Workspace Mcp configuration",
+    "description": "Set to true to load workspace MCP sources in prompt mode (-p). Disabled by default to prevent starting repository-controlled MCP servers without interactive trust.",
+    "syntax": [
+      "GITHUB_COPILOT_PROMPT_MODE_WORKSPACE_MCP=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.github-token",
+    "tool": "github-copilot",
+    "name": "GITHUB_TOKEN",
+    "display_name": "Github Token",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Github Token configuration",
+    "description": "Authentication token.",
+    "syntax": [
+      "GITHUB_TOKEN=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.plain-diff",
+    "tool": "github-copilot",
+    "name": "PLAIN_DIFF",
+    "display_name": "Plain Diff",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Plain Diff configuration",
+    "description": "Set to true to disable rich diff rendering.",
+    "syntax": [
+      "PLAIN_DIFF=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.use-builtin-ripgrep",
+    "tool": "github-copilot",
+    "name": "USE_BUILTIN_RIPGREP",
+    "display_name": "Use Builtin Ripgrep",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Use Builtin Ripgrep configuration",
+    "description": "Set to false to use the system ripgrep instead of the bundled version.",
+    "syntax": [
+      "USE_BUILTIN_RIPGREP=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.use-tgrep",
+    "tool": "github-copilot",
+    "name": "USE_TGREP",
+    "display_name": "Use Tgrep",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Use Tgrep configuration",
+    "description": "Set to true to always use tgrep, a trigram-indexed search engine, regardless of repository size, or false to always use ripgrep. When unset, Copilot CLI automatically switches from ripgrep to tgrep once a repository exceeds a platform-specific file-count threshold.",
+    "syntax": [
+      "USE_TGREP=<value>"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "When unset, Copilot CLI automatically switches from ripgrep to tgrep once a repository exceeds a platform-specific file-count threshold."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.pythonpath",
+    "tool": "github-copilot",
+    "name": "PYTHONPATH",
+    "display_name": "Pythonpath",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Pythonpath configuration",
+    "description": "Python",
+    "syntax": [
+      "PYTHONPATH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.pythonhome",
+    "tool": "github-copilot",
+    "name": "PYTHONHOME",
+    "display_name": "Pythonhome",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Pythonhome configuration",
+    "description": "Python",
+    "syntax": [
+      "PYTHONHOME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.virtual-env",
+    "tool": "github-copilot",
+    "name": "VIRTUAL_ENV",
+    "display_name": "Virtual Env",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Virtual Env configuration",
+    "description": "Python (venv)",
+    "syntax": [
+      "VIRTUAL_ENV=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.pyenv-root",
+    "tool": "github-copilot",
+    "name": "PYENV_ROOT",
+    "display_name": "Pyenv Root",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Pyenv Root configuration",
+    "description": "Python (pyenv)",
+    "syntax": [
+      "PYENV_ROOT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.conda-prefix",
+    "tool": "github-copilot",
+    "name": "CONDA_PREFIX",
+    "display_name": "Conda Prefix",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Conda Prefix configuration",
+    "description": "Conda",
+    "syntax": [
+      "CONDA_PREFIX=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.gopath",
+    "tool": "github-copilot",
+    "name": "GOPATH",
+    "display_name": "Gopath",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Gopath configuration",
+    "description": "Go",
+    "syntax": [
+      "GOPATH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.goroot",
+    "tool": "github-copilot",
+    "name": "GOROOT",
+    "display_name": "Goroot",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Goroot configuration",
+    "description": "Go",
+    "syntax": [
+      "GOROOT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.cargo-home",
+    "tool": "github-copilot",
+    "name": "CARGO_HOME",
+    "display_name": "Cargo Home",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Cargo Home configuration",
+    "description": "Rust (Cargo)",
+    "syntax": [
+      "CARGO_HOME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.rustup-home",
+    "tool": "github-copilot",
+    "name": "RUSTUP_HOME",
+    "display_name": "Rustup Home",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Rustup Home configuration",
+    "description": "Rust (rustup)",
+    "syntax": [
+      "RUSTUP_HOME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.java-home",
+    "tool": "github-copilot",
+    "name": "JAVA_HOME",
+    "display_name": "Java Home",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Java Home configuration",
+    "description": "Java",
+    "syntax": [
+      "JAVA_HOME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.node-path",
+    "tool": "github-copilot",
+    "name": "NODE_PATH",
+    "display_name": "Node Path",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Node Path configuration",
+    "description": "Node.js",
+    "syntax": [
+      "NODE_PATH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.nvm-home",
+    "tool": "github-copilot",
+    "name": "NVM_HOME",
+    "display_name": "Nvm Home",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Nvm Home configuration",
+    "description": "Node.js (nvm)",
+    "syntax": [
+      "NVM_HOME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.nvm-symlink",
+    "tool": "github-copilot",
+    "name": "NVM_SYMLINK",
+    "display_name": "Nvm Symlink",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Nvm Symlink configuration",
+    "description": "Node.js (nvm)",
+    "syntax": [
+      "NVM_SYMLINK=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.dotnet-root",
+    "tool": "github-copilot",
+    "name": "DOTNET_ROOT",
+    "display_name": "Dotnet Root",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Dotnet Root configuration",
+    "description": ".NET",
+    "syntax": [
+      "DOTNET_ROOT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.vcinstalldir",
+    "tool": "github-copilot",
+    "name": "VCINSTALLDIR",
+    "display_name": "Vcinstalldir",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Vcinstalldir configuration",
+    "description": "Visual C++",
+    "syntax": [
+      "VCINSTALLDIR=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.vsinstalldir",
+    "tool": "github-copilot",
+    "name": "VSINSTALLDIR",
+    "display_name": "Vsinstalldir",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Vsinstalldir configuration",
+    "description": "Visual Studio",
+    "syntax": [
+      "VSINSTALLDIR=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.vcpkg-root",
+    "tool": "github-copilot",
+    "name": "VCPKG_ROOT",
+    "display_name": "Vcpkg Root",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Vcpkg Root configuration",
+    "description": "vcpkg",
+    "syntax": [
+      "VCPKG_ROOT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.ld-library-path",
+    "tool": "github-copilot",
+    "name": "LD_LIBRARY_PATH",
+    "display_name": "Ld Library Path",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Ld Library Path configuration",
+    "description": "Shared libraries",
+    "syntax": [
+      "LD_LIBRARY_PATH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-otel-enabled",
+    "tool": "github-copilot",
+    "name": "COPILOT_OTEL_ENABLED",
+    "display_name": "Copilot Otel Enabled",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Otel Enabled configuration",
+    "description": "false",
+    "syntax": [
+      "COPILOT_OTEL_ENABLED=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-exporter-otlp-endpoint",
+    "tool": "github-copilot",
+    "name": "OTEL_EXPORTER_OTLP_ENDPOINT",
+    "display_name": "Otel Exporter Otlp Endpoint",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "Otel Exporter Otlp Endpoint configuration",
+    "description": "—",
+    "syntax": [
+      "OTEL_EXPORTER_OTLP_ENDPOINT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-otel-exporter-type",
+    "tool": "github-copilot",
+    "name": "COPILOT_OTEL_EXPORTER_TYPE",
+    "display_name": "Copilot Otel Exporter Type",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Otel Exporter Type configuration",
+    "description": "otlp-http",
+    "syntax": [
+      "COPILOT_OTEL_EXPORTER_TYPE=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-exporter-otlp-protocol",
+    "tool": "github-copilot",
+    "name": "OTEL_EXPORTER_OTLP_PROTOCOL",
+    "display_name": "Otel Exporter Otlp Protocol",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Exporter Otlp Protocol configuration",
+    "description": "http/json",
+    "syntax": [
+      "OTEL_EXPORTER_OTLP_PROTOCOL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-exporter-otlp-traces-protocol",
+    "tool": "github-copilot",
+    "name": "OTEL_EXPORTER_OTLP_TRACES_PROTOCOL",
+    "display_name": "Otel Exporter Otlp Traces Protocol",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Otel Exporter Otlp Traces Protocol configuration",
+    "description": "—",
+    "syntax": [
+      "OTEL_EXPORTER_OTLP_TRACES_PROTOCOL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-exporter-otlp-metrics-protocol",
+    "tool": "github-copilot",
+    "name": "OTEL_EXPORTER_OTLP_METRICS_PROTOCOL",
+    "display_name": "Otel Exporter Otlp Metrics Protocol",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Exporter Otlp Metrics Protocol configuration",
+    "description": "—",
+    "syntax": [
+      "OTEL_EXPORTER_OTLP_METRICS_PROTOCOL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-service-name",
+    "tool": "github-copilot",
+    "name": "OTEL_SERVICE_NAME",
+    "display_name": "Otel Service Name",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Service Name configuration",
+    "description": "github-copilot",
+    "syntax": [
+      "OTEL_SERVICE_NAME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-resource-attributes",
+    "tool": "github-copilot",
+    "name": "OTEL_RESOURCE_ATTRIBUTES",
+    "display_name": "Otel Resource Attributes",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Resource Attributes configuration",
+    "description": "—",
+    "syntax": [
+      "OTEL_RESOURCE_ATTRIBUTES=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-instrumentation-genai-capture-message-content",
+    "tool": "github-copilot",
+    "name": "OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT",
+    "display_name": "Otel Instrumentation Genai Capture Message Content",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Instrumentation Genai Capture Message Content configuration",
+    "description": "false",
+    "syntax": [
+      "OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-log-level",
+    "tool": "github-copilot",
+    "name": "OTEL_LOG_LEVEL",
+    "display_name": "Otel Log Level",
+    "type": "environment-variable",
+    "category": "diagnostics",
+    "role": "Otel Log Level configuration",
+    "description": "—",
+    "syntax": [
+      "OTEL_LOG_LEVEL=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-otel-file-exporter-path",
+    "tool": "github-copilot",
+    "name": "COPILOT_OTEL_FILE_EXPORTER_PATH",
+    "display_name": "Copilot Otel File Exporter Path",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Otel File Exporter Path configuration",
+    "description": "—",
+    "syntax": [
+      "COPILOT_OTEL_FILE_EXPORTER_PATH=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.copilot-otel-source-name",
+    "tool": "github-copilot",
+    "name": "COPILOT_OTEL_SOURCE_NAME",
+    "display_name": "Copilot Otel Source Name",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Copilot Otel Source Name configuration",
+    "description": "github.copilot",
+    "syntax": [
+      "COPILOT_OTEL_SOURCE_NAME=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.otel-exporter-otlp-headers",
+    "tool": "github-copilot",
+    "name": "OTEL_EXPORTER_OTLP_HEADERS",
+    "display_name": "Otel Exporter Otlp Headers",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Otel Exporter Otlp Headers configuration",
+    "description": "—",
+    "syntax": [
+      "OTEL_EXPORTER_OTLP_HEADERS=<value>"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]
