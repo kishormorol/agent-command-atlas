@@ -1,0 +1,419 @@
+[
+  {
+    "id": "github-copilot.slash-command.chronicle",
+    "tool": "github-copilot",
+    "name": "/chronicle",
+    "display_name": "Inspect session history and insights",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Longitudinal session analysis",
+    "description": "Run session-history tools for standups, usage tips, improvement suggestions, indexing, and repository skill proposals.",
+    "syntax": [
+      "/chronicle <standup|tips|improve|reindex|skills create|skills review|skills status>"
+    ],
+    "examples": [
+      {
+        "command": "/chronicle standup",
+        "explanation": "Create a standup summary from session history.",
+        "level": "minimal"
+      },
+      {
+        "command": "/chronicle skills review",
+        "explanation": "Review repository skill proposals generated from observed usage.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task depends on patterns or outcomes across prior Copilot CLI sessions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Uses Copilot CLI session data available to the current installation."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.slash-command.clikit",
+    "tool": "github-copilot",
+    "name": "/clikit",
+    "display_name": "Preview CLI business components",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Component preview",
+    "description": "Preview a CLI business component such as quota information.",
+    "syntax": [
+      "/clikit [component]"
+    ],
+    "examples": [
+      {
+        "command": "/clikit",
+        "explanation": "Open the CLI business-component preview.",
+        "level": "minimal"
+      },
+      {
+        "command": "/clikit quota",
+        "explanation": "Request a preview of the quota component when it is available.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for inspecting documented CLI business-component previews."
+    ],
+    "when_not_to_use": [
+      "Do not treat preview components as a general configuration interface."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "The available component names depend on the installed Copilot CLI build."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.slash-command.keep-alive",
+    "tool": "github-copilot",
+    "name": "/keep-alive",
+    "display_name": "Prevent machine sleep",
+    "type": "slash-command",
+    "aliases": [
+      "/caffeinate"
+    ],
+    "category": "system",
+    "role": "Sleep prevention",
+    "description": "Prevent the machine from sleeping for the active session, while the agent is busy, or for a specified duration.",
+    "syntax": [
+      "/keep-alive [on|off|busy|duration]"
+    ],
+    "examples": [
+      {
+        "command": "/keep-alive busy",
+        "explanation": "Prevent sleep only while the agent is busy.",
+        "level": "minimal"
+      },
+      {
+        "command": "/keep-alive 2h",
+        "explanation": "Keep the machine awake during a two-hour unattended validation run.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for a long local task that would be interrupted if the machine sleeps."
+    ],
+    "when_not_to_use": [
+      "Turn it off when continued wakefulness is no longer needed."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Behavior depends on operating-system support for sleep prevention."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.slash-command.list-dirs",
+    "tool": "github-copilot",
+    "name": "/list-dirs",
+    "display_name": "List allowed directories",
+    "type": "slash-command",
+    "category": "permissions",
+    "role": "File-access inspection",
+    "description": "Display every directory for which file access has been allowed in the current session.",
+    "syntax": [
+      "/list-dirs"
+    ],
+    "examples": [
+      {
+        "command": "/list-dirs",
+        "explanation": "Audit the session's file-access scope after adding a sibling repository.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to verify the directories Copilot can access before working across repository boundaries."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.slash-command.lsp",
+    "tool": "github-copilot",
+    "name": "/lsp",
+    "display_name": "Manage language servers",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Language-server management",
+    "description": "Show, test, reload, inspect logs for, or get help with language-server configuration.",
+    "syntax": [
+      "/lsp [show|test|reload|logs|help] [server-name]"
+    ],
+    "examples": [
+      {
+        "command": "/lsp show",
+        "explanation": "Show configured language servers.",
+        "level": "minimal"
+      },
+      {
+        "command": "/lsp test typescript",
+        "explanation": "Test the configured TypeScript language server before relying on its diagnostics.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when language-aware tools are unavailable, stale, or producing questionable results."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Named servers must exist in the current language-server configuration."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.slash-command.refine",
+    "tool": "github-copilot",
+    "name": "/refine",
+    "display_name": "Refine a draft prompt",
+    "type": "slash-command",
+    "category": "planning",
+    "role": "Prompt refinement",
+    "description": "Rewrite roughly composed text into a clearer prompt for review before it is sent.",
+    "syntax": [
+      "/refine <text>",
+      "Ctrl+X then /refine"
+    ],
+    "examples": [
+      {
+        "command": "/refine fix auth maybe race tests",
+        "explanation": "Rewrite rough text into a clear prompt for review.",
+        "level": "minimal"
+      },
+      {
+        "command": "Ctrl+X then /refine",
+        "explanation": "Refine the text already in the input box, which is useful after voice dictation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a draft prompt is ambiguous or was entered quickly by speech."
+    ],
+    "when_not_to_use": [
+      "Review the rewritten prompt before submitting it; refinement does not validate the requested behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.slash-command.rubber-duck",
+    "tool": "github-copilot",
+    "name": "/rubber-duck",
+    "display_name": "Consult the rubber duck agent",
+    "type": "slash-command",
+    "category": "agents",
+    "role": "Independent second opinion",
+    "description": "Consult Copilot's rubber duck agent for a second opinion on a plan, code, or tests.",
+    "syntax": [
+      "/rubber-duck [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "/rubber-duck",
+        "explanation": "Ask for a second opinion on the current work.",
+        "level": "minimal"
+      },
+      {
+        "command": "/rubber-duck challenge the assumptions in this migration plan",
+        "explanation": "Request focused critique before implementation begins.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when an independent critique could expose missing assumptions or weak tests."
+    ],
+    "when_not_to_use": [
+      "Do not mistake a second model opinion for independent runtime verification."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.slash-command.tuikit",
+    "tool": "github-copilot",
+    "name": "/tuikit",
+    "display_name": "Preview TUIkit components",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Terminal UI component preview",
+    "description": "Preview TUIkit color tokens, icons, selectors, and tab-bar components.",
+    "syntax": [
+      "/tuikit [colors|icons|select|tabbar]"
+    ],
+    "examples": [
+      {
+        "command": "/tuikit colors",
+        "explanation": "Preview TUIkit color tokens.",
+        "level": "minimal"
+      },
+      {
+        "command": "/tuikit tabbar",
+        "explanation": "Inspect the tab-bar component when evaluating terminal rendering behavior.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to inspect the documented terminal UI design-system previews."
+    ],
+    "when_not_to_use": [
+      "Do not treat preview components as user theme configuration."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

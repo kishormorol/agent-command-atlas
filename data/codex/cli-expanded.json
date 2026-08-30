@@ -1,0 +1,660 @@
+[
+  {
+    "id": "codex.cli-subcommand.app-server",
+    "tool": "codex",
+    "name": "codex app-server",
+    "display_name": "Start the Codex app server",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "agents",
+    "role": "Protocol server",
+    "description": "Launch the local Codex app server over JSONL standard I/O, WebSocket, or a Unix socket for client integrations and debugging.",
+    "syntax": [
+      "codex app-server [--listen <transport>]"
+    ],
+    "examples": [
+      {
+        "command": "codex app-server --listen stdio://",
+        "explanation": "Start the app server with its default JSONL standard-I/O transport.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex app-server --listen ws://127.0.0.1:4500",
+        "explanation": "Expose a local WebSocket endpoint for an app-server client.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when developing or debugging a client that speaks the Codex app-server protocol."
+    ],
+    "when_not_to_use": [
+      "Do not expose an unencrypted ws:// listener beyond localhost or a trusted tunnel."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Primarily intended for development and debugging and may change."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-subcommand.apply",
+    "tool": "codex",
+    "name": "codex apply",
+    "display_name": "Apply a cloud-task diff",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "git",
+    "role": "Cloud change application",
+    "description": "Apply the most recent diff from a Codex cloud chat to the local repository with git apply.",
+    "syntax": [
+      "codex apply <task-id>"
+    ],
+    "examples": [
+      {
+        "command": "codex apply task_123",
+        "explanation": "Bring an authenticated cloud task's completed patch into the checked-out repository for local review and testing.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use after a cloud task has produced a diff that you want to inspect locally."
+    ],
+    "when_not_to_use": [
+      "Do not use with uncommitted local changes unless you are prepared to resolve apply conflicts."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires authentication and access to the cloud chat."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-subcommand.cloud",
+    "tool": "codex",
+    "name": "codex cloud",
+    "display_name": "Manage Codex cloud chats",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "session",
+    "role": "Cloud task management",
+    "description": "Open the cloud-chat picker, submit a task, or list recent Codex cloud chats.",
+    "syntax": [
+      "codex cloud [exec|list] [options]"
+    ],
+    "examples": [
+      {
+        "command": "codex cloud",
+        "explanation": "Open the interactive cloud-chat picker.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex cloud list --json",
+        "explanation": "List recent cloud tasks in machine-readable form for automation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to submit or inspect Codex cloud work from the terminal."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "web"
+      ],
+      "conditions": [
+        "Requires Codex cloud access and authentication."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-subcommand.completion",
+    "tool": "codex",
+    "name": "codex completion",
+    "display_name": "Generate shell completion",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "configuration",
+    "role": "Shell integration",
+    "description": "Generate a completion script for a supported shell.",
+    "syntax": [
+      "codex completion <bash|fish|zsh|powershell|elvish>"
+    ],
+    "examples": [
+      {
+        "command": "codex completion zsh",
+        "explanation": "Print the zsh completion script.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex completion bash",
+        "explanation": "Generate Bash completions for installation in the shell's completion directory.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to enable tab completion for Codex commands and options."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-subcommand.doctor",
+    "tool": "codex",
+    "name": "codex doctor",
+    "display_name": "Diagnose the Codex installation",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "diagnostics",
+    "role": "Installation diagnostics",
+    "description": "Generate a local diagnostic report covering installation, configuration, authentication, runtime, Git, terminal, app-server, and thread health.",
+    "syntax": [
+      "codex doctor [options]"
+    ],
+    "examples": [
+      {
+        "command": "codex doctor",
+        "explanation": "Capture a health report before filing a support issue for a broken CLI installation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when Codex startup, authentication, Git integration, or terminal behavior is failing unexpectedly."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-subcommand.features",
+    "tool": "codex",
+    "name": "codex features",
+    "display_name": "Manage Codex feature flags",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "configuration",
+    "role": "Feature management",
+    "description": "List, enable, or disable feature flags persisted in CODEX_HOME/config.toml.",
+    "syntax": [
+      "codex features <list|enable|disable> [feature]"
+    ],
+    "examples": [
+      {
+        "command": "codex features list",
+        "explanation": "List feature flags and their current state.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex features enable <feature>",
+        "explanation": "Persistently enable a documented feature for future sessions.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to inspect or deliberately opt into a named Codex feature."
+    ],
+    "when_not_to_use": [
+      "Do not enable an unfamiliar experimental feature without checking its official documentation and maturity."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Individual features can have their own maturity and availability."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-subcommand.fork",
+    "tool": "codex",
+    "name": "codex fork",
+    "display_name": "Fork a saved session",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "session",
+    "role": "Session branching",
+    "description": "Fork a prior interactive session into a new chat, using the picker or the most recent session.",
+    "syntax": [
+      "codex fork [session-id|--last] [--all]"
+    ],
+    "examples": [
+      {
+        "command": "codex fork",
+        "explanation": "Choose a session to fork.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex fork --last",
+        "explanation": "Branch the most recent session while preserving its original history.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when you want to explore a different approach without altering the original session lineage."
+    ],
+    "capabilities": [
+      "session.fork"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-flag.add-dir",
+    "tool": "codex",
+    "name": "--add-dir",
+    "display_name": "Grant access to another directory",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Additional workspace access",
+    "description": "Grant Codex write access to an additional directory while retaining the selected sandbox mode.",
+    "syntax": [
+      "codex --add-dir <path>"
+    ],
+    "examples": [
+      {
+        "command": "codex --add-dir ../shared-lib",
+        "explanation": "Allow work in a sibling shared library without disabling sandboxing.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task legitimately spans directories outside the primary workspace."
+    ],
+    "when_not_to_use": [
+      "Grant only the narrow directories required by the task."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-flag.cd",
+    "tool": "codex",
+    "name": "--cd",
+    "display_name": "Set working directory",
+    "type": "cli-flag",
+    "aliases": [
+      "-C"
+    ],
+    "category": "session",
+    "role": "Working-directory selection",
+    "description": "Set the working directory for the Codex invocation.",
+    "syntax": [
+      "codex --cd <directory>"
+    ],
+    "examples": [
+      {
+        "command": "codex -C services/api",
+        "explanation": "Start Codex with services/api as its working directory.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when invoking Codex from outside the repository or resuming work in a different current directory."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-flag.config",
+    "tool": "codex",
+    "name": "--config",
+    "display_name": "Override a configuration value",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "Per-invocation configuration",
+    "description": "Override a config.toml value for the current invocation using a dotted key and TOML value.",
+    "syntax": [
+      "codex --config <key=value>"
+    ],
+    "examples": [
+      {
+        "command": "codex -c model_reasoning_effort='\"high\"'",
+        "explanation": "Use high reasoning effort for one invocation without changing config.toml.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for a temporary override that should take precedence over configuration files."
+    ],
+    "when_not_to_use": [
+      "Use config.toml instead for a setting that should persist across sessions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-flag.dangerously-bypass",
+    "tool": "codex",
+    "name": "--dangerously-bypass-approvals-and-sandbox",
+    "display_name": "Bypass approvals and sandboxing",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Unrestricted execution",
+    "description": "Disable approval prompts and sandbox restrictions for the invocation.",
+    "syntax": [
+      "codex --dangerously-bypass-approvals-and-sandbox"
+    ],
+    "examples": [
+      {
+        "command": "codex --dangerously-bypass-approvals-and-sandbox",
+        "explanation": "Run without Codex approval or sandbox protections inside an already isolated disposable environment.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use only inside a dedicated external sandbox or disposable virtual machine."
+    ],
+    "when_not_to_use": [
+      "Do not use on a normal workstation or repository when workspace-write plus targeted approvals is sufficient."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Managed policy can prevent unrestricted execution."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-flag.full-auto",
+    "tool": "codex",
+    "name": "--full-auto",
+    "display_name": "Use low-friction automatic execution",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Automatic local execution",
+    "description": "Apply the documented low-friction preset for automatic work within sandbox boundaries.",
+    "syntax": [
+      "codex --full-auto"
+    ],
+    "examples": [
+      {
+        "command": "codex --full-auto \"run the test suite and fix failures\"",
+        "explanation": "Let Codex iterate automatically while remaining subject to the preset's sandbox constraints.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for well-scoped local work where automatic iteration is appropriate."
+    ],
+    "when_not_to_use": [
+      "Do not confuse this preset with unrestricted host access."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "codex.cli-flag.search",
+    "tool": "codex",
+    "name": "--search",
+    "display_name": "Enable live web search",
+    "type": "cli-flag",
+    "category": "context",
+    "role": "Web research mode",
+    "description": "Switch Codex web search from its cached default to live browsing for the invocation.",
+    "syntax": [
+      "codex --search [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "codex --search \"verify the current release notes for this dependency\"",
+        "explanation": "Use live web results for a time-sensitive task.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when freshness matters and cached search could be stale."
+    ],
+    "when_not_to_use": [
+      "Do not use web search when the task must rely exclusively on repository content."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Requires web search availability and network access."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

@@ -30,9 +30,34 @@
     "id": "codex.cli-command.launch"
   },
   {
+    "path": "codex/add-dir/",
+    "kind": "entry",
+    "id": "codex.cli-flag.add-dir"
+  },
+  {
     "path": "codex/ask-for-approval/",
     "kind": "entry",
     "id": "codex.cli-flag.ask-for-approval"
+  },
+  {
+    "path": "codex/cd/",
+    "kind": "entry",
+    "id": "codex.cli-flag.cd"
+  },
+  {
+    "path": "codex/config/",
+    "kind": "entry",
+    "id": "codex.cli-flag.config"
+  },
+  {
+    "path": "codex/dangerously-bypass-approvals-and-sandbox/",
+    "kind": "entry",
+    "id": "codex.cli-flag.dangerously-bypass"
+  },
+  {
+    "path": "codex/full-auto/",
+    "kind": "entry",
+    "id": "codex.cli-flag.full-auto"
   },
   {
     "path": "codex/cli-flag-model/",
@@ -45,9 +70,49 @@
     "id": "codex.cli-flag.sandbox"
   },
   {
+    "path": "codex/search/",
+    "kind": "entry",
+    "id": "codex.cli-flag.search"
+  },
+  {
+    "path": "codex/codex-app-server/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.app-server"
+  },
+  {
+    "path": "codex/codex-apply/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.apply"
+  },
+  {
+    "path": "codex/codex-cloud/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.cloud"
+  },
+  {
+    "path": "codex/codex-completion/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.completion"
+  },
+  {
+    "path": "codex/codex-doctor/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.doctor"
+  },
+  {
     "path": "codex/codex-exec/",
     "kind": "entry",
     "id": "codex.cli-subcommand.exec"
+  },
+  {
+    "path": "codex/codex-features/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.features"
+  },
+  {
+    "path": "codex/codex-fork/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.fork"
   },
   {
     "path": "codex/codex-login/",
@@ -83,6 +148,21 @@
     "path": "codex/codex-home-config-toml/",
     "kind": "entry",
     "id": "codex.config-file.user-config"
+  },
+  {
+    "path": "codex/approval-policy/",
+    "kind": "entry",
+    "id": "codex.config-option.approval-policy"
+  },
+  {
+    "path": "codex/model-reasoning-effort/",
+    "kind": "entry",
+    "id": "codex.config-option.model-reasoning-effort"
+  },
+  {
+    "path": "codex/sandbox-mode/",
+    "kind": "entry",
+    "id": "codex.config-option.sandbox-mode"
   },
   {
     "path": "codex/codex-home/",
@@ -405,14 +485,74 @@
     "id": "claude-code.cli-command.interactive"
   },
   {
+    "path": "claude-code/cli-flag-add-dir/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.add-dir"
+  },
+  {
+    "path": "claude-code/agent/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.agent"
+  },
+  {
+    "path": "claude-code/cli-flag-agents/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.agents"
+  },
+  {
+    "path": "claude-code/allowed-tools/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.allowed-tools"
+  },
+  {
     "path": "claude-code/continue/",
     "kind": "entry",
     "id": "claude-code.cli-flag.continue"
   },
   {
+    "path": "claude-code/dangerously-skip-permissions/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.dangerously-skip-permissions"
+  },
+  {
+    "path": "claude-code/disallowed-tools/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.disallowed-tools"
+  },
+  {
+    "path": "claude-code/cli-flag-effort/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.effort"
+  },
+  {
+    "path": "claude-code/fork-session/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.fork-session"
+  },
+  {
+    "path": "claude-code/json-schema/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.json-schema"
+  },
+  {
+    "path": "claude-code/max-budget-usd/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.max-budget-usd"
+  },
+  {
+    "path": "claude-code/mcp-config/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-config"
+  },
+  {
     "path": "claude-code/cli-flag-model/",
     "kind": "entry",
     "id": "claude-code.cli-flag.model"
+  },
+  {
+    "path": "claude-code/output-format/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.output-format"
   },
   {
     "path": "claude-code/permission-mode/",
@@ -430,6 +570,11 @@
     "id": "claude-code.cli-flag.resume"
   },
   {
+    "path": "claude-code/worktree/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.worktree"
+  },
+  {
     "path": "claude-code/claude-auth-login/",
     "kind": "entry",
     "id": "claude-code.cli-subcommand.auth-login"
@@ -443,6 +588,21 @@
     "path": "claude-code/claude-settings-json/",
     "kind": "entry",
     "id": "claude-code.config-file.project-settings"
+  },
+  {
+    "path": "claude-code/effortlevel/",
+    "kind": "entry",
+    "id": "claude-code.config-option.effort-level"
+  },
+  {
+    "path": "claude-code/config-option-model/",
+    "kind": "entry",
+    "id": "claude-code.config-option.model"
+  },
+  {
+    "path": "claude-code/permissions-defaultmode/",
+    "kind": "entry",
+    "id": "claude-code.config-option.permissions-default-mode"
   },
   {
     "path": "claude-code/anthropic-api-key/",
@@ -505,7 +665,12 @@
     "id": "claude-code.skill.verify"
   },
   {
-    "path": "claude-code/add-dir/",
+    "path": "claude-code/workflow-authoring/",
+    "kind": "entry",
+    "id": "claude-code.skill.workflow-authoring"
+  },
+  {
+    "path": "claude-code/slash-command-add-dir/",
     "kind": "entry",
     "id": "claude-code.slash-command.add-dir"
   },
@@ -515,14 +680,29 @@
     "id": "claude-code.slash-command.advisor"
   },
   {
-    "path": "claude-code/agents/",
+    "path": "claude-code/slash-command-agents/",
     "kind": "entry",
     "id": "claude-code.slash-command.agents"
+  },
+  {
+    "path": "claude-code/artifacts/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.artifacts"
+  },
+  {
+    "path": "claude-code/auto-mode-setup/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.auto-mode-setup"
   },
   {
     "path": "claude-code/autocompact/",
     "kind": "entry",
     "id": "claude-code.slash-command.autocompact"
+  },
+  {
+    "path": "claude-code/autofix-pr/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.autofix-pr"
   },
   {
     "path": "claude-code/background/",
@@ -585,7 +765,7 @@
     "id": "claude-code.slash-command.diff"
   },
   {
-    "path": "claude-code/effort/",
+    "path": "claude-code/slash-command-effort/",
     "kind": "entry",
     "id": "claude-code.slash-command.effort"
   },
@@ -610,6 +790,11 @@
     "id": "claude-code.slash-command.feedback"
   },
   {
+    "path": "claude-code/focus/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.focus"
+  },
+  {
     "path": "claude-code/fork/",
     "kind": "entry",
     "id": "claude-code.slash-command.fork"
@@ -618,6 +803,11 @@
     "path": "claude-code/goal/",
     "kind": "entry",
     "id": "claude-code.slash-command.goal"
+  },
+  {
+    "path": "claude-code/heapdump/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.heapdump"
   },
   {
     "path": "claude-code/help/",
@@ -645,9 +835,19 @@
     "id": "claude-code.slash-command.init"
   },
   {
+    "path": "claude-code/insights/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.insights"
+  },
+  {
     "path": "claude-code/keybindings/",
     "kind": "entry",
     "id": "claude-code.slash-command.keybindings"
+  },
+  {
+    "path": "claude-code/list-agents/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.list-agents"
   },
   {
     "path": "claude-code/login/",
@@ -735,9 +935,24 @@
     "id": "claude-code.slash-command.sandbox"
   },
   {
+    "path": "claude-code/schedule/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.schedule"
+  },
+  {
     "path": "claude-code/security-review/",
     "kind": "entry",
     "id": "claude-code.slash-command.security-review"
+  },
+  {
+    "path": "claude-code/setup-bedrock/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.setup-bedrock"
+  },
+  {
+    "path": "claude-code/setup-vertex/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.setup-vertex"
   },
   {
     "path": "claude-code/skills/",
@@ -785,6 +1000,11 @@
     "id": "claude-code.slash-command.theme"
   },
   {
+    "path": "claude-code/tui/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.tui"
+  },
+  {
     "path": "claude-code/ultraplan/",
     "kind": "entry",
     "id": "claude-code.slash-command.ultraplan"
@@ -805,6 +1025,11 @@
     "id": "claude-code.slash-command.vim"
   },
   {
+    "path": "claude-code/voice/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.voice"
+  },
+  {
     "path": "claude-code/workflows/",
     "kind": "entry",
     "id": "claude-code.slash-command.workflows"
@@ -820,9 +1045,49 @@
     "id": "gemini-cli.cli-command.launch"
   },
   {
+    "path": "gemini-cli/allowed-mcp-server-names/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.allowed-mcp-server-names"
+  },
+  {
     "path": "gemini-cli/approval-mode/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.approval-mode"
+  },
+  {
+    "path": "gemini-cli/debug/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.debug"
+  },
+  {
+    "path": "gemini-cli/experimental-acp/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.experimental-acp"
+  },
+  {
+    "path": "gemini-cli/cli-flag-extensions/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.extensions"
+  },
+  {
+    "path": "gemini-cli/include-directories/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.include-directories"
+  },
+  {
+    "path": "gemini-cli/list-extensions/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.list-extensions"
+  },
+  {
+    "path": "gemini-cli/cli-flag-model/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.model"
+  },
+  {
+    "path": "gemini-cli/output-format/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.output-format"
   },
   {
     "path": "gemini-cli/prompt/",
@@ -830,9 +1095,29 @@
     "id": "gemini-cli.cli-flag.prompt"
   },
   {
+    "path": "gemini-cli/prompt-interactive/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.prompt-interactive"
+  },
+  {
+    "path": "gemini-cli/cli-flag-resume/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.resume"
+  },
+  {
+    "path": "gemini-cli/sandbox/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.sandbox"
+  },
+  {
     "path": "gemini-cli/worktree/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.worktree"
+  },
+  {
+    "path": "gemini-cli/yolo/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.yolo"
   },
   {
     "path": "gemini-cli/gemini-extensions/",
@@ -858,6 +1143,21 @@
     "path": "gemini-cli/gemini-settings-json/",
     "kind": "entry",
     "id": "gemini-cli.config-file.project-settings"
+  },
+  {
+    "path": "gemini-cli/general-plan-enabled/",
+    "kind": "entry",
+    "id": "gemini-cli.config-option.plan-enabled"
+  },
+  {
+    "path": "gemini-cli/model-name/",
+    "kind": "entry",
+    "id": "gemini-cli.config-option.model-name"
+  },
+  {
+    "path": "gemini-cli/security-foldertrust-enabled/",
+    "kind": "entry",
+    "id": "gemini-cli.config-option.folder-trust-enabled"
   },
   {
     "path": "gemini-cli/gemini-api-key/",
@@ -970,7 +1270,7 @@
     "id": "gemini-cli.slash-command.editor"
   },
   {
-    "path": "gemini-cli/extensions/",
+    "path": "gemini-cli/slash-command-extensions/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.extensions"
   },
@@ -1055,7 +1355,7 @@
     "id": "gemini-cli.slash-command.memory-show"
   },
   {
-    "path": "gemini-cli/model/",
+    "path": "gemini-cli/slash-command-model/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.model"
   },
@@ -1105,7 +1405,7 @@
     "id": "gemini-cli.slash-command.restore"
   },
   {
-    "path": "gemini-cli/resume/",
+    "path": "gemini-cli/slash-command-resume/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.resume"
   },
@@ -1215,9 +1515,49 @@
     "id": "cursor.cli-command.agent"
   },
   {
+    "path": "cursor/api-key/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.api-key"
+  },
+  {
+    "path": "cursor/background/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.background"
+  },
+  {
+    "path": "cursor/force/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.force"
+  },
+  {
+    "path": "cursor/fullscreen/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.fullscreen"
+  },
+  {
+    "path": "cursor/cli-flag-model/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.model"
+  },
+  {
+    "path": "cursor/output-format/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.output-format"
+  },
+  {
     "path": "cursor/print/",
     "kind": "entry",
     "id": "cursor.cli-flag.print"
+  },
+  {
+    "path": "cursor/cli-flag-resume/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.resume"
+  },
+  {
+    "path": "cursor/version/",
+    "kind": "entry",
+    "id": "cursor.cli-flag.version"
   },
   {
     "path": "cursor/worktree/",
@@ -1375,6 +1715,21 @@
     "id": "cursor.config-file.user-config"
   },
   {
+    "path": "cursor/approvalmode/",
+    "kind": "entry",
+    "id": "cursor.config-option.approval-mode"
+  },
+  {
+    "path": "cursor/permissions-allow/",
+    "kind": "entry",
+    "id": "cursor.config-option.permissions-allow"
+  },
+  {
+    "path": "cursor/sandbox-mode/",
+    "kind": "entry",
+    "id": "cursor.config-option.sandbox-mode"
+  },
+  {
     "path": "cursor/cursor-api-key/",
     "kind": "entry",
     "id": "cursor.environment-variable.api-key"
@@ -1475,7 +1830,7 @@
     "id": "cursor.slash-command.mcp"
   },
   {
-    "path": "cursor/model/",
+    "path": "cursor/slash-command-model/",
     "kind": "entry",
     "id": "cursor.slash-command.model"
   },
@@ -1505,7 +1860,7 @@
     "id": "cursor.slash-command.rename"
   },
   {
-    "path": "cursor/resume/",
+    "path": "cursor/slash-command-resume/",
     "kind": "entry",
     "id": "cursor.slash-command.resume"
   },
@@ -1570,6 +1925,26 @@
     "id": "github-copilot.cli-command.init"
   },
   {
+    "path": "github-copilot/cli-flag-add-dir/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.add-dir"
+  },
+  {
+    "path": "github-copilot/additional-mcp-config/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.additional-mcp-config"
+  },
+  {
+    "path": "github-copilot/cli-flag-agent/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.agent"
+  },
+  {
+    "path": "github-copilot/cli-flag-allow-all/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.allow-all"
+  },
+  {
     "path": "github-copilot/allow-tool/",
     "kind": "entry",
     "id": "github-copilot.cli-flag.allow-tool"
@@ -1580,9 +1955,49 @@
     "id": "github-copilot.cli-flag.autopilot"
   },
   {
+    "path": "github-copilot/deny-tool/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.deny-tool"
+  },
+  {
+    "path": "github-copilot/effort/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.effort"
+  },
+  {
     "path": "github-copilot/cli-flag-model/",
     "kind": "entry",
     "id": "github-copilot.cli-flag.model"
+  },
+  {
+    "path": "github-copilot/output-format/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.output-format"
+  },
+  {
+    "path": "github-copilot/prompt/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.prompt"
+  },
+  {
+    "path": "github-copilot/cli-flag-resume/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.resume"
+  },
+  {
+    "path": "github-copilot/cli-flag-sandbox/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.sandbox"
+  },
+  {
+    "path": "github-copilot/stream/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.stream"
+  },
+  {
+    "path": "github-copilot/cli-flag-worktree/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.worktree"
   },
   {
     "path": "github-copilot/copilot-app/",
@@ -1630,6 +2045,21 @@
     "id": "github-copilot.config-file.user-settings"
   },
   {
+    "path": "github-copilot/config-option-model/",
+    "kind": "entry",
+    "id": "github-copilot.config-option.model"
+  },
+  {
+    "path": "github-copilot/sandbox-enabled/",
+    "kind": "entry",
+    "id": "github-copilot.config-option.sandbox-enabled"
+  },
+  {
+    "path": "github-copilot/worktreebaseref/",
+    "kind": "entry",
+    "id": "github-copilot.config-option.worktree-base-ref"
+  },
+  {
     "path": "github-copilot/copilot-home/",
     "kind": "entry",
     "id": "github-copilot.environment-variable.copilot-home"
@@ -1650,12 +2080,77 @@
     "id": "github-copilot.prefix-command.at"
   },
   {
+    "path": "github-copilot/quick-help/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.quick-help"
+  },
+  {
+    "path": "github-copilot/alt-v/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.paste-image"
+  },
+  {
+    "path": "github-copilot/ctrl-c/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.cancel-or-exit"
+  },
+  {
+    "path": "github-copilot/ctrl-d/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.shutdown"
+  },
+  {
+    "path": "github-copilot/ctrl-g/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.external-editor"
+  },
+  {
+    "path": "github-copilot/ctrl-l/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.clear-screen"
+  },
+  {
+    "path": "github-copilot/ctrl-q/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.queue-message"
+  },
+  {
+    "path": "github-copilot/ctrl-r/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.history-search"
+  },
+  {
+    "path": "github-copilot/ctrl-v/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.paste-attachment"
+  },
+  {
+    "path": "github-copilot/ctrl-x-then/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.command-with-draft"
+  },
+  {
+    "path": "github-copilot/ctrl-x-then-b/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.background-task"
+  },
+  {
+    "path": "github-copilot/esc/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.cancel"
+  },
+  {
+    "path": "github-copilot/shift-enter/",
+    "kind": "entry",
+    "id": "github-copilot.shortcut.newline"
+  },
+  {
     "path": "github-copilot/shift-tab/",
     "kind": "entry",
     "id": "github-copilot.shortcut.mode-cycle"
   },
   {
-    "path": "github-copilot/add-dir/",
+    "path": "github-copilot/slash-command-add-dir/",
     "kind": "entry",
     "id": "github-copilot.slash-command.add-dir"
   },
@@ -1665,12 +2160,12 @@
     "id": "github-copilot.slash-command.after"
   },
   {
-    "path": "github-copilot/agent/",
+    "path": "github-copilot/slash-command-agent/",
     "kind": "entry",
     "id": "github-copilot.slash-command.agent"
   },
   {
-    "path": "github-copilot/allow-all/",
+    "path": "github-copilot/slash-command-allow-all/",
     "kind": "entry",
     "id": "github-copilot.slash-command.allow-all"
   },
@@ -1690,9 +2185,19 @@
     "id": "github-copilot.slash-command.changelog"
   },
   {
+    "path": "github-copilot/chronicle/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.chronicle"
+  },
+  {
     "path": "github-copilot/clear/",
     "kind": "entry",
     "id": "github-copilot.slash-command.clear"
+  },
+  {
+    "path": "github-copilot/clikit/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.clikit"
   },
   {
     "path": "github-copilot/compact/",
@@ -1800,6 +2305,11 @@
     "id": "github-copilot.slash-command.instructions"
   },
   {
+    "path": "github-copilot/keep-alive/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.keep-alive"
+  },
+  {
     "path": "github-copilot/limits/",
     "kind": "entry",
     "id": "github-copilot.slash-command.limits"
@@ -1815,6 +2325,11 @@
     "id": "github-copilot.slash-command.limits-unset"
   },
   {
+    "path": "github-copilot/list-dirs/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.list-dirs"
+  },
+  {
     "path": "github-copilot/login/",
     "kind": "entry",
     "id": "github-copilot.slash-command.login"
@@ -1823,6 +2338,11 @@
     "path": "github-copilot/logout/",
     "kind": "entry",
     "id": "github-copilot.slash-command.logout"
+  },
+  {
+    "path": "github-copilot/lsp/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.lsp"
   },
   {
     "path": "github-copilot/mcp/",
@@ -1870,6 +2390,11 @@
     "id": "github-copilot.slash-command.pr"
   },
   {
+    "path": "github-copilot/refine/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.refine"
+  },
+  {
     "path": "github-copilot/remote/",
     "kind": "entry",
     "id": "github-copilot.slash-command.remote"
@@ -1895,7 +2420,7 @@
     "id": "github-copilot.slash-command.restart"
   },
   {
-    "path": "github-copilot/resume/",
+    "path": "github-copilot/slash-command-resume/",
     "kind": "entry",
     "id": "github-copilot.slash-command.resume"
   },
@@ -1905,7 +2430,12 @@
     "id": "github-copilot.slash-command.review"
   },
   {
-    "path": "github-copilot/sandbox/",
+    "path": "github-copilot/rubber-duck/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.rubber-duck"
+  },
+  {
+    "path": "github-copilot/slash-command-sandbox/",
     "kind": "entry",
     "id": "github-copilot.slash-command.sandbox"
   },
@@ -1990,6 +2520,11 @@
     "id": "github-copilot.slash-command.theme"
   },
   {
+    "path": "github-copilot/tuikit/",
+    "kind": "entry",
+    "id": "github-copilot.slash-command.tuikit"
+  },
+  {
     "path": "github-copilot/undo/",
     "kind": "entry",
     "id": "github-copilot.slash-command.undo"
@@ -2020,7 +2555,7 @@
     "id": "github-copilot.slash-command.voice"
   },
   {
-    "path": "github-copilot/worktree/",
+    "path": "github-copilot/slash-command-worktree/",
     "kind": "entry",
     "id": "github-copilot.slash-command.worktree"
   },

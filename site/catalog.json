@@ -43,6 +43,57 @@
     "path": "codex/codex/"
   },
   {
+    "id": "codex.cli-flag.add-dir",
+    "tool": "codex",
+    "name": "--add-dir",
+    "display_name": "Grant access to another directory",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Additional workspace access",
+    "description": "Grant Codex write access to an additional directory while retaining the selected sandbox mode.",
+    "syntax": [
+      "codex --add-dir <path>"
+    ],
+    "examples": [
+      {
+        "command": "codex --add-dir ../shared-lib",
+        "explanation": "Allow work in a sibling shared library without disabling sandboxing.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task legitimately spans directories outside the primary workspace."
+    ],
+    "when_not_to_use": [
+      "Grant only the narrow directories required by the task."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/add-dir/"
+  },
+  {
     "id": "codex.cli-flag.ask-for-approval",
     "tool": "codex",
     "name": "--ask-for-approval",
@@ -89,6 +140,206 @@
       ]
     },
     "path": "codex/ask-for-approval/"
+  },
+  {
+    "id": "codex.cli-flag.cd",
+    "tool": "codex",
+    "name": "--cd",
+    "display_name": "Set working directory",
+    "type": "cli-flag",
+    "aliases": [
+      "-C"
+    ],
+    "category": "session",
+    "role": "Working-directory selection",
+    "description": "Set the working directory for the Codex invocation.",
+    "syntax": [
+      "codex --cd <directory>"
+    ],
+    "examples": [
+      {
+        "command": "codex -C services/api",
+        "explanation": "Start Codex with services/api as its working directory.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when invoking Codex from outside the repository or resuming work in a different current directory."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/cd/"
+  },
+  {
+    "id": "codex.cli-flag.config",
+    "tool": "codex",
+    "name": "--config",
+    "display_name": "Override a configuration value",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "Per-invocation configuration",
+    "description": "Override a config.toml value for the current invocation using a dotted key and TOML value.",
+    "syntax": [
+      "codex --config <key=value>"
+    ],
+    "examples": [
+      {
+        "command": "codex -c model_reasoning_effort='\"high\"'",
+        "explanation": "Use high reasoning effort for one invocation without changing config.toml.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for a temporary override that should take precedence over configuration files."
+    ],
+    "when_not_to_use": [
+      "Use config.toml instead for a setting that should persist across sessions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/config/"
+  },
+  {
+    "id": "codex.cli-flag.dangerously-bypass",
+    "tool": "codex",
+    "name": "--dangerously-bypass-approvals-and-sandbox",
+    "display_name": "Bypass approvals and sandboxing",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Unrestricted execution",
+    "description": "Disable approval prompts and sandbox restrictions for the invocation.",
+    "syntax": [
+      "codex --dangerously-bypass-approvals-and-sandbox"
+    ],
+    "examples": [
+      {
+        "command": "codex --dangerously-bypass-approvals-and-sandbox",
+        "explanation": "Run without Codex approval or sandbox protections inside an already isolated disposable environment.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use only inside a dedicated external sandbox or disposable virtual machine."
+    ],
+    "when_not_to_use": [
+      "Do not use on a normal workstation or repository when workspace-write plus targeted approvals is sufficient."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Managed policy can prevent unrestricted execution."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/dangerously-bypass-approvals-and-sandbox/"
+  },
+  {
+    "id": "codex.cli-flag.full-auto",
+    "tool": "codex",
+    "name": "--full-auto",
+    "display_name": "Use low-friction automatic execution",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Automatic local execution",
+    "description": "Apply the documented low-friction preset for automatic work within sandbox boundaries.",
+    "syntax": [
+      "codex --full-auto"
+    ],
+    "examples": [
+      {
+        "command": "codex --full-auto \"run the test suite and fix failures\"",
+        "explanation": "Let Codex iterate automatically while remaining subject to the preset's sandbox constraints.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for well-scoped local work where automatic iteration is appropriate."
+    ],
+    "when_not_to_use": [
+      "Do not confuse this preset with unrestricted host access."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/full-auto/"
   },
   {
     "id": "codex.cli-flag.model",
@@ -187,6 +438,315 @@
     "path": "codex/sandbox/"
   },
   {
+    "id": "codex.cli-flag.search",
+    "tool": "codex",
+    "name": "--search",
+    "display_name": "Enable live web search",
+    "type": "cli-flag",
+    "category": "context",
+    "role": "Web research mode",
+    "description": "Switch Codex web search from its cached default to live browsing for the invocation.",
+    "syntax": [
+      "codex --search [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "codex --search \"verify the current release notes for this dependency\"",
+        "explanation": "Use live web results for a time-sensitive task.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when freshness matters and cached search could be stale."
+    ],
+    "when_not_to_use": [
+      "Do not use web search when the task must rely exclusively on repository content."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Requires web search availability and network access."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/search/"
+  },
+  {
+    "id": "codex.cli-subcommand.app-server",
+    "tool": "codex",
+    "name": "codex app-server",
+    "display_name": "Start the Codex app server",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "agents",
+    "role": "Protocol server",
+    "description": "Launch the local Codex app server over JSONL standard I/O, WebSocket, or a Unix socket for client integrations and debugging.",
+    "syntax": [
+      "codex app-server [--listen <transport>]"
+    ],
+    "examples": [
+      {
+        "command": "codex app-server --listen stdio://",
+        "explanation": "Start the app server with its default JSONL standard-I/O transport.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex app-server --listen ws://127.0.0.1:4500",
+        "explanation": "Expose a local WebSocket endpoint for an app-server client.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when developing or debugging a client that speaks the Codex app-server protocol."
+    ],
+    "when_not_to_use": [
+      "Do not expose an unencrypted ws:// listener beyond localhost or a trusted tunnel."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Primarily intended for development and debugging and may change."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/codex-app-server/"
+  },
+  {
+    "id": "codex.cli-subcommand.apply",
+    "tool": "codex",
+    "name": "codex apply",
+    "display_name": "Apply a cloud-task diff",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "git",
+    "role": "Cloud change application",
+    "description": "Apply the most recent diff from a Codex cloud chat to the local repository with git apply.",
+    "syntax": [
+      "codex apply <task-id>"
+    ],
+    "examples": [
+      {
+        "command": "codex apply task_123",
+        "explanation": "Bring an authenticated cloud task's completed patch into the checked-out repository for local review and testing.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use after a cloud task has produced a diff that you want to inspect locally."
+    ],
+    "when_not_to_use": [
+      "Do not use with uncommitted local changes unless you are prepared to resolve apply conflicts."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires authentication and access to the cloud chat."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/codex-apply/"
+  },
+  {
+    "id": "codex.cli-subcommand.cloud",
+    "tool": "codex",
+    "name": "codex cloud",
+    "display_name": "Manage Codex cloud chats",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "session",
+    "role": "Cloud task management",
+    "description": "Open the cloud-chat picker, submit a task, or list recent Codex cloud chats.",
+    "syntax": [
+      "codex cloud [exec|list] [options]"
+    ],
+    "examples": [
+      {
+        "command": "codex cloud",
+        "explanation": "Open the interactive cloud-chat picker.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex cloud list --json",
+        "explanation": "List recent cloud tasks in machine-readable form for automation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to submit or inspect Codex cloud work from the terminal."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "web"
+      ],
+      "conditions": [
+        "Requires Codex cloud access and authentication."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/codex-cloud/"
+  },
+  {
+    "id": "codex.cli-subcommand.completion",
+    "tool": "codex",
+    "name": "codex completion",
+    "display_name": "Generate shell completion",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "configuration",
+    "role": "Shell integration",
+    "description": "Generate a completion script for a supported shell.",
+    "syntax": [
+      "codex completion <bash|fish|zsh|powershell|elvish>"
+    ],
+    "examples": [
+      {
+        "command": "codex completion zsh",
+        "explanation": "Print the zsh completion script.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex completion bash",
+        "explanation": "Generate Bash completions for installation in the shell's completion directory.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to enable tab completion for Codex commands and options."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/codex-completion/"
+  },
+  {
+    "id": "codex.cli-subcommand.doctor",
+    "tool": "codex",
+    "name": "codex doctor",
+    "display_name": "Diagnose the Codex installation",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "diagnostics",
+    "role": "Installation diagnostics",
+    "description": "Generate a local diagnostic report covering installation, configuration, authentication, runtime, Git, terminal, app-server, and thread health.",
+    "syntax": [
+      "codex doctor [options]"
+    ],
+    "examples": [
+      {
+        "command": "codex doctor",
+        "explanation": "Capture a health report before filing a support issue for a broken CLI installation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when Codex startup, authentication, Git integration, or terminal behavior is failing unexpectedly."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/codex-doctor/"
+  },
+  {
     "id": "codex.cli-subcommand.exec",
     "tool": "codex",
     "name": "codex exec",
@@ -231,6 +791,117 @@
       ]
     },
     "path": "codex/codex-exec/"
+  },
+  {
+    "id": "codex.cli-subcommand.features",
+    "tool": "codex",
+    "name": "codex features",
+    "display_name": "Manage Codex feature flags",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "configuration",
+    "role": "Feature management",
+    "description": "List, enable, or disable feature flags persisted in CODEX_HOME/config.toml.",
+    "syntax": [
+      "codex features <list|enable|disable> [feature]"
+    ],
+    "examples": [
+      {
+        "command": "codex features list",
+        "explanation": "List feature flags and their current state.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex features enable <feature>",
+        "explanation": "Persistently enable a documented feature for future sessions.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to inspect or deliberately opt into a named Codex feature."
+    ],
+    "when_not_to_use": [
+      "Do not enable an unfamiliar experimental feature without checking its official documentation and maturity."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Individual features can have their own maturity and availability."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/codex-features/"
+  },
+  {
+    "id": "codex.cli-subcommand.fork",
+    "tool": "codex",
+    "name": "codex fork",
+    "display_name": "Fork a saved session",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "session",
+    "role": "Session branching",
+    "description": "Fork a prior interactive session into a new chat, using the picker or the most recent session.",
+    "syntax": [
+      "codex fork [session-id|--last] [--all]"
+    ],
+    "examples": [
+      {
+        "command": "codex fork",
+        "explanation": "Choose a session to fork.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex fork --last",
+        "explanation": "Branch the most recent session while preserving its original history.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when you want to explore a different approach without altering the original session lineage."
+    ],
+    "capabilities": [
+      "session.fork"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/codex-fork/"
   },
   {
     "id": "codex.cli-subcommand.login",
@@ -540,6 +1211,165 @@
       ]
     },
     "path": "codex/codex-home-config-toml/"
+  },
+  {
+    "id": "codex.config-option.approval-policy",
+    "tool": "codex",
+    "name": "approval_policy",
+    "display_name": "Default approval policy",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Approval configuration",
+    "description": "Control when Codex pauses for approval before executing commands; granular policy objects can handle prompt categories separately.",
+    "syntax": [
+      "approval_policy = \"on-request\""
+    ],
+    "examples": [
+      {
+        "command": "approval_policy = \"on-request\"",
+        "explanation": "Let Codex request approval when an operation needs escalation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use in config.toml to set a persistent approval default instead of passing --ask-for-approval each time."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Managed requirements can restrict allowed values."
+      ]
+    },
+    "notes": [
+      "The on-failure value is deprecated; official guidance is on-request for interactive runs or never for non-interactive runs."
+    ],
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/approval-policy/"
+  },
+  {
+    "id": "codex.config-option.model-reasoning-effort",
+    "tool": "codex",
+    "name": "model_reasoning_effort",
+    "display_name": "Default reasoning effort",
+    "type": "config-option",
+    "category": "models",
+    "role": "Reasoning effort configuration",
+    "description": "Set the default reasoning effort requested from supported Codex models.",
+    "syntax": [
+      "model_reasoning_effort = \"high\""
+    ],
+    "examples": [
+      {
+        "command": "model_reasoning_effort = \"high\"",
+        "explanation": "Use high reasoning effort as the default for new work.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when most sessions benefit from a consistent supported effort level."
+    ],
+    "when_not_to_use": [
+      "Use a -c override when only one invocation needs a different effort."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Supported values depend on the selected model."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/model-reasoning-effort/"
+  },
+  {
+    "id": "codex.config-option.sandbox-mode",
+    "tool": "codex",
+    "name": "sandbox_mode",
+    "display_name": "Default sandbox mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Sandbox configuration",
+    "description": "Select the persistent sandbox policy applied to tool execution unless an invocation overrides it.",
+    "syntax": [
+      "sandbox_mode = \"workspace-write\""
+    ],
+    "examples": [
+      {
+        "command": "sandbox_mode = \"workspace-write\"",
+        "explanation": "Allow workspace writes while keeping host access sandboxed by default.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to establish the normal isolation boundary for Codex work."
+    ],
+    "when_not_to_use": [
+      "Do not select danger-full-access as a convenience default on a normal workstation."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Managed requirements can restrict allowed sandbox modes."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/sandbox-mode/"
   },
   {
     "id": "codex.environment-variable.codex-home",
@@ -3477,6 +4307,222 @@
     "path": "claude-code/claude/"
   },
   {
+    "id": "claude-code.cli-flag.add-dir",
+    "tool": "claude-code",
+    "name": "--add-dir",
+    "display_name": "Add a working directory",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Additional directory access",
+    "description": "Grant Claude read and edit access to one or more additional existing directories for the current session.",
+    "syntax": [
+      "claude --add-dir <directory> [directory...]"
+    ],
+    "examples": [
+      {
+        "command": "claude --add-dir ../apps ../lib",
+        "explanation": "Work across sibling application and library directories.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task spans directories outside the initial working tree."
+    ],
+    "when_not_to_use": [
+      "Do not assume most .claude configuration is discovered from added directories."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Every supplied path must already exist as a directory."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/cli-flag-add-dir/"
+  },
+  {
+    "id": "claude-code.cli-flag.agent",
+    "tool": "claude-code",
+    "name": "--agent",
+    "display_name": "Select a custom agent",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent selection",
+    "description": "Select a configured custom agent for the current session, overriding the agent setting.",
+    "syntax": [
+      "claude --agent <agent-name>"
+    ],
+    "examples": [
+      {
+        "command": "claude --agent security-reviewer",
+        "explanation": "Start the session using the configured security-reviewer agent.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task should begin with one specific custom agent's tools and instructions."
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "The named agent must be available in the current configuration."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/agent/"
+  },
+  {
+    "id": "claude-code.cli-flag.agents",
+    "tool": "claude-code",
+    "name": "--agents",
+    "display_name": "Define session subagents",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Dynamic subagent definition",
+    "description": "Define custom subagents for the invocation using JSON fields compatible with subagent frontmatter plus a prompt.",
+    "syntax": [
+      "claude --agents '<json>'"
+    ],
+    "examples": [
+      {
+        "command": "claude --agents '{\"reviewer\":{\"description\":\"Reviews code\",\"prompt\":\"You are a code reviewer\"}}'",
+        "explanation": "Define a reviewer subagent for this invocation without creating an agent file.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for temporary or automation-supplied subagent definitions."
+    ],
+    "when_not_to_use": [
+      "Use agent files for definitions that should be maintained and reused."
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Startup JSON validation requires Claude Code v2.1.242 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/cli-flag-agents/"
+  },
+  {
+    "id": "claude-code.cli-flag.allowed-tools",
+    "tool": "claude-code",
+    "name": "--allowed-tools",
+    "display_name": "Allow tools without prompting",
+    "type": "cli-flag",
+    "aliases": [
+      "--allowedTools"
+    ],
+    "category": "permissions",
+    "role": "Tool allow rules",
+    "description": "Specify tool permission rules that can execute without an approval prompt; this does not restrict the tools available to Claude.",
+    "syntax": [
+      "claude --allowed-tools <rules...>"
+    ],
+    "examples": [
+      {
+        "command": "claude --allowed-tools \"Bash(git log *)\" \"Bash(git diff *)\" Read",
+        "explanation": "Allow common read-only repository inspection without prompts.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to reduce prompts for narrowly scoped, understood operations."
+    ],
+    "when_not_to_use": [
+      "Use --tools to restrict tool availability; allowed-tools only changes permission prompting."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Managed policy can further restrict permissions."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/allowed-tools/"
+  },
+  {
     "id": "claude-code.cli-flag.continue",
     "tool": "claude-code",
     "name": "--continue",
@@ -3533,6 +4579,366 @@
     "path": "claude-code/continue/"
   },
   {
+    "id": "claude-code.cli-flag.dangerously-skip-permissions",
+    "tool": "claude-code",
+    "name": "--dangerously-skip-permissions",
+    "display_name": "Skip permission prompts",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission bypass",
+    "description": "Start in bypassPermissions mode and skip Claude Code permission prompts.",
+    "syntax": [
+      "claude --dangerously-skip-permissions"
+    ],
+    "examples": [
+      {
+        "command": "claude --dangerously-skip-permissions",
+        "explanation": "Run without Claude Code prompts inside a separately isolated disposable environment.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use only where an external sandbox already contains the risks of unrestricted agent actions."
+    ],
+    "when_not_to_use": [
+      "Do not use on a normal developer workstation when scoped permission rules are sufficient."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Equivalent to --permission-mode bypassPermissions and may be blocked by managed policy."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/dangerously-skip-permissions/"
+  },
+  {
+    "id": "claude-code.cli-flag.disallowed-tools",
+    "tool": "claude-code",
+    "name": "--disallowed-tools",
+    "display_name": "Deny tool rules",
+    "type": "cli-flag",
+    "aliases": [
+      "--disallowedTools"
+    ],
+    "category": "permissions",
+    "role": "Tool denial",
+    "description": "Remove whole tools or deny scoped operations that match the supplied permission rules.",
+    "syntax": [
+      "claude --disallowed-tools <rules...>"
+    ],
+    "examples": [
+      {
+        "command": "claude --disallowed-tools \"Bash(rm *)\" Edit",
+        "explanation": "Deny matching removal commands and remove the Edit tool from context.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to impose explicit session-level tool restrictions in addition to normal approvals."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/disallowed-tools/"
+  },
+  {
+    "id": "claude-code.cli-flag.effort",
+    "tool": "claude-code",
+    "name": "--effort",
+    "display_name": "Set model effort",
+    "type": "cli-flag",
+    "category": "models",
+    "role": "Reasoning effort selection",
+    "description": "Set the reasoning effort for the current session, subject to the selected model's available levels.",
+    "syntax": [
+      "claude --effort <low|medium|high|xhigh|max|ultracode>"
+    ],
+    "examples": [
+      {
+        "command": "claude --effort high",
+        "explanation": "Use high effort for a difficult architecture task.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to trade latency and usage for deeper reasoning on a demanding task."
+    ],
+    "when_not_to_use": [
+      "Do not assume every listed effort level is supported by every model."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Available effort levels depend on the model; ultracode requires Claude Code v2.1.203 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/cli-flag-effort/"
+  },
+  {
+    "id": "claude-code.cli-flag.fork-session",
+    "tool": "claude-code",
+    "name": "--fork-session",
+    "display_name": "Fork a resumed session",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session branching",
+    "description": "Create a new session identifier instead of reusing the original when continuing or resuming a conversation.",
+    "syntax": [
+      "claude --resume <session> --fork-session",
+      "claude --continue --fork-session"
+    ],
+    "examples": [
+      {
+        "command": "claude --resume auth-refactor --fork-session",
+        "explanation": "Branch the named session into a new resumable conversation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to explore an alternative from an earlier conversation without changing the original session."
+    ],
+    "capabilities": [
+      "session.fork"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Must be combined with --resume or --continue."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/fork-session/"
+  },
+  {
+    "id": "claude-code.cli-flag.json-schema",
+    "tool": "claude-code",
+    "name": "--json-schema",
+    "display_name": "Require structured JSON output",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Structured headless output",
+    "description": "Validate the final non-interactive result against a supplied JSON Schema after the agent completes its workflow.",
+    "syntax": [
+      "claude -p --json-schema '<schema>' <prompt>"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --json-schema '{\"type\":\"object\",\"properties\":{\"summary\":{\"type\":\"string\"}},\"required\":[\"summary\"]}' \"summarize this repository\"",
+        "explanation": "Return a validated object containing a summary field.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when automation needs a predictable validated result after Claude finishes using tools."
+    ],
+    "when_not_to_use": [
+      "Do not use for interactive sessions; this flag is for print mode."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Print mode only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/json-schema/"
+  },
+  {
+    "id": "claude-code.cli-flag.max-budget-usd",
+    "tool": "claude-code",
+    "name": "--max-budget-usd",
+    "display_name": "Cap API spending",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Cost limit",
+    "description": "Stop a print-mode workflow when API spend, including subagent spend, reaches the specified dollar cap.",
+    "syntax": [
+      "claude -p --max-budget-usd <amount> <prompt>"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --max-budget-usd 5.00 \"analyze and fix the failing integration tests\"",
+        "explanation": "Run a headless task with a five-dollar API-spend ceiling.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to bound cost for unattended API-backed workflows."
+    ],
+    "when_not_to_use": [
+      "Do not treat the cap as a guarantee that a task will complete within the limit."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Print mode only; full subagent cap enforcement requires Claude Code v2.1.217 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/max-budget-usd/"
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-config",
+    "tool": "claude-code",
+    "name": "--mcp-config",
+    "display_name": "Load session MCP configuration",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Load MCP server definitions for the invocation from JSON files or inline JSON strings.",
+    "syntax": [
+      "claude --mcp-config <file-or-json> [file-or-json...]"
+    ],
+    "examples": [
+      {
+        "command": "claude --mcp-config ./mcp.json",
+        "explanation": "Load the project's MCP servers for this session.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to provide temporary or automation-specific MCP servers without changing persistent configuration."
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Print-mode startup waiting for pending servers requires Claude Code v2.1.221 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/mcp-config/"
+  },
+  {
     "id": "claude-code.cli-flag.model",
     "tool": "claude-code",
     "name": "--model",
@@ -3579,6 +4985,56 @@
       ]
     },
     "path": "claude-code/cli-flag-model/"
+  },
+  {
+    "id": "claude-code.cli-flag.output-format",
+    "tool": "claude-code",
+    "name": "--output-format",
+    "display_name": "Select print output format",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Headless output formatting",
+    "description": "Select text, JSON, or streaming JSON output for print mode.",
+    "syntax": [
+      "claude -p --output-format <text|json|stream-json> <prompt>"
+    ],
+    "examples": [
+      {
+        "command": "claude -p --output-format json \"summarize the changes\"",
+        "explanation": "Return a machine-readable JSON result for a headless prompt.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use JSON formats when another program will consume Claude's output."
+    ],
+    "when_not_to_use": [
+      "Do not expect output-format to structure the answer to a custom schema; use --json-schema for that."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Print mode only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/output-format/"
   },
   {
     "id": "claude-code.cli-flag.permission-mode",
@@ -3729,6 +5185,63 @@
     "path": "claude-code/cli-flag-resume/"
   },
   {
+    "id": "claude-code.cli-flag.worktree",
+    "tool": "claude-code",
+    "name": "--worktree",
+    "display_name": "Start in an isolated worktree",
+    "type": "cli-flag",
+    "aliases": [
+      "-w"
+    ],
+    "category": "worktrees",
+    "role": "Worktree creation",
+    "description": "Create an isolated Git worktree under the repository's .claude/worktrees directory and start Claude there.",
+    "syntax": [
+      "claude --worktree [name|#pr|pr-url|mr-url]"
+    ],
+    "examples": [
+      {
+        "command": "claude -w feature-auth",
+        "explanation": "Create and enter an isolated feature-auth worktree.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to isolate concurrent or experimental changes from the primary checkout."
+    ],
+    "when_not_to_use": [
+      "Do not use outside a Git repository or when the task must modify the current checkout directly."
+    ],
+    "capabilities": [
+      "worktree.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Requires Git; branching from a GitLab merge request requires Claude Code v2.1.233 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/worktree/"
+  },
+  {
     "id": "claude-code.cli-subcommand.auth-login",
     "tool": "claude-code",
     "name": "claude auth login",
@@ -3858,6 +5371,168 @@
       ]
     },
     "path": "claude-code/claude-settings-json/"
+  },
+  {
+    "id": "claude-code.config-option.effort-level",
+    "tool": "claude-code",
+    "name": "effortLevel",
+    "display_name": "Default reasoning effort",
+    "type": "config-option",
+    "category": "models",
+    "role": "Reasoning effort configuration",
+    "description": "Persist the default reasoning effort for new Claude Code sessions.",
+    "syntax": [
+      "{ \"effortLevel\": \"high\" }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"effortLevel\": \"high\" }",
+        "explanation": "Start supported models with high reasoning effort by default.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a consistent reasoning effort is appropriate across sessions."
+    ],
+    "when_not_to_use": [
+      "Use --effort for a task-specific override."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive",
+        "ide"
+      ],
+      "conditions": [
+        "Supported levels depend on the selected model."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/effortlevel/"
+  },
+  {
+    "id": "claude-code.config-option.model",
+    "tool": "claude-code",
+    "name": "model",
+    "display_name": "Default model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Model configuration",
+    "description": "Set the model Claude Code starts with for new sessions unless a higher-precedence per-session override is supplied.",
+    "syntax": [
+      "{ \"model\": \"sonnet\" }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"model\": \"sonnet\" }",
+        "explanation": "Use the current Sonnet alias for new sessions by default.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when most new sessions should start with one model or alias."
+    ],
+    "when_not_to_use": [
+      "Use --model for a one-session override."
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive",
+        "ide"
+      ],
+      "conditions": [
+        "Managed availableModels policy can restrict selection."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/config-option-model/"
+  },
+  {
+    "id": "claude-code.config-option.permissions-default-mode",
+    "tool": "claude-code",
+    "name": "permissions.defaultMode",
+    "display_name": "Default permission mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Permission-mode configuration",
+    "description": "Set the permission mode used when new Claude Code sessions start.",
+    "syntax": [
+      "{ \"permissions\": { \"defaultMode\": \"plan\" } }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"permissions\": { \"defaultMode\": \"plan\" } }",
+        "explanation": "Start new sessions in read-only plan mode by default.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to establish a safer or workflow-specific starting mode across sessions."
+    ],
+    "when_not_to_use": [
+      "Use --permission-mode when only one invocation should differ."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive",
+        "ide"
+      ],
+      "conditions": [
+        "Managed settings can override this value."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/permissions-defaultmode/"
   },
   {
     "id": "claude-code.environment-variable.api-key",
@@ -4393,6 +6068,63 @@
     "path": "claude-code/verify/"
   },
   {
+    "id": "claude-code.skill.workflow-authoring",
+    "tool": "claude-code",
+    "name": "/workflow-authoring",
+    "display_name": "Load dynamic-workflow authoring guidance",
+    "type": "skill",
+    "category": "skills",
+    "role": "Workflow development guidance",
+    "description": "Load the bundled reference for dynamic workflow scripts, including the API, resume behavior, quality patterns, and examples.",
+    "syntax": [
+      "/workflow-authoring"
+    ],
+    "examples": [
+      {
+        "command": "/workflow-authoring",
+        "explanation": "Load the reference before manually editing a saved dynamic workflow script.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use before writing or manually modifying a dynamic workflow script."
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available only when dynamic workflows are enabled.",
+        "Requires Claude Code v2.1.248 or later."
+      ]
+    },
+    "version": {
+      "introduced": "2.1.248",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/workflow-authoring/"
+  },
+  {
     "id": "claude-code.slash-command.add-dir",
     "tool": "claude-code",
     "name": "/add-dir",
@@ -4432,7 +6164,7 @@
         "official-docs"
       ]
     },
-    "path": "claude-code/add-dir/"
+    "path": "claude-code/slash-command-add-dir/"
   },
   {
     "id": "claude-code.slash-command.advisor",
@@ -4528,7 +6260,125 @@
         "official-docs"
       ]
     },
-    "path": "claude-code/agents/"
+    "path": "claude-code/slash-command-agents/"
+  },
+  {
+    "id": "claude-code.slash-command.artifacts",
+    "tool": "claude-code",
+    "name": "/artifacts",
+    "display_name": "Browse Claude artifacts",
+    "type": "slash-command",
+    "category": "context",
+    "role": "Artifact discovery",
+    "description": "List accessible Claude artifacts and attach one to the session, open it in a browser, or copy its link.",
+    "syntax": [
+      "/artifacts"
+    ],
+    "examples": [
+      {
+        "command": "/artifacts",
+        "explanation": "Open the picker and attach a shared architecture artifact as working context.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when an existing Claude artifact contains requirements or design material needed in the current session."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available only where Claude artifacts are supported.",
+        "Requires Claude Code v2.1.208 or later; attaching with Enter requires v2.1.216 or later."
+      ]
+    },
+    "version": {
+      "introduced": "2.1.208",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/artifacts/"
+  },
+  {
+    "id": "claude-code.slash-command.auto-mode-setup",
+    "tool": "claude-code",
+    "name": "/auto-mode-setup",
+    "display_name": "Draft auto-mode environment rules",
+    "type": "slash-command",
+    "category": "permissions",
+    "role": "Auto-mode configuration",
+    "description": "Draft autoMode.environment entries from the project and recent sessions, then review and save them to user settings.",
+    "syntax": [
+      "/auto-mode-setup"
+    ],
+    "examples": [
+      {
+        "command": "/auto-mode-setup",
+        "explanation": "Draft and review environment restrictions before enabling auto mode.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to establish reviewed environment rules before relying on auto mode."
+    ],
+    "when_not_to_use": [
+      "Do not accept the generated rules without reviewing their effect on commands and secrets."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "plans": [
+        "Pro",
+        "Max",
+        "Team"
+      ],
+      "conditions": [
+        "Requires Claude Code v2.1.228 or later; native Windows requires v2.1.233 or later."
+      ]
+    },
+    "version": {
+      "introduced": "2.1.228",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/auto-mode-setup/"
   },
   {
     "id": "claude-code.slash-command.autocompact",
@@ -4576,6 +6426,63 @@
       ]
     },
     "path": "claude-code/autocompact/"
+  },
+  {
+    "id": "claude-code.slash-command.autofix-pr",
+    "tool": "claude-code",
+    "name": "/autofix-pr",
+    "display_name": "Watch and automatically fix a pull request",
+    "type": "slash-command",
+    "category": "git",
+    "role": "Cloud pull-request remediation",
+    "description": "Start a Claude Code web session that watches the current branch's pull request and pushes fixes for CI failures or review comments.",
+    "syntax": [
+      "/autofix-pr [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "/autofix-pr",
+        "explanation": "Watch the current branch's pull request using the default remediation prompt.",
+        "level": "minimal"
+      },
+      {
+        "command": "/autofix-pr only fix lint and type errors",
+        "explanation": "Limit automatic fixes to lint and type-check failures.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a checked-out branch has an open pull request that should be monitored for actionable failures or feedback."
+    ],
+    "when_not_to_use": [
+      "Do not use until you are comfortable with a cloud session pushing changes to the pull-request branch."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "web"
+      ],
+      "conditions": [
+        "Requires the gh CLI and access to Claude Code on the web.",
+        "The target pull request is detected from the checked-out branch."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/autofix-pr/"
   },
   {
     "id": "claude-code.slash-command.background",
@@ -5213,7 +7120,7 @@
         "official-docs"
       ]
     },
-    "path": "claude-code/effort/"
+    "path": "claude-code/slash-command-effort/"
   },
   {
     "id": "claude-code.slash-command.exit",
@@ -5389,6 +7296,53 @@
     "path": "claude-code/feedback/"
   },
   {
+    "id": "claude-code.slash-command.focus",
+    "tool": "claude-code",
+    "name": "/focus",
+    "display_name": "Toggle focus view",
+    "type": "slash-command",
+    "category": "modes",
+    "role": "Reduced-noise rendering",
+    "description": "Toggle a focused transcript view that shows the last prompt, compact tool summaries, and the final response.",
+    "syntax": [
+      "/focus"
+    ],
+    "examples": [
+      {
+        "command": "/focus",
+        "explanation": "Reduce visual noise while following a long implementation turn with many tool calls.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when tool output makes the terminal transcript difficult to scan."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available only with fullscreen rendering."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/focus/"
+  },
+  {
     "id": "claude-code.slash-command.fork",
     "tool": "claude-code",
     "name": "/fork",
@@ -5497,6 +7451,59 @@
       ]
     },
     "path": "claude-code/goal/"
+  },
+  {
+    "id": "claude-code.slash-command.heapdump",
+    "tool": "claude-code",
+    "name": "/heapdump",
+    "display_name": "Capture memory diagnostics",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Memory diagnostics",
+    "description": "Write a JavaScript heap snapshot and a separate memory-diagnostics summary for troubleshooting high memory usage.",
+    "syntax": [
+      "/heapdump"
+    ],
+    "examples": [
+      {
+        "command": "/heapdump",
+        "explanation": "Capture diagnostics after reproducing abnormal Claude Code memory growth.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use only while diagnosing high Claude Code memory usage."
+    ],
+    "when_not_to_use": [
+      "Do not share the .heapsnapshot file; official documentation warns that it contains the full conversation and credentials."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Hidden from the command menu and must be typed in full."
+      ]
+    },
+    "notes": [
+      "Share only the generated -diagnostics.json file when reporting an issue."
+    ],
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/heapdump/"
   },
   {
     "id": "claude-code.slash-command.help",
@@ -5718,6 +7725,53 @@
     "path": "claude-code/init/"
   },
   {
+    "id": "claude-code.slash-command.insights",
+    "tool": "claude-code",
+    "name": "/insights",
+    "display_name": "Analyze local usage patterns",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Session analysis",
+    "description": "Generate a local HTML report about recent projects, Claude Code usage patterns, failures, and features to consider.",
+    "syntax": [
+      "/insights"
+    ],
+    "examples": [
+      {
+        "command": "/insights",
+        "explanation": "Generate a report to review recurring workflow friction across recent local sessions.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to identify patterns across recent local sessions rather than inspect one active conversation."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Not available in cloud sessions."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/insights/"
+  },
+  {
     "id": "claude-code.slash-command.keybindings",
     "tool": "claude-code",
     "name": "/keybindings",
@@ -5758,6 +7812,66 @@
       ]
     },
     "path": "claude-code/keybindings/"
+  },
+  {
+    "id": "claude-code.slash-command.list-agents",
+    "tool": "claude-code",
+    "name": "/list-agents",
+    "display_name": "List messageable agents and sessions",
+    "type": "slash-command",
+    "aliases": [
+      "/peers"
+    ],
+    "category": "agents",
+    "role": "Cross-session agent discovery",
+    "description": "List subagents, agent-team teammates, and other Claude Code sessions that the current session can message.",
+    "syntax": [
+      "/list-agents"
+    ],
+    "examples": [
+      {
+        "command": "/list-agents",
+        "explanation": "Find the exact recipient name before sending a cross-session coordination message.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use before cross-session messaging when you need the exact available recipient names."
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires cross-session messaging to be enabled.",
+        "Requires Claude Code v2.1.224 or later; teammate rows and the current session name require v2.1.239 or later."
+      ]
+    },
+    "version": {
+      "introduced": "2.1.224",
+      "deprecated": null,
+      "removed": null,
+      "replacement": null
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/list-agents/"
   },
   {
     "id": "claude-code.slash-command.login",
@@ -6568,6 +8682,65 @@
     "path": "claude-code/sandbox/"
   },
   {
+    "id": "claude-code.slash-command.schedule",
+    "tool": "claude-code",
+    "name": "/schedule",
+    "display_name": "Manage cloud routines",
+    "type": "slash-command",
+    "aliases": [
+      "/routines"
+    ],
+    "category": "session",
+    "role": "Routine scheduling",
+    "description": "Create, update, list, run, or inspect routines that execute in the cloud through a conversational setup flow.",
+    "syntax": [
+      "/schedule [description]"
+    ],
+    "examples": [
+      {
+        "command": "/schedule",
+        "explanation": "Open conversational routine management.",
+        "level": "minimal"
+      },
+      {
+        "command": "/schedule run the dependency audit every Monday morning",
+        "explanation": "Begin configuring a recurring cloud routine.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for recurring tasks that should execute through Claude's cloud routine system."
+    ],
+    "when_not_to_use": [
+      "Do not treat this as a local operating-system scheduler."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "web"
+      ],
+      "conditions": [
+        "Requires access to Claude routines and cloud execution."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/schedule/"
+  },
+  {
     "id": "claude-code.slash-command.security-review",
     "tool": "claude-code",
     "name": "/security-review",
@@ -6610,6 +8783,100 @@
       ]
     },
     "path": "claude-code/security-review/"
+  },
+  {
+    "id": "claude-code.slash-command.setup-bedrock",
+    "tool": "claude-code",
+    "name": "/setup-bedrock",
+    "display_name": "Configure Amazon Bedrock",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Provider setup",
+    "description": "Run an interactive wizard for Amazon Bedrock authentication, region, and model pins.",
+    "syntax": [
+      "/setup-bedrock"
+    ],
+    "examples": [
+      {
+        "command": "/setup-bedrock",
+        "explanation": "Configure a workstation to use the organization's Bedrock region and approved models.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when Claude Code should authenticate and run through Amazon Bedrock."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Hidden from the command menu until CLAUDE_CODE_USE_BEDROCK=1 is set, though it can be typed in full."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/setup-bedrock/"
+  },
+  {
+    "id": "claude-code.slash-command.setup-vertex",
+    "tool": "claude-code",
+    "name": "/setup-vertex",
+    "display_name": "Configure Google Cloud Agent Platform",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Provider setup",
+    "description": "Run an interactive wizard for Google Cloud authentication, project, region, and model pins.",
+    "syntax": [
+      "/setup-vertex"
+    ],
+    "examples": [
+      {
+        "command": "/setup-vertex",
+        "explanation": "Configure a workstation for the organization's Google Cloud project and approved region.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when Claude Code should run through Google Cloud's Agent Platform."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Hidden from the command menu until CLAUDE_CODE_USE_VERTEX=1 is set, though it can be typed in full."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/setup-vertex/"
   },
   {
     "id": "claude-code.slash-command.skills",
@@ -7017,6 +9284,58 @@
     "path": "claude-code/theme/"
   },
   {
+    "id": "claude-code.slash-command.tui",
+    "tool": "claude-code",
+    "name": "/tui",
+    "display_name": "Select terminal renderer",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Terminal UI selection",
+    "description": "Show or change the terminal UI renderer and relaunch while preserving the conversation.",
+    "syntax": [
+      "/tui [default|fullscreen]"
+    ],
+    "examples": [
+      {
+        "command": "/tui",
+        "explanation": "Show the active renderer.",
+        "level": "minimal"
+      },
+      {
+        "command": "/tui fullscreen",
+        "explanation": "Switch the active conversation to fullscreen rendering.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to opt into or leave the fullscreen terminal renderer without losing the conversation."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Fullscreen support depends on the terminal environment."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/tui/"
+  },
+  {
     "id": "claude-code.slash-command.ultraplan",
     "tool": "claude-code",
     "name": "/ultraplan",
@@ -7207,6 +9526,58 @@
     "path": "claude-code/vim/"
   },
   {
+    "id": "claude-code.slash-command.voice",
+    "tool": "claude-code",
+    "name": "/voice",
+    "display_name": "Configure voice dictation",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Voice input",
+    "description": "Toggle voice dictation or choose hold-to-talk, tap-to-toggle, or off behavior.",
+    "syntax": [
+      "/voice [hold|tap|off]"
+    ],
+    "examples": [
+      {
+        "command": "/voice",
+        "explanation": "Toggle voice dictation.",
+        "level": "minimal"
+      },
+      {
+        "command": "/voice hold",
+        "explanation": "Use hold-to-talk behavior for dictating a detailed implementation prompt.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when dictation is more convenient than typing a prompt."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires a Claude.ai account and an available input device."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "claude-code/voice/"
+  },
+  {
     "id": "claude-code.slash-command.workflows",
     "tool": "claude-code",
     "name": "/workflows",
@@ -7336,6 +9707,57 @@
     "path": "gemini-cli/gemini/"
   },
   {
+    "id": "gemini-cli.cli-flag.allowed-mcp-server-names",
+    "tool": "gemini-cli",
+    "name": "--allowed-mcp-server-names",
+    "display_name": "Allow selected MCP servers",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP server selection",
+    "description": "Specify the MCP server names allowed for the invocation as comma-separated values or repeated flags.",
+    "syntax": [
+      "gemini --allowed-mcp-server-names <name[,name...]>"
+    ],
+    "examples": [
+      {
+        "command": "gemini --allowed-mcp-server-names github,filesystem",
+        "explanation": "Limit the invocation to the named MCP servers.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when an invocation should expose only a controlled subset of configured MCP servers."
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Named servers must exist in Gemini CLI configuration."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/allowed-mcp-server-names/"
+  },
+  {
     "id": "gemini-cli.cli-flag.approval-mode",
     "tool": "gemini-cli",
     "name": "--approval-mode",
@@ -7383,6 +9805,363 @@
     "path": "gemini-cli/approval-mode/"
   },
   {
+    "id": "gemini-cli.cli-flag.debug",
+    "tool": "gemini-cli",
+    "name": "--debug",
+    "display_name": "Enable debug logging",
+    "type": "cli-flag",
+    "aliases": [
+      "-d"
+    ],
+    "category": "diagnostics",
+    "role": "Verbose diagnostics",
+    "description": "Run Gemini CLI in debug mode with verbose logging.",
+    "syntax": [
+      "gemini --debug"
+    ],
+    "examples": [
+      {
+        "command": "gemini --debug",
+        "explanation": "Start an interactive session with debug logging enabled.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini --debug -p \"reproduce the MCP connection failure\"",
+        "explanation": "Capture verbose diagnostics during a reproducible headless task.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use while diagnosing startup, tool, extension, or MCP behavior."
+    ],
+    "when_not_to_use": [
+      "Avoid sharing debug logs before checking them for sensitive paths or values."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/debug/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.experimental-acp",
+    "tool": "gemini-cli",
+    "name": "--experimental-acp",
+    "display_name": "Start the ACP server",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Protocol server",
+    "description": "Start Gemini CLI in its experimental Agent Client Protocol mode.",
+    "syntax": [
+      "gemini --experimental-acp"
+    ],
+    "examples": [
+      {
+        "command": "gemini --experimental-acp",
+        "explanation": "Start the experimental ACP integration mode.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use while developing or testing an ACP client integration."
+    ],
+    "when_not_to_use": [
+      "Do not rely on experimental ACP behavior as a stable production interface."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Experimental feature."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/experimental-acp/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.extensions",
+    "tool": "gemini-cli",
+    "name": "--extensions",
+    "display_name": "Select extensions",
+    "type": "cli-flag",
+    "aliases": [
+      "-e"
+    ],
+    "category": "plugins",
+    "role": "Extension selection",
+    "description": "Select the extensions enabled for the invocation; when omitted, all installed extensions are enabled.",
+    "syntax": [
+      "gemini --extensions <name[,name...]>"
+    ],
+    "examples": [
+      {
+        "command": "gemini --extensions security-tools",
+        "explanation": "Start with only the named extension selected.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to narrow an invocation to extensions relevant to the task."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Named extensions must be installed."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/cli-flag-extensions/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.include-directories",
+    "tool": "gemini-cli",
+    "name": "--include-directories",
+    "display_name": "Include workspace directories",
+    "type": "cli-flag",
+    "category": "context",
+    "role": "Additional workspace context",
+    "description": "Include additional directories in the Gemini CLI workspace using comma-separated values or repeated flags.",
+    "syntax": [
+      "gemini --include-directories <path[,path...]>"
+    ],
+    "examples": [
+      {
+        "command": "gemini --include-directories ../shared-lib,../schemas",
+        "explanation": "Include sibling library and schema directories in workspace context.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when the task depends on files outside the initial working directory."
+    ],
+    "when_not_to_use": [
+      "Include only directories relevant to the task to avoid unnecessary context and access."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/include-directories/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.list-extensions",
+    "tool": "gemini-cli",
+    "name": "--list-extensions",
+    "display_name": "List installed extensions",
+    "type": "cli-flag",
+    "aliases": [
+      "-l"
+    ],
+    "category": "plugins",
+    "role": "Extension discovery",
+    "description": "List all available Gemini CLI extensions and exit.",
+    "syntax": [
+      "gemini --list-extensions"
+    ],
+    "examples": [
+      {
+        "command": "gemini --list-extensions",
+        "explanation": "Inspect installed extensions before selecting a subset.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use before --extensions when you need the exact installed names."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/list-extensions/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.model",
+    "tool": "gemini-cli",
+    "name": "--model",
+    "display_name": "Select a model",
+    "type": "cli-flag",
+    "aliases": [
+      "-m"
+    ],
+    "category": "models",
+    "role": "Model selection",
+    "description": "Select the Gemini model for the invocation instead of the automatic default.",
+    "syntax": [
+      "gemini --model <model>"
+    ],
+    "examples": [
+      {
+        "command": "gemini --model <available-model>",
+        "explanation": "Start with a model listed as available for the current account.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task requires a specific available model rather than automatic selection."
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Available model identifiers depend on the account and deployment."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/cli-flag-model/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.output-format",
+    "tool": "gemini-cli",
+    "name": "--output-format",
+    "display_name": "Select output format",
+    "type": "cli-flag",
+    "aliases": [
+      "-o"
+    ],
+    "category": "session",
+    "role": "Machine-readable output",
+    "description": "Select text, JSON, or streaming JSON output for the CLI invocation.",
+    "syntax": [
+      "gemini --output-format <text|json|stream-json>"
+    ],
+    "examples": [
+      {
+        "command": "gemini -p \"summarize the diff\" --output-format json",
+        "explanation": "Return machine-readable output from a headless prompt.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use JSON formats when another program will consume Gemini CLI output."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/output-format/"
+  },
+  {
     "id": "gemini-cli.cli-flag.prompt",
     "tool": "gemini-cli",
     "name": "--prompt",
@@ -7426,6 +10205,163 @@
       ]
     },
     "path": "gemini-cli/prompt/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.prompt-interactive",
+    "tool": "gemini-cli",
+    "name": "--prompt-interactive",
+    "display_name": "Run a prompt then stay interactive",
+    "type": "cli-flag",
+    "aliases": [
+      "-i"
+    ],
+    "category": "session",
+    "role": "Seeded interactive session",
+    "description": "Execute an initial prompt and continue in interactive mode after the response.",
+    "syntax": [
+      "gemini --prompt-interactive <prompt>"
+    ],
+    "examples": [
+      {
+        "command": "gemini -i \"map the authentication flow before we edit it\"",
+        "explanation": "Begin with a focused analysis, then continue the same session interactively.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when you want a repeatable initial instruction without ending the session after one response."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/prompt-interactive/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.resume",
+    "tool": "gemini-cli",
+    "name": "--resume",
+    "display_name": "Resume a prior session",
+    "type": "cli-flag",
+    "aliases": [
+      "-r"
+    ],
+    "category": "session",
+    "role": "Session recovery",
+    "description": "Resume a prior session by index or resume the most recent session with the latest selector.",
+    "syntax": [
+      "gemini --resume <index|latest>"
+    ],
+    "examples": [
+      {
+        "command": "gemini --resume latest",
+        "explanation": "Continue the most recent saved Gemini CLI session.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when returning to a conversation whose context should be preserved."
+    ],
+    "capabilities": [
+      "session.resume"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "The selected saved session must exist."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/cli-flag-resume/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.sandbox",
+    "tool": "gemini-cli",
+    "name": "--sandbox",
+    "display_name": "Enable sandboxing",
+    "type": "cli-flag",
+    "aliases": [
+      "-s"
+    ],
+    "category": "permissions",
+    "role": "Sandbox control",
+    "description": "Run Gemini CLI in a sandboxed environment for safer tool execution.",
+    "syntax": [
+      "gemini --sandbox"
+    ],
+    "examples": [
+      {
+        "command": "gemini --sandbox \"run the tests and diagnose failures\"",
+        "explanation": "Perform tool-using work inside the configured sandbox.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when commands should be isolated from the broader host environment."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Sandbox implementation depends on platform and configuration."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/sandbox/"
   },
   {
     "id": "gemini-cli.cli-flag.worktree",
@@ -7476,6 +10412,67 @@
       ]
     },
     "path": "gemini-cli/worktree/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.yolo",
+    "tool": "gemini-cli",
+    "name": "--yolo",
+    "display_name": "Legacy automatic approval",
+    "type": "cli-flag",
+    "aliases": [
+      "-y"
+    ],
+    "category": "permissions",
+    "role": "Deprecated approval bypass",
+    "description": "Automatically approve actions using the legacy flag; use approval-mode=yolo instead.",
+    "syntax": [
+      "gemini --yolo"
+    ],
+    "examples": [
+      {
+        "command": "gemini --approval-mode=yolo",
+        "explanation": "Use the documented replacement for unattended automatic approval.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use --approval-mode=yolo only in an appropriately isolated environment when automatic approvals are intentional."
+    ],
+    "when_not_to_use": [
+      "Do not add --yolo to new scripts because it is deprecated."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "version": {
+      "introduced": null,
+      "deprecated": "unknown",
+      "removed": null,
+      "replacement": "--approval-mode=yolo"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/yolo/"
   },
   {
     "id": "gemini-cli.cli-subcommand.extensions",
@@ -7690,6 +10687,165 @@
       ]
     },
     "path": "gemini-cli/gemini-settings-json/"
+  },
+  {
+    "id": "gemini-cli.config-option.plan-enabled",
+    "tool": "gemini-cli",
+    "name": "general.plan.enabled",
+    "display_name": "Enable Plan Mode",
+    "type": "config-option",
+    "category": "planning",
+    "role": "Plan-mode configuration",
+    "description": "Enable Plan Mode so planning can use a read-only safety boundary before implementation.",
+    "syntax": [
+      "{ \"general\": { \"plan\": { \"enabled\": true } } }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"general\": { \"plan\": { \"enabled\": true } } }",
+        "explanation": "Keep Plan Mode available in Gemini CLI.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when users should be able to plan without write-capable implementation tools."
+    ],
+    "capabilities": [
+      "planning.start"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Changing this setting requires a restart."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/general-plan-enabled/"
+  },
+  {
+    "id": "gemini-cli.config-option.model-name",
+    "tool": "gemini-cli",
+    "name": "model.name",
+    "display_name": "Default conversation model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Model configuration",
+    "description": "Set the Gemini model used for conversations by default.",
+    "syntax": [
+      "{ \"model\": { \"name\": \"<model>\" } }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"model\": { \"name\": \"<available-model>\" } }",
+        "explanation": "Persist an account-available conversation model.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when automatic model selection is not appropriate for most sessions."
+    ],
+    "when_not_to_use": [
+      "Use --model for a one-invocation override."
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "The configured model must be available to the account."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/model-name/"
+  },
+  {
+    "id": "gemini-cli.config-option.folder-trust-enabled",
+    "tool": "gemini-cli",
+    "name": "security.folderTrust.enabled",
+    "display_name": "Enable folder trust",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Workspace trust configuration",
+    "description": "Enable Gemini CLI's folder-trust tracking for workspaces.",
+    "syntax": [
+      "{ \"security\": { \"folderTrust\": { \"enabled\": true } } }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"security\": { \"folderTrust\": { \"enabled\": true } } }",
+        "explanation": "Require trust decisions for workspace-controlled configuration.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Keep enabled when opening repositories whose local configuration should not be trusted automatically."
+    ],
+    "when_not_to_use": [
+      "Do not disable folder trust merely to suppress a prompt in unfamiliar repositories."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Changing this setting requires a restart."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-source"
+      ]
+    },
+    "path": "gemini-cli/security-foldertrust-enabled/"
   },
   {
     "id": "gemini-cli.environment-variable.api-key",
@@ -8771,7 +11927,7 @@
         "official-source"
       ]
     },
-    "path": "gemini-cli/extensions/"
+    "path": "gemini-cli/slash-command-extensions/"
   },
   {
     "id": "gemini-cli.slash-command.gemma",
@@ -9552,7 +12708,7 @@
         "official-source"
       ]
     },
-    "path": "gemini-cli/model/"
+    "path": "gemini-cli/slash-command-model/"
   },
   {
     "id": "gemini-cli.slash-command.model-set",
@@ -10036,7 +13192,7 @@
         "official-source"
       ]
     },
-    "path": "gemini-cli/resume/"
+    "path": "gemini-cli/slash-command-resume/"
   },
   {
     "id": "gemini-cli.slash-command.rewind",
@@ -10971,6 +14127,318 @@
     "path": "cursor/agent/"
   },
   {
+    "id": "cursor.cli-flag.api-key",
+    "tool": "cursor",
+    "name": "--api-key",
+    "display_name": "Authenticate with an API key",
+    "type": "cli-flag",
+    "aliases": [
+      "-a"
+    ],
+    "category": "authentication",
+    "role": "Per-invocation authentication",
+    "description": "Supply a Cursor API key directly for the invocation instead of reading CURSOR_API_KEY.",
+    "syntax": [
+      "agent --api-key <key> [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "agent --api-key <key> \"review this repository\"",
+        "explanation": "Authenticate one invocation with an explicitly supplied key.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use in a controlled automation environment that injects the key securely."
+    ],
+    "when_not_to_use": [
+      "Do not place real keys in shell history; prefer CURSOR_API_KEY or a secret manager."
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/authentication",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/api-key/"
+  },
+  {
+    "id": "cursor.cli-flag.background",
+    "tool": "cursor",
+    "name": "--background",
+    "display_name": "Start in background mode",
+    "type": "cli-flag",
+    "aliases": [
+      "-b"
+    ],
+    "category": "session",
+    "role": "Background session launch",
+    "description": "Start Cursor Agent in background mode and open the composer picker on launch.",
+    "syntax": [
+      "agent --background"
+    ],
+    "examples": [
+      {
+        "command": "agent --background",
+        "explanation": "Start a background agent session from the current workspace.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when launching work that should begin through the background composer flow."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/background/"
+  },
+  {
+    "id": "cursor.cli-flag.force",
+    "tool": "cursor",
+    "name": "--force",
+    "display_name": "Force-allow commands",
+    "type": "cli-flag",
+    "aliases": [
+      "-f"
+    ],
+    "category": "permissions",
+    "role": "Command approval override",
+    "description": "Allow commands automatically unless an explicit deny rule blocks them.",
+    "syntax": [
+      "agent --force [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "agent --force \"run the test suite and fix failures\"",
+        "explanation": "Allow commands automatically while retaining explicit deny rules.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use only when the configured deny rules and execution environment provide sufficient safeguards."
+    ],
+    "when_not_to_use": [
+      "Do not use merely to avoid reviewing commands in an untrusted repository."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Explicit deny rules still take precedence."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/force/"
+  },
+  {
+    "id": "cursor.cli-flag.fullscreen",
+    "tool": "cursor",
+    "name": "--fullscreen",
+    "display_name": "Enable fullscreen mode",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "Terminal rendering",
+    "description": "Start Cursor Agent with fullscreen terminal rendering enabled.",
+    "syntax": [
+      "agent --fullscreen"
+    ],
+    "examples": [
+      {
+        "command": "agent --fullscreen",
+        "explanation": "Use the full terminal surface for the interactive session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when a dedicated fullscreen terminal interface is preferable to inline output."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Requires a compatible terminal."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/fullscreen/"
+  },
+  {
+    "id": "cursor.cli-flag.model",
+    "tool": "cursor",
+    "name": "--model",
+    "display_name": "Select a model",
+    "type": "cli-flag",
+    "aliases": [
+      "-m"
+    ],
+    "category": "models",
+    "role": "Model selection",
+    "description": "Select the Cursor Agent model for the invocation.",
+    "syntax": [
+      "agent --model <model>"
+    ],
+    "examples": [
+      {
+        "command": "agent --model <available-model> \"review this migration plan\"",
+        "explanation": "Use an account-available model for a specific task.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when automatic model selection is not appropriate for the task."
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Available model identifiers depend on the account."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/cli-flag-model/"
+  },
+  {
+    "id": "cursor.cli-flag.output-format",
+    "tool": "cursor",
+    "name": "--output-format",
+    "display_name": "Select print output format",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Machine-readable output",
+    "description": "Select text, JSON, or streaming JSON output when Cursor Agent runs with print mode.",
+    "syntax": [
+      "agent --print --output-format <text|json|stream-json> <prompt>"
+    ],
+    "examples": [
+      {
+        "command": "agent --print --output-format json \"summarize the current diff\"",
+        "explanation": "Return machine-readable output for an automated task.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use JSON formats when another process will consume print-mode output."
+    ],
+    "when_not_to_use": [
+      "The option only applies with --print."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --print."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/output-format/"
+  },
+  {
     "id": "cursor.cli-flag.print",
     "tool": "cursor",
     "name": "--print",
@@ -11014,6 +14482,110 @@
       ]
     },
     "path": "cursor/print/"
+  },
+  {
+    "id": "cursor.cli-flag.resume",
+    "tool": "cursor",
+    "name": "--resume",
+    "display_name": "Resume a chat session",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session recovery",
+    "description": "Resume a selected chat by identifier or open the resume flow when no identifier is supplied.",
+    "syntax": [
+      "agent --resume [chat-id]"
+    ],
+    "examples": [
+      {
+        "command": "agent --resume",
+        "explanation": "Choose a chat to resume.",
+        "level": "minimal"
+      },
+      {
+        "command": "agent --resume <chat-id>",
+        "explanation": "Continue a known chat directly from automation or shell history.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when returning to work whose existing conversation context should be retained."
+    ],
+    "capabilities": [
+      "session.resume"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "The selected chat must exist and be accessible."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/cli-flag-resume/"
+  },
+  {
+    "id": "cursor.cli-flag.version",
+    "tool": "cursor",
+    "name": "--version",
+    "display_name": "Show Cursor Agent version",
+    "type": "cli-flag",
+    "aliases": [
+      "-v"
+    ],
+    "category": "system",
+    "role": "Version inspection",
+    "description": "Print the installed Cursor Agent CLI version and exit.",
+    "syntax": [
+      "agent --version"
+    ],
+    "examples": [
+      {
+        "command": "agent --version",
+        "explanation": "Check the installed CLI version before comparing behavior with current documentation.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when reporting a bug or confirming compatibility with a documented feature."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/version/"
   },
   {
     "id": "cursor.cli-flag.worktree",
@@ -12390,6 +15962,168 @@
     "path": "cursor/cursor-cli-config-json/"
   },
   {
+    "id": "cursor.config-option.approval-mode",
+    "tool": "cursor",
+    "name": "approvalMode",
+    "display_name": "Default approval mode",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Approval configuration",
+    "description": "Persist allowlist, auto-review, or unrestricted approval behavior for Cursor Agent CLI.",
+    "syntax": [
+      "{ \"approvalMode\": \"allowlist\" }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"approvalMode\": \"allowlist\" }",
+        "explanation": "Use allowlist-based command approval by default.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to set the normal approval posture for local sessions."
+    ],
+    "when_not_to_use": [
+      "Do not choose unrestricted mode as a convenience default in untrusted repositories."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Supported values are allowlist, auto-review, and unrestricted."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/approvalmode/"
+  },
+  {
+    "id": "cursor.config-option.permissions-allow",
+    "tool": "cursor",
+    "name": "permissions.allow",
+    "display_name": "Allowed operations",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Permission allow rules",
+    "description": "List exact Cursor Agent operations permitted by the CLI configuration.",
+    "syntax": [
+      "{ \"permissions\": { \"allow\": [\"Shell(ls)\"] } }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"permissions\": { \"allow\": [\"Shell(ls)\"], \"deny\": [] } }",
+        "explanation": "Allow the exact Shell(ls) operation in project configuration.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to persist narrow, reviewed operation allowances."
+    ],
+    "when_not_to_use": [
+      "Do not use broad permission rules where an exact operation is sufficient."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Permission entries are exact strings; project configuration supports permissions only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/permissions-allow/"
+  },
+  {
+    "id": "cursor.config-option.sandbox-mode",
+    "tool": "cursor",
+    "name": "sandbox.mode",
+    "display_name": "Sandbox mode override",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Sandbox configuration",
+    "description": "Persist the sandbox-mode override used by Cursor Agent CLI.",
+    "syntax": [
+      "{ \"sandbox\": { \"mode\": \"<mode>\" } }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"sandbox\": { \"mode\": \"<documented-mode>\" } }",
+        "explanation": "Persist a sandbox mode supported by the installed CLI.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when the CLI should consistently start with one supported sandbox behavior."
+    ],
+    "when_not_to_use": [
+      "Use the interactive sandbox controls for a temporary session change."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Valid mode values depend on the installed CLI and policy."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/sandbox-mode/"
+  },
+  {
     "id": "cursor.environment-variable.api-key",
     "tool": "cursor",
     "name": "CURSOR_API_KEY",
@@ -13327,7 +17061,7 @@
         "official-docs"
       ]
     },
-    "path": "cursor/model/"
+    "path": "cursor/slash-command-model/"
   },
   {
     "id": "cursor.slash-command.open",
@@ -13602,7 +17336,7 @@
         "official-docs"
       ]
     },
-    "path": "cursor/resume/"
+    "path": "cursor/slash-command-resume/"
   },
   {
     "id": "cursor.slash-command.rewind",
@@ -14169,6 +17903,215 @@
     "path": "github-copilot/copilot-init/"
   },
   {
+    "id": "github-copilot.cli-flag.add-dir",
+    "tool": "github-copilot",
+    "name": "--add-dir",
+    "display_name": "Allow another directory",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Additional directory access",
+    "description": "Allow file access to an additional directory and load its trusted .github/skills and .github/agents configuration.",
+    "syntax": [
+      "copilot --add-dir=<path>"
+    ],
+    "examples": [
+      {
+        "command": "copilot --add-dir=../shared-lib",
+        "explanation": "Allow a sibling library and load its trusted Copilot agent and skill definitions.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task legitimately spans another trusted directory."
+    ],
+    "when_not_to_use": [
+      "Do not add an untrusted directory because its agent and skill configuration may be loaded."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/cli-flag-add-dir/"
+  },
+  {
+    "id": "github-copilot.cli-flag.additional-mcp-config",
+    "tool": "github-copilot",
+    "name": "--additional-mcp-config",
+    "display_name": "Add session MCP configuration",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "Temporary MCP configuration",
+    "description": "Add or override MCP servers for one session using an inline JSON value or an @-prefixed file path.",
+    "syntax": [
+      "copilot --additional-mcp-config=<json|@file>"
+    ],
+    "examples": [
+      {
+        "command": "copilot --additional-mcp-config=@./mcp-session.json",
+        "explanation": "Add project-specific MCP servers without changing the user's persistent file.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for temporary MCP servers or automation-specific overrides."
+    ],
+    "when_not_to_use": [
+      "Use the persistent MCP configuration for servers needed in every session."
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/additional-mcp-config/"
+  },
+  {
+    "id": "github-copilot.cli-flag.agent",
+    "tool": "github-copilot",
+    "name": "--agent",
+    "display_name": "Select a custom agent",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Agent selection",
+    "description": "Start the invocation using a named custom agent.",
+    "syntax": [
+      "copilot --agent=<agent-name>"
+    ],
+    "examples": [
+      {
+        "command": "copilot --agent=security-reviewer",
+        "explanation": "Start with the configured security-reviewer agent.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task should use one custom agent's tools, prompt, and configuration from the outset."
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "The named custom agent must be available and trusted."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/cli-flag-agent/"
+  },
+  {
+    "id": "github-copilot.cli-flag.allow-all",
+    "tool": "github-copilot",
+    "name": "--allow-all",
+    "display_name": "Allow all permissions",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Permission bypass",
+    "description": "Enable all tool, path, and URL permissions for the invocation.",
+    "syntax": [
+      "copilot --allow-all"
+    ],
+    "examples": [
+      {
+        "command": "copilot --allow-all -p \"run the isolated fixture migration\"",
+        "explanation": "Run a programmatic task inside a separately controlled disposable environment.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use only in a trusted, appropriately isolated execution environment."
+    ],
+    "when_not_to_use": [
+      "Do not use on untrusted repositories or where narrower allow rules are sufficient."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Equivalent to allow-all-tools, allow-all-paths, and allow-all-urls; managed policy can disable bypass permissions."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/cli-flag-allow-all/"
+  },
+  {
     "id": "github-copilot.cli-flag.allow-tool",
     "tool": "github-copilot",
     "name": "--allow-tool",
@@ -14256,6 +18199,106 @@
     "path": "github-copilot/autopilot/"
   },
   {
+    "id": "github-copilot.cli-flag.deny-tool",
+    "tool": "github-copilot",
+    "name": "--deny-tool",
+    "display_name": "Deny a tool pattern",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Tool denial",
+    "description": "Deny a tool or scoped permission pattern; deny rules take precedence over allow rules.",
+    "syntax": [
+      "copilot --deny-tool=<pattern>"
+    ],
+    "examples": [
+      {
+        "command": "copilot --allow-tool='shell(git:*)' --deny-tool='shell(git push)'",
+        "explanation": "Allow Git commands except git push.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to carve explicit high-risk exceptions out of broader allow rules."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/deny-tool/"
+  },
+  {
+    "id": "github-copilot.cli-flag.effort",
+    "tool": "github-copilot",
+    "name": "--effort",
+    "display_name": "Set model effort",
+    "type": "cli-flag",
+    "category": "models",
+    "role": "Reasoning effort selection",
+    "description": "Set the reasoning effort for the selected model when the model supports configurable effort.",
+    "syntax": [
+      "copilot --effort=<level>"
+    ],
+    "examples": [
+      {
+        "command": "copilot --effort=high \"review the concurrency design\"",
+        "explanation": "Request higher reasoning effort for a difficult design review.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a supported model should spend more or less reasoning effort on the task."
+    ],
+    "when_not_to_use": [
+      "Do not assume every model supports every effort value."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Supported levels depend on the selected model."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/effort/"
+  },
+  {
     "id": "github-copilot.cli-flag.model",
     "tool": "github-copilot",
     "name": "--model",
@@ -14301,6 +18344,315 @@
       ]
     },
     "path": "github-copilot/cli-flag-model/"
+  },
+  {
+    "id": "github-copilot.cli-flag.output-format",
+    "tool": "github-copilot",
+    "name": "--output-format",
+    "display_name": "Select CLI output format",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Machine-readable output",
+    "description": "Select plain text or JSON Lines output for the invocation.",
+    "syntax": [
+      "copilot --output-format=<text|json>"
+    ],
+    "examples": [
+      {
+        "command": "copilot -p \"summarize the diff\" --output-format=json",
+        "explanation": "Return JSON Lines suitable for a consuming program.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use JSON when programmatic consumers need structured event output."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/output-format/"
+  },
+  {
+    "id": "github-copilot.cli-flag.prompt",
+    "tool": "github-copilot",
+    "name": "--prompt",
+    "display_name": "Run a prompt programmatically",
+    "type": "cli-flag",
+    "aliases": [
+      "-p"
+    ],
+    "category": "session",
+    "role": "Headless execution",
+    "description": "Execute one prompt programmatically and exit after pending task handling and the final result.",
+    "syntax": [
+      "copilot --prompt=<prompt>"
+    ],
+    "examples": [
+      {
+        "command": "copilot -p \"summarize the uncommitted changes\"",
+        "explanation": "Run one non-interactive repository task.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use in scripts, CI, or shell pipelines where an interactive session is not appropriate."
+    ],
+    "when_not_to_use": [
+      "Use interactive mode when the task requires ongoing clarification or approval."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/prompt/"
+  },
+  {
+    "id": "github-copilot.cli-flag.resume",
+    "tool": "github-copilot",
+    "name": "--resume",
+    "display_name": "Resume a session",
+    "type": "cli-flag",
+    "aliases": [
+      "-r"
+    ],
+    "category": "session",
+    "role": "Session recovery",
+    "description": "Open the session picker or resume a session by exact name, identifier, or identifier prefix.",
+    "syntax": [
+      "copilot --resume[=<value>]"
+    ],
+    "examples": [
+      {
+        "command": "copilot --resume",
+        "explanation": "Choose a session from the interactive picker.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot --resume=auth-refactor",
+        "explanation": "Resume an exactly named session directly.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when returning to prior work whose conversation and task history should be preserved."
+    ],
+    "capabilities": [
+      "session.resume"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Bare --resume requires a TTY when multiple sessions exist and conflicts with --continue."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/cli-flag-resume/"
+  },
+  {
+    "id": "github-copilot.cli-flag.sandbox",
+    "tool": "github-copilot",
+    "name": "--sandbox",
+    "display_name": "Enable OS-level sandboxing",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Shell sandbox control",
+    "description": "Enable the operating-system shell sandbox for the current session without changing the saved setting.",
+    "syntax": [
+      "copilot --sandbox"
+    ],
+    "examples": [
+      {
+        "command": "copilot --sandbox -p \"run tests and diagnose failures\"",
+        "explanation": "Run a headless tool-using task with the OS-level sandbox enabled.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to opt one session into stronger shell isolation."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Only available in experimental mode."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/cli-flag-sandbox/"
+  },
+  {
+    "id": "github-copilot.cli-flag.stream",
+    "tool": "github-copilot",
+    "name": "--stream",
+    "display_name": "Control response streaming",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Output streaming",
+    "description": "Enable or disable progressive display of Copilot responses.",
+    "syntax": [
+      "copilot --stream=<on|off>"
+    ],
+    "examples": [
+      {
+        "command": "copilot --stream=off -p \"produce the final release summary\"",
+        "explanation": "Wait for a complete response instead of rendering it progressively.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Disable streaming when a consuming terminal or harness should receive the completed response as one result."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/stream/"
+  },
+  {
+    "id": "github-copilot.cli-flag.worktree",
+    "tool": "github-copilot",
+    "name": "--worktree",
+    "display_name": "Start in an isolated worktree",
+    "type": "cli-flag",
+    "aliases": [
+      "-w"
+    ],
+    "category": "worktrees",
+    "role": "Worktree creation",
+    "description": "Create or reuse an isolated Git worktree under a sibling .worktrees directory and start the session there.",
+    "syntax": [
+      "copilot --worktree[=<name>]"
+    ],
+    "examples": [
+      {
+        "command": "copilot --worktree=auth-refactor",
+        "explanation": "Create or reuse an isolated auth-refactor worktree.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to isolate concurrent changes or an experimental implementation from the current checkout."
+    ],
+    "when_not_to_use": [
+      "Do not combine it with resume, continue, or connect session selection."
+    ],
+    "capabilities": [
+      "worktree.manage"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Only available in experimental mode and requires a Git repository."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/cli-flag-worktree/"
   },
   {
     "id": "github-copilot.cli-subcommand.app",
@@ -14695,6 +19047,160 @@
     "path": "github-copilot/copilot-home-settings-json/"
   },
   {
+    "id": "github-copilot.config-option.model",
+    "tool": "github-copilot",
+    "name": "model",
+    "display_name": "Default model",
+    "type": "config-option",
+    "category": "models",
+    "role": "Model configuration",
+    "description": "Set the default Copilot CLI model, or auto to let Copilot select an available model.",
+    "syntax": [
+      "{ \"model\": \"auto\" }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"model\": \"auto\" }",
+        "explanation": "Let Copilot choose the default model for new sessions.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to persist automatic or explicit model selection across sessions."
+    ],
+    "when_not_to_use": [
+      "Use --model or /model for a one-session change."
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Available models depend on account and organization policy."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/config-option-model/"
+  },
+  {
+    "id": "github-copilot.config-option.sandbox-enabled",
+    "tool": "github-copilot",
+    "name": "sandbox.enabled",
+    "display_name": "Enable the OS sandbox",
+    "type": "config-option",
+    "category": "permissions",
+    "role": "Sandbox configuration",
+    "description": "Persist OS-level sandboxing for shell commands, local MCP and language servers, and built-in file and web tools.",
+    "syntax": [
+      "{ \"sandbox\": { \"enabled\": true } }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"sandbox\": { \"enabled\": true } }",
+        "explanation": "Enable the sandbox for future sessions by default.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to make shell and local tool isolation the normal session posture."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Sandbox functionality is available in experimental mode; managed policy can enforce a minimum sandbox floor."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/sandbox-enabled/"
+  },
+  {
+    "id": "github-copilot.config-option.worktree-base-ref",
+    "tool": "github-copilot",
+    "name": "worktreeBaseRef",
+    "display_name": "Worktree branch base",
+    "type": "config-option",
+    "category": "worktrees",
+    "role": "Worktree configuration",
+    "description": "Choose whether new Copilot worktrees branch from the current checkout or the remote default branch.",
+    "syntax": [
+      "{ \"worktreeBaseRef\": \"head\" }",
+      "{ \"worktreeBaseRef\": \"defaultBranch\" }"
+    ],
+    "examples": [
+      {
+        "command": "{ \"worktreeBaseRef\": \"defaultBranch\" }",
+        "explanation": "Base new isolated worktrees on the remote default branch.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use defaultBranch when new worktrees should not inherit unrelated commits from the current checkout."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Applies to the experimental /worktree and --worktree controls."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/worktreebaseref/"
+  },
+  {
     "id": "github-copilot.environment-variable.copilot-home",
     "tool": "github-copilot",
     "name": "COPILOT_HOME",
@@ -14859,6 +19365,629 @@
     "path": "github-copilot/at/"
   },
   {
+    "id": "github-copilot.shortcut.quick-help",
+    "tool": "github-copilot",
+    "name": "?",
+    "display_name": "Open quick help",
+    "type": "shortcut",
+    "category": "help",
+    "role": "Command discovery",
+    "description": "Open quick help from an empty prompt; press again to dismiss it and insert a literal question mark.",
+    "syntax": [
+      "?"
+    ],
+    "examples": [
+      {
+        "command": "?",
+        "explanation": "Open the interactive quick-help tabs.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when you need an in-session reminder of commands or shortcuts."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "The prompt must be empty."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/quick-help/"
+  },
+  {
+    "id": "github-copilot.shortcut.paste-image",
+    "tool": "github-copilot",
+    "name": "Alt+V",
+    "display_name": "Paste image attachment",
+    "type": "shortcut",
+    "category": "context",
+    "role": "Image attachment",
+    "description": "Paste an image from the clipboard into the prompt as an attachment.",
+    "syntax": [
+      "Alt+V"
+    ],
+    "examples": [
+      {
+        "command": "Alt+V",
+        "explanation": "Attach a clipboard screenshot to the prompt.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when a screenshot or diagram is useful context for the task."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires clipboard image support and a model and organization policy that allow vision input."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/alt-v/"
+  },
+  {
+    "id": "github-copilot.shortcut.cancel-or-exit",
+    "tool": "github-copilot",
+    "name": "Ctrl+C",
+    "display_name": "Cancel, clear, or exit",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Session interruption",
+    "description": "Cancel the active operation or clear input; press twice to exit.",
+    "syntax": [
+      "Ctrl+C",
+      "Ctrl+C, Ctrl+C"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+C",
+        "explanation": "Cancel work or clear the current input.",
+        "level": "minimal"
+      },
+      {
+        "command": "Ctrl+C, Ctrl+C",
+        "explanation": "Exit the interactive CLI.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for terminal-standard interruption and exit behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-c/"
+  },
+  {
+    "id": "github-copilot.shortcut.shutdown",
+    "tool": "github-copilot",
+    "name": "Ctrl+D",
+    "display_name": "Shut down Copilot CLI",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Session shutdown",
+    "description": "Shut down the Copilot CLI process.",
+    "syntax": [
+      "Ctrl+D"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+D",
+        "explanation": "Shut down Copilot CLI.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when the interactive CLI should close cleanly."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-d/"
+  },
+  {
+    "id": "github-copilot.shortcut.external-editor",
+    "tool": "github-copilot",
+    "name": "Ctrl+G",
+    "display_name": "Edit prompt externally",
+    "type": "shortcut",
+    "aliases": [
+      "Ctrl+X then e"
+    ],
+    "category": "configuration",
+    "role": "Prompt editing",
+    "description": "Open the current prompt in the editor configured by the EDITOR environment variable.",
+    "syntax": [
+      "Ctrl+G"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+G",
+        "explanation": "Edit a long prompt in the configured external editor.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use for a long or structured prompt that is awkward to edit on one terminal line."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires a working EDITOR configuration."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-g/"
+  },
+  {
+    "id": "github-copilot.shortcut.clear-screen",
+    "tool": "github-copilot",
+    "name": "Ctrl+L",
+    "display_name": "Clear the screen",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Terminal cleanup",
+    "description": "Clear the terminal display without ending the session.",
+    "syntax": [
+      "Ctrl+L"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+L",
+        "explanation": "Clear visual clutter while keeping the session active.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when you want a clean terminal view without clearing conversation context."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-l/"
+  },
+  {
+    "id": "github-copilot.shortcut.queue-message",
+    "tool": "github-copilot",
+    "name": "Ctrl+Q",
+    "display_name": "Queue a message",
+    "type": "shortcut",
+    "aliases": [
+      "Ctrl+Enter"
+    ],
+    "category": "session",
+    "role": "Queued input",
+    "description": "Queue the current input to run after the agent's active task finishes.",
+    "syntax": [
+      "Ctrl+Q"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+Q",
+        "explanation": "Queue the typed follow-up while Copilot is busy.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when you want a follow-up, shell command, or supported slash command to run in order after current work."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "The agent must be running for the input to be queued."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-q/"
+  },
+  {
+    "id": "github-copilot.shortcut.history-search",
+    "tool": "github-copilot",
+    "name": "Ctrl+R",
+    "display_name": "Search command history",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Input history search",
+    "description": "Reverse-search prior command and prompt input.",
+    "syntax": [
+      "Ctrl+R"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+R",
+        "explanation": "Find and reuse a previous prompt from input history.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when repeating or adapting a prompt entered earlier."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-r/"
+  },
+  {
+    "id": "github-copilot.shortcut.paste-attachment",
+    "tool": "github-copilot",
+    "name": "Ctrl+V",
+    "display_name": "Paste clipboard attachment",
+    "type": "shortcut",
+    "category": "context",
+    "role": "Context attachment",
+    "description": "Paste clipboard content into the prompt as an attachment.",
+    "syntax": [
+      "Ctrl+V"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+V",
+        "explanation": "Attach clipboard content to the current prompt.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when clipboard content should be supplied as explicit prompt context."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires clipboard integration in the terminal environment."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-v/"
+  },
+  {
+    "id": "github-copilot.shortcut.command-with-draft",
+    "tool": "github-copilot",
+    "name": "Ctrl+X then /",
+    "display_name": "Run a slash command while drafting",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Draft-preserving command access",
+    "description": "Run a slash command after prompt text has already been entered without retyping the draft.",
+    "syntax": [
+      "Ctrl+X then /"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+X then /model",
+        "explanation": "Change the model while preserving the prompt currently being drafted.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a session setting needs to change after you have started composing a prompt."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Prompt input must already contain text."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-x-then/"
+  },
+  {
+    "id": "github-copilot.shortcut.background-task",
+    "tool": "github-copilot",
+    "name": "Ctrl+X then b",
+    "display_name": "Move task to background",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Background execution",
+    "description": "Promote the running task or shell command to background execution.",
+    "syntax": [
+      "Ctrl+X then b"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+X then b",
+        "explanation": "Move a long-running test command to the background and continue interacting.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when active work can continue while a task or shell command finishes."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "A task or shell command must be running."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/ctrl-x-then-b/"
+  },
+  {
+    "id": "github-copilot.shortcut.cancel",
+    "tool": "github-copilot",
+    "name": "Esc",
+    "display_name": "Cancel the current operation",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Operation cancellation",
+    "description": "Cancel the current operation; press twice to interrupt a running turn or stop background agents while the main agent is idle.",
+    "syntax": [
+      "Esc",
+      "Esc, Esc"
+    ],
+    "examples": [
+      {
+        "command": "Esc",
+        "explanation": "Cancel the current operation.",
+        "level": "minimal"
+      },
+      {
+        "command": "Esc, Esc",
+        "explanation": "Interrupt a running turn.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when the active operation or turn should stop."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/esc/"
+  },
+  {
+    "id": "github-copilot.shortcut.newline",
+    "tool": "github-copilot",
+    "name": "Shift+Enter",
+    "display_name": "Insert a prompt newline",
+    "type": "shortcut",
+    "aliases": [
+      "Option+Enter",
+      "Alt+Enter"
+    ],
+    "category": "terminal",
+    "role": "Multiline prompt editing",
+    "description": "Insert a newline into prompt input instead of submitting it.",
+    "syntax": [
+      "Shift+Enter"
+    ],
+    "examples": [
+      {
+        "command": "Shift+Enter",
+        "explanation": "Add another line to a structured prompt without sending it.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use to compose multiline requirements or checklists in the prompt box."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "On macOS Option+Enter is also supported; on Windows and Linux Alt+Enter is supported."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/shift-enter/"
+  },
+  {
     "id": "github-copilot.shortcut.mode-cycle",
     "tool": "github-copilot",
     "name": "Shift+Tab",
@@ -14946,7 +20075,7 @@
         "official-docs"
       ]
     },
-    "path": "github-copilot/add-dir/"
+    "path": "github-copilot/slash-command-add-dir/"
   },
   {
     "id": "github-copilot.slash-command.after",
@@ -15041,7 +20170,7 @@
         "official-docs"
       ]
     },
-    "path": "github-copilot/agent/"
+    "path": "github-copilot/slash-command-agent/"
   },
   {
     "id": "github-copilot.slash-command.allow-all",
@@ -15091,7 +20220,7 @@
         "official-docs"
       ]
     },
-    "path": "github-copilot/allow-all/"
+    "path": "github-copilot/slash-command-allow-all/"
   },
   {
     "id": "github-copilot.slash-command.app",
@@ -15229,6 +20358,58 @@
     "path": "github-copilot/changelog/"
   },
   {
+    "id": "github-copilot.slash-command.chronicle",
+    "tool": "github-copilot",
+    "name": "/chronicle",
+    "display_name": "Inspect session history and insights",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Longitudinal session analysis",
+    "description": "Run session-history tools for standups, usage tips, improvement suggestions, indexing, and repository skill proposals.",
+    "syntax": [
+      "/chronicle <standup|tips|improve|reindex|skills create|skills review|skills status>"
+    ],
+    "examples": [
+      {
+        "command": "/chronicle standup",
+        "explanation": "Create a standup summary from session history.",
+        "level": "minimal"
+      },
+      {
+        "command": "/chronicle skills review",
+        "explanation": "Review repository skill proposals generated from observed usage.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a task depends on patterns or outcomes across prior Copilot CLI sessions."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Uses Copilot CLI session data available to the current installation."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/chronicle/"
+  },
+  {
     "id": "github-copilot.slash-command.clear",
     "tool": "github-copilot",
     "name": "/clear",
@@ -15286,6 +20467,61 @@
       ]
     },
     "path": "github-copilot/clear/"
+  },
+  {
+    "id": "github-copilot.slash-command.clikit",
+    "tool": "github-copilot",
+    "name": "/clikit",
+    "display_name": "Preview CLI business components",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Component preview",
+    "description": "Preview a CLI business component such as quota information.",
+    "syntax": [
+      "/clikit [component]"
+    ],
+    "examples": [
+      {
+        "command": "/clikit",
+        "explanation": "Open the CLI business-component preview.",
+        "level": "minimal"
+      },
+      {
+        "command": "/clikit quota",
+        "explanation": "Request a preview of the quota component when it is available.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for inspecting documented CLI business-component previews."
+    ],
+    "when_not_to_use": [
+      "Do not treat preview components as a general configuration interface."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "The available component names depend on the installed Copilot CLI build."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/clikit/"
   },
   {
     "id": "github-copilot.slash-command.compact",
@@ -16263,6 +21499,64 @@
     "path": "github-copilot/instructions/"
   },
   {
+    "id": "github-copilot.slash-command.keep-alive",
+    "tool": "github-copilot",
+    "name": "/keep-alive",
+    "display_name": "Prevent machine sleep",
+    "type": "slash-command",
+    "aliases": [
+      "/caffeinate"
+    ],
+    "category": "system",
+    "role": "Sleep prevention",
+    "description": "Prevent the machine from sleeping for the active session, while the agent is busy, or for a specified duration.",
+    "syntax": [
+      "/keep-alive [on|off|busy|duration]"
+    ],
+    "examples": [
+      {
+        "command": "/keep-alive busy",
+        "explanation": "Prevent sleep only while the agent is busy.",
+        "level": "minimal"
+      },
+      {
+        "command": "/keep-alive 2h",
+        "explanation": "Keep the machine awake during a two-hour unattended validation run.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use for a long local task that would be interrupted if the machine sleeps."
+    ],
+    "when_not_to_use": [
+      "Turn it off when continued wakefulness is no longer needed."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Behavior depends on operating-system support for sleep prevention."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/keep-alive/"
+  },
+  {
     "id": "github-copilot.slash-command.limits",
     "tool": "github-copilot",
     "name": "/limits",
@@ -16393,6 +21687,54 @@
     "path": "github-copilot/limits-unset/"
   },
   {
+    "id": "github-copilot.slash-command.list-dirs",
+    "tool": "github-copilot",
+    "name": "/list-dirs",
+    "display_name": "List allowed directories",
+    "type": "slash-command",
+    "category": "permissions",
+    "role": "File-access inspection",
+    "description": "Display every directory for which file access has been allowed in the current session.",
+    "syntax": [
+      "/list-dirs"
+    ],
+    "examples": [
+      {
+        "command": "/list-dirs",
+        "explanation": "Audit the session's file-access scope after adding a sibling repository.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to verify the directories Copilot can access before working across repository boundaries."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/list-dirs/"
+  },
+  {
     "id": "github-copilot.slash-command.login",
     "tool": "github-copilot",
     "name": "/login",
@@ -16481,6 +21823,58 @@
       ]
     },
     "path": "github-copilot/logout/"
+  },
+  {
+    "id": "github-copilot.slash-command.lsp",
+    "tool": "github-copilot",
+    "name": "/lsp",
+    "display_name": "Manage language servers",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Language-server management",
+    "description": "Show, test, reload, inspect logs for, or get help with language-server configuration.",
+    "syntax": [
+      "/lsp [show|test|reload|logs|help] [server-name]"
+    ],
+    "examples": [
+      {
+        "command": "/lsp show",
+        "explanation": "Show configured language servers.",
+        "level": "minimal"
+      },
+      {
+        "command": "/lsp test typescript",
+        "explanation": "Test the configured TypeScript language server before relying on its diagnostics.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when language-aware tools are unavailable, stale, or producing questionable results."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Named servers must exist in the current language-server configuration."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/lsp/"
   },
   {
     "id": "github-copilot.slash-command.mcp",
@@ -16915,6 +22309,60 @@
     "path": "github-copilot/pr/"
   },
   {
+    "id": "github-copilot.slash-command.refine",
+    "tool": "github-copilot",
+    "name": "/refine",
+    "display_name": "Refine a draft prompt",
+    "type": "slash-command",
+    "category": "planning",
+    "role": "Prompt refinement",
+    "description": "Rewrite roughly composed text into a clearer prompt for review before it is sent.",
+    "syntax": [
+      "/refine <text>",
+      "Ctrl+X then /refine"
+    ],
+    "examples": [
+      {
+        "command": "/refine fix auth maybe race tests",
+        "explanation": "Rewrite rough text into a clear prompt for review.",
+        "level": "minimal"
+      },
+      {
+        "command": "Ctrl+X then /refine",
+        "explanation": "Refine the text already in the input box, which is useful after voice dictation.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a draft prompt is ambiguous or was entered quickly by speech."
+    ],
+    "when_not_to_use": [
+      "Review the rewritten prompt before submitting it; refinement does not validate the requested behavior."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/refine/"
+  },
+  {
     "id": "github-copilot.slash-command.remote",
     "tool": "github-copilot",
     "name": "/remote",
@@ -17181,7 +22629,7 @@
         "official-docs"
       ]
     },
-    "path": "github-copilot/resume/"
+    "path": "github-copilot/slash-command-resume/"
   },
   {
     "id": "github-copilot.slash-command.review",
@@ -17235,6 +22683,59 @@
     "path": "github-copilot/review/"
   },
   {
+    "id": "github-copilot.slash-command.rubber-duck",
+    "tool": "github-copilot",
+    "name": "/rubber-duck",
+    "display_name": "Consult the rubber duck agent",
+    "type": "slash-command",
+    "category": "agents",
+    "role": "Independent second opinion",
+    "description": "Consult Copilot's rubber duck agent for a second opinion on a plan, code, or tests.",
+    "syntax": [
+      "/rubber-duck [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "/rubber-duck",
+        "explanation": "Ask for a second opinion on the current work.",
+        "level": "minimal"
+      },
+      {
+        "command": "/rubber-duck challenge the assumptions in this migration plan",
+        "explanation": "Request focused critique before implementation begins.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when an independent critique could expose missing assumptions or weak tests."
+    ],
+    "when_not_to_use": [
+      "Do not mistake a second model opinion for independent runtime verification."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/rubber-duck/"
+  },
+  {
     "id": "github-copilot.slash-command.sandbox",
     "tool": "github-copilot",
     "name": "/sandbox",
@@ -17276,7 +22777,7 @@
         "official-docs"
       ]
     },
-    "path": "github-copilot/sandbox/"
+    "path": "github-copilot/slash-command-sandbox/"
   },
   {
     "id": "github-copilot.slash-command.search",
@@ -18010,6 +23511,59 @@
     "path": "github-copilot/theme/"
   },
   {
+    "id": "github-copilot.slash-command.tuikit",
+    "tool": "github-copilot",
+    "name": "/tuikit",
+    "display_name": "Preview TUIkit components",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Terminal UI component preview",
+    "description": "Preview TUIkit color tokens, icons, selectors, and tab-bar components.",
+    "syntax": [
+      "/tuikit [colors|icons|select|tabbar]"
+    ],
+    "examples": [
+      {
+        "command": "/tuikit colors",
+        "explanation": "Preview TUIkit color tokens.",
+        "level": "minimal"
+      },
+      {
+        "command": "/tuikit tabbar",
+        "explanation": "Inspect the tab-bar component when evaluating terminal rendering behavior.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to inspect the documented terminal UI design-system previews."
+    ],
+    "when_not_to_use": [
+      "Do not treat preview components as user theme configuration."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-08-30",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/tuikit/"
+  },
+  {
     "id": "github-copilot.slash-command.undo",
     "tool": "github-copilot",
     "name": "/undo",
@@ -18314,7 +23868,7 @@
         "official-docs"
       ]
     },
-    "path": "github-copilot/worktree/"
+    "path": "github-copilot/slash-command-worktree/"
   },
   {
     "id": "github-copilot.slash-command.worktree-new",
