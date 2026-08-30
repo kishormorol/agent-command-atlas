@@ -49,6 +49,10 @@ for (const entryId of [
 const resumeTools = new Set(context.testSearch("resume old session").slice(0, 9).map((entry) => entry.tool));
 assert.deepEqual(resumeTools, new Set(["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]));
 
+const modelResults = context.testSearch("model");
+assert(modelResults.length > 0, "model search should return model controls");
+assert(modelResults.some((entry) => entry.name === "/model" || entry.name === "--model"), "model search should surface a primary model control");
+
 const copilotPermissionResults = context.testSearch("show all github copilot permission commands").slice(0, 8);
 assert(copilotPermissionResults.length > 0);
 assert(copilotPermissionResults.every((entry) => entry.tool === "github-copilot"));
@@ -71,6 +75,7 @@ assert(context.testHomeMarkup.includes('class="hero__command-palette"'));
 assert(context.testHomeMarkup.includes('class="atlas-stats"'));
 assert(context.testHomeMarkup.includes(`${entries.length}</dt><dd>reference entries`));
 assert(context.testHomeMarkup.includes('data-query="compact context"'));
+assert(context.testHomeMarkup.includes("Star this project on GitHub"));
 assert(app.includes('addEventListener("search", update)'));
 assert(app.includes('addEventListener("change", update)'));
 assert(app.includes('addEventListener("submit"'));

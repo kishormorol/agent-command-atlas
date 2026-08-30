@@ -23,6 +23,8 @@ const SEARCH_SYNONYMS = {
   context: ["conversation", "chat", "tokens"],
   old: ["earlier", "previous", "saved", "history", "resume"],
   permission: ["permissions", "approval", "sandbox", "trust", "access"],
+  model: ["models", "llm", "select", "switch", "provider"],
+  models: ["model", "llm", "select", "switch", "provider"],
   resume: ["continue", "restore", "previous", "history"],
   session: ["conversation", "chat", "thread"],
   shell: ["terminal", "execute", "command", "process"],
@@ -113,7 +115,7 @@ function prepareSearchIndex() {
     const capabilities = entryCapabilities(entry);
     const primaryCapabilities = state.primaryCapabilitiesByEntry.get(entry.id) || [];
     entry._searchFields = [
-      { text: normalize([entry.name, entry.display_name, ...(entry.aliases || [])].join(" ")), weight: 12 },
+      { text: normalize([entry.name, entry.display_name, ...(entry.aliases || []), ...(entry.syntax || [])].join(" ")), weight: 12 },
       { text: normalize(primaryCapabilities.flatMap((item) => [item.id, item.display_name, item.description]).join(" ")), weight: 24 },
       { text: normalize(capabilities.flatMap((item) => [item.id, item.display_name, item.description]).join(" ")), weight: 10 },
       { text: normalize([toolName(entry.tool), state.tools.get(entry.tool)?.vendor, entry.type, categoryName(entry.category), entry.role].join(" ")), weight: 6 },
@@ -310,7 +312,7 @@ function homeView() {
   const verifiedDates = state.entries.map((entry) => entry.verification.last_verified).filter(Boolean).sort();
   return `<section class="hero">
       <div class="hero__content">
-        <div class="hero__copy"><p class="eyebrow">Agent Command Atlas · Verified reference</p><h1>Find the right<br><span>agent command.</span></h1><p>Search commands, flags, shortcuts, and control surfaces across Codex, Claude Code, Gemini CLI, Cursor, and GitHub Copilot CLI.</p></div>
+        <div class="hero__copy"><p class="eyebrow">Agent Command Atlas · Verified reference</p><h1>Find the right<br><span>agent command.</span></h1><p>Search commands, flags, shortcuts, and control surfaces across Codex, Claude Code, Gemini CLI, Cursor, and GitHub Copilot CLI.</p><a class="hero__star" href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer"><span aria-hidden="true">★</span> Star this project on GitHub <span aria-hidden="true">↗</span></a></div>
         <div class="hero__command-palette">
           <div class="command-palette__bar"><span></span><span></span><span></span><strong>atlas / search</strong></div>
           ${searchBox(filters)}

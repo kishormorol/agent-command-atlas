@@ -156,6 +156,24 @@ code { overflow-wrap: anywhere; }
 }
 .hero h1 span { color: var(--accent); }
 .hero__copy > p:last-child { max-width: 620px; margin: 0; color: #adb4bf; font-size: clamp(1rem, 1.6vw, 1.16rem); line-height: 1.62; }
+.hero__star {
+  display: inline-flex;
+  gap: 9px;
+  margin-top: 24px;
+  padding: 10px 14px;
+  align-items: center;
+  color: var(--night);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  font-size: .75rem;
+  font-weight: 850;
+  text-decoration: none;
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.hero__star:hover { background: #d8ff82; box-shadow: 0 6px 0 rgba(200, 255, 83, .18); transform: translateY(-2px); }
+.hero__star:focus-visible { outline: 3px solid rgba(200, 255, 83, .72); outline-offset: 3px; }
+.hero__star span:first-child { font-size: 1rem; line-height: 1; }
 .eyebrow { margin: 0 0 8px; color: var(--link); font-size: .65rem; font-weight: 860; letter-spacing: .14em; text-transform: uppercase; }
 .hero .eyebrow { color: var(--accent); }
 
@@ -601,6 +619,38 @@ pre { max-width: 100%; margin: 0; padding: 17px 19px; overflow-x: auto; color: #
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .capability-card, .entry-card { transition: none; }
+}
+
+/* Product polish: keep the reference dense, but give the main surfaces clearer hierarchy. */
+body {
+  background:
+    radial-gradient(circle at 8% -10%, rgba(200, 255, 83, .10), transparent 28rem),
+    var(--canvas);
+}
+.site-header__inner { min-height: 72px; }
+.brand__mark { box-shadow: 0 0 0 4px rgba(200, 255, 83, .09); }
+.site-nav a { transition: color .15s ease, background .15s ease, transform .15s ease; }
+.site-nav a:hover { transform: translateY(-1px); }
+.hero { padding-top: 84px; }
+.hero__command-palette { box-shadow: 0 30px 80px rgba(0, 0, 0, .42), 10px 10px 0 rgba(200, 255, 83, .10); }
+.hero__command-palette .search input { border-color: #e1e5d5; box-shadow: 0 12px 30px rgba(0, 0, 0, .24); }
+.hero__command-palette .search input:focus { box-shadow: 0 0 0 4px rgba(200, 255, 83, .16), 0 12px 30px rgba(0, 0, 0, .24); }
+.capability-card, .entry-card, .tool-summary, .detail-head, .examples > div, .detail-aside section, .coverage-card, .comparison-table {
+  box-shadow: 0 8px 22px rgba(33, 36, 42, .045), 0 2px 0 #e2e0d8;
+}
+.capability-card:hover, .entry-card:hover { box-shadow: 0 14px 28px rgba(33, 36, 42, .10), 0 3px 0 #d7d4ca; }
+.filter-panel { box-shadow: 0 14px 30px rgba(17, 19, 24, .16); }
+.filter-panel select:focus, .button:focus-visible, .tool-tab:focus-visible, .quick-search:focus-visible { outline: 3px solid rgba(200, 255, 83, .72); outline-offset: 2px; }
+.results-bar { border-bottom: 1px solid var(--line); margin-bottom: 9px; }
+.entry-card__footer > a { color: var(--link); }
+.page-head { padding-top: 62px; }
+.detail-head { box-shadow: 0 14px 30px rgba(33, 36, 42, .08), 0 3px 0 #e2e0d8; }
+.official-link::after { content: "  ↗"; }
+
+@media (max-width: 680px) {
+  .site-header__inner { min-height: 60px; }
+  .hero { padding-top: 40px; }
+  .page-head { padding-top: 34px; }
 }
 
 @media print {
