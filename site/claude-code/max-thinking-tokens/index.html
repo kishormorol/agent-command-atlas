@@ -13,7 +13,7 @@
     <meta name="twitter:description" content="MAX_THINKING_TOKENS for Claude Code: Fixed token budget for extended thinking. Claude Code caps it at one token below the request&#x27;s max output tokens and never below 1,024; see CLAUDE_CODE_MAX_OUTPUT_TOKENS for how that limit is set. When unset and thinking is enabled, models with adaptive reasoning choose their own thinking depth, and other models use the cap. Set to 0 to disable thinking on the Anthropic API, except on Fable 5, which cannot have thinking turned off; on third-party providers, 0 omits the thinking parameter instead. With thinking turned off on the Anthropic API, Claude Code sends effort high instead of a higher level to models it knows don&#x27;t accept that combination, such as Opus 5. Nonzero values are ignored on adaptive reasoning models unless CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING is set">
     <title>MAX_THINKING_TOKENS — Max Thinking Tokens | Agent Command Atlas</title>
     <link rel="icon" href="favicon.svg?v=20260830" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=7bee5984eb22">
   </head>
   <body data-route="entry:claude-code.environment-variable.max-thinking-tokens">
     <a class="skip-link" href="#main-content">Skip to reference</a>

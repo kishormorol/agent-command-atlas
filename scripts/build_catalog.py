@@ -122,20 +122,35 @@ def write_route(path: Path, page: str) -> None:
     (path / "index.html").write_text(page, encoding="utf-8")
 
 
-def stamp_script_cache(site: Path) -> str:
-    """Point index.html at a content-derived app.js query so a changed script is never served stale."""
-    digest = hashlib.sha256((site / "app.js").read_bytes()).hexdigest()[:12]
+def asset_digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+
+
+def stamp_asset_caches(site: Path) -> dict[str, str]:
+    """Point index.html at content-derived asset queries so a changed file is never served stale."""
+    digests = {name: asset_digest(site / name) for name in ("app.js", "styles.css")}
     index = site / "index.html"
     page = index.read_text(encoding="utf-8")
-    stamped = re.sub(r'<script src="app\.js\?v=[^"]*"></script>', f'<script src="app.js?v={digest}"></script>', page, count=1)
+    stamped = re.sub(
+        r'<script src="app\.js(?:\?v=[^"]*)?"></script>',
+        f'<script src="app.js?v={digests["app.js"]}"></script>',
+        page,
+        count=1,
+    )
+    stamped = re.sub(
+        r'<link rel="stylesheet" href="styles\.css(?:\?v=[^"]*)?">',
+        f'<link rel="stylesheet" href="styles.css?v={digests["styles.css"]}">',
+        stamped,
+        count=1,
+    )
     if stamped != page:
         index.write_text(stamped, encoding="utf-8")
-    return digest
+    return digests
 
 
 def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilities: list[dict]) -> list[dict]:
     """Generate static shells so tool, entry, and comparison URLs work on static hosts."""
-    stamp_script_cache(site)
+    stamp_asset_caches(site)
     template = (site / "index.html").read_text(encoding="utf-8")
     for route_root in [tool["id"] for tool in tools] + ["compare", "coverage"]:
         target = site / route_root

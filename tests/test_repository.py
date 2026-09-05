@@ -153,17 +153,24 @@ class RepositoryTests(unittest.TestCase):
             self.assertIn(expected, workflow)
         self.assertTrue((ROOT / "site" / ".nojekyll").is_file())
 
-    def test_generated_routes_share_the_template_script_cache_stamp(self):
+    def test_generated_routes_share_the_template_asset_cache_stamps(self):
         template = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
-        stamp = re.search(r'<script src="app\.js\?v=([^"]+)"></script>', template)
-        self.assertIsNotNone(stamp, "the site template must carry a cache-busted app.js reference")
-        digest = hashlib.sha256((ROOT / "site" / "app.js").read_bytes()).hexdigest()[:12]
-        self.assertEqual(stamp.group(1), digest, "the stamp must track the current app.js contents")
+        expected = {}
+        for name, pattern in (
+            ("app.js", r'<script src="app\.js\?v=([^"]+)"></script>'),
+            ("styles.css", r'<link rel="stylesheet" href="styles\.css\?v=([^"]+)">'),
+        ):
+            stamp = re.search(pattern, template)
+            self.assertIsNotNone(stamp, f"the site template must carry a cache-busted {name} reference")
+            digest = hashlib.sha256((ROOT / "site" / name).read_bytes()).hexdigest()[:12]
+            self.assertEqual(stamp.group(1), digest, f"the stamp must track the current {name} contents")
+            expected[name] = digest
         routes = json.loads((ROOT / "site" / "routes.json").read_text(encoding="utf-8"))
         for route in routes:
             with self.subTest(route=route["path"]):
                 page = (ROOT / "site" / route["path"] / "index.html").read_text(encoding="utf-8")
-                self.assertIn(f"app.js?v={digest}", page)
+                for name, digest in expected.items():
+                    self.assertIn(f"{name}?v={digest}", page)
 
     def test_site_has_keyboard_and_responsive_accessibility_guards(self):
         homepage = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

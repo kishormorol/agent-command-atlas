@@ -13,7 +13,7 @@
     <meta name="twitter:description" content="CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT for Claude Code: Idle timeout in milliseconds for MCP tool calls. When a stdio, HTTP, SSE, WebSocket, or claude.ai connector MCP server sends no response and no progress notification for this long, the tool call aborts with an error instead of waiting for the overall MCP_TOOL_TIMEOUT. Overrides the per-transport defaults of 300000 (5 minutes) for network servers and 1800000 (30 minutes) for stdio servers. Set to 0 to disable the idle check. Values below 1000 are raised to one second, and the value is capped at the effective MCP_TOOL_TIMEOUT. A per-server timeout in .mcp.json of at least 1000 raises that server&#x27;s idle window to at least the timeout value. Doesn&#x27;t apply to IDE servers or SDK in-process servers. Requires Claude Code v2.1.187 or later. Before v2.1.203, stdio servers were exempt from the idle timeout">
     <title>CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT — Claude Code Mcp Tool Idle Timeout | Agent Command Atlas</title>
     <link rel="icon" href="favicon.svg?v=20260830" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=7bee5984eb22">
   </head>
   <body data-route="entry:claude-code.environment-variable.claude-code-mcp-tool-idle-timeout">
     <a class="skip-link" href="#main-content">Skip to reference</a>

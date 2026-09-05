@@ -13,7 +13,7 @@
     <meta name="twitter:description" content="CLAUDE_CODE_SUBPROCESS_ENV_SCRUB for Claude Code: Set to 1 to strip Anthropic and cloud provider credentials from subprocess environments (Bash tool, hooks, MCP stdio servers). The parent Claude process keeps these credentials for API calls, but child processes cannot read them, reducing exposure to prompt injection attacks that attempt to exfiltrate secrets via shell expansion. On Linux, this also runs Bash subprocesses in an isolated PID namespace so they cannot read host process environments via /proc; as a side effect, ps, pgrep, and kill cannot see or signal host processes. claude-code-action sets this automatically when allowed_non_write_users is configured">
     <title>CLAUDE_CODE_SUBPROCESS_ENV_SCRUB — Claude Code Subprocess Env Scrub | Agent Command Atlas</title>
     <link rel="icon" href="favicon.svg?v=20260830" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=7bee5984eb22">
   </head>
   <body data-route="entry:claude-code.environment-variable.claude-code-subprocess-env-scrub">
     <a class="skip-link" href="#main-content">Skip to reference</a>
