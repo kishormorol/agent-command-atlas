@@ -1,0 +1,1884 @@
+[
+  {
+    "id": "claude-code.cli-subcommand.agents",
+    "tool": "claude-code",
+    "name": "claude agents",
+    "display_name": "Open agent view",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "agents",
+    "role": "Background session management",
+    "description": "Open agent view to monitor and dispatch parallel background sessions.",
+    "syntax": [
+      "claude agents",
+      "claude agents --cwd <path>",
+      "claude agents --json"
+    ],
+    "examples": [
+      {
+        "command": "claude agents",
+        "explanation": "List and monitor background sessions.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude agents --cwd ./service",
+        "explanation": "Show only sessions started under one directory.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "See which background sessions exist and dispatch new ones."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.attach",
+      "claude-code.cli-subcommand.logs",
+      "claude-code.cli-flag.bg"
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.attach",
+    "tool": "claude-code",
+    "name": "claude attach",
+    "display_name": "Attach to a background session",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "session",
+    "role": "Background session control",
+    "description": "Open a background session in this terminal by its short id.",
+    "syntax": [
+      "claude attach <id>"
+    ],
+    "examples": [
+      {
+        "command": "claude attach abc123",
+        "explanation": "Bring a background session into this terminal.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Take over a session started with --bg."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.agents",
+      "claude-code.cli-flag.bg"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.logs",
+    "tool": "claude-code",
+    "name": "claude logs",
+    "display_name": "Print background session output",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "diagnostics",
+    "role": "Background session inspection",
+    "description": "Print recent terminal output from a background session.",
+    "syntax": [
+      "claude logs <id>"
+    ],
+    "examples": [
+      {
+        "command": "claude logs abc123",
+        "explanation": "Read a background session's recent output.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check on a background run without attaching to it."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.attach",
+      "claude-code.cli-subcommand.agents"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.respawn",
+    "tool": "claude-code",
+    "name": "claude respawn",
+    "display_name": "Restart a background session",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "session",
+    "role": "Background session control",
+    "description": "Restart a background session, running or stopped, with its conversation intact.",
+    "syntax": [
+      "claude respawn <id>",
+      "claude respawn --all"
+    ],
+    "examples": [
+      {
+        "command": "claude respawn abc123",
+        "explanation": "Restart one background session on the current version.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude respawn --all",
+        "explanation": "Restart every running session to pick up an update.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Move running sessions onto a newly installed Claude Code version."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.stop",
+      "claude-code.cli-subcommand.update"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.stop",
+    "tool": "claude-code",
+    "name": "claude stop",
+    "display_name": "Stop a background session",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "session",
+    "role": "Background session control",
+    "description": "Stop a background session while keeping its conversation.",
+    "syntax": [
+      "claude stop <id>",
+      "claude kill <id>"
+    ],
+    "aliases": [
+      "claude kill"
+    ],
+    "examples": [
+      {
+        "command": "claude stop abc123",
+        "explanation": "Stop a background session and keep its transcript.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Halt background work without discarding the conversation."
+    ],
+    "when_not_to_use": [
+      "It does not delete the session; use claude rm for that."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.rm",
+      "claude-code.cli-subcommand.respawn"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.rm",
+    "tool": "claude-code",
+    "name": "claude rm",
+    "display_name": "Delete a background session",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "session",
+    "role": "Background session cleanup",
+    "description": "Remove a background session from the list, and its worktree when that is safe.",
+    "syntax": [
+      "claude rm <id>"
+    ],
+    "examples": [
+      {
+        "command": "claude rm abc123",
+        "explanation": "Delete a finished background session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Clear out sessions that have already exited."
+    ],
+    "when_not_to_use": [
+      "The transcript stays on the local machine and remains available through claude --resume."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.stop"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.auth",
+    "tool": "claude-code",
+    "name": "claude auth",
+    "display_name": "Manage authentication",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "authentication",
+    "role": "Authentication group",
+    "description": "Command group for signing in, signing out, and inspecting authentication state.",
+    "syntax": [
+      "claude auth <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "claude auth status",
+        "explanation": "Check whether this machine is signed in.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Manage credentials from the shell rather than from a session."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auth-login",
+      "claude-code.cli-subcommand.auth-logout"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.auth-status",
+    "tool": "claude-code",
+    "name": "claude auth status",
+    "display_name": "Show authentication status",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.auth",
+    "category": "authentication",
+    "role": "Authentication",
+    "description": "Show authentication status as JSON, exiting 0 when logged in and 1 when not.",
+    "syntax": [
+      "claude auth status",
+      "claude auth status --text"
+    ],
+    "examples": [
+      {
+        "command": "claude auth status",
+        "explanation": "Print authentication status as JSON.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude auth status --text || claude auth login",
+        "explanation": "Gate a script on being signed in.",
+        "level": "workflow"
+      }
+    ],
+    "when_to_use": [
+      "Check credentials in CI before starting a run."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auth-login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.setup-token",
+    "tool": "claude-code",
+    "name": "claude setup-token",
+    "display_name": "Create a long-lived token",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "authentication",
+    "role": "Authentication",
+    "description": "Generate a long-lived OAuth token for CI and scripts, printed to the terminal without being saved.",
+    "syntax": [
+      "claude setup-token"
+    ],
+    "examples": [
+      {
+        "command": "claude setup-token",
+        "explanation": "Print a long-lived token for a CI secret store.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Authenticate an automated environment that cannot run a browser flow."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auth-login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a Claude subscription."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.auto-mode",
+    "tool": "claude-code",
+    "name": "claude auto-mode",
+    "display_name": "Inspect auto mode",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "permissions",
+    "role": "Auto mode group",
+    "description": "Command group for inspecting or resetting the auto mode classifier configuration.",
+    "syntax": [
+      "claude auto-mode <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "claude auto-mode config",
+        "explanation": "Show the effective auto mode configuration.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Understand why auto mode is or is not approving an action."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auto-mode-defaults"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.auto-mode-config",
+    "tool": "claude-code",
+    "name": "claude auto-mode config",
+    "display_name": "Show effective auto mode config",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.auto-mode",
+    "category": "permissions",
+    "role": "Auto mode inspection",
+    "description": "Print the effective auto mode configuration with your settings applied.",
+    "syntax": [
+      "claude auto-mode config"
+    ],
+    "examples": [
+      {
+        "command": "claude auto-mode config",
+        "explanation": "See the auto mode rules actually in force.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Compare your customized rules against the built-in defaults."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auto-mode-defaults"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.auto-mode-defaults",
+    "tool": "claude-code",
+    "name": "claude auto-mode defaults",
+    "display_name": "Print auto mode defaults",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.auto-mode",
+    "category": "permissions",
+    "role": "Auto mode inspection",
+    "description": "Print the built-in auto mode classifier rules as JSON.",
+    "syntax": [
+      "claude auto-mode defaults",
+      "claude auto-mode defaults --label <prefix>"
+    ],
+    "examples": [
+      {
+        "command": "claude auto-mode defaults",
+        "explanation": "Print the shipped classifier rules.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Read the baseline before writing your own auto mode rules."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auto-mode-config"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.auto-mode-critique",
+    "tool": "claude-code",
+    "name": "claude auto-mode critique",
+    "display_name": "Critique auto mode rules",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.auto-mode",
+    "category": "permissions",
+    "role": "Auto mode inspection",
+    "description": "Inspect auto mode classifier behavior for a candidate rule set.",
+    "syntax": [
+      "claude auto-mode critique"
+    ],
+    "examples": [
+      {
+        "command": "claude auto-mode critique",
+        "explanation": "Inspect classifier behavior for the current rules.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check custom auto mode rules before relying on them."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auto-mode-config"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "notes": [
+      "Exposed by the 2.1.261 binary; the CLI reference documents auto-mode defaults and reset but not this subcommand."
+    ]
+  },
+  {
+    "id": "claude-code.cli-subcommand.auto-mode-reset",
+    "tool": "claude-code",
+    "name": "claude auto-mode reset",
+    "display_name": "Reset auto mode",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.auto-mode",
+    "category": "permissions",
+    "role": "Auto mode reset",
+    "description": "Restore the default auto mode configuration by removing the autoMode section from user settings.",
+    "syntax": [
+      "claude auto-mode reset"
+    ],
+    "examples": [
+      {
+        "command": "claude auto-mode reset",
+        "explanation": "Drop custom auto mode rules and return to defaults.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Recover from auto mode rules that approve or block the wrong actions."
+    ],
+    "when_not_to_use": [
+      "It edits your user settings file; it prompts for confirmation before writing."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.auto-mode-defaults"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp",
+    "tool": "claude-code",
+    "name": "claude mcp",
+    "display_name": "Manage MCP servers",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "mcp",
+    "role": "MCP management group",
+    "description": "Configure and manage Model Context Protocol servers from the shell.",
+    "syntax": [
+      "claude mcp <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp list",
+        "explanation": "List the configured MCP servers.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude mcp add --transport http sentry https://mcp.sentry.dev/mcp",
+        "explanation": "Add an HTTP MCP server.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Add, inspect, or remove MCP servers without opening a session."
+    ],
+    "related_commands": [
+      "claude-code.slash-command.mcp",
+      "claude-code.cli-subcommand.mcp-login"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-login",
+    "tool": "claude-code",
+    "name": "claude mcp login",
+    "display_name": "Authenticate an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "Run a configured MCP server's OAuth flow without opening the interactive /mcp panel.",
+    "syntax": [
+      "claude mcp login <name>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp login sentry",
+        "explanation": "Complete a server's OAuth flow from the shell.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Authenticate an HTTP, SSE, or claude.ai connector server outside a session."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-logout"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-logout",
+    "tool": "claude-code",
+    "name": "claude mcp logout",
+    "display_name": "Clear MCP credentials",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "Clear stored OAuth credentials for an MCP server.",
+    "syntax": [
+      "claude mcp logout <name>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp logout sentry",
+        "explanation": "Remove stored credentials for one server.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Revoke a server's stored credentials on a shared machine."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Claude Code v2.1.186 or later."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin",
+    "tool": "claude-code",
+    "name": "claude plugin",
+    "display_name": "Manage plugins",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "plugins",
+    "role": "Plugin management group",
+    "description": "Command group for installing, enabling, inspecting, and removing Claude Code plugins.",
+    "syntax": [
+      "claude plugin <subcommand>",
+      "claude plugins <subcommand>"
+    ],
+    "aliases": [
+      "claude plugins"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin list",
+        "explanation": "List installed plugins.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude plugin validate ./my-plugin",
+        "explanation": "Check a plugin before installing it.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Manage plugins from the shell rather than the interactive /plugin manager."
+    ],
+    "related_commands": [
+      "claude-code.slash-command.plugin",
+      "claude-code.plugin.claude-plugin-plugin-json"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.project",
+    "tool": "claude-code",
+    "name": "claude project",
+    "display_name": "Manage project state",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "configuration",
+    "role": "Project state group",
+    "description": "Command group for managing Claude Code's local state for a project.",
+    "syntax": [
+      "claude project <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "claude project purge",
+        "explanation": "Delete local Claude Code state for this project.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Clean up or inspect the local state Claude Code keeps for a repository."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.project-purge"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.project-purge",
+    "tool": "claude-code",
+    "name": "claude project purge",
+    "display_name": "Purge project state",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.project",
+    "category": "configuration",
+    "role": "Project state cleanup",
+    "description": "Delete all local Claude Code state for a project: transcripts, task lists, debug logs, file-edit history, and prompt history.",
+    "syntax": [
+      "claude project purge",
+      "claude project purge <path>"
+    ],
+    "examples": [
+      {
+        "command": "claude project purge",
+        "explanation": "Remove local state for the current project.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Hand over a machine, or clear state after working on sensitive code."
+    ],
+    "when_not_to_use": [
+      "It is destructive and removes transcripts that resume depends on."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.project"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.doctor",
+    "tool": "claude-code",
+    "name": "claude doctor",
+    "display_name": "Check installation health",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "diagnostics",
+    "role": "Installation diagnostics",
+    "description": "Print read-only installation and settings diagnostics without starting a session.",
+    "syntax": [
+      "claude doctor"
+    ],
+    "examples": [
+      {
+        "command": "claude doctor",
+        "explanation": "Check install health and settings validity from the shell.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Diagnose a broken install or an invalid settings file."
+    ],
+    "when_not_to_use": [
+      "For a full checkup that can also fix issues, run /doctor inside a session."
+    ],
+    "related_commands": [
+      "claude-code.skill.doctor"
+    ],
+    "capabilities": [
+      "config.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.install",
+    "tool": "claude-code",
+    "name": "claude install",
+    "display_name": "Install the native build",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "system",
+    "role": "Installation",
+    "description": "Install or reinstall the native binary, optionally pinning a version.",
+    "syntax": [
+      "claude install",
+      "claude install <stable|latest|version>"
+    ],
+    "examples": [
+      {
+        "command": "claude install",
+        "explanation": "Install the native build.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude install 2.1.118",
+        "explanation": "Pin a specific version.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Move between released versions, or repair an installation."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.update"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.update",
+    "tool": "claude-code",
+    "name": "claude update",
+    "display_name": "Update Claude Code",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "system",
+    "role": "Installation",
+    "description": "Check for updates and install a newer version if one is available.",
+    "syntax": [
+      "claude update",
+      "claude upgrade"
+    ],
+    "aliases": [
+      "claude upgrade"
+    ],
+    "examples": [
+      {
+        "command": "claude update",
+        "explanation": "Update to the latest version.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Pick up a newer release before starting long-running work."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.install",
+      "claude-code.cli-subcommand.respawn"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.import",
+    "tool": "claude-code",
+    "name": "claude import",
+    "display_name": "Import another agent's config",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "configuration",
+    "role": "Configuration import",
+    "description": "Start a session that imports configuration from another AI coding agent into Claude Code.",
+    "syntax": [
+      "claude import",
+      "claude import <codex|gemini>"
+    ],
+    "examples": [
+      {
+        "command": "claude import codex",
+        "explanation": "Bring Codex configuration into Claude Code.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Migrate from another agent without rewriting configuration by hand."
+    ],
+    "related_commands": [
+      "claude-code.slash-command.import"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.gateway",
+    "tool": "claude-code",
+    "name": "claude gateway",
+    "display_name": "Run the enterprise gateway",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "configuration",
+    "role": "Enterprise deployment",
+    "description": "Start the self-hosted Claude apps gateway server for administrators deploying SSO and policy.",
+    "syntax": [
+      "claude gateway"
+    ],
+    "examples": [
+      {
+        "command": "claude gateway",
+        "explanation": "Start the enterprise auth and telemetry gateway.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Deploy SSO and policy in front of Claude Code for an organization."
+    ],
+    "when_not_to_use": [
+      "This is an administrator surface, not part of an ordinary coding session."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.remote-control",
+    "tool": "claude-code",
+    "name": "claude remote-control",
+    "display_name": "Start Remote Control",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "session",
+    "role": "Remote session control",
+    "description": "Start a Remote Control server so Claude Code can be driven from claude.ai or the Claude app.",
+    "syntax": [
+      "claude remote-control"
+    ],
+    "examples": [
+      {
+        "command": "claude remote-control",
+        "explanation": "Run in server mode for remote steering.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Continue or steer a local session from another device."
+    ],
+    "when_not_to_use": [
+      "It runs in server mode and does not start a local interactive session."
+    ],
+    "related_commands": [
+      "claude-code.slash-command.remote-control"
+    ],
+    "capabilities": [
+      "session.remote-control"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.self-hosted-runner",
+    "tool": "claude-code",
+    "name": "claude self-hosted-runner",
+    "display_name": "Run a self-hosted runner",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "session",
+    "role": "Self-hosted infrastructure",
+    "description": "Register this machine or container with a self-hosted environment and host Claude Code cloud sessions on your own infrastructure.",
+    "syntax": [
+      "claude self-hosted-runner"
+    ],
+    "examples": [
+      {
+        "command": "claude self-hosted-runner",
+        "explanation": "Host cloud sessions on your own infrastructure.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run cloud sessions inside your own network or compliance boundary."
+    ],
+    "related_commands": [
+      "claude-code.cli-flag.environment"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.daemon",
+    "tool": "claude-code",
+    "name": "claude daemon",
+    "display_name": "Manage the session supervisor",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "diagnostics",
+    "role": "Supervisor group",
+    "description": "Command group for inspecting and stopping the background-session supervisor.",
+    "syntax": [
+      "claude daemon <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "claude daemon status",
+        "explanation": "Check the background-session supervisor.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Diagnose background sessions that will not start or attach."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.daemon-status"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.daemon-status",
+    "tool": "claude-code",
+    "name": "claude daemon status",
+    "display_name": "Show supervisor status",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.daemon",
+    "category": "diagnostics",
+    "role": "Supervisor inspection",
+    "description": "Print the background-session supervisor's state, version, socket directory, and worker count.",
+    "syntax": [
+      "claude daemon status"
+    ],
+    "examples": [
+      {
+        "command": "claude daemon status",
+        "explanation": "Inspect the supervisor for diagnostics.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Confirm the supervisor is running before debugging background sessions."
+    ],
+    "when_not_to_use": [
+      "It exits 1 when the supervisor is not running, which scripts should expect."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.daemon-stop"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.daemon-stop",
+    "tool": "claude-code",
+    "name": "claude daemon stop",
+    "display_name": "Stop the supervisor",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.daemon",
+    "category": "diagnostics",
+    "role": "Supervisor control",
+    "description": "Stop the background-session supervisor and the sessions it hosts.",
+    "syntax": [
+      "claude daemon stop --any",
+      "claude daemon stop --any --keep-workers"
+    ],
+    "examples": [
+      {
+        "command": "claude daemon stop --any",
+        "explanation": "Stop the supervisor and its hosted sessions.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude daemon stop --any --keep-workers",
+        "explanation": "Leave background sessions running for the next supervisor.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Restart supervision cleanly after an upgrade."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.daemon-status"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.ultrareview",
+    "tool": "claude-code",
+    "name": "claude ultrareview",
+    "display_name": "Run ultrareview non-interactively",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-command.interactive",
+    "category": "code-review",
+    "role": "Cloud review",
+    "description": "Run a cloud-hosted multi-agent code review of the current branch, a PR number, or a base branch, and print the findings.",
+    "syntax": [
+      "claude ultrareview",
+      "claude ultrareview <target>",
+      "claude ultrareview --json",
+      "claude ultrareview --timeout <seconds>"
+    ],
+    "examples": [
+      {
+        "command": "claude ultrareview",
+        "explanation": "Review the current branch and print findings.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude ultrareview 1234 --json",
+        "explanation": "Review a pull request and emit the raw payload.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Run a deep review from a script or a CI job."
+    ],
+    "when_not_to_use": [
+      "It exits 0 on success and 1 on failure, which reports the run rather than the review verdict."
+    ],
+    "related_commands": [
+      "claude-code.slash-command.ultrareview",
+      "claude-code.skill.code-review"
+    ],
+    "capabilities": [
+      "code.review"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.brief",
+    "tool": "claude-code",
+    "name": "--brief",
+    "display_name": "Enable agent-to-user messages",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session control",
+    "description": "Enable the SendUserMessage tool so the agent can send messages to the user during a run.",
+    "syntax": [
+      "claude --brief"
+    ],
+    "examples": [
+      {
+        "command": "claude --brief",
+        "explanation": "Let the agent message the user directly during a run.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Follow a long unattended run through progress messages."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.file",
+    "tool": "claude-code",
+    "name": "--file",
+    "display_name": "Download file resources",
+    "type": "cli-flag",
+    "category": "context",
+    "role": "Context input",
+    "description": "Download file resources at startup, given as file_id:relative_path pairs.",
+    "syntax": [
+      "claude --file <file_id>:<relative_path>"
+    ],
+    "examples": [
+      {
+        "command": "claude --file file_abc:doc.txt file_def:img.png",
+        "explanation": "Fetch files into the session at startup.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Seed a session with files stored outside the working tree."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.permission-prompts",
+    "tool": "claude-code",
+    "name": "--permission-prompts",
+    "display_name": "Route permission prompts",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Approval routing",
+    "description": "Choose where permission prompts are answered: host, or none.",
+    "syntax": [
+      "claude --permission-prompts <host|none>"
+    ],
+    "examples": [
+      {
+        "command": "claude --permission-prompts none",
+        "explanation": "Run without routing permission prompts to a host.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Control how approvals surface when embedding Claude Code in another tool."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.system-prompt-snapshot",
+    "tool": "claude-code",
+    "name": "--system-prompt-snapshot",
+    "display_name": "Toggle system prompt snapshots",
+    "type": "cli-flag",
+    "category": "diagnostics",
+    "role": "Prompt diagnostics",
+    "description": "Turn system prompt snapshotting on or off for the session.",
+    "syntax": [
+      "claude --system-prompt-snapshot <on|off>"
+    ],
+    "examples": [
+      {
+        "command": "claude --system-prompt-snapshot off",
+        "explanation": "Disable system prompt snapshots.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Control whether the resolved system prompt is captured for inspection."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.help",
+    "tool": "claude-code",
+    "name": "--help",
+    "display_name": "Show CLI help",
+    "type": "cli-flag",
+    "category": "help",
+    "role": "Help",
+    "description": "Print usage, options, and the available subcommands.",
+    "syntax": [
+      "claude --help",
+      "claude -h",
+      "claude <subcommand> --help"
+    ],
+    "examples": [
+      {
+        "command": "claude --help",
+        "explanation": "List every option and subcommand.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude mcp --help",
+        "explanation": "List one subcommand group's own subcommands.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Check the exact surface of the installed build, including options the docs omit."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/cli-usage",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "aliases": [
+      "-h"
+    ]
+  }
+]

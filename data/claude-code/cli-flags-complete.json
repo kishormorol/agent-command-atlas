@@ -973,12 +973,14 @@
     "when_to_use": [
       "Use this option when the invocation needs the documented exec behavior."
     ],
-    "maturity": "stable",
+    "maturity": "conditional",
     "availability": {
       "channels": [
         "cli"
       ],
-      "conditions": []
+      "conditions": [
+        "Listed in the CLI reference but rejected as an unknown option by the tested 2.1.261 build."
+      ]
     },
     "sources": [
       {
@@ -988,12 +990,19 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
-    }
+    },
+    "when_not_to_use": [
+      "Do not script it without checking your own build; the flag is documented but not accepted everywhere."
+    ],
+    "notes": [
+      "Manually tested on 2.1.261: `claude -p --exec ...` exits with `error: unknown option '--exec'` while the CLI reference still documents the flag. Confirm availability with `claude --help` in your installed build."
+    ]
   },
   {
     "id": "claude-code.cli-flag.fallback-model",

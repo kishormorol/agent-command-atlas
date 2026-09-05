@@ -1,0 +1,153 @@
+[
+  {
+    "id": "claude-code.skill.design",
+    "tool": "claude-code",
+    "name": "/design",
+    "display_name": "Design canvas",
+    "type": "skill",
+    "category": "planning",
+    "role": "Design skill",
+    "description": "Skill. Draft UI mockups, screen flows, landing pages, or posters as artboards on a design canvas.",
+    "syntax": [
+      "/design [brief]"
+    ],
+    "examples": [
+      {
+        "command": "/design a settings page for the billing flow",
+        "explanation": "Draft screens as artboards on a canvas.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Produce a visual layout you would rather tweak by hand than in code."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.skill-doctor",
+    "tool": "claude-code",
+    "name": "/skill-doctor",
+    "display_name": "Audit skill cost",
+    "type": "slash-command",
+    "category": "skills",
+    "role": "Skill diagnostics",
+    "description": "Show what each skill costs in context and how often it is used, so unused skills can be found.",
+    "syntax": [
+      "/skill-doctor"
+    ],
+    "examples": [
+      {
+        "command": "/skill-doctor",
+        "explanation": "Report per-skill context cost and usage.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Trim a skill catalog that is consuming context without earning it."
+    ],
+    "related_commands": [
+      "claude-code.slash-command.skills"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.slash-command.ultrareview",
+    "tool": "claude-code",
+    "name": "/ultrareview",
+    "display_name": "Ultrareview",
+    "type": "slash-command",
+    "category": "code-review",
+    "role": "Cloud review",
+    "description": "Run a deep, multi-agent code review in a cloud sandbox.",
+    "syntax": [
+      "/ultrareview [PR or branch]"
+    ],
+    "examples": [
+      {
+        "command": "/ultrareview",
+        "explanation": "Review the current branch in a cloud sandbox.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Ask for a deeper review than a local diff pass provides."
+    ],
+    "when_not_to_use": [
+      "It is a deprecated alias; /code-review ultra is the current spelling."
+    ],
+    "related_commands": [
+      "claude-code.skill.code-review",
+      "claude-code.cli-subcommand.ultrareview"
+    ],
+    "maturity": "deprecated",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/commands",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "version": {
+      "replacement": "/code-review ultra"
+    }
+  }
+]

@@ -2705,6 +2705,11 @@
     "id": "claude-code.cli-flag.bg"
   },
   {
+    "path": "claude-code/brief/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.brief"
+  },
+  {
     "path": "claude-code/channels/",
     "kind": "entry",
     "id": "claude-code.cli-flag.channels"
@@ -2785,6 +2790,11 @@
     "id": "claude-code.cli-flag.fallback-model"
   },
   {
+    "path": "claude-code/file/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.file"
+  },
+  {
     "path": "claude-code/fork-session/",
     "kind": "entry",
     "id": "claude-code.cli-flag.fork-session"
@@ -2798,6 +2808,11 @@
     "path": "claude-code/from-pr/",
     "kind": "entry",
     "id": "claude-code.cli-flag.from-pr"
+  },
+  {
+    "path": "claude-code/cli-flag-help/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.help"
   },
   {
     "path": "claude-code/cli-flag-ide/",
@@ -2888,6 +2903,11 @@
     "path": "claude-code/permission-prompt-tool/",
     "kind": "entry",
     "id": "claude-code.cli-flag.permission-prompt-tool"
+  },
+  {
+    "path": "claude-code/permission-prompts/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.permission-prompts"
   },
   {
     "path": "claude-code/plugin-dir/",
@@ -2985,6 +3005,11 @@
     "id": "claude-code.cli-flag.system-prompt-file"
   },
   {
+    "path": "claude-code/system-prompt-snapshot/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.system-prompt-snapshot"
+  },
+  {
     "path": "claude-code/teammate-mode/",
     "kind": "entry",
     "id": "claude-code.cli-flag.teammate-mode"
@@ -3020,6 +3045,21 @@
     "id": "claude-code.cli-flag.worktree"
   },
   {
+    "path": "claude-code/claude-agents/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.agents"
+  },
+  {
+    "path": "claude-code/claude-attach/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.attach"
+  },
+  {
+    "path": "claude-code/claude-auth/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auth"
+  },
+  {
     "path": "claude-code/claude-auth-login/",
     "kind": "entry",
     "id": "claude-code.cli-subcommand.auth-login"
@@ -3028,6 +3068,146 @@
     "path": "claude-code/claude-auth-logout/",
     "kind": "entry",
     "id": "claude-code.cli-subcommand.auth-logout"
+  },
+  {
+    "path": "claude-code/claude-auth-status/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auth-status"
+  },
+  {
+    "path": "claude-code/claude-auto-mode/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auto-mode"
+  },
+  {
+    "path": "claude-code/claude-auto-mode-config/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auto-mode-config"
+  },
+  {
+    "path": "claude-code/claude-auto-mode-critique/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auto-mode-critique"
+  },
+  {
+    "path": "claude-code/claude-auto-mode-defaults/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auto-mode-defaults"
+  },
+  {
+    "path": "claude-code/claude-auto-mode-reset/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.auto-mode-reset"
+  },
+  {
+    "path": "claude-code/claude-daemon/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.daemon"
+  },
+  {
+    "path": "claude-code/claude-daemon-status/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.daemon-status"
+  },
+  {
+    "path": "claude-code/claude-daemon-stop/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.daemon-stop"
+  },
+  {
+    "path": "claude-code/claude-doctor/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.doctor"
+  },
+  {
+    "path": "claude-code/claude-gateway/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.gateway"
+  },
+  {
+    "path": "claude-code/claude-import/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.import"
+  },
+  {
+    "path": "claude-code/claude-install/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.install"
+  },
+  {
+    "path": "claude-code/claude-logs/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.logs"
+  },
+  {
+    "path": "claude-code/claude-mcp/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp"
+  },
+  {
+    "path": "claude-code/claude-mcp-login/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-login"
+  },
+  {
+    "path": "claude-code/claude-mcp-logout/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-logout"
+  },
+  {
+    "path": "claude-code/claude-plugin/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin"
+  },
+  {
+    "path": "claude-code/claude-project/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.project"
+  },
+  {
+    "path": "claude-code/claude-project-purge/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.project-purge"
+  },
+  {
+    "path": "claude-code/claude-remote-control/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.remote-control"
+  },
+  {
+    "path": "claude-code/claude-respawn/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.respawn"
+  },
+  {
+    "path": "claude-code/claude-rm/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.rm"
+  },
+  {
+    "path": "claude-code/claude-self-hosted-runner/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.self-hosted-runner"
+  },
+  {
+    "path": "claude-code/claude-setup-token/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.setup-token"
+  },
+  {
+    "path": "claude-code/claude-stop/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.stop"
+  },
+  {
+    "path": "claude-code/claude-ultrareview/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.ultrareview"
+  },
+  {
+    "path": "claude-code/claude-update/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.update"
   },
   {
     "path": "claude-code/claude-settings-json/",
@@ -6210,6 +6390,11 @@
     "id": "claude-code.skill.debug"
   },
   {
+    "path": "claude-code/design/",
+    "kind": "entry",
+    "id": "claude-code.skill.design"
+  },
+  {
     "path": "claude-code/design-sync/",
     "kind": "entry",
     "id": "claude-code.skill.design-sync"
@@ -6610,6 +6795,11 @@
     "id": "claude-code.slash-command.setup-vertex"
   },
   {
+    "path": "claude-code/skill-doctor/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.skill-doctor"
+  },
+  {
     "path": "claude-code/skills/",
     "kind": "entry",
     "id": "claude-code.slash-command.skills"
@@ -6673,6 +6863,11 @@
     "path": "claude-code/ultraplan/",
     "kind": "entry",
     "id": "claude-code.slash-command.ultraplan"
+  },
+  {
+    "path": "claude-code/ultrareview/",
+    "kind": "entry",
+    "id": "claude-code.slash-command.ultrareview"
   },
   {
     "path": "claude-code/upgrade/",
