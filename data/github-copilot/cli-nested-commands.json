@@ -1,0 +1,1194 @@
+[
+  {
+    "id": "github-copilot.cli-subcommand.mcp-add",
+    "tool": "github-copilot",
+    "name": "copilot mcp add",
+    "display_name": "Add an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Add an MCP server to the user configuration at ~/.copilot/mcp-config.json. Give a stdio command after --, or pass a URL with --transport http or sse.",
+    "syntax": [
+      "copilot mcp add [options] <name> -- <command> [args...]",
+      "copilot mcp add --transport <http|sse> <name> <url>"
+    ],
+    "examples": [
+      {
+        "command": "copilot mcp add my-server -- npx -y @org/my-mcp",
+        "explanation": "Add a local stdio server.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot mcp add --transport http api-server https://mcp.example.com",
+        "explanation": "Add a remote streamable HTTP server.",
+        "level": "practical"
+      },
+      {
+        "command": "copilot mcp add db --env PGURL=postgres://localhost/dev --tools 'query,schema' -- npx -y @org/pg-mcp",
+        "explanation": "Add a stdio server with an environment variable and a tool filter.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "Read a server's command, URL, environment, and exposed tools before adding it; MCP tools act outside the repository."
+    ],
+    "related_commands": [
+      "github-copilot.cli-flag.transport",
+      "github-copilot.cli-subcommand.mcp-list"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.mcp-list",
+    "tool": "github-copilot",
+    "name": "copilot mcp list",
+    "display_name": "List MCP servers",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP inspection",
+    "description": "List all configured MCP servers grouped by source, including plugin-provided servers.",
+    "syntax": [
+      "copilot mcp list [--json]"
+    ],
+    "examples": [
+      {
+        "command": "copilot mcp list",
+        "explanation": "See every configured server and where it came from.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot mcp list --json",
+        "explanation": "Emit the listing as JSON for scripting.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.mcp-get"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.mcp-get",
+    "tool": "github-copilot",
+    "name": "copilot mcp get",
+    "display_name": "Show one MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP inspection",
+    "description": "Show the configuration and tools for a specific server. For a plugin-provided server it also names the source plugin and version.",
+    "syntax": [
+      "copilot mcp get [options] <name> [--json]"
+    ],
+    "examples": [
+      {
+        "command": "copilot mcp get github",
+        "explanation": "Inspect one server's configuration and tools.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.mcp-list"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.mcp-remove",
+    "tool": "github-copilot",
+    "name": "copilot mcp remove",
+    "display_name": "Remove an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Remove a user-level MCP server. Workspace servers are not removable this way and must be edited in their own configuration files.",
+    "syntax": [
+      "copilot mcp remove <name>"
+    ],
+    "examples": [
+      {
+        "command": "copilot mcp remove my-server",
+        "explanation": "Drop a user-level server.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.mcp-add"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "User-level servers only; workspace servers must be edited directly."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin",
+    "tool": "github-copilot",
+    "name": "copilot plugin",
+    "display_name": "Manage plugins",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-command.launch",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Manage plugins and plugin marketplaces from the terminal. copilot plugin and copilot plugins are interchangeable; use whichever reads better for the subcommand.",
+    "syntax": [
+      "copilot plugin <subcommand>"
+    ],
+    "aliases": [
+      "copilot plugins"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin list",
+        "explanation": "See the installed plugins.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-install"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-install",
+    "tool": "github-copilot",
+    "name": "copilot plugin install",
+    "display_name": "Install a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin installation",
+    "description": "Install a plugin from a marketplace specification, a GitHub repository or subdirectory, a Git URL, or a local path. The copilot plugins install form also installs a single skill with --skill.",
+    "syntax": [
+      "copilot plugin install <specification>"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin install spark@copilot-plugins",
+        "explanation": "Install from a registered marketplace.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot plugin install owner/repo:path/to/plugin",
+        "explanation": "Install from a subdirectory of a GitHub repository.",
+        "level": "practical"
+      },
+      {
+        "command": "copilot plugins install --skill --scope project ./my-skill/SKILL.md",
+        "explanation": "Install one skill into the repository's .github/skills directory.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "A plugin runs with your session's reach; install only from sources you trust."
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-marketplace-add",
+      "github-copilot.cli-flag.skill"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-uninstall",
+    "tool": "github-copilot",
+    "name": "copilot plugin uninstall",
+    "display_name": "Uninstall a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin removal",
+    "description": "Remove an installed plugin. The copilot plugins remove form does the same and extends to MCP servers and skills with --mcp and --skill.",
+    "syntax": [
+      "copilot plugin uninstall <name>"
+    ],
+    "aliases": [
+      "copilot plugins remove"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin uninstall spark",
+        "explanation": "Uninstall a plugin.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot plugins remove github --mcp",
+        "explanation": "Remove an MCP server through the same command family.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-install"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-list",
+    "tool": "github-copilot",
+    "name": "copilot plugin list",
+    "display_name": "List installed plugins",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin inspection",
+    "description": "List the installed plugins. This is narrower than copilot plugins list, which inspects every plugin, MCP server, skill, instruction source, and language server discovered for the working directory.",
+    "syntax": [
+      "copilot plugin list"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin list",
+        "explanation": "See which plugins are installed.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugins-list"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-update",
+    "tool": "github-copilot",
+    "name": "copilot plugin update",
+    "display_name": "Update plugins",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin maintenance",
+    "description": "Update a named plugin, or every installed plugin with --all.",
+    "syntax": [
+      "copilot plugin update <name>",
+      "copilot plugin update --all"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin update spark",
+        "explanation": "Update one plugin.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot plugin update --all",
+        "explanation": "Update everything installed.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-flag.plugin-all"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-enable",
+    "tool": "github-copilot",
+    "name": "copilot plugin enable",
+    "display_name": "Enable a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin configuration",
+    "description": "Enable a previously disabled plugin. The copilot plugins enable form does the same and extends to MCP servers and skills with --mcp and --skill.",
+    "syntax": [
+      "copilot plugin enable <name>"
+    ],
+    "aliases": [
+      "copilot plugins enable"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin enable spark@copilot-plugins",
+        "explanation": "Turn a plugin back on.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot plugins enable my-skill --skill",
+        "explanation": "Enable a skill through the same command family.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-disable"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "A plugin pinned by an organization or MDM managed policy cannot be toggled locally."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-disable",
+    "tool": "github-copilot",
+    "name": "copilot plugin disable",
+    "display_name": "Disable a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin configuration",
+    "description": "Disable a plugin without uninstalling it. The change persists to configuration and applies to future sessions.",
+    "syntax": [
+      "copilot plugin disable <name>"
+    ],
+    "aliases": [
+      "copilot plugins disable"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin disable spark",
+        "explanation": "Keep a plugin installed but inactive.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot plugins disable github --mcp",
+        "explanation": "Disable an MCP server through the same command family.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-enable"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "A plugin pinned by an organization or MDM managed policy cannot be toggled locally."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-marketplace",
+    "tool": "github-copilot",
+    "name": "copilot plugin marketplace",
+    "display_name": "Manage plugin marketplaces",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Marketplace management",
+    "description": "Register, list, browse, refresh, and unregister the plugin marketplaces Copilot installs from.",
+    "syntax": [
+      "copilot plugin marketplace <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin marketplace list",
+        "explanation": "See the registered marketplaces.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-marketplace-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-add",
+    "tool": "github-copilot",
+    "name": "copilot plugin marketplace add",
+    "display_name": "Register a marketplace",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "Register a marketplace. Its own name, from its marketplace.json manifest, becomes the registration key; there is no option to set a custom local name.",
+    "syntax": [
+      "copilot plugin marketplace add <specification>"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin marketplace add owner/repo",
+        "explanation": "Register a marketplace from a GitHub repository.",
+        "level": "minimal"
+      }
+    ],
+    "when_not_to_use": [
+      "Registering a marketplace is what makes its plugins installable; add only sources you trust."
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-marketplace"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-list",
+    "tool": "github-copilot",
+    "name": "copilot plugin marketplace list",
+    "display_name": "List marketplaces",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace inspection",
+    "description": "List the registered plugin marketplaces.",
+    "syntax": [
+      "copilot plugin marketplace list"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin marketplace list",
+        "explanation": "See which marketplaces are registered.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-marketplace"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-browse",
+    "tool": "github-copilot",
+    "name": "copilot plugin marketplace browse",
+    "display_name": "Browse a marketplace",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace inspection",
+    "description": "Browse the plugins offered by a registered marketplace.",
+    "syntax": [
+      "copilot plugin marketplace browse <name>"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin marketplace browse copilot-plugins",
+        "explanation": "See what one marketplace offers before installing.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-install"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-update",
+    "tool": "github-copilot",
+    "name": "copilot plugin marketplace update",
+    "display_name": "Refresh marketplace catalogs",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace maintenance",
+    "description": "Re-fetch a marketplace's plugin catalog. Omit the name to refresh every registered marketplace.",
+    "syntax": [
+      "copilot plugin marketplace update [name]"
+    ],
+    "aliases": [
+      "copilot plugin marketplace refresh"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin marketplace update",
+        "explanation": "Refresh every registered catalog.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot plugin marketplace update copilot-plugins",
+        "explanation": "Refresh one catalog.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-marketplace"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-remove",
+    "tool": "github-copilot",
+    "name": "copilot plugin marketplace remove",
+    "display_name": "Unregister a marketplace",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "Unregister a marketplace. Refused while plugins from it are still installed, unless --force is passed to uninstall those plugins too.",
+    "syntax": [
+      "copilot plugin marketplace remove <name> [--force]"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin marketplace remove copilot-plugins",
+        "explanation": "Unregister a marketplace with nothing installed from it.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot plugin marketplace remove copilot-plugins --force",
+        "explanation": "Unregister it and uninstall its plugins.",
+        "level": "practical"
+      }
+    ],
+    "when_not_to_use": [
+      "--force uninstalls every plugin that came from the marketplace; check what is installed first."
+    ],
+    "related_commands": [
+      "github-copilot.cli-flag.marketplace-force"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-flag.plugin-all",
+    "tool": "github-copilot",
+    "name": "--all",
+    "display_name": "Apply to every installed plugin",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Bulk selection",
+    "description": "On copilot plugin update, update every installed plugin instead of a named one.",
+    "syntax": [
+      "copilot plugin update --all"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin update --all",
+        "explanation": "Update everything installed.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-update"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-flag.marketplace-force",
+    "tool": "github-copilot",
+    "name": "--force",
+    "display_name": "Force marketplace removal",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "On copilot plugin marketplace remove, also uninstall the plugins installed from that marketplace, which the command otherwise refuses to do.",
+    "syntax": [
+      "copilot plugin marketplace remove <name> --force"
+    ],
+    "examples": [
+      {
+        "command": "copilot plugin marketplace remove copilot-plugins --force",
+        "explanation": "Unregister a marketplace and uninstall its plugins.",
+        "level": "minimal"
+      }
+    ],
+    "when_not_to_use": [
+      "This uninstalls plugins you may still be using; list them before forcing."
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.plugin-marketplace-remove"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.skill-list",
+    "tool": "github-copilot",
+    "name": "copilot skill list",
+    "display_name": "List agent skills",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.skill",
+    "category": "skills",
+    "role": "Skill inspection",
+    "description": "List the agent skills available to Copilot CLI.",
+    "syntax": [
+      "copilot skill list"
+    ],
+    "examples": [
+      {
+        "command": "copilot skill list",
+        "explanation": "See the skills Copilot can reach.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check what is installed before a session, or from a script."
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.skill-add"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.skill-add",
+    "tool": "github-copilot",
+    "name": "copilot skill add",
+    "display_name": "Add an agent skill",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.skill",
+    "category": "skills",
+    "role": "Skill installation",
+    "description": "Add a skill from a file, a URL, or a directory, without opening an interactive session.",
+    "syntax": [
+      "copilot skill add <file|url|directory>"
+    ],
+    "examples": [
+      {
+        "command": "copilot skill add ./my-skill/SKILL.md",
+        "explanation": "Add a skill from a local file.",
+        "level": "minimal"
+      },
+      {
+        "command": "copilot skill add https://example.com/skills/reviewer.md",
+        "explanation": "Add a skill from a URL.",
+        "level": "practical"
+      }
+    ],
+    "when_not_to_use": [
+      "A skill is instructions the agent will follow; read one before adding it from a source you do not control."
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.skill-remove"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.cli-subcommand.skill-remove",
+    "tool": "github-copilot",
+    "name": "copilot skill remove",
+    "display_name": "Remove an agent skill",
+    "type": "cli-subcommand",
+    "parent_id": "github-copilot.cli-subcommand.skill",
+    "category": "skills",
+    "role": "Skill removal",
+    "description": "Remove a skill by name, or remove a registered custom skill directory.",
+    "syntax": [
+      "copilot skill remove <name-or-directory>"
+    ],
+    "examples": [
+      {
+        "command": "copilot skill remove my-skill",
+        "explanation": "Remove one skill.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "github-copilot.cli-subcommand.skill-add"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "1.0.83",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  }
+]

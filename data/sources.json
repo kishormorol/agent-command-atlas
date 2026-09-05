@@ -56,7 +56,9 @@
   ],
   "github-copilot": [
     {"url":"https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference","kind":"official-docs","scope":"CLI and interactive commands, shortcuts, flags, configuration, hooks, MCP, skills, and agents"},
-    {"url":"https://docs.github.com/en/copilot/reference/hooks-reference","kind":"official-docs","scope":"Hook events, configuration, payloads, and decision control"}
+    {"url":"https://docs.github.com/en/copilot/reference/hooks-reference","kind":"official-docs","scope":"Hook events, configuration, payloads, and decision control"},
+    {"url":"https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference","kind":"official-docs","scope":"Plugin and marketplace CLI commands and manifests"},
+    {"url":"https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills","kind":"official-docs","scope":"Adding and managing agent skills from the CLI"}
   ],
   "muse-code": [
     {"url":"https://dev.meta.ai/docs/muse-code","kind":"official-docs","scope":"Install, first run, and the interactive and headless surfaces"},

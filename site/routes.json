@@ -10270,6 +10270,11 @@
     "id": "github-copilot.cli-flag.agent"
   },
   {
+    "path": "github-copilot/all/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.plugin-all"
+  },
+  {
     "path": "github-copilot/cli-flag-allow-all/",
     "kind": "entry",
     "id": "github-copilot.cli-flag.allow-all"
@@ -10423,6 +10428,11 @@
     "path": "github-copilot/extension-sdk-path/",
     "kind": "entry",
     "id": "github-copilot.cli-flag.extension-sdk-path"
+  },
+  {
+    "path": "github-copilot/force/",
+    "kind": "entry",
+    "id": "github-copilot.cli-flag.marketplace-force"
   },
   {
     "path": "github-copilot/header/",
@@ -10725,6 +10735,91 @@
     "id": "github-copilot.cli-subcommand.mcp"
   },
   {
+    "path": "github-copilot/copilot-mcp-add/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.mcp-add"
+  },
+  {
+    "path": "github-copilot/copilot-mcp-get/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.mcp-get"
+  },
+  {
+    "path": "github-copilot/copilot-mcp-list/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.mcp-list"
+  },
+  {
+    "path": "github-copilot/copilot-mcp-remove/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.mcp-remove"
+  },
+  {
+    "path": "github-copilot/copilot-plugin/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-disable/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-disable"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-enable/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-enable"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-install/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-install"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-list/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-list"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-marketplace/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-marketplace"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-marketplace-add/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-add"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-marketplace-browse/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-browse"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-marketplace-list/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-list"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-marketplace-remove/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-remove"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-marketplace-update/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-marketplace-update"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-uninstall/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-uninstall"
+  },
+  {
+    "path": "github-copilot/copilot-plugin-update/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.plugin-update"
+  },
+  {
     "path": "github-copilot/copilot-plugins-list/",
     "kind": "entry",
     "id": "github-copilot.cli-subcommand.plugins-list"
@@ -10733,6 +10828,21 @@
     "path": "github-copilot/copilot-skill/",
     "kind": "entry",
     "id": "github-copilot.cli-subcommand.skill"
+  },
+  {
+    "path": "github-copilot/copilot-skill-add/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.skill-add"
+  },
+  {
+    "path": "github-copilot/copilot-skill-list/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.skill-list"
+  },
+  {
+    "path": "github-copilot/copilot-skill-remove/",
+    "kind": "entry",
+    "id": "github-copilot.cli-subcommand.skill-remove"
   },
   {
     "path": "github-copilot/copilot-update/",
