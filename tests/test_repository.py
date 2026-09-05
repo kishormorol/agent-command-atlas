@@ -1,4 +1,5 @@
 import json
+import re
 import shutil
 import tempfile
 import unittest
@@ -150,6 +151,16 @@ class RepositoryTests(unittest.TestCase):
         ):
             self.assertIn(expected, workflow)
         self.assertTrue((ROOT / "site" / ".nojekyll").is_file())
+
+    def test_generated_routes_share_the_template_script_cache_stamp(self):
+        template = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        stamp = re.search(r'<script src="(app\.js\?v=[^"]+)"></script>', template)
+        self.assertIsNotNone(stamp, "the site template must carry a cache-busted app.js reference")
+        routes = json.loads((ROOT / "site" / "routes.json").read_text(encoding="utf-8"))
+        for route in routes:
+            with self.subTest(route=route["path"]):
+                page = (ROOT / "site" / route["path"] / "index.html").read_text(encoding="utf-8")
+                self.assertIn(stamp.group(1), page)
 
     def test_site_has_keyboard_and_responsive_accessibility_guards(self):
         homepage = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

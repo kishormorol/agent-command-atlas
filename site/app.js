@@ -507,15 +507,15 @@ function coverageView() {
 }
 
 function guideView() {
-  return `<div class="page-head"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><span>How to use</span></nav><p class="eyebrow">Quick start</p><h1>Find an answer in seconds.</h1><p>Use the Atlas when you know the task but not the vendor-specific command. Search by intent, filter the results, then open a command page for examples and verification details.</p></div>
+  return `<div class="page-head"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="">Atlas</a><span aria-hidden="true">/</span><span>How to use</span></nav><p class="eyebrow">Quick start</p><h1>Find an answer in seconds.</h1><p>Use the Atlas when you know the task but not the vendor-specific command. Search by intent across six ecosystems, filter the results, then open a command page for examples and verification details.</p></div>
     <section class="guide-page" aria-labelledby="guide-heading">
       <div class="section-heading"><div><p class="eyebrow">Three steps</p><h2 id="guide-heading">A simple way to use the Atlas</h2></div><p>Everything is generated from the canonical dataset and linked to official sources.</p></div>
       <div class="guide-grid">
         <article class="guide-card"><span>01</span><h2>Search by goal</h2><p>Type what you want to accomplish, not only the exact command. Try <code>model</code>, <code>resume old session</code>, or <code>compact context</code>.</p><a href="?q=model">Try a model search →</a></article>
-        <article class="guide-card"><span>02</span><h2>Narrow the list</h2><p>Use tool, type, category, and maturity filters together. This is useful when you need only stable Codex flags or experimental Copilot controls.</p><a href="">Browse the full reference →</a></article>
+        <article class="guide-card"><span>02</span><h2>Narrow the list</h2><p>Use tool, type, category, and maturity filters together. This is useful when you need only stable Codex flags, experimental Copilot controls, or the conditional Muse Code surfaces gated on a build or rollout.</p><a href="">Browse the full reference →</a></article>
         <article class="guide-card"><span>03</span><h2>Open the evidence</h2><p>Command pages include copy-ready syntax, minimal and practical examples, usage guidelines, lifecycle status, and a direct official source.</p><a href="compare/">Compare capabilities →</a></article>
       </div>
-      <div class="guide-callout"><strong>Tip:</strong> matching names do not guarantee equivalent behavior. Read the relationship label—Exact, Similar, Partial, None, or Unknown—before translating a workflow between tools.</div>
+      <div class="guide-callout"><strong>Tip:</strong> matching names do not guarantee equivalent behavior. Read the relationship label—Exact, Similar, Partial, None, or Unknown—before translating a workflow between tools. <em>None</em> means no equivalent control is documented; <em>Unknown</em> means one may exist but is not yet mapped.</div>
     </section>`;
 }
 
