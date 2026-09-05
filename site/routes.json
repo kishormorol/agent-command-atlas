@@ -7280,6 +7280,21 @@
     "id": "gemini-cli.cli-command.launch"
   },
   {
+    "path": "gemini-cli/acp/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.acp"
+  },
+  {
+    "path": "gemini-cli/admin-policy/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.admin-policy"
+  },
+  {
+    "path": "gemini-cli/all/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.extensions-all"
+  },
+  {
     "path": "gemini-cli/allowed-mcp-server-names/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.allowed-mcp-server-names"
@@ -7295,6 +7310,11 @@
     "id": "gemini-cli.cli-flag.approval-mode"
   },
   {
+    "path": "gemini-cli/auto-update/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.extensions-auto-update"
+  },
+  {
     "path": "gemini-cli/debug/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.debug"
@@ -7303,6 +7323,11 @@
     "path": "gemini-cli/delete-session/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.delete-session"
+  },
+  {
+    "path": "gemini-cli/env/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.mcp-env"
   },
   {
     "path": "gemini-cli/experimental-acp/",
@@ -7330,6 +7355,11 @@
     "id": "gemini-cli.cli-flag.include-directories"
   },
   {
+    "path": "gemini-cli/include-tools/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.mcp-include-tools"
+  },
+  {
     "path": "gemini-cli/list-extensions/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.list-extensions"
@@ -7350,6 +7380,21 @@
     "id": "gemini-cli.cli-flag.output-format"
   },
   {
+    "path": "gemini-cli/path/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.skills-path"
+  },
+  {
+    "path": "gemini-cli/policy/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.policy"
+  },
+  {
+    "path": "gemini-cli/pre-release/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.extensions-pre-release"
+  },
+  {
     "path": "gemini-cli/prompt/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.prompt"
@@ -7358,6 +7403,11 @@
     "path": "gemini-cli/prompt-interactive/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.prompt-interactive"
+  },
+  {
+    "path": "gemini-cli/ref/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.extensions-ref"
   },
   {
     "path": "gemini-cli/cli-flag-resume/",
@@ -7370,14 +7420,29 @@
     "id": "gemini-cli.cli-flag.sandbox"
   },
   {
+    "path": "gemini-cli/scope/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.extensions-scope"
+  },
+  {
     "path": "gemini-cli/screen-reader/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.screen-reader"
   },
   {
+    "path": "gemini-cli/session/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.mcp-session"
+  },
+  {
     "path": "gemini-cli/skip-trust/",
     "kind": "entry",
     "id": "gemini-cli.cli-flag.skip-trust"
+  },
+  {
+    "path": "gemini-cli/transport/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-flag.mcp-transport"
   },
   {
     "path": "gemini-cli/version/",
@@ -7400,14 +7465,149 @@
     "id": "gemini-cli.cli-subcommand.extensions"
   },
   {
+    "path": "gemini-cli/gemini-extensions-config/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-config"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-disable/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-disable"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-enable/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-enable"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-install/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-install"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-link/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-link"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-list/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-list"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-new/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-new"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-uninstall/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-uninstall"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-update/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-update"
+  },
+  {
+    "path": "gemini-cli/gemini-extensions-validate/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.extensions-validate"
+  },
+  {
+    "path": "gemini-cli/gemini-gemma/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.gemma"
+  },
+  {
+    "path": "gemini-cli/gemini-gemma-logs/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.gemma-logs"
+  },
+  {
+    "path": "gemini-cli/gemini-gemma-setup/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.gemma-setup"
+  },
+  {
+    "path": "gemini-cli/gemini-gemma-start/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.gemma-start"
+  },
+  {
+    "path": "gemini-cli/gemini-gemma-status/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.gemma-status"
+  },
+  {
+    "path": "gemini-cli/gemini-gemma-stop/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.gemma-stop"
+  },
+  {
     "path": "gemini-cli/gemini-mcp/",
     "kind": "entry",
     "id": "gemini-cli.cli-subcommand.mcp"
   },
   {
+    "path": "gemini-cli/gemini-mcp-add/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.mcp-add"
+  },
+  {
+    "path": "gemini-cli/gemini-mcp-disable/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.mcp-disable"
+  },
+  {
+    "path": "gemini-cli/gemini-mcp-enable/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.mcp-enable"
+  },
+  {
+    "path": "gemini-cli/gemini-mcp-list/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.mcp-list"
+  },
+  {
+    "path": "gemini-cli/gemini-mcp-remove/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.mcp-remove"
+  },
+  {
     "path": "gemini-cli/gemini-skills/",
     "kind": "entry",
     "id": "gemini-cli.cli-subcommand.skills"
+  },
+  {
+    "path": "gemini-cli/gemini-skills-disable/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.skills-disable"
+  },
+  {
+    "path": "gemini-cli/gemini-skills-enable/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.skills-enable"
+  },
+  {
+    "path": "gemini-cli/gemini-skills-install/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.skills-install"
+  },
+  {
+    "path": "gemini-cli/gemini-skills-link/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.skills-link"
+  },
+  {
+    "path": "gemini-cli/gemini-skills-list/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.skills-list"
+  },
+  {
+    "path": "gemini-cli/gemini-skills-uninstall/",
+    "kind": "entry",
+    "id": "gemini-cli.cli-subcommand.skills-uninstall"
   },
   {
     "path": "gemini-cli/gemini-update/",

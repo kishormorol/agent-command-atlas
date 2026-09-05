@@ -139,7 +139,7 @@
     "type": "cli-flag",
     "category": "configuration",
     "role": "CLI configuration",
-    "description": "Run in Zed editor integration mode. **Experimental feature.**",
+    "description": "Run in Zed editor integration mode. **Experimental feature.**. The 0.58.0 binary accepts no such flag.",
     "syntax": [
       "gemini --experimental-zed-integration"
     ],
@@ -153,12 +153,14 @@
     "when_to_use": [
       "Use this option when the invocation needs the documented experimental zed integration behavior."
     ],
-    "maturity": "experimental",
+    "maturity": "removed",
     "availability": {
       "channels": [
         "cli"
       ],
-      "conditions": []
+      "conditions": [
+        "Absent from the 0.58.0 CLI; the published cheatsheet still lists it."
+      ]
     },
     "sources": [
       {
@@ -167,12 +169,19 @@
       }
     ],
     "verification": {
-      "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "status": "manually-tested",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
       "verified_by": [
-        "official-source"
+        "manual-test",
+        "official-docs"
       ]
+    },
+    "version": {
+      "introduced": null,
+      "deprecated": null,
+      "removed": "unknown",
+      "replacement": null
     }
   },
   {

@@ -61016,6 +61016,158 @@
     "path": "gemini-cli/gemini/"
   },
   {
+    "id": "gemini-cli.cli-flag.acp",
+    "tool": "gemini-cli",
+    "name": "--acp",
+    "display_name": "Start in ACP mode",
+    "type": "cli-flag",
+    "category": "modes",
+    "role": "Editor integration",
+    "description": "Start the agent in ACP mode, for editors and clients that drive Gemini CLI over the Agent Client Protocol. Replaces --experimental-acp.",
+    "syntax": [
+      "gemini --acp"
+    ],
+    "examples": [
+      {
+        "command": "gemini --acp",
+        "explanation": "Run the agent as an ACP server for an editor client.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.experimental-acp"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/acp/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.admin-policy",
+    "tool": "gemini-cli",
+    "name": "--admin-policy",
+    "display_name": "Load admin policy files",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Policy configuration",
+    "description": "Load additional admin policy files or directories. Admin policies are supplemental and are applied on top of user policy.",
+    "syntax": [
+      "gemini --admin-policy <path>[,<path>]"
+    ],
+    "examples": [
+      {
+        "command": "gemini --admin-policy /etc/gemini/admin-policies",
+        "explanation": "Apply an organization's policy directory.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.policy"
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/policy-engine.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/admin-policy/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.extensions-all",
+    "tool": "gemini-cli",
+    "name": "--all",
+    "display_name": "Apply an extension or skill command to everything",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Bulk selection",
+    "description": "Apply the command to every item rather than a named one. Documented on gemini extensions update, gemini skills list, and gemini skills enable and disable.",
+    "syntax": [
+      "gemini extensions update --all",
+      "gemini skills list --all",
+      "gemini skills enable --all"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions update --all",
+        "explanation": "Update every installed extension.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini skills list --all",
+        "explanation": "Include built-in skills in the listing.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-update"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/all/"
+  },
+  {
     "id": "gemini-cli.cli-flag.allowed-mcp-server-names",
     "tool": "gemini-cli",
     "name": "--allowed-mcp-server-names",
@@ -61165,6 +61317,59 @@
     "path": "gemini-cli/approval-mode/"
   },
   {
+    "id": "gemini-cli.cli-flag.extensions-auto-update",
+    "tool": "gemini-cli",
+    "name": "--auto-update",
+    "display_name": "Keep an extension updated",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Extension maintenance",
+    "description": "On gemini extensions install, enable automatic updates for the extension being installed.",
+    "syntax": [
+      "gemini extensions install <source> --auto-update"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions install https://github.com/user/my-extension --auto-update",
+        "explanation": "Install and follow upstream automatically.",
+        "level": "minimal"
+      }
+    ],
+    "when_not_to_use": [
+      "Automatic updates pull new code from the source without review; pin a ref instead when that matters."
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-install"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/auto-update/"
+  },
+  {
     "id": "gemini-cli.cli-flag.debug",
     "tool": "gemini-cli",
     "name": "--debug",
@@ -61267,6 +61472,56 @@
     "path": "gemini-cli/delete-session/"
   },
   {
+    "id": "gemini-cli.cli-flag.mcp-env",
+    "tool": "gemini-cli",
+    "name": "--env",
+    "display_name": "Set MCP server environment variables",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP process environment",
+    "description": "On gemini mcp add, set environment variables passed to the server process.",
+    "syntax": [
+      "gemini mcp add <name> <command> --env KEY=value"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp add slack node server.js --env SLACK_TOKEN=xoxb-xxx",
+        "explanation": "Pass a token to a stdio server.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/env/"
+  },
+  {
     "id": "gemini-cli.cli-flag.experimental-acp",
     "tool": "gemini-cli",
     "name": "--experimental-acp",
@@ -61274,7 +61529,7 @@
     "type": "cli-flag",
     "category": "agents",
     "role": "Protocol server",
-    "description": "Start Gemini CLI in its experimental Agent Client Protocol mode.",
+    "description": "Start Gemini CLI in its experimental Agent Client Protocol mode. The 0.58.0 CLI marks it deprecated in favour of --acp.",
     "syntax": [
       "gemini --experimental-acp"
     ],
@@ -61291,7 +61546,7 @@
     "when_not_to_use": [
       "Do not rely on experimental ACP behavior as a stable production interface."
     ],
-    "maturity": "experimental",
+    "maturity": "deprecated",
     "availability": {
       "channels": [
         "cli"
@@ -61307,12 +61562,19 @@
       }
     ],
     "verification": {
-      "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "status": "manually-tested",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
       "verified_by": [
-        "official-source"
+        "manual-test",
+        "official-docs"
       ]
+    },
+    "version": {
+      "introduced": null,
+      "deprecated": "unknown",
+      "removed": null,
+      "replacement": "gemini-cli.cli-flag.acp"
     },
     "path": "gemini-cli/experimental-acp/"
   },
@@ -61324,7 +61586,7 @@
     "type": "cli-flag",
     "category": "configuration",
     "role": "CLI configuration",
-    "description": "Run in Zed editor integration mode. **Experimental feature.**",
+    "description": "Run in Zed editor integration mode. **Experimental feature.**. The 0.58.0 binary accepts no such flag.",
     "syntax": [
       "gemini --experimental-zed-integration"
     ],
@@ -61338,12 +61600,14 @@
     "when_to_use": [
       "Use this option when the invocation needs the documented experimental zed integration behavior."
     ],
-    "maturity": "experimental",
+    "maturity": "removed",
     "availability": {
       "channels": [
         "cli"
       ],
-      "conditions": []
+      "conditions": [
+        "Absent from the 0.58.0 CLI; the published cheatsheet still lists it."
+      ]
     },
     "sources": [
       {
@@ -61352,12 +61616,19 @@
       }
     ],
     "verification": {
-      "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "status": "manually-tested",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
       "verified_by": [
-        "official-source"
+        "manual-test",
+        "official-docs"
       ]
+    },
+    "version": {
+      "introduced": null,
+      "deprecated": null,
+      "removed": "unknown",
+      "replacement": null
     },
     "path": "gemini-cli/experimental-zed-integration/"
   },
@@ -61505,6 +61776,59 @@
       ]
     },
     "path": "gemini-cli/include-directories/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.mcp-include-tools",
+    "tool": "gemini-cli",
+    "name": "--include-tools",
+    "display_name": "Expose only named MCP tools",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP tool filtering",
+    "description": "On gemini mcp add, expose only the named tools from the server instead of everything it offers.",
+    "syntax": [
+      "gemini mcp add <name> <command> --include-tools tool1,tool2"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp add github npx -y @modelcontextprotocol/server-github --include-tools list_repos,get_pr",
+        "explanation": "Expose two tools from a large server.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Cut a broad server down to the tools you actually want the model reaching for."
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/include-tools/"
   },
   {
     "id": "gemini-cli.cli-flag.list-extensions",
@@ -61705,6 +62029,147 @@
     "path": "gemini-cli/output-format/"
   },
   {
+    "id": "gemini-cli.cli-flag.skills-path",
+    "tool": "gemini-cli",
+    "name": "--path",
+    "display_name": "Install a skill from a sub-directory",
+    "type": "cli-flag",
+    "category": "skills",
+    "role": "Skill installation",
+    "description": "On gemini skills install, name the sub-directory within a Git repository that contains the skill.",
+    "syntax": [
+      "gemini skills install <source> --path <path>"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills install https://github.com/u/repo --path skills/reviewer",
+        "explanation": "Install one skill out of a repository that holds several.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.skills-install"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/path/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.policy",
+    "tool": "gemini-cli",
+    "name": "--policy",
+    "display_name": "Load additional policy files",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Policy configuration",
+    "description": "Load additional user policy files or directories for the Policy Engine. Accepts a comma-separated list, or repeat the flag.",
+    "syntax": [
+      "gemini --policy <path>[,<path>]"
+    ],
+    "examples": [
+      {
+        "command": "gemini --policy ./policies/team.json",
+        "explanation": "Load one extra policy file for this run.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.admin-policy"
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/index.md",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/policy/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.extensions-pre-release",
+    "tool": "gemini-cli",
+    "name": "--pre-release",
+    "display_name": "Install pre-release extensions",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Extension installation",
+    "description": "On gemini extensions install, allow installation of pre-release versions rather than only the latest stable release tag.",
+    "syntax": [
+      "gemini extensions install <source> --pre-release"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions install https://github.com/user/my-extension --pre-release",
+        "explanation": "Install the newest version even when it is a pre-release.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-install"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/pre-release/"
+  },
+  {
     "id": "gemini-cli.cli-flag.prompt",
     "tool": "gemini-cli",
     "name": "--prompt",
@@ -61800,6 +62265,56 @@
       ]
     },
     "path": "gemini-cli/prompt-interactive/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.extensions-ref",
+    "tool": "gemini-cli",
+    "name": "--ref",
+    "display_name": "Install an extension from a Git ref",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Extension installation",
+    "description": "On gemini extensions install, install from a specific branch, tag, or commit rather than the default ref.",
+    "syntax": [
+      "gemini extensions install <source> --ref <ref>"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions install https://github.com/user/my-extension --ref develop",
+        "explanation": "Track a development branch.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-install"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/ref/"
   },
   {
     "id": "gemini-cli.cli-flag.resume",
@@ -61910,6 +62425,62 @@
     "path": "gemini-cli/sandbox/"
   },
   {
+    "id": "gemini-cli.cli-flag.extensions-scope",
+    "tool": "gemini-cli",
+    "name": "--scope",
+    "display_name": "Choose the settings scope",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "Settings scope",
+    "description": "Choose which settings scope a change is written to: user (global, the default) or workspace (local to the project). Documented on the extension enable, disable, and config commands and on the skill install, disable, and uninstall commands.",
+    "syntax": [
+      "gemini extensions enable --scope <user|workspace> <name>",
+      "gemini skills install <source> --scope <user|workspace>"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills install https://github.com/u/repo --scope workspace",
+        "explanation": "Install a skill for this project only.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini extensions disable --scope user my-extension",
+        "explanation": "Disable an extension everywhere.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-config"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/scope/"
+  },
+  {
     "id": "gemini-cli.cli-flag.screen-reader",
     "tool": "gemini-cli",
     "name": "--screen-reader",
@@ -61955,6 +62526,53 @@
     "path": "gemini-cli/screen-reader/"
   },
   {
+    "id": "gemini-cli.cli-flag.mcp-session",
+    "tool": "gemini-cli",
+    "name": "--session",
+    "display_name": "Apply an MCP change to this session only",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration scope",
+    "description": "On gemini mcp enable and disable, apply the change to the current session only, without persisting it to the settings file.",
+    "syntax": [
+      "gemini mcp enable <name> --session",
+      "gemini mcp disable <name> --session"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp disable github --session",
+        "explanation": "Turn a server off for one session.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-enable"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/session/"
+  },
+  {
     "id": "gemini-cli.cli-flag.skip-trust",
     "tool": "gemini-cli",
     "name": "--skip-trust",
@@ -61998,6 +62616,56 @@
       ]
     },
     "path": "gemini-cli/skip-trust/"
+  },
+  {
+    "id": "gemini-cli.cli-flag.mcp-transport",
+    "tool": "gemini-cli",
+    "name": "--transport",
+    "display_name": "Choose the MCP transport",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP transport selection",
+    "description": "On gemini mcp add, register the server over HTTP rather than the default stdio transport.",
+    "syntax": [
+      "gemini mcp add <name> <url> --transport http"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp add api-server http://localhost:3000 --transport http",
+        "explanation": "Add an HTTP server.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/transport/"
   },
   {
     "id": "gemini-cli.cli-flag.version",
@@ -62208,6 +62876,858 @@
     "path": "gemini-cli/gemini-extensions/"
   },
   {
+    "id": "gemini-cli.cli-subcommand.extensions-config",
+    "tool": "gemini-cli",
+    "name": "gemini extensions config",
+    "display_name": "Configure extension settings",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension configuration",
+    "description": "Read or change an extension's settings. --scope selects which settings scope is written.",
+    "syntax": [
+      "gemini extensions config [name] [setting] [--scope <scope>]"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions config my-extension",
+        "explanation": "Inspect one extension's settings.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.extensions-scope"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-config/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-disable",
+    "tool": "gemini-cli",
+    "name": "gemini extensions disable",
+    "display_name": "Disable an extension",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension configuration",
+    "description": "Disable an installed extension without uninstalling it. --scope selects the settings scope the change is written to.",
+    "syntax": [
+      "gemini extensions disable [--scope <scope>] <name>"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions disable my-extension",
+        "explanation": "Keep an extension installed but inactive.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-enable"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-disable/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-enable",
+    "tool": "gemini-cli",
+    "name": "gemini extensions enable",
+    "display_name": "Enable an extension",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension configuration",
+    "description": "Enable an installed extension. --scope selects the settings scope the change is written to.",
+    "syntax": [
+      "gemini extensions enable [--scope <scope>] <name>"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions enable my-extension",
+        "explanation": "Turn an extension back on.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-disable"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-enable/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-install",
+    "tool": "gemini-cli",
+    "name": "gemini extensions install",
+    "display_name": "Install an extension",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension installation",
+    "description": "Install an extension from a Git repository URL or a local path.",
+    "syntax": [
+      "gemini extensions install <source> [--ref <ref>] [--auto-update] [--pre-release]"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions install https://github.com/user/my-extension",
+        "explanation": "Install from a Git URL.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini extensions install https://github.com/user/my-extension --ref develop",
+        "explanation": "Install from a specific branch, tag, or commit.",
+        "level": "practical"
+      },
+      {
+        "command": "gemini extensions install https://github.com/user/my-extension --auto-update",
+        "explanation": "Install and keep it updated automatically.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "An extension runs with your CLI session's reach; install only from sources you trust."
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.extensions-ref",
+      "gemini-cli.cli-flag.extensions-auto-update"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-install/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-link",
+    "tool": "gemini-cli",
+    "name": "gemini extensions link",
+    "display_name": "Link a local extension",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension development",
+    "description": "Link an extension from a local path, so edits to that path are always reflected without reinstalling.",
+    "syntax": [
+      "gemini extensions link <path>"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions link /path/to/extension",
+        "explanation": "Develop an extension against a live checkout.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Iterate on an extension you are writing, rather than reinstalling after every change."
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-new"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-link/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-list",
+    "tool": "gemini-cli",
+    "name": "gemini extensions list",
+    "display_name": "List installed extensions",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension inspection",
+    "description": "List the installed extensions.",
+    "syntax": [
+      "gemini extensions list"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions list",
+        "explanation": "See what is installed.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.list-extensions"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-list/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-new",
+    "tool": "gemini-cli",
+    "name": "gemini extensions new",
+    "display_name": "Scaffold a new extension",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension development",
+    "description": "Create a new extension at the given path from a boilerplate example template.",
+    "syntax": [
+      "gemini extensions new <path> [template]"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions new ./my-extension",
+        "explanation": "Scaffold an extension from the default template.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-validate"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-new/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-uninstall",
+    "tool": "gemini-cli",
+    "name": "gemini extensions uninstall",
+    "display_name": "Uninstall extensions",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension removal",
+    "description": "Uninstall one or more installed extensions by name.",
+    "syntax": [
+      "gemini extensions uninstall [names..]"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions uninstall my-extension",
+        "explanation": "Remove one extension.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-install"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-uninstall/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-update",
+    "tool": "gemini-cli",
+    "name": "gemini extensions update",
+    "display_name": "Update extensions",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension maintenance",
+    "description": "Update a named extension, or every installed extension with --all, to the latest version.",
+    "syntax": [
+      "gemini extensions update [<name>] [--all]"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions update my-extension",
+        "explanation": "Update one extension.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini extensions update --all",
+        "explanation": "Update everything installed.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.extensions-all"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-update/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.extensions-validate",
+    "tool": "gemini-cli",
+    "name": "gemini extensions validate",
+    "display_name": "Validate an extension",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.extensions",
+    "category": "plugins",
+    "role": "Extension development",
+    "description": "Validate the structure of an extension at a local path before installing or publishing it.",
+    "syntax": [
+      "gemini extensions validate <path>"
+    ],
+    "examples": [
+      {
+        "command": "gemini extensions validate ./my-extension",
+        "explanation": "Check an extension's structure.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.extensions-new"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-extensions-validate/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.gemma",
+    "tool": "gemini-cli",
+    "name": "gemini gemma",
+    "display_name": "Manage local Gemma routing",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-command.launch",
+    "category": "models",
+    "role": "Local model routing",
+    "description": "Manage local Gemma model routing, which serves a Gemma model from a local LiteRT-LM server instead of calling the hosted API.",
+    "syntax": [
+      "gemini gemma <command>"
+    ],
+    "examples": [
+      {
+        "command": "gemini gemma status",
+        "explanation": "Check whether local routing is configured and running.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.gemma-setup"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Experimental local Gemma routing."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://geminicli.com/docs/core/gemma-setup/",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-gemma/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.gemma-logs",
+    "tool": "gemini-cli",
+    "name": "gemini gemma logs",
+    "display_name": "View LiteRT-LM logs",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.gemma",
+    "category": "models",
+    "role": "Local model diagnostics",
+    "description": "View the local LiteRT-LM server logs.",
+    "syntax": [
+      "gemini gemma logs"
+    ],
+    "examples": [
+      {
+        "command": "gemini gemma logs",
+        "explanation": "Read the server logs when local routing misbehaves.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.gemma"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Experimental local Gemma routing."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://geminicli.com/docs/core/gemma-setup/",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-gemma-logs/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.gemma-setup",
+    "tool": "gemini-cli",
+    "name": "gemini gemma setup",
+    "display_name": "Set up local Gemma routing",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.gemma",
+    "category": "models",
+    "role": "Local model setup",
+    "description": "Download and configure Gemma local model routing.",
+    "syntax": [
+      "gemini gemma setup"
+    ],
+    "examples": [
+      {
+        "command": "gemini gemma setup",
+        "explanation": "Download the model and configure routing.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.gemma"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Experimental local Gemma routing."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://geminicli.com/docs/core/gemma-setup/",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-gemma-setup/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.gemma-start",
+    "tool": "gemini-cli",
+    "name": "gemini gemma start",
+    "display_name": "Start the LiteRT-LM server",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.gemma",
+    "category": "models",
+    "role": "Local model runtime",
+    "description": "Start the local LiteRT-LM server that serves the Gemma model.",
+    "syntax": [
+      "gemini gemma start"
+    ],
+    "examples": [
+      {
+        "command": "gemini gemma start",
+        "explanation": "Bring the local server up.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.gemma"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Experimental local Gemma routing."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://geminicli.com/docs/core/gemma-setup/",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-gemma-start/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.gemma-status",
+    "tool": "gemini-cli",
+    "name": "gemini gemma status",
+    "display_name": "Check local Gemma routing",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.gemma",
+    "category": "models",
+    "role": "Local model diagnostics",
+    "description": "Report whether local Gemma model routing is configured and whether the server is running.",
+    "syntax": [
+      "gemini gemma status"
+    ],
+    "examples": [
+      {
+        "command": "gemini gemma status",
+        "explanation": "Check the state of local routing.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.gemma"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Experimental local Gemma routing."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://geminicli.com/docs/core/gemma-setup/",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-gemma-status/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.gemma-stop",
+    "tool": "gemini-cli",
+    "name": "gemini gemma stop",
+    "display_name": "Stop the LiteRT-LM server",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.gemma",
+    "category": "models",
+    "role": "Local model runtime",
+    "description": "Stop the local LiteRT-LM server.",
+    "syntax": [
+      "gemini gemma stop"
+    ],
+    "examples": [
+      {
+        "command": "gemini gemma stop",
+        "explanation": "Shut the local server down and free its memory.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.gemma"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Experimental local Gemma routing."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://geminicli.com/docs/core/gemma-setup/",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-gemma-stop/"
+  },
+  {
     "id": "gemini-cli.cli-subcommand.mcp",
     "tool": "gemini-cli",
     "name": "gemini mcp",
@@ -62255,6 +63775,292 @@
       ]
     },
     "path": "gemini-cli/gemini-mcp/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.mcp-add",
+    "tool": "gemini-cli",
+    "name": "gemini mcp add",
+    "display_name": "Add an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Add an MCP server, either as a stdio launcher command or, with --transport http, as an HTTP server.",
+    "syntax": [
+      "gemini mcp add <name> <commandOrUrl> [args...]"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp add github npx -y @modelcontextprotocol/server-github",
+        "explanation": "Add a stdio server.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini mcp add api-server http://localhost:3000 --transport http",
+        "explanation": "Add an HTTP server.",
+        "level": "practical"
+      },
+      {
+        "command": "gemini mcp add slack node server.js --env SLACK_TOKEN=xoxb-xxx --scope user",
+        "explanation": "Add a stdio server with a token, saved to user scope.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "Read a server's command, URL, environment, and exposed tools before adding it; MCP tools act outside the repository."
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.mcp-transport",
+      "gemini-cli.cli-flag.mcp-env",
+      "gemini-cli.cli-subcommand.mcp-list"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-mcp-add/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.mcp-disable",
+    "tool": "gemini-cli",
+    "name": "gemini mcp disable",
+    "display_name": "Disable an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Disable a configured MCP server without removing it. With --session the change applies to the current session only.",
+    "syntax": [
+      "gemini mcp disable <name> [--session]"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp disable github",
+        "explanation": "Keep the configuration but stop starting the server.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Silence a noisy or slow server without losing how it was configured."
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-enable"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-mcp-disable/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.mcp-enable",
+    "tool": "gemini-cli",
+    "name": "gemini mcp enable",
+    "display_name": "Enable an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Enable a configured MCP server. With --session the change applies to the current session only and is not written to the settings file.",
+    "syntax": [
+      "gemini mcp enable <name> [--session]"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp enable github",
+        "explanation": "Turn a configured server back on.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini mcp enable github --session",
+        "explanation": "Turn it on for this session without persisting the change.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-disable",
+      "gemini-cli.cli-flag.mcp-session"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-mcp-enable/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.mcp-list",
+    "tool": "gemini-cli",
+    "name": "gemini mcp list",
+    "display_name": "List MCP servers",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP inspection",
+    "description": "List every configured MCP server.",
+    "syntax": [
+      "gemini mcp list"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp list",
+        "explanation": "Show the configured servers.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-add"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-mcp-list/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.mcp-remove",
+    "tool": "gemini-cli",
+    "name": "gemini mcp remove",
+    "display_name": "Remove an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Remove a configured MCP server by name.",
+    "syntax": [
+      "gemini mcp remove <name>"
+    ],
+    "examples": [
+      {
+        "command": "gemini mcp remove github",
+        "explanation": "Drop a server from the configuration.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.mcp-add"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-mcp-remove/"
   },
   {
     "id": "gemini-cli.cli-subcommand.skills",
@@ -62306,6 +64112,361 @@
     "path": "gemini-cli/gemini-skills/"
   },
   {
+    "id": "gemini-cli.cli-subcommand.skills-disable",
+    "tool": "gemini-cli",
+    "name": "gemini skills disable",
+    "display_name": "Disable an agent skill",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill configuration",
+    "description": "Disable an agent skill, or every skill with --all. --scope selects which scope the change is written to.",
+    "syntax": [
+      "gemini skills disable <name> [--scope <user|workspace>]",
+      "gemini skills disable --all"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills disable my-skill",
+        "explanation": "Turn one skill off.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini skills disable --all",
+        "explanation": "Turn every skill off.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.skills-enable"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-skills-disable/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.skills-enable",
+    "tool": "gemini-cli",
+    "name": "gemini skills enable",
+    "display_name": "Enable an agent skill",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill configuration",
+    "description": "Enable an agent skill, or every skill with --all.",
+    "syntax": [
+      "gemini skills enable <name>",
+      "gemini skills enable --all"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills enable my-skill",
+        "explanation": "Turn one skill on.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini skills enable --all",
+        "explanation": "Turn every discovered skill on.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.skills-disable"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-skills-enable/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.skills-install",
+    "tool": "gemini-cli",
+    "name": "gemini skills install",
+    "display_name": "Install an agent skill",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill installation",
+    "description": "Install an agent skill from a Git repository URL, a local path, or a file. --path names a sub-directory inside a Git repository, and --scope selects user or workspace.",
+    "syntax": [
+      "gemini skills install <source> [--scope <user|workspace>] [--path <path>]"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills install https://github.com/u/repo",
+        "explanation": "Install a skill from a repository.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini skills install https://github.com/u/repo --path skills/reviewer --scope workspace",
+        "explanation": "Install one skill from a monorepo, for this project only.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "A skill is instructions the agent will follow; read one before installing it from a source you do not control."
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.skills-path",
+      "gemini-cli.cli-flag.extensions-scope"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-skills-install/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.skills-link",
+    "tool": "gemini-cli",
+    "name": "gemini skills link",
+    "display_name": "Link local agent skills",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill development",
+    "description": "Link agent skills from a local path by symlink, so changes to the source are reflected immediately.",
+    "syntax": [
+      "gemini skills link <path>"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills link /path/to/my-skills",
+        "explanation": "Develop skills against a live checkout.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.skills-install"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-skills-link/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.skills-list",
+    "tool": "gemini-cli",
+    "name": "gemini skills list",
+    "display_name": "List agent skills",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill inspection",
+    "description": "List the discovered agent skills. Add --all to include built-in skills.",
+    "syntax": [
+      "gemini skills list [--all]"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills list",
+        "explanation": "See the skills discovered for this project.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini skills list --all",
+        "explanation": "Include built-in skills in the listing.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-flag.extensions-all"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-skills-list/"
+  },
+  {
+    "id": "gemini-cli.cli-subcommand.skills-uninstall",
+    "tool": "gemini-cli",
+    "name": "gemini skills uninstall",
+    "display_name": "Uninstall an agent skill",
+    "type": "cli-subcommand",
+    "parent_id": "gemini-cli.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill removal",
+    "description": "Uninstall an agent skill by name. --scope selects which scope it is removed from.",
+    "syntax": [
+      "gemini skills uninstall <name> [--scope <user|workspace>]"
+    ],
+    "examples": [
+      {
+        "command": "gemini skills uninstall my-skill",
+        "explanation": "Remove a skill.",
+        "level": "minimal"
+      },
+      {
+        "command": "gemini skills uninstall my-skill --scope workspace",
+        "explanation": "Remove it from the project scope.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "gemini-cli.cli-subcommand.skills-install"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md",
+        "kind": "official-source"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "gemini-cli/gemini-skills-uninstall/"
+  },
+  {
     "id": "gemini-cli.cli-subcommand.update",
     "tool": "gemini-cli",
     "name": "gemini update",
@@ -62314,7 +64475,7 @@
     "parent_id": "gemini-cli.cli-command.launch",
     "category": "system",
     "role": "CLI update",
-    "description": "Update Gemini CLI to the latest release.",
+    "description": "Update Gemini CLI to the latest release. The 0.58.0 binary registers no update command.",
     "when_to_use": [
       "Use this control when update Gemini CLI to the latest release."
     ],
@@ -62328,12 +64489,14 @@
         "level": "minimal"
       }
     ],
-    "maturity": "stable",
+    "maturity": "removed",
     "availability": {
       "channels": [
         "cli"
       ],
-      "conditions": []
+      "conditions": [
+        "Absent from the 0.58.0 CLI; the published cheatsheet still lists it."
+      ]
     },
     "sources": [
       {
@@ -62342,12 +64505,19 @@
       }
     ],
     "verification": {
-      "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "status": "manually-tested",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
       "verified_by": [
-        "official-source"
+        "manual-test",
+        "official-docs"
       ]
+    },
+    "version": {
+      "introduced": null,
+      "deprecated": null,
+      "removed": "unknown",
+      "replacement": "Update through the package manager the CLI was installed with, for example npm install -g @google/gemini-cli."
     },
     "path": "gemini-cli/gemini-update/"
   },

@@ -35,7 +35,11 @@
     {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md","kind":"official-source","scope":"Agent Skills commands and discovery"},
     {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/hooks/reference.md","kind":"official-source","scope":"Hook events and configuration"},
     {"url":"https://geminicli.com/docs/cli/auto-memory/","kind":"official-docs","scope":"Experimental Auto Memory commands"},
-    {"url":"https://geminicli.com/docs/core/gemma-setup/","kind":"official-docs","scope":"Experimental local Gemma routing"}
+    {"url":"https://geminicli.com/docs/core/gemma-setup/","kind":"official-docs","scope":"Experimental local Gemma routing"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md","kind":"official-source","scope":"MCP server management commands and configuration"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md","kind":"official-source","scope":"Extension management commands and manifest reference"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/policy-engine.md","kind":"official-source","scope":"Policy engine rules and admin policy loading"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/index.md","kind":"release-notes","scope":"Release notes for CLI flags and features"}
   ],
   "cursor": [
     {"url":"https://cursor.com/docs/cli/reference/slash-commands","kind":"official-docs","scope":"Slash commands"},
