@@ -254,11 +254,12 @@ function entryCard(entry) {
 
 function capabilityCard(capability) {
   const mapped = capability.mappings.filter((mapping) => mapping.entry_id).length;
+  const total = capability.mappings.length;
   return `<a class="capability-card" href="${routeHref(capability.path)}">
     <span class="capability-card__top"><span class="capability-card__id">${escapeHtml(capability.id)}</span><span aria-hidden="true">↗</span></span>
     <strong>${escapeHtml(capability.display_name)}</strong>
     <span>${escapeHtml(capability.description)}</span>
-    <span class="capability-card__footer"><span class="capability-card__coverage" aria-label="${mapped} of 5 tools mapped">${capability.mappings.map((mapping) => `<i class="${mapping.entry_id ? "is-mapped" : ""}" aria-hidden="true"></i>`).join("")}</span><small>${mapped}/5 mapped</small></span>
+    <span class="capability-card__footer"><span class="capability-card__coverage" aria-label="${mapped} of ${total} tools mapped">${capability.mappings.map((mapping) => `<i class="${mapping.entry_id ? "is-mapped" : ""}" aria-hidden="true"></i>`).join("")}</span><small>${mapped}/${total} mapped</small></span>
   </a>`;
 }
 

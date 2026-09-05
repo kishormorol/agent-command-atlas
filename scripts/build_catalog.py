@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import shutil
@@ -121,8 +122,20 @@ def write_route(path: Path, page: str) -> None:
     (path / "index.html").write_text(page, encoding="utf-8")
 
 
+def stamp_script_cache(site: Path) -> str:
+    """Point index.html at a content-derived app.js query so a changed script is never served stale."""
+    digest = hashlib.sha256((site / "app.js").read_bytes()).hexdigest()[:12]
+    index = site / "index.html"
+    page = index.read_text(encoding="utf-8")
+    stamped = re.sub(r'<script src="app\.js\?v=[^"]*"></script>', f'<script src="app.js?v={digest}"></script>', page, count=1)
+    if stamped != page:
+        index.write_text(stamped, encoding="utf-8")
+    return digest
+
+
 def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilities: list[dict]) -> list[dict]:
     """Generate static shells so tool, entry, and comparison URLs work on static hosts."""
+    stamp_script_cache(site)
     template = (site / "index.html").read_text(encoding="utf-8")
     for route_root in [tool["id"] for tool in tools] + ["compare", "coverage"]:
         target = site / route_root

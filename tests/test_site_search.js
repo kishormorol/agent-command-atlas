@@ -95,6 +95,17 @@ assert(context.testEntryMarkup.includes('class="entry-card__title"'));
 assert(context.testEntryMarkup.includes("Open reference"));
 assert(context.testCapabilityMarkup.includes('class="capability-card__top"'));
 assert(context.testCapabilityMarkup.includes('class="capability-card__coverage"'));
+
+const capabilityTotal = capabilities[0].mappings.length;
+const capabilityMapped = capabilities[0].mappings.filter((mapping) => mapping.entry_id).length;
+assert(
+  context.testCapabilityMarkup.includes(`${capabilityMapped}/${capabilityTotal} mapped`),
+  "capability coverage must count every mapped tool, not a hardcoded roster size",
+);
+assert(
+  context.testCapabilityMarkup.includes(`aria-label="${capabilityMapped} of ${capabilityTotal} tools mapped"`),
+  "capability coverage label must match the mapping count",
+);
 assert(context.testCoverageMarkup.includes('class="coverage-grid"'));
 assert(context.testCoverageMarkup.includes("Dataset coverage, not vendor completeness"));
 for (const tool of tools) {

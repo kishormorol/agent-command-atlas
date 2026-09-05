@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import shutil
@@ -154,13 +155,15 @@ class RepositoryTests(unittest.TestCase):
 
     def test_generated_routes_share_the_template_script_cache_stamp(self):
         template = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
-        stamp = re.search(r'<script src="(app\.js\?v=[^"]+)"></script>', template)
+        stamp = re.search(r'<script src="app\.js\?v=([^"]+)"></script>', template)
         self.assertIsNotNone(stamp, "the site template must carry a cache-busted app.js reference")
+        digest = hashlib.sha256((ROOT / "site" / "app.js").read_bytes()).hexdigest()[:12]
+        self.assertEqual(stamp.group(1), digest, "the stamp must track the current app.js contents")
         routes = json.loads((ROOT / "site" / "routes.json").read_text(encoding="utf-8"))
         for route in routes:
             with self.subTest(route=route["path"]):
                 page = (ROOT / "site" / route["path"] / "index.html").read_text(encoding="utf-8")
-                self.assertIn(stamp.group(1), page)
+                self.assertIn(f"app.js?v={digest}", page)
 
     def test_site_has_keyboard_and_responsive_accessibility_guards(self):
         homepage = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
