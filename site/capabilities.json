@@ -63,9 +63,9 @@
       },
       {
         "tool": "cursor",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Cursor subagent controls are documented outside the current CLI command dataset and are not yet mapped."
+        "entry_id": "cursor.agent.project-cursor-agents-name-md",
+        "relationship": "partial",
+        "notes": "Subagents are defined in .cursor/agents/ files and the main agent selects them on its own. No CLI or slash command discovers, inspects, or coordinates them."
       },
       {
         "tool": "github-copilot",
@@ -105,9 +105,9 @@
       },
       {
         "tool": "cursor",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No official Cursor CLI command is currently mapped for parallel subagent fan-out."
+        "entry_id": "cursor.agent.project-cursor-agents-name-md",
+        "relationship": "similar",
+        "notes": "The subagents reference documents parallel execution: Cursor launches multiple subagents simultaneously to work on different parts of a codebase. The main agent decides when, and no command fans a task out explicitly."
       },
       {
         "tool": "github-copilot",
@@ -224,8 +224,8 @@
       {
         "tool": "cursor",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "The general agent can review code, but the current CLI reference has no dedicated review command."
+        "relationship": "none",
+        "notes": "No dedicated review command in the CLI slash-command or parameter references; the general agent reviews code when asked."
       },
       {
         "tool": "github-copilot",
@@ -307,8 +307,8 @@
       {
         "tool": "cursor",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Cursor file-context controls are not yet mapped."
+        "relationship": "none",
+        "notes": "The CLI references document no @-mention or file-attachment control; file context is reached through the agent's own tools."
       },
       {
         "tool": "github-copilot",
@@ -425,8 +425,8 @@
       {
         "tool": "cursor",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No documented context-usage control is currently mapped."
+        "relationship": "none",
+        "notes": "No documented control reports context usage. /summarize reduces context but reports nothing about it."
       },
       {
         "tool": "github-copilot",
@@ -1112,9 +1112,9 @@
       },
       {
         "tool": "cursor",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Cursor's documented status subcommand reports authentication rather than active-session configuration."
+        "entry_id": "cursor.cli-subcommand.status",
+        "relationship": "partial",
+        "notes": "agent status reports the authenticated identity, which is part of this capability, but nothing about the active session's configuration or context state."
       },
       {
         "tool": "github-copilot",
@@ -1192,9 +1192,9 @@
       },
       {
         "tool": "cursor",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Cursor skill controls are not yet represented in the dataset."
+        "entry_id": "cursor.skill.cursor-skills-name-skill-md",
+        "relationship": "partial",
+        "notes": "Skills are loaded from .cursor/skills/ and .agents/skills/ and are selected by typing / in chat, which covers discovery and selection but not enabling, disabling, installing, or reloading."
       },
       {
         "tool": "github-copilot",

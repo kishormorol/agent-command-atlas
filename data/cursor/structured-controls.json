@@ -3,7 +3,11 @@
     "id": "cursor.agent.project-cursor-agents-name-md",
     "tool": "cursor",
     "name": ".cursor/agents/<name>.md",
-    "capabilities": ["agents.define"],
+    "capabilities": [
+      "agents.define",
+      "agents.manage",
+      "agents.parallel"
+    ],
     "display_name": "Project subagent definition",
     "type": "agent",
     "category": "agents",
@@ -96,7 +100,10 @@
     "id": "cursor.skill.cursor-skills-name-skill-md",
     "tool": "cursor",
     "name": ".cursor/skills/<name>/SKILL.md",
-    "capabilities": ["skills.define"],
+    "capabilities": [
+      "skills.define",
+      "skills.manage"
+    ],
     "display_name": "Cursor Agent Skill",
     "type": "skill",
     "category": "skills",
@@ -373,7 +380,9 @@
     "id": "cursor.permission.sandbox-enabled",
     "tool": "cursor",
     "name": "sandbox enabled",
-    "capabilities": ["permissions.sandbox"],
+    "capabilities": [
+      "permissions.sandbox"
+    ],
     "display_name": "Enabled sandbox",
     "type": "permission",
     "category": "permissions",

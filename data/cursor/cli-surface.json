@@ -1,0 +1,138 @@
+[
+  {
+    "id": "cursor.environment-variable.config-dir",
+    "tool": "cursor",
+    "name": "CURSOR_CONFIG_DIR",
+    "display_name": "Cursor CLI configuration directory",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Configuration location",
+    "description": "Point the Cursor CLI at a custom configuration directory instead of the default location.",
+    "syntax": [
+      "CURSOR_CONFIG_DIR=<path>"
+    ],
+    "examples": [
+      {
+        "command": "CURSOR_CONFIG_DIR=/tmp/cursor-profile cursor-agent",
+        "explanation": "Run with an isolated configuration directory.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Keep a throwaway or per-project configuration separate from your usual one."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2026.09.02-c22c1a3",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "cursor.environment-variable.worker-labels-file",
+    "tool": "cursor",
+    "name": "CURSOR_WORKER_LABELS_FILE",
+    "display_name": "Worker labels file path",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Worker configuration",
+    "description": "Path to a JSON or TOML labels file for a self-hosted Cloud Agent worker. Equivalent to passing --labels-file.",
+    "syntax": [
+      "CURSOR_WORKER_LABELS_FILE=<path>"
+    ],
+    "examples": [
+      {
+        "command": "CURSOR_WORKER_LABELS_FILE=./worker-labels.toml cursor-agent worker start",
+        "explanation": "Label a self-hosted worker from a file rather than a flag.",
+        "level": "practical"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Applies to the self-hosted Cloud Agent worker."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/parameters",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2026.09.02-c22c1a3",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "cursor.shortcut.plan-mode",
+    "tool": "cursor",
+    "name": "Shift+Tab",
+    "display_name": "Switch to Plan mode",
+    "type": "shortcut",
+    "category": "modes",
+    "role": "Mode switching",
+    "description": "Switch the interactive session into Plan mode, where Cursor designs an approach and asks clarifying questions before editing. Equivalent to /plan, --plan, or --mode=plan.",
+    "syntax": [
+      "Shift+Tab"
+    ],
+    "examples": [
+      {
+        "command": "Shift+Tab",
+        "explanation": "Drop into Plan mode without leaving the composer.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Think an approach through before Cursor starts editing files."
+    ],
+    "capabilities": [
+      "mode.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/overview",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2026.09.02-c22c1a3",
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

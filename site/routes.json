@@ -9905,6 +9905,16 @@
     "id": "cursor.environment-variable.api-key"
   },
   {
+    "path": "cursor/cursor-config-dir/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.config-dir"
+  },
+  {
+    "path": "cursor/cursor-worker-labels-file/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.worker-labels-file"
+  },
+  {
     "path": "cursor/afteragentresponse/",
     "kind": "entry",
     "id": "cursor.hook.after-agent-response"
@@ -10033,6 +10043,11 @@
     "path": "cursor/sandbox-enabled/",
     "kind": "entry",
     "id": "cursor.permission.sandbox-enabled"
+  },
+  {
+    "path": "cursor/shift-tab/",
+    "kind": "entry",
+    "id": "cursor.shortcut.plan-mode"
   },
   {
     "path": "cursor/cursor-skills-name-skill-md/",
