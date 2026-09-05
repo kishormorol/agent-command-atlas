@@ -1,0 +1,107 @@
+[
+  {
+    "id": "gemini-cli.slash-command.auth-signin",
+    "tool": "gemini-cli",
+    "name": "/auth signin",
+    "display_name": "Sign in or change auth method",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.auth",
+    "category": "authentication",
+    "role": "Authentication",
+    "description": "Open the authentication dialog to sign in or change the authentication method. This is what bare /auth runs when no subcommand is given.",
+    "syntax": [
+      "/auth signin"
+    ],
+    "aliases": [
+      "/auth login"
+    ],
+    "examples": [
+      {
+        "command": "/auth signin",
+        "explanation": "Open the authentication dialog.",
+        "level": "minimal"
+      }
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "manually-tested",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "manual-test",
+        "official-source"
+      ]
+    }
+  },
+  {
+    "id": "gemini-cli.slash-command.auth-signout",
+    "tool": "gemini-cli",
+    "name": "/auth signout",
+    "display_name": "Sign out and clear credentials",
+    "type": "slash-command",
+    "parent_id": "gemini-cli.slash-command.auth",
+    "category": "authentication",
+    "role": "Authentication",
+    "description": "Sign out and clear all cached credentials, resetting the authentication state so a different account can be used. Announced in the release notes as /logout; the 0.58.0 CLI registers it as a subcommand of /auth, named signout with logout as an alias.",
+    "syntax": [
+      "/auth signout"
+    ],
+    "aliases": [
+      "/auth logout"
+    ],
+    "examples": [
+      {
+        "command": "/auth signout",
+        "explanation": "Clear cached credentials before switching accounts.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Switch between accounts, or clear credentials from a shared machine."
+    ],
+    "capabilities": [
+      "auth.logout"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/index.md",
+        "kind": "release-notes"
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md",
+        "kind": "official-source"
+      }
+    ],
+    "verification": {
+      "status": "manually-tested",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.58.0",
+      "verified_by": [
+        "manual-test",
+        "release-notes"
+      ]
+    }
+  }
+]

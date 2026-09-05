@@ -9160,6 +9160,16 @@
     "id": "gemini-cli.slash-command.auth"
   },
   {
+    "path": "gemini-cli/auth-signin/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.auth-signin"
+  },
+  {
+    "path": "gemini-cli/auth-signout/",
+    "kind": "entry",
+    "id": "gemini-cli.slash-command.auth-signout"
+  },
+  {
     "path": "gemini-cli/bug/",
     "kind": "entry",
     "id": "gemini-cli.slash-command.bug"

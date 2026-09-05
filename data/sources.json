@@ -1,7 +1,6 @@
 {
   "codex": [
-    {"url":"https://developers.openai.com/codex/cli/reference/","kind":"official-docs","scope":"CLI commands and flags"},
-    {"url":"https://developers.openai.com/codex/cli/slash-commands/","kind":"official-docs","scope":"Interactive commands and shortcuts"},
+    {"url":"https://developers.openai.com/codex/cli/slash-commands/","kind":"official-docs","scope":"Interactive commands and shortcuts (redirects to the consolidated developer-commands reference)"},
     {"url":"https://learn.chatgpt.com/docs/developer-commands?surface=cli","kind":"official-docs","scope":"Current consolidated CLI, interactive command, flag, and shortcut reference"},
     {"url":"https://learn.chatgpt.com/docs/config-file/config-reference","kind":"official-docs","scope":"Configuration files and options"},
     {"url":"https://learn.chatgpt.com/docs/config-file/environment-variables","kind":"official-docs","scope":"Public environment variables"},
@@ -39,7 +38,8 @@
     {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md","kind":"official-source","scope":"MCP server management commands and configuration"},
     {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md","kind":"official-source","scope":"Extension management commands and manifest reference"},
     {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/policy-engine.md","kind":"official-source","scope":"Policy engine rules and admin policy loading"},
-    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/index.md","kind":"release-notes","scope":"Release notes for CLI flags and features"}
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/index.md","kind":"release-notes","scope":"Release notes for CLI flags and features"},
+    {"url":"https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/tutorials/session-management.md","kind":"official-source","scope":"Session checkpointing, rewind, and conversation forking workflows"}
   ],
   "cursor": [
     {"url":"https://cursor.com/docs/cli/reference/slash-commands","kind":"official-docs","scope":"Slash commands"},

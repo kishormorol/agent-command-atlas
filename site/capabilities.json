@@ -100,8 +100,8 @@
       {
         "tool": "gemini-cli",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Agent management is documented, but a dedicated parallel fan-out command is not mapped."
+        "relationship": "none",
+        "notes": "The subagents reference describes specialists the main agent delegates to one at a time and documents no concurrency; no command fans a task out in parallel. --worktree enables parallel work, but the user drives each session."
       },
       {
         "tool": "cursor",
@@ -178,8 +178,9 @@
       },
       {
         "tool": "gemini-cli",
-        "entry_id": null,
-        "relationship": "unknown"
+        "entry_id": "gemini-cli.slash-command.auth-signout",
+        "relationship": "exact",
+        "notes": "The 0.58.0 CLI names it /auth signout, with /auth logout as an alias; the release notes announced it as /logout."
       },
       {
         "tool": "cursor",
@@ -947,9 +948,9 @@
       },
       {
         "tool": "gemini-cli",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No direct session-fork mapping has been verified."
+        "entry_id": "gemini-cli.slash-command.resume-save",
+        "relationship": "partial",
+        "notes": "Gemini CLI has no single fork command. The documented workflow saves a tagged checkpoint and resumes it later to branch history, which takes two commands and leaves both branches sharing one session tag."
       },
       {
         "tool": "cursor",
