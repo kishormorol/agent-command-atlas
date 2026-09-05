@@ -7,14 +7,17 @@ All notable project changes are documented here.
 ### Added
 
 - Meta Muse Code as a sixth covered ecosystem, with 154 official-source-backed records spanning CLI commands and flags, slash commands, shortcuts, bundled skills, permissions and sandbox modes, subagents and observers, workflows, hooks, MCP, configuration, instruction files, and environment variables.
-- Muse Code mappings for all 33 cross-tool capabilities, including honest `none` and `unknown` records for code review, Git diff, remote control, plugin management, and agent definitions.
-- Expanded the canonical dataset from 508 to more than 2,200 official-source-backed records across all five ecosystems.
+- Muse Code mappings for all 33 cross-tool capabilities, including honest `none` records for code review, Git diff, remote control, plugin management, and agent definitions.
+- Expanded the canonical dataset from 508 to more than 2,500 official-source-backed records across all six ecosystems.
+- Nested CLI command trees for every ecosystem with an inspectable binary: `claude mcp` and `claude plugin`; `codex mcp`, `plugin`, `features`, `cloud` and `login`; `gemini mcp`, `extensions`, `skills` and `gemma`; and `copilot mcp`, `plugin` and `skill`.
 - Complete documented flag, environment-variable, configuration-option, hook-event, shortcut, and structured-control families found in the current official references.
 - Structured entries for agents, skills, plugins and extensions, MCP, permission modes, sandbox controls, and project instruction surfaces.
 - Eight task capabilities covering hook and plugin management, agent and skill definitions, sandboxing, session naming, usage inspection, and configuration inspection.
 
 ### Changed
 
+- Verified entries against the shipping binaries for Claude Code 2.1.261, Codex 0.151.0, Gemini CLI 0.58.0, GitHub Copilot CLI 1.0.83, and Cursor 2026.09.02-c22c1a3, recording a tested version on every entry the sweeps touched.
+- Resolved every unknown capability mapping. All 198 mappings across 33 capabilities and six tools are now exact, similar, partial, or an evidence-backed none.
 - Widened the capability schema from five to six per-tool mappings and registered Muse Code in the entry schema, validator, source registry, and website tool palette.
 - Improved usage guidance for every command-like entry and expanded copy-ready examples throughout the catalog.
 - Ranked primary capability implementations above incidental configuration matches in task-oriented website searches.
@@ -23,6 +26,9 @@ All notable project changes are documented here.
 
 ### Fixed
 
+- Recorded controls that the vendor documentation still lists but the shipping binary no longer has: `gemini update`, `--experimental-zed-integration`, and Cursor's `--background` and `--fullscreen` are marked removed, and `--experimental-acp` deprecated in favour of `--acp`.
+- Corrected `codex cloud` to experimental, matching both its documentation and the binary, and recorded its `codex cloud-tasks` alias.
+- Taught the validator that a `none` or `unknown` capability mapping cannot contradict a tool's own entries declaring that capability, and that short CLI flags are case-sensitive.
 - Made static route metadata generation safe for literal backslashes in documented syntax and examples.
 - Added regression coverage for route collisions and metadata containing regular-expression replacement characters.
 
