@@ -33,8 +33,8 @@
       {
         "tool": "muse-code",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Agent definitions are referenced for workflow children, but no definition format or path is documented."
+        "relationship": "none",
+        "notes": "The lead spawns subagents on its own and the extending reference documents no definition format, file path, or frontmatter for a reusable one."
       }
     ],
     "path": "compare/agents-define/"
@@ -318,8 +318,8 @@
       {
         "tool": "muse-code",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No file-attachment prefix is documented; the agent reads workspace files with its own tools."
+        "relationship": "none",
+        "notes": "The composer documents only the ! shell prefix and the / palette; no prefix adds a file or directory to the prompt. The agent reads workspace files with its own tools."
       }
     ],
     "path": "compare/context-attach-file/"
@@ -924,8 +924,8 @@
       {
         "tool": "muse-code",
         "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Plugin bundles are named as a skill source, but no plugin management surface is documented."
+        "relationship": "none",
+        "notes": "Plugin bundles are named as one source of skills, but no documented command installs, lists, enables, disables, or removes them. muse skills list shows bundled skills only."
       }
     ],
     "path": "compare/plugins-manage/"
