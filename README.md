@@ -26,7 +26,7 @@ The project turns one canonical dataset into complementary outputs:
 
 Search `compact`, `resume old session`, `MCP`, or `model` and get useful results across tools—not just exact command-name matches. Every result links to an official source and shows syntax, examples, maturity, availability, and verification state.
 
-![Agent Command Atlas interface](site/og.png)
+![The Agent Command Atlas homepage, showing the search field, dataset totals, and the six ecosystem filters](site/screenshot.png)
 
 ## Why developers use it
 
