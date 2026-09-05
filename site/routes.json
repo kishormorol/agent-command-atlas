@@ -2815,6 +2815,11 @@
     "id": "codex.slash-command.vim"
   },
   {
+    "path": "codex/worktree/",
+    "kind": "entry",
+    "id": "codex.slash-command.worktree"
+  },
+  {
     "path": "claude-code/claude-agents-name-md/",
     "kind": "entry",
     "id": "claude-code.agent.claude-agents-name-md"

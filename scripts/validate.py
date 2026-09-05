@@ -237,10 +237,28 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
                 elif capability_id not in mapped_entry.get("capabilities", []):
                     errors.append(f"{label}: mapped entry {entry_id} does not declare {capability_id}")
 
+    claimed_by: dict[tuple[str, str], list[str]] = {}
     for path, index, entry in entries:
         for capability_id in entry.get("capabilities", []):
             if capability_id not in capability_ids:
                 errors.append(f"{path.relative_to(root)}:{index}: unknown capability {capability_id}")
+            claimed_by.setdefault((entry.get("tool"), capability_id), []).append(entry.get("id"))
+
+    # A tool cannot be missing a capability that its own entries declare. `none` is an
+    # evidence-backed absence and `unknown` means research is incomplete; either one
+    # contradicts an entry that claims to implement the capability.
+    for index, capability in enumerate(capabilities):
+        capability_id = capability.get("id")
+        for mapping in capability.get("mappings", []):
+            if mapping.get("relationship") not in {"none", "unknown"}:
+                continue
+            claimants = claimed_by.get((mapping.get("tool"), capability_id))
+            if claimants:
+                errors.append(
+                    f"data/capabilities.json:{index}: {mapping.get('relationship')} mapping for "
+                    f"{mapping.get('tool')} contradicts {len(claimants)} entries that declare "
+                    f"{capability_id}, including {claimants[0]}"
+                )
 
     return errors, len(entries), len(capabilities)
 

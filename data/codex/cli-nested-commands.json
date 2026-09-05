@@ -1761,6 +1761,9 @@
     "related_commands": [
       "codex.cli-subcommand.cloud-exec"
     ],
+    "capabilities": [
+      "agents.parallel"
+    ],
     "maturity": "experimental",
     "availability": {
       "channels": [

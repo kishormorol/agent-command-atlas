@@ -87,9 +87,9 @@
     "mappings": [
       {
         "tool": "codex",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Agent-thread navigation is documented, but this capability does not yet map a dedicated parallel launcher."
+        "entry_id": "codex.cli-flag.cloud-attempts",
+        "relationship": "partial",
+        "notes": "codex cloud exec --attempts runs one task as up to four independent best-of-N attempts. No documented Codex control fans a task across coordinated subagents; worktree chats run in parallel but the user decomposes the work."
       },
       {
         "tool": "claude-code",
@@ -976,9 +976,9 @@
     "mappings": [
       {
         "tool": "codex",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "Desktop handoff is documented, but a matching remote-steering control is not currently mapped."
+        "entry_id": "codex.cli-subcommand.remote-control",
+        "relationship": "exact",
+        "notes": "Codex exposes remote control through the CLI rather than a slash command: the daemon is started with codex remote-control start and another device is paired with codex remote-control pair."
       },
       {
         "tool": "claude-code",
@@ -1294,9 +1294,9 @@
     "mappings": [
       {
         "tool": "codex",
-        "entry_id": null,
-        "relationship": "unknown",
-        "notes": "No dedicated Codex worktree control is represented in the current dataset."
+        "entry_id": "codex.slash-command.worktree",
+        "relationship": "partial",
+        "notes": "Codex runs chats on Git worktrees from the desktop app and IDE composer. The CLI documents no worktree command, so this is not reachable from the terminal the way the other tools' controls are."
       },
       {
         "tool": "claude-code",

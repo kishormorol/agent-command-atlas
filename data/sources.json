@@ -9,7 +9,8 @@
     {"url":"https://learn.chatgpt.com/docs/agent-configuration/subagents","kind":"official-docs","scope":"Built-in and custom subagents"},
     {"url":"https://learn.chatgpt.com/docs/build-skills","kind":"official-docs","scope":"Skill structure and discovery"},
     {"url":"https://learn.chatgpt.com/docs/hooks","kind":"official-docs","scope":"Hook events, handlers, and trust"},
-    {"url":"https://learn.chatgpt.com/docs/extend/mcp?surface=cli","kind":"official-docs","scope":"MCP configuration and CLI management"}
+    {"url":"https://learn.chatgpt.com/docs/extend/mcp?surface=cli","kind":"official-docs","scope":"MCP configuration and CLI management"},
+    {"url":"https://learn.chatgpt.com/docs/environments/git-worktrees","kind":"official-docs","scope":"Git worktree chats in the desktop app"}
   ],
   "claude-code": [
     {"url":"https://code.claude.com/docs/en/cli-usage","kind":"official-docs","scope":"CLI commands and flags"},

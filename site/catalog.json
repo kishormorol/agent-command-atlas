@@ -219,6 +219,9 @@
     "related_commands": [
       "codex.cli-subcommand.cloud-exec"
     ],
+    "capabilities": [
+      "agents.parallel"
+    ],
     "maturity": "experimental",
     "availability": {
       "channels": [
@@ -23223,6 +23226,67 @@
       ]
     },
     "path": "codex/vim/"
+  },
+  {
+    "id": "codex.slash-command.worktree",
+    "tool": "codex",
+    "name": "/worktree",
+    "display_name": "Run a chat in a Git worktree",
+    "type": "slash-command",
+    "category": "worktrees",
+    "role": "Worktree chat",
+    "description": "Run the current chat in a new Git worktree, so Codex works on a second checkout of the repository instead of the local checkout. Worktrees let several independent chats run against one project at the same time, and Handoff moves a chat between Local and Worktree. This control is offered in the ChatGPT desktop app and IDE composer; the Codex CLI documents no worktree command.",
+    "syntax": [
+      "/worktree"
+    ],
+    "examples": [
+      {
+        "command": "/worktree",
+        "explanation": "Move the current chat onto a new Git worktree.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Queue background work on a branch while you keep the local checkout free for your own foreground work.",
+      "Run several Codex chats against one repository without them fighting over the same checkout."
+    ],
+    "when_not_to_use": [
+      "Git only allows a branch to be checked out in one place at a time, so hand the chat back to Local before checking that branch out yourself.",
+      "The Codex CLI has no worktree command; reach for this from the desktop app or IDE composer."
+    ],
+    "capabilities": [
+      "worktree.manage"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "ide",
+        "desktop"
+      ],
+      "conditions": [
+        "Requires a project inside a Git repository.",
+        "Not available in the Codex CLI."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/environments/git-worktrees",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "codex/worktree/"
   },
   {
     "id": "claude-code.agent.claude-agents-name-md",

@@ -69,6 +69,26 @@ class RepositoryTests(unittest.TestCase):
             errors, _, _ = validate_repository(copy_root)
             self.assertTrue(any("duplicate id" in error for error in errors), errors)
 
+    def test_unknown_mapping_cannot_contradict_entries_that_declare_it(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            copy_root = Path(temporary_directory) / "atlas"
+            shutil.copytree(ROOT, copy_root, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+            path = copy_root / "data" / "capabilities.json"
+            capabilities = json.loads(path.read_text(encoding="utf-8"))
+            for capability in capabilities:
+                if capability["id"] != "session.remote-control":
+                    continue
+                for mapping in capability["mappings"]:
+                    if mapping["tool"] == "codex":
+                        mapping["entry_id"] = None
+                        mapping["relationship"] = "unknown"
+            path.write_text(json.dumps(capabilities), encoding="utf-8")
+            errors, _, _ = validate_repository(copy_root)
+            self.assertTrue(
+                any("contradicts" in error and "session.remote-control" in error for error in errors),
+                errors,
+            )
+
     def test_cli_subcommand_can_reference_cli_command_parent(self):
         errors, _, _ = validate_repository(ROOT)
         self.assertFalse(
