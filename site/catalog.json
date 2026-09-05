@@ -198,6 +198,151 @@
     "path": "codex/ask-for-approval/"
   },
   {
+    "id": "codex.cli-flag.cloud-attempts",
+    "tool": "codex",
+    "name": "--attempts",
+    "display_name": "Run best-of-N cloud attempts",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Cloud execution",
+    "description": "On codex cloud exec, set the number of assistant attempts (best-of-N) Codex cloud should run, from 1 to 4.",
+    "syntax": [
+      "codex cloud exec --attempts <1-4>"
+    ],
+    "examples": [
+      {
+        "command": "codex cloud exec --env env_123 --attempts 4 \"Fix the failing unit tests\"",
+        "explanation": "Run four attempts on a task worth extra compute.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.cloud-exec"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/attempts/"
+  },
+  {
+    "id": "codex.cli-flag.plugin-available",
+    "tool": "codex",
+    "name": "--available",
+    "display_name": "Include uninstalled marketplace plugins",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Plugin inspection",
+    "description": "On codex plugin list, include uninstalled marketplace plugins in the output. Requires --json.",
+    "syntax": [
+      "codex plugin list --available --json"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin list --available --json",
+        "explanation": "See installed and installable plugins together.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-list"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --json."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/available/"
+  },
+  {
+    "id": "codex.cli-flag.mcp-bearer-token-env-var",
+    "tool": "codex",
+    "name": "--bearer-token-env-var",
+    "display_name": "Send a bearer token to an MCP server",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "On codex mcp add, name the environment variable whose value is sent as a bearer token when connecting to a streamable HTTP MCP server.",
+    "syntax": [
+      "codex mcp add <name> --url <url> --bearer-token-env-var <ENV_VAR>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp add example --url https://mcp.example.com --bearer-token-env-var EXAMPLE_TOKEN",
+        "explanation": "Authenticate with a static token held in the environment.",
+        "level": "minimal"
+      }
+    ],
+    "when_not_to_use": [
+      "Prefer this over embedding a token in the configuration file, so the secret stays out of config.toml."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Streamable HTTP servers only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/bearer-token-env-var/"
+  },
+  {
     "id": "codex.cli-flag.bundled",
     "tool": "codex",
     "name": "--bundled",
@@ -338,6 +483,52 @@
     "path": "codex/config/"
   },
   {
+    "id": "codex.cli-flag.cloud-cursor",
+    "tool": "codex",
+    "name": "--cursor",
+    "display_name": "Page through cloud tasks",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Cloud inspection",
+    "description": "On codex cloud list, continue a listing from the pagination cursor returned by a previous request.",
+    "syntax": [
+      "codex cloud list --cursor <cursor>"
+    ],
+    "examples": [
+      {
+        "command": "codex cloud list --json --cursor eyJ0IjoxfQ",
+        "explanation": "Fetch the next page of tasks.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.cloud-list"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/cursor/"
+  },
+  {
     "id": "codex.cli-flag.dangerously-bypass",
     "tool": "codex",
     "name": "--dangerously-bypass-approvals-and-sandbox",
@@ -439,6 +630,55 @@
       ]
     },
     "path": "codex/dangerously-bypass-hook-trust/"
+  },
+  {
+    "id": "codex.cli-flag.login-device-auth",
+    "tool": "codex",
+    "name": "--device-auth",
+    "display_name": "Log in with a device code",
+    "type": "cli-flag",
+    "category": "authentication",
+    "role": "Authentication method",
+    "description": "On codex login, use the OAuth device code flow instead of launching a browser window.",
+    "syntax": [
+      "codex login --device-auth"
+    ],
+    "examples": [
+      {
+        "command": "codex login --device-auth",
+        "explanation": "Log in from a machine with no browser, such as an SSH session.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.login"
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/device-auth/"
   },
   {
     "id": "codex.cli-flag.disable",
@@ -575,6 +815,54 @@
     "path": "codex/enable/"
   },
   {
+    "id": "codex.cli-flag.mcp-env",
+    "tool": "codex",
+    "name": "--env",
+    "display_name": "Set MCP stdio environment variables",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP process environment",
+    "description": "On codex mcp add, set environment variable assignments applied when launching a stdio MCP server. Repeatable.",
+    "syntax": [
+      "codex mcp add <name> --env KEY=VALUE -- <command...>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp add db --env PGURL=postgres://localhost/dev -- npx -y @org/pg-mcp",
+        "explanation": "Pass a connection string to a stdio server.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Valid only for stdio servers."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/env/"
+  },
+  {
     "id": "codex.cli-flag.full-auto",
     "tool": "codex",
     "name": "--full-auto",
@@ -678,6 +966,105 @@
     "path": "codex/image/"
   },
   {
+    "id": "codex.cli-flag.json-output",
+    "tool": "codex",
+    "name": "--json",
+    "display_name": "Emit machine-readable JSON",
+    "type": "cli-flag",
+    "category": "system",
+    "role": "Scripted output",
+    "description": "Emit machine-readable JSON instead of formatted text. Documented on codex mcp get and list, codex plugin add, list, and remove, every codex plugin marketplace subcommand, codex cloud list, and every codex remote-control subcommand.",
+    "syntax": [
+      "codex mcp list --json",
+      "codex plugin list --json",
+      "codex cloud list --json",
+      "codex remote-control pair --json"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin list --json",
+        "explanation": "Read installed and available plugin arrays from a script.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex remote-control pair --json",
+        "explanation": "Read pairingCode, manualPairingCode, environmentId, and expiresAt as JSON.",
+        "level": "workflow"
+      }
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Not accepted by every subcommand; check the subcommand's own documentation."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/json/"
+  },
+  {
+    "id": "codex.cli-flag.cloud-limit",
+    "tool": "codex",
+    "name": "--limit",
+    "display_name": "Cap the cloud task listing",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Cloud inspection",
+    "description": "On codex cloud list, set the maximum number of tasks to return, from 1 to 20.",
+    "syntax": [
+      "codex cloud list --limit <1-20>"
+    ],
+    "examples": [
+      {
+        "command": "codex cloud list --limit 5",
+        "explanation": "Show only the five most recent tasks.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.cloud-list"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/limit/"
+  },
+  {
     "id": "codex.cli-flag.local-provider",
     "tool": "codex",
     "name": "--local-provider",
@@ -723,6 +1110,62 @@
       ]
     },
     "path": "codex/local-provider/"
+  },
+  {
+    "id": "codex.cli-flag.plugin-marketplace",
+    "tool": "codex",
+    "name": "--marketplace",
+    "display_name": "Name the marketplace for a plugin command",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Plugin selection",
+    "description": "On codex plugin add, list, and remove, name the configured marketplace to use when the plugin selector omits @MARKETPLACE. Short form: -m.",
+    "syntax": [
+      "codex plugin add <plugin> --marketplace <name>",
+      "codex plugin list --marketplace <name>",
+      "codex plugin remove <plugin> --marketplace <name>"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin add sample --marketplace debug",
+        "explanation": "Install a plugin from a specific marketplace.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex plugin list -m debug",
+        "explanation": "List only the plugins from one marketplace.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/marketplace/"
   },
   {
     "id": "codex.cli-flag.model",
@@ -822,6 +1265,154 @@
     "path": "codex/no-alt-screen/"
   },
   {
+    "id": "codex.cli-flag.mcp-oauth-client-id",
+    "tool": "codex",
+    "name": "--oauth-client-id",
+    "display_name": "Use a pre-registered OAuth client",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "On codex mcp add, supply the OAuth client identifier for a streamable HTTP MCP server whose authorization server requires a pre-registered client. Requires --url.",
+    "syntax": [
+      "codex mcp add <name> --url <url> --oauth-client-id <client-id>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp add example --url https://mcp.example.com --oauth-client-id my-client",
+        "explanation": "Add a server that needs a pre-registered OAuth client.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-add",
+      "codex.cli-flag.mcp-oauth-client-registration"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --url."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/oauth-client-id/"
+  },
+  {
+    "id": "codex.cli-flag.mcp-oauth-client-registration",
+    "tool": "codex",
+    "name": "--oauth-client-registration",
+    "display_name": "Choose an OAuth registration method",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "On codex mcp login, choose the OAuth client-registration strategy for this login only: auto, cimd, or dcr. The default is auto, and the choice is not stored in configuration.",
+    "syntax": [
+      "codex mcp login <name> --oauth-client-registration <auto|cimd|dcr>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp login example --oauth-client-registration cimd",
+        "explanation": "Use client ID metadata documents for one login.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex mcp login example --oauth-client-registration dcr",
+        "explanation": "Use dynamic client registration for one login.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/oauth-client-registration/"
+  },
+  {
+    "id": "codex.cli-flag.mcp-oauth-resource",
+    "tool": "codex",
+    "name": "--oauth-resource",
+    "display_name": "Set the MCP OAuth resource parameter",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "On codex mcp add, include an OAuth resource parameter during login for a streamable HTTP MCP server. Requires --url.",
+    "syntax": [
+      "codex mcp add <name> --url <url> --oauth-resource <resource>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp add example --url https://mcp.example.com --oauth-resource https://api.example.com",
+        "explanation": "Scope the OAuth login to one protected resource.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires --url."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/oauth-resource/"
+  },
+  {
     "id": "codex.cli-flag.oss",
     "tool": "codex",
     "name": "--oss",
@@ -917,6 +1508,54 @@
       ]
     },
     "path": "codex/profile/"
+  },
+  {
+    "id": "codex.cli-flag.marketplace-ref",
+    "tool": "codex",
+    "name": "--ref",
+    "display_name": "Pin a Git marketplace ref",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "On codex plugin marketplace add, fetch a specific Git ref for a Git-backed marketplace source.",
+    "syntax": [
+      "codex plugin marketplace add <source> --ref <ref>"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin marketplace add owner/repo --ref main",
+        "explanation": "Track a named branch instead of the default ref.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-marketplace-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Git marketplace sources only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/ref/"
   },
   {
     "id": "codex.cli-flag.remote",
@@ -1064,6 +1703,52 @@
     "path": "codex/sandbox/"
   },
   {
+    "id": "codex.cli-flag.mcp-scopes",
+    "tool": "codex",
+    "name": "--scopes",
+    "display_name": "Request MCP OAuth scopes",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "On codex mcp login, request a comma-separated list of OAuth scopes for the login.",
+    "syntax": [
+      "codex mcp login <name> --scopes <scope,scope>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp login example --scopes read,write",
+        "explanation": "Ask for two scopes during the OAuth flow.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/scopes/"
+  },
+  {
     "id": "codex.cli-flag.search",
     "tool": "codex",
     "name": "--search",
@@ -1115,6 +1800,54 @@
     "path": "codex/search/"
   },
   {
+    "id": "codex.cli-flag.marketplace-sparse",
+    "tool": "codex",
+    "name": "--sparse",
+    "display_name": "Sparse-check out a marketplace path",
+    "type": "cli-flag",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "On codex plugin marketplace add, use a sparse checkout of the given path for a Git-backed marketplace. Repeatable.",
+    "syntax": [
+      "codex plugin marketplace add <source> --sparse <path>"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin marketplace add https://github.com/owner/repo --sparse plugins/foo",
+        "explanation": "Fetch only one plugin directory from a large repository.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-marketplace-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Git marketplace sources only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/sparse/"
+  },
+  {
     "id": "codex.cli-flag.strict-config",
     "tool": "codex",
     "name": "--strict-config",
@@ -1160,6 +1893,156 @@
       ]
     },
     "path": "codex/strict-config/"
+  },
+  {
+    "id": "codex.cli-flag.mcp-url",
+    "tool": "codex",
+    "name": "--url",
+    "display_name": "Register a streamable HTTP MCP server",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP transport selection",
+    "description": "On codex mcp add, register a streamable HTTP server at the given URL instead of a stdio server. Mutually exclusive with the trailing stdio COMMAND.",
+    "syntax": [
+      "codex mcp add <name> --url <https://...>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp add example --url https://mcp.example.com",
+        "explanation": "Add a streamable HTTP server.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/url/"
+  },
+  {
+    "id": "codex.cli-flag.login-with-access-token",
+    "tool": "codex",
+    "name": "--with-access-token",
+    "display_name": "Log in with a piped access token",
+    "type": "cli-flag",
+    "category": "authentication",
+    "role": "Authentication method",
+    "description": "On codex login, read an access token from stdin rather than prompting.",
+    "syntax": [
+      "codex login --with-access-token"
+    ],
+    "examples": [
+      {
+        "command": "printenv CODEX_ACCESS_TOKEN | codex login --with-access-token",
+        "explanation": "Authenticate a CI runner from an environment secret.",
+        "level": "minimal"
+      }
+    ],
+    "when_not_to_use": [
+      "Pipe the token from a secret store or environment variable so it never reaches shell history."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.login"
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/with-access-token/"
+  },
+  {
+    "id": "codex.cli-flag.login-with-api-key",
+    "tool": "codex",
+    "name": "--with-api-key",
+    "display_name": "Log in with a piped API key",
+    "type": "cli-flag",
+    "category": "authentication",
+    "role": "Authentication method",
+    "description": "On codex login, read an API key from stdin rather than prompting.",
+    "syntax": [
+      "codex login --with-api-key"
+    ],
+    "examples": [
+      {
+        "command": "printenv OPENAI_API_KEY | codex login --with-api-key",
+        "explanation": "Authenticate with an API key held in the environment.",
+        "level": "minimal"
+      }
+    ],
+    "when_not_to_use": [
+      "Pipe the key from a secret store or environment variable so it never reaches shell history."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.login"
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/with-api-key/"
   },
   {
     "id": "codex.cli-subcommand.app",
@@ -1369,6 +2252,9 @@
     "syntax": [
       "codex cloud [exec|list] [options]"
     ],
+    "aliases": [
+      "codex cloud-tasks"
+    ],
     "examples": [
       {
         "command": "codex cloud",
@@ -1384,7 +2270,7 @@
     "when_to_use": [
       "Use to submit or inspect Codex cloud work from the terminal."
     ],
-    "maturity": "stable",
+    "maturity": "experimental",
     "availability": {
       "channels": [
         "cli",
@@ -1402,13 +2288,132 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "codex/codex-cloud/"
+  },
+  {
+    "id": "codex.cli-subcommand.cloud-exec",
+    "tool": "codex",
+    "name": "codex cloud exec",
+    "display_name": "Submit a Codex cloud task",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.cloud",
+    "category": "session",
+    "role": "Cloud execution",
+    "description": "Submit a task to Codex cloud without launching the TUI. --env is required; if the prompt is omitted, Codex asks for it interactively. Codex exits non-zero when submission fails.",
+    "syntax": [
+      "codex cloud exec --env <ENV_ID> [--attempts <1-4>] [query]"
+    ],
+    "examples": [
+      {
+        "command": "codex cloud exec --env env_123 \"Fix the failing unit tests\"",
+        "explanation": "Submit one cloud task and return.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex cloud exec --env env_123 --attempts 4 \"Fix the failing unit tests\"",
+        "explanation": "Ask for four independent attempts and pick the best.",
+        "level": "workflow"
+      }
+    ],
+    "when_to_use": [
+      "Queue work from a script or CI without holding a terminal open."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.cloud-list",
+      "codex.cli-flag.cloud-attempts"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Codex cloud access and the same credentials as the main CLI."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-cloud-exec/"
+  },
+  {
+    "id": "codex.cli-subcommand.cloud-list",
+    "tool": "codex",
+    "name": "codex cloud list",
+    "display_name": "List Codex cloud tasks",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.cloud",
+    "category": "session",
+    "role": "Cloud inspection",
+    "description": "List recent cloud chats with optional environment filtering and pagination. Plain-text output prints a task URL followed by status details; --json returns a tasks array plus an optional cursor.",
+    "syntax": [
+      "codex cloud list [--env <ENV_ID>] [--limit <1-20>] [--cursor <cursor>] [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex cloud list",
+        "explanation": "See recent cloud tasks and their status.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex cloud list --env env_123 --limit 5",
+        "explanation": "Show the five most recent tasks in one environment.",
+        "level": "practical"
+      },
+      {
+        "command": "codex cloud list --json --cursor eyJ0IjoxfQ",
+        "explanation": "Continue a paginated listing from a previous cursor.",
+        "level": "workflow"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-flag.cloud-limit",
+      "codex.cli-flag.cloud-cursor"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires Codex cloud access and the same credentials as the main CLI."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-cloud-list/"
   },
   {
     "id": "codex.cli-subcommand.completion",
@@ -1838,6 +2843,154 @@
     "path": "codex/codex-features/"
   },
   {
+    "id": "codex.cli-subcommand.features-disable",
+    "tool": "codex",
+    "name": "codex features disable",
+    "display_name": "Disable a Codex feature flag",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.features",
+    "category": "configuration",
+    "role": "Feature configuration",
+    "description": "Persistently disable a feature flag in $CODEX_HOME/config.toml.",
+    "syntax": [
+      "codex features disable <feature>"
+    ],
+    "examples": [
+      {
+        "command": "codex features disable unified_exec",
+        "explanation": "Turn a feature off for every later session.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.features-enable"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-features-disable/"
+  },
+  {
+    "id": "codex.cli-subcommand.features-enable",
+    "tool": "codex",
+    "name": "codex features enable",
+    "display_name": "Enable a Codex feature flag",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.features",
+    "category": "configuration",
+    "role": "Feature configuration",
+    "description": "Persistently enable a feature flag in $CODEX_HOME/config.toml.",
+    "syntax": [
+      "codex features enable <feature>"
+    ],
+    "examples": [
+      {
+        "command": "codex features enable unified_exec",
+        "explanation": "Turn a feature on for every later session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Keep a feature on across sessions, rather than passing --enable each run."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.features-disable",
+      "codex.cli-flag.enable"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-features-enable/"
+  },
+  {
+    "id": "codex.cli-subcommand.features-list",
+    "tool": "codex",
+    "name": "codex features list",
+    "display_name": "List Codex feature flags",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.features",
+    "category": "configuration",
+    "role": "Feature inspection",
+    "description": "Show known feature flags, their maturity stage, and their effective state.",
+    "syntax": [
+      "codex features list"
+    ],
+    "examples": [
+      {
+        "command": "codex features list",
+        "explanation": "See which optional features are on before changing them.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.features-enable"
+    ],
+    "capabilities": [
+      "config.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-features-list/"
+  },
+  {
     "id": "codex.cli-subcommand.fork",
     "tool": "codex",
     "name": "codex fork",
@@ -1942,6 +3095,58 @@
     "path": "codex/codex-login/"
   },
   {
+    "id": "codex.cli-subcommand.login-status",
+    "tool": "codex",
+    "name": "codex login status",
+    "display_name": "Show the active Codex auth mode",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.login",
+    "category": "authentication",
+    "role": "Authentication inspection",
+    "description": "Print the active authentication mode and exit with 0 when credentials are present, which makes it usable as a guard in automation scripts.",
+    "syntax": [
+      "codex login status"
+    ],
+    "examples": [
+      {
+        "command": "codex login status",
+        "explanation": "Check whether this machine is logged in.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex login status || codex login --with-api-key",
+        "explanation": "Fall back to an API key login when no credentials are present.",
+        "level": "workflow"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-login-status/"
+  },
+  {
     "id": "codex.cli-subcommand.logout",
     "tool": "codex",
     "name": "codex logout",
@@ -2038,6 +3243,354 @@
       ]
     },
     "path": "codex/codex-mcp/"
+  },
+  {
+    "id": "codex.cli-subcommand.mcp-add",
+    "tool": "codex",
+    "name": "codex mcp add",
+    "display_name": "Register an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Register a Model Context Protocol server in ~/.codex/config.toml, either as a stdio launcher command after -- or as a streamable HTTP server with --url.",
+    "syntax": [
+      "codex mcp add <name> -- <command...>",
+      "codex mcp add <name> --url <url>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp add context7 -- npx -y @upstash/context7-mcp",
+        "explanation": "Register a stdio server that Codex launches on demand.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex mcp add db --env PGURL=postgres://localhost/dev -- npx -y @org/pg-mcp",
+        "explanation": "Register a stdio server with an environment variable it needs at launch.",
+        "level": "practical"
+      },
+      {
+        "command": "codex mcp add example --url https://mcp.example.com --oauth-client-id my-client",
+        "explanation": "Register a streamable HTTP server with a pre-registered OAuth client.",
+        "level": "workflow"
+      }
+    ],
+    "when_to_use": [
+      "Register a server without hand-editing config.toml."
+    ],
+    "when_not_to_use": [
+      "Read the launcher command, URL, environment, and exposed tools before adding a server; MCP tools act outside the repository."
+    ],
+    "related_commands": [
+      "codex.cli-flag.mcp-url",
+      "codex.cli-flag.mcp-env",
+      "codex.cli-subcommand.mcp-list"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-mcp-add/"
+  },
+  {
+    "id": "codex.cli-subcommand.mcp-get",
+    "tool": "codex",
+    "name": "codex mcp get",
+    "display_name": "Show one MCP server configuration",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP inspection",
+    "description": "Print the stored configuration for a single MCP server. With --json, the raw config entry is printed.",
+    "syntax": [
+      "codex mcp get <name> [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp get context7",
+        "explanation": "Inspect how one server is configured.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex mcp get context7 --json",
+        "explanation": "Print the raw config entry for that server.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-list"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-mcp-get/"
+  },
+  {
+    "id": "codex.cli-subcommand.mcp-list",
+    "tool": "codex",
+    "name": "codex mcp list",
+    "display_name": "List configured MCP servers",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP inspection",
+    "description": "List the MCP servers configured for Codex. Add --json for machine-readable output.",
+    "syntax": [
+      "codex mcp list [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp list",
+        "explanation": "Show the configured servers as a table.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex mcp list --json",
+        "explanation": "Emit the configured servers as JSON for scripting.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-get",
+      "codex.cli-flag.json-output"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-mcp-list/"
+  },
+  {
+    "id": "codex.cli-subcommand.mcp-login",
+    "tool": "codex",
+    "name": "codex mcp login",
+    "display_name": "Authenticate with an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "Start an OAuth login for a configured MCP server. OAuth actions work only with streamable HTTP servers, and only when the server supports OAuth.",
+    "syntax": [
+      "codex mcp login <name> [--scopes <scope,scope>] [--oauth-client-registration <auto|cimd|dcr>]"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp login example",
+        "explanation": "Run the OAuth flow for a streamable HTTP server.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex mcp login example --scopes read,write",
+        "explanation": "Request specific OAuth scopes during login.",
+        "level": "practical"
+      },
+      {
+        "command": "codex mcp login example --oauth-client-registration dcr",
+        "explanation": "Force dynamic client registration for this login only.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "Stdio servers do not use OAuth; there is nothing to log in to."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-logout",
+      "codex.cli-flag.mcp-scopes"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Streamable HTTP servers that support OAuth only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-mcp-login/"
+  },
+  {
+    "id": "codex.cli-subcommand.mcp-logout",
+    "tool": "codex",
+    "name": "codex mcp logout",
+    "display_name": "Clear MCP OAuth credentials",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "Remove the stored OAuth credentials for a streamable HTTP MCP server.",
+    "syntax": [
+      "codex mcp logout <name>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp logout example",
+        "explanation": "Drop stored OAuth credentials for one server.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-login"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Streamable HTTP servers that support OAuth only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-mcp-logout/"
+  },
+  {
+    "id": "codex.cli-subcommand.mcp-remove",
+    "tool": "codex",
+    "name": "codex mcp remove",
+    "display_name": "Delete an MCP server entry",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Delete a stored MCP server definition from the Codex configuration.",
+    "syntax": [
+      "codex mcp remove <name>"
+    ],
+    "examples": [
+      {
+        "command": "codex mcp remove context7",
+        "explanation": "Remove a server Codex should no longer start.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.mcp-add"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-mcp-remove/"
   },
   {
     "id": "codex.cli-subcommand.mcp-server",
@@ -2137,6 +3690,131 @@
     "path": "codex/codex-plugin/"
   },
   {
+    "id": "codex.cli-subcommand.plugin-add",
+    "tool": "codex",
+    "name": "codex plugin add",
+    "display_name": "Install a Codex plugin",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin installation",
+    "description": "Install a plugin from a configured marketplace snapshot. Pass PLUGIN@MARKETPLACE, or pass PLUGIN with --marketplace.",
+    "syntax": [
+      "codex plugin add <plugin[@marketplace]> [--marketplace <name>] [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin add sample@debug",
+        "explanation": "Install a plugin from a named marketplace.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex plugin add sample --marketplace debug",
+        "explanation": "Name the marketplace separately when the selector omits it.",
+        "level": "practical"
+      },
+      {
+        "command": "codex plugin add sample@debug --json",
+        "explanation": "Print pluginId, name, marketplaceName, version, installedPath, and authPolicy for automation.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "A plugin runs with your Codex session's reach; install only from marketplaces you trust."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-list",
+      "codex.cli-flag.plugin-marketplace"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-plugin-add/"
+  },
+  {
+    "id": "codex.cli-subcommand.plugin-list",
+    "tool": "codex",
+    "name": "codex plugin list",
+    "display_name": "List Codex plugins",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin inspection",
+    "description": "List installed plugins. With --json the output has installed and available arrays; --available adds uninstalled marketplace plugins and requires --json.",
+    "syntax": [
+      "codex plugin list [--marketplace <name>] [--json] [--available --json]"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin list",
+        "explanation": "Show the installed plugins.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex plugin list --marketplace debug",
+        "explanation": "Restrict the listing to one configured marketplace.",
+        "level": "practical"
+      },
+      {
+        "command": "codex plugin list --available --json",
+        "explanation": "Include uninstalled marketplace plugins in machine-readable output.",
+        "level": "workflow"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-flag.plugin-available",
+      "codex.cli-subcommand.plugin-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-plugin-list/"
+  },
+  {
     "id": "codex.cli-subcommand.plugin-marketplace",
     "tool": "codex",
     "name": "codex plugin marketplace",
@@ -2181,6 +3859,287 @@
       ]
     },
     "path": "codex/codex-plugin-marketplace/"
+  },
+  {
+    "id": "codex.cli-subcommand.plugin-marketplace-add",
+    "tool": "codex",
+    "name": "codex plugin marketplace add",
+    "display_name": "Add a plugin marketplace",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "Add a marketplace source Codex can browse and install from: GitHub shorthand, an HTTP or HTTPS Git URL, an SSH Git URL, or a local marketplace root directory.",
+    "syntax": [
+      "codex plugin marketplace add <source> [--ref <ref>] [--sparse <path>] [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin marketplace add ./path/to/marketplace",
+        "explanation": "Add a local marketplace root.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex plugin marketplace add owner/repo --ref main",
+        "explanation": "Add a Git marketplace pinned to a ref.",
+        "level": "practical"
+      },
+      {
+        "command": "codex plugin marketplace add https://github.com/owner/repo --sparse plugins/foo",
+        "explanation": "Sparse-check out one path from a Git marketplace.",
+        "level": "workflow"
+      }
+    ],
+    "when_not_to_use": [
+      "Adding a marketplace is what makes its plugins installable; add only sources you trust."
+    ],
+    "related_commands": [
+      "codex.cli-flag.marketplace-ref",
+      "codex.cli-flag.marketplace-sparse"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-plugin-marketplace-add/"
+  },
+  {
+    "id": "codex.cli-subcommand.plugin-marketplace-list",
+    "tool": "codex",
+    "name": "codex plugin marketplace list",
+    "display_name": "List plugin marketplaces",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace inspection",
+    "description": "Show the plugin marketplaces Codex is currently considering and the root path for each, including implicitly discovered default marketplaces and configured snapshots.",
+    "syntax": [
+      "codex plugin marketplace list [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin marketplace list",
+        "explanation": "See which marketplaces are in scope and where they resolve.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex plugin marketplace list --json",
+        "explanation": "Emit a marketplaces array for scripting.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-marketplace-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-plugin-marketplace-list/"
+  },
+  {
+    "id": "codex.cli-subcommand.plugin-marketplace-remove",
+    "tool": "codex",
+    "name": "codex plugin marketplace remove",
+    "display_name": "Remove a plugin marketplace",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "Remove a configured plugin marketplace source by name.",
+    "syntax": [
+      "codex plugin marketplace remove <marketplace-name> [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin marketplace remove debug",
+        "explanation": "Stop considering one marketplace source.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-marketplace-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-plugin-marketplace-remove/"
+  },
+  {
+    "id": "codex.cli-subcommand.plugin-marketplace-upgrade",
+    "tool": "codex",
+    "name": "codex plugin marketplace upgrade",
+    "display_name": "Refresh marketplace snapshots",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace maintenance",
+    "description": "Refresh configured Git marketplace snapshots. Name one marketplace, or omit the name to upgrade every configured Git marketplace.",
+    "syntax": [
+      "codex plugin marketplace upgrade [marketplace-name] [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin marketplace upgrade",
+        "explanation": "Refresh every configured Git marketplace.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex plugin marketplace upgrade debug",
+        "explanation": "Refresh one marketplace by name.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-marketplace-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Git-backed marketplaces only; local marketplace roots are read in place."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-plugin-marketplace-upgrade/"
+  },
+  {
+    "id": "codex.cli-subcommand.plugin-remove",
+    "tool": "codex",
+    "name": "codex plugin remove",
+    "display_name": "Remove an installed Codex plugin",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin removal",
+    "description": "Remove an installed plugin from local config and cache. Pass PLUGIN@MARKETPLACE, or pass PLUGIN with --marketplace.",
+    "syntax": [
+      "codex plugin remove <plugin[@marketplace]> [--marketplace <name>] [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex plugin remove sample@debug",
+        "explanation": "Uninstall a plugin.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex plugin remove sample --marketplace debug",
+        "explanation": "Name the marketplace separately when the selector omits it.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.plugin-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-plugin-remove/"
   },
   {
     "id": "codex.cli-subcommand.remote-control",
@@ -2229,6 +4188,167 @@
       ]
     },
     "path": "codex/codex-remote-control/"
+  },
+  {
+    "id": "codex.cli-subcommand.remote-control-pair",
+    "tool": "codex",
+    "name": "codex remote-control pair",
+    "display_name": "Create a remote-control pairing code",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.remote-control",
+    "category": "session",
+    "role": "Remote control",
+    "description": "Create and print a short-lived manual pairing code once the daemon is running. With --json the response includes pairingCode, manualPairingCode, environmentId, and expiresAt.",
+    "syntax": [
+      "codex remote-control pair [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex remote-control pair",
+        "explanation": "Print a pairing code to enter on another device.",
+        "level": "minimal"
+      },
+      {
+        "command": "codex remote-control pair --json",
+        "explanation": "Read the pairing code and its expiry from a script.",
+        "level": "practical"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.remote-control-start"
+    ],
+    "capabilities": [
+      "session.remote-control"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a running remote-control daemon."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-remote-control-pair/"
+  },
+  {
+    "id": "codex.cli-subcommand.remote-control-start",
+    "tool": "codex",
+    "name": "codex remote-control start",
+    "display_name": "Start the remote-control daemon",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.remote-control",
+    "category": "session",
+    "role": "Remote control",
+    "description": "Start the local app-server daemon with remote control enabled. Running codex remote-control without a subcommand starts remote control in the foreground instead.",
+    "syntax": [
+      "codex remote-control start [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex remote-control start",
+        "explanation": "Start the managed daemon in the background.",
+        "level": "minimal"
+      }
+    ],
+    "when_not_to_use": [
+      "This is not a replacement for codex app-server --listen when you are building a local protocol client."
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.remote-control-stop",
+      "codex.cli-subcommand.remote-control-pair"
+    ],
+    "capabilities": [
+      "session.remote-control"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-remote-control-start/"
+  },
+  {
+    "id": "codex.cli-subcommand.remote-control-stop",
+    "tool": "codex",
+    "name": "codex remote-control stop",
+    "display_name": "Stop the remote-control daemon",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-subcommand.remote-control",
+    "category": "session",
+    "role": "Remote control",
+    "description": "Stop the local app-server daemon started with remote control enabled.",
+    "syntax": [
+      "codex remote-control stop [--json]"
+    ],
+    "examples": [
+      {
+        "command": "codex remote-control stop",
+        "explanation": "Shut the managed daemon down.",
+        "level": "minimal"
+      }
+    ],
+    "related_commands": [
+      "codex.cli-subcommand.remote-control-start"
+    ],
+    "capabilities": [
+      "session.remote-control"
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-remote-control-stop/"
   },
   {
     "id": "codex.cli-subcommand.resume",

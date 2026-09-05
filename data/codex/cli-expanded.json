@@ -117,6 +117,9 @@
     "syntax": [
       "codex cloud [exec|list] [options]"
     ],
+    "aliases": [
+      "codex cloud-tasks"
+    ],
     "examples": [
       {
         "command": "codex cloud",
@@ -132,7 +135,7 @@
     "when_to_use": [
       "Use to submit or inspect Codex cloud work from the terminal."
     ],
-    "maturity": "stable",
+    "maturity": "experimental",
     "availability": {
       "channels": [
         "cli",
@@ -150,10 +153,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-05",
+      "tested_version": "0.151.0",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     }
   },

@@ -50,6 +50,21 @@
     "id": "codex.cli-flag.ask-for-approval"
   },
   {
+    "path": "codex/attempts/",
+    "kind": "entry",
+    "id": "codex.cli-flag.cloud-attempts"
+  },
+  {
+    "path": "codex/available/",
+    "kind": "entry",
+    "id": "codex.cli-flag.plugin-available"
+  },
+  {
+    "path": "codex/bearer-token-env-var/",
+    "kind": "entry",
+    "id": "codex.cli-flag.mcp-bearer-token-env-var"
+  },
+  {
     "path": "codex/bundled/",
     "kind": "entry",
     "id": "codex.cli-flag.bundled"
@@ -65,6 +80,11 @@
     "id": "codex.cli-flag.config"
   },
   {
+    "path": "codex/cursor/",
+    "kind": "entry",
+    "id": "codex.cli-flag.cloud-cursor"
+  },
+  {
     "path": "codex/dangerously-bypass-approvals-and-sandbox/",
     "kind": "entry",
     "id": "codex.cli-flag.dangerously-bypass"
@@ -73,6 +93,11 @@
     "path": "codex/dangerously-bypass-hook-trust/",
     "kind": "entry",
     "id": "codex.cli-flag.dangerously-bypass-hook-trust"
+  },
+  {
+    "path": "codex/device-auth/",
+    "kind": "entry",
+    "id": "codex.cli-flag.login-device-auth"
   },
   {
     "path": "codex/disable/",
@@ -90,6 +115,11 @@
     "id": "codex.cli-flag.enable"
   },
   {
+    "path": "codex/env/",
+    "kind": "entry",
+    "id": "codex.cli-flag.mcp-env"
+  },
+  {
     "path": "codex/full-auto/",
     "kind": "entry",
     "id": "codex.cli-flag.full-auto"
@@ -100,9 +130,24 @@
     "id": "codex.cli-flag.image"
   },
   {
+    "path": "codex/json/",
+    "kind": "entry",
+    "id": "codex.cli-flag.json-output"
+  },
+  {
+    "path": "codex/limit/",
+    "kind": "entry",
+    "id": "codex.cli-flag.cloud-limit"
+  },
+  {
     "path": "codex/local-provider/",
     "kind": "entry",
     "id": "codex.cli-flag.local-provider"
+  },
+  {
+    "path": "codex/marketplace/",
+    "kind": "entry",
+    "id": "codex.cli-flag.plugin-marketplace"
   },
   {
     "path": "codex/cli-flag-model/",
@@ -115,6 +160,21 @@
     "id": "codex.cli-flag.no-alt-screen"
   },
   {
+    "path": "codex/oauth-client-id/",
+    "kind": "entry",
+    "id": "codex.cli-flag.mcp-oauth-client-id"
+  },
+  {
+    "path": "codex/oauth-client-registration/",
+    "kind": "entry",
+    "id": "codex.cli-flag.mcp-oauth-client-registration"
+  },
+  {
+    "path": "codex/oauth-resource/",
+    "kind": "entry",
+    "id": "codex.cli-flag.mcp-oauth-resource"
+  },
+  {
     "path": "codex/oss/",
     "kind": "entry",
     "id": "codex.cli-flag.oss"
@@ -123,6 +183,11 @@
     "path": "codex/profile/",
     "kind": "entry",
     "id": "codex.cli-flag.profile"
+  },
+  {
+    "path": "codex/ref/",
+    "kind": "entry",
+    "id": "codex.cli-flag.marketplace-ref"
   },
   {
     "path": "codex/remote/",
@@ -140,14 +205,39 @@
     "id": "codex.cli-flag.sandbox"
   },
   {
+    "path": "codex/scopes/",
+    "kind": "entry",
+    "id": "codex.cli-flag.mcp-scopes"
+  },
+  {
     "path": "codex/search/",
     "kind": "entry",
     "id": "codex.cli-flag.search"
   },
   {
+    "path": "codex/sparse/",
+    "kind": "entry",
+    "id": "codex.cli-flag.marketplace-sparse"
+  },
+  {
     "path": "codex/strict-config/",
     "kind": "entry",
     "id": "codex.cli-flag.strict-config"
+  },
+  {
+    "path": "codex/url/",
+    "kind": "entry",
+    "id": "codex.cli-flag.mcp-url"
+  },
+  {
+    "path": "codex/with-access-token/",
+    "kind": "entry",
+    "id": "codex.cli-flag.login-with-access-token"
+  },
+  {
+    "path": "codex/with-api-key/",
+    "kind": "entry",
+    "id": "codex.cli-flag.login-with-api-key"
   },
   {
     "path": "codex/codex-app/",
@@ -173,6 +263,16 @@
     "path": "codex/codex-cloud/",
     "kind": "entry",
     "id": "codex.cli-subcommand.cloud"
+  },
+  {
+    "path": "codex/codex-cloud-exec/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.cloud-exec"
+  },
+  {
+    "path": "codex/codex-cloud-list/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.cloud-list"
   },
   {
     "path": "codex/codex-completion/",
@@ -220,6 +320,21 @@
     "id": "codex.cli-subcommand.features"
   },
   {
+    "path": "codex/codex-features-disable/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.features-disable"
+  },
+  {
+    "path": "codex/codex-features-enable/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.features-enable"
+  },
+  {
+    "path": "codex/codex-features-list/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.features-list"
+  },
+  {
     "path": "codex/codex-fork/",
     "kind": "entry",
     "id": "codex.cli-subcommand.fork"
@@ -228,6 +343,11 @@
     "path": "codex/codex-login/",
     "kind": "entry",
     "id": "codex.cli-subcommand.login"
+  },
+  {
+    "path": "codex/codex-login-status/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.login-status"
   },
   {
     "path": "codex/codex-logout/",
@@ -240,6 +360,36 @@
     "id": "codex.cli-subcommand.mcp"
   },
   {
+    "path": "codex/codex-mcp-add/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.mcp-add"
+  },
+  {
+    "path": "codex/codex-mcp-get/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.mcp-get"
+  },
+  {
+    "path": "codex/codex-mcp-list/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.mcp-list"
+  },
+  {
+    "path": "codex/codex-mcp-login/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.mcp-login"
+  },
+  {
+    "path": "codex/codex-mcp-logout/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.mcp-logout"
+  },
+  {
+    "path": "codex/codex-mcp-remove/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.mcp-remove"
+  },
+  {
     "path": "codex/codex-mcp-server/",
     "kind": "entry",
     "id": "codex.cli-subcommand.mcp-server"
@@ -250,14 +400,64 @@
     "id": "codex.cli-subcommand.plugin"
   },
   {
+    "path": "codex/codex-plugin-add/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.plugin-add"
+  },
+  {
+    "path": "codex/codex-plugin-list/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.plugin-list"
+  },
+  {
     "path": "codex/codex-plugin-marketplace/",
     "kind": "entry",
     "id": "codex.cli-subcommand.plugin-marketplace"
   },
   {
+    "path": "codex/codex-plugin-marketplace-add/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.plugin-marketplace-add"
+  },
+  {
+    "path": "codex/codex-plugin-marketplace-list/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.plugin-marketplace-list"
+  },
+  {
+    "path": "codex/codex-plugin-marketplace-remove/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.plugin-marketplace-remove"
+  },
+  {
+    "path": "codex/codex-plugin-marketplace-upgrade/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.plugin-marketplace-upgrade"
+  },
+  {
+    "path": "codex/codex-plugin-remove/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.plugin-remove"
+  },
+  {
     "path": "codex/codex-remote-control/",
     "kind": "entry",
     "id": "codex.cli-subcommand.remote-control"
+  },
+  {
+    "path": "codex/codex-remote-control-pair/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.remote-control-pair"
+  },
+  {
+    "path": "codex/codex-remote-control-start/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.remote-control-start"
+  },
+  {
+    "path": "codex/codex-remote-control-stop/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.remote-control-stop"
   },
   {
     "path": "codex/codex-resume/",
