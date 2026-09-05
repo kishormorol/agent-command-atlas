@@ -33,5 +33,12 @@
     "vendor": "GitHub",
     "order": 5,
     "status": "active"
+  },
+  {
+    "id": "muse-code",
+    "name": "Muse Code",
+    "vendor": "Meta",
+    "order": 6,
+    "status": "active"
   }
 ]

@@ -7,7 +7,7 @@
   "required": ["id", "tool", "name", "display_name", "type", "category", "role", "description", "syntax", "maturity", "availability", "sources", "verification"],
   "properties": {
     "id": {"type": "string", "pattern": "^[a-z0-9-]+\\.[a-z0-9-]+\\.[a-z0-9-]+$"},
-    "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]},
+    "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot", "muse-code"]},
     "name": {"type": "string", "minLength": 1},
     "display_name": {"type": "string", "minLength": 1},
     "type": {"enum": ["slash-command", "cli-command", "cli-subcommand", "cli-flag", "shortcut", "prefix-command", "config", "config-file", "config-option", "environment-variable", "instruction-file", "skill", "workflow", "hook", "agent", "plugin", "extension", "permission", "mcp", "mode"]},
@@ -90,7 +90,7 @@
       "additionalProperties": false,
       "required": ["tool", "entry_id", "relationship"],
       "properties": {
-        "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]},
+        "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot", "muse-code"]},
         "entry_id": {"type": ["string", "null"]},
         "relationship": {"enum": ["exact", "similar", "partial", "none", "unknown"]},
         "notes": {"type": "string", "minLength": 1}

@@ -25,6 +25,11 @@
     "id": "github-copilot"
   },
   {
+    "path": "muse-code/",
+    "kind": "tool",
+    "id": "muse-code"
+  },
+  {
     "path": "codex/codex-agents-name-toml/",
     "kind": "entry",
     "id": "codex.agent.codex-agents-name-toml"
@@ -11318,6 +11323,776 @@
     "path": "github-copilot/worktree-new/",
     "kind": "entry",
     "id": "github-copilot.slash-command.worktree-new"
+  },
+  {
+    "path": "muse-code/goal-tracking-observer/",
+    "kind": "entry",
+    "id": "muse-code.agent.goal-tracking-observer"
+  },
+  {
+    "path": "muse-code/memory-recall-observer/",
+    "kind": "entry",
+    "id": "muse-code.agent.memory-recall-observer"
+  },
+  {
+    "path": "muse-code/skill-recall-observer/",
+    "kind": "entry",
+    "id": "muse-code.agent.skill-recall-observer"
+  },
+  {
+    "path": "muse-code/verification-observer/",
+    "kind": "entry",
+    "id": "muse-code.agent.verification-observer"
+  },
+  {
+    "path": "muse-code/subagent/",
+    "kind": "entry",
+    "id": "muse-code.agent.subagent"
+  },
+  {
+    "path": "muse-code/muse/",
+    "kind": "entry",
+    "id": "muse-code.cli-command.launch"
+  },
+  {
+    "path": "muse-code/allow-workspace-switch/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.allow-workspace-switch"
+  },
+  {
+    "path": "muse-code/apply/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.apply"
+  },
+  {
+    "path": "muse-code/approval-judge/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.approval-judge"
+  },
+  {
+    "path": "muse-code/approval-mode/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.approval-mode"
+  },
+  {
+    "path": "muse-code/disable-approval/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.disable-approval"
+  },
+  {
+    "path": "muse-code/disable-sandbox/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.disable-sandbox"
+  },
+  {
+    "path": "muse-code/dry-run/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.dry-run"
+  },
+  {
+    "path": "muse-code/force/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.force"
+  },
+  {
+    "path": "muse-code/from/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.from"
+  },
+  {
+    "path": "muse-code/json/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.json"
+  },
+  {
+    "path": "muse-code/max-model-steps/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.max-model-steps"
+  },
+  {
+    "path": "muse-code/model/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.model"
+  },
+  {
+    "path": "muse-code/no-session-log/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.no-session-log"
+  },
+  {
+    "path": "muse-code/out/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.out"
+  },
+  {
+    "path": "muse-code/overwrite/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.overwrite"
+  },
+  {
+    "path": "muse-code/prompt-file/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.prompt-file"
+  },
+  {
+    "path": "muse-code/reasoning-effort/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.reasoning-effort"
+  },
+  {
+    "path": "muse-code/redacted/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.redacted"
+  },
+  {
+    "path": "muse-code/sandbox-network/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.sandbox-network"
+  },
+  {
+    "path": "muse-code/scope/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.scope"
+  },
+  {
+    "path": "muse-code/session/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.session"
+  },
+  {
+    "path": "muse-code/session-id/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.session-id"
+  },
+  {
+    "path": "muse-code/subagent-worktree-isolation/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.subagent-worktree-isolation"
+  },
+  {
+    "path": "muse-code/trust-workspace/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.trust-workspace"
+  },
+  {
+    "path": "muse-code/version/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.version"
+  },
+  {
+    "path": "muse-code/workspace/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.workspace"
+  },
+  {
+    "path": "muse-code/yolo/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.yolo"
+  },
+  {
+    "path": "muse-code/w/",
+    "kind": "entry",
+    "id": "muse-code.cli-flag.worktree"
+  },
+  {
+    "path": "muse-code/muse-auth-set/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.auth-set"
+  },
+  {
+    "path": "muse-code/muse-config/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.config"
+  },
+  {
+    "path": "muse-code/muse-exec/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.exec"
+  },
+  {
+    "path": "muse-code/muse-export/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.export"
+  },
+  {
+    "path": "muse-code/muse-init/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.init"
+  },
+  {
+    "path": "muse-code/muse-logout/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.logout"
+  },
+  {
+    "path": "muse-code/muse-resume/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.resume"
+  },
+  {
+    "path": "muse-code/muse-skills/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.skills"
+  },
+  {
+    "path": "muse-code/muse-skills-enable/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.skills-enable"
+  },
+  {
+    "path": "muse-code/muse-skills-import/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.skills-import"
+  },
+  {
+    "path": "muse-code/muse-skills-inspect/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.skills-inspect"
+  },
+  {
+    "path": "muse-code/muse-skills-install/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.skills-install"
+  },
+  {
+    "path": "muse-code/muse-skills-list/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.skills-list"
+  },
+  {
+    "path": "muse-code/muse-skills-validate/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.skills-validate"
+  },
+  {
+    "path": "muse-code/muse-trace-inspect/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.trace-inspect"
+  },
+  {
+    "path": "muse-code/muse-workflows/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.workflows"
+  },
+  {
+    "path": "muse-code/muse-workflows-list/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.workflows-list"
+  },
+  {
+    "path": "muse-code/muse-workflows-recover/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.workflows-recover"
+  },
+  {
+    "path": "muse-code/muse-workflows-save/",
+    "kind": "entry",
+    "id": "muse-code.cli-subcommand.workflows-save"
+  },
+  {
+    "path": "muse-code/muse-hooks-json/",
+    "kind": "entry",
+    "id": "muse-code.config-file.project-hooks"
+  },
+  {
+    "path": "muse-code/config-muse-settings-json/",
+    "kind": "entry",
+    "id": "muse-code.config-file.user-settings"
+  },
+  {
+    "path": "muse-code/tools-session-messaging/",
+    "kind": "entry",
+    "id": "muse-code.config-option.tools-session-messaging"
+  },
+  {
+    "path": "muse-code/tools-workflows/",
+    "kind": "entry",
+    "id": "muse-code.config-option.tools-workflows"
+  },
+  {
+    "path": "muse-code/agents-execution-capacity/",
+    "kind": "entry",
+    "id": "muse-code.config-option.agents-execution-capacity"
+  },
+  {
+    "path": "muse-code/hooks/",
+    "kind": "entry",
+    "id": "muse-code.config-option.hooks"
+  },
+  {
+    "path": "muse-code/managed-hooks-path/",
+    "kind": "entry",
+    "id": "muse-code.config-option.managed-hooks-path"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-args/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-args"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-command/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-command"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-enabled/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-enabled"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-env/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-env"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-framing/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-framing"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-headers/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-headers"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-mode/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-mode"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-transport/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-transport"
+  },
+  {
+    "path": "muse-code/mcp-servers-name-url/",
+    "kind": "entry",
+    "id": "muse-code.config-option.mcp-url"
+  },
+  {
+    "path": "muse-code/runtime-capabilities/",
+    "kind": "entry",
+    "id": "muse-code.config-option.runtime-capabilities"
+  },
+  {
+    "path": "muse-code/schema-version/",
+    "kind": "entry",
+    "id": "muse-code.config-option.schema-version"
+  },
+  {
+    "path": "muse-code/show-reasoning/",
+    "kind": "entry",
+    "id": "muse-code.config-option.show-reasoning"
+  },
+  {
+    "path": "muse-code/codex-home/",
+    "kind": "entry",
+    "id": "muse-code.environment-variable.codex-home"
+  },
+  {
+    "path": "muse-code/meta-api-key/",
+    "kind": "entry",
+    "id": "muse-code.environment-variable.meta-api-key"
+  },
+  {
+    "path": "muse-code/xdg-config-home/",
+    "kind": "entry",
+    "id": "muse-code.environment-variable.xdg-config-home"
+  },
+  {
+    "path": "muse-code/permissionrequest/",
+    "kind": "entry",
+    "id": "muse-code.hook.permission-request"
+  },
+  {
+    "path": "muse-code/postcompact/",
+    "kind": "entry",
+    "id": "muse-code.hook.postcompact"
+  },
+  {
+    "path": "muse-code/postllmcall/",
+    "kind": "entry",
+    "id": "muse-code.hook.post-llm-call"
+  },
+  {
+    "path": "muse-code/posttooluse/",
+    "kind": "entry",
+    "id": "muse-code.hook.post-tool-use"
+  },
+  {
+    "path": "muse-code/precompact/",
+    "kind": "entry",
+    "id": "muse-code.hook.precompact"
+  },
+  {
+    "path": "muse-code/prellmcall/",
+    "kind": "entry",
+    "id": "muse-code.hook.pre-llm-call"
+  },
+  {
+    "path": "muse-code/pretooluse/",
+    "kind": "entry",
+    "id": "muse-code.hook.pre-tool-use"
+  },
+  {
+    "path": "muse-code/sessionend/",
+    "kind": "entry",
+    "id": "muse-code.hook.session-end"
+  },
+  {
+    "path": "muse-code/sessionstart/",
+    "kind": "entry",
+    "id": "muse-code.hook.session-start"
+  },
+  {
+    "path": "muse-code/hook-stop/",
+    "kind": "entry",
+    "id": "muse-code.hook.stop"
+  },
+  {
+    "path": "muse-code/subagentstart/",
+    "kind": "entry",
+    "id": "muse-code.hook.subagent-start"
+  },
+  {
+    "path": "muse-code/subagentstop/",
+    "kind": "entry",
+    "id": "muse-code.hook.subagent-stop"
+  },
+  {
+    "path": "muse-code/userpromptsubmit/",
+    "kind": "entry",
+    "id": "muse-code.hook.user-prompt-submit"
+  },
+  {
+    "path": "muse-code/agents-agents-md/",
+    "kind": "entry",
+    "id": "muse-code.instruction-file.agents-dir-agents-md"
+  },
+  {
+    "path": "muse-code/agents-memory-memory-md/",
+    "kind": "entry",
+    "id": "muse-code.instruction-file.memory-md"
+  },
+  {
+    "path": "muse-code/claude-claude-md/",
+    "kind": "entry",
+    "id": "muse-code.instruction-file.claude-dir-claude-md"
+  },
+  {
+    "path": "muse-code/agents-md/",
+    "kind": "entry",
+    "id": "muse-code.instruction-file.agents-md"
+  },
+  {
+    "path": "muse-code/claude-md/",
+    "kind": "entry",
+    "id": "muse-code.instruction-file.claude-md"
+  },
+  {
+    "path": "muse-code/mcp-servers-name/",
+    "kind": "entry",
+    "id": "muse-code.mcp.mcp-servers-name"
+  },
+  {
+    "path": "muse-code/headless/",
+    "kind": "entry",
+    "id": "muse-code.mode.headless"
+  },
+  {
+    "path": "muse-code/interactive/",
+    "kind": "entry",
+    "id": "muse-code.mode.interactive"
+  },
+  {
+    "path": "muse-code/allow-once/",
+    "kind": "entry",
+    "id": "muse-code.permission.allow-once"
+  },
+  {
+    "path": "muse-code/always-allow-in-this-workspace/",
+    "kind": "entry",
+    "id": "muse-code.permission.always-allow-workspace"
+  },
+  {
+    "path": "muse-code/workspace-trust/",
+    "kind": "entry",
+    "id": "muse-code.permission.workspace-trust"
+  },
+  {
+    "path": "muse-code/enabled/",
+    "kind": "entry",
+    "id": "muse-code.permission.network-enabled"
+  },
+  {
+    "path": "muse-code/never/",
+    "kind": "entry",
+    "id": "muse-code.permission.never"
+  },
+  {
+    "path": "muse-code/on-request/",
+    "kind": "entry",
+    "id": "muse-code.permission.on-request"
+  },
+  {
+    "path": "muse-code/proxy-only/",
+    "kind": "entry",
+    "id": "muse-code.permission.proxy-only"
+  },
+  {
+    "path": "muse-code/restricted/",
+    "kind": "entry",
+    "id": "muse-code.permission.restricted"
+  },
+  {
+    "path": "muse-code/untrusted/",
+    "kind": "entry",
+    "id": "muse-code.permission.untrusted"
+  },
+  {
+    "path": "muse-code/bang/",
+    "kind": "entry",
+    "id": "muse-code.prefix-command.bang"
+  },
+  {
+    "path": "muse-code/slash/",
+    "kind": "entry",
+    "id": "muse-code.prefix-command.slash"
+  },
+  {
+    "path": "muse-code/alt-enter/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.alt-enter"
+  },
+  {
+    "path": "muse-code/alt-v/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.alt-v"
+  },
+  {
+    "path": "muse-code/c/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.workflow-cancel"
+  },
+  {
+    "path": "muse-code/ctrl-c/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.ctrl-c"
+  },
+  {
+    "path": "muse-code/ctrl-l/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.ctrl-l"
+  },
+  {
+    "path": "muse-code/ctrl-n/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.ctrl-n"
+  },
+  {
+    "path": "muse-code/ctrl-p/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.ctrl-p"
+  },
+  {
+    "path": "muse-code/enter/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.enter"
+  },
+  {
+    "path": "muse-code/esc/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.esc"
+  },
+  {
+    "path": "muse-code/esc-esc/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.esc-esc"
+  },
+  {
+    "path": "muse-code/p/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.workflow-pause"
+  },
+  {
+    "path": "muse-code/r/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.workflow-result"
+  },
+  {
+    "path": "muse-code/space/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.workflow-close"
+  },
+  {
+    "path": "muse-code/tab/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.tab"
+  },
+  {
+    "path": "muse-code/x/",
+    "kind": "entry",
+    "id": "muse-code.shortcut.workflow-skip"
+  },
+  {
+    "path": "muse-code/agents-skills-skill-id-skill-md/",
+    "kind": "entry",
+    "id": "muse-code.skill.project-skill-md"
+  },
+  {
+    "path": "muse-code/grill-with-docs/",
+    "kind": "entry",
+    "id": "muse-code.skill.grill-with-docs"
+  },
+  {
+    "path": "muse-code/grilling/",
+    "kind": "entry",
+    "id": "muse-code.skill.grilling"
+  },
+  {
+    "path": "muse-code/plan/",
+    "kind": "entry",
+    "id": "muse-code.skill.plan"
+  },
+  {
+    "path": "muse-code/taste/",
+    "kind": "entry",
+    "id": "muse-code.skill.taste"
+  },
+  {
+    "path": "muse-code/clear/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.clear"
+  },
+  {
+    "path": "muse-code/compact/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.compact"
+  },
+  {
+    "path": "muse-code/copy/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.copy"
+  },
+  {
+    "path": "muse-code/effort/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.effort"
+  },
+  {
+    "path": "muse-code/export/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.export"
+  },
+  {
+    "path": "muse-code/fork/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.fork"
+  },
+  {
+    "path": "muse-code/goal/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.goal"
+  },
+  {
+    "path": "muse-code/help/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.help"
+  },
+  {
+    "path": "muse-code/keymap/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.keymap"
+  },
+  {
+    "path": "muse-code/login/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.login"
+  },
+  {
+    "path": "muse-code/loop/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.loop"
+  },
+  {
+    "path": "muse-code/models/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.models"
+  },
+  {
+    "path": "muse-code/name/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.name"
+  },
+  {
+    "path": "muse-code/new/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.new"
+  },
+  {
+    "path": "muse-code/recap/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.recap"
+  },
+  {
+    "path": "muse-code/resume/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.resume"
+  },
+  {
+    "path": "muse-code/settings/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.settings"
+  },
+  {
+    "path": "muse-code/side/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.side"
+  },
+  {
+    "path": "muse-code/status/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.status"
+  },
+  {
+    "path": "muse-code/stop/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.stop"
+  },
+  {
+    "path": "muse-code/subagents/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.subagents"
+  },
+  {
+    "path": "muse-code/tasks/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.tasks"
+  },
+  {
+    "path": "muse-code/upgrade/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.upgrade"
+  },
+  {
+    "path": "muse-code/usage/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.usage"
+  },
+  {
+    "path": "muse-code/voice/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.voice"
+  },
+  {
+    "path": "muse-code/workflows/",
+    "kind": "entry",
+    "id": "muse-code.slash-command.workflows"
+  },
+  {
+    "path": "muse-code/agents-workflows-name-js/",
+    "kind": "entry",
+    "id": "muse-code.workflow.agents-workflows-name-js"
   },
   {
     "path": "compare/",

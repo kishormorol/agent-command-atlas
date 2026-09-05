@@ -1,0 +1,1090 @@
+[
+  {
+    "id": "muse-code.config-file.user-settings",
+    "tool": "muse-code",
+    "name": "~/.config/muse/settings.json",
+    "display_name": "User settings",
+    "type": "config-file",
+    "category": "configuration",
+    "role": "User configuration",
+    "description": "User settings for model defaults, terminal UI, tools, MCP servers, hooks, runtime capabilities, and telemetry.",
+    "syntax": [
+      "~/.config/muse/settings.json"
+    ],
+    "when_to_use": [
+      "Set machine-wide defaults you do not want to repeat per session."
+    ],
+    "when_not_to_use": [
+      "A missing file is fine; create it only when you have something to set."
+    ],
+    "related_commands": [
+      "muse-code.config-option.schema-version",
+      "muse-code.slash-command.settings"
+    ],
+    "capabilities": [
+      "config.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The file must set \"schema_version\": 1. Omitting the key fails every command at startup with malformed settings file."
+    ]
+  },
+  {
+    "id": "muse-code.config-file.project-hooks",
+    "tool": "muse-code",
+    "name": ".muse/hooks.json",
+    "display_name": "Project hooks file",
+    "type": "config-file",
+    "category": "hooks",
+    "role": "Project hook configuration",
+    "description": "Hooks committed to a repository at the project root.",
+    "syntax": [
+      "<project-root>/.muse/hooks.json"
+    ],
+    "when_to_use": [
+      "Share lifecycle automation with everyone who clones the repository."
+    ],
+    "when_not_to_use": [
+      "Only add hooks whose commands you have read; a hook runs through your shell outside the sandbox and approval."
+    ],
+    "related_commands": [
+      "muse-code.config-option.hooks",
+      "muse-code.config-option.managed-hooks-path",
+      "muse-code.permission.workspace-trust"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Project hooks run only after you trust the project folder, and take effect as soon as you trust it since 0.2.1.",
+      "A malformed project or managed hook file contributes no handlers from that source and produces a startup warning."
+    ]
+  },
+  {
+    "id": "muse-code.instruction-file.agents-md",
+    "tool": "muse-code",
+    "name": "AGENTS.md",
+    "display_name": "Project instructions",
+    "type": "instruction-file",
+    "category": "project-instructions",
+    "role": "Hierarchical instructions",
+    "description": "The project's agent rules, discovered from the workspace root up to the nearest .git boundary.",
+    "syntax": [
+      "AGENTS.md"
+    ],
+    "when_to_use": [
+      "Record conventions the agent should follow in this repository."
+    ],
+    "when_not_to_use": [
+      "Project rules load only after you trust the workspace."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.init",
+      "muse-code.instruction-file.claude-md",
+      "muse-code.permission.workspace-trust"
+    ],
+    "capabilities": [
+      "instructions.initialize"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "At each directory level Muse Code checks AGENTS.md, CLAUDE.md, .agents/AGENTS.md, then .claude/CLAUDE.md, and the first existing file wins for that level.",
+      "Project rules win over user rules, and among project files the deeper file wins."
+    ]
+  },
+  {
+    "id": "muse-code.instruction-file.claude-md",
+    "tool": "muse-code",
+    "name": "CLAUDE.md",
+    "display_name": "Claude instruction fallback",
+    "type": "instruction-file",
+    "category": "project-instructions",
+    "role": "Hierarchical instructions",
+    "description": "A Claude Code instruction file Muse Code reads when no AGENTS.md exists at that directory level.",
+    "syntax": [
+      "CLAUDE.md"
+    ],
+    "when_to_use": [
+      "Reuse instructions already written for Claude Code without duplicating them."
+    ],
+    "related_commands": [
+      "muse-code.instruction-file.agents-md"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.instruction-file.agents-dir-agents-md",
+    "tool": "muse-code",
+    "name": ".agents/AGENTS.md",
+    "display_name": "Nested project instructions",
+    "type": "instruction-file",
+    "category": "project-instructions",
+    "role": "Hierarchical instructions",
+    "description": "The third instruction file Muse Code checks at each directory level.",
+    "syntax": [
+      ".agents/AGENTS.md"
+    ],
+    "when_to_use": [
+      "Keep agent configuration together under .agents/ rather than at the repository root."
+    ],
+    "related_commands": [
+      "muse-code.instruction-file.agents-md"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.instruction-file.claude-dir-claude-md",
+    "tool": "muse-code",
+    "name": ".claude/CLAUDE.md",
+    "display_name": "Nested Claude instruction fallback",
+    "type": "instruction-file",
+    "category": "project-instructions",
+    "role": "Hierarchical instructions",
+    "description": "The last instruction file Muse Code checks at each directory level.",
+    "syntax": [
+      ".claude/CLAUDE.md"
+    ],
+    "when_to_use": [
+      "Reuse a repository's existing Claude Code configuration directory."
+    ],
+    "related_commands": [
+      "muse-code.instruction-file.agents-md"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.instruction-file.memory-md",
+    "tool": "muse-code",
+    "name": ".agents/memory/MEMORY.md",
+    "display_name": "Project memory index",
+    "type": "instruction-file",
+    "category": "project-instructions",
+    "role": "Durable project memory",
+    "description": "The index of committed project memory, with one Markdown file per topic beside it.",
+    "syntax": [
+      "<repo>/.agents/memory/MEMORY.md"
+    ],
+    "when_to_use": [
+      "Record durable, project-specific facts: deployment procedures, why a workaround exists, a service's unusual behavior."
+    ],
+    "when_not_to_use": [
+      "Treat a repository's MEMORY.md as a prompt-injection surface; it loads even in an untrusted workspace."
+    ],
+    "related_commands": [
+      "muse-code.agent.memory-recall-observer",
+      "muse-code.instruction-file.agents-md"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "At session start Muse Code injects MEMORY.md plus the paths, not the contents, of up to 48 other memory files."
+    ]
+  },
+  {
+    "id": "muse-code.config-option.schema-version",
+    "tool": "muse-code",
+    "name": "schema_version",
+    "display_name": "Settings schema version",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Settings validation",
+    "description": "The settings file schema version, which must be 1.",
+    "syntax": [
+      "\"schema_version\": 1"
+    ],
+    "when_to_use": [
+      "Include it in every settings.json you create."
+    ],
+    "when_not_to_use": [
+      "Omitting it fails every command at startup with malformed settings file; an unrecognized value fails with unsupported settings schema version."
+    ],
+    "related_commands": [
+      "muse-code.config-file.user-settings"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.hooks",
+    "tool": "muse-code",
+    "name": "hooks",
+    "display_name": "User hooks block",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Hook configuration",
+    "description": "A first-class block in the settings file defining machine-wide hooks.",
+    "syntax": [
+      "\"hooks\": { \"<Event>\": [] }"
+    ],
+    "when_to_use": [
+      "Run your own automation on lifecycle events across every project."
+    ],
+    "when_not_to_use": [
+      "User hooks run from your own settings without a project-trust step, so review what they execute."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.managed-hooks-path"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.managed-hooks-path",
+    "tool": "muse-code",
+    "name": "managed_hooks_path",
+    "display_name": "Managed hooks path",
+    "type": "config-option",
+    "category": "hooks",
+    "role": "Hook configuration",
+    "description": "A pointer to a file of centrally administered hooks.",
+    "syntax": [
+      "\"managed_hooks_path\": \"<path>\""
+    ],
+    "when_to_use": [
+      "Administer hooks centrally across a fleet of machines."
+    ],
+    "when_not_to_use": [
+      "Managed hooks run without a project-trust step, so whoever controls the file controls what executes."
+    ],
+    "related_commands": [
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.runtime-capabilities",
+    "tool": "muse-code",
+    "name": "runtime_capabilities",
+    "display_name": "Runtime capabilities",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Capability toggles",
+    "description": "A map that toggles runtime capabilities such as the background observer agents.",
+    "syntax": [
+      "\"runtime_capabilities\": {}"
+    ],
+    "when_to_use": [
+      "Turn an observer agent off when its extra model calls are not worth the token usage."
+    ],
+    "related_commands": [
+      "muse-code.agent.verification-observer"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.agents-execution-capacity",
+    "tool": "muse-code",
+    "name": "agents.execution_capacity",
+    "display_name": "Agent execution capacity",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Concurrency limit",
+    "description": "The number of agents one tree can execute at once, from 1 through 64. The default is eight, including the root agent.",
+    "syntax": [
+      "\"agents\": { \"execution_capacity\": 16 }"
+    ],
+    "when_to_use": [
+      "Raise or lower how many child agents run in parallel."
+    ],
+    "when_not_to_use": [
+      "A spawn attempted when the tree is full is rejected."
+    ],
+    "related_commands": [
+      "muse-code.agent.subagent"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "An unconfigured ultra root uses 64. Every descendant shares the same root-tree capacity."
+    ]
+  },
+  {
+    "id": "muse-code.config-option.show-reasoning",
+    "tool": "muse-code",
+    "name": "show_reasoning",
+    "display_name": "Show reasoning in the transcript",
+    "type": "config-option",
+    "category": "configuration",
+    "role": "Reasoning display",
+    "description": "Commit the model's full reasoning into the transcript. Off by default.",
+    "syntax": [
+      "\"show_reasoning\": true"
+    ],
+    "when_to_use": [
+      "Keep the model's reasoning in the session record."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.reasoning-effort"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "It is independent of the live one-line reasoning summary in the status row, which is on by default."
+    ]
+  },
+  {
+    "id": "muse-code.config-option.tools-workflows",
+    "tool": "muse-code",
+    "name": "Tools > Workflows",
+    "display_name": "Workflow selection",
+    "type": "config-option",
+    "category": "agents",
+    "role": "Workflow selection",
+    "description": "Choose whether Muse Code may propose workflows: auto, explicit, or off.",
+    "syntax": [
+      "/settings > Tools > Workflows"
+    ],
+    "when_to_use": [
+      "Let Muse Code propose a workflow for workflow-scale work, or require you to ask."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.workflows",
+      "muse-code.slash-command.settings"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": [
+        "Requires a build that includes the workflow script engine and access to the staged WorkflowTool rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The setting applies immediately to the current session."
+    ]
+  },
+  {
+    "id": "muse-code.config-option.tools-session-messaging",
+    "tool": "muse-code",
+    "name": "Tools > Session messaging",
+    "display_name": "Session messaging",
+    "type": "config-option",
+    "category": "session",
+    "role": "Peer messaging",
+    "description": "Turn local session-to-session messaging on or off. On by default.",
+    "syntax": [
+      "/settings > Tools > Session messaging"
+    ],
+    "when_to_use": [
+      "Coordinate independent live sessions with handoffs, review requests, and status updates."
+    ],
+    "when_not_to_use": [
+      "A peer message cannot approve a tool call, grant consent, or change permissions; treat it as unverified data."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.name",
+      "muse-code.slash-command.settings"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": [
+        "Availability depends on the session-messaging rollout gate.",
+        "Connects eligible interactive sessions for the same user on the same Unix machine only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/session-messaging",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "A preference change applies on the next Muse Code launch. Messages carry plain text up to 8,192 bytes."
+    ]
+  },
+  {
+    "id": "muse-code.config-option.mcp-transport",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.transport",
+    "display_name": "MCP transport",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "The server transport: stdio or streamable_http.",
+    "syntax": [
+      "\"transport\": \"stdio\"",
+      "\"transport\": \"streamable_http\""
+    ],
+    "when_to_use": [
+      "Choose between a local child process and a remote HTTP endpoint."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.mcp-command",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.command",
+    "display_name": "MCP server command",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "The executable for a stdio MCP server.",
+    "syntax": [
+      "\"command\": \"my-mcp-server\""
+    ],
+    "when_to_use": [
+      "Point a stdio server at its binary."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.mcp-args",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.args",
+    "display_name": "MCP server arguments",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Arguments passed to a stdio MCP server.",
+    "syntax": [
+      "\"args\": []"
+    ],
+    "when_to_use": [
+      "Pass configuration to a stdio server on its command line."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.mcp-env",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.env",
+    "display_name": "MCP server environment",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Environment variables for a stdio MCP server.",
+    "syntax": [
+      "\"env\": {}"
+    ],
+    "when_to_use": [
+      "Supply credentials or settings a stdio server reads from its environment."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.mcp-url",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.url",
+    "display_name": "MCP server URL",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "The endpoint for a streamable_http MCP server.",
+    "syntax": [
+      "\"url\": \"https://example.com/mcp\""
+    ],
+    "when_to_use": [
+      "Connect to a remote MCP endpoint over HTTP."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.mcp-headers",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.headers",
+    "display_name": "MCP server headers",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Headers sent to a streamable_http MCP server.",
+    "syntax": [
+      "\"headers\": {}"
+    ],
+    "when_to_use": [
+      "Authenticate to a remote MCP endpoint."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.mcp-enabled",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.enabled",
+    "display_name": "MCP server enablement",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Whether the server is active.",
+    "syntax": [
+      "\"enabled\": true"
+    ],
+    "when_to_use": [
+      "Keep a server declared but switched off."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.config-option.mcp-mode",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.mode",
+    "display_name": "MCP server mode",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Whether a server is required or optional. The default is required.",
+    "syntax": [
+      "\"mode\": \"optional\""
+    ],
+    "when_to_use": [
+      "Let a run continue when a non-essential server is unavailable."
+    ],
+    "when_not_to_use": [
+      "If a required server fails to start, the whole run aborts."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Optional servers that fail at startup no longer spam the transcript as of 0.2.1."
+    ]
+  },
+  {
+    "id": "muse-code.config-option.mcp-framing",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>.framing",
+    "display_name": "MCP message framing",
+    "type": "config-option",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Optional message framing for a stdio server.",
+    "syntax": [
+      "\"framing\": \"<value>\""
+    ],
+    "when_to_use": [
+      "Match a stdio server that expects non-default framing."
+    ],
+    "when_not_to_use": [
+      "A non-default framing value on streamable_http fails validation."
+    ],
+    "related_commands": [
+      "muse-code.mcp.mcp-servers-name"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

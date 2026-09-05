@@ -35,19 +35,20 @@ vm.runInNewContext(`${app}
   globalThis.testDetailCoverage = testEntries.map((entry) => ({ id: entry.id, markup: detailView(entry.id) }));
 `, context);
 
-const compactIds = new Set(context.testSearch("compact").slice(0, 6).map((entry) => entry.id));
+const compactIds = new Set(context.testSearch("compact").slice(0, 8).map((entry) => entry.id));
 for (const entryId of [
   "codex.slash-command.compact",
   "claude-code.slash-command.compact",
   "gemini-cli.slash-command.compress",
   "cursor.slash-command.summarize",
   "github-copilot.slash-command.compact",
+  "muse-code.slash-command.compact",
 ]) {
   assert(compactIds.has(entryId), `compact search should surface ${entryId}`);
 }
 
-const resumeTools = new Set(context.testSearch("resume old session").slice(0, 9).map((entry) => entry.tool));
-assert.deepEqual(resumeTools, new Set(["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]));
+const resumeTools = new Set(context.testSearch("resume old session").slice(0, 11).map((entry) => entry.tool));
+assert.deepEqual(resumeTools, new Set(["codex", "claude-code", "gemini-cli", "cursor", "github-copilot", "muse-code"]));
 
 const modelResults = context.testSearch("model");
 assert(modelResults.length > 0, "model search should return model controls");
@@ -57,6 +58,15 @@ const copilotPermissionResults = context.testSearch("show all github copilot per
 assert(copilotPermissionResults.length > 0);
 assert(copilotPermissionResults.every((entry) => entry.tool === "github-copilot"));
 assert(copilotPermissionResults.some((entry) => entry.category === "permissions"));
+
+const musePermissionResults = context.testSearch("show all muse code permission commands").slice(0, 8);
+assert(musePermissionResults.length > 0);
+assert(musePermissionResults.every((entry) => entry.tool === "muse-code"));
+assert(musePermissionResults.some((entry) => entry.category === "permissions"));
+
+const conditionalMuse = context.testSearch("", { tool: "muse-code", maturity: "conditional" });
+assert(conditionalMuse.length > 0);
+assert(conditionalMuse.every((entry) => entry.tool === "muse-code" && entry.maturity === "conditional"));
 
 const conditionalClaude = context.testSearch("", { tool: "claude-code", maturity: "conditional" });
 assert(conditionalClaude.length > 0);

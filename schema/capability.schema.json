@@ -11,14 +11,14 @@
     "description": {"type": "string", "minLength": 1},
     "mappings": {
       "type": "array",
-      "minItems": 5,
-      "maxItems": 5,
+      "minItems": 6,
+      "maxItems": 6,
       "items": {
         "type": "object",
         "additionalProperties": false,
         "required": ["tool", "entry_id", "relationship"],
         "properties": {
-          "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot"]},
+          "tool": {"enum": ["codex", "claude-code", "gemini-cli", "cursor", "github-copilot", "muse-code"]},
           "entry_id": {"type": ["string", "null"]},
           "relationship": {"enum": ["exact", "similar", "partial", "none", "unknown"]},
           "notes": {"type": "string", "minLength": 1}

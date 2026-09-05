@@ -1,0 +1,850 @@
+[
+  {
+    "id": "muse-code.shortcut.enter",
+    "tool": "muse-code",
+    "name": "Enter",
+    "display_name": "Steer the running turn",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Steering",
+    "description": "Submit text that is injected into the turn in progress; the agent applies it on its next step.",
+    "syntax": [
+      "Enter"
+    ],
+    "examples": [
+      {
+        "command": "Enter",
+        "explanation": "Steer a running turn without waiting for it to finish.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Correct the agent's direction mid-turn."
+    ],
+    "related_commands": [
+      "muse-code.shortcut.alt-enter"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.alt-enter",
+    "tool": "muse-code",
+    "name": "Alt+Enter",
+    "display_name": "Queue for the next turn",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Queueing",
+    "description": "Hold the typed text for the next turn instead of injecting it into the current one.",
+    "syntax": [
+      "Alt+Enter"
+    ],
+    "examples": [
+      {
+        "command": "Alt+Enter",
+        "explanation": "Queue an instruction for after the current turn finishes.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Line up the next instruction while the agent is still working."
+    ],
+    "related_commands": [
+      "muse-code.shortcut.enter"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.esc",
+    "tool": "muse-code",
+    "name": "Esc",
+    "display_name": "Interrupt the turn",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Interrupt",
+    "description": "Cancel the current turn. On an empty composer it instead retracts the most recently queued instruction.",
+    "syntax": [
+      "Esc"
+    ],
+    "examples": [
+      {
+        "command": "Esc",
+        "explanation": "Interrupt the current turn.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Stop a turn that is going the wrong way."
+    ],
+    "when_not_to_use": [
+      "Esc stops the turn only. It does not stop background terminals or subagents; use /stop for those."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.stop",
+      "muse-code.shortcut.esc-esc"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Only the newest eligible queued item is retractable at a time.",
+      "Interrupting a turn automatically pauses an unfinished goal."
+    ]
+  },
+  {
+    "id": "muse-code.shortcut.esc-esc",
+    "tool": "muse-code",
+    "name": "Esc Esc",
+    "display_name": "Rewind the conversation",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Rewind",
+    "description": "Press Esc twice in quick succession from an idle, empty composer to open the rewind picker.",
+    "syntax": [
+      "Esc Esc"
+    ],
+    "examples": [
+      {
+        "command": "Esc Esc",
+        "explanation": "Open the rewind picker to branch from an earlier message.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Take the conversation in a different direction from an earlier message."
+    ],
+    "when_not_to_use": [
+      "Rewind changes conversation history only; it does not restore, revert, or delete workspace files."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.fork"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available only in interactive sessions with session logging enabled.",
+        "Starts only from the idle main conversation with an empty composer."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/rewind",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "There is no /rewind slash command.",
+      "The picker labels each prior input Exact, Review required, or Blocked."
+    ]
+  },
+  {
+    "id": "muse-code.shortcut.ctrl-c",
+    "tool": "muse-code",
+    "name": "Ctrl+C",
+    "display_name": "Interrupt, clear input, or leave a side chat",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Interrupt",
+    "description": "Interrupt from an empty composer, clear the input when it holds text, and return to the main thread from a side conversation.",
+    "syntax": [
+      "Ctrl+C"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+C",
+        "explanation": "Interrupt the current turn from an empty composer.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Leave a side conversation, or interrupt without reaching for Esc."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.side",
+      "muse-code.shortcut.esc"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.alt-v",
+    "tool": "muse-code",
+    "name": "Alt+V",
+    "display_name": "Toggle voice input",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Voice input",
+    "description": "Start or stop voice input, transcribing speech into the composer.",
+    "syntax": [
+      "Alt+V"
+    ],
+    "examples": [
+      {
+        "command": "Alt+V",
+        "explanation": "Dictate a prompt instead of typing it.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Dictate a long prompt."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.voice"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "option-V on macOS. Voice is enabled by default on macOS and off by default on Linux."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.ctrl-l",
+    "tool": "muse-code",
+    "name": "Ctrl+L",
+    "display_name": "Clear the screen",
+    "type": "shortcut",
+    "category": "terminal",
+    "role": "Screen control",
+    "description": "Clear the terminal screen without clearing the session.",
+    "syntax": [
+      "Ctrl+L"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+L",
+        "explanation": "Clear the screen while keeping the session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Tidy a crowded terminal without resetting the conversation."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.clear"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/changelog",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Described in the 0.2.1 release notes, which record a fix for redraw artifacts."
+    ]
+  },
+  {
+    "id": "muse-code.shortcut.ctrl-p",
+    "tool": "muse-code",
+    "name": "Ctrl+P",
+    "display_name": "Select the previous message",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Rewind navigation",
+    "description": "Move to the previous message in the rewind picker.",
+    "syntax": [
+      "Ctrl+P"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+P",
+        "explanation": "Move up the rewind picker.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Navigate the rewind picker without the arrow keys."
+    ],
+    "related_commands": [
+      "muse-code.shortcut.esc-esc"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/rewind",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.ctrl-n",
+    "tool": "muse-code",
+    "name": "Ctrl+N",
+    "display_name": "Select the next message",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Rewind navigation",
+    "description": "Move to the next message in the rewind picker.",
+    "syntax": [
+      "Ctrl+N"
+    ],
+    "examples": [
+      {
+        "command": "Ctrl+N",
+        "explanation": "Move down the rewind picker.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Navigate the rewind picker without the arrow keys."
+    ],
+    "related_commands": [
+      "muse-code.shortcut.esc-esc"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/rewind",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.tab",
+    "tool": "muse-code",
+    "name": "Tab",
+    "display_name": "Add a note to a clarifying answer",
+    "type": "shortcut",
+    "category": "session",
+    "role": "Clarifying questions",
+    "description": "Add an optional free-text note to a clarifying question the agent asked.",
+    "syntax": [
+      "Tab"
+    ],
+    "examples": [
+      {
+        "command": "Tab",
+        "explanation": "Add a free-text note to a clarifying answer.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Explain a choice the offered options do not capture."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Answers to clarifying questions are conversational input. They grant no filesystem, shell, network, or approval authority."
+    ]
+  },
+  {
+    "id": "muse-code.shortcut.workflow-cancel",
+    "tool": "muse-code",
+    "name": "C",
+    "display_name": "Cancel the selected workflow",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Workflow control",
+    "description": "Cancel the selected workflow from the control-room run list.",
+    "syntax": [
+      "C"
+    ],
+    "examples": [
+      {
+        "command": "C",
+        "explanation": "Cancel the selected workflow run.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Stop a workflow that is no longer worth its token usage."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.workflows"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available in the /workflows control room, which requires the workflow engine build and rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.workflow-pause",
+    "tool": "muse-code",
+    "name": "P",
+    "display_name": "Pause or resume the workflow",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Workflow control",
+    "description": "Pause or resume the selected workflow run from inside the control room.",
+    "syntax": [
+      "P"
+    ],
+    "examples": [
+      {
+        "command": "P",
+        "explanation": "Pause a running workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Hold a run while you inspect an intermediate result."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.workflows"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available in the /workflows control room, which requires the workflow engine build and rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.workflow-result",
+    "tool": "muse-code",
+    "name": "R",
+    "display_name": "Open a result or restart a child",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Workflow control",
+    "description": "Open the result of a completed workflow from the run list, or restart the selected running child inside a run.",
+    "syntax": [
+      "R"
+    ],
+    "examples": [
+      {
+        "command": "R",
+        "explanation": "Open the result of a completed workflow.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Read a finished run's output, or restart a child that stalled."
+    ],
+    "when_not_to_use": [
+      "R is not a general retry for completed or failed children."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.workflows"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available in the /workflows control room, which requires the workflow engine build and rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.workflow-skip",
+    "tool": "muse-code",
+    "name": "X",
+    "display_name": "Skip the selected child",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Workflow control",
+    "description": "Skip the selected running child agent inside a workflow run.",
+    "syntax": [
+      "X"
+    ],
+    "examples": [
+      {
+        "command": "X",
+        "explanation": "Skip a running child agent.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Drop a child whose result you no longer need."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.workflows"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available in the /workflows control room, which requires the workflow engine build and rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.shortcut.workflow-close",
+    "tool": "muse-code",
+    "name": "Space",
+    "display_name": "Close the control room",
+    "type": "shortcut",
+    "category": "agents",
+    "role": "Workflow control",
+    "description": "Close the workflow control room from any level.",
+    "syntax": [
+      "Space"
+    ],
+    "examples": [
+      {
+        "command": "Space",
+        "explanation": "Close the workflow control room.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Return to the conversation; the workflow keeps running in the background."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.workflows"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Available in the /workflows control room, which requires the workflow engine build and rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.prefix-command.bang",
+    "tool": "muse-code",
+    "name": "!",
+    "display_name": "Run a shell command",
+    "type": "prefix-command",
+    "category": "terminal",
+    "role": "Shell execution",
+    "description": "Run a shell command from the composer instead of sending a prompt to the model.",
+    "syntax": [
+      "!<command>"
+    ],
+    "examples": [
+      {
+        "command": "!git status",
+        "explanation": "Run a shell command without leaving the session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check repository state or run a quick command mid-session."
+    ],
+    "when_not_to_use": [
+      "Shell commands still run under the approval policy and the OS sandbox."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.stop"
+    ],
+    "capabilities": [
+      "terminal.execute"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/changelog",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Documented in the release notes, which record that hooks triggered by ! shell commands are durably recorded and survive resume and export."
+    ]
+  },
+  {
+    "id": "muse-code.prefix-command.slash",
+    "tool": "muse-code",
+    "name": "/",
+    "display_name": "Open the command palette",
+    "type": "prefix-command",
+    "category": "help",
+    "role": "Command discovery",
+    "description": "Open the command palette in the composer and filter it as you keep typing.",
+    "syntax": [
+      "/"
+    ],
+    "examples": [
+      {
+        "command": "/",
+        "explanation": "Open the command palette and filter the command list.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Find a command without memorizing its name."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.help"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Skill slash commands are highlighted while you type as of 0.2.1."
+    ]
+  }
+]

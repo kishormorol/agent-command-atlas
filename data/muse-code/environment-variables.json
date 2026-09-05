@@ -1,0 +1,141 @@
+[
+  {
+    "id": "muse-code.environment-variable.meta-api-key",
+    "tool": "muse-code",
+    "name": "META_API_KEY",
+    "display_name": "Meta API key",
+    "type": "environment-variable",
+    "category": "authentication",
+    "role": "API authentication",
+    "description": "Provide a Meta API key so Muse Code can authenticate without the browser sign-in flow.",
+    "syntax": [
+      "META_API_KEY=<key>"
+    ],
+    "when_to_use": [
+      "Authenticate in CI, a script, or a Meta Managed Account that cannot use browser sign-in."
+    ],
+    "when_not_to_use": [
+      "muse logout does not unset an exported META_API_KEY; remove it from your shell or secret store separately."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.auth-set",
+      "muse-code.cli-subcommand.logout"
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/auth",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Muse Code uses META_API_KEY if set, then a stored key, and only then a stored browser session."
+    ]
+  },
+  {
+    "id": "muse-code.environment-variable.xdg-config-home",
+    "tool": "muse-code",
+    "name": "XDG_CONFIG_HOME",
+    "display_name": "User configuration root",
+    "type": "environment-variable",
+    "category": "skills",
+    "role": "Skill discovery",
+    "description": "Root the user skill directory Muse Code discovers at $XDG_CONFIG_HOME/muse/skills.",
+    "syntax": [
+      "XDG_CONFIG_HOME=<path>"
+    ],
+    "when_to_use": [
+      "Keep account-wide skills outside the default configuration location."
+    ],
+    "related_commands": [
+      "muse-code.skill.project-skill-md"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.environment-variable.codex-home",
+    "tool": "muse-code",
+    "name": "CODEX_HOME",
+    "display_name": "Codex home for skill discovery",
+    "type": "environment-variable",
+    "category": "skills",
+    "role": "Skill discovery",
+    "description": "Point Muse Code at the Codex skill directory it discovers at $CODEX_HOME/skills.",
+    "syntax": [
+      "CODEX_HOME=<path>"
+    ],
+    "when_to_use": [
+      "Share one Codex skill library with Muse Code."
+    ],
+    "when_not_to_use": [
+      "A user preference and rollout gate can disable foreign personal skill roots."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.skills-import"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Muse Code falls back to ~/.codex/skills when CODEX_HOME is unset."
+    ]
+  }
+]

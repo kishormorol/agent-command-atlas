@@ -1,0 +1,1415 @@
+[
+  {
+    "id": "muse-code.slash-command.help",
+    "tool": "muse-code",
+    "name": "/help",
+    "display_name": "Show help",
+    "type": "slash-command",
+    "category": "help",
+    "role": "Command discovery",
+    "description": "Show the full set of commands available in this workspace.",
+    "syntax": [
+      "/help"
+    ],
+    "examples": [
+      {
+        "command": "/help",
+        "explanation": "List every command available in the current session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Discover which commands a workspace actually exposes, including skills."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.keymap"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.keymap",
+    "tool": "muse-code",
+    "name": "/keymap",
+    "display_name": "Show keyboard shortcuts",
+    "type": "slash-command",
+    "category": "help",
+    "role": "Shortcut discovery",
+    "description": "Show the keyboard shortcuts available in the interactive session.",
+    "syntax": [
+      "/keymap"
+    ],
+    "examples": [
+      {
+        "command": "/keymap",
+        "explanation": "Show the session's keyboard shortcuts.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Look up a shortcut without leaving the session."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.help"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.login",
+    "tool": "muse-code",
+    "name": "/login",
+    "display_name": "Sign in",
+    "type": "slash-command",
+    "category": "authentication",
+    "role": "Authentication",
+    "description": "Reopen the sign-in options: a browser sign-in or a pasted Meta API key.",
+    "syntax": [
+      "/login"
+    ],
+    "examples": [
+      {
+        "command": "/login",
+        "explanation": "Reopen the sign-in options from a running session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Switch credentials, or sign in after starting a session unauthenticated."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.logout",
+      "muse-code.cli-subcommand.auth-set"
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/auth",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.upgrade",
+    "tool": "muse-code",
+    "name": "/upgrade",
+    "display_name": "Manage your subscription",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Subscription management",
+    "description": "Open Accounts Center in your browser to change or cancel a Muse Code subscription.",
+    "syntax": [
+      "/upgrade"
+    ],
+    "examples": [
+      {
+        "command": "/upgrade",
+        "explanation": "Open Accounts Center to change your plan.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Move between the Everyday, High, and Power usage plans."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires a Meta Account and a Muse Code subscription flow available in your region."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/subscriptions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.settings",
+    "tool": "muse-code",
+    "name": "/settings",
+    "display_name": "Open settings",
+    "type": "slash-command",
+    "category": "configuration",
+    "role": "Settings",
+    "description": "Open the settings surface for tool, model, and interface preferences.",
+    "syntax": [
+      "/settings"
+    ],
+    "examples": [
+      {
+        "command": "/settings",
+        "explanation": "Open settings to change tool and interface preferences.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Turn voice, workflows, or session messaging on or off."
+    ],
+    "related_commands": [
+      "muse-code.config-file.user-settings",
+      "muse-code.config-option.tools-workflows"
+    ],
+    "capabilities": [
+      "config.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/session-messaging",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.status",
+    "tool": "muse-code",
+    "name": "/status",
+    "display_name": "Show session status",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Session status",
+    "description": "Show a summary card for the current session.",
+    "syntax": [
+      "/status"
+    ],
+    "examples": [
+      {
+        "command": "/status",
+        "explanation": "Show the session summary card.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check what the current session is configured to do."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.usage"
+    ],
+    "capabilities": [
+      "session.status",
+      "context.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/changelog",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Redesigned as a summary card in 0.2.1. The command is currently described only in the release notes."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.usage",
+    "tool": "muse-code",
+    "name": "/usage",
+    "display_name": "Show usage",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Usage inspection",
+    "description": "Show usage and cost totals for the session, labeled in USD.",
+    "syntax": [
+      "/usage"
+    ],
+    "examples": [
+      {
+        "command": "/usage",
+        "explanation": "Show session usage and cost totals.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Track what a long session is spending before it grows further."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.status"
+    ],
+    "capabilities": [
+      "usage.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/changelog",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Costs are labeled explicitly as USD since 0.2.1. The command is currently described only in the release notes."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.models",
+    "tool": "muse-code",
+    "name": "/models",
+    "display_name": "Switch model",
+    "type": "slash-command",
+    "category": "models",
+    "role": "Model selection",
+    "description": "Switch the session's model mid-session.",
+    "syntax": [
+      "/models"
+    ],
+    "examples": [
+      {
+        "command": "/models",
+        "explanation": "Switch models without restarting the session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Move a running session to a different model."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.model",
+      "muse-code.slash-command.effort"
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/changelog",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.effort",
+    "tool": "muse-code",
+    "name": "/effort",
+    "display_name": "Change reasoning effort",
+    "type": "slash-command",
+    "category": "models",
+    "role": "Reasoning depth",
+    "description": "Change the reasoning effort mid-session.",
+    "syntax": [
+      "/effort"
+    ],
+    "examples": [
+      {
+        "command": "/effort",
+        "explanation": "Raise or lower reasoning effort without restarting.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Spend more reasoning on a hard step and less on routine ones."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.reasoning-effort"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.new",
+    "tool": "muse-code",
+    "name": "/new",
+    "display_name": "Start a new session",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Session start",
+    "description": "Start a fresh session and keep the terminal scrollback on screen.",
+    "syntax": [
+      "/new"
+    ],
+    "examples": [
+      {
+        "command": "/new",
+        "explanation": "Start a fresh session without clearing the screen.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Begin unrelated work while keeping the previous output visible."
+    ],
+    "when_not_to_use": [
+      "It resets the conversation, context, token counts, goal, and tasks; use /compact to reclaim room instead."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.clear",
+      "muse-code.slash-command.fork"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.clear",
+    "tool": "muse-code",
+    "name": "/clear",
+    "display_name": "Clear the session",
+    "type": "slash-command",
+    "category": "context",
+    "role": "Context reset",
+    "description": "Start a fresh session and wipe the terminal scrollback.",
+    "syntax": [
+      "/clear"
+    ],
+    "examples": [
+      {
+        "command": "/clear",
+        "explanation": "Start a fresh session and clear the screen.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Begin unrelated work with a clean screen."
+    ],
+    "when_not_to_use": [
+      "Neither /new nor /clear changes on-disk memory or rules."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.new"
+    ],
+    "capabilities": [
+      "context.clear"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.name",
+    "tool": "muse-code",
+    "name": "/name",
+    "display_name": "Name the session",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Session naming",
+    "description": "Show the current session name, or assign one.",
+    "syntax": [
+      "/name",
+      "/name <name>"
+    ],
+    "examples": [
+      {
+        "command": "/name",
+        "explanation": "Show the current session name.",
+        "level": "minimal"
+      },
+      {
+        "command": "/name api-review-482731",
+        "explanation": "Give this session a stable name other sessions can address.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Give a session a stable name so peers can message it."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.subagents"
+    ],
+    "capabilities": [
+      "session.rename"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/session-messaging",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "After normalization a name is 3-32 ASCII characters, starts with a lowercase letter, uses lowercase letters, digits, and single hyphens, and avoids a trailing or doubled hyphen. all, self, and current are reserved."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.resume",
+    "tool": "muse-code",
+    "name": "/resume",
+    "display_name": "Resume a session",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Session resume",
+    "description": "Pick a retained session in this workspace and continue it.",
+    "syntax": [
+      "/resume",
+      "/resume --last"
+    ],
+    "examples": [
+      {
+        "command": "/resume",
+        "explanation": "Pick a retained session to continue.",
+        "level": "minimal"
+      },
+      {
+        "command": "/resume --last",
+        "explanation": "Resume the most recent session in this workspace.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Continue work from a previous session in the same workspace."
+    ],
+    "when_not_to_use": [
+      "It is unavailable inside a side conversation; return to the main thread first."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.resume",
+      "muse-code.slash-command.fork"
+    ],
+    "capabilities": [
+      "session.resume"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.fork",
+    "tool": "muse-code",
+    "name": "/fork",
+    "display_name": "Fork the session",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Session branch",
+    "description": "Branch a new session from the current session's latest stable point.",
+    "syntax": [
+      "/fork"
+    ],
+    "examples": [
+      {
+        "command": "/fork",
+        "explanation": "Branch a new session and leave the current one running.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Explore an alternative direction without disturbing the running session."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.resume"
+    ],
+    "capabilities": [
+      "session.fork"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The source session stays active and unchanged, and the fork does not take over your view. Continue it later with muse resume <fork-id>."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.side",
+    "tool": "muse-code",
+    "name": "/side",
+    "display_name": "Open a side conversation",
+    "type": "slash-command",
+    "category": "context",
+    "role": "Side conversation",
+    "description": "Start a short parallel conversation seeded from the main session without changing the main thread.",
+    "syntax": [
+      "/side",
+      "/side <prompt>",
+      "/btw <prompt>"
+    ],
+    "aliases": [
+      "/btw"
+    ],
+    "examples": [
+      {
+        "command": "/side",
+        "explanation": "Open a side conversation.",
+        "level": "minimal"
+      },
+      {
+        "command": "/side How does the retry policy work?",
+        "explanation": "Ask a side question without adding it to the main history.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Ask something that should not enter the main conversation's history."
+    ],
+    "when_not_to_use": [
+      "Only one side conversation can be open at a time, and /side, /fork, /new, /clear, and /resume are unavailable inside it."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.copy"
+    ],
+    "capabilities": [
+      "context.side-question"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Press Ctrl+C to return to the main thread, which Muse Code restores exactly."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.compact",
+    "tool": "muse-code",
+    "name": "/compact",
+    "display_name": "Compact the context",
+    "type": "slash-command",
+    "category": "context",
+    "role": "Context compaction",
+    "description": "Replace earlier model-visible history with a generated summary to reclaim context room.",
+    "syntax": [
+      "/compact"
+    ],
+    "examples": [
+      {
+        "command": "/compact",
+        "explanation": "Summarize prior context to reclaim room.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Continue a long task that is filling the context window."
+    ],
+    "when_not_to_use": [
+      "It is lossy for the model's context; export the transcript first if you need the verbatim record."
+    ],
+    "related_commands": [
+      "muse-code.hook.precompact",
+      "muse-code.hook.postcompact",
+      "muse-code.slash-command.recap"
+    ],
+    "capabilities": [
+      "context.compact"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Muse Code also compacts automatically when context fills. A manual /compact never counts against the auto-compaction budget, and since 0.2.1 it runs in the background."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.recap",
+    "tool": "muse-code",
+    "name": "/recap",
+    "display_name": "Recap recent activity",
+    "type": "slash-command",
+    "category": "context",
+    "role": "Activity summary",
+    "description": "Render a short summary of what happened since the last recap.",
+    "syntax": [
+      "/recap"
+    ],
+    "examples": [
+      {
+        "command": "/recap",
+        "explanation": "Summarize recent activity after stepping away.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Catch up on a long-running session you left unattended."
+    ],
+    "when_not_to_use": [
+      "It needs new activity to summarize and runs between turns, not during one."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.compact"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "A recap is a summary cell only. It does not change the model's context."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.export",
+    "tool": "muse-code",
+    "name": "/export",
+    "display_name": "Export the session",
+    "type": "slash-command",
+    "category": "session",
+    "role": "Session export",
+    "description": "Write the on-screen conversation to a text file, or the full session log to JSON.",
+    "syntax": [
+      "/export",
+      "/export transcript",
+      "/export trajectory",
+      "/export <transcript|trajectory> --out <path> --redacted"
+    ],
+    "examples": [
+      {
+        "command": "/export transcript",
+        "explanation": "Write the on-screen conversation to a .txt file.",
+        "level": "minimal"
+      },
+      {
+        "command": "/export trajectory --out run.json --redacted",
+        "explanation": "Write the full session log to JSON with secret-shaped strings scrubbed.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Keep a durable record of a session for review or audit."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.export",
+      "muse-code.cli-flag.out",
+      "muse-code.cli-flag.redacted"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.copy",
+    "tool": "muse-code",
+    "name": "/copy",
+    "display_name": "Copy the last response",
+    "type": "slash-command",
+    "category": "context",
+    "role": "Clipboard",
+    "description": "Copy the markdown of the last completed response to the clipboard.",
+    "syntax": [
+      "/copy"
+    ],
+    "examples": [
+      {
+        "command": "/copy",
+        "explanation": "Copy the last response to the clipboard.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Move an answer into a pull request, an issue, or a document."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.goal",
+    "tool": "muse-code",
+    "name": "/goal",
+    "display_name": "Set a session goal",
+    "type": "slash-command",
+    "category": "planning",
+    "role": "Goal tracking",
+    "description": "Set, show, revise, pause, resume, or clear the objective the runtime holds the agent to.",
+    "syntax": [
+      "/goal <objective>",
+      "/goal",
+      "/goal edit <objective>",
+      "/goal pause",
+      "/goal resume",
+      "/goal clear"
+    ],
+    "examples": [
+      {
+        "command": "/goal Ship the migration with green tests",
+        "explanation": "Set the objective for a multi-turn task.",
+        "level": "minimal"
+      },
+      {
+        "command": "/goal resume",
+        "explanation": "Restart goal tracking after an interrupt paused it.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Hold the agent to an outcome across many turns."
+    ],
+    "related_commands": [
+      "muse-code.agent.goal-tracking-observer",
+      "muse-code.slash-command.loop"
+    ],
+    "capabilities": [
+      "planning.goal"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Interrupting a turn with Esc automatically pauses an unfinished goal.",
+      "The runtime prompts the agent to report_progress if it goes about 10 model steps without one."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.loop",
+    "tool": "muse-code",
+    "name": "/loop",
+    "display_name": "Schedule a recurring prompt",
+    "type": "slash-command",
+    "category": "planning",
+    "role": "Scheduling",
+    "description": "Schedule a recurring prompt as a cron job, using a shorthand interval or a 5-field cron expression.",
+    "syntax": [
+      "/loop <interval> <prompt>",
+      "/loop \"<cron>\" <prompt>"
+    ],
+    "examples": [
+      {
+        "command": "/loop 10m /run-tests",
+        "explanation": "Run the /run-tests skill every ten minutes.",
+        "level": "minimal"
+      },
+      {
+        "command": "/loop \"0 9 * * 1-5\" standup",
+        "explanation": "Run a prompt on weekdays at 9am local time.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Repeat a check on a cadence while you work on something else."
+    ],
+    "when_not_to_use": [
+      "An occurrence that lands during an active run is skipped, not queued or replayed."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.goal"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "With no cadence it defaults to every ten minutes, and recurring jobs auto-expire after 7 days.",
+      "There is no dedicated loop-monitor panel; a loop is an ordinary scheduled job managed with the agent's cron tools."
+    ]
+  },
+  {
+    "id": "muse-code.slash-command.tasks",
+    "tool": "muse-code",
+    "name": "/tasks",
+    "display_name": "Open the Tasks drawer",
+    "type": "slash-command",
+    "category": "terminal",
+    "role": "Background tasks",
+    "description": "Open the drawer for background tasks and direct subagents, with controls for the selected row.",
+    "syntax": [
+      "/tasks"
+    ],
+    "examples": [
+      {
+        "command": "/tasks",
+        "explanation": "Open the Tasks drawer to manage background work.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Manage a long shell command, a monitor, or a direct subagent."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.stop",
+      "muse-code.slash-command.subagents"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.subagents",
+    "tool": "muse-code",
+    "name": "/subagents",
+    "display_name": "View subagents",
+    "type": "slash-command",
+    "category": "agents",
+    "role": "Subagent inspection",
+    "description": "Open the subagent view for running and completed descendants.",
+    "syntax": [
+      "/subagents"
+    ],
+    "examples": [
+      {
+        "command": "/subagents",
+        "explanation": "See which child agents are running and what they produced.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Follow a fan-out job across its child agents."
+    ],
+    "related_commands": [
+      "muse-code.agent.subagent",
+      "muse-code.slash-command.tasks"
+    ],
+    "capabilities": [
+      "agents.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.stop",
+    "tool": "muse-code",
+    "name": "/stop",
+    "display_name": "Stop background work",
+    "type": "slash-command",
+    "category": "terminal",
+    "role": "Background control",
+    "description": "Cancel applicable background tasks and terminals.",
+    "syntax": [
+      "/stop"
+    ],
+    "examples": [
+      {
+        "command": "/stop",
+        "explanation": "Stop background tasks and terminals left running.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Clean up background work after interrupting a turn with Esc."
+    ],
+    "when_not_to_use": [
+      "It does not blanket-cancel direct subagents; manage those through /tasks."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.tasks",
+      "muse-code.shortcut.esc"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.workflows",
+    "tool": "muse-code",
+    "name": "/workflows",
+    "display_name": "Open the workflow control room",
+    "type": "slash-command",
+    "category": "agents",
+    "role": "Workflow monitoring",
+    "description": "Browse active and completed multi-agent workflow runs, with phases, progress, usage, and results.",
+    "syntax": [
+      "/workflows"
+    ],
+    "examples": [
+      {
+        "command": "/workflows",
+        "explanation": "Open the workflow control room.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Watch or steer a multi-agent run: pause, resume, cancel, skip, or restart a child."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.workflows",
+      "muse-code.workflow.agents-workflows-name-js"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Requires a build that includes the workflow script engine and access to the staged WorkflowTool rollout.",
+        "The public aarch64-apple-darwin package does not include workflow-script-engine-v8, so workflows are unavailable in that artifact."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.slash-command.voice",
+    "tool": "muse-code",
+    "name": "/voice",
+    "display_name": "Inspect voice input",
+    "type": "slash-command",
+    "category": "diagnostics",
+    "role": "Voice status",
+    "description": "Show voice status or toggle voice diagnostics.",
+    "syntax": [
+      "/voice status",
+      "/voice debug"
+    ],
+    "examples": [
+      {
+        "command": "/voice status",
+        "explanation": "Show whether voice input is available.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Diagnose why dictation is not working."
+    ],
+    "when_not_to_use": [
+      "/voice inspects state only; turn voice on or off in /settings, not with /voice on."
+    ],
+    "related_commands": [
+      "muse-code.shortcut.alt-v",
+      "muse-code.slash-command.settings"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "Voice is enabled by default on macOS and off by default on Linux."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

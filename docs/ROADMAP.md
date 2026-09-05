@@ -2,7 +2,7 @@
 
 ## v0.1 — Foundation
 - Canonical schema
-- Five tool manifests
+- Six tool manifests
 - Source registry
 - Starter verified entries
 - Searchable static prototype
@@ -16,7 +16,7 @@
 - GitHub Copilot CLI
 
 ## v0.3 — CLI commands and flags
-- Full CLI command trees and options for all five tools
+- Full CLI command trees and options for all six tools
 
 ## v0.4 — Controls beyond commands
 - Shortcuts
@@ -34,7 +34,7 @@
 - Migration notes
 
 ## v1.0 — Comprehensive reference release
-- Full verified five-tool coverage
+- Full verified six-tool coverage
 - Practical examples for every core entry
 - Common mistakes and workflows
 - Version/deprecation history

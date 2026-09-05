@@ -16,7 +16,7 @@ except ImportError:
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TOOL_IDS = {"codex", "claude-code", "gemini-cli", "cursor", "github-copilot"}
+TOOL_IDS = {"codex", "claude-code", "gemini-cli", "cursor", "github-copilot", "muse-code"}
 
 
 def load_json(path: Path, errors: list[str], root: Path = ROOT) -> Any | None:

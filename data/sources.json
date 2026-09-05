@@ -50,5 +50,19 @@
   "github-copilot": [
     {"url":"https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference","kind":"official-docs","scope":"CLI and interactive commands, shortcuts, flags, configuration, hooks, MCP, skills, and agents"},
     {"url":"https://docs.github.com/en/copilot/reference/hooks-reference","kind":"official-docs","scope":"Hook events, configuration, payloads, and decision control"}
+  ],
+  "muse-code": [
+    {"url":"https://dev.meta.ai/docs/muse-code","kind":"official-docs","scope":"Install, first run, and the interactive and headless surfaces"},
+    {"url":"https://dev.meta.ai/docs/muse-code/auth","kind":"official-docs","scope":"Authentication commands, API keys, and billing"},
+    {"url":"https://dev.meta.ai/docs/muse-code/subscriptions","kind":"official-docs","scope":"Subscription plans and in-session plan management"},
+    {"url":"https://dev.meta.ai/docs/muse-code/permissions","kind":"official-docs","scope":"Approval modes, staged shell review, trust scopes, and the sandbox"},
+    {"url":"https://dev.meta.ai/docs/muse-code/interactive","kind":"official-docs","scope":"Slash commands, steering shortcuts, goals, tasks, and the session model"},
+    {"url":"https://dev.meta.ai/docs/muse-code/workflows","kind":"official-docs","scope":"Multi-agent workflow commands, control room, and workflow storage"},
+    {"url":"https://dev.meta.ai/docs/muse-code/session-messaging","kind":"official-docs","scope":"Session naming, peer messaging, and worktree sessions"},
+    {"url":"https://dev.meta.ai/docs/muse-code/rewind","kind":"official-docs","scope":"Rewind gesture and conversation branches"},
+    {"url":"https://dev.meta.ai/docs/muse-code/configuration","kind":"official-docs","scope":"Settings file, instruction files, model and reasoning selection, launch flags, and memory"},
+    {"url":"https://dev.meta.ai/docs/muse-code/extending","kind":"official-docs","scope":"Subagents, skills, hooks, MCP servers, and headless runs"},
+    {"url":"https://dev.meta.ai/docs/muse-code/changelog","kind":"release-notes","scope":"Commands and controls documented only in the release notes"},
+    {"url":"https://dev.meta.ai/docs/cookbook/bundled-skills","kind":"official-docs","scope":"Built-in skill names and invocation walkthroughs"}
   ]
 }

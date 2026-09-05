@@ -1,0 +1,636 @@
+[
+  {
+    "id": "muse-code.hook.session-start",
+    "tool": "muse-code",
+    "name": "SessionStart",
+    "display_name": "Session Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A session starts.",
+    "syntax": [
+      "hooks.SessionStart"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when a session starts."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Muse Code discovers and validates hooks at session startup. There is no active muse hooks command family or per-hook trust command."
+    ]
+  },
+  {
+    "id": "muse-code.hook.user-prompt-submit",
+    "tool": "muse-code",
+    "name": "UserPromptSubmit",
+    "display_name": "User Prompt Submit",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "You submit a prompt.",
+    "syntax": [
+      "hooks.UserPromptSubmit"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when you submit a prompt."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.pre-tool-use",
+    "tool": "muse-code",
+    "name": "PreToolUse",
+    "display_name": "Pre Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool call is about to run.",
+    "syntax": [
+      "hooks.PreToolUse"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when a tool call is about to run."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.permission-request",
+    "tool": "muse-code",
+    "name": "PermissionRequest",
+    "display_name": "Permission Request",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "An action requests approval.",
+    "syntax": [
+      "hooks.PermissionRequest"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when an action requests approval."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.post-tool-use",
+    "tool": "muse-code",
+    "name": "PostToolUse",
+    "display_name": "Post Tool Use",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A tool call has finished.",
+    "syntax": [
+      "hooks.PostToolUse"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when a tool call has finished."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.pre-llm-call",
+    "tool": "muse-code",
+    "name": "PreLLMCall",
+    "display_name": "Pre LLM Call",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A model call is about to be made.",
+    "syntax": [
+      "hooks.PreLLMCall"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when a model call is about to be made."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.post-llm-call",
+    "tool": "muse-code",
+    "name": "PostLLMCall",
+    "display_name": "Post LLM Call",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A model call has returned.",
+    "syntax": [
+      "hooks.PostLLMCall"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when a model call has returned."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.precompact",
+    "tool": "muse-code",
+    "name": "PreCompact",
+    "display_name": "Pre Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction is about to run.",
+    "syntax": [
+      "hooks.PreCompact"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when context compaction is about to run."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks",
+      "muse-code.slash-command.compact"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.postcompact",
+    "tool": "muse-code",
+    "name": "PostCompact",
+    "display_name": "Post Compact",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "Context compaction has finished.",
+    "syntax": [
+      "hooks.PostCompact"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when context compaction has finished."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks",
+      "muse-code.slash-command.compact"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.subagent-start",
+    "tool": "muse-code",
+    "name": "SubagentStart",
+    "display_name": "Subagent Start",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent starts.",
+    "syntax": [
+      "hooks.SubagentStart"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when a subagent starts."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks",
+      "muse-code.agent.subagent"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.subagent-stop",
+    "tool": "muse-code",
+    "name": "SubagentStop",
+    "display_name": "Subagent Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "A subagent stops.",
+    "syntax": [
+      "hooks.SubagentStop"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when a subagent stops."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks",
+      "muse-code.agent.subagent"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.stop",
+    "tool": "muse-code",
+    "name": "Stop",
+    "display_name": "Stop",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The agent stops.",
+    "syntax": [
+      "hooks.Stop"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when the agent stops."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.hook.session-end",
+    "tool": "muse-code",
+    "name": "SessionEnd",
+    "display_name": "Session End",
+    "type": "hook",
+    "category": "hooks",
+    "role": "Lifecycle hook event",
+    "description": "The session terminates in an orderly way.",
+    "syntax": [
+      "hooks.SessionEnd"
+    ],
+    "when_to_use": [
+      "Bind a shell command to run when the session terminates in an orderly way."
+    ],
+    "when_not_to_use": [
+      "A hook's command runs directly through your shell, outside the sandbox and approval that govern the agent's own tools."
+    ],
+    "related_commands": [
+      "muse-code.config-file.project-hooks",
+      "muse-code.config-option.hooks"
+    ],
+    "capabilities": [
+      "hooks.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "SessionEnd is observational: its output cannot block termination, inject context for a later request, or stop the session."
+    ]
+  }
+]

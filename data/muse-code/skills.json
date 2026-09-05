@@ -1,0 +1,296 @@
+[
+  {
+    "id": "muse-code.skill.plan",
+    "tool": "muse-code",
+    "name": "/plan",
+    "display_name": "Plan skill",
+    "type": "skill",
+    "category": "planning",
+    "role": "Planning playbook",
+    "description": "Ground a plan in your files, name the key decisions, save it to .agents/plans/, and stop for approval before any code changes.",
+    "syntax": [
+      "/plan <task>"
+    ],
+    "examples": [
+      {
+        "command": "/plan Add a transfer operation with overdraft protection",
+        "explanation": "Produce a decision-complete plan and stop for approval.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "The work has decisions to make before code: an API to design, a migration to sequence, a PR to split."
+    ],
+    "when_not_to_use": [
+      "It is explicit-invocation only; task complexity alone does not trigger it, and it does not plan ordinary implement, fix, or refactor requests."
+    ],
+    "related_commands": [
+      "muse-code.skill.grilling",
+      "muse-code.skill.taste"
+    ],
+    "capabilities": [
+      "planning.start"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/cookbook/bundled-skills",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The extending page lists this bundled playbook as /plan, matching the cookbook."
+    ]
+  },
+  {
+    "id": "muse-code.skill.grilling",
+    "tool": "muse-code",
+    "name": "/grilling",
+    "display_name": "Grilling skill",
+    "type": "skill",
+    "category": "planning",
+    "role": "Design interrogation",
+    "description": "Interview you one decision-forcing question at a time until the design is sharp.",
+    "syntax": [
+      "/grilling <idea>"
+    ],
+    "examples": [
+      {
+        "command": "/grilling Pressure-test the transfer and overdraft design",
+        "explanation": "Have the agent play skeptic one question at a time.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "You have a rough idea and want its assumptions pressure-tested before you build."
+    ],
+    "when_not_to_use": [
+      "It is explicit-invocation only; Muse Code does not run it because a request looks underspecified."
+    ],
+    "related_commands": [
+      "muse-code.skill.grill-with-docs",
+      "muse-code.skill.plan"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/cookbook/bundled-skills",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The extending page calls this playbook /grill while the cookbook documents it as /grilling. Run /help to see the name your build exposes."
+    ]
+  },
+  {
+    "id": "muse-code.skill.grill-with-docs",
+    "tool": "muse-code",
+    "name": "/grill-with-docs",
+    "display_name": "Grill-with-docs skill",
+    "type": "skill",
+    "category": "planning",
+    "role": "Design interrogation",
+    "description": "Run the same decision-forcing interview and write the settled decisions into your project docs.",
+    "syntax": [
+      "/grill-with-docs <idea>"
+    ],
+    "examples": [
+      {
+        "command": "/grill-with-docs Pressure-test the transfer design and record decisions",
+        "explanation": "Turn interview answers into durable project knowledge.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "The interview produces decisions worth keeping beyond the transcript."
+    ],
+    "when_not_to_use": [
+      "Give the project a home for durable decisions first, or the skill has nowhere to write."
+    ],
+    "related_commands": [
+      "muse-code.skill.grilling"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/cookbook/bundled-skills",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The extending page calls this playbook /grill-and-record while the cookbook documents it as /grill-with-docs. Run /help to see the name your build exposes."
+    ]
+  },
+  {
+    "id": "muse-code.skill.taste",
+    "tool": "muse-code",
+    "name": "/taste",
+    "display_name": "Taste skill",
+    "type": "skill",
+    "category": "code-review",
+    "role": "Design-quality gate",
+    "description": "Apply a flat checklist of visual defaults to avoid, so generated frontend UI stops looking machine-made.",
+    "syntax": [
+      "/taste <task>"
+    ],
+    "examples": [
+      {
+        "command": "/taste Build the landing page from the README",
+        "explanation": "Generate UI with the anti-slop checklist applied.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "You are generating a UI and want to avoid the purple gradient, centered hero, three-card grid look."
+    ],
+    "when_not_to_use": [
+      "It never prescribes a specific look; an explicit request from you overrides the checklist."
+    ],
+    "related_commands": [
+      "muse-code.skill.plan"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/cookbook/bundled-skills",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.skill.project-skill-md",
+    "tool": "muse-code",
+    "name": ".agents/skills/<skill-id>/SKILL.md",
+    "display_name": "Project skill definition",
+    "type": "skill",
+    "category": "skills",
+    "role": "Skill definition",
+    "description": "A skill committed to a repository, shared with anyone who clones it.",
+    "syntax": [
+      "<repo>/.agents/skills/<skill-id>/SKILL.md"
+    ],
+    "examples": [
+      {
+        "command": "mkdir -p .agents/skills/deploy && $EDITOR .agents/skills/deploy/SKILL.md",
+        "explanation": "Author a project skill the whole team gets on clone.",
+        "level": "practical"
+      },
+      {
+        "command": "muse skills validate ./.agents/skills/deploy",
+        "explanation": "Check the skill before committing it.",
+        "level": "workflow"
+      }
+    ],
+    "when_to_use": [
+      "Package a repeatable workflow the agent should load on demand in this repository."
+    ],
+    "when_not_to_use": [
+      "Project skills load only after you trust the workspace."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.skills-install",
+      "muse-code.cli-subcommand.skills-validate",
+      "muse-code.permission.workspace-trust"
+    ],
+    "capabilities": [
+      "skills.define"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Muse Code also scans repo-local .codex/skills and .claude/skills, and user skills in $XDG_CONFIG_HOME/muse/skills, ~/.agents/skills, ~/.claude/skills, and $CODEX_HOME/skills."
+    ]
+  }
+]

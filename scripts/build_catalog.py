@@ -170,7 +170,7 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
             template,
             "compare",
             "Compare AI Coding Agent Commands | Agent Command Atlas",
-            "Compare equivalent and related capabilities across Codex, Claude Code, Gemini CLI, Cursor, and GitHub Copilot CLI.",
+            "Compare equivalent and related capabilities across Codex, Claude Code, Gemini CLI, Cursor, GitHub Copilot CLI, and Muse Code.",
             1,
         ),
     )
@@ -181,7 +181,7 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
             template,
             "coverage",
             "Dataset Coverage | Agent Command Atlas",
-            "Inspect record counts, verification, lifecycle states, and structured coverage across all five Agent Command Atlas ecosystems.",
+            "Inspect record counts, verification, lifecycle states, and structured coverage across all six Agent Command Atlas ecosystems.",
             1,
         ),
     )

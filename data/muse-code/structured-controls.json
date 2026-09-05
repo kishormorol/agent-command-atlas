@@ -1,0 +1,849 @@
+[
+  {
+    "id": "muse-code.permission.on-request",
+    "tool": "muse-code",
+    "name": "on-request",
+    "display_name": "On-request approval mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Approval mode",
+    "description": "The default approval mode: recognized, non-dangerous parsed shell stages pass, while dangerous or external-execution patterns stop for review.",
+    "syntax": [
+      "muse --approval-mode on-request"
+    ],
+    "when_to_use": [
+      "Work interactively with guardrails that stay out of the way for safe commands."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.approval-mode"
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Dangerous patterns include destructive removal forms and ripgrep options that can launch helper processes, such as -z, --search-zip, --pre, and --hostname-bin."
+    ]
+  },
+  {
+    "id": "muse-code.permission.untrusted",
+    "tool": "muse-code",
+    "name": "untrusted",
+    "display_name": "Untrusted approval mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Approval mode",
+    "description": "A stricter mode in which any shell stage with no matching allow rule stops for review.",
+    "syntax": [
+      "muse --approval-mode untrusted"
+    ],
+    "when_to_use": [
+      "Review every unmatched shell stage on code you do not control."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.approval-mode"
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "It escalates shell execution only. File reads and in-workspace write_file and edit_file writes still pass in any mode."
+    ]
+  },
+  {
+    "id": "muse-code.permission.never",
+    "tool": "muse-code",
+    "name": "never",
+    "display_name": "Never-approve mode",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Approval mode",
+    "description": "Nothing stops for approval; the sandbox alone contains what runs.",
+    "syntax": [
+      "muse --approval-mode never"
+    ],
+    "when_to_use": [
+      "Run unattended where the sandbox is the intended boundary."
+    ],
+    "when_not_to_use": [
+      "Do not use it where the sandbox is unavailable or disabled."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.approval-mode"
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.permission.proxy-only",
+    "tool": "muse-code",
+    "name": "proxy-only",
+    "display_name": "Proxy-only network access",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Sandbox network mode",
+    "description": "The default network policy: outbound connections are approved per destination, and the first connection to a new host, port, or protocol stops for review.",
+    "syntax": [
+      "muse --sandbox-network proxy-only"
+    ],
+    "when_to_use": [
+      "Let a task reach the network while keeping each new destination visible."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.sandbox-network"
+    ],
+    "capabilities": [
+      "permissions.sandbox"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.permission.restricted",
+    "tool": "muse-code",
+    "name": "restricted",
+    "display_name": "Restricted network access",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Sandbox network mode",
+    "description": "No network access from sandboxed commands.",
+    "syntax": [
+      "muse --sandbox-network restricted"
+    ],
+    "when_to_use": [
+      "Run a task that has no legitimate reason to reach the network."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.sandbox-network"
+    ],
+    "capabilities": [
+      "permissions.sandbox"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.permission.network-enabled",
+    "tool": "muse-code",
+    "name": "enabled",
+    "display_name": "Full network access",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Sandbox network mode",
+    "description": "Full outbound network access from sandboxed commands.",
+    "syntax": [
+      "muse --sandbox-network enabled"
+    ],
+    "when_to_use": [
+      "Run a task whose network use you already trust, such as a dependency install in a container."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.sandbox-network"
+    ],
+    "capabilities": [
+      "permissions.sandbox"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.permission.allow-once",
+    "tool": "muse-code",
+    "name": "Allow once",
+    "display_name": "Allow once",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Approval decision",
+    "description": "Run the held shell stage one time only; Muse Code saves no rule.",
+    "syntax": [
+      "Allow once"
+    ],
+    "when_to_use": [
+      "Approve a one-off command you do not want to grant standing permission for."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.permission.always-allow-workspace",
+    "tool": "muse-code",
+    "name": "Always allow in this workspace",
+    "display_name": "Always allow in this workspace",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Approval decision",
+    "description": "Save an allow rule for this command's prefix, scoped to this workspace root.",
+    "syntax": [
+      "Always allow in this workspace"
+    ],
+    "when_to_use": [
+      "Stop re-approving a command you run constantly in one project."
+    ],
+    "when_not_to_use": [
+      "You cannot save an interpreter prefix such as python, bash, or node as a broad allow."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Prefix rules apply by specificity, and a deny rule always overrides an allow rule whatever the specificity."
+    ]
+  },
+  {
+    "id": "muse-code.permission.workspace-trust",
+    "tool": "muse-code",
+    "name": "Workspace trust",
+    "display_name": "Workspace trust",
+    "type": "permission",
+    "category": "permissions",
+    "role": "Trust scope",
+    "description": "Trusting a workspace root lets Muse Code load that project's skills, rules, and hooks.",
+    "syntax": [
+      "Trust this workspace?"
+    ],
+    "when_to_use": [
+      "Work in a repository you control and want project configuration to apply to."
+    ],
+    "when_not_to_use": [
+      "Leave a checkout you do not control untrusted; its AGENTS.md, rules, skills, and hooks are attacker-controlled instruction."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.trust-workspace",
+      "muse-code.instruction-file.agents-md"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Committed project memory under .agents/memory/ loads even in an untrusted workspace, unlike skills, rules, and hooks."
+    ]
+  },
+  {
+    "id": "muse-code.mode.interactive",
+    "tool": "muse-code",
+    "name": "interactive",
+    "display_name": "Interactive mode",
+    "type": "mode",
+    "category": "session",
+    "role": "Interaction mode",
+    "description": "The terminal UI for a back-and-forth session with slash commands, approvals, and live status.",
+    "syntax": [
+      "muse"
+    ],
+    "when_to_use": [
+      "Work with the agent conversationally and approve actions as they come up."
+    ],
+    "related_commands": [
+      "muse-code.cli-command.launch"
+    ],
+    "capabilities": [
+      "mode.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.mode.headless",
+    "tool": "muse-code",
+    "name": "headless",
+    "display_name": "Headless mode",
+    "type": "mode",
+    "category": "session",
+    "role": "Interaction mode",
+    "description": "One prompt run to completion without a UI, for scripts and CI.",
+    "syntax": [
+      "muse exec \"<prompt>\""
+    ],
+    "when_to_use": [
+      "Run the agent from a pipeline where nobody is watching the terminal."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.exec"
+    ],
+    "capabilities": [
+      "mode.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.agent.subagent",
+    "tool": "muse-code",
+    "name": "subagent",
+    "display_name": "Subagent",
+    "type": "agent",
+    "category": "agents",
+    "role": "Child agent",
+    "description": "A child agent the lead session spawns for one bounded task, optionally in an isolated Git worktree.",
+    "syntax": [
+      "subagent"
+    ],
+    "when_to_use": [
+      "Split a job into bounded, independently verifiable tasks that would otherwise contend for the same files."
+    ],
+    "when_not_to_use": [
+      "Keep the work on one agent when the steps are strictly sequential."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.subagents",
+      "muse-code.cli-flag.subagent-worktree-isolation",
+      "muse-code.config-option.agents-execution-capacity"
+    ],
+    "capabilities": [
+      "agents.parallel",
+      "agents.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "One agent tree executes eight agents at once by default, including the root agent; an unconfigured ultra root uses 64.",
+      "Cancellation is cooperative: a cancelled child that never reaches a checkpoint keeps running, and one mid-write finishes that write.",
+      "An isolation request is never silently downgraded to the shared checkout."
+    ]
+  },
+  {
+    "id": "muse-code.agent.memory-recall-observer",
+    "tool": "muse-code",
+    "name": "Memory recall observer",
+    "display_name": "Memory recall observer",
+    "type": "agent",
+    "category": "agents",
+    "role": "Background observer",
+    "description": "A background observer that surfaces a note from local project memory relevant to the next reply.",
+    "syntax": [
+      "runtime_capabilities"
+    ],
+    "when_to_use": [
+      "Let durable project facts reach a turn without asking for them."
+    ],
+    "related_commands": [
+      "muse-code.instruction-file.memory-md",
+      "muse-code.config-option.runtime-capabilities"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "On by default. Rollout gates and the settings file can disable it."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Each enabled observer makes its own model calls, so the default set of four adds token usage."
+    ]
+  },
+  {
+    "id": "muse-code.agent.skill-recall-observer",
+    "tool": "muse-code",
+    "name": "Skill recall observer",
+    "display_name": "Skill recall observer",
+    "type": "agent",
+    "category": "agents",
+    "role": "Background observer",
+    "description": "A background observer that surfaces a project skill the task should load first.",
+    "syntax": [
+      "runtime_capabilities"
+    ],
+    "when_to_use": [
+      "Let a relevant skill reach a turn without naming it yourself."
+    ],
+    "related_commands": [
+      "muse-code.skill.project-skill-md",
+      "muse-code.config-option.runtime-capabilities"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "On by default. Rollout gates and the settings file can disable it."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.agent.goal-tracking-observer",
+    "tool": "muse-code",
+    "name": "Goal tracking observer",
+    "display_name": "Goal tracking observer",
+    "type": "agent",
+    "category": "agents",
+    "role": "Background observer",
+    "description": "A background observer that holds the agent to a declared goal and declines to close the turn until the work is done.",
+    "syntax": [
+      "runtime_capabilities"
+    ],
+    "when_to_use": [
+      "Keep a multi-turn objective from being declared finished early."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.goal",
+      "muse-code.config-option.runtime-capabilities"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "On by default. Rollout gates and the settings file can disable it."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.agent.verification-observer",
+    "tool": "muse-code",
+    "name": "Verification observer",
+    "display_name": "Verification observer",
+    "type": "agent",
+    "category": "agents",
+    "role": "Background observer",
+    "description": "A background observer that checks the agent ran the work it claims it finished.",
+    "syntax": [
+      "runtime_capabilities"
+    ],
+    "when_to_use": [
+      "Catch a turn that reports success without running the check."
+    ],
+    "related_commands": [
+      "muse-code.config-option.runtime-capabilities"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": [
+        "On by default. Rollout gates and the settings file can disable it."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "An observer never answers for you: it proposes, a reconciler decides, and only an accepted proposal reaches the main agent."
+    ]
+  },
+  {
+    "id": "muse-code.workflow.agents-workflows-name-js",
+    "tool": "muse-code",
+    "name": ".agents/workflows/<name>.js",
+    "display_name": "Saved project workflow",
+    "type": "workflow",
+    "category": "agents",
+    "role": "Workflow definition",
+    "description": "A reusable JavaScript workflow saved at project scope and loaded once when a session starts.",
+    "syntax": [
+      "<repo>/.agents/workflows/<name>.js"
+    ],
+    "when_to_use": [
+      "Keep an orchestration pattern your team repeats: parallel groups, dependent stages, and a final synthesis."
+    ],
+    "when_not_to_use": [
+      "Commit the file before another clone can discover it, and restart a session saved after it launched."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.workflows-save",
+      "muse-code.slash-command.workflows"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": [
+        "Requires a build that includes the workflow script engine and access to the staged WorkflowTool rollout.",
+        "Project workflows load after you trust the workspace."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "A workflow can call up to 1,000 child tasks over its lifetime; the local active-child limit is CPU-derived and capped at 16.",
+      "A completed script must return a JSON-serializable value."
+    ]
+  },
+  {
+    "id": "muse-code.mcp.mcp-servers-name",
+    "tool": "muse-code",
+    "name": "mcp_servers.<name>",
+    "display_name": "MCP server configuration",
+    "type": "mcp",
+    "category": "mcp",
+    "role": "MCP server configuration",
+    "description": "Declare an MCP server in the settings file with a stdio or streamable_http transport.",
+    "syntax": [
+      "mcp_servers.<name>"
+    ],
+    "aliases": [
+      "mcpServers.<name>"
+    ],
+    "when_to_use": [
+      "Connect external tools to the agent through the Model Context Protocol."
+    ],
+    "when_not_to_use": [
+      "MCP tools are not sandboxed; an MCP server runs outside the filesystem and network sandbox."
+    ],
+    "related_commands": [
+      "muse-code.config-file.user-settings",
+      "muse-code.config-option.mcp-transport",
+      "muse-code.config-option.mcp-mode"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive",
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/changelog",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Settings accept the standard mcpServers key as well since 0.2.1, and configuration across multiple files and scopes merges consistently."
+    ]
+  }
+]

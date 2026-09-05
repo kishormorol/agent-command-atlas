@@ -22,6 +22,7 @@
   --gemini-cli: #5977ff;
   --cursor: #252932;
   --github-copilot: #a277ff;
+  --muse-code: #0866ff;
   --mono: "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", monospace;
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-family: var(--sans);
@@ -274,6 +275,7 @@ code { overflow-wrap: anywhere; }
 .tool-tab--gemini-cli .tool-tab__dot { background: var(--gemini-cli); }
 .tool-tab--cursor .tool-tab__dot { background: #d9dde5; }
 .tool-tab--github-copilot .tool-tab__dot { background: var(--github-copilot); }
+.tool-tab--muse-code .tool-tab__dot { background: var(--muse-code); }
 .tool-tab:hover, .tool-tab.is-active { color: var(--night); background: var(--accent); border-color: var(--accent); }
 
 .capability-section, .reference-section, .tool-summary, .detail-page, .comparison-page, .coverage-page { width: min(1320px, calc(100% - 48px)); margin: 0 auto; }
@@ -357,6 +359,7 @@ code { overflow-wrap: anywhere; }
 .entry-card--gemini-cli { --tool-accent: var(--gemini-cli); }
 .entry-card--cursor { --tool-accent: var(--cursor); }
 .entry-card--github-copilot { --tool-accent: var(--github-copilot); }
+.entry-card--muse-code { --tool-accent: var(--muse-code); }
 .entry-card:hover { border-color: #b5b4ad; border-left-color: var(--tool-accent); box-shadow: 0 7px 18px rgba(17, 19, 24, .07); transform: translateY(-1px); }
 .entry-card__identity, .entry-card__usage, .entry-card__footer { min-width: 0; padding: 17px 18px; }
 .entry-card__usage, .entry-card__footer { border-left: 1px solid #e9e7e0; }
@@ -406,6 +409,7 @@ code { overflow-wrap: anywhere; }
 .page-head--gemini-cli::before { background: var(--gemini-cli); }
 .page-head--cursor::before { background: #e8eaf0; }
 .page-head--github-copilot::before { background: var(--github-copilot); }
+.page-head--muse-code::before { background: var(--muse-code); }
 .page-head h1 { max-width: 960px; font-size: clamp(2.8rem, 6vw, 5rem); }
 .page-head > p:not(.eyebrow) { max-width: 790px; color: #aeb5c0; font-size: .98rem; line-height: 1.63; }
 .page-head .search { max-width: 850px; }
@@ -432,6 +436,7 @@ code { overflow-wrap: anywhere; }
 .detail-page--gemini-cli { --tool-accent: var(--gemini-cli); }
 .detail-page--cursor { --tool-accent: var(--cursor); }
 .detail-page--github-copilot { --tool-accent: var(--github-copilot); }
+.detail-page--muse-code { --tool-accent: var(--muse-code); }
 .detail-head { max-width: 980px; margin-bottom: 44px; padding: 28px 30px; background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--tool-accent); border-radius: 10px; box-shadow: 0 4px 0 #e2e0d8; }
 .detail-head__meta { display: flex; flex-wrap: wrap; gap: 8px 15px; color: var(--muted); font-size: .62rem; font-weight: 810; letter-spacing: .05em; text-transform: uppercase; }
 .detail-head h1 { margin-top: 18px; font-size: clamp(2.7rem, 6vw, 4.9rem); }
@@ -511,6 +516,7 @@ pre { max-width: 100%; margin: 0; padding: 17px 19px; overflow-x: auto; color: #
 .coverage-card--gemini-cli { --coverage-accent: var(--gemini-cli); }
 .coverage-card--cursor { --coverage-accent: var(--cursor); }
 .coverage-card--github-copilot { --coverage-accent: var(--github-copilot); }
+.coverage-card--muse-code { --coverage-accent: var(--muse-code); }
 .coverage-card__head { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 12px; align-items: center; }
 .coverage-card__head > span { width: 9px; height: 9px; background: var(--coverage-accent); border-radius: 50%; }
 .coverage-card__head p { margin: 0 0 3px; color: var(--muted); font-size: .6rem; letter-spacing: .06em; text-transform: uppercase; }

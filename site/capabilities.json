@@ -29,6 +29,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.agent.github-agents-name-agent-md",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": null,
+        "relationship": "unknown",
+        "notes": "Agent definitions are referenced for workflow children, but no definition format or path is documented."
       }
     ],
     "path": "compare/agents-define/"
@@ -64,6 +70,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.subagents",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.subagents",
         "relationship": "exact"
       }
     ],
@@ -102,6 +113,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.fleet",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.agent.subagent",
+        "relationship": "similar",
+        "notes": "The lead spawns subagents by default; workflows add staged orchestration where the build and rollout allow."
       }
     ],
     "path": "compare/agents-parallel/"
@@ -135,6 +152,11 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.login",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.login",
+        "relationship": "exact"
       }
     ],
     "path": "compare/auth-login/"
@@ -167,6 +189,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.logout",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.cli-subcommand.logout",
         "relationship": "exact"
       }
     ],
@@ -203,6 +230,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.review",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "No dedicated review command is documented; a review is requested in natural language or split across a multi-agent workflow."
       }
     ],
     "path": "compare/code-review/"
@@ -240,6 +273,12 @@
         "entry_id": "github-copilot.slash-command.settings",
         "relationship": "similar",
         "notes": "Copilot opens the settings interface rather than a resolved configuration trace."
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.settings",
+        "relationship": "similar",
+        "notes": "The settings surface opens preferences; muse config validates managed configuration documents."
       }
     ],
     "path": "compare/config-inspect/"
@@ -274,6 +313,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.prefix-command.at",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": null,
+        "relationship": "unknown",
+        "notes": "No file-attachment prefix is documented; the agent reads workspace files with its own tools."
       }
     ],
     "path": "compare/context-attach-file/"
@@ -307,6 +352,11 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.clear",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.clear",
+        "relationship": "exact"
       }
     ],
     "path": "compare/context-clear/"
@@ -339,6 +389,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.compact",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.compact",
         "relationship": "exact"
       }
     ],
@@ -376,6 +431,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.context",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.status",
+        "relationship": "partial",
+        "notes": "The status card summarizes the session rather than breaking down what fills the context window."
       }
     ],
     "path": "compare/context-inspect/"
@@ -412,6 +473,11 @@
         "entry_id": null,
         "relationship": "none",
         "notes": "The /ask command asks a question but does not document exclusion from conversation history."
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.side",
+        "relationship": "exact"
       }
     ],
     "path": "compare/context-side-question/"
@@ -447,6 +513,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.diff",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "The documented command set has no dedicated diff command; repository changes are inspected with a ! shell command."
       }
     ],
     "path": "compare/git-diff/"
@@ -481,6 +553,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.config-option.hooks",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.config-file.project-hooks",
+        "relationship": "partial",
+        "notes": "Hooks are configured in files; there is no muse hooks command family or per-hook trust command."
       }
     ],
     "path": "compare/hooks-configure/"
@@ -515,6 +593,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.cli-command.init",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.cli-subcommand.init",
+        "relationship": "exact",
+        "notes": "Muse Code seeds AGENTS.md from the shell rather than from an interactive command."
       }
     ],
     "path": "compare/instructions-initialize/"
@@ -550,6 +634,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.mcp",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.mcp.mcp-servers-name",
+        "relationship": "partial",
+        "notes": "MCP servers are declared in the settings file; no interactive or CLI manager is documented."
       }
     ],
     "path": "compare/mcp-manage/"
@@ -587,6 +677,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.shortcut.mode-cycle",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.cli-flag.approval-mode",
+        "relationship": "partial",
+        "notes": "The launch flag selects the approval policy; no in-session interaction-mode selector is documented."
       }
     ],
     "path": "compare/mode-select/"
@@ -619,6 +715,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.model",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.models",
         "relationship": "exact"
       }
     ],
@@ -655,6 +756,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.permissions",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.cli-flag.approval-mode",
+        "relationship": "similar",
+        "notes": "Approval policy is chosen at launch rather than through an interactive permissions manager."
       }
     ],
     "path": "compare/permissions-configure/"
@@ -693,6 +800,12 @@
         "entry_id": "github-copilot.config-option.sandbox-enabled",
         "relationship": "similar",
         "notes": "Copilot CLI sandboxing covers shell, MCP/LSP, and built-in file and web tools under its own policy model."
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.cli-flag.sandbox-network",
+        "relationship": "similar",
+        "notes": "Network access is chosen per run and the OS sandbox is always on unless explicitly disabled."
       }
     ],
     "path": "compare/permissions-sandbox/"
@@ -728,6 +841,11 @@
         "entry_id": "github-copilot.slash-command.goal",
         "relationship": "similar",
         "notes": "Copilot couples the objective with autopilot execution and optional AI-credit caps."
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.goal",
+        "relationship": "exact"
       }
     ],
     "path": "compare/planning-goal/"
@@ -761,6 +879,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.plan",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.skill.plan",
+        "relationship": "similar",
+        "notes": "Planning is a bundled skill invoked explicitly, not a separate interaction mode."
       }
     ],
     "path": "compare/planning-start/"
@@ -795,6 +919,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.plugin",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": null,
+        "relationship": "unknown",
+        "notes": "Plugin bundles are named as a skill source, but no plugin management surface is documented."
       }
     ],
     "path": "compare/plugins-manage/"
@@ -829,6 +959,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.fork",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.fork",
         "relationship": "exact"
       }
     ],
@@ -866,6 +1001,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.remote",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": null,
+        "relationship": "none",
+        "notes": "Session messaging connects sessions for the same user on the same machine and provides no cross-machine transport."
       }
     ],
     "path": "compare/session-remote-control/"
@@ -900,6 +1041,11 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.rename",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.name",
+        "relationship": "exact"
       }
     ],
     "path": "compare/session-rename/"
@@ -932,6 +1078,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.resume",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.resume",
         "relationship": "exact"
       }
     ],
@@ -969,6 +1120,11 @@
         "entry_id": "github-copilot.slash-command.session",
         "relationship": "partial",
         "notes": "The nested session manager includes session information alongside cleanup and checkpoint operations."
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.status",
+        "relationship": "exact"
       }
     ],
     "path": "compare/session-status/"
@@ -1001,6 +1157,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.skill.github-skills-name-skill-md",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.skill.project-skill-md",
         "relationship": "exact"
       }
     ],
@@ -1038,6 +1199,12 @@
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.skills",
         "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.cli-subcommand.skills",
+        "relationship": "similar",
+        "notes": "Skills are managed from the shell with muse skills rather than an in-session command."
       }
     ],
     "path": "compare/skills-manage/"
@@ -1070,6 +1237,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.prefix-command.bang",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.prefix-command.bang",
         "relationship": "exact"
       }
     ],
@@ -1105,6 +1277,11 @@
       {
         "tool": "github-copilot",
         "entry_id": "github-copilot.slash-command.usage",
+        "relationship": "exact"
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.slash-command.usage",
         "relationship": "exact"
       }
     ],
@@ -1143,6 +1320,11 @@
         "entry_id": "github-copilot.slash-command.worktree",
         "relationship": "exact",
         "notes": "Experimental and requires Git."
+      },
+      {
+        "tool": "muse-code",
+        "entry_id": "muse-code.cli-flag.worktree",
+        "relationship": "exact"
       }
     ],
     "path": "compare/worktree-manage/"

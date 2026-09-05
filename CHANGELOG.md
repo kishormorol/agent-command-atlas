@@ -6,6 +6,8 @@ All notable project changes are documented here.
 
 ### Added
 
+- Meta Muse Code as a sixth covered ecosystem, with 154 official-source-backed records spanning CLI commands and flags, slash commands, shortcuts, bundled skills, permissions and sandbox modes, subagents and observers, workflows, hooks, MCP, configuration, instruction files, and environment variables.
+- Muse Code mappings for all 33 cross-tool capabilities, including honest `none` and `unknown` records for code review, Git diff, remote control, plugin management, and agent definitions.
 - Expanded the canonical dataset from 508 to more than 2,200 official-source-backed records across all five ecosystems.
 - Complete documented flag, environment-variable, configuration-option, hook-event, shortcut, and structured-control families found in the current official references.
 - Structured entries for agents, skills, plugins and extensions, MCP, permission modes, sandbox controls, and project instruction surfaces.
@@ -13,6 +15,7 @@ All notable project changes are documented here.
 
 ### Changed
 
+- Widened the capability schema from five to six per-tool mappings and registered Muse Code in the entry schema, validator, source registry, and website tool palette.
 - Improved usage guidance for every command-like entry and expanded copy-ready examples throughout the catalog.
 - Ranked primary capability implementations above incidental configuration matches in task-oriented website searches.
 - Preserved stable clean command URLs when multiple record types share a slug, while generating compatibility aliases for older type-prefixed URLs.

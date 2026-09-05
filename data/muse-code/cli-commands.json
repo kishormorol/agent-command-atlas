@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "muse-code.cli-command.launch",
+    "tool": "muse-code",
+    "name": "muse",
+    "display_name": "Start Muse Code",
+    "type": "cli-command",
+    "category": "session",
+    "role": "Session launch",
+    "description": "Launch an interactive Muse Code session in the current project directory.",
+    "syntax": [
+      "muse",
+      "muse [prompt]"
+    ],
+    "examples": [
+      {
+        "command": "muse",
+        "explanation": "Start an interactive session in the current directory.",
+        "level": "minimal"
+      },
+      {
+        "command": "cd /path/to/your/project && muse",
+        "explanation": "Open a session against a specific project checkout.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Work with the agent interactively, with approvals and live status."
+    ],
+    "when_not_to_use": [
+      "Use muse exec for scripted or CI runs that must complete without a terminal UI."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.exec",
+      "muse-code.cli-subcommand.resume"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "First run asks whether to trust the workspace and prompts for authentication."
+      ],
+      "platforms": [
+        "macos",
+        "linux"
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/auth",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.exec",
+    "tool": "muse-code",
+    "name": "muse exec",
+    "display_name": "Run headlessly",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "session",
+    "role": "Headless execution",
+    "description": "Run one prompt to completion without a terminal UI, for scripts and CI pipelines.",
+    "syntax": [
+      "muse exec \"<prompt>\"",
+      "muse exec --prompt-file <path>",
+      "muse exec --session-id <uuid> \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse exec \"Update the changelog for the latest release and run the tests.\"",
+        "explanation": "Run a single prompt to completion and print the result to stdout.",
+        "level": "minimal"
+      },
+      {
+        "command": "muse exec --json \"Refactor the auth module and run the tests.\"",
+        "explanation": "Emit JSONL events on stdout for a pipeline to consume.",
+        "level": "practical"
+      },
+      {
+        "command": "META_API_KEY=\"$MUSE_KEY\" muse exec --disable-approval \"Run the test suite and summarize failures.\"",
+        "explanation": "Run unattended in CI with an API key and no approval prompts, keeping the sandbox on.",
+        "level": "workflow"
+      }
+    ],
+    "when_to_use": [
+      "Drive the agent from a script, a job, or a CI pipeline."
+    ],
+    "when_not_to_use": [
+      "Do not rely on the exit code to judge whether the work is correct; it reports only how the run ended."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.json",
+      "muse-code.cli-flag.prompt-file",
+      "muse-code.cli-flag.max-model-steps"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "A headless run cannot answer an interactive approval prompt; choose an approval policy that completes unattended."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Exit codes report how the run ended: 0 when the turn completes, 1 on failure or cancellation, 2 for a usage error, and 130 or 143 on SIGINT or SIGTERM."
+    ]
+  },
+  {
+    "id": "muse-code.cli-subcommand.resume",
+    "tool": "muse-code",
+    "name": "muse resume",
+    "display_name": "Resume a session",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "session",
+    "role": "Session resume",
+    "description": "Reopen a retained session in the interactive UI and continue it.",
+    "syntax": [
+      "muse resume",
+      "muse resume <session-id>"
+    ],
+    "examples": [
+      {
+        "command": "muse resume",
+        "explanation": "Open the interactive resume picker for retained sessions.",
+        "level": "minimal"
+      },
+      {
+        "command": "muse resume <fork-id>",
+        "explanation": "Continue a session branched earlier with /fork.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Continue an interrupted or forked session with its event log replayed."
+    ],
+    "when_not_to_use": [
+      "Use muse exec --session-id to continue a job non-interactively; muse resume always opens the UI."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.resume",
+      "muse-code.slash-command.fork"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a retained session log; unavailable for sessions started with --no-session-log."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.init",
+    "tool": "muse-code",
+    "name": "muse init",
+    "display_name": "Seed project instructions",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "project-instructions",
+    "role": "Project setup",
+    "description": "Write a single AGENTS.md into the current directory to seed the project's agent rules.",
+    "syntax": [
+      "muse init",
+      "muse init --dry-run",
+      "muse init --force"
+    ],
+    "examples": [
+      {
+        "command": "muse init",
+        "explanation": "Create AGENTS.md in the current directory.",
+        "level": "minimal"
+      },
+      {
+        "command": "muse init --dry-run",
+        "explanation": "Show what would be written without changing anything.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Start using Muse Code in a repository that has no agent instruction file."
+    ],
+    "when_not_to_use": [
+      "Do not run with --force over an AGENTS.md you want to keep; it overwrites the file completely."
+    ],
+    "related_commands": [
+      "muse-code.instruction-file.agents-md",
+      "muse-code.cli-flag.dry-run"
+    ],
+    "capabilities": [
+      "instructions.initialize"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Stops without --force when AGENTS.md already exists.",
+        "Creates no other files and does not change settings.json."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.logout",
+    "tool": "muse-code",
+    "name": "muse logout",
+    "display_name": "Sign out",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "authentication",
+    "role": "Authentication",
+    "description": "Remove the stored Meta credential, clearing the browser session and any stored API key.",
+    "syntax": [
+      "muse logout"
+    ],
+    "examples": [
+      {
+        "command": "muse logout",
+        "explanation": "Clear the stored browser session and stored key.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Sign out of Muse Code on a shared or retired machine."
+    ],
+    "when_not_to_use": [
+      "It does not unset a META_API_KEY exported in your environment; remove that separately."
+    ],
+    "related_commands": [
+      "muse-code.environment-variable.meta-api-key",
+      "muse-code.slash-command.login"
+    ],
+    "capabilities": [
+      "auth.logout"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/auth",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.auth-set",
+    "tool": "muse-code",
+    "name": "muse auth set",
+    "display_name": "Store an API key",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "authentication",
+    "role": "Authentication",
+    "description": "Store a Meta API key for Muse Code instead of using the browser sign-in flow.",
+    "syntax": [
+      "muse auth set"
+    ],
+    "examples": [
+      {
+        "command": "muse auth set",
+        "explanation": "Store a Meta API key for later runs.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Authenticate a Meta Managed Account, which cannot use the browser sign-in flow."
+    ],
+    "related_commands": [
+      "muse-code.environment-variable.meta-api-key"
+    ],
+    "capabilities": [
+      "auth.login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "An API key always takes priority over a stored browser session."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/auth",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.export",
+    "tool": "muse-code",
+    "name": "muse export",
+    "display_name": "Export a session log",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "session",
+    "role": "Session export",
+    "description": "Write a retained session's full event log to a JSON document for audit or replay.",
+    "syntax": [
+      "muse export --session <uuid> --out <path>"
+    ],
+    "examples": [
+      {
+        "command": "muse export --session <uuid> --out run.json",
+        "explanation": "Export one session's trajectory to a JSON file.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Audit a run after the fact, or feed a recorded trajectory into a replay check."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.export",
+      "muse-code.cli-flag.session"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a retained session log.",
+        "The export document embeds the CLI version that produced it."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.trace-inspect",
+    "tool": "muse-code",
+    "name": "muse trace inspect",
+    "display_name": "Inspect a trace",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "diagnostics",
+    "role": "Session inspection",
+    "description": "Inspect a recorded session event log after the run for post-hoc analysis.",
+    "syntax": [
+      "muse trace inspect"
+    ],
+    "examples": [
+      {
+        "command": "muse trace inspect",
+        "explanation": "Inspect the recorded event log of a session after it ran.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Answer which model call, tool call, or approval decision produced a result."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.export"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a retained session log."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.config",
+    "tool": "muse-code",
+    "name": "muse config",
+    "display_name": "Validate managed configuration",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "configuration",
+    "role": "Configuration validation",
+    "description": "Validate enterprise-managed configuration documents.",
+    "syntax": [
+      "muse config"
+    ],
+    "examples": [
+      {
+        "command": "muse config",
+        "explanation": "Validate an enterprise-managed configuration document.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check a centrally administered configuration document before rolling it out."
+    ],
+    "capabilities": [
+      "config.inspect"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/changelog",
+        "kind": "release-notes"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Introduced in Muse Code 0.2.1 and currently described only in the release notes."
+    ]
+  },
+  {
+    "id": "muse-code.cli-subcommand.skills",
+    "tool": "muse-code",
+    "name": "muse skills",
+    "display_name": "Manage skills",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "skills",
+    "role": "Skill management",
+    "description": "Command group for listing, inspecting, enabling, installing, validating, and importing skills.",
+    "syntax": [
+      "muse skills <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills list",
+        "explanation": "List every skill from all sources.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Work with the skill catalog from the shell rather than from a session."
+    ],
+    "related_commands": [
+      "muse-code.skill.project-skill-md"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.skills-list",
+    "tool": "muse-code",
+    "name": "muse skills list",
+    "display_name": "List skills",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill discovery",
+    "description": "List every skill available to Muse Code across built-in, user, project, and plugin sources.",
+    "syntax": [
+      "muse skills list"
+    ],
+    "examples": [
+      {
+        "command": "muse skills list",
+        "explanation": "Show every skill and the source it loads from.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check which skills a workspace actually exposes before you invoke one."
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.skills-inspect",
+    "tool": "muse-code",
+    "name": "muse skills inspect",
+    "display_name": "Inspect a skill",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill inspection",
+    "description": "Show the definition and metadata of one skill by id.",
+    "syntax": [
+      "muse skills inspect <skill-id>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills inspect plan",
+        "explanation": "Inspect the built-in plan skill.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Read what a skill actually instructs before you trust it in a project."
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.skills-enable",
+    "tool": "muse-code",
+    "name": "muse skills enable",
+    "display_name": "Enable a skill",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill activation",
+    "description": "Enable a skill at the chosen scope.",
+    "syntax": [
+      "muse skills enable <skill-id> --scope <project|user>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills enable my-skill --scope project",
+        "explanation": "Enable a skill for this project.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Turn on a discovered skill for a project or for your account."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.scope"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.skills-install",
+    "tool": "muse-code",
+    "name": "muse skills install",
+    "display_name": "Install a skill",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill installation",
+    "description": "Install a skill directory at the chosen scope.",
+    "syntax": [
+      "muse skills install <path> --scope <project|user>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills install ./my-skill --scope user",
+        "explanation": "Install a local skill directory for your account.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Add a skill you authored or received to your account or a repository."
+    ],
+    "when_not_to_use": [
+      "Do not install a skill directory you have not read; skill text is model-visible instruction."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.skills-validate",
+      "muse-code.cli-flag.scope"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.skills-validate",
+    "tool": "muse-code",
+    "name": "muse skills validate",
+    "display_name": "Validate a skill",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill validation",
+    "description": "Check a skill directory before installing it.",
+    "syntax": [
+      "muse skills validate <path>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills validate ./my-skill",
+        "explanation": "Check a skill directory before installing it.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Catch a malformed skill before it reaches a shared project."
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.skills-import",
+    "tool": "muse-code",
+    "name": "muse skills import",
+    "display_name": "Import skills",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.skills",
+    "category": "skills",
+    "role": "Skill import",
+    "description": "Import skills from another agent's skill directories.",
+    "syntax": [
+      "muse skills import --from <claude|codex>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills import --from claude",
+        "explanation": "Import skills authored for Claude Code.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Reuse an existing skill library rather than rewriting it for Muse Code."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.from"
+    ],
+    "capabilities": [
+      "skills.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.workflows",
+    "tool": "muse-code",
+    "name": "muse workflows",
+    "display_name": "Manage workflows",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-command.launch",
+    "category": "agents",
+    "role": "Workflow management",
+    "description": "Command group for saving, listing, and recovering reusable multi-agent workflows.",
+    "syntax": [
+      "muse workflows <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "muse workflows list",
+        "explanation": "List the workflows a repository and your account expose.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Manage saved workflow scripts from the shell."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a build that includes the workflow script engine and access to the staged WorkflowTool rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.workflows-save",
+    "tool": "muse-code",
+    "name": "muse workflows save",
+    "display_name": "Save a workflow",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.workflows",
+    "category": "agents",
+    "role": "Workflow authoring",
+    "description": "Save a JavaScript workflow script at project or user scope so a session can run it by name.",
+    "syntax": [
+      "muse workflows save <name> --from <path> --scope <project|user>",
+      "muse workflows save <name> --from <path> --overwrite"
+    ],
+    "examples": [
+      {
+        "command": "muse workflows save review-change --from ./review-change.js --scope project",
+        "explanation": "Write .agents/workflows/review-change.js for the repository.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Keep an orchestration pattern your team repeats."
+    ],
+    "when_not_to_use": [
+      "Saving does not parse or run the JavaScript; syntax errors surface when the workflow launches."
+    ],
+    "related_commands": [
+      "muse-code.workflow.agents-workflows-name-js",
+      "muse-code.cli-flag.overwrite"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a build that includes the workflow script engine and access to the staged WorkflowTool rollout.",
+        "The source must be a regular, nonempty UTF-8 file no larger than 512 KiB."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Workflow names use lowercase letters, digits, periods, underscores, and hyphens, start with a lowercase letter or digit, and run to 64 characters."
+    ]
+  },
+  {
+    "id": "muse-code.cli-subcommand.workflows-list",
+    "tool": "muse-code",
+    "name": "muse workflows list",
+    "display_name": "List workflows",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.workflows",
+    "category": "agents",
+    "role": "Workflow discovery",
+    "description": "List the saved workflows available at project and user scope.",
+    "syntax": [
+      "muse workflows list"
+    ],
+    "examples": [
+      {
+        "command": "muse workflows list",
+        "explanation": "List saved project and user workflows.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Confirm a saved workflow is discoverable before a session tries to run it."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a build that includes the workflow script engine and access to the staged WorkflowTool rollout.",
+        "Trust the workspace in a session first, then exit before listing project workflows."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-subcommand.workflows-recover",
+    "tool": "muse-code",
+    "name": "muse workflows recover",
+    "display_name": "Recover a workflow run",
+    "type": "cli-subcommand",
+    "parent_id": "muse-code.cli-subcommand.workflows",
+    "category": "agents",
+    "role": "Workflow recovery",
+    "description": "Restart the remaining child work of a retained workflow run after a process restart.",
+    "syntax": [
+      "muse workflows recover <run-id> --session <session-id> --apply"
+    ],
+    "examples": [
+      {
+        "command": "muse workflows recover <run-id> --session <session-id> --apply",
+        "explanation": "Reuse committed results and restart only the remaining child work.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Continue a workflow whose owning process exited before the run finished."
+    ],
+    "when_not_to_use": [
+      "Wait for the current attempt to finish or fail first; one workflow owner runs at a time."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.apply",
+      "muse-code.cli-flag.session"
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a workflow-engine-enabled build and the retained session identifiers."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

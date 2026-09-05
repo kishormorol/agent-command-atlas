@@ -313,7 +313,7 @@ function homeView() {
   const verifiedDates = state.entries.map((entry) => entry.verification.last_verified).filter(Boolean).sort();
   return `<section class="hero">
       <div class="hero__content">
-        <div class="hero__copy"><p class="eyebrow">Agent Command Atlas · Verified reference</p><h1>Find the right<br><span>agent command.</span></h1><p>Search commands, flags, shortcuts, and control surfaces across Codex, Claude Code, Gemini CLI, Cursor, and GitHub Copilot CLI.</p><a class="hero__star" href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer"><span aria-hidden="true">★</span> Star this project on GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="hero__copy"><p class="eyebrow">Agent Command Atlas · Verified reference</p><h1>Find the right<br><span>agent command.</span></h1><p>Search commands, flags, shortcuts, and control surfaces across Codex, Claude Code, Gemini CLI, Cursor, GitHub Copilot CLI, and Muse Code.</p><a class="hero__star" href="https://github.com/kishormorol/agent-command-atlas" target="_blank" rel="noreferrer"><span aria-hidden="true">★</span> Star this project on GitHub <span aria-hidden="true">↗</span></a></div>
         <div class="hero__command-palette">
           <div class="command-palette__bar"><span></span><span></span><span></span><strong>atlas / search</strong></div>
           ${searchBox(filters)}

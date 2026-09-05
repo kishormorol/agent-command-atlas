@@ -1,0 +1,1465 @@
+[
+  {
+    "id": "muse-code.cli-flag.model",
+    "tool": "muse-code",
+    "name": "--model",
+    "display_name": "Select the model",
+    "type": "cli-flag",
+    "category": "models",
+    "role": "Model selection",
+    "description": "Choose the model for the run. The default model is muse-spark-1.2.",
+    "syntax": [
+      "muse --model <id>",
+      "muse exec --model <id> \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse --model muse-spark-1.2",
+        "explanation": "Start a session on a specific model.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Pin a run to a model other than the default."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.models"
+    ],
+    "capabilities": [
+      "model.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Since 0.2.1 --model accepts any model id; an unknown id uses assumed metadata instead of being rejected."
+    ]
+  },
+  {
+    "id": "muse-code.cli-flag.reasoning-effort",
+    "tool": "muse-code",
+    "name": "--reasoning-effort",
+    "display_name": "Set reasoning effort",
+    "type": "cli-flag",
+    "category": "models",
+    "role": "Reasoning depth",
+    "description": "Trade latency for depth with none, minimal, low, medium, high, xhigh, or ultra. The default is high.",
+    "syntax": [
+      "muse --reasoning-effort <none|minimal|low|medium|high|xhigh|ultra>"
+    ],
+    "examples": [
+      {
+        "command": "muse --reasoning-effort medium",
+        "explanation": "Lower reasoning depth for a faster session.",
+        "level": "minimal"
+      },
+      {
+        "command": "muse exec --reasoning-effort xhigh \"Audit this module for race conditions.\"",
+        "explanation": "Use the premium-precision tier for a hard headless task.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Match reasoning depth to the difficulty of the task."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.effort"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "The Meta provider does not accept none; other providers can support it."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "ultra is a client-side setting that maps to each provider's highest supported tier and can make Muse Code delegate more aggressively."
+    ]
+  },
+  {
+    "id": "muse-code.cli-flag.approval-mode",
+    "tool": "muse-code",
+    "name": "--approval-mode",
+    "display_name": "Set the approval mode",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Approval policy",
+    "description": "Select the approval policy for tool calls with side effects: on-request, untrusted, or never.",
+    "syntax": [
+      "muse --approval-mode <on-request|untrusted|never>"
+    ],
+    "examples": [
+      {
+        "command": "muse --approval-mode untrusted",
+        "explanation": "Stop for review on any shell stage with no matching allow rule.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Tighten or loosen approvals for one run without touching the sandbox."
+    ],
+    "related_commands": [
+      "muse-code.permission.on-request",
+      "muse-code.permission.untrusted",
+      "muse-code.permission.never"
+    ],
+    "capabilities": [
+      "permissions.configure",
+      "mode.select"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.approval-judge",
+    "tool": "muse-code",
+    "name": "--approval-judge",
+    "display_name": "Toggle the approval judge",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Approval automation",
+    "description": "Turn the built-in judge that reviews prompt-bound calls automatically on or off.",
+    "syntax": [
+      "muse --approval-judge <on|off>"
+    ],
+    "examples": [
+      {
+        "command": "muse --approval-judge off",
+        "explanation": "Send every review decision to you instead of the judge.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "See every approval decision yourself while you are learning what the agent does."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.approval-mode"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The judge is part of the approval layer, not a separate layer. Introduced in 0.2.1 as automatic approval pre-screening."
+    ]
+  },
+  {
+    "id": "muse-code.cli-flag.sandbox-network",
+    "tool": "muse-code",
+    "name": "--sandbox-network",
+    "display_name": "Set sandbox network access",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Network policy",
+    "description": "Control outbound network access from sandboxed commands: proxy-only, restricted, or enabled.",
+    "syntax": [
+      "muse --sandbox-network <proxy-only|restricted|enabled>"
+    ],
+    "examples": [
+      {
+        "command": "muse --sandbox-network restricted",
+        "explanation": "Run with no network access at all.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Decide how much network reach a run needs before it starts."
+    ],
+    "related_commands": [
+      "muse-code.permission.proxy-only",
+      "muse-code.permission.restricted",
+      "muse-code.permission.network-enabled"
+    ],
+    "capabilities": [
+      "permissions.sandbox"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "--disable-sandbox forces full egress and overrides this flag."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.disable-sandbox",
+    "tool": "muse-code",
+    "name": "--disable-sandbox",
+    "display_name": "Disable the sandbox",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Sandbox opt-out",
+    "description": "Keep approval, but run shell commands outside the OS sandbox.",
+    "syntax": [
+      "muse --disable-sandbox"
+    ],
+    "examples": [
+      {
+        "command": "muse --disable-sandbox",
+        "explanation": "Keep approval prompts while removing OS containment.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run on a host where the OS sandbox cannot be enforced and you accept the loss of containment."
+    ],
+    "when_not_to_use": [
+      "Avoid it on a workstation with real credentials; it also lets write_file and edit_file write anywhere on the filesystem."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.sandbox-network"
+    ],
+    "capabilities": [
+      "permissions.sandbox"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "It removes workspace confinement from the file tools and forces the network to full egress."
+    ]
+  },
+  {
+    "id": "muse-code.cli-flag.disable-approval",
+    "tool": "muse-code",
+    "name": "--disable-approval",
+    "display_name": "Disable approvals",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Approval opt-out",
+    "description": "Skip approval prompts while keeping the OS sandbox on.",
+    "syntax": [
+      "muse --disable-approval",
+      "muse exec --disable-approval \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse exec --disable-approval \"Run the test suite and summarize failures.\"",
+        "explanation": "Run unattended with the sandbox still containing what runs.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Run non-interactively where nobody can answer an approval prompt."
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.yolo",
+    "tool": "muse-code",
+    "name": "--yolo",
+    "display_name": "Disable all guardrails",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Guardrail opt-out",
+    "description": "Disable approval and the sandbox and trust the workspace for this run.",
+    "syntax": [
+      "muse --yolo",
+      "muse exec --yolo \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse --yolo",
+        "explanation": "Run with no approval, no sandbox, and the workspace trusted.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run inside an already-isolated environment such as a disposable CI container."
+    ],
+    "when_not_to_use": [
+      "Never use it on a workstation with access to real credentials or infrastructure, or on a fork or pull-request checkout whose AGENTS.md, rules, and skills are attacker-controlled."
+    ],
+    "related_commands": [
+      "muse-code.cli-flag.disable-sandbox",
+      "muse-code.cli-flag.disable-approval",
+      "muse-code.cli-flag.trust-workspace"
+    ],
+    "capabilities": [
+      "permissions.configure"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.trust-workspace",
+    "tool": "muse-code",
+    "name": "--trust-workspace",
+    "display_name": "Trust the workspace",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Workspace trust",
+    "description": "Trust the current workspace for the run so its project skills, rules, and hooks load.",
+    "syntax": [
+      "muse --trust-workspace"
+    ],
+    "examples": [
+      {
+        "command": "muse --trust-workspace",
+        "explanation": "Load project skills, rules, and hooks without the first-run prompt.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Skip the trust prompt in a checkout you already control."
+    ],
+    "when_not_to_use": [
+      "Do not trust a checkout you did not write; project instruction files are model-visible instruction."
+    ],
+    "related_commands": [
+      "muse-code.permission.workspace-trust"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/permissions",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.workspace",
+    "tool": "muse-code",
+    "name": "--workspace",
+    "display_name": "Set the workspace root",
+    "type": "cli-flag",
+    "category": "permissions",
+    "role": "Workspace scope",
+    "description": "Root the policy-gated workspace tools at a given path.",
+    "syntax": [
+      "muse --workspace <path>"
+    ],
+    "examples": [
+      {
+        "command": "muse --workspace /path/to/project",
+        "explanation": "Scope the agent's workspace tools to one directory.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Point a session at a checkout other than the current directory."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.subagent-worktree-isolation",
+    "tool": "muse-code",
+    "name": "--subagent-worktree-isolation",
+    "display_name": "Request subagent worktree isolation",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Subagent isolation",
+    "description": "Compatibility flag for subagent worktree isolation.",
+    "syntax": [
+      "muse --subagent-worktree-isolation"
+    ],
+    "examples": [
+      {
+        "command": "muse --subagent-worktree-isolation",
+        "explanation": "Launch with the compatibility isolation flag accepted.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Keep an existing launch command working after isolation moved to a per-child request."
+    ],
+    "when_not_to_use": [
+      "Do not rely on it to isolate every child; isolation is selected per subagent."
+    ],
+    "related_commands": [
+      "muse-code.agent.subagent"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "The flag remains accepted for compatibility. It does not force every child into a worktree."
+    ]
+  },
+  {
+    "id": "muse-code.cli-flag.worktree",
+    "tool": "muse-code",
+    "name": "-w",
+    "display_name": "Run in a managed worktree",
+    "type": "cli-flag",
+    "category": "worktrees",
+    "role": "Worktree session",
+    "description": "Create a Muse Code-managed Git worktree from HEAD for this session.",
+    "syntax": [
+      "muse -w"
+    ],
+    "examples": [
+      {
+        "command": "muse -w",
+        "explanation": "Start a session in its own managed worktree from HEAD.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run more than one writing session against the same repository without collisions."
+    ],
+    "when_not_to_use": [
+      "Keep read-only sessions in the shared checkout instead."
+    ],
+    "capabilities": [
+      "worktree.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a Git repository."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/session-messaging",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.no-session-log",
+    "tool": "muse-code",
+    "name": "--no-session-log",
+    "display_name": "Run without a session log",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session logging",
+    "description": "Run without retaining the session event log.",
+    "syntax": [
+      "muse --no-session-log",
+      "muse exec --no-session-log \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse --no-session-log",
+        "explanation": "Run an interactive session with no retained log.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Run a session you do not want recorded on disk."
+    ],
+    "when_not_to_use": [
+      "It forfeits resume, trajectory export and reattach, automatic session naming and peer messaging, rewind, and retained workflow recovery."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.resume",
+      "muse-code.slash-command.export"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.version",
+    "tool": "muse-code",
+    "name": "--version",
+    "display_name": "Show the version",
+    "type": "cli-flag",
+    "category": "system",
+    "role": "Version information",
+    "description": "Print the installed Muse Code version.",
+    "syntax": [
+      "muse --version"
+    ],
+    "examples": [
+      {
+        "command": "muse --version",
+        "explanation": "Confirm Muse Code is on your path and show its version.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Verify the install, or record the version alongside a bug report."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.json",
+    "tool": "muse-code",
+    "name": "--json",
+    "display_name": "Emit JSONL events",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Structured output",
+    "description": "Emit JSONL events on stdout during a headless run.",
+    "syntax": [
+      "muse exec --json \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse exec --json \"Refactor the auth module and run the tests.\"",
+        "explanation": "Stream structured events for a pipeline to parse.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Consume a headless run's progress from a script rather than reading prose."
+    ],
+    "when_not_to_use": [
+      "It is a headless-only flag; the interactive TUI does not accept it."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.exec"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.prompt-file",
+    "tool": "muse-code",
+    "name": "--prompt-file",
+    "display_name": "Read the prompt from a file",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Prompt input",
+    "description": "Read a headless run's prompt from a file instead of an argument.",
+    "syntax": [
+      "muse exec --prompt-file <path>"
+    ],
+    "examples": [
+      {
+        "command": "muse exec --prompt-file ./task.txt",
+        "explanation": "Run a long prompt kept in version control.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Keep a long or reviewed prompt in the repository rather than in shell history."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.max-model-steps",
+    "tool": "muse-code",
+    "name": "--max-model-steps",
+    "display_name": "Cap model steps",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Run limit",
+    "description": "Cap the number of model steps in a headless run.",
+    "syntax": [
+      "muse exec --max-model-steps <n> \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse exec --max-model-steps 40 \"Fix the failing test.\"",
+        "explanation": "Stop a stuck task from looping indefinitely.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Bound the cost and duration of an unattended run."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Hitting the limit ends the run with exit code 1."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.session-id",
+    "tool": "muse-code",
+    "name": "--session-id",
+    "display_name": "Continue a session headlessly",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session continuation",
+    "description": "Continue an existing session non-interactively by id.",
+    "syntax": [
+      "muse exec --session-id <uuid> \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse exec --session-id <uuid> \"Continue the task.\"",
+        "explanation": "Resume an interrupted job from a script.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Continue an interrupted CI job without opening the interactive UI."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.resume"
+    ],
+    "capabilities": [
+      "session.resume"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.allow-workspace-switch",
+    "tool": "muse-code",
+    "name": "--allow-workspace-switch",
+    "display_name": "Allow a workspace switch",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session continuation",
+    "description": "Permit continuing a session from a workspace other than the one it started in.",
+    "syntax": [
+      "muse exec --session-id <uuid> --allow-workspace-switch \"<prompt>\""
+    ],
+    "examples": [
+      {
+        "command": "muse exec --session-id <uuid> --allow-workspace-switch \"Continue the task.\"",
+        "explanation": "Continue a session from a different checkout path.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Resume a run whose checkout moved, such as a fresh CI workspace."
+    ],
+    "when_not_to_use": [
+      "Without it Muse Code refuses a workspace mismatch, which is the safer default."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.dry-run",
+    "tool": "muse-code",
+    "name": "--dry-run",
+    "display_name": "Preview the change",
+    "type": "cli-flag",
+    "category": "project-instructions",
+    "role": "Preview",
+    "description": "Show what muse init would write without changing anything.",
+    "syntax": [
+      "muse init --dry-run"
+    ],
+    "examples": [
+      {
+        "command": "muse init --dry-run",
+        "explanation": "Preview the AGENTS.md that muse init would create.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check the generated instruction file before it lands in a repository."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.init"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.force",
+    "tool": "muse-code",
+    "name": "--force",
+    "display_name": "Overwrite the instruction file",
+    "type": "cli-flag",
+    "category": "project-instructions",
+    "role": "Overwrite",
+    "description": "Let muse init overwrite an existing AGENTS.md completely.",
+    "syntax": [
+      "muse init --force"
+    ],
+    "examples": [
+      {
+        "command": "muse init --force",
+        "explanation": "Replace an existing AGENTS.md with a freshly seeded one.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Reseed instructions in a project whose AGENTS.md is disposable."
+    ],
+    "when_not_to_use": [
+      "Save existing content first; the overwrite is complete."
+    ],
+    "related_commands": [
+      "muse-code.cli-subcommand.init"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.scope",
+    "tool": "muse-code",
+    "name": "--scope",
+    "display_name": "Choose the install scope",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "Scope selection",
+    "description": "Select project or user scope when enabling or installing a skill, or saving a workflow.",
+    "syntax": [
+      "muse skills enable <skill-id> --scope <project|user>",
+      "muse skills install <path> --scope <project|user>",
+      "muse workflows save <name> --from <path> --scope <project|user>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills install ./my-skill --scope user",
+        "explanation": "Install a skill for your account rather than one repository.",
+        "level": "minimal"
+      },
+      {
+        "command": "muse workflows save review-change --from ./review-change.js --scope project",
+        "explanation": "Save a workflow into the repository at .agents/workflows/.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Decide whether a skill or workflow travels with the repository or stays on your machine."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Saving a workflow defaults to project scope."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.from",
+    "tool": "muse-code",
+    "name": "--from",
+    "display_name": "Choose the source",
+    "type": "cli-flag",
+    "category": "configuration",
+    "role": "Source selection",
+    "description": "Name the source to import skills from, or the script file a saved workflow is created from.",
+    "syntax": [
+      "muse skills import --from <claude|codex>",
+      "muse workflows save <name> --from <path>"
+    ],
+    "examples": [
+      {
+        "command": "muse skills import --from codex",
+        "explanation": "Import skills authored for Codex.",
+        "level": "minimal"
+      },
+      {
+        "command": "muse workflows save review-change --from ./review-change.js",
+        "explanation": "Save a local script as a named workflow.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Reuse skills from another agent, or promote a local script into a named workflow."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "skills import --from reports the accepted values when given an unknown source."
+    ]
+  },
+  {
+    "id": "muse-code.cli-flag.overwrite",
+    "tool": "muse-code",
+    "name": "--overwrite",
+    "display_name": "Overwrite the saved workflow",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Overwrite",
+    "description": "Replace an existing workflow at the selected destination.",
+    "syntax": [
+      "muse workflows save <name> --from <path> --overwrite"
+    ],
+    "examples": [
+      {
+        "command": "muse workflows save review-change --from ./review-change.js --overwrite",
+        "explanation": "Replace a workflow of the same name at the same scope.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Update a saved workflow in place after editing its script."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a build that includes the workflow script engine and access to the staged WorkflowTool rollout."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "notes": [
+      "Without it, a collision at the exact selected destination fails. The same name may still exist in another scope."
+    ]
+  },
+  {
+    "id": "muse-code.cli-flag.session",
+    "tool": "muse-code",
+    "name": "--session",
+    "display_name": "Select the session",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Session selection",
+    "description": "Name the retained session for an export or a workflow recovery.",
+    "syntax": [
+      "muse export --session <uuid> --out <path>",
+      "muse workflows recover <run-id> --session <session-id>"
+    ],
+    "examples": [
+      {
+        "command": "muse export --session <uuid> --out run.json",
+        "explanation": "Export one retained session's trajectory.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Address a specific retained session from the shell."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.out",
+    "tool": "muse-code",
+    "name": "--out",
+    "display_name": "Choose the output path",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Output path",
+    "description": "Write the export to a chosen path.",
+    "syntax": [
+      "muse export --session <uuid> --out <path>",
+      "/export transcript --out <path>"
+    ],
+    "examples": [
+      {
+        "command": "muse export --session <uuid> --out run.json",
+        "explanation": "Write the session trajectory to run.json.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Control where an exported transcript or trajectory lands."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.export"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/extending",
+        "kind": "official-docs"
+      },
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.apply",
+    "tool": "muse-code",
+    "name": "--apply",
+    "display_name": "Apply the recovery",
+    "type": "cli-flag",
+    "category": "agents",
+    "role": "Workflow recovery",
+    "description": "Apply a workflow recovery rather than only reporting what it would do.",
+    "syntax": [
+      "muse workflows recover <run-id> --session <session-id> --apply"
+    ],
+    "examples": [
+      {
+        "command": "muse workflows recover <run-id> --session <session-id> --apply",
+        "explanation": "Restart the remaining child work of a retained run.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Resume a workflow after the owning process restarted."
+    ],
+    "maturity": "conditional",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Requires a workflow-engine-enabled build and retained session identifiers."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/workflows",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "muse-code.cli-flag.redacted",
+    "tool": "muse-code",
+    "name": "--redacted",
+    "display_name": "Redact the export",
+    "type": "cli-flag",
+    "category": "session",
+    "role": "Export redaction",
+    "description": "Scrub secret-shaped strings from an exported transcript or trajectory.",
+    "syntax": [
+      "/export transcript --redacted",
+      "/export trajectory --redacted"
+    ],
+    "examples": [
+      {
+        "command": "/export transcript --redacted",
+        "explanation": "Export a transcript with secret-shaped strings scrubbed.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Share a session record outside the machine it ran on."
+    ],
+    "when_not_to_use": [
+      "Redaction is pattern-based; review the output before publishing it."
+    ],
+    "related_commands": [
+      "muse-code.slash-command.export"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://dev.meta.ai/docs/muse-code/interactive",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  }
+]

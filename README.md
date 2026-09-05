@@ -8,13 +8,14 @@
 
 Agent Command Atlas is a searchable, source-linked reference for the commands and control surfaces developers use every day with AI coding agents.
 
-It covers five ecosystems in one consistent, honest interface:
+It covers six ecosystems in one consistent, honest interface:
 
 1. OpenAI Codex
 2. Anthropic Claude Code
 3. Google Gemini CLI
 4. Cursor
 5. GitHub Copilot CLI
+6. Meta Muse Code
 
 The project turns one canonical dataset into complementary outputs:
 
@@ -112,4 +113,4 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for detailed requirements.
 
 ## Project status
 
-The atlas now covers interactive commands, nested subcommands, CLI flags, configuration, environment variables, shortcuts, hooks, permissions, MCP, skills, and agent controls across all five ecosystems. It remains a living reference rather than a claim that fast-changing vendor surfaces can ever be permanently complete. See [the roadmap](docs/ROADMAP.md).
+The atlas now covers interactive commands, nested subcommands, CLI flags, configuration, environment variables, shortcuts, hooks, permissions, MCP, skills, and agent controls across all six ecosystems. It remains a living reference rather than a claim that fast-changing vendor surfaces can ever be permanently complete. See [the roadmap](docs/ROADMAP.md).
