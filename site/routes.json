@@ -2710,6 +2710,11 @@
     "id": "claude-code.cli-flag.brief"
   },
   {
+    "path": "claude-code/callback-port/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-callback-port"
+  },
+  {
     "path": "claude-code/channels/",
     "kind": "entry",
     "id": "claude-code.cli-flag.channels"
@@ -2718,6 +2723,16 @@
     "path": "claude-code/cli-flag-chrome/",
     "kind": "entry",
     "id": "claude-code.cli-flag.chrome"
+  },
+  {
+    "path": "claude-code/client-id/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-client-id"
+  },
+  {
+    "path": "claude-code/client-secret/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-client-secret"
   },
   {
     "path": "claude-code/cloud/",
@@ -2770,6 +2785,11 @@
     "id": "claude-code.cli-flag.enable-auto-mode"
   },
   {
+    "path": "claude-code/env/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-env"
+  },
+  {
     "path": "claude-code/environment/",
     "kind": "entry",
     "id": "claude-code.cli-flag.environment"
@@ -2808,6 +2828,11 @@
     "path": "claude-code/from-pr/",
     "kind": "entry",
     "id": "claude-code.cli-flag.from-pr"
+  },
+  {
+    "path": "claude-code/header/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-header"
   },
   {
     "path": "claude-code/cli-flag-help/",
@@ -2975,6 +3000,11 @@
     "id": "claude-code.cli-flag.safe-mode"
   },
   {
+    "path": "claude-code/scope/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-scope"
+  },
+  {
     "path": "claude-code/session-id/",
     "kind": "entry",
     "id": "claude-code.cli-flag.session-id"
@@ -3028,6 +3058,11 @@
     "path": "claude-code/tools/",
     "kind": "entry",
     "id": "claude-code.cli-flag.tools"
+  },
+  {
+    "path": "claude-code/transport/",
+    "kind": "entry",
+    "id": "claude-code.cli-flag.mcp-transport"
   },
   {
     "path": "claude-code/verbose/",
@@ -3145,6 +3180,31 @@
     "id": "claude-code.cli-subcommand.mcp"
   },
   {
+    "path": "claude-code/claude-mcp-add/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-add"
+  },
+  {
+    "path": "claude-code/claude-mcp-add-from-claude-desktop/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-add-from-claude-desktop"
+  },
+  {
+    "path": "claude-code/claude-mcp-add-json/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-add-json"
+  },
+  {
+    "path": "claude-code/claude-mcp-get/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-get"
+  },
+  {
+    "path": "claude-code/claude-mcp-list/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-list"
+  },
+  {
     "path": "claude-code/claude-mcp-login/",
     "kind": "entry",
     "id": "claude-code.cli-subcommand.mcp-login"
@@ -3155,9 +3215,104 @@
     "id": "claude-code.cli-subcommand.mcp-logout"
   },
   {
+    "path": "claude-code/claude-mcp-remove/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-remove"
+  },
+  {
+    "path": "claude-code/claude-mcp-reset-project-choices/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-reset-project-choices"
+  },
+  {
+    "path": "claude-code/claude-mcp-serve/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.mcp-serve"
+  },
+  {
     "path": "claude-code/claude-plugin/",
     "kind": "entry",
     "id": "claude-code.cli-subcommand.plugin"
+  },
+  {
+    "path": "claude-code/claude-plugin-details/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-details"
+  },
+  {
+    "path": "claude-code/claude-plugin-disable/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-disable"
+  },
+  {
+    "path": "claude-code/claude-plugin-enable/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-enable"
+  },
+  {
+    "path": "claude-code/claude-plugin-init/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-init"
+  },
+  {
+    "path": "claude-code/claude-plugin-install/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-install"
+  },
+  {
+    "path": "claude-code/claude-plugin-list/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-list"
+  },
+  {
+    "path": "claude-code/claude-plugin-marketplace/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-marketplace"
+  },
+  {
+    "path": "claude-code/claude-plugin-marketplace-add/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-marketplace-add"
+  },
+  {
+    "path": "claude-code/claude-plugin-marketplace-list/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-marketplace-list"
+  },
+  {
+    "path": "claude-code/claude-plugin-marketplace-remove/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-marketplace-remove"
+  },
+  {
+    "path": "claude-code/claude-plugin-marketplace-update/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-marketplace-update"
+  },
+  {
+    "path": "claude-code/claude-plugin-prune/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-prune"
+  },
+  {
+    "path": "claude-code/claude-plugin-tag/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-tag"
+  },
+  {
+    "path": "claude-code/claude-plugin-uninstall/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-uninstall"
+  },
+  {
+    "path": "claude-code/claude-plugin-update/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-update"
+  },
+  {
+    "path": "claude-code/claude-plugin-validate/",
+    "kind": "entry",
+    "id": "claude-code.cli-subcommand.plugin-validate"
   },
   {
     "path": "claude-code/claude-project/",
@@ -3570,7 +3725,7 @@
     "id": "claude-code.config-option.enforceavailablemodels"
   },
   {
-    "path": "claude-code/env/",
+    "path": "claude-code/config-option-env/",
     "kind": "entry",
     "id": "claude-code.config-option.env"
   },

@@ -1880,5 +1880,1671 @@
     "aliases": [
       "-h"
     ]
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-add",
+    "tool": "claude-code",
+    "name": "claude mcp add",
+    "display_name": "Add an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Add an MCP server over stdio, SSE, or HTTP transport.",
+    "syntax": [
+      "claude mcp add [options] <name> <commandOrUrl> [args...]"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add --transport http sentry https://mcp.sentry.dev/mcp",
+        "explanation": "Add an HTTP server.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude mcp add my-server -e API_KEY=xxx -- npx my-mcp-server",
+        "explanation": "Add a stdio server with an environment variable.",
+        "level": "practical"
+      },
+      {
+        "command": "claude mcp add --transport http corridor https://app.corridor.dev/api/mcp --header \"Authorization: Bearer ...\"",
+        "explanation": "Add an HTTP server that needs an auth header.",
+        "level": "workflow"
+      }
+    ],
+    "when_to_use": [
+      "Register a server without editing configuration files by hand."
+    ],
+    "when_not_to_use": [
+      "Review a server's command, URL, environment, and exposed tools before adding it; MCP tools act outside the repository."
+    ],
+    "related_commands": [
+      "claude-code.cli-flag.mcp-transport",
+      "claude-code.cli-flag.mcp-scope",
+      "claude-code.cli-subcommand.mcp-remove"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-add-json",
+    "tool": "claude-code",
+    "name": "claude mcp add-json",
+    "display_name": "Add an MCP server from JSON",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Add an MCP server from a JSON configuration string.",
+    "syntax": [
+      "claude mcp add-json [options] <name> <json>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add-json my-server '{\"command\":\"npx\",\"args\":[\"my-mcp-server\"]}'",
+        "explanation": "Add a server from a JSON definition.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Script server registration, or copy a definition from another machine."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-add"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-add-from-claude-desktop",
+    "tool": "claude-code",
+    "name": "claude mcp add-from-claude-desktop",
+    "display_name": "Import servers from Claude Desktop",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Import MCP servers already configured in Claude Desktop.",
+    "syntax": [
+      "claude mcp add-from-claude-desktop [options]"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add-from-claude-desktop",
+        "explanation": "Import Claude Desktop's configured servers.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Reuse servers you already trust in Claude Desktop."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-add"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Available on macOS and WSL only."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-get",
+    "tool": "claude-code",
+    "name": "claude mcp get",
+    "display_name": "Show one MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP inspection",
+    "description": "Show the configuration of a single MCP server.",
+    "syntax": [
+      "claude mcp get <name>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp get sentry",
+        "explanation": "Inspect one server's configuration.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Confirm a server's transport, scope, and command before debugging it."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-list"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-list",
+    "tool": "claude-code",
+    "name": "claude mcp list",
+    "display_name": "List MCP servers",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP inspection",
+    "description": "List the configured MCP servers and their connection state.",
+    "syntax": [
+      "claude mcp list"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp list",
+        "explanation": "List configured servers.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check which servers a project actually loads."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-get"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-remove",
+    "tool": "claude-code",
+    "name": "claude mcp remove",
+    "display_name": "Remove an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Remove a configured MCP server, optionally from a specific scope.",
+    "syntax": [
+      "claude mcp remove [options] <name>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp remove sentry",
+        "explanation": "Remove a server.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude mcp remove sentry --scope project",
+        "explanation": "Remove it from the project scope only.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Drop a server you no longer trust or need."
+    ],
+    "related_commands": [
+      "claude-code.cli-flag.mcp-scope",
+      "claude-code.cli-subcommand.mcp-add"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-reset-project-choices",
+    "tool": "claude-code",
+    "name": "claude mcp reset-project-choices",
+    "display_name": "Reset project server approvals",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP trust",
+    "description": "Clear the approval choices recorded for project-scoped MCP servers.",
+    "syntax": [
+      "claude mcp reset-project-choices"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp reset-project-choices",
+        "explanation": "Ask again about this project's servers.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Re-review project servers after a repository changes hands."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-list"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.mcp-serve",
+    "tool": "claude-code",
+    "name": "claude mcp serve",
+    "display_name": "Serve Claude Code as an MCP server",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.mcp",
+    "category": "mcp",
+    "role": "MCP server",
+    "description": "Run Claude Code itself as an MCP server so another client can use its tools.",
+    "syntax": [
+      "claude mcp serve [options]"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp serve",
+        "explanation": "Expose Claude Code's tools over MCP.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude mcp serve --debug",
+        "explanation": "Serve with debug output while diagnosing a client.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Let another MCP client drive Claude Code's tools."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp"
+    ],
+    "capabilities": [
+      "mcp.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-transport",
+    "tool": "claude-code",
+    "name": "--transport",
+    "display_name": "MCP transport",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Transport for an MCP server: stdio, sse, or http. Defaults to stdio.",
+    "syntax": [
+      "claude mcp add --transport <stdio|sse|http> <name> <commandOrUrl>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add --transport http sentry https://mcp.sentry.dev/mcp",
+        "explanation": "Register an HTTP server.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Register a remote server rather than a local child process."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-scope",
+    "tool": "claude-code",
+    "name": "--scope",
+    "display_name": "MCP configuration scope",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Configuration scope for an MCP server: local, user, or project. Defaults to local.",
+    "syntax": [
+      "claude mcp add --scope <local|user|project> <name> <commandOrUrl>",
+      "claude mcp remove --scope <scope> <name>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add --scope project my-server -- npx my-mcp-server",
+        "explanation": "Share a server with everyone who clones the repository.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Decide whether a server travels with the repository or stays on your machine."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-add",
+      "claude-code.cli-subcommand.mcp-remove"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-env",
+    "tool": "claude-code",
+    "name": "--env",
+    "display_name": "MCP server environment",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Set environment variables for a stdio MCP server.",
+    "syntax": [
+      "claude mcp add <name> -e KEY=value -- <command>"
+    ],
+    "aliases": [
+      "-e"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add my-server -e API_KEY=xxx -- npx my-mcp-server",
+        "explanation": "Pass a credential to a stdio server.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Supply configuration a stdio server reads from its environment."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-header",
+    "tool": "claude-code",
+    "name": "--header",
+    "display_name": "MCP server headers",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP configuration",
+    "description": "Set headers for HTTP or SSE MCP servers.",
+    "syntax": [
+      "claude mcp add --transport http <name> <url> --header \"<Header: value>\""
+    ],
+    "aliases": [
+      "-H"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add --transport http corridor https://app.corridor.dev/api/mcp -H \"X-Api-Key: abc123\"",
+        "explanation": "Authenticate to a remote server with a header.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Reach a remote server that authenticates with a static header."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-add"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-client-id",
+    "tool": "claude-code",
+    "name": "--client-id",
+    "display_name": "MCP OAuth client id",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "OAuth client ID for HTTP or SSE MCP servers.",
+    "syntax": [
+      "claude mcp add --transport http <name> <url> --client-id <clientId>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add --transport http acme https://mcp.acme.dev --client-id abc123",
+        "explanation": "Register a server with a pre-issued OAuth client.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Connect to a server that requires a registered OAuth client."
+    ],
+    "related_commands": [
+      "claude-code.cli-flag.mcp-client-secret",
+      "claude-code.cli-subcommand.mcp-login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-client-secret",
+    "tool": "claude-code",
+    "name": "--client-secret",
+    "display_name": "MCP OAuth client secret",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "Prompt for an OAuth client secret rather than passing it on the command line.",
+    "syntax": [
+      "claude mcp add --transport http <name> <url> --client-secret"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add --transport http acme https://mcp.acme.dev --client-id abc123 --client-secret",
+        "explanation": "Enter the secret at a prompt instead of in shell history.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Keep a client secret out of your shell history."
+    ],
+    "related_commands": [
+      "claude-code.cli-flag.mcp-client-id"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "notes": [
+      "The secret can also be supplied through the MCP_CLIENT_SECRET environment variable."
+    ]
+  },
+  {
+    "id": "claude-code.cli-flag.mcp-callback-port",
+    "tool": "claude-code",
+    "name": "--callback-port",
+    "display_name": "MCP OAuth callback port",
+    "type": "cli-flag",
+    "category": "mcp",
+    "role": "MCP authentication",
+    "description": "Use a fixed port for the OAuth callback, for servers that require a pre-registered redirect URI.",
+    "syntax": [
+      "claude mcp add --transport http <name> <url> --callback-port <port>"
+    ],
+    "examples": [
+      {
+        "command": "claude mcp add --transport http acme https://mcp.acme.dev --callback-port 8123",
+        "explanation": "Match a server's registered redirect URI.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Satisfy a server that only accepts a fixed redirect URI."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.mcp-login"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/mcp",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-list",
+    "tool": "claude-code",
+    "name": "claude plugin list",
+    "display_name": "List installed plugins",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "List the installed plugins.",
+    "syntax": [
+      "claude plugin list"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin list",
+        "explanation": "List installed plugins.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "See what is loaded before debugging an unexpected skill or agent."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-details",
+    "tool": "claude-code",
+    "name": "claude plugin details",
+    "display_name": "Show plugin details",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Show a plugin's component inventory and projected token cost.",
+    "syntax": [
+      "claude plugin details <name>"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin details my-plugin",
+        "explanation": "Inspect a plugin's components and context cost.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Judge whether a plugin earns the context it consumes."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-install",
+    "tool": "claude-code",
+    "name": "claude plugin install",
+    "display_name": "Install a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Install a plugin from an available marketplace.",
+    "syntax": [
+      "claude plugin install <plugin>",
+      "claude plugin install <plugin>@<marketplace>"
+    ],
+    "aliases": [
+      "claude plugin i"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin install my-plugin",
+        "explanation": "Install from the available marketplaces.",
+        "level": "minimal"
+      },
+      {
+        "command": "claude plugin install my-plugin@my-marketplace",
+        "explanation": "Install from a specific marketplace.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Add a packaged set of skills, agents, or commands."
+    ],
+    "when_not_to_use": [
+      "Read what a plugin contributes before installing it; its components run with your session's access."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-uninstall",
+    "tool": "claude-code",
+    "name": "claude plugin uninstall",
+    "display_name": "Uninstall a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Uninstall an installed plugin.",
+    "syntax": [
+      "claude plugin uninstall <plugin>"
+    ],
+    "aliases": [
+      "claude plugin remove"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin uninstall my-plugin",
+        "explanation": "Remove an installed plugin.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Remove a plugin you no longer use."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-enable",
+    "tool": "claude-code",
+    "name": "claude plugin enable",
+    "display_name": "Enable a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Enable a disabled plugin.",
+    "syntax": [
+      "claude plugin enable <plugin>"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin enable my-plugin",
+        "explanation": "Turn a plugin back on.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Re-enable a plugin without reinstalling it."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-disable",
+    "tool": "claude-code",
+    "name": "claude plugin disable",
+    "display_name": "Disable a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Disable an enabled plugin without uninstalling it.",
+    "syntax": [
+      "claude plugin disable [plugin]"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin disable my-plugin",
+        "explanation": "Turn a plugin off but keep it installed.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Narrow a session's surface while keeping the plugin available."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-update",
+    "tool": "claude-code",
+    "name": "claude plugin update",
+    "display_name": "Update a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Update a plugin to its latest version.",
+    "syntax": [
+      "claude plugin update <plugin>"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin update my-plugin",
+        "explanation": "Update one plugin.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Pick up a plugin fix."
+    ],
+    "when_not_to_use": [
+      "A restart is required before the update applies."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-init",
+    "tool": "claude-code",
+    "name": "claude plugin init",
+    "display_name": "Scaffold a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Scaffold a new plugin that auto-loads in the next session.",
+    "syntax": [
+      "claude plugin init <name>"
+    ],
+    "aliases": [
+      "claude plugin new"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin init my-plugin",
+        "explanation": "Scaffold a new plugin skeleton.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Start a plugin without assembling its manifest by hand."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-validate",
+    "tool": "claude-code",
+    "name": "claude plugin validate",
+    "display_name": "Validate a plugin",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Validate a plugin or marketplace manifest, or the skills, agents, and commands in a directory.",
+    "syntax": [
+      "claude plugin validate <path>"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin validate ./my-plugin",
+        "explanation": "Check a plugin before publishing it.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Catch a malformed manifest before anyone installs it."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-tag",
+    "tool": "claude-code",
+    "name": "claude plugin tag",
+    "display_name": "Tag a plugin release",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Create a {name}--v{version} git tag for a plugin release, validating that plugin.json and any enclosing marketplace entry agree.",
+    "syntax": [
+      "claude plugin tag [path]"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin tag ./my-plugin",
+        "explanation": "Tag a release and check manifest agreement.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Publish a versioned plugin release from a repository."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-prune",
+    "tool": "claude-code",
+    "name": "claude plugin prune",
+    "display_name": "Prune unused dependencies",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Plugin management",
+    "description": "Remove auto-installed dependencies that are no longer needed.",
+    "syntax": [
+      "claude plugin prune"
+    ],
+    "aliases": [
+      "claude plugin autoremove"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin prune",
+        "explanation": "Clean up unused auto-installed plugins.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Tidy a machine that has accumulated transitive plugin installs."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin",
+      "claude-code.slash-command.plugin"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugins-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-marketplace",
+    "tool": "claude-code",
+    "name": "claude plugin marketplace",
+    "display_name": "Manage marketplaces",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin",
+    "category": "plugins",
+    "role": "Marketplace group",
+    "description": "Command group for adding, listing, updating, and removing plugin marketplaces.",
+    "syntax": [
+      "claude plugin marketplace <subcommand>"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin marketplace list",
+        "explanation": "List configured marketplaces.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Point Claude Code at the marketplaces your team publishes to."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin-install"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugin-marketplaces",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-marketplace-add",
+    "tool": "claude-code",
+    "name": "claude plugin marketplace add",
+    "display_name": "Add a marketplace",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "Add a marketplace from a URL, a path, or a GitHub repository.",
+    "syntax": [
+      "claude plugin marketplace add <source>"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin marketplace add my-org/plugins",
+        "explanation": "Add a marketplace from a GitHub repository.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Make an organization's plugins installable."
+    ],
+    "when_not_to_use": [
+      "A marketplace decides what your team can install; add only sources you control or trust."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin-install"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugin-marketplaces",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-marketplace-list",
+    "tool": "claude-code",
+    "name": "claude plugin marketplace list",
+    "display_name": "List marketplaces",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace inspection",
+    "description": "List all configured marketplaces.",
+    "syntax": [
+      "claude plugin marketplace list"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin marketplace list",
+        "explanation": "List configured marketplaces.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Check where a plugin would be installed from."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin-marketplace-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugin-marketplaces",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-marketplace-update",
+    "tool": "claude-code",
+    "name": "claude plugin marketplace update",
+    "display_name": "Update marketplaces",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace refresh",
+    "description": "Update one marketplace from its source, or every marketplace when no name is given.",
+    "syntax": [
+      "claude plugin marketplace update",
+      "claude plugin marketplace update <name>"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin marketplace update",
+        "explanation": "Refresh every configured marketplace.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Pick up newly published plugins before installing."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin-marketplace-list"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugin-marketplaces",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
+  },
+  {
+    "id": "claude-code.cli-subcommand.plugin-marketplace-remove",
+    "tool": "claude-code",
+    "name": "claude plugin marketplace remove",
+    "display_name": "Remove a marketplace",
+    "type": "cli-subcommand",
+    "parent_id": "claude-code.cli-subcommand.plugin-marketplace",
+    "category": "plugins",
+    "role": "Marketplace configuration",
+    "description": "Remove a configured marketplace.",
+    "syntax": [
+      "claude plugin marketplace remove <name>"
+    ],
+    "aliases": [
+      "claude plugin marketplace rm"
+    ],
+    "examples": [
+      {
+        "command": "claude plugin marketplace remove my-marketplace",
+        "explanation": "Stop offering plugins from a source.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Retire a marketplace your team no longer publishes to."
+    ],
+    "related_commands": [
+      "claude-code.cli-subcommand.plugin-marketplace-add"
+    ],
+    "capabilities": [
+      "plugins.manage"
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://code.claude.com/docs/en/plugin-marketplaces",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-05",
+      "tested_version": "2.1.261",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    }
   }
 ]

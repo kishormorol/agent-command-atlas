@@ -149,16 +149,18 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
         if entry.get("category") not in category_set:
             errors.append(f"{label}: unknown category {entry.get('category')!r}")
 
+        # Short CLI flags are case-sensitive: -h and -H are different flags.
+        fold = (lambda value: value) if entry_type == "cli-flag" else (lambda value: value.casefold())
         name = entry.get("name")
         if isinstance(name, str):
-            key = (tool_id, entry_type, name.casefold())
+            key = (tool_id, entry_type, fold(name))
             if key in names or key in aliases:
                 owner = names.get(key) or aliases.get(key)
                 errors.append(f"{label}: duplicate command name {name!r}; first used by {owner}")
             names[key] = entry_id
         for alias in entry.get("aliases", []):
-            key = (tool_id, entry_type, alias.casefold())
-            if alias.casefold() == str(name).casefold():
+            key = (tool_id, entry_type, fold(alias))
+            if fold(alias) == fold(str(name)):
                 errors.append(f"{label}: alias duplicates the canonical name {alias!r}")
             if key in names or key in aliases:
                 owner = names.get(key) or aliases.get(key)

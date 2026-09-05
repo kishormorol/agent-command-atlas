@@ -40,6 +40,24 @@ class RepositoryTests(unittest.TestCase):
         generated = json.loads((ROOT / "site" / "catalog.json").read_text(encoding="utf-8"))
         self.assertEqual({entry["id"] for entry in authored}, {entry["id"] for entry in generated})
 
+    def test_short_flag_case_is_significant(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            copy_root = Path(temporary_directory) / "atlas"
+            shutil.copytree(ROOT, copy_root, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+            path = copy_root / "data" / "claude-code" / "cli-commands-complete.json"
+            entries = json.loads(path.read_text(encoding="utf-8"))
+            aliases = {alias for entry in entries for alias in entry.get("aliases", [])}
+            self.assertIn("-H", aliases, "the fixture must keep a case-sensitive short flag")
+            errors, _, _ = validate_repository(copy_root)
+            self.assertFalse([error for error in errors if "-H" in error], errors)
+
+            for entry in entries:
+                if entry["name"] == "--header":
+                    entry["aliases"] = ["-h"]
+            path.write_text(json.dumps(entries), encoding="utf-8")
+            errors, _, _ = validate_repository(copy_root)
+            self.assertTrue(any("duplicate alias '-h'" in error for error in errors), errors)
+
     def test_duplicate_ids_are_rejected(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             copy_root = Path(temporary_directory) / "atlas"
