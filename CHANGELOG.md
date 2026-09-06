@@ -4,6 +4,10 @@ All notable project changes are documented here.
 
 ## Unreleased
 
+### Fixed
+
+- Recorded the five Gemini CLI entries verified against both the official reference and the 0.58.0 binary as `officially-documented` rather than `manually-tested`, matching the convention already used by the other 176 entries carrying both kinds of evidence. `manually-tested` is now reserved for the two Cursor flags whose only remaining evidence is a binary run, because the vendor parameter reference no longer lists them.
+
 ## [0.2.0] - 2026-09-06
 
 ### Added

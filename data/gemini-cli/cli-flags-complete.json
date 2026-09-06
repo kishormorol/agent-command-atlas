@@ -169,7 +169,7 @@
       }
     ],
     "verification": {
-      "status": "manually-tested",
+      "status": "officially-documented",
       "last_verified": "2026-09-05",
       "tested_version": "0.58.0",
       "verified_by": [
