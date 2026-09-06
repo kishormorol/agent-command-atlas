@@ -4,6 +4,8 @@ All notable project changes are documented here.
 
 ## Unreleased
 
+## [0.2.0] - 2026-09-06
+
 ### Added
 
 - Meta Muse Code as a sixth covered ecosystem, with 154 official-source-backed records spanning CLI commands and flags, slash commands, shortcuts, bundled skills, permissions and sandbox modes, subagents and observers, workflows, hooks, MCP, configuration, instruction files, and environment variables.
