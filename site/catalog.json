@@ -23710,10 +23710,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/claude/"
@@ -23764,10 +23765,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-add-dir/"
@@ -23862,10 +23864,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "legacy_paths": [
@@ -23919,10 +23922,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-agents/"
@@ -23964,10 +23968,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/allow-dangerously-skip-permissions/"
@@ -24021,10 +24026,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/allowed-tools/"
@@ -24119,10 +24125,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/append-system-prompt/"
@@ -24209,10 +24216,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-autocompact/"
@@ -24256,10 +24264,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "version": {
@@ -24307,10 +24316,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-background/"
@@ -24352,10 +24362,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/bare/"
@@ -24397,10 +24408,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/betas/"
@@ -24442,10 +24454,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/bg/"
@@ -24487,8 +24500,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -24629,10 +24642,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-chrome/"
@@ -24776,10 +24790,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cloud/"
@@ -24832,10 +24847,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/continue/"
@@ -24931,10 +24947,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/dangerously-skip-permissions/"
@@ -24976,10 +24993,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "legacy_paths": [
@@ -25024,10 +25042,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/debug-file/"
@@ -25069,10 +25088,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/disable-slash-commands/"
@@ -25121,10 +25141,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/disallowed-tools/"
@@ -25172,10 +25193,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-effort/"
@@ -25268,8 +25290,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -25319,10 +25341,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "version": {
@@ -25370,10 +25393,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/exclude-dynamic-system-prompt-sections/"
@@ -25469,10 +25493,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/fallback-model/"
@@ -25514,8 +25539,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -25567,10 +25592,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/fork-session/"
@@ -25616,10 +25642,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "version": {
@@ -25667,10 +25694,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/from-pr/"
@@ -25718,8 +25746,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -25771,8 +25799,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -25820,10 +25848,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-ide/"
@@ -25867,10 +25896,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/include-hook-events/"
@@ -25914,10 +25944,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/include-partial-messages/"
@@ -26049,10 +26080,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/input-format/"
@@ -26099,10 +26131,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/json-schema/"
@@ -26194,10 +26227,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/max-budget-usd/"
@@ -26290,10 +26324,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/mcp-config/"
@@ -26338,10 +26373,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-model/"
@@ -26383,10 +26419,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/name/"
@@ -26428,10 +26465,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/no-chrome/"
@@ -26473,10 +26511,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/no-session-persistence/"
@@ -26523,10 +26562,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/output-format/"
@@ -26573,10 +26613,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/permission-mode/"
@@ -26620,10 +26661,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "version": {
@@ -26671,8 +26713,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -26717,10 +26759,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/plugin-dir/"
@@ -26762,10 +26805,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/plugin-url/"
@@ -26810,10 +26854,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/print/"
@@ -26857,10 +26902,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/prompt-suggestions/"
@@ -27040,10 +27086,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-remote-control/"
@@ -27085,10 +27132,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/remote-control-session-name-prefix/"
@@ -27132,10 +27180,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/replay-user-messages/"
@@ -27179,10 +27228,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "version": {
@@ -27241,10 +27291,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-resume/"
@@ -27286,10 +27337,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/safe-mode/"
@@ -27382,10 +27434,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/session-id/"
@@ -27427,10 +27480,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/setting-sources/"
@@ -27472,10 +27526,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/settings/"
@@ -27517,10 +27572,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/strict-mcp-config/"
@@ -27562,10 +27618,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/system-prompt/"
@@ -27652,8 +27709,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -27743,10 +27800,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/cli-flag-teleport/"
@@ -27790,10 +27848,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/tmux/"
@@ -27835,10 +27894,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/tools/"
@@ -27883,8 +27943,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -27929,10 +27989,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "legacy_paths": [
@@ -27977,10 +28038,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/version/"
@@ -28034,10 +28096,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "legacy_paths": [
@@ -28098,8 +28161,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28149,8 +28212,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28200,8 +28263,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28250,10 +28313,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/claude-auth-login/"
@@ -28299,10 +28363,11 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-08-29",
-      "tested_version": null,
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
-        "official-docs"
+        "official-docs",
+        "manual-test"
       ]
     },
     "path": "claude-code/claude-auth-logout/"
@@ -28354,8 +28419,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28404,8 +28469,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28454,8 +28519,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28504,8 +28569,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28558,8 +28623,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28611,8 +28676,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28826,8 +28891,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28876,8 +28941,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28927,8 +28992,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -28983,8 +29048,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -29034,8 +29099,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -29093,8 +29158,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -29161,8 +29226,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -30654,8 +30719,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -30708,8 +30773,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -30821,8 +30886,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -30874,8 +30939,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -30976,8 +31041,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"
@@ -31099,8 +31164,8 @@
     ],
     "verification": {
       "status": "officially-documented",
-      "last_verified": "2026-09-05",
-      "tested_version": "2.1.261",
+      "last_verified": "2026-09-07",
+      "tested_version": "2.1.263",
       "verified_by": [
         "official-docs",
         "manual-test"

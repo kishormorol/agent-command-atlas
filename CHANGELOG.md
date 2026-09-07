@@ -11,6 +11,10 @@ All notable project changes are documented here.
 - Codex's `agents`, `debug`, `queue`, `migrate-rollouts`, and `exec-server` subcommands, plus `exec-server forward`, found by diffing the 0.151.0 binary against the dataset. Only `codex debug` is in the official command reference; the rest are recorded as verified against the shipping binary.
 - GitHub Copilot's documented `SHELL`, `COMSPEC`, and `EDITOR` environment variables, which control the shell used for the `$` terminal hand-off and the external prompt editor.
 
+### Changed
+
+- Re-verified the Claude Code CLI surface against the 2.1.263 binary and re-stamped the 95 flags and subcommands whose presence that binary confirms. Entries the binary does not enumerate, such as flags reachable only through deeper nested subcommands, keep their earlier 2.1.261 record rather than inheriting a version they were not checked against.
+
 ### Fixed
 
 - Removed two Cursor `config-option` records, `Global` and `Project`, that were scrape artifacts of the configuration page's scope table rather than options. Both paths are already recorded correctly as `config-file` entries.
