@@ -9780,16 +9780,6 @@
     "id": "cursor.config-file.user-config"
   },
   {
-    "path": "cursor/global/",
-    "kind": "entry",
-    "id": "cursor.config-option.global"
-  },
-  {
-    "path": "cursor/project/",
-    "kind": "entry",
-    "id": "cursor.config-option.project"
-  },
-  {
     "path": "cursor/approvalmode/",
     "kind": "entry",
     "id": "cursor.config-option.approval-mode"
@@ -9913,6 +9903,31 @@
     "path": "cursor/cursor-worker-labels-file/",
     "kind": "entry",
     "id": "cursor.environment-variable.worker-labels-file"
+  },
+  {
+    "path": "cursor/https-proxy/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.https-proxy"
+  },
+  {
+    "path": "cursor/http-proxy/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.http-proxy"
+  },
+  {
+    "path": "cursor/node-extra-ca-certs/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.node-extra-ca-certs"
+  },
+  {
+    "path": "cursor/node-use-env-proxy/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.node-use-env-proxy"
+  },
+  {
+    "path": "cursor/xdg-config-home/",
+    "kind": "entry",
+    "id": "cursor.environment-variable.xdg-config-home"
   },
   {
     "path": "cursor/afteragentresponse/",
@@ -10043,6 +10058,11 @@
     "path": "cursor/sandbox-enabled/",
     "kind": "entry",
     "id": "cursor.permission.sandbox-enabled"
+  },
+  {
+    "path": "cursor/ampersand/",
+    "kind": "entry",
+    "id": "cursor.prefix-command.ampersand"
   },
   {
     "path": "cursor/shift-tab/",

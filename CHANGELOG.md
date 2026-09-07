@@ -4,8 +4,14 @@ All notable project changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- Cursor's five documented proxy, TLS, and XDG environment variables (`XDG_CONFIG_HOME`, `HTTP_PROXY`, `HTTPS_PROXY`, `NODE_USE_ENV_PROXY`, `NODE_EXTRA_CA_CERTS`), which the configuration reference lists but the dataset had never captured.
+- Cursor's `&` prefix command for handing a conversation to a Cloud Agent, the first prefix-command record for an ecosystem that previously had none.
+
 ### Fixed
 
+- Removed two Cursor `config-option` records, `Global` and `Project`, that were scrape artifacts of the configuration page's scope table rather than options. Both paths are already recorded correctly as `config-file` entries.
 - Recorded the five Gemini CLI entries verified against both the official reference and the 0.58.0 binary as `officially-documented` rather than `manually-tested`, matching the convention already used by the other 176 entries carrying both kinds of evidence. `manually-tested` is now reserved for the two Cursor flags whose only remaining evidence is a binary run, because the vendor parameter reference no longer lists them.
 
 ## [0.2.0] - 2026-09-06

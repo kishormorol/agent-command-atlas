@@ -82852,82 +82852,6 @@
     "path": "cursor/cursor-cli-config-json/"
   },
   {
-    "id": "cursor.config-option.global",
-    "tool": "cursor",
-    "name": "Global",
-    "display_name": "Global",
-    "type": "config-option",
-    "category": "configuration",
-    "role": "Configuration setting",
-    "description": "$env:USERPROFILE\\.cursor\\cli-config.json",
-    "syntax": [
-      "Global: <Windows>"
-    ],
-    "when_to_use": [
-      "Set this option when you need the documented Global behavior."
-    ],
-    "maturity": "stable",
-    "availability": {
-      "channels": [
-        "cli"
-      ],
-      "conditions": []
-    },
-    "sources": [
-      {
-        "url": "https://cursor.com/docs/cli/reference/configuration",
-        "kind": "official-docs"
-      }
-    ],
-    "verification": {
-      "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
-      "verified_by": [
-        "official-docs"
-      ]
-    },
-    "path": "cursor/global/"
-  },
-  {
-    "id": "cursor.config-option.project",
-    "tool": "cursor",
-    "name": "Project",
-    "display_name": "Project",
-    "type": "config-option",
-    "category": "configuration",
-    "role": "Configuration setting",
-    "description": "/.cursor/cli.json",
-    "syntax": [
-      "Project: <All>"
-    ],
-    "when_to_use": [
-      "Set this option when you need the documented Project behavior."
-    ],
-    "maturity": "stable",
-    "availability": {
-      "channels": [
-        "cli"
-      ],
-      "conditions": []
-    },
-    "sources": [
-      {
-        "url": "https://cursor.com/docs/cli/reference/configuration",
-        "kind": "official-docs"
-      }
-    ],
-    "verification": {
-      "status": "officially-documented",
-      "last_verified": "2026-08-30",
-      "tested_version": null,
-      "verified_by": [
-        "official-docs"
-      ]
-    },
-    "path": "cursor/project/"
-  },
-  {
     "id": "cursor.config-option.approval-mode",
     "tool": "cursor",
     "name": "approvalMode",
@@ -83936,6 +83860,233 @@
       ]
     },
     "path": "cursor/cursor-worker-labels-file/"
+  },
+  {
+    "id": "cursor.environment-variable.https-proxy",
+    "tool": "cursor",
+    "name": "HTTPS_PROXY",
+    "display_name": "HTTPS proxy server",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Network routing",
+    "description": "HTTPS proxy server URL used for Cursor CLI network requests.",
+    "syntax": [
+      "HTTPS_PROXY=<value>"
+    ],
+    "examples": [
+      {
+        "command": "HTTPS_PROXY=http://proxy.internal:3128 cursor-agent",
+        "explanation": "Route HTTPS traffic through a corporate proxy.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when the CLI must reach the network through an HTTPS proxy."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-06",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/https-proxy/"
+  },
+  {
+    "id": "cursor.environment-variable.http-proxy",
+    "tool": "cursor",
+    "name": "HTTP_PROXY",
+    "display_name": "HTTP proxy server",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Network routing",
+    "description": "HTTP proxy server URL used for Cursor CLI network requests.",
+    "syntax": [
+      "HTTP_PROXY=<value>"
+    ],
+    "examples": [
+      {
+        "command": "HTTP_PROXY=http://proxy.internal:3128 cursor-agent",
+        "explanation": "Route plain HTTP traffic through a corporate proxy.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when the CLI must reach the network through an HTTP proxy."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-06",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/http-proxy/"
+  },
+  {
+    "id": "cursor.environment-variable.node-extra-ca-certs",
+    "tool": "cursor",
+    "name": "NODE_EXTRA_CA_CERTS",
+    "display_name": "Additional CA certificate bundle",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "TLS trust",
+    "description": "Path to an additional certificate authority bundle to trust, such as a corporate root certificate.",
+    "syntax": [
+      "NODE_EXTRA_CA_CERTS=<value>"
+    ],
+    "examples": [
+      {
+        "command": "NODE_EXTRA_CA_CERTS=/etc/ssl/corp-root.pem cursor-agent",
+        "explanation": "Trust an internal certificate authority terminating TLS.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a proxy or network appliance presents a certificate signed by a private authority."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-06",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/node-extra-ca-certs/"
+  },
+  {
+    "id": "cursor.environment-variable.node-use-env-proxy",
+    "tool": "cursor",
+    "name": "NODE_USE_ENV_PROXY",
+    "display_name": "Use proxy environment variables",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Network routing",
+    "description": "Enable use of the proxy settings supplied through environment variables.",
+    "syntax": [
+      "NODE_USE_ENV_PROXY=<value>"
+    ],
+    "examples": [
+      {
+        "command": "NODE_USE_ENV_PROXY=1 cursor-agent",
+        "explanation": "Honor HTTP_PROXY and HTTPS_PROXY for outbound requests.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use alongside HTTP_PROXY or HTTPS_PROXY when proxy environment variables should be applied."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-06",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/node-use-env-proxy/"
+  },
+  {
+    "id": "cursor.environment-variable.xdg-config-home",
+    "tool": "cursor",
+    "name": "XDG_CONFIG_HOME",
+    "display_name": "XDG configuration directory",
+    "type": "environment-variable",
+    "category": "configuration",
+    "role": "Configuration location",
+    "description": "Base configuration directory on Linux and BSD, following the XDG Base Directory specification.",
+    "syntax": [
+      "XDG_CONFIG_HOME=<value>"
+    ],
+    "examples": [
+      {
+        "command": "XDG_CONFIG_HOME=~/.config cursor-agent",
+        "explanation": "Resolve Cursor CLI configuration under an XDG base directory.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use on Linux or BSD when configuration lives under an XDG base directory rather than the default location."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Linux and BSD."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/reference/configuration",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-06",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/xdg-config-home/"
   },
   {
     "id": "cursor.hook.after-agent-response",
@@ -85206,6 +85357,54 @@
       ]
     },
     "path": "cursor/sandbox-enabled/"
+  },
+  {
+    "id": "cursor.prefix-command.ampersand",
+    "tool": "cursor",
+    "name": "&",
+    "display_name": "Hand off to a Cloud Agent",
+    "type": "prefix-command",
+    "category": "agents",
+    "role": "Cloud handoff",
+    "description": "Prepend & to a message to push the conversation to a Cloud Agent so it keeps running after you step away.",
+    "syntax": [
+      "&<message>"
+    ],
+    "examples": [
+      {
+        "command": "&finish the migration and open a pull request when the tests pass",
+        "explanation": "Hand the current conversation to a Cloud Agent that continues without you.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when a long-running task should continue after you close the terminal."
+    ],
+    "when_not_to_use": [
+      "Do not use for work that must stay on your machine, because the conversation moves to a Cloud Agent."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://cursor.com/docs/cli/overview",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-06",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "cursor/ampersand/"
   },
   {
     "id": "cursor.shortcut.plan-mode",
