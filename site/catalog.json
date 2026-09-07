@@ -2048,6 +2048,54 @@
     "path": "codex/with-api-key/"
   },
   {
+    "id": "codex.cli-subcommand.agents",
+    "tool": "codex",
+    "name": "codex agents",
+    "display_name": "Browse agent sessions",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "agents",
+    "role": "Agent session browser",
+    "description": "Browse all agent sessions on the shared local app-server daemon.",
+    "syntax": [
+      "codex agents"
+    ],
+    "examples": [
+      {
+        "command": "codex agents",
+        "explanation": "Browse agent sessions on the local app-server daemon.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use to see the agent sessions running against the shared local daemon."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Present in the 0.151.0 CLI; not listed in the official command reference."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "manually-tested",
+      "last_verified": "2026-09-07",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-agents/"
+  },
+  {
     "id": "codex.cli-subcommand.app",
     "tool": "codex",
     "name": "codex app",
@@ -2470,6 +2518,53 @@
     "path": "codex/codex-completion/"
   },
   {
+    "id": "codex.cli-subcommand.debug",
+    "tool": "codex",
+    "name": "codex debug",
+    "display_name": "Debugging tools",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "diagnostics",
+    "role": "Debug tooling",
+    "description": "Debugging tools for inspecting the model catalog, the app server, and the model-visible prompt input.",
+    "syntax": [
+      "codex debug <command>"
+    ],
+    "examples": [
+      {
+        "command": "codex debug models",
+        "explanation": "Render the raw model catalog as JSON.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when diagnosing what the CLI sends to or receives from the model."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-07",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "official-docs",
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-debug/"
+  },
+  {
     "id": "codex.cli-subcommand.debug-app-server-send-message-v2",
     "tool": "codex",
     "name": "codex debug app-server send-message-v2",
@@ -2743,6 +2838,102 @@
       ]
     },
     "path": "codex/codex-exec/"
+  },
+  {
+    "id": "codex.cli-subcommand.exec-server",
+    "tool": "codex",
+    "name": "codex exec-server",
+    "display_name": "Run the exec server",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "agents",
+    "role": "Exec service",
+    "description": "Run the standalone exec-server service.",
+    "syntax": [
+      "codex exec-server [command]"
+    ],
+    "examples": [
+      {
+        "command": "codex exec-server",
+        "explanation": "Start the standalone exec-server service.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use when running the exec server as its own process."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Present in the 0.151.0 CLI; not listed in the official command reference."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "manually-tested",
+      "last_verified": "2026-09-07",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-exec-server/"
+  },
+  {
+    "id": "codex.cli-subcommand.exec-server-forward",
+    "tool": "codex",
+    "name": "codex exec-server forward",
+    "display_name": "Forward a remote exec server",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "agents",
+    "role": "Remote environment registration",
+    "description": "Register an existing WebSocket exec-server as a remote environment.",
+    "syntax": [
+      "codex exec-server forward"
+    ],
+    "examples": [
+      {
+        "command": "codex exec-server forward",
+        "explanation": "Register a running WebSocket exec-server as a remote environment.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use to attach an already-running exec-server as a remote environment."
+    ],
+    "maturity": "experimental",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Present in the 0.151.0 CLI; not listed in the official command reference."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "manually-tested",
+      "last_verified": "2026-09-07",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-exec-server-forward/"
   },
   {
     "id": "codex.cli-subcommand.execpolicy",
@@ -3647,6 +3838,54 @@
     "path": "codex/codex-mcp-server/"
   },
   {
+    "id": "codex.cli-subcommand.migrate-rollouts",
+    "tool": "codex",
+    "name": "codex migrate-rollouts",
+    "display_name": "Migrate legacy sessions",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "session",
+    "role": "Session migration",
+    "description": "Inspect or migrate legacy local sessions to paginated thread history. Without --apply the command only reports eligible sessions.",
+    "syntax": [
+      "codex migrate-rollouts [--apply]"
+    ],
+    "examples": [
+      {
+        "command": "codex migrate-rollouts",
+        "explanation": "Report which legacy sessions are eligible for migration.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use once after upgrading, to move older local sessions into paginated thread history."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Present in the 0.151.0 CLI; not listed in the official command reference."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "manually-tested",
+      "last_verified": "2026-09-07",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-migrate-rollouts/"
+  },
+  {
     "id": "codex.cli-subcommand.plugin",
     "tool": "codex",
     "name": "codex plugin",
@@ -4143,6 +4382,54 @@
       ]
     },
     "path": "codex/codex-plugin-remove/"
+  },
+  {
+    "id": "codex.cli-subcommand.queue",
+    "tool": "codex",
+    "name": "codex queue",
+    "display_name": "Queue a session message",
+    "type": "cli-subcommand",
+    "parent_id": "codex.cli-command.launch",
+    "category": "session",
+    "role": "Message queueing",
+    "description": "Queue a message for an existing session, addressed by session UUID or exact session name.",
+    "syntax": [
+      "codex queue --thread <thread> --message <text>"
+    ],
+    "examples": [
+      {
+        "command": "codex queue --thread my-session --message \"run the tests\"",
+        "explanation": "Queue a message for a named session.",
+        "level": "minimal"
+      }
+    ],
+    "when_to_use": [
+      "Use to hand work to a session that is already running without attaching to it."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli"
+      ],
+      "conditions": [
+        "Present in the 0.151.0 CLI; not listed in the official command reference."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "manually-tested",
+      "last_verified": "2026-09-07",
+      "tested_version": "0.151.0",
+      "verified_by": [
+        "manual-test"
+      ]
+    },
+    "path": "codex/codex-queue/"
   },
   {
     "id": "codex.cli-subcommand.remote-control",
@@ -96768,6 +97055,54 @@
     "path": "github-copilot/cargo-home/"
   },
   {
+    "id": "github-copilot.environment-variable.comspec",
+    "tool": "github-copilot",
+    "name": "COMSPEC",
+    "display_name": "Windows command interpreter",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Shell selection",
+    "description": "Command interpreter that Copilot CLI hands the terminal over to on Windows when you type $ at the prompt in a local, trusted, idle session.",
+    "syntax": [
+      "COMSPEC=<value>"
+    ],
+    "examples": [
+      {
+        "command": "set COMSPEC=C:\\\\Windows\\\\System32\\\\cmd.exe",
+        "explanation": "Choose the interpreter used for the terminal hand-off on Windows.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to control which interpreter the $ prompt hand-off launches on Windows."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Windows. Unix uses SHELL."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-07",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/comspec/"
+  },
+  {
     "id": "github-copilot.environment-variable.conda-prefix",
     "tool": "github-copilot",
     "name": "CONDA_PREFIX",
@@ -97652,6 +97987,52 @@
       ]
     },
     "path": "github-copilot/dotnet-root/"
+  },
+  {
+    "id": "github-copilot.environment-variable.editor",
+    "tool": "github-copilot",
+    "name": "EDITOR",
+    "display_name": "External prompt editor",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Editor selection",
+    "description": "External editor used to edit the current prompt outside the CLI.",
+    "syntax": [
+      "EDITOR=<value>"
+    ],
+    "examples": [
+      {
+        "command": "EDITOR=nvim copilot",
+        "explanation": "Edit the prompt in Neovim rather than the default editor.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when you want to compose a long prompt in your own editor."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-07",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/editor/"
   },
   {
     "id": "github-copilot.environment-variable.gh-host",
@@ -98634,6 +99015,54 @@
       ]
     },
     "path": "github-copilot/rustup-home/"
+  },
+  {
+    "id": "github-copilot.environment-variable.shell",
+    "tool": "github-copilot",
+    "name": "SHELL",
+    "display_name": "Interactive shell",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Shell selection",
+    "description": "Shell that Copilot CLI hands the terminal over to when you type $ at the prompt in a local, trusted, idle session.",
+    "syntax": [
+      "SHELL=<value>"
+    ],
+    "examples": [
+      {
+        "command": "SHELL=/bin/zsh copilot",
+        "explanation": "Drop into zsh when handing the terminal over from the prompt.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to control which shell the $ prompt hand-off launches."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Unix. Windows uses COMSPEC."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-07",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    },
+    "path": "github-copilot/shell/"
   },
   {
     "id": "github-copilot.environment-variable.use-builtin-ripgrep",

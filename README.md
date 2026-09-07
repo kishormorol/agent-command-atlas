@@ -15,7 +15,7 @@ One searchable, source-linked reference for the commands, flags, shortcuts, and 
 
 | Reference entries | Ecosystems | Cross-tool tasks | Capability mappings |
 | --- | --- | --- | --- |
-| 2,591 | 6 | 33 | 198, none left unknown |
+| 2,604 | 6 | 33 | 198, none left unknown |
 
 ## Search by intent, not by name
 
@@ -34,8 +34,8 @@ Every result links to an official source and shows syntax, examples, maturity, a
 
 Accuracy takes priority over command count.
 
-- **Every entry cites an official source.** All 2,591 records link to vendor documentation or an official source repository, and `scripts/check_sources.py` confirms every registered URL still resolves.
-- **Verification state is recorded, not assumed.** Each entry carries how it was checked and when. 2,589 are officially documented; the two exceptions are Cursor flags the vendor reference no longer lists, kept and marked as verified against the shipping binary.
+- **Every entry cites an official source.** All 2,604 records link to vendor documentation or an official source repository, and `scripts/check_sources.py` confirms every registered URL still resolves.
+- **Verification state is recorded, not assumed.** Each entry carries how it was checked and when. 2,597 are officially documented. The other seven are recorded against a shipping binary instead: two Cursor flags the vendor reference no longer lists, and five Codex subcommands the command reference does not yet list.
 - **Claims are checked against real binaries.** Entries were verified against Claude Code 2.1.261, Codex 0.151.0, Gemini CLI 0.58.0, GitHub Copilot CLI 1.0.83, and Cursor 2026.09.02-c22c1a3. Muse Code is documentation-backed, since it ships no inspectable binary.
 - **Cross-tool claims are semantic, not lexical.** Relationships are labeled `exact`, `similar`, `partial`, `none`, or `unknown`. All 198 mappings are currently resolved — `none` is an evidence-backed conclusion, never a gap in research.
 - **Nothing is quietly deleted.** Experimental, conditional, rolling-out, deprecated, and removed controls stay visible, including controls the docs still list that the binary no longer has.

@@ -8,6 +8,8 @@ All notable project changes are documented here.
 
 - Cursor's five documented proxy, TLS, and XDG environment variables (`XDG_CONFIG_HOME`, `HTTP_PROXY`, `HTTPS_PROXY`, `NODE_USE_ENV_PROXY`, `NODE_EXTRA_CA_CERTS`), which the configuration reference lists but the dataset had never captured.
 - Cursor's `&` prefix command for handing a conversation to a Cloud Agent, the first prefix-command record for an ecosystem that previously had none.
+- Codex's `agents`, `debug`, `queue`, `migrate-rollouts`, and `exec-server` subcommands, plus `exec-server forward`, found by diffing the 0.151.0 binary against the dataset. Only `codex debug` is in the official command reference; the rest are recorded as verified against the shipping binary.
+- GitHub Copilot's documented `SHELL`, `COMSPEC`, and `EDITOR` environment variables, which control the shell used for the `$` terminal hand-off and the external prompt editor.
 
 ### Fixed
 

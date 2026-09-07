@@ -2018,5 +2018,144 @@
         "official-docs"
       ]
     }
+  },
+  {
+    "id": "github-copilot.environment-variable.shell",
+    "tool": "github-copilot",
+    "name": "SHELL",
+    "display_name": "Interactive shell",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Shell selection",
+    "description": "Shell that Copilot CLI hands the terminal over to when you type $ at the prompt in a local, trusted, idle session.",
+    "syntax": [
+      "SHELL=<value>"
+    ],
+    "examples": [
+      {
+        "command": "SHELL=/bin/zsh copilot",
+        "explanation": "Drop into zsh when handing the terminal over from the prompt.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to control which shell the $ prompt hand-off launches."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Unix. Windows uses COMSPEC."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-07",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.comspec",
+    "tool": "github-copilot",
+    "name": "COMSPEC",
+    "display_name": "Windows command interpreter",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Shell selection",
+    "description": "Command interpreter that Copilot CLI hands the terminal over to on Windows when you type $ at the prompt in a local, trusted, idle session.",
+    "syntax": [
+      "COMSPEC=<value>"
+    ],
+    "examples": [
+      {
+        "command": "set COMSPEC=C:\\\\Windows\\\\System32\\\\cmd.exe",
+        "explanation": "Choose the interpreter used for the terminal hand-off on Windows.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use to control which interpreter the $ prompt hand-off launches on Windows."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": [
+        "Windows. Unix uses SHELL."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-07",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
+  },
+  {
+    "id": "github-copilot.environment-variable.editor",
+    "tool": "github-copilot",
+    "name": "EDITOR",
+    "display_name": "External prompt editor",
+    "type": "environment-variable",
+    "category": "terminal",
+    "role": "Editor selection",
+    "description": "External editor used to edit the current prompt outside the CLI.",
+    "syntax": [
+      "EDITOR=<value>"
+    ],
+    "examples": [
+      {
+        "command": "EDITOR=nvim copilot",
+        "explanation": "Edit the prompt in Neovim rather than the default editor.",
+        "level": "practical"
+      }
+    ],
+    "when_to_use": [
+      "Use when you want to compose a long prompt in your own editor."
+    ],
+    "maturity": "stable",
+    "availability": {
+      "channels": [
+        "cli",
+        "interactive"
+      ],
+      "conditions": []
+    },
+    "sources": [
+      {
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference",
+        "kind": "official-docs"
+      }
+    ],
+    "verification": {
+      "status": "officially-documented",
+      "last_verified": "2026-09-07",
+      "tested_version": null,
+      "verified_by": [
+        "official-docs"
+      ]
+    }
   }
 ]

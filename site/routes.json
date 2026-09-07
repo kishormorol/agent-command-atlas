@@ -240,6 +240,11 @@
     "id": "codex.cli-flag.login-with-api-key"
   },
   {
+    "path": "codex/codex-agents/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.agents"
+  },
+  {
     "path": "codex/codex-app/",
     "kind": "entry",
     "id": "codex.cli-subcommand.app"
@@ -280,6 +285,11 @@
     "id": "codex.cli-subcommand.completion"
   },
   {
+    "path": "codex/codex-debug/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.debug"
+  },
+  {
     "path": "codex/codex-debug-app-server-send-message-v2/",
     "kind": "entry",
     "id": "codex.cli-subcommand.debug-app-server-send-message-v2"
@@ -308,6 +318,16 @@
     "path": "codex/codex-exec/",
     "kind": "entry",
     "id": "codex.cli-subcommand.exec"
+  },
+  {
+    "path": "codex/codex-exec-server/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.exec-server"
+  },
+  {
+    "path": "codex/codex-exec-server-forward/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.exec-server-forward"
   },
   {
     "path": "codex/codex-execpolicy/",
@@ -395,6 +415,11 @@
     "id": "codex.cli-subcommand.mcp-server"
   },
   {
+    "path": "codex/codex-migrate-rollouts/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.migrate-rollouts"
+  },
+  {
     "path": "codex/codex-plugin/",
     "kind": "entry",
     "id": "codex.cli-subcommand.plugin"
@@ -438,6 +463,11 @@
     "path": "codex/codex-plugin-remove/",
     "kind": "entry",
     "id": "codex.cli-subcommand.plugin-remove"
+  },
+  {
+    "path": "codex/codex-queue/",
+    "kind": "entry",
+    "id": "codex.cli-subcommand.queue"
   },
   {
     "path": "codex/codex-remote-control/",
@@ -11335,6 +11365,11 @@
     "id": "github-copilot.environment-variable.cargo-home"
   },
   {
+    "path": "github-copilot/comspec/",
+    "kind": "entry",
+    "id": "github-copilot.environment-variable.comspec"
+  },
+  {
     "path": "github-copilot/conda-prefix/",
     "kind": "entry",
     "id": "github-copilot.environment-variable.conda-prefix"
@@ -11458,6 +11493,11 @@
     "path": "github-copilot/dotnet-root/",
     "kind": "entry",
     "id": "github-copilot.environment-variable.dotnet-root"
+  },
+  {
+    "path": "github-copilot/editor/",
+    "kind": "entry",
+    "id": "github-copilot.environment-variable.editor"
   },
   {
     "path": "github-copilot/gh-host/",
@@ -11598,6 +11638,11 @@
     "path": "github-copilot/rustup-home/",
     "kind": "entry",
     "id": "github-copilot.environment-variable.rustup-home"
+  },
+  {
+    "path": "github-copilot/shell/",
+    "kind": "entry",
+    "id": "github-copilot.environment-variable.shell"
   },
   {
     "path": "github-copilot/use-builtin-ripgrep/",
