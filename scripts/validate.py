@@ -82,24 +82,50 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
     if errors:
         return errors, 0, 0
 
-    tool_ids = [tool.get("id") for tool in tools if isinstance(tool, dict)]
+    manifest_shape_invalid = False
+    tool_ids = []
+    orders = []
     for index, tool in enumerate(tools):
-        if not isinstance(tool, dict) or not all(tool.get(key) is not None for key in ("id", "name", "vendor", "order", "status")):
+        if not isinstance(tool, dict) or not all(
+            tool.get(key) is not None for key in ("id", "name", "vendor", "order", "status")
+        ):
             errors.append(f"data/tools.json:{index}: id, name, vendor, order, and status are required")
-        elif tool["status"] not in {"active", "deprecated", "removed"}:
+            manifest_shape_invalid = True
+            continue
+        for key in ("id", "name", "vendor", "status"):
+            if not isinstance(tool[key], str):
+                errors.append(f"data/tools.json:{index}: {key} must be a string")
+                manifest_shape_invalid = True
+        if type(tool["order"]) is not int:
+            errors.append(f"data/tools.json:{index}: order must be an integer")
+            manifest_shape_invalid = True
+        if isinstance(tool["status"], str) and tool["status"] not in {"active", "deprecated", "removed"}:
             errors.append(f"data/tools.json:{index}: unsupported status {tool['status']!r}")
+        if isinstance(tool["id"], str):
+            tool_ids.append(tool["id"])
+        if type(tool["order"]) is int:
+            orders.append(tool["order"])
     if len(tool_ids) != len(set(tool_ids)):
         errors.append("data/tools.json: duplicate tool id")
     if set(tool_ids) != TOOL_IDS:
         errors.append(f"data/tools.json: expected tool ids {sorted(TOOL_IDS)}, got {sorted(tool_ids)}")
-    orders = [tool.get("order") for tool in tools if isinstance(tool, dict)]
     if len(orders) != len(set(orders)):
         errors.append("data/tools.json: duplicate tool order")
 
-    category_ids = [item.get("id") for item in categories if isinstance(item, dict)]
+    category_ids = []
     for index, category in enumerate(categories):
-        if not isinstance(category, dict) or not all(category.get(key) for key in ("id", "display_name", "description")):
+        if not isinstance(category, dict) or not all(
+            category.get(key) for key in ("id", "display_name", "description")
+        ):
             errors.append(f"data/categories.json:{index}: id, display_name, and description are required")
+            manifest_shape_invalid = True
+            continue
+        for key in ("id", "display_name", "description"):
+            if not isinstance(category[key], str):
+                errors.append(f"data/categories.json:{index}: {key} must be a string")
+                manifest_shape_invalid = True
+        if isinstance(category["id"], str):
+            category_ids.append(category["id"])
     if len(category_ids) != len(set(category_ids)):
         errors.append("data/categories.json: duplicate category id")
     category_set = set(category_ids)
@@ -110,11 +136,21 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
     for tool_id, rows in sources.items():
         if not isinstance(rows, list) or not rows:
             errors.append(f"data/sources.json:{tool_id}: expected a non-empty array")
+            manifest_shape_invalid = True
             continue
         registry: dict[str, str] = {}
         for index, row in enumerate(rows):
             if not isinstance(row, dict) or not all(row.get(key) for key in ("url", "kind", "scope")):
                 errors.append(f"data/sources.json:{tool_id}.{index}: url, kind, and scope are required")
+                manifest_shape_invalid = True
+                continue
+            source_types_valid = True
+            for key, field_name in (("url", "URL"), ("kind", "kind"), ("scope", "scope")):
+                if not isinstance(row[key], str):
+                    errors.append(f"data/sources.json:{tool_id}.{index}: {field_name} must be a string")
+                    manifest_shape_invalid = True
+                    source_types_valid = False
+            if not source_types_valid:
                 continue
             if not row["url"].startswith("https://"):
                 errors.append(f"data/sources.json:{tool_id}.{index}: URL must use HTTPS")
@@ -125,39 +161,45 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
             registry[row["url"]] = row["kind"]
         registered_sources[tool_id] = registry
 
+    if manifest_shape_invalid:
+        return errors, 0, 0
+
     entries = load_entries(root, errors)
+    valid_entries = []
     by_id: dict[str, dict[str, Any]] = {}
     names: dict[tuple[str, str, str], str] = {}
     aliases: dict[tuple[str, str, str], str] = {}
     for path, index, entry in entries:
         label = f"{path.relative_to(root)}:{index}"
-        errors.extend(schema_errors(entry, entry_schema, label))
+        entry_errors = schema_errors(entry, entry_schema, label)
+        errors.extend(entry_errors)
+        if entry_errors:
+            continue
+        valid_entries.append((path, index, entry))
         entry_id = entry.get("id")
         if entry_id in by_id:
             errors.append(f"{label}: duplicate id {entry_id}")
-        elif isinstance(entry_id, str):
+        else:
             by_id[entry_id] = entry
 
         tool_id = entry.get("tool")
         entry_type = entry.get("type")
         if tool_id != path.parent.name:
             errors.append(f"{label}: tool {tool_id!r} does not match folder {path.parent.name!r}")
-        if isinstance(entry_id, str) and isinstance(tool_id, str) and isinstance(entry_type, str):
-            expected_prefix = f"{tool_id}.{entry_type}."
-            if not entry_id.startswith(expected_prefix):
-                errors.append(f"{label}: id must start with {expected_prefix!r}")
+        expected_prefix = f"{tool_id}.{entry_type}."
+        if not entry_id.startswith(expected_prefix):
+            errors.append(f"{label}: id must start with {expected_prefix!r}")
         if entry.get("category") not in category_set:
             errors.append(f"{label}: unknown category {entry.get('category')!r}")
 
         # Short CLI flags are case-sensitive: -h and -H are different flags.
         fold = (lambda value: value) if entry_type == "cli-flag" else (lambda value: value.casefold())
         name = entry.get("name")
-        if isinstance(name, str):
-            key = (tool_id, entry_type, fold(name))
-            if key in names or key in aliases:
-                owner = names.get(key) or aliases.get(key)
-                errors.append(f"{label}: duplicate command name {name!r}; first used by {owner}")
-            names[key] = entry_id
+        key = (tool_id, entry_type, fold(name))
+        if key in names or key in aliases:
+            owner = names.get(key) or aliases.get(key)
+            errors.append(f"{label}: duplicate command name {name!r}; first used by {owner}")
+        names[key] = entry_id
         for alias in entry.get("aliases", []):
             key = (tool_id, entry_type, fold(alias))
             if fold(alias) == fold(str(name)):
@@ -184,7 +226,7 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
         if verification.get("status") not in {"needs-verification", "unverified"} and not verification.get("last_verified"):
             errors.append(f"{label}: verified entries require last_verified")
 
-    for path, index, entry in entries:
+    for path, index, entry in valid_entries:
         label = f"{path.relative_to(root)}:{index}"
         parent_id = entry.get("parent_id")
         if parent_id:
@@ -210,9 +252,14 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
                 errors.append(f"{label}: equivalent command {equivalent_id} belongs to another tool")
 
     capability_ids: set[str] = set()
+    valid_capabilities = []
     for index, capability in enumerate(capabilities):
         label = f"data/capabilities.json:{index}"
-        errors.extend(schema_errors(capability, capability_schema, label))
+        capability_errors = schema_errors(capability, capability_schema, label)
+        errors.extend(capability_errors)
+        if capability_errors:
+            continue
+        valid_capabilities.append((index, capability))
         capability_id = capability.get("id")
         if capability_id in capability_ids:
             errors.append(f"{label}: duplicate capability id {capability_id}")
@@ -238,7 +285,7 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
                     errors.append(f"{label}: mapped entry {entry_id} does not declare {capability_id}")
 
     claimed_by: dict[tuple[str, str], list[str]] = {}
-    for path, index, entry in entries:
+    for path, index, entry in valid_entries:
         for capability_id in entry.get("capabilities", []):
             if capability_id not in capability_ids:
                 errors.append(f"{path.relative_to(root)}:{index}: unknown capability {capability_id}")
@@ -247,7 +294,7 @@ def validate_repository(root: Path = ROOT) -> tuple[list[str], int, int]:
     # A tool cannot be missing a capability that its own entries declare. `none` is an
     # evidence-backed absence and `unknown` means research is incomplete; either one
     # contradicts an entry that claims to implement the capability.
-    for index, capability in enumerate(capabilities):
+    for index, capability in valid_capabilities:
         capability_id = capability.get("id")
         for mapping in capability.get("mappings", []):
             if mapping.get("relationship") not in {"none", "unknown"}:
