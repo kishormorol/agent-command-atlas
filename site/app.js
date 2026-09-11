@@ -132,6 +132,7 @@ function queryGroups(query) {
 }
 
 function searchScore(entry, query) {
+  if (entry.type === "cli-flag" && (entry.name === query.trim() || entry.aliases?.includes(query.trim()))) return 100;
   const groups = queryGroups(query);
   if (!groups.length) return 1;
   let matchedGroups = 0;
@@ -175,13 +176,18 @@ function option(value, text, selectedValue) {
 
 function currentFilters(toolId = "") {
   const params = new URLSearchParams(location.search);
-  return {
+  const filters = {
     q: params.get("q") || "",
     tool: toolId || params.get("tool") || "",
     type: params.get("type") || "",
     category: params.get("category") || "",
     maturity: params.get("maturity") || "",
   };
+  if (!state.tools.has(filters.tool)) filters.tool = "";
+  if (!Object.hasOwn(TYPE_GROUPS, filters.type) && !state.entries.some((entry) => entry.type === filters.type)) filters.type = "";
+  if (!state.categories.has(filters.category)) filters.category = "";
+  if (!state.entries.some((entry) => entry.maturity === filters.maturity)) filters.maturity = "";
+  return filters;
 }
 
 function toolLinks(activeTool = "") {
@@ -575,16 +581,18 @@ function bindReference(fixedTool = "") {
     if (!$("#q")) return;
     $("#q").value = button.dataset.query || "";
     update();
-    $("#reference-heading")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    $("#reference-heading")?.scrollIntoView({ block: "start" });
   }));
   bindShowMore(getFilters());
 }
 
 function bindShowMore(filters) {
   $("#show-more")?.addEventListener("click", () => {
+    const firstNewIndex = state.visibleLimit;
     state.visibleLimit += 24;
     $("#results-region").outerHTML = resultsMarkup(filters);
     bindShowMore(filters);
+    document.querySelectorAll(".entry-card__title a")[firstNewIndex]?.focus();
   });
 }
 
@@ -619,6 +627,11 @@ function renderRoute() {
 }
 
 function bindGlobalShortcuts() {
+  $(".skip-link")?.addEventListener("click", (event) => {
+    const target = new URL(location.href);
+    target.hash = "main-content";
+    event.currentTarget.href = target.href;
+  });
   document.addEventListener("keydown", (event) => {
     const target = event.target;
     const isEditing = target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement;

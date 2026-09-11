@@ -27,6 +27,10 @@ vm.runInNewContext(`${app}
   state.entriesById = new Map(testEntries.map((entry) => [entry.id, entry]));
   prepareSearchIndex();
   globalThis.testSearch = (q, filters = {}) => filteredEntries({ q, tool: "", type: "", category: "", maturity: "", ...filters });
+  globalThis.testFilters = (search, toolId = "") => {
+    location.search = search;
+    return currentFilters(toolId);
+  };
   globalThis.testHomeMarkup = homeView();
   globalThis.testEntryMarkup = entryCard(testEntries[0]);
   globalThis.testCapabilityMarkup = capabilityCard(testCapabilities[0]);
@@ -34,6 +38,25 @@ vm.runInNewContext(`${app}
   globalThis.testDetailMarkup = detailView(testEntries[0].id);
   globalThis.testDetailCoverage = testEntries.map((entry) => ({ id: entry.id, markup: detailView(entry.id) }));
 `, context);
+
+for (const [query, name] of [["-h", "--help"], ["-H", "--header"], [" --help ", "--help"]]) {
+  const results = context.testSearch(query, { tool: "claude-code", type: "cli-flag" });
+  assert.equal(results[0].name, name, `${query} should rank its exact case-sensitive flag first`);
+}
+
+for (const field of ["tool", "type", "category", "maturity"]) {
+  for (const value of ["not-a-filter", "constructor", "x".repeat(4096)]) {
+    const filters = context.testFilters(`?${field}=${value}`);
+    assert.equal(filters[field], "", `unsupported ${field} must agree with the All option`);
+    assert.equal(context.testSearch(filters.q, filters).length, entries.length);
+  }
+}
+assert.equal(context.testFilters("?type=configuration").type, "configuration");
+assert.equal(context.testFilters("?tool=cursor", "codex").tool, "codex");
+assert.equal(context.testFilters("?tool=&tool=codex").tool, "");
+const sharedFilters = context.testFilters("?q=compact%20context&tool=codex&type=cli-flag&category=context&maturity=stable");
+assert.equal(JSON.stringify(sharedFilters), JSON.stringify({ q: "compact context", tool: "codex", type: "cli-flag", category: "context", maturity: "stable" }));
+context.testFilters("");
 
 const compactIds = new Set(context.testSearch("compact").slice(0, 8).map((entry) => entry.id));
 for (const entryId of [

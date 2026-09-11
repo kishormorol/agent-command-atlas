@@ -84,13 +84,28 @@ def add_entry_paths(entries: list[dict]) -> None:
         entry["path"] = path
 
 
-def route_page(template: str, route: str, title: str, description: str, depth: int) -> str:
+def route_page(
+    template: str,
+    route: str,
+    title: str,
+    description: str,
+    depth: int,
+    page_path: str | None = None,
+) -> str:
     base = "../" * depth
     page = template.replace(
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         f'<meta name="viewport" content="width=device-width, initial-scale=1">\n    <base href="{base}">',
         1,
     )
+    if page_path is not None:
+        skip_href = escape(f"{page_path}#main-content", quote=True)
+        page = re.sub(
+            r'(<a\b[^>]*class="skip-link"[^>]*href=")[^"]*(")',
+            lambda match: f"{match.group(1)}{skip_href}{match.group(2)}",
+            page,
+            count=1,
+        )
     page = page.replace("<title>Agent Command Atlas</title>", f"<title>{escape(title)}</title>", 1)
     page = re.sub(
         r'<meta name="description" content="[^"]*">',
@@ -148,8 +163,42 @@ def stamp_asset_caches(site: Path) -> dict[str, str]:
     return digests
 
 
+def _plan_routes(
+    tools: list[dict], entries: list[dict], capabilities: list[dict]
+) -> list[tuple[dict, str]]:
+    """Reserve every generated path before changing any site files."""
+    owners: dict[str, str] = {}
+
+    def reserve(path: str, owner: str) -> None:
+        previous = owners.get(path)
+        if previous is not None:
+            raise ValueError(f"route collision for {path}: {previous} conflicts with {owner}")
+        owners[path] = owner
+
+    for tool in tools:
+        reserve(f"{tool['id']}/", f"tool:{tool['id']}")
+    for entry in entries:
+        reserve(entry["path"], f"entry:{entry['id']}")
+        for legacy_path in entry.get("legacy_paths", []):
+            reserve(legacy_path, f"entry-alias:{entry['id']}")
+    for path, owner in (
+        ("compare/", "compare"),
+        ("coverage/", "coverage"),
+        ("guide/", "guide"),
+    ):
+        reserve(path, owner)
+
+    capability_routes: list[tuple[dict, str]] = []
+    for capability in capabilities:
+        path = f"compare/{slugify(capability['id'], 'capability')}/"
+        reserve(path, f"capability:{capability['id']}")
+        capability_routes.append((capability, path))
+    return capability_routes
+
+
 def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilities: list[dict]) -> list[dict]:
     """Generate static shells so tool, entry, and comparison URLs work on static hosts."""
+    capability_routes = _plan_routes(tools, entries, capabilities)
     stamp_asset_caches(site)
     template = (site / "index.html").read_text(encoding="utf-8")
     for route_root in [tool["id"] for tool in tools] + ["compare", "coverage"]:
@@ -163,7 +212,14 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
         description = f"Search documented {tool['name']} commands, flags, shortcuts, configuration, and control surfaces."
         write_route(
             site / tool["id"],
-            route_page(template, f"tool:{tool['id']}", f"{tool['name']} Commands | Agent Command Atlas", description, 1),
+            route_page(
+                template,
+                f"tool:{tool['id']}",
+                f"{tool['name']} Commands | Agent Command Atlas",
+                description,
+                1,
+                f"{tool['id']}/",
+            ),
         )
         routes.append({"path": f"{tool['id']}/", "kind": "tool", "id": tool["id"]})
 
@@ -177,6 +233,7 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
                 f"{entry['name']} — {entry['display_name']} | Agent Command Atlas",
                 description,
                 2,
+                entry["path"],
             ),
         )
         routes.append({"path": entry["path"], "kind": "entry", "id": entry["id"]})
@@ -189,6 +246,7 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
                     f"{entry['name']} — {entry['display_name']} | Agent Command Atlas",
                     description,
                     2,
+                    legacy_path,
                 ),
             )
 
@@ -200,6 +258,7 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
             "Compare AI Coding Agent Commands | Agent Command Atlas",
             "Compare equivalent and related capabilities across Codex, Claude Code, Gemini CLI, Cursor, GitHub Copilot CLI, and Muse Code.",
             1,
+            "compare/",
         ),
     )
     routes.append({"path": "compare/", "kind": "compare", "id": None})
@@ -211,6 +270,7 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
             "Dataset Coverage | Agent Command Atlas",
             "Inspect record counts, verification, lifecycle states, and structured coverage across all six Agent Command Atlas ecosystems.",
             1,
+            "coverage/",
         ),
     )
     routes.append({"path": "coverage/", "kind": "coverage", "id": None})
@@ -222,22 +282,24 @@ def build_routes(site: Path, tools: list[dict], entries: list[dict], capabilitie
             "How to Use the Atlas | Agent Command Atlas",
             "Learn how to search, filter, compare, and verify AI coding-agent commands in Agent Command Atlas.",
             1,
+            "guide/",
         ),
     )
     routes.append({"path": "guide/", "kind": "guide", "id": None})
-    for capability in capabilities:
-        capability["path"] = f"compare/{slugify(capability['id'], 'capability')}/"
+    for capability, path in capability_routes:
+        capability["path"] = path
         write_route(
-            site / capability["path"],
+            site / path,
             route_page(
                 template,
                 f"capability:{capability['id']}",
                 f"{capability['display_name']} Comparison | Agent Command Atlas",
                 capability["description"],
                 2,
+                path,
             ),
         )
-        routes.append({"path": capability["path"], "kind": "capability", "id": capability["id"]})
+        routes.append({"path": path, "kind": "capability", "id": capability["id"]})
     return routes
 
 
