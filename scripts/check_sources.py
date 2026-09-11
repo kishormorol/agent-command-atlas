@@ -15,12 +15,22 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+class HTTPSRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, request, response, code, message, headers, new_url):
+        if urllib.parse.urlsplit(new_url).scheme != "https":
+            response.close()
+            raise urllib.error.URLError("Source redirects must use HTTPS")
+        return super().redirect_request(request, response, code, message, headers, new_url)
+
+
 def registered_urls(root: Path = ROOT) -> list[tuple[str, str]]:
     sources = json.loads((root / "data" / "sources.json").read_text(encoding="utf-8"))
     return [(tool, source["url"]) for tool, rows in sources.items() for source in rows]
 
 
 def check_url(url: str, timeout: float, redirects_left: int = 5) -> tuple[bool, str]:
+    if urllib.parse.urlsplit(url).scheme != "https":
+        return False, "Source URLs must use HTTPS"
     request = urllib.request.Request(
         url,
         headers={
@@ -28,16 +38,18 @@ def check_url(url: str, timeout: float, redirects_left: int = 5) -> tuple[bool, 
             "Accept": "text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.1",
         },
     )
+    redirects = HTTPSRedirectHandler()
+    redirects.max_redirections = redirects_left
+    redirects.max_repeats = redirects_left
+    opener = urllib.request.build_opener(redirects)
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with opener.open(request, timeout=timeout) as response:
+            if urllib.parse.urlsplit(response.geturl()).scheme != "https":
+                return False, "Source responses must use HTTPS"
             response.read(1)
             return 200 <= response.status < 400, f"{response.status} {response.geturl()}"
     except urllib.error.HTTPError as exc:
-        location = exc.headers.get("Location")
-        if 300 <= exc.code < 400 and location and redirects_left:
-            target = urllib.parse.urljoin(url, location)
-            ok, detail = check_url(target, timeout, redirects_left - 1)
-            return ok, f"{exc.code} {target} -> {detail}"
+        exc.close()
         return False, str(exc)
     except (urllib.error.URLError, TimeoutError, OSError) as exc:
         return False, str(exc)
