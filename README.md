@@ -103,4 +103,10 @@ The `Publish Atlas website` workflow revalidates and regenerates `site/` before 
 
 The atlas covers interactive commands, nested subcommands, CLI flags, configuration, environment variables, shortcuts, hooks, permissions, MCP, skills, and agent controls across all six ecosystems. It stays a living reference rather than a claim that fast-moving vendor surfaces can ever be permanently complete. See [the roadmap](docs/ROADMAP.md).
 
+## Acknowledgements
+
+Thanks to the people who have improved the atlas beyond its data:
+
+- [@WhiteHades](https://github.com/WhiteHades) — case-sensitive CLI flag ranking, accessible skip links and mobile navigation, route collision checks, HTTPS redirect enforcement, and validation that reports malformed records instead of raising.
+
 Released under the [MIT License](LICENSE).
