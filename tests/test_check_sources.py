@@ -13,9 +13,15 @@ class SourceCheckerTests(unittest.TestCase):
     def setUp(self):
         self.responses = {}
         self.requests = []
-        self.enterContext(patch.object(urllib.request, "_opener", None))
+        # TestCase.enterContext is 3.11+; start/addCleanup keeps the suite runnable on 3.10.
+        self.start_patch(patch.object(urllib.request, "_opener", None))
         for handler, method in ((urllib.request.HTTPSHandler, "https_open"), (urllib.request.HTTPHandler, "http_open")):
-            self.enterContext(patch.object(handler, method, side_effect=self.respond))
+            self.start_patch(patch.object(handler, method, side_effect=self.respond))
+
+    def start_patch(self, patcher):
+        value = patcher.start()
+        self.addCleanup(patcher.stop)
+        return value
 
     def respond(self, request):
         self.requests.append(request.full_url)
