@@ -33,7 +33,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { min-width: 320px; margin: 0; background: var(--canvas); }
+body { margin: 0; background: var(--canvas); }
 button, input, select { font: inherit; }
 button, select { cursor: pointer; }
 a { color: var(--link); text-underline-offset: 3px; }
@@ -404,6 +404,7 @@ code { overflow-wrap: anywhere; }
   border-bottom: 1px solid #242a34;
 }
 .page-head::before { content: ""; display: block; width: 56px; height: 6px; margin-bottom: 30px; background: var(--accent); border-radius: 6px; }
+.page-head .eyebrow { color: var(--accent); }
 .page-head--codex::before { background: var(--codex); }
 .page-head--claude-code::before { background: var(--claude-code); }
 .page-head--gemini-cli::before { background: var(--gemini-cli); }
@@ -582,7 +583,7 @@ pre { max-width: 100%; margin: 0; padding: 17px 19px; overflow-x: auto; color: #
   .site-header__inner, .capability-section, .reference-section, .tool-summary, .detail-page, .comparison-page, .coverage-page, .site-footer { width: min(100% - 28px, 1320px); }
   .site-header__inner { min-height: 60px; }
   .brand__name { display: none; }
-  .site-nav { gap: 0; }
+  .site-nav { gap: 0; flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
   .site-nav a { padding: 7px; font-size: .7rem; }
   .site-nav__github { margin-left: 2px; border: 0; }
   .hero { padding: 40px 14px 24px; }
