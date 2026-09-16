@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Agent Command Atlas"
+abstract: "A searchable, source-linked reference for the commands, flags, shortcuts, and control surfaces of six AI coding agents."
+authors:
+  - family-names: Morol
+    given-names: Md Kishor
+repository-code: "https://github.com/kishormorol/agent-command-atlas"
+url: "https://kishormorol.github.io/agent-command-atlas/"
+license: MIT
+keywords:
+  - ai-agents
+  - ai-coding-assistant
+  - claude-code
+  - cli
+  - codex
+  - cursor
+  - developer-tools
+  - documentation
+  - gemini-cli
+  - github-copilot
+  - mcp
