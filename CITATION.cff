@@ -6,6 +6,7 @@ abstract: "A searchable, source-linked reference for the commands, flags, shortc
 authors:
   - family-names: Morol
     given-names: Md Kishor
+    orcid: "https://orcid.org/0000-0002-4468-8260"
 repository-code: "https://github.com/kishormorol/agent-command-atlas"
 url: "https://kishormorol.github.io/agent-command-atlas/"
 license: MIT
