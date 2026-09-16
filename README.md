@@ -6,6 +6,7 @@
 [![Release](https://img.shields.io/github/v/release/kishormorol/agent-command-atlas?style=flat&label=release)](https://github.com/kishormorol/agent-command-atlas/releases)
 [![GitHub stars](https://img.shields.io/github/stars/kishormorol/agent-command-atlas?style=flat&label=stars)](https://github.com/kishormorol/agent-command-atlas/stargazers)
 [![License](https://img.shields.io/github/license/kishormorol/agent-command-atlas?style=flat)](LICENSE)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22798637-1682D4?style=flat)](https://doi.org/10.5281/zenodo.22798637)
 
 One searchable, source-linked reference for the commands, flags, shortcuts, and control surfaces of six AI coding agents: **OpenAI Codex, Anthropic Claude Code, Google Gemini CLI, Cursor, GitHub Copilot CLI, and Meta Muse Code.**
 
