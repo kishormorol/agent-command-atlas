@@ -3,6 +3,7 @@
 **Stop guessing which AI coding-agent command to use.**
 
 [![Live reference](https://img.shields.io/badge/live-reference-visit_atlas-c8ff53?style=flat&labelColor=111318&color=354f00)](https://kishormorol.github.io/agent-command-atlas/)
+[![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-live%20demo-FFD21E?style=flat)](https://huggingface.co/spaces/kishormorol/agent-command-atlas)
 [![Release](https://img.shields.io/github/v/release/kishormorol/agent-command-atlas?style=flat&label=release)](https://github.com/kishormorol/agent-command-atlas/releases)
 [![GitHub stars](https://img.shields.io/github/stars/kishormorol/agent-command-atlas?style=flat&label=stars)](https://github.com/kishormorol/agent-command-atlas/stargazers)
 [![License](https://img.shields.io/github/license/kishormorol/agent-command-atlas?style=flat)](LICENSE)
